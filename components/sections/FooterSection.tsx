@@ -12,7 +12,7 @@ export function FooterSection() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        {/* Top row: brand + description */}
+        {/* Top row: brand + nav */}
         <div className="footer-top">
           <div className="footer-brand-col">
             <Link href="/" className="footer-brand">
@@ -40,7 +40,7 @@ export function FooterSection() {
           <p className="footer-copy">&copy; 2026 Rushh. Tous droits réservés.</p>
           <div className="footer-legal">
             <a href="#">Conditions générales</a>
-            <a href="#">Politique de confidentialité</a>
+            <a href="#">Confidentialité</a>
           </div>
         </div>
       </div>

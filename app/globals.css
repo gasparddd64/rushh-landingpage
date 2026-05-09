@@ -1809,14 +1809,14 @@ section { position: relative; }
   display: inline-flex;
   font-size: 13px;
   font-weight: 500;
-  color: #c8c8ff;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 20px;
   padding: 6px 14px;
-  background: rgba(0,0,255,0.20);
+  background: rgba(255,255,255,0.15);
   border-radius: 100px;
-  border: 1px solid rgba(0,0,255,0.3);
+  border: 1px solid rgba(255,255,255,0.25);
 }
 .cta-title {
   position: relative;
@@ -2005,23 +2005,36 @@ section { position: relative; }
   .feature-card { padding: 28px; }
   .testi-card { padding: 28px; }
 
-  /* 1. Hero CTAs côte à côte, même taille */
+  /* 1. Hero CTAs côte à côte, même taille, une ligne */
   .hero-ctas {
     flex-wrap: nowrap !important;
     gap: 8px;
+    width: 100%;
+    padding: 0 8px;
   }
   .hero-ctas .hero-btn-phone {
-    height: 44px;
-    font-size: 12px;
-    padding: 0 14px;
-    border-radius: 12px;
-    gap: 6px;
+    height: 48px;
+    font-size: 13px;
+    padding: 0 16px;
+    border-radius: 14px;
+    gap: 8px;
     flex: 1;
     justify-content: center;
+    white-space: nowrap;
   }
+  .hero-ctas > button,
   .hero-ctas > * {
     flex: 1;
     min-width: 0;
+    max-width: 50%;
+  }
+  .hero-ctas > * button {
+    width: 100% !important;
+    white-space: nowrap !important;
+    font-size: 13px !important;
+    height: 48px !important;
+    padding-left: 16px !important;
+    padding-right: 8px !important;
   }
 
   /* 2. Aurora plus visible mobile */
@@ -2054,25 +2067,28 @@ section { position: relative; }
   }
 
   /* 5. Footer mobile */
-  .footer-inner { padding: 32px 20px 24px; }
+  .footer-inner { padding: 36px 24px 28px; }
   .footer-top {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 28px;
   }
+  .footer-brand { margin-left: 0; }
   .footer-links {
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+    width: 100%;
   }
-  .footer-link { font-size: 14px; }
+  .footer-link { font-size: 15px; }
+  .footer-divider { margin: 28px 0 20px; }
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
   }
   .footer-legal {
-    flex-direction: column;
-    gap: 8px;
+    display: flex;
+    gap: 20px;
   }
-  .footer-divider { margin: 20px 0 16px; }
 }
