@@ -158,6 +158,94 @@ body { overflow-x: hidden; }
   display: flex; gap: 12px; align-items: center;
 }
 
+/* Hamburger — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1001;
+}
+.nav-hamburger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-hamburger-bar.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger-bar.open:nth-child(2) { opacity: 0; }
+.nav-hamburger-bar.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu overlay */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: white;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 32px 32px;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.35s;
+  pointer-events: none;
+}
+.mobile-menu-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.mobile-menu-link {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.2s;
+}
+.mobile-menu-link:first-child {
+  border-top: 1px solid var(--line);
+}
+.mobile-menu-link:hover { color: var(--accent); }
+.mobile-menu-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+}
+.mobile-menu-cta-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 52px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-hamburger { display: flex; }
+  .nav-links { display: none !important; }
+  .nav-cta { display: none !important; }
+}
+
 /* ---------- BUTTONS ---------- */
 .btn {
   display: inline-flex;
@@ -1899,4 +1987,10 @@ section { position: relative; }
   .cta-card { padding: 56px 28px; }
   .feature-card { padding: 28px; }
   .testi-card { padding: 28px; }
+  .hero-btn-phone {
+    height: 44px;
+    font-size: 13px;
+    padding: 0 18px;
+    border-radius: 12px;
+  }
 }

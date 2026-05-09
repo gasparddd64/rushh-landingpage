@@ -55,7 +55,7 @@ export function WhySection() {
             </div>
             <ButtonColorful
               onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              label="Demander une démo"
+              label="Réserver une démo"
             />
           </div>
           <div className="why-side">

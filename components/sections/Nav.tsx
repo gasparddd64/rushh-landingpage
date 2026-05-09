@@ -1,30 +1,76 @@
 "use client";
 
+import { useState } from "react";
+import { Phone } from "lucide-react";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 
+const navLinks = [
+  { text: "Fonctionnalités", href: "#features" },
+  { text: "Bénéfices", href: "#benefits" },
+  { text: "Pourquoi Rushh ?", href: "#why" },
+  { text: "Comment ça marche", href: "#how" },
+  { text: "FAQ", href: "#faq" },
+];
+
 export function Nav() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="nav">
-      <div className="wrap nav-inner">
-        <div className="brand">
-          <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
-          <span>Rushh</span>
+    <>
+      <nav className="nav">
+        <div className="wrap nav-inner">
+          <div className="brand">
+            <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
+            <span>Rushh</span>
+          </div>
+          <ul className="nav-links">
+            {navLinks.map((l) => (
+              <li key={l.text}><a href={l.href}>{l.text}</a></li>
+            ))}
+          </ul>
+          <div className="nav-cta">
+            <ButtonColorful
+              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
+              label="Réserver une démo"
+              className="!h-[38px] !rounded-xl !text-[13px] !px-5 !pl-5 !pr-2"
+            />
+          </div>
+          <button
+            className="nav-hamburger"
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
+          >
+            <span className={`nav-hamburger-bar${open ? " open" : ""}`} />
+            <span className={`nav-hamburger-bar${open ? " open" : ""}`} />
+            <span className={`nav-hamburger-bar${open ? " open" : ""}`} />
+          </button>
         </div>
-        <ul className="nav-links">
-          <li><a href="#features">Fonctionnalités</a></li>
-          <li><a href="#benefits">Bénéfices</a></li>
-          <li><a href="#why">Pourquoi Rushh ?</a></li>
-          <li><a href="#how">Comment ça marche</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-        <div className="nav-cta">
+      </nav>
+
+      {/* Mobile menu overlay */}
+      <div className={`mobile-menu${open ? " mobile-menu-open" : ""}`}>
+        <div className="mobile-menu-links">
+          {navLinks.map((l) => (
+            <a key={l.text} href={l.href} className="mobile-menu-link" onClick={() => setOpen(false)}>
+              {l.text}
+            </a>
+          ))}
+        </div>
+        <div className="mobile-menu-ctas">
+          <button
+            onClick={() => { window.location.href = "tel:0517948549"; setOpen(false); }}
+            className="mobile-menu-cta-phone"
+          >
+            <Phone size={16} />
+            Appeler notre IA
+          </button>
           <ButtonColorful
-            onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-            label="Demander une démo"
-            className="!h-[38px] !rounded-xl !text-[13px] !px-5 !pl-5 !pr-2"
+            onClick={() => { window.open("https://calendly.com/hello-rushhmail/30min", "_blank"); setOpen(false); }}
+            label="Réserver une démo"
+            className="!w-full !rounded-xl"
           />
         </div>
       </div>
-    </nav>
+    </>
   );
 }

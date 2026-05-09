@@ -21,11 +21,11 @@ export function CTASection() {
               className="hero-btn-phone"
             >
               <Phone size={18} />
-              Discuter avec notre agent vocale
+              Appeler notre IA
             </button>
             <ButtonColorful
               onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              label="Demander une démo"
+              label="Réserver une démo"
               variant="white"
             />
           </div>
