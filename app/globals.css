@@ -516,6 +516,22 @@ body { overflow-x: hidden; }
 }
 
 /* ---------- HERO ---------- */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: var(--ink);
+  color: rgba(255,255,255,0.9);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-bottom: 24px;
+}
+.hero-badge-icon {
+  font-size: 14px;
+}
 .hero-ctas {
   display: flex;
   align-items: center;
