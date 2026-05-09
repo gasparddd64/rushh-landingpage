@@ -59,7 +59,7 @@ function StepCard({ step, active, dark }: { step: StepData; active: boolean; dar
             onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
             label={step.cta}
             variant="white"
-            className="!h-[38px] !rounded-xl whitespace-nowrap !text-[12px]"
+            className="!h-[38px] !rounded-xl whitespace-nowrap !text-[12px] self-start mt-4"
           />
         )}
       </div>

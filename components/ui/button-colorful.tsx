@@ -45,14 +45,14 @@ export function ButtonColorful({
 
             {/* Content */}
             <div className="relative flex items-center justify-center gap-4 h-full">
-                <span className={cn("text-[15px] font-semibold", isWhite ? "text-black" : "text-white")}>{label}</span>
+                <span className={cn("text-[15px] font-semibold", isWhite ? "text-[#374151]" : "text-white")}>{label}</span>
                 <span className={cn(
                     "flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300",
                     isWhite
-                        ? "bg-black/10 group-hover:bg-black/15"
+                        ? "bg-[#374151]/10 group-hover:bg-[#374151]/15"
                         : "bg-white/20 group-hover:bg-white/30"
                 )}>
-                    <ArrowUpRight className={cn("w-[16px] h-[16px]", isWhite ? "text-black" : "text-white")} strokeWidth={2.5} />
+                    <ArrowUpRight className={cn("w-[16px] h-[16px]", isWhite ? "text-[#374151]" : "text-white")} strokeWidth={2.5} />
                 </span>
             </div>
         </button>

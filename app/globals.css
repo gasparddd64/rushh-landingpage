@@ -1987,10 +1987,52 @@ section { position: relative; }
   .cta-card { padding: 56px 28px; }
   .feature-card { padding: 28px; }
   .testi-card { padding: 28px; }
+
+  /* 1. Hero CTAs côte à côte */
   .hero-btn-phone {
     height: 44px;
-    font-size: 13px;
-    padding: 0 18px;
+    font-size: 12px;
+    padding: 0 14px;
     border-radius: 12px;
+    gap: 6px;
   }
+
+  /* 2. Aurora plus visible mobile */
+  .aurora-layer {
+    opacity: 0.45 !important;
+    filter: blur(30px) !important;
+  }
+
+  /* 3. Stepcard dark — text left, button lower, grey text */
+  .stepcard { min-height: 260px; }
+  .stepcard-dark { min-height: 340px; padding-bottom: 28px; }
+
+  /* 4. CTA section — titre plus compact */
+  .cta-title { font-size: clamp(24px, 6vw, 36px) !important; }
+  .cta-buttons { gap: 8px; }
+  .cta-buttons .hero-btn-phone {
+    height: 42px;
+    font-size: 12px;
+    padding: 0 12px;
+  }
+
+  /* 5. Footer mobile */
+  .footer-inner { padding: 32px 20px 24px; }
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+  .footer-link { font-size: 13px; }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .footer-legal { gap: 16px; }
+  .footer-divider { margin: 24px 0 20px; }
 }
