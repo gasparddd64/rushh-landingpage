@@ -121,7 +121,7 @@ export function HeroSection() {
             initial={{ opacity: 0, filter: "blur(12px)", y: 12 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ type: "spring", bounce: 0.3, duration: 1.5, delay: 0.75 }}
-            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, flexWrap: "wrap" }}
+            className="hero-ctas"
           >
             <button
               onClick={() => { window.location.href = "tel:0517948549"; }}
