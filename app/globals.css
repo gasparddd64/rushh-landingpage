@@ -548,12 +548,21 @@ body { overflow-x: hidden; }
   align-items: center;
   justify-content: center;
   gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.hero-cta-equal {
+  flex: 1 1 0;
+  min-width: 0;
+  white-space: nowrap;
 }
 .hero-btn-phone {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   height: 52px;
-  padding: 0 28px; border-radius: 16px;
+  padding: 0 20px; border-radius: 16px;
   background: #000; color: white;
   font-size: 15px; font-weight: 600;
   border: none; cursor: pointer;
@@ -565,12 +574,18 @@ body { overflow-x: hidden; }
   box-shadow: 0 8px 30px rgba(0,0,0,0.25);
 }
 .hero-btn-demo {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 16px 32px; border-radius: 14px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 52px;
+  padding: 0 20px; border-radius: 16px;
   background: #0000FF; color: white;
-  font-size: 16px; font-weight: 600;
+  font-size: 15px; font-weight: 600;
   border: none; cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(0,0,255,0.25);
+}
+.hero-btn-demo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,255,0.35);
 }
 .hero-btn-demo:hover {
   transform: translateY(-2px);
@@ -1987,6 +2002,7 @@ section { position: relative; }
 .footer-legal a:hover {
   color: var(--ink);
 }
+
 @media (max-width: 640px) {
   .footer-top {
     flex-direction: column;
@@ -2034,25 +2050,19 @@ section { position: relative; }
 
   /* 1. Hero CTAs côte à côte, même taille, centré */
   .hero-ctas {
-    flex-wrap: nowrap !important;
     gap: 8px;
-    width: 100%;
-    justify-content: center !important;
+    max-width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+  .hero-ctas .hero-cta-equal {
+    height: 46px;
+    font-size: 13px;
+    padding: 0 12px;
+    border-radius: 12px;
   }
   .hero-ctas .hero-btn-phone {
-    height: 46px;
-    font-size: 12px;
-    padding: 0 14px;
-    border-radius: 12px;
     gap: 6px;
-    white-space: nowrap;
-  }
-  .hero-ctas > * button {
-    white-space: nowrap !important;
-    font-size: 12px !important;
-    height: 46px !important;
-    padding-left: 14px !important;
-    padding-right: 6px !important;
   }
 
   /* 2. Aurora plus visible mobile */

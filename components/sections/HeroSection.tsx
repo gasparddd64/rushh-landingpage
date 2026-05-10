@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Phone, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
-import { ButtonColorful } from "@/components/ui/button-colorful";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { cn } from "@/lib/utils";
 import { motion, type Variants } from "framer-motion";
@@ -91,25 +90,25 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section ref={heroRef} style={{ overflow: "hidden", textAlign: "center" }}>
+    <section ref={heroRef} style={{ overflow: "hidden", overflowX: "hidden", textAlign: "center", width: "100%", maxWidth: "100vw" }}>
       {/* Aurora hero area */}
       <AuroraBackground showRadialGradient style={{ padding: "100px 24px 60px" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 2 }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 2, padding: "0 16px", boxSizing: "border-box" }}>
           <div className="hero-badge">
             <span className="hero-badge-dot" />
             Rushh · Agent vocal immobilier
           </div>
           <h1 style={{
-            fontSize: "clamp(40px, 5.5vw, 72px)",
+            fontSize: "clamp(36px, 5.5vw, 72px)",
             fontWeight: 700,
-            lineHeight: 1.05,
+            lineHeight: 1.1,
             letterSpacing: "-0.035em",
             color: "#1a1a2e",
             marginBottom: 20,
           }}>
             Votre agence décroche.<br />
             <span style={{ color: "#0000FF" }}>Toujours.</span><br />
-            <span style={{ fontSize: "0.55em", fontWeight: 600, color: "#6b7280", letterSpacing: "-0.02em" }}>Zéro appel manqué.</span>
+            <span style={{ color: "#0000FF" }}>Zéro appel manqué.</span>
           </h1>
 
           <p style={{
@@ -130,16 +129,18 @@ export function HeroSection() {
           >
             <button
               onClick={() => { window.location.href = "tel:0517948549"; }}
-              className="hero-btn-phone"
+              className="hero-btn-phone hero-cta-equal"
             >
               <Phone size={18} />
               Appeler notre IA
             </button>
 
-            <ButtonColorful
+            <button
               onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              label="Réserver une démo"
-            />
+              className="hero-btn-demo hero-cta-equal"
+            >
+              Réserver une démo
+            </button>
           </motion.div>
         </div>
       </AuroraBackground>
