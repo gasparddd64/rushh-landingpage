@@ -96,8 +96,8 @@ export function HeroSection() {
       <AuroraBackground showRadialGradient style={{ padding: "100px 24px 60px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 2 }}>
           <div className="hero-badge">
-            <span className="hero-badge-icon">&#9889;</span>
-            Zéro appel manqué, 24h/24
+            <span className="hero-badge-dot" />
+            Rushh · Agent vocal immobilier
           </div>
           <h1 style={{
             fontSize: "clamp(40px, 5.5vw, 72px)",
@@ -107,7 +107,8 @@ export function HeroSection() {
             color: "#1a1a2e",
             marginBottom: 20,
           }}>
-            Votre agence décroche. <span style={{ color: "#0000FF" }}>Toujours.</span>
+            Votre agence décroche.<br />
+            <span style={{ color: "#0000FF" }}>Toujours.</span>
           </h1>
 
           <p style={{

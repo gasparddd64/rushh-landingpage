@@ -17,7 +17,7 @@ export function ButtonColorful({
     return (
         <button
             className={cn(
-                "relative overflow-hidden rounded-2xl border-none cursor-pointer",
+                "relative overflow-hidden rounded-2xl border-none cursor-pointer whitespace-nowrap",
                 "h-[52px]",
                 isWhite ? "bg-white" : "bg-[#0000FF]",
                 isWhite
