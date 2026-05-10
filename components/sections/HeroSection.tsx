@@ -111,7 +111,7 @@ export function HeroSection() {
           <h1 className="hero-title hero-mobile-only">
             Votre agence<br />
             décroche. <span style={{ color: "#0000FF" }}>Toujours.</span><br />
-            Zéro appel manqué.
+            Zéro <span style={{ color: "#0000FF" }}>appel</span> manqué.
           </h1>
           <p className="hero-subtitle hero-mobile-only">
             Plus aucun appel manqué. Rushh répond à votre place, qualifie et transmet la fiche prospect.
