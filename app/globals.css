@@ -2035,22 +2035,6 @@ section { position: relative; }
   color: var(--ink);
 }
 
-@media (max-width: 640px) {
-  .footer-top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .footer-links {
-    flex-wrap: wrap;
-    gap: 16px 24px;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-}
-
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 980px) {
   .nav-links { display: none; }
@@ -2066,105 +2050,109 @@ section { position: relative; }
   .testi-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 640px) {
-  .wrap { padding: 0 20px; }
-  .section-pad { padding: 64px 0; }
-  .hero { padding: 48px 0 64px; }
-  .benefits-grid { grid-template-columns: 1fr; }
-  .stepcards { grid-template-columns: 1fr; }
-  .calc-sidebar { padding: 28px 24px; gap: 22px; }
-  .calc-big-number { font-size: 42px; }
-  .calc-stats { gap: 20px; }
-  .calc-stat-val { font-size: 22px; }
-  .cta-card { padding: 56px 28px; }
-  .feature-card { padding: 28px; }
-  .testi-card { padding: 28px; }
+@media (max-width: 768px) {
+  /* ── Global mobile compact ── */
 
-  /* 1. Hero mobile — centered, swap desktop/mobile content */
-  .hero-section {
-    text-align: center;
-  }
-  .hero-inner {
-    padding: 0 24px;
-  }
+  /* Sections — less vertical space */
+  .section-pad { padding: 56px 0; }
+  .section-head { margin-bottom: 40px; }
+  .wrap { padding: 0 20px; }
+
+  /* Section titles & subtitles — 20-25% smaller */
+  .section-title { font-size: clamp(24px, 6vw, 36px); }
+  .section-sub { font-size: 15px; }
+
+  /* Hero mobile */
+  .hero { padding: 40px 0 48px; }
+  .hero-section { text-align: center; }
+  .hero-inner { padding: 0 24px; }
   .hero-desktop-only { display: none; }
   .hero-mobile-only { display: block; }
-  .hero-title {
-    font-size: clamp(32px, 8vw, 48px);
-  }
-  .hero-subtitle {
-    max-width: 100%;
-    font-size: 16px;
-  }
+  .hero-title { font-size: clamp(30px, 8vw, 44px); }
+  .hero-subtitle { max-width: 100%; font-size: 15px; margin-bottom: 28px; }
+  .hero-badge { font-size: 12px; padding: 6px 14px; margin-bottom: 18px; }
 
-  /* 2. Hero CTAs côte à côte, même taille */
-  .hero-ctas {
-    gap: 8px;
-    max-width: 100%;
-    justify-content: center;
-  }
-  .hero-ctas .hero-cta-equal {
-    height: 46px;
-    font-size: 13px;
-    padding: 0 14px;
-    border-radius: 12px;
-  }
-  .hero-ctas .hero-btn-phone {
-    gap: 6px;
-  }
+  /* Hero CTAs */
+  .hero-ctas { gap: 8px; max-width: 100%; justify-content: center; }
+  .hero-ctas .hero-cta-equal { height: 44px; font-size: 13px; padding: 0 14px; border-radius: 12px; }
+  .hero-ctas .hero-btn-phone { gap: 6px; }
 
-  /* 3. Aurora beaucoup plus visible mobile */
-  .aurora-layer {
-    opacity: 0.7 !important;
-    filter: blur(20px) !important;
-  }
+  /* Aurora more visible on mobile */
+  .aurora-layer { opacity: 0.7 !important; filter: blur(20px) !important; }
 
-  /* 3. Stepcard dark — text left, button lower, grey text */
-  .stepcard { min-height: 260px; }
-  .stepcard-dark { min-height: 340px; padding-bottom: 28px; }
+  /* Feature cards */
+  .feature-card { padding: 20px; }
+  .feature-card .feature-icon { width: 36px; height: 36px; margin-bottom: 12px; }
+  .feature-card .feature-title { font-size: 17px; }
+  .feature-card .feature-desc { font-size: 13px; }
 
-  /* 4. CTA section — titre plus compact, boutons côte à côte */
+  /* Benefit cards */
+  .benefits-grid { grid-template-columns: 1fr; }
+  .benefit-card { padding: 20px; }
+  .benefit-icon { width: 36px; height: 36px; margin-bottom: 12px; }
+  .benefit-title { font-size: 15px; }
+  .benefit-desc { font-size: 13px; }
+
+  /* Step cards */
+  .stepcards { grid-template-columns: 1fr; gap: 16px; }
+  .stepcard { min-height: 220px; padding: 20px 18px 24px; }
+  .stepcard-dark { min-height: 280px; padding-bottom: 24px; }
+  .stepcard-top { margin-bottom: 16px; }
+  .stepcard-num { width: 32px; height: 32px; font-size: 13px; }
+  .stepcard-title { font-size: 17px; }
+  .stepcard-desc { font-size: 13px; }
+
+  /* Why cards */
+  .why-card { padding: 20px; }
+
+  /* Calculator */
+  .calc-sidebar { padding: 24px 20px; gap: 18px; }
+  .calc-big-number { font-size: 36px; }
+  .calc-stats { gap: 16px; }
+  .calc-stat-val { font-size: 20px; }
+  .calc-stat-label { font-size: 12px; }
+
+  /* Testimonials */
+  .testi-card { padding: 24px; }
+  .testi-quote { font-size: 16px; margin-bottom: 20px; }
+  .testi-quote::before { font-size: 48px; vertical-align: -18px; }
+
+  /* Demo section */
+  .demo-left, .demo-right { padding: 24px; }
+
+  /* CTA section */
+  .cta-card { padding: 40px 24px; }
   .cta-title { font-size: clamp(22px, 6vw, 32px) !important; }
   .cta-title br { display: none; }
-  .cta-buttons {
-    flex-wrap: nowrap !important;
-    gap: 8px;
-  }
-  .cta-buttons .hero-btn-phone {
-    height: 42px;
-    font-size: 11px;
-    padding: 0 12px;
-    flex: 1;
-    justify-content: center;
-  }
-  .cta-buttons > * {
-    flex: 1;
-    min-width: 0;
-  }
+  .cta-sub { font-size: 14px; }
+  .cta-eyebrow { font-size: 12px; }
+  .cta-buttons { flex-wrap: nowrap !important; gap: 8px; }
+  .cta-buttons .hero-btn-phone { height: 42px; font-size: 11px; padding: 0 12px; flex: 1; justify-content: center; }
+  .cta-buttons > * { flex: 1; min-width: 0; }
 
-  /* 5. Footer mobile */
-  .footer-inner { padding: 36px 24px 28px; }
-  .footer-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 28px;
-  }
+  /* FAQ */
+  .faq-q { font-size: 15px; padding: 16px 0; }
+  .faq-a { font-size: 14px; }
+
+  /* Footer mobile */
+  .footer-inner { padding: 32px 20px 24px; }
+  .footer-top { flex-direction: column; align-items: flex-start; gap: 24px; }
   .footer-brand { margin-left: 0; }
-  .footer-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px 24px;
-    width: 100%;
-  }
-  .footer-link { font-size: 15px; }
-  .footer-divider { margin: 28px 0 20px; }
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .footer-legal {
-    display: flex;
-    gap: 20px;
-  }
+  .footer-desc { font-size: 13px; }
+  .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; width: 100%; }
+  .footer-link { font-size: 14px; }
+  .footer-divider { margin: 24px 0 16px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .footer-copy { font-size: 12px; }
+  .footer-legal { display: flex; gap: 16px; }
+  .footer-legal a { font-size: 12px; }
+
+  /* Dashboard preview — smaller on mobile */
+  .dash-shell { min-height: 320px; }
+  .dash-sidebar { display: none; }
+  .dash-agent-card { padding: 12px; }
+  .dash-stats-card { padding: 12px; }
+  .dash-chart-card { padding: 12px; }
+  .dash-stat-val { font-size: 16px; }
+  .dash-stat-label { font-size: 10px; }
 }
