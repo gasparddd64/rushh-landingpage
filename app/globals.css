@@ -2079,9 +2079,9 @@ section { position: relative; }
   .feature-card { padding: 28px; }
   .testi-card { padding: 28px; }
 
-  /* 1. Hero mobile — left-align, symmetric padding */
+  /* 1. Hero mobile — centered, symmetric padding */
   .hero-section {
-    text-align: left;
+    text-align: center;
   }
   .hero-inner {
     padding: 0 24px;
@@ -2090,8 +2090,6 @@ section { position: relative; }
     font-size: clamp(32px, 8vw, 48px);
   }
   .hero-subtitle {
-    margin-left: 0;
-    margin-right: 0;
     max-width: 100%;
     font-size: 16px;
   }
@@ -2100,18 +2098,15 @@ section { position: relative; }
   .hero-ctas {
     gap: 8px;
     max-width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .hero-ctas .hero-cta-equal {
     height: 46px;
-    font-size: 12px;
+    font-size: 13px;
     padding: 0 14px;
     border-radius: 12px;
   }
   .hero-ctas .hero-btn-phone {
-    gap: 6px;
-  }
-  .hero-ctas .hero-btn-demo {
     gap: 6px;
   }
 

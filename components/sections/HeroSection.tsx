@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Phone, ArrowUpRight, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
+import { Phone, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { cn } from "@/lib/utils";
 import { motion, type Variants } from "framer-motion";
@@ -96,11 +96,12 @@ export function HeroSection() {
         <div className="hero-inner">
           <div className="hero-badge">
             <span className="hero-badge-dot" />
-            Rushh · Agent vocal immobilier
+            L&apos;agent vocal pour agence immobilière
           </div>
           <h1 className="hero-title">
             Votre agence décroche.<br />
-            <span style={{ color: "#0000FF" }}>Zéro</span> appel manqué.
+            <span style={{ color: "#0000FF" }}>Toujours.</span><br />
+            Zéro appel manqué.
           </h1>
 
           <p className="hero-subtitle">
@@ -126,7 +127,6 @@ export function HeroSection() {
               className="hero-btn-demo hero-cta-equal"
             >
               Réserver une démo
-              <ArrowUpRight size={16} strokeWidth={2.5} />
             </button>
           </motion.div>
         </div>
