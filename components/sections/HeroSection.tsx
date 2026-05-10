@@ -98,13 +98,22 @@ export function HeroSection() {
             <span className="hero-badge-dot" />
             L&apos;agent vocal pour agence immobilière
           </div>
-          <h1 className="hero-title">
+          {/* Desktop */}
+          <h1 className="hero-title hero-desktop-only">
             Votre agence décroche.<br />
-            <span style={{ color: "#0000FF" }}>Toujours.</span><br />
+            <span style={{ color: "#0000FF" }}>Même quand vous ne pouvez pas.</span>
+          </h1>
+          <p className="hero-subtitle hero-desktop-only">
+            Plus besoin de jongler entre visites et votre téléphone. Rushh répond, qualifie et transmet la fiche prospect 24h/24.
+          </p>
+
+          {/* Mobile */}
+          <h1 className="hero-title hero-mobile-only">
+            Votre agence<br />
+            décroche. <span style={{ color: "#0000FF" }}>Toujours.</span><br />
             Zéro appel manqué.
           </h1>
-
-          <p className="hero-subtitle">
+          <p className="hero-subtitle hero-mobile-only">
             Plus aucun appel manqué. Rushh répond à votre place, qualifie et transmet la fiche prospect.
           </p>
 

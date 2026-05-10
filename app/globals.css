@@ -532,7 +532,6 @@ body { overflow-x: hidden; }
   box-sizing: border-box;
 }
 .hero-title {
-  fontSize: clamp(36px, 5.5vw, 72px);
   font-size: clamp(36px, 5.5vw, 72px);
   font-weight: 700;
   line-height: 1.1;
@@ -547,6 +546,8 @@ body { overflow-x: hidden; }
   max-width: 560px;
   margin: 0 auto 40px;
 }
+.hero-desktop-only { display: block; }
+.hero-mobile-only { display: none; }
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -2079,13 +2080,15 @@ section { position: relative; }
   .feature-card { padding: 28px; }
   .testi-card { padding: 28px; }
 
-  /* 1. Hero mobile — centered, symmetric padding */
+  /* 1. Hero mobile — centered, swap desktop/mobile content */
   .hero-section {
     text-align: center;
   }
   .hero-inner {
     padding: 0 24px;
   }
+  .hero-desktop-only { display: none; }
+  .hero-mobile-only { display: block; }
   .hero-title {
     font-size: clamp(32px, 8vw, 48px);
   }
