@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Phone, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
+import { Phone, ArrowUpRight, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { cn } from "@/lib/utils";
 import { motion, type Variants } from "framer-motion";
@@ -90,35 +90,21 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section ref={heroRef} style={{ overflow: "hidden", overflowX: "hidden", textAlign: "center", width: "100%", maxWidth: "100vw" }}>
+    <section ref={heroRef} className="hero-section">
       {/* Aurora hero area */}
       <AuroraBackground showRadialGradient style={{ padding: "100px 24px 60px" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 2, padding: "0 16px", boxSizing: "border-box" }}>
+        <div className="hero-inner">
           <div className="hero-badge">
             <span className="hero-badge-dot" />
             Rushh · Agent vocal immobilier
           </div>
-          <h1 style={{
-            fontSize: "clamp(36px, 5.5vw, 72px)",
-            fontWeight: 700,
-            lineHeight: 1.1,
-            letterSpacing: "-0.035em",
-            color: "#1a1a2e",
-            marginBottom: 20,
-          }}>
+          <h1 className="hero-title">
             Votre agence décroche.<br />
-            <span style={{ color: "#0000FF" }}>Toujours.</span><br />
-            <span style={{ color: "#0000FF" }}>Zéro appel manqué.</span>
+            <span style={{ color: "#0000FF" }}>Zéro</span> appel manqué.
           </h1>
 
-          <p style={{
-            fontSize: 18,
-            lineHeight: 1.6,
-            color: "#6b7280",
-            maxWidth: 560,
-            margin: "0 auto 40px",
-          }}>
-            Plus aucun appel manqué. Rushh répond à votre place, qualifie et transmet la fiche prospect instantanément.
+          <p className="hero-subtitle">
+            Plus aucun appel manqué. Rushh répond à votre place, qualifie et transmet la fiche prospect.
           </p>
 
           <motion.div
@@ -140,6 +126,7 @@ export function HeroSection() {
               className="hero-btn-demo hero-cta-equal"
             >
               Réserver une démo
+              <ArrowUpRight size={16} strokeWidth={2.5} />
             </button>
           </motion.div>
         </div>
