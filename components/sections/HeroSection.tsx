@@ -108,7 +108,8 @@ export function HeroSection() {
             marginBottom: 20,
           }}>
             Votre agence décroche.<br />
-            <span style={{ color: "#0000FF" }}>Toujours.</span>
+            <span style={{ color: "#0000FF" }}>Toujours.</span><br />
+            <span style={{ fontSize: "0.55em", fontWeight: 600, color: "#6b7280", letterSpacing: "-0.02em" }}>Zéro appel manqué.</span>
           </h1>
 
           <p style={{

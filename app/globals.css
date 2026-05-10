@@ -2032,36 +2032,27 @@ section { position: relative; }
   .feature-card { padding: 28px; }
   .testi-card { padding: 28px; }
 
-  /* 1. Hero CTAs côte à côte, même taille, une ligne */
+  /* 1. Hero CTAs côte à côte, même taille, centré */
   .hero-ctas {
     flex-wrap: nowrap !important;
     gap: 8px;
     width: 100%;
-    padding: 0 8px;
+    justify-content: center !important;
   }
   .hero-ctas .hero-btn-phone {
-    height: 48px;
-    font-size: 13px;
-    padding: 0 16px;
-    border-radius: 14px;
-    gap: 8px;
-    flex: 1;
-    justify-content: center;
+    height: 46px;
+    font-size: 12px;
+    padding: 0 14px;
+    border-radius: 12px;
+    gap: 6px;
     white-space: nowrap;
   }
-  .hero-ctas > button,
-  .hero-ctas > * {
-    flex: 1;
-    min-width: 0;
-    max-width: 50%;
-  }
   .hero-ctas > * button {
-    width: 100% !important;
     white-space: nowrap !important;
-    font-size: 13px !important;
-    height: 48px !important;
-    padding-left: 16px !important;
-    padding-right: 8px !important;
+    font-size: 12px !important;
+    height: 46px !important;
+    padding-left: 14px !important;
+    padding-right: 6px !important;
   }
 
   /* 2. Aurora plus visible mobile */
