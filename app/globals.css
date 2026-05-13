@@ -528,26 +528,20 @@ body { overflow-x: hidden; }
 /* Background full image — desktop only */
 .hero-bg-full {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 700px;
+  inset: 0;
   z-index: 3;
   pointer-events: none;
   background: url('/hero-bg-desktop.png') center bottom / cover no-repeat;
   opacity: 0.5;
+  mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 75%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 75%);
 }
 .hero-bg-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 700px;
+  inset: 0;
   z-index: 4;
   pointer-events: none;
-  background:
-    radial-gradient(ellipse 55% 65% at 50% 40%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.6) 55%, transparent 100%),
-    linear-gradient(180deg, transparent 80%, white 100%);
+  background: radial-gradient(ellipse 55% 50% at 50% 35%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.55) 55%, transparent 100%);
 }
 .hero-inner {
   max-width: 800px;
