@@ -150,7 +150,7 @@ export function HeroSection() {
               <CheckCircle2 size={16} />
               Sans engagement
             </span>
-            <span className="hero-trust-separator" />
+            <div style={{ width: 1, height: 18, background: "#d1d5db", flexShrink: 0 }} />
             <span className="hero-trust-item">
               <Clock size={16} />
               Démo en 2 minutes
