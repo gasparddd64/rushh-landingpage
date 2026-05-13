@@ -590,9 +590,11 @@ body { overflow-x: hidden; }
   color: #6b7280;
 }
 .hero-trust-separator {
+  display: inline-block;
   width: 1px;
   height: 18px;
   background: #d1d5db;
+  flex-shrink: 0;
 }
 .hero-desktop-only { display: block; }
 .hero-mobile-only { display: none; }
@@ -678,7 +680,16 @@ body { overflow-x: hidden; }
   z-index: 10;
   margin-top: 88px;
   padding: 0 16px;
+}
+.hero-dash-container::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -9999px;
+  right: -9999px;
+  bottom: 0;
   background: white;
+  z-index: -1;
 }
 @media (min-width: 768px) {
   .hero-dash-container { display: block; }
