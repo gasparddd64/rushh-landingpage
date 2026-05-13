@@ -67,6 +67,7 @@ body { overflow-x: hidden; }
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  z-index: 0;
 }
 .aurora-layer {
   position: absolute;
@@ -527,24 +528,32 @@ body { overflow-x: hidden; }
 /* Background full image — desktop only */
 .hero-bg-full {
   position: absolute;
-  inset: 0;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 700px;
+  z-index: 3;
   pointer-events: none;
   background: url('/hero-bg-desktop.png') center bottom / cover no-repeat;
-  opacity: 0.18;
+  opacity: 0.5;
 }
 .hero-bg-overlay {
   position: absolute;
-  inset: 0;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 700px;
+  z-index: 4;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(245,248,255,0.85) 40%, rgba(235,240,255,0.7) 70%, rgba(255,255,255,0.95) 100%);
+  background:
+    radial-gradient(ellipse 55% 65% at 50% 40%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.6) 55%, transparent 100%),
+    linear-gradient(180deg, transparent 80%, white 100%);
 }
 .hero-inner {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
+  z-index: 5;
   padding: 0 24px;
   box-sizing: border-box;
 }
@@ -667,7 +676,7 @@ body { overflow-x: hidden; }
 .hero-dash-container {
   display: none;
   position: relative;
-  z-index: 2;
+  z-index: 10;
   margin-top: 88px;
   padding: 0 16px;
 }
