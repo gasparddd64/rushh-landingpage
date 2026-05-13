@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Phone, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
+import { Phone, CheckCircle2, Clock, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { cn } from "@/lib/utils";
 import { motion, type Variants } from "framer-motion";
@@ -91,20 +91,25 @@ export function HeroSection() {
 
   return (
     <section ref={heroRef} className="hero-section">
+      {/* Background image — desktop only */}
+      <div className="hero-bg-full" aria-hidden />
+      <div className="hero-bg-overlay" aria-hidden />
+
       {/* Aurora hero area */}
       <AuroraBackground showRadialGradient style={{ padding: "100px 24px 60px" }}>
         <div className="hero-inner">
           <div className="hero-badge">
             <span className="hero-badge-dot" />
-            L&apos;agent vocal pour agence immobilière
+            L&apos;agent conversationnel pour agence immobilière
           </div>
           {/* Desktop */}
           <h1 className="hero-title hero-desktop-only">
-            Votre agence décroche.<br />
-            <span style={{ color: "#0000FF" }}>Même quand vous ne pouvez pas.</span>
+            Le standard intelligent<br />
+            pour agences immobilières.
           </h1>
-          <p className="hero-subtitle hero-desktop-only">
-            Plus besoin de jongler entre visites et votre téléphone. Rushh répond, qualifie et transmet la fiche prospect 24h/24.
+          <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
+            Répondez à chaque appel immobilier avec Rushh,<br />
+            votre agent IA disponible 24h/24.
           </p>
 
           {/* Mobile */}
@@ -138,6 +143,18 @@ export function HeroSection() {
               Réserver une démo
             </button>
           </motion.div>
+
+          {/* Trust badges — desktop only */}
+          <div className="hero-trust hero-desktop-only">
+            <span className="hero-trust-item">
+              <CheckCircle2 size={16} />
+              Sans engagement
+            </span>
+            <span className="hero-trust-item">
+              <Clock size={16} />
+              Démo en 2 minutes
+            </span>
+          </div>
         </div>
       </AuroraBackground>
 
