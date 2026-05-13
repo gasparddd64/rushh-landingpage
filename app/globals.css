@@ -531,17 +531,17 @@ body { overflow-x: hidden; }
   inset: 0;
   z-index: 3;
   pointer-events: none;
-  background: url('/hero-bg-desktop.png') center bottom / cover no-repeat;
-  opacity: 0.5;
-  mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 75%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 75%);
+  background: url('/hero-bg-desktop.png') center bottom / 115% auto no-repeat;
+  opacity: 0.65;
+  mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 78%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 78%);
 }
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
   z-index: 4;
   pointer-events: none;
-  background: radial-gradient(ellipse 55% 50% at 50% 35%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.55) 55%, transparent 100%);
+  background: radial-gradient(ellipse 45% 45% at 50% 38%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.45) 55%, transparent 100%);
 }
 .hero-inner {
   max-width: 800px;
