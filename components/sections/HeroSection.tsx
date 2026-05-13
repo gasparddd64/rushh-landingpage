@@ -150,6 +150,7 @@ export function HeroSection() {
               <CheckCircle2 size={16} />
               Sans engagement
             </span>
+            <span className="hero-trust-separator" />
             <span className="hero-trust-item">
               <Clock size={16} />
               Démo en 2 minutes

@@ -575,7 +575,7 @@ body { overflow-x: hidden; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 24px;
   margin-top: 24px;
 }
 .hero-trust-item {
@@ -583,11 +583,16 @@ body { overflow-x: hidden; }
   align-items: center;
   gap: 6px;
   font-size: 14px;
-  color: #9ca3af;
+  color: #6b7280;
   font-weight: 500;
 }
 .hero-trust-item svg {
-  color: #9ca3af;
+  color: #6b7280;
+}
+.hero-trust-separator {
+  width: 1px;
+  height: 18px;
+  background: #d1d5db;
 }
 .hero-desktop-only { display: block; }
 .hero-mobile-only { display: none; }
@@ -673,6 +678,7 @@ body { overflow-x: hidden; }
   z-index: 10;
   margin-top: 88px;
   padding: 0 16px;
+  background: white;
 }
 @media (min-width: 768px) {
   .hero-dash-container { display: block; }
