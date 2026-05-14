@@ -92,7 +92,12 @@ export function HeroSection() {
   return (
     <section ref={heroRef} className="hero-section">
       {/* Background image — desktop only */}
-      <div className="hero-bg-full" aria-hidden />
+      <img
+        src="/hero-bg-desktop.png"
+        alt=""
+        aria-hidden="true"
+        className="hero-bg-full"
+      />
       <div className="hero-bg-overlay" aria-hidden />
 
       {/* Aurora hero area */}
