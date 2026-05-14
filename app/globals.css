@@ -93,8 +93,8 @@ body { overflow-x: hidden; }
   animation: aurora 60s linear infinite;
 }
 .aurora-radial {
-  mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
 }
 @keyframes aurora {
   from { background-position: 50% 50%, 50% 50%; }
