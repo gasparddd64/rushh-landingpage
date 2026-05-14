@@ -150,7 +150,6 @@ export function HeroSection() {
               <CheckCircle2 size={16} />
               Sans engagement
             </span>
-            <div style={{ width: 1, height: 18, background: "#d1d5db", flexShrink: 0 }} />
             <span className="hero-trust-item">
               <Clock size={16} />
               Démo en 2 minutes
@@ -167,11 +166,6 @@ export function HeroSection() {
         }}
       >
         <div className="hero-dash-container">
-          <div aria-hidden style={{
-            position: "absolute", inset: 0, zIndex: 10,
-            background: "linear-gradient(to bottom, transparent 55%, white 100%)",
-            pointerEvents: "none",
-          }} />
           <div style={{
             position: "relative", maxWidth: 1100, margin: "0 auto",
             overflow: "hidden", borderRadius: "20px 20px 0 0",

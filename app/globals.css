@@ -573,9 +573,10 @@ body { overflow-x: hidden; }
 /* Trust badges */
 .hero-trust {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 8px;
   margin-top: 24px;
 }
 .hero-trust-item {
@@ -588,13 +589,6 @@ body { overflow-x: hidden; }
 }
 .hero-trust-item svg {
   color: #6b7280;
-}
-.hero-trust-separator {
-  display: inline-block;
-  width: 1px;
-  height: 18px;
-  background: #d1d5db;
-  flex-shrink: 0;
 }
 .hero-desktop-only { display: block; }
 .hero-mobile-only { display: none; }
