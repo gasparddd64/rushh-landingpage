@@ -98,7 +98,7 @@ export function HeroSection() {
       <div className="hero-bg-overlay" aria-hidden />
 
       {/* Aurora hero area */}
-      <AuroraBackground showRadialGradient style={{ padding: "100px 24px 60px" }}>
+      <AuroraBackground showRadialGradient style={{ padding: "160px 24px 60px" }}>
         <div className="hero-inner">
           <div className="hero-badge">
             <span className="hero-badge-dot" />
