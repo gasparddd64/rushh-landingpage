@@ -2146,10 +2146,14 @@ section { position: relative; }
   .hero-inner { padding: 0 24px; }
   .hero-desktop-only { display: none; }
   .hero-mobile-only { display: block; }
-  .hero-bg-full, .hero-bg-overlay { display: none; }
+  .hero-bg-full {
+    display: block;
+    background-position: center center;
+  }
+  .hero-bg-overlay { display: block; }
   .hero-title { font-size: clamp(30px, 8vw, 44px); }
   .hero-subtitle { max-width: 100%; font-size: 15px; margin-bottom: 28px; }
-  .hero-badge { font-size: 12px; padding: 6px 14px; margin-bottom: 18px; }
+  .hero-badge { font-size: 11px; padding: 6px 12px; margin-bottom: 18px; white-space: nowrap; }
 
   /* Hero CTAs */
   .hero-ctas { gap: 8px; max-width: 100%; justify-content: center; }

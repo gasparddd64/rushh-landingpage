@@ -116,12 +116,12 @@ export function HeroSection() {
 
           {/* Mobile */}
           <h1 className="hero-title hero-mobile-only">
-            Votre agence<br />
-            décroche. <span style={{ color: "#0000FF" }}>Toujours.</span><br />
-            Zéro <span style={{ color: "#0000FF" }}>appel</span> manqué.
+            Le standard intelligent<br />
+            pour agences immobilières.
           </h1>
           <p className="hero-subtitle hero-mobile-only">
-            Plus aucun appel manqué. Rushh répond à votre place, qualifie et transmet la fiche prospect.
+            Répondez à chaque appel immobilier avec Rushh,
+            votre agent IA disponible 24h/24.
           </p>
 
           <motion.div
