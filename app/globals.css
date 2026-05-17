@@ -2155,9 +2155,12 @@ section { position: relative; }
   .hero-subtitle { max-width: 100%; font-size: 15px; margin-bottom: 28px; }
   .hero-badge { font-size: 11px; padding: 6px 12px; margin-bottom: 18px; white-space: nowrap; }
 
+  /* Hero padding bottom */
+  .aurora-wrap { padding-bottom: 24px !important; }
+
   /* Hero CTAs */
-  .hero-ctas { gap: 8px; max-width: 100%; justify-content: center; }
-  .hero-ctas .hero-cta-equal { height: 44px; font-size: 13px; padding: 0 14px; border-radius: 12px; }
+  .hero-ctas { gap: 8px; max-width: 100%; justify-content: center; flex-wrap: nowrap; }
+  .hero-ctas .hero-cta-equal { height: auto; font-size: 14px; padding: 12px 20px; border-radius: 12px; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
 
   /* Aurora more visible on mobile */
