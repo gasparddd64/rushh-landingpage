@@ -165,12 +165,13 @@ export function HeroSection() {
           ...transitionVariants,
         }}
       >
-        <div className="hero-dash-container">
+        <div className="hero-dash-container" style={{ position: 'relative', zIndex: 10, backgroundColor: 'white' }}>
           <div style={{
             position: "relative", maxWidth: 1100, margin: "0 auto",
             overflow: "hidden", borderRadius: "20px 20px 0 0",
             border: "1px solid rgba(0,0,0,0.08)", borderBottom: "none",
             boxShadow: "0 20px 60px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.04)",
+            background: "white",
           }}>
             <div className="dash-shell" style={{ borderRadius: "20px 20px 0 0", border: "none", boxShadow: "none", minHeight: 420 }}>
               {/* Sidebar */}
