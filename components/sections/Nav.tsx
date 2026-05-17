@@ -29,11 +29,12 @@ export function Nav() {
             ))}
           </ul>
           <div className="nav-cta">
-            <ButtonColorful
+            <button
               onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              label="Réserver une démo"
-              className="!h-[38px] !rounded-xl !text-[13px] !px-5 !pl-5 !pr-2"
-            />
+              className="nav-cta-btn"
+            >
+              Réserver une démo
+            </button>
           </div>
           <button
             className="nav-hamburger"
