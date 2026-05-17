@@ -18,16 +18,18 @@ const defaultItemVariants: Variants = {
   visible: { opacity: 1 },
 };
 
-function AnimatedGroup({ children, className, variants }: {
+function AnimatedGroup({ children, className, variants, style, itemStyle }: {
   children: ReactNode; className?: string;
   variants?: { container?: Variants; item?: Variants };
+  style?: React.CSSProperties;
+  itemStyle?: React.CSSProperties;
 }) {
   const containerVariants = variants?.container || defaultContainerVariants;
   const itemVariants = variants?.item || defaultItemVariants;
   return (
-    <motion.div initial="hidden" animate="visible" variants={containerVariants} className={cn(className)}>
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className={cn(className)} style={style}>
       {React.Children.map(children, (child, i) => (
-        <motion.div key={i} variants={itemVariants}>{child}</motion.div>
+        <motion.div key={i} variants={itemVariants} style={itemStyle}>{child}</motion.div>
       ))}
     </motion.div>
   );
@@ -164,6 +166,8 @@ export function HeroSection() {
           container: { visible: { transition: { staggerChildren: 0.05, delayChildren: 0.75 } } },
           ...transitionVariants,
         }}
+        style={{ position: 'relative', zIndex: 20, backgroundColor: 'white' }}
+        itemStyle={{ position: 'relative', zIndex: 20, backgroundColor: 'white' }}
       >
         <div className="hero-dash-container" style={{ position: 'relative', zIndex: 20, backgroundColor: 'white' }}>
           <div style={{
