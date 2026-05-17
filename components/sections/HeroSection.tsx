@@ -146,8 +146,8 @@ export function HeroSection() {
             </button>
           </motion.div>
 
-          {/* Trust badges — desktop only */}
-          <div className="hero-trust hero-desktop-only">
+          {/* Trust badges */}
+          <div className="hero-trust">
             <span className="hero-trust-item">
               <CheckCircle2 size={16} />
               Sans engagement
