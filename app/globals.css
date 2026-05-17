@@ -2148,7 +2148,9 @@ section { position: relative; }
   .hero-mobile-only { display: block; }
   .hero-bg-full {
     display: block;
-    background-position: center center;
+    background-image: url('/hero-bg-mobile.png');
+    background-position: center bottom;
+    background-size: cover;
     opacity: 0.75;
   }
   .hero-bg-overlay { display: block; }
