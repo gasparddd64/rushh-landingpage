@@ -166,10 +166,10 @@ export function HeroSection() {
           container: { visible: { transition: { staggerChildren: 0.05, delayChildren: 0.75 } } },
           ...transitionVariants,
         }}
-        style={{ position: 'relative', zIndex: 20, backgroundColor: 'white' }}
-        itemStyle={{ position: 'relative', zIndex: 20, backgroundColor: 'white' }}
+        style={{ position: 'relative', zIndex: 20 }}
+        itemStyle={{ position: 'relative', zIndex: 20 }}
       >
-        <div className="hero-dash-container" style={{ position: 'relative', zIndex: 20, backgroundColor: 'white' }}>
+        <div className="hero-dash-container" style={{ position: 'relative', zIndex: 20 }}>
           <div style={{
             position: "relative", maxWidth: 1100, margin: "0 auto",
             overflow: "hidden", borderRadius: "20px 20px 0 0",

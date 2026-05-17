@@ -697,14 +697,7 @@ body { overflow-x: hidden; }
   padding: 0 16px;
 }
 .hero-dash-container::before {
-  content: "";
-  position: absolute;
-  top: -40px;
-  left: -9999px;
-  right: -9999px;
-  bottom: 0;
-  background: white;
-  z-index: -1;
+  display: none;
 }
 @media (min-width: 768px) {
   .hero-dash-container { display: block; }
