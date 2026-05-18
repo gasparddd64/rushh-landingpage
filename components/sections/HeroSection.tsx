@@ -122,8 +122,8 @@ export function HeroSection() {
             pour agences immobilières.
           </h1>
           <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
-            Répondez à chaque appel immobilier avec Rushh,<br />
-            votre agent IA disponible 24h/24.
+            Rushh, votre agent conversationnel, décroche chaque appel,<br />
+            qualifie et vous envoie la fiche résumé. 24h/24, 7j/7.
           </p>
 
           {/* Mobile */}
@@ -132,8 +132,8 @@ export function HeroSection() {
             pour agences immobilières.
           </h1>
           <p className="hero-subtitle hero-mobile-only">
-            Répondez à chaque appel immobilier avec Rushh,
-            votre agent IA disponible 24h/24.
+            Rushh, votre agent conversationnel, décroche chaque appel,
+            qualifie et vous envoie la fiche résumé. 24h/24, 7j/7.
           </p>
 
           <motion.div
