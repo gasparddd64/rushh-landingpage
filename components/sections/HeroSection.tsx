@@ -3,37 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Phone, CheckCircle2, Clock, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
-import { AuroraBackground } from "@/components/ui/aurora-background";
-import { cn } from "@/lib/utils";
-import { motion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
-
-/* ── AnimatedGroup ── */
-const defaultContainerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-};
-const defaultItemVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-};
-
-function AnimatedGroup({ children, className, variants, style, itemStyle }: {
-  children: ReactNode; className?: string;
-  variants?: { container?: Variants; item?: Variants };
-  style?: React.CSSProperties;
-  itemStyle?: React.CSSProperties;
-}) {
-  const containerVariants = variants?.container || defaultContainerVariants;
-  const itemVariants = variants?.item || defaultItemVariants;
-  return (
-    <motion.div initial="hidden" animate="visible" variants={containerVariants} className={cn(className)} style={style}>
-      {React.Children.map(children, (child, i) => (
-        <motion.div key={i} variants={itemVariants} style={itemStyle}>{child}</motion.div>
-      ))}
-    </motion.div>
-  );
-}
+import { motion } from "framer-motion";
 
 /* ── Dashboard data ── */
 const calls = [
@@ -42,8 +12,6 @@ const calls = [
   { obj: "Locataire Studio Bordeaux", type: "Locataire", phone: "06 93 47 81 15" },
   { obj: "Propriétaire Maison Nantes", type: "Propriétaire", phone: "06 12 58 90 33" },
   { obj: "Acquéreur 2P Marseille 7e", type: "Acquéreur", phone: "07 65 22 41 08" },
-  { obj: "Locataire T2 Toulouse", type: "Locataire", phone: "06 78 33 19 52" },
-  { obj: "Propriétaire Villa Nice", type: "Propriétaire", phone: "07 44 61 87 20" },
 ];
 
 const typeBadge: Record<string, { bg: string }> = {
@@ -70,13 +38,6 @@ function WaveformBars({ active }: { active: number }) {
   );
 }
 
-const transitionVariants = {
-  item: {
-    hidden: { opacity: 0, filter: "blur(12px)", y: 12 },
-    visible: { opacity: 1, filter: "blur(0px)", y: 0, transition: { type: "spring" as const, bounce: 0.3, duration: 1.5 } },
-  },
-};
-
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
   const [waveActive, setWaveActive] = useState(0);
@@ -88,173 +49,153 @@ export function HeroSection() {
 
   useEffect(() => {
     if (!heroRef.current) return;
-    gsap.fromTo(heroRef.current, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 1.4, ease: "power3.out" });
+    gsap.fromTo(heroRef.current, { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "power3.out" });
   }, []);
 
   return (
-    <section ref={heroRef} className="hero-section">
-      {/* Background image — desktop only */}
-      <div className="hero-bg-full" aria-hidden />
-      <div className="hero-bg-overlay" aria-hidden />
+    <section ref={heroRef} className="hero-v2">
+      {/* Gradient bg */}
+      <div className="hero-v2-gradient" aria-hidden />
 
-      {/* Aurora hero area */}
-      <AuroraBackground showRadialGradient style={{ padding: "160px 24px 60px" }}>
-        <div className="hero-inner">
-          <div className="hero-badge">
-            <span className="hero-badge-dot" />
-            L&apos;agent conversationnel pour agence immobilière
-          </div>
-          {/* Desktop */}
-          <h1 className="hero-title hero-desktop-only">
-            Le standard intelligent<br />
-            pour agences immobilières.
+      <div className="hero-v2-wrap">
+        {/* Left: text */}
+        <motion.div
+          className="hero-v2-text"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h1 className="hero-v2-title">
+            Le standard<br />
+            intelligent pour<br />
+            agences immobilières.
           </h1>
-          <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
+          <p className="hero-v2-subtitle">
             Répondez à chaque appel immobilier avec Rushh,<br />
             votre agent IA disponible 24h/24.
           </p>
-
-          {/* Mobile */}
-          <h1 className="hero-title hero-mobile-only">
-            Le standard intelligent<br />
-            pour agences immobilières.
-          </h1>
-          <p className="hero-subtitle hero-mobile-only">
-            Répondez à chaque appel immobilier avec Rushh,
-            votre agent IA disponible 24h/24.
-          </p>
-
-          <motion.div
-            initial={{ opacity: 0, filter: "blur(12px)", y: 12 }}
-            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-            transition={{ type: "spring", bounce: 0.3, duration: 1.5, delay: 0.75 }}
-            className="hero-ctas"
-          >
-            <button
-              onClick={() => { window.location.href = "tel:0517948549"; }}
-              className="hero-btn-phone hero-cta-equal"
-            >
-              <Phone size={18} />
-              Appeler notre IA
-            </button>
-
+          <div className="hero-v2-ctas">
             <button
               onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              className="hero-btn-demo hero-cta-equal"
+              className="hero-v2-btn-primary"
             >
               Réserver une démo
             </button>
-          </motion.div>
-
-          {/* Trust badges */}
-          <div className="hero-trust">
-            <span className="hero-trust-item">
-              <CheckCircle2 size={16} />
+            <button
+              onClick={() => { window.location.href = "tel:0517948549"; }}
+              className="hero-v2-btn-secondary"
+            >
+              <Phone size={16} />
+              Appeler notre IA
+            </button>
+          </div>
+          <div className="hero-v2-trust">
+            <span className="hero-v2-trust-item">
+              <CheckCircle2 size={15} />
               Sans engagement
             </span>
-            <span className="hero-trust-item">
-              <Clock size={16} />
+            <span className="hero-v2-trust-item">
+              <Clock size={15} />
               Démo en 2 minutes
             </span>
           </div>
-        </div>
-      </AuroraBackground>
+        </motion.div>
 
-      {/* Dashboard */}
-      <AnimatedGroup
-        variants={{
-          container: { visible: { transition: { staggerChildren: 0.05, delayChildren: 0.75 } } },
-          ...transitionVariants,
-        }}
-        style={{ position: 'relative', zIndex: 20 }}
-        itemStyle={{ position: 'relative', zIndex: 20 }}
-      >
-        <div className="hero-dash-container" style={{ position: 'relative', zIndex: 20 }}>
-          <div style={{
-            position: "relative", maxWidth: 1100, margin: "0 auto",
-            overflow: "hidden", borderRadius: "20px 20px 0 0",
-            border: "1px solid rgba(0,0,0,0.08)", borderBottom: "none",
-            boxShadow: "0 20px 60px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.04)",
-            background: "white",
-          }}>
-            <div className="dash-shell" style={{ borderRadius: "20px 20px 0 0", border: "none", boxShadow: "none", minHeight: 420 }}>
+        {/* Right: browser + dashboard */}
+        <motion.div
+          className="hero-v2-browser"
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
+        >
+          {/* Browser chrome */}
+          <div className="browser-chrome">
+            <div className="browser-dots">
+              <span className="browser-dot" style={{ background: "#ff5f57" }} />
+              <span className="browser-dot" style={{ background: "#febc2e" }} />
+              <span className="browser-dot" style={{ background: "#28c840" }} />
+            </div>
+            <div className="browser-url">
+              <span>app.rushh.fr/dashboard</span>
+            </div>
+          </div>
+
+          {/* Dashboard content */}
+          <div className="browser-body">
+            <div className="dash-v2">
               {/* Sidebar */}
-              <div className="dash-sidebar">
-                <div className="dash-sidebar-logo">
-                  <img src="/logo-rushh.png" alt="Rushh" style={{ width: 32, height: 32, objectFit: "contain" }} />
-                  <span className="dash-logo-text">Rushh</span>
+              <div className="dash-v2-sidebar">
+                <div className="dash-v2-logo">
+                  <img src="/logo-rushh.png" alt="Rushh" style={{ width: 24, height: 24, objectFit: "contain" }} />
+                  <span>Rushh</span>
                 </div>
-                <nav className="dash-nav">
-                  <div className="dash-nav-item active"><LayoutDashboard size={15} /><span>Tableau de bord</span></div>
-                  <div className="dash-nav-item"><PhoneCall size={15} /><span>Mes appels</span></div>
-                  <div className="dash-nav-item"><Users size={15} /><span>Prospects</span></div>
-                  <div className="dash-nav-item"><Calendar size={15} /><span>Agenda</span></div>
-                  <div className="dash-nav-item"><BarChart3 size={15} /><span>Analyses</span></div>
+                <div className="dash-v2-user">
+                  <div className="dash-v2-avatar">A</div>
+                  <div>
+                    <div className="dash-v2-user-name">Mon agence</div>
+                    <div className="dash-v2-user-role">Admin</div>
+                  </div>
+                </div>
+                <nav className="dash-v2-nav">
+                  <div className="dash-v2-nav-item active"><LayoutDashboard size={14} /><span>Dashboard</span></div>
+                  <div className="dash-v2-nav-item"><PhoneCall size={14} /><span>Appels</span></div>
+                  <div className="dash-v2-nav-item"><Users size={14} /><span>Prospects</span></div>
+                  <div className="dash-v2-nav-item"><Calendar size={14} /><span>Agenda</span></div>
+                  <div className="dash-v2-nav-item"><BarChart3 size={14} /><span>Rapports</span></div>
                 </nav>
-                <div className="dash-sidebar-user">
-                  <div className="dash-user-avatar">A</div>
-                  <span className="dash-user-name">Mon agence</span>
-                </div>
               </div>
 
-              {/* Main */}
-              <div className="dash-main">
-                <div className="dash-main-header">
-                  <h3 className="dash-main-title">Mes derniers appels</h3>
-                  <div className="dash-main-actions">
-                    <div className="dash-search"><Search size={13} /><span>Rechercher…</span></div>
-                    <div className="dash-filter"><SlidersHorizontal size={13} /></div>
+              {/* Main area */}
+              <div className="dash-v2-main">
+                <div className="dash-v2-header">
+                  <div>
+                    <h3 className="dash-v2-welcome">Bienvenue, Thomas</h3>
+                    <p className="dash-v2-welcome-sub">Gérez vos appels et prospects en un clic.</p>
                   </div>
                 </div>
-                <div className="dash-table">
-                  <div className="dash-table-head"><span>Objet</span><span>Type</span><span>Téléphone</span></div>
-                  {calls.map((c, i) => (
-                    <div className="dash-table-row" key={i}>
-                      <span className="dash-cell-obj">{c.obj}</span>
-                      <span><span className="dash-badge" style={{ background: typeBadge[c.type].bg, color: "#000" }}>{c.type}</span></span>
-                      <span className="dash-cell-phone">{c.phone}</span>
+
+                {/* Stats row */}
+                <div className="dash-v2-stats">
+                  <div className="dash-v2-stat-card">
+                    <span className="dash-v2-stat-label">Appels traités</span>
+                    <div className="dash-v2-stat-row">
+                      <span className="dash-v2-stat-num">1 284</span>
+                      <span className="dash-v2-stat-badge">+22%</span>
                     </div>
-                  ))}
+                    <span className="dash-v2-stat-sub">81 de plus ce mois</span>
+                  </div>
+                  <div className="dash-v2-stat-card">
+                    <span className="dash-v2-stat-label">Prospects qualifiés</span>
+                    <div className="dash-v2-stat-row">
+                      <span className="dash-v2-stat-num">196</span>
+                      <span className="dash-v2-stat-badge">+50%</span>
+                    </div>
+                    <span className="dash-v2-stat-sub">98 de plus ce mois</span>
+                  </div>
                 </div>
-                <div className="dash-tabs">
-                  <span className="dash-tab active">Tout</span>
-                  <span className="dash-tab">Prospects</span>
-                  <span className="dash-tab">Clients</span>
-                </div>
-              </div>
 
-              {/* Right panel */}
-              <div className="dash-panel">
-                <div className="dash-agent-card">
-                  <div className="dash-agent-info">
-                    <p className="dash-agent-label">Agent vocal</p>
-                    <p className="dash-agent-name">Thomas</p>
-                    <p className="dash-agent-phone">05 17 94 85 49</p>
+                {/* Table */}
+                <div className="dash-v2-table-wrap">
+                  <div className="dash-v2-table-header">
+                    <h4>Derniers appels</h4>
+                    <div className="dash-v2-search"><Search size={12} /><span>Rechercher…</span></div>
                   </div>
-                  <WaveformBars active={waveActive} />
-                  <button className="dash-agent-btn">Appel test</button>
-                </div>
-                <div className="dash-stats-card">
-                  <div className="dash-stat-row">
-                    <div className="dash-stat-block"><span className="dash-stat-val">1 284</span><span className="dash-stat-label">Appels traités</span></div>
-                    <div className="dash-stat-block"><span className="dash-stat-val accent">+11%</span><span className="dash-stat-label">Cette semaine</span></div>
-                  </div>
-                  <div className="dash-stat-row">
-                    <div className="dash-stat-block"><span className="dash-stat-val">2m 34s</span><span className="dash-stat-label">Durée moyenne</span></div>
-                    <div className="dash-stat-block"><span className="dash-stat-val">3 312</span><span className="dash-stat-label">Minutes totales</span></div>
-                  </div>
-                </div>
-                <div className="dash-chart-card">
-                  <p className="dash-chart-title">Appels / semaine</p>
-                  <div className="dash-chart-bars">
-                    {barHeights.map((h, i) => (<div key={i} className="dash-chart-bar" style={{ height: `${h}%` }} />))}
+                  <div className="dash-v2-table">
+                    <div className="dash-v2-table-head"><span>Objet</span><span>Type</span><span>Téléphone</span></div>
+                    {calls.map((c, i) => (
+                      <div className="dash-v2-table-row" key={i}>
+                        <span>{c.obj}</span>
+                        <span><span className="dash-v2-badge" style={{ background: typeBadge[c.type].bg }}>{c.type}</span></span>
+                        <span className="dash-v2-phone">{c.phone}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </AnimatedGroup>
+        </motion.div>
+      </div>
     </section>
   );
 }
