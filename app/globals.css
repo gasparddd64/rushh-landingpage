@@ -175,19 +175,19 @@ body { overflow-x: hidden; }
 .nav-cta {
   display: flex; gap: 12px; align-items: center;
 }
-.nav-cta-btn {
-  background: #0047C6;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 20px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
+.nav-cta .demo-cta-btn {
+  padding: 8px 18px;
+  font-size: 12px;
+  border-radius: 10px;
 }
-.nav-cta-btn:hover {
-  background: #003da8;
+.nav-cta .demo-cta-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+}
+.nav-cta .demo-cta-arrow svg {
+  width: 13px;
+  height: 13px;
 }
 
 /* Hamburger — hidden on desktop */
