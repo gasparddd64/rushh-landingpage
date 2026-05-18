@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { CheckIcon, RocketIcon } from "@/components/icons";
-import { ButtonColorful } from "@/components/ui/button-colorful";
+import { DemoCTA } from "@/components/ui/demo-cta";
 
 function Typewriter({ text, active, speed = 28, onDone }: { text: string; active: boolean; speed?: number; onDone?: () => void }) {
   const [i, setI] = useState(0);
@@ -55,20 +55,8 @@ function StepCard({ step, active, dark }: { step: StepData; active: boolean; dar
           </div>
         </div>
         {step.cta && titleDone && (
-          <div className="stepcard-cta-row">
-            <button
-              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              className="stepcard-cta-btn"
-            >
-              {step.cta}
-            </button>
-            <button
-              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              className="stepcard-cta-arrow"
-              aria-label="Réserver"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-            </button>
+          <div style={{ marginTop: 18, alignSelf: "flex-start" }}>
+            <DemoCTA variant="white" />
           </div>
         )}
       </div>

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Phone, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
+import { DemoCTA } from "@/components/ui/demo-cta";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { cn } from "@/lib/utils";
 import { motion, type Variants } from "framer-motion";
@@ -146,12 +147,7 @@ export function HeroSection() {
               Appeler notre IA
             </button>
 
-            <button
-              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              className="hero-btn-demo hero-cta-equal"
-            >
-              Réserver une démo
-            </button>
+            <DemoCTA />
           </motion.div>
 
           {/* Trust badges removed */}

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Phone } from "lucide-react";
-import { ButtonColorful } from "@/components/ui/button-colorful";
+import { DemoCTA } from "@/components/ui/demo-cta";
 
 const navLinks = [
   { text: "Fonctionnalités", href: "#features" },
@@ -29,12 +29,7 @@ export function Nav() {
             ))}
           </ul>
           <div className="nav-cta">
-            <button
-              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              className="nav-cta-btn"
-            >
-              Réserver une démo
-            </button>
+            <DemoCTA />
           </div>
           <button
             className="nav-hamburger"
@@ -75,11 +70,7 @@ export function Nav() {
             <Phone size={16} />
             Appeler notre IA
           </button>
-          <ButtonColorful
-            onClick={() => { window.open("https://calendly.com/hello-rushhmail/30min", "_blank"); setOpen(false); }}
-            label="Réserver une démo"
-            className="!w-full !rounded-xl"
-          />
+          <DemoCTA />
         </div>
       </div>
     </>

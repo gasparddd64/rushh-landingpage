@@ -403,6 +403,58 @@ body { overflow-x: hidden; }
   border-radius: 14px;
 }
 
+/* ---------- DEMO CTA (universal) ---------- */
+.demo-cta-wrap {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+.demo-cta-btn {
+  padding: 12px 24px;
+  background: #0047C6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.demo-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,71,198,0.3);
+}
+.demo-cta-btn--white {
+  background: white;
+  color: var(--ink);
+}
+.demo-cta-btn--white:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.demo-cta-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #0047C6;
+  color: white;
+  border: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.demo-cta-arrow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,71,198,0.3);
+}
+.demo-cta-arrow--white {
+  background: white;
+  color: var(--ink);
+}
+.demo-cta-arrow--white:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
 /* ---------- BTN RUSHH (animated pill) ---------- */
 .btn-rushh {
   position: relative;

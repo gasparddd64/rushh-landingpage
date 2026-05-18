@@ -2,7 +2,7 @@
 
 import { useRef, type MouseEvent, type ReactNode } from "react";
 import { SparklesIcon, LightningIcon } from "@/components/icons";
-import { ButtonColorful } from "@/components/ui/button-colorful";
+import { DemoCTA } from "@/components/ui/demo-cta";
 
 function WhyTile({ icon, title, desc }: { icon: ReactNode; title: string; desc: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -53,10 +53,7 @@ export function WhySection() {
                 <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 8 }}>Pour être<br />opérationnel</div>
               </div>
             </div>
-            <ButtonColorful
-              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              label="Réserver une démo"
-            />
+            <DemoCTA />
           </div>
           <div className="why-side">
             <WhyTile icon={<SparklesIcon size={20} />} title="Spécialisé immobilier" desc="Vendeur, acheteur, bailleur. Rushh connaît les bons mots, les bonnes questions, les bons réflexes." />

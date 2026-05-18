@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ButtonColorful } from "@/components/ui/button-colorful";
+import { DemoCTA } from "@/components/ui/demo-cta";
 
 /* ── types ── */
 interface SliderField {
@@ -136,11 +136,7 @@ export function CalculatorSection() {
                 <p>Avec Rushh, récupérez jusqu&apos;à <strong>80%</strong> de ces opportunités perdues.</p>
               </div>
 
-              <ButtonColorful
-                onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-                label="Réserver une démo"
-                variant="white"
-              />
+              <DemoCTA variant="white" />
             </div>
           </div>
         </div>
