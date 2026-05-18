@@ -1,14 +1,6 @@
-import { Phone, TrendingUp, Clock, Inbox, Shield, Sparkles } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+"use client";
 
-const benefits: { icon: LucideIcon; title: string; desc: string; accent?: string }[] = [
-  { icon: Phone, title: "Zéro appel manqué", desc: "Chaque appel décroché instantanément, même en visite. Vos prospects ne tombent plus jamais dans le vide.", accent: "#0000FF" },
-  { icon: TrendingUp, title: "Plus de mandats", desc: "Un appel raté peut coûter un mandat. Rushh élimine ce risque." },
-  { icon: Clock, title: "Gain de temps immédiat", desc: "Fini les interruptions en visite et les rappels dans le vide." },
-  { icon: Inbox, title: "Toujours informé", desc: "Une fiche récap après chaque appel. Vous savez qui rappeler et pourquoi." },
-  { icon: Shield, title: "Données sécurisées", desc: "Traitement conforme RGPD. Vos prospects protégés." },
-  { icon: Sparkles, title: "Zéro changement", desc: "Rushh s'adapte à vos outils. Vous ne changez rien." },
-];
+import { Phone, TrendingUp, Clock, Inbox, Shield, Sparkles } from "lucide-react";
 
 export function BenefitsSection() {
   return (
@@ -19,48 +11,86 @@ export function BenefitsSection() {
           <h2 className="section-title">Ce que ça change concrètement pour votre agence.</h2>
           <p className="section-sub">Moins d&apos;interruptions, plus de mandats, zéro appel manqué.</p>
         </div>
-        <div className="benefits-grid-v2">
-          {/* Featured card */}
-          <div className="benefit-card-v2 benefit-card-featured">
-            <div className="benefit-card-featured-badge">Le plus demandé</div>
-            <div className="benefit-icon-v2 benefit-icon-featured">
-              <Phone size={28} />
+
+        <div className="bento-grid">
+          {/* Row 1: 2 cards */}
+          <div className="bento-card bento-dark">
+            <div className="bento-card-top">
+              <div className="bento-icon-dark"><Phone size={20} /></div>
+              <span className="bento-badge-dark">N°1</span>
             </div>
-            <h3 className="benefit-title-v2 benefit-title-featured">{benefits[0].title}</h3>
-            <p className="benefit-desc-v2 benefit-desc-featured">{benefits[0].desc}</p>
-            <div className="benefit-stat">
-              <span className="benefit-stat-number">100%</span>
-              <span className="benefit-stat-label">des appels décrochés</span>
+            <h3 className="bento-title-dark">Zéro appel manqué</h3>
+            <p className="bento-desc-dark">Chaque appel décroché instantanément, même quand vous êtes en visite.</p>
+            <div className="bento-metric-row">
+              <div className="bento-metric">
+                <span className="bento-metric-num">100%</span>
+                <span className="bento-metric-label">Appels décrochés</span>
+              </div>
+              <div className="bento-metric">
+                <span className="bento-metric-num">&lt;1s</span>
+                <span className="bento-metric-label">Temps de réponse</span>
+              </div>
             </div>
           </div>
 
-          {/* Right column */}
-          <div className="benefits-right-col">
-            {benefits.slice(1, 3).map((b, i) => (
-              <div key={i} className="benefit-card-v2 benefit-card-compact">
-                <div className="benefit-icon-v2">
-                  <b.icon size={20} />
-                </div>
-                <div className="benefit-text-compact">
-                  <h3 className="benefit-title-v2">{b.title}</h3>
-                  <p className="benefit-desc-v2">{b.desc}</p>
+          <div className="bento-card bento-light">
+            <div className="bento-icon-light"><TrendingUp size={20} /></div>
+            <h3 className="bento-title-light">Plus de mandats</h3>
+            <p className="bento-desc-light">Un appel raté peut coûter un mandat. Rushh élimine ce risque définitivement.</p>
+            <div className="bento-bar-chart">
+              <div className="bento-bar-group">
+                <span className="bento-bar-label">Avant</span>
+                <div className="bento-bar-track">
+                  <div className="bento-bar-fill bento-bar-before" style={{ width: "45%" }} />
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom row */}
-        <div className="benefits-bottom-row">
-          {benefits.slice(3).map((b, i) => (
-            <div key={i} className="benefit-card-v2 benefit-card-bottom">
-              <div className="benefit-icon-v2">
-                <b.icon size={20} />
+              <div className="bento-bar-group">
+                <span className="bento-bar-label">Après</span>
+                <div className="bento-bar-track">
+                  <div className="bento-bar-fill bento-bar-after" style={{ width: "92%" }} />
+                </div>
               </div>
-              <h3 className="benefit-title-v2">{b.title}</h3>
-              <p className="benefit-desc-v2">{b.desc}</p>
             </div>
-          ))}
+            <p className="bento-bar-caption">Taux de captation prospects</p>
+          </div>
+
+          {/* Row 2: 3 cards */}
+          <div className="bento-card bento-light bento-sm">
+            <div className="bento-icon-light"><Clock size={20} /></div>
+            <h3 className="bento-title-light">Gain de temps</h3>
+            <p className="bento-desc-light">Fini les interruptions en visite et les rappels dans le vide.</p>
+            <div className="bento-big-stat">
+              <span className="bento-big-num">2h</span>
+              <span className="bento-big-unit">/jour économisées</span>
+            </div>
+          </div>
+
+          <div className="bento-card bento-light bento-sm">
+            <div className="bento-icon-light"><Inbox size={20} /></div>
+            <h3 className="bento-title-light">Toujours informé</h3>
+            <p className="bento-desc-light">Fiche récap après chaque appel avec les infos clés du prospect.</p>
+            <div className="bento-fiche-preview">
+              <div className="bento-fiche-row">
+                <span className="bento-fiche-dot bento-fiche-dot-green" />
+                <span>Acquéreur · 3P · Paris 8e</span>
+              </div>
+              <div className="bento-fiche-row">
+                <span className="bento-fiche-dot bento-fiche-dot-blue" />
+                <span>Budget : 650K€ · Visite souhaitée</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bento-card bento-light bento-sm">
+            <div className="bento-icon-light"><Shield size={20} /></div>
+            <h3 className="bento-title-light">Sécurisé & sans friction</h3>
+            <p className="bento-desc-light">RGPD natif. Aucun outil à changer. Rushh s&apos;intègre à votre workflow existant.</p>
+            <div className="bento-tags">
+              <span className="bento-tag">🔒 RGPD</span>
+              <span className="bento-tag">⚡ Plug & play</span>
+              <span className="bento-tag">🔄 CRM compatible</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
