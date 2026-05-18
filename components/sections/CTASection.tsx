@@ -21,7 +21,7 @@ export function CTASection() {
 
           {/* Right: photo */}
           <div className="cta-kz-photo">
-            <img src="/cta-paris.jpg" alt="Paris" />
+            <img src="/cta-paris.jpg?v=2" alt="Immeuble haussmannien" />
           </div>
         </div>
       </div>
