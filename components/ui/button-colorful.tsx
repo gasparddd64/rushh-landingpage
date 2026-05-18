@@ -19,10 +19,10 @@ export function ButtonColorful({
             className={cn(
                 "relative overflow-hidden rounded-2xl border-none cursor-pointer whitespace-nowrap",
                 "h-[52px]",
-                isWhite ? "bg-white" : "bg-[#0000FF]",
+                isWhite ? "bg-white" : "bg-[#0047C6]",
                 isWhite
                     ? "shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
-                    : "shadow-[0_4px_20px_rgba(0,0,255,0.25)] hover:shadow-[0_8px_30px_rgba(0,0,255,0.35)]",
+                    : "shadow-[0_4px_20px_rgba(0,71,198,0.25)] hover:shadow-[0_8px_30px_rgba(0,71,198,0.35)]",
                 "transition-all duration-300 ease-out",
                 "hover:-translate-y-0.5",
                 "active:translate-y-0",
@@ -35,12 +35,12 @@ export function ButtonColorful({
             {/* Shimmer effect on hover */}
             <div className={cn(
                 "absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out",
-                isWhite ? "via-[#0000FF]/5" : "via-white/15"
+                isWhite ? "via-[#0047C6]/5" : "via-white/15"
             )} />
 
             {/* Glow */}
             {!isWhite && (
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#2200f4] to-[#0000cc] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0050d4] to-[#003da8] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
             )}
 
             {/* Content */}

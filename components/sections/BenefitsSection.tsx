@@ -8,7 +8,7 @@ export function BenefitsSection() {
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <circle cx="18" cy="4" r="3" fill="#0000FF" stroke="none"/>
+          <circle cx="18" cy="4" r="3" fill="#0047C6" stroke="none"/>
         </svg>
       ),
       rotate: "-2deg",
@@ -32,7 +32,7 @@ export function BenefitsSection() {
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
           <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M9 16l2 2 4-4" stroke="#0000FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M9 16l2 2 4-4" stroke="#0047C6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
       rotate: "-1.5deg",
@@ -44,7 +44,7 @@ export function BenefitsSection() {
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
           <path d="M14 2v6h6" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M8 13h8M8 17h5" stroke="#0000FF" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M8 13h8M8 17h5" stroke="#0047C6" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
       rotate: "2deg",
@@ -58,7 +58,7 @@ export function BenefitsSection() {
           <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
           <path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           <path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M20 8l2 2-2 2" stroke="#0000FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M20 8l2 2-2 2" stroke="#0047C6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
       rotate: "-1deg",
@@ -70,7 +70,7 @@ export function BenefitsSection() {
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" strokeWidth="2"/>
           <path d="M12 8v4l3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M8 16l-3 3M16 16l3 3" stroke="#0000FF" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M8 16l-3 3M16 16l3 3" stroke="#0047C6" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
       rotate: "1.5deg",

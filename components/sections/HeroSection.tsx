@@ -47,7 +47,7 @@ const calls = [
 ];
 
 const typeBadge: Record<string, { bg: string }> = {
-  Acquéreur: { bg: "rgba(0,0,255,0.08)" },
+  Acquéreur: { bg: "rgba(0,71,198,0.08)" },
   Vendeur: { bg: "rgba(124,58,237,0.08)" },
   Locataire: { bg: "rgba(16,185,129,0.08)" },
   Propriétaire: { bg: "rgba(245,158,11,0.08)" },
