@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Phone, CheckCircle2, Clock, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
+import { Phone, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { cn } from "@/lib/utils";
 import { motion, type Variants } from "framer-motion";
@@ -55,18 +55,30 @@ const typeBadge: Record<string, { bg: string }> = {
 
 const barHeights = [40, 65, 50, 80, 60, 90, 55, 75, 45, 85, 70, 95];
 
-function WaveformBars({ active }: { active: number }) {
-  const h = [60, 80, 50, 90, 70, 100, 45, 75, 55, 85, 65, 95, 50, 70, 90, 60];
+function VoiceWave({ offset }: { offset: number }) {
+  // Generate a smooth sine wave path that shifts over time
+  const points: string[] = [];
+  const w = 200;
+  const h = 40;
+  const mid = h / 2;
+  for (let x = 0; x <= w; x += 1) {
+    const t = (x / w) * Math.PI * 4 + offset * 0.3;
+    const amp = 12 * Math.sin((x / w) * Math.PI); // envelope: fades at edges
+    const y = mid + Math.sin(t) * amp;
+    points.push(`${x},${y.toFixed(1)}`);
+  }
   return (
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 2, height: 24 }}>
-      {h.map((height, i) => {
-        const dist = Math.min(Math.abs(i - active), Math.abs(i - active + 16), Math.abs(i - active - 16));
-        const isActive = dist < 5;
-        return (
-          <div key={i} style={{ width: 3, borderRadius: 2, height: `${height}%`, background: "white", opacity: isActive ? 1 - dist * 0.15 : 0.3, transition: "opacity 0.15s" }} />
-        );
-      })}
-    </div>
+    <svg viewBox={`0 0 ${w} ${h}`} style={{ width: "100%", height: 32 }}>
+      <polyline
+        points={points.join(" ")}
+        fill="none"
+        stroke="white"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        style={{ filter: "drop-shadow(0 0 6px rgba(255,255,255,0.5))" }}
+      />
+    </svg>
   );
 }
 
@@ -146,17 +158,7 @@ export function HeroSection() {
             </button>
           </motion.div>
 
-          {/* Trust badges */}
-          <div className="hero-trust">
-            <span className="hero-trust-item">
-              <CheckCircle2 size={16} />
-              Sans engagement
-            </span>
-            <span className="hero-trust-item">
-              <Clock size={16} />
-              Démo en 2 minutes
-            </span>
-          </div>
+          {/* Trust badges removed */}
         </div>
       </AuroraBackground>
 
@@ -181,7 +183,7 @@ export function HeroSection() {
               {/* Sidebar */}
               <div className="dash-sidebar">
                 <div className="dash-sidebar-logo">
-                  <img src="/logo-rushh.png" alt="Rushh" style={{ width: 32, height: 32, objectFit: "contain" }} />
+                  <img src="/logo-rushh.png" alt="Rushh" style={{ width: 38, height: 38, objectFit: "contain", marginTop: -4 }} />
                   <span className="dash-logo-text">Rushh</span>
                 </div>
                 <nav className="dash-nav">
@@ -231,7 +233,7 @@ export function HeroSection() {
                     <p className="dash-agent-name">Thomas</p>
                     <p className="dash-agent-phone">05 17 94 85 49</p>
                   </div>
-                  <WaveformBars active={waveActive} />
+                  <VoiceWave offset={waveActive} />
                   <button className="dash-agent-btn">Appel test</button>
                 </div>
                 <div className="dash-stats-card">
