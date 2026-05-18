@@ -81,7 +81,7 @@ export function BenefitsSection() {
     <section className="section-pad" id="benefits" style={{ background: "white" }}>
       <div className="wrap">
         <div className="section-head">
-          <span className="section-eyebrow">Fonctionnalités</span>
+          <span className="section-eyebrow">Bénéfices</span>
           <h2 className="section-title">Tout ce que Rushh fait pour vous.</h2>
           <p className="section-sub">De la réception d&apos;appel jusqu&apos;à votre CRM, tout est automatisé.</p>
         </div>

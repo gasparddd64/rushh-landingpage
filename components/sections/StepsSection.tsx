@@ -55,12 +55,21 @@ function StepCard({ step, active, dark }: { step: StepData; active: boolean; dar
           </div>
         </div>
         {step.cta && titleDone && (
-          <ButtonColorful
-            onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-            label={step.cta}
-            variant="white"
-            className="!h-[38px] !rounded-xl whitespace-nowrap !text-[12px] self-start mt-4"
-          />
+          <div className="stepcard-cta-row">
+            <button
+              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
+              className="stepcard-cta-btn"
+            >
+              {step.cta}
+            </button>
+            <button
+              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
+              className="stepcard-cta-arrow"
+              aria-label="Réserver"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </button>
+          </div>
         )}
       </div>
     </div>
@@ -116,7 +125,7 @@ export function StepsSection() {
         <div className="section-head">
           <span className="section-eyebrow">Comment ça marche</span>
           <h2 className="section-title">De la démo à votre premier appel décroché.</h2>
-          <p className="section-sub">On s&apos;occupe de tout. Vous validez à chaque étape.</p>
+          <p className="section-sub">On s&apos;occupe de tout pour que votre agence gagne dès le premier appel.</p>
         </div>
         <div className="stepcards">
           {STEPS.map((s, i) => (
