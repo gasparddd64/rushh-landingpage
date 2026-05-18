@@ -15,11 +15,13 @@ export function CTASection() {
             Un seul appel raté peut coûter un mandat. Regardons ensemble ce que ça vous coûte vraiment.
           </p>
           <div className="cta-buttons">
-            <ButtonColorful
+            <button
               onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
-              label="Réserver une démo"
-              variant="white"
-            />
+              className="cta-btn-main"
+            >
+              Réserver une démo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </button>
           </div>
         </div>
       </div>
