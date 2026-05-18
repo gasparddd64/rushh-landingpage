@@ -184,10 +184,7 @@ function FeatureCardFiche() {
         <div className="fp-card">
           <div className="fp-head">
             <div className="fp-avatar">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="8" r="4" fill="white" opacity="0.9"/>
-                <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" fill="white" opacity="0.9"/>
-              </svg>
+              <img src="/avatar-marie.jpg" alt="Marie Dubois" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             <div>
               <div className="fp-name">Marie Dubois</div>
