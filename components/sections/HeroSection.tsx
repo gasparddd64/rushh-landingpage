@@ -147,7 +147,12 @@ export function HeroSection() {
               Appeler notre IA
             </button>
 
-            <DemoCTA />
+            <button
+              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
+              className="hero-btn-demo hero-cta-equal"
+            >
+              Réserver une démo
+            </button>
           </motion.div>
 
           {/* Trust badges removed */}

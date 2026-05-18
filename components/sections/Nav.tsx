@@ -29,7 +29,12 @@ export function Nav() {
             ))}
           </ul>
           <div className="nav-cta">
-            <DemoCTA />
+            <button
+              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
+              className="nav-cta-btn"
+            >
+              Réserver une démo
+            </button>
           </div>
           <button
             className="nav-hamburger"
