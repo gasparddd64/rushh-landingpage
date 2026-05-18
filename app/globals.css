@@ -1219,6 +1219,181 @@ section { position: relative; }
   line-height: 1.55;
 }
 
+/* ---------- BENEFITS V2 ---------- */
+.benefits-grid-v2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.benefit-card-v2 {
+  border-radius: 20px;
+  padding: 28px;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+}
+.benefit-card-v2:hover {
+  transform: translateY(-3px);
+}
+
+/* Featured (left big card) */
+.benefit-card-featured {
+  background: linear-gradient(160deg, #0000FF 0%, #1a1aff 40%, #0000cc 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 340px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,255,0.20), 0 4px 12px rgba(0,0,255,0.10);
+}
+.benefit-card-featured::after {
+  content: "";
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.benefit-card-featured-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 5px 14px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(8px);
+  margin-bottom: 24px;
+}
+.benefit-icon-featured {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.15) !important;
+  color: white !important;
+  margin-bottom: 20px;
+}
+.benefit-title-featured {
+  color: white !important;
+  font-size: 22px !important;
+  margin-bottom: 10px;
+}
+.benefit-desc-featured {
+  color: rgba(255,255,255,0.8) !important;
+  font-size: 15px !important;
+  line-height: 1.6;
+}
+.benefit-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.benefit-stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.benefit-stat-label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+}
+
+/* Right column */
+.benefits-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.benefit-card-compact {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  flex: 1;
+  padding: 24px;
+}
+.benefit-card-compact:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(0,0,255,0.06);
+}
+.benefit-text-compact {
+  flex: 1;
+}
+
+/* Bottom row */
+.benefits-bottom-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.benefit-card-bottom {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+}
+.benefit-card-bottom:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(0,0,255,0.06);
+}
+
+/* Shared v2 icon */
+.benefit-icon-v2 {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: grid; place-items: center;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+  transition: background 0.3s, color 0.3s;
+}
+.benefit-card-v2:hover .benefit-icon-v2 {
+  background: var(--accent);
+  color: white;
+}
+.benefit-card-featured:hover .benefit-icon-featured {
+  background: rgba(255,255,255,0.25) !important;
+  color: white !important;
+}
+
+/* Shared v2 text */
+.benefit-title-v2 {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.benefit-desc-v2 {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Mobile overrides */
+@media (max-width: 768px) {
+  .benefits-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+  .benefit-card-featured {
+    min-height: auto;
+    padding: 28px 24px;
+  }
+  .benefits-bottom-row {
+    grid-template-columns: 1fr;
+  }
+  .benefit-card-compact {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
 /* ---------- WHY ---------- */
 .why-grid {
   display: grid;
