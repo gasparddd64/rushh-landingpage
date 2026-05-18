@@ -112,10 +112,6 @@ export function HeroSection() {
       {/* Aurora hero area */}
       <AuroraBackground showRadialGradient style={{ padding: "160px 24px 60px" }}>
         <div className="hero-inner">
-          <div className="hero-badge">
-            <span className="hero-badge-dot" />
-            L&apos;agent conversationnel pour agence immobilière
-          </div>
           {/* Desktop */}
           <h1 className="hero-title hero-desktop-only">
             Le standard intelligent<br />
