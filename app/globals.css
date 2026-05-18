@@ -1025,7 +1025,7 @@ section { position: relative; }
 }
 .bargraph .bg-bar {
   flex: 1;
-  background: linear-gradient(180deg, var(--accent), #3c28ff);
+  background: linear-gradient(180deg, #8b95a8, #b0b8c8);
   border-radius: 2px;
   min-height: 4px;
   transition: height 0.18s ease;
@@ -1124,8 +1124,11 @@ section { position: relative; }
 .fp-avatar {
   width: 40px; height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #3c28ff);
+  background: linear-gradient(135deg, #e8c4a0, #d4a07a);
   flex-shrink: 0;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
 }
 .fp-name {
   font-size: 14px; font-weight: 700;
