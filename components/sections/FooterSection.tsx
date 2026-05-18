@@ -8,39 +8,39 @@ const links = [
   { text: "Contact", href: "mailto:hello@rushh.fr" },
 ];
 
+const legalLinks = [
+  { text: "CGV", href: "#" },
+  { text: "RGPD", href: "#" },
+];
+
 export function FooterSection() {
   return (
-    <footer className="footer">
-      <div className="footer-inner">
-        {/* Top row: brand + nav */}
-        <div className="footer-top">
-          <div className="footer-brand-col">
-            <Link href="/" className="footer-brand">
-              <img src="/logo-rushh.png" alt="Rushh" className="footer-logo" />
-              <span className="footer-brand-name">Rushh</span>
+    <footer className="footer-joe">
+      <div className="footer-joe-inner">
+        <div className="footer-joe-top">
+          <div className="footer-joe-brand-col">
+            <Link href="/" className="footer-joe-brand">
+              <img src="/logo-rushh.png" alt="Rushh" className="footer-joe-logo" />
+              <span className="footer-joe-name">Rushh</span>
             </Link>
-            <p className="footer-desc">
-              Réceptionniste IA pour les agences immobilières.<br />
-              Zéro appel manqué, fiches prospects qualifiées, 24h/24.
+            <p className="footer-joe-tagline">
+              Le standard intelligent<br />
+              pour les agences immobilières
             </p>
+            <p className="footer-joe-copy">&copy; 2026 Rushh. Tous droits réservés.</p>
           </div>
-          <nav className="footer-links">
-            {links.map((link) => (
-              <a key={link.text} href={link.href} className="footer-link">
-                {link.text}
-              </a>
-            ))}
-          </nav>
-        </div>
 
-        <div className="footer-divider" />
-
-        {/* Bottom row */}
-        <div className="footer-bottom">
-          <p className="footer-copy">&copy; 2026 Rushh. Tous droits réservés.</p>
-          <div className="footer-legal">
-            <a href="#">Conditions générales</a>
-            <a href="#">Confidentialité</a>
+          <div className="footer-joe-links-wrap">
+            <div className="footer-joe-links">
+              {links.map((l) => (
+                <a key={l.text} href={l.href} className="footer-joe-link">{l.text}</a>
+              ))}
+            </div>
+            <div className="footer-joe-links">
+              {legalLinks.map((l) => (
+                <a key={l.text} href={l.href} className="footer-joe-link">{l.text}</a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
