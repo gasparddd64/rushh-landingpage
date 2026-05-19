@@ -2415,12 +2415,10 @@ section { position: relative; }
 
   /* City carousel — visible on mobile */
   .hero-city-carousel {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: block;
     margin-top: 28px;
     width: 100vw;
-    margin-left: -24px;
+    margin-left: calc(-50vw + 50%);
     overflow: hidden;
     mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
@@ -2431,15 +2429,12 @@ section { position: relative; }
     width: max-content;
   }
   .hero-city-track-1 {
-    animation: city-scroll-left 30s linear infinite;
-  }
-  .hero-city-track-2 {
-    animation: city-scroll-right 35s linear infinite;
+    animation: city-scroll-left 35s linear infinite;
   }
   .hero-city-card {
-    width: 140px;
-    height: 90px;
-    border-radius: 14px;
+    width: 130px;
+    height: 82px;
+    border-radius: 12px;
     overflow: hidden;
     flex-shrink: 0;
     position: relative;
@@ -2460,8 +2455,14 @@ section { position: relative; }
     text-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
 
-  /* Dashboard — hidden on mobile */
-  .hero-dash-container { display: none !important; }
+  /* Dashboard — scale down on mobile */
+  .hero-dash-container {
+    margin-top: 24px;
+    padding: 0;
+    transform: scale(0.52);
+    transform-origin: top center;
+    margin-bottom: -200px;
+  }
 
   /* Feature cards */
   .feature-card { padding: 20px; }

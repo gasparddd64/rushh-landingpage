@@ -41,17 +41,13 @@ const cityRow1 = [
   { name: "Paris", src: "/city-paris.jpg" },
   { name: "Lyon", src: "/city-lyon.jpg" },
   { name: "Bordeaux", src: "/city-bordeaux.jpg" },
-  { name: "Montpellier", src: "/city-montpellier.jpg" },
   { name: "Marseille", src: "/city-marseille.jpg" },
-  { name: "Toulouse", src: "/city-toulouse.jpg" },
-];
-const cityRow2 = [
   { name: "Nice", src: "/city-nice.jpg" },
-  { name: "Nantes", src: "/city-nantes.jpg" },
-  { name: "Strasbourg", src: "/city-strasbourg.jpg" },
+  { name: "Toulouse", src: "/city-toulouse.jpg" },
   { name: "Lille", src: "/city-lille.jpg" },
-  { name: "Rennes", src: "/city-rennes.jpg" },
-  { name: "Aix-en-Provence", src: "/city-aix.jpg" },
+  { name: "Strasbourg", src: "/city-strasbourg.jpg" },
+  { name: "Nantes", src: "/city-nantes.jpg" },
+  { name: "Biarritz", src: "/city-biarritz.jpg" },
 ];
 
 /* ── Dashboard data per view ── */
@@ -664,14 +660,6 @@ export function HeroSection() {
           <div className="hero-city-carousel">
             <div className="hero-city-track hero-city-track-1">
               {[...cityRow1, ...cityRow1].map((c, i) => (
-                <div key={i} className="hero-city-card">
-                  <img src={c.src} alt={c.name} />
-                  <span className="hero-city-label">{c.name}</span>
-                </div>
-              ))}
-            </div>
-            <div className="hero-city-track hero-city-track-2">
-              {[...cityRow2, ...cityRow2].map((c, i) => (
                 <div key={i} className="hero-city-card">
                   <img src={c.src} alt={c.name} />
                   <span className="hero-city-label">{c.name}</span>
