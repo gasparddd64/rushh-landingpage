@@ -2254,9 +2254,9 @@ section { position: relative; }
 
 @media (max-width: 768px) {
   .cta-kz { padding: 48px 0; }
-  .cta-kz-grid { grid-template-columns: 1fr; }
-  .cta-kz-card { padding: 32px 24px; }
-  .cta-kz-photo { min-height: 240px; }
+  .cta-kz-grid { grid-template-columns: 1fr; gap: 16px; }
+  .cta-kz-card { padding: 28px 20px; }
+  .cta-kz-photo { min-height: 200px; border-radius: 16px; }
 }
 
 
@@ -2345,9 +2345,11 @@ section { position: relative; }
 
 @media (max-width: 768px) {
   .footer-joe { padding: 0 16px 24px; }
-  .footer-joe-top { flex-direction: column; gap: 32px; }
+  .footer-joe-top { flex-direction: column; gap: 28px; }
   .footer-joe-tagline { font-size: 18px; }
-  .footer-joe-links-wrap { gap: 32px; }
+  .footer-joe-links-wrap { flex-direction: row; gap: 40px; width: 100%; }
+  .footer-joe-links { gap: 8px; }
+  .footer-joe-link { font-size: 13px; }
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -2400,8 +2402,8 @@ section { position: relative; }
   .hero-section { margin-top: 0; min-height: auto; }
 
   /* Hero CTAs */
-  .hero-ctas { gap: 8px; max-width: 100%; justify-content: center; flex-wrap: nowrap; }
-  .hero-ctas .hero-cta-equal { height: auto; font-size: 14px; padding: 12px 20px; border-radius: 12px; }
+  .hero-ctas { gap: 8px; max-width: 100%; justify-content: center; flex-wrap: wrap; }
+  .hero-ctas .hero-cta-equal { height: auto; font-size: 13px; padding: 12px 16px; border-radius: 12px; flex: 0 1 auto; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
 
   /* Aurora more visible on mobile */
