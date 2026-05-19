@@ -739,6 +739,8 @@ body { overflow-x: hidden; }
   box-shadow: 0 8px 24px rgba(0,71,198,0.3);
 }
 
+.hero-mobile-building { display: none; }
+
 .hero-dash-container {
   display: none;
   position: relative;
@@ -2385,29 +2387,41 @@ section { position: relative; }
   .hero-inner { padding: 0 24px; }
   .hero-desktop-only { display: none; }
   .hero-mobile-only { display: block; }
-  .hero-bg-full {
-    display: block;
-    background-image: url('/hero-bg-mobile.png');
-    background-position: center bottom;
-    background-size: cover;
-    opacity: 0.75;
-  }
-  .hero-bg-overlay { display: block; }
-  .hero-title { font-size: clamp(30px, 8vw, 44px); }
-  .hero-subtitle { max-width: 100%; font-size: 15px; margin-bottom: 28px; }
+  .hero-bg-full { display: none; }
+  .hero-bg-overlay { display: none; }
+  .hero-title { font-size: clamp(28px, 7.5vw, 40px); }
+  .hero-subtitle { max-width: 100%; font-size: 14px; margin-bottom: 24px; color: var(--muted); }
   .hero-badge { font-size: 11px; padding: 6px 12px; margin-bottom: 18px; white-space: nowrap; }
 
-  /* Hero padding */
-  .aurora-wrap { padding-top: 80px !important; padding-bottom: 40px !important; }
-  .hero-section { margin-top: 0; min-height: auto; }
+  /* Hero padding — clean look, no bg image */
+  .aurora-wrap { padding-top: 100px !important; padding-bottom: 24px !important; }
+  .aurora-layer { opacity: 0 !important; }
+  .hero-section { margin-top: 0; min-height: auto; background: white; }
 
-  /* Hero CTAs */
-  .hero-ctas { gap: 8px; max-width: 100%; justify-content: center; flex-wrap: wrap; }
-  .hero-ctas .hero-cta-equal { height: auto; font-size: 13px; padding: 12px 16px; border-radius: 12px; flex: 0 1 auto; }
+  /* Hero CTAs — side by side */
+  .hero-ctas { gap: 10px; max-width: 100%; justify-content: center; flex-wrap: nowrap; }
+  .hero-ctas .hero-cta-equal { height: auto; font-size: 13px; padding: 12px 16px; border-radius: 12px; flex: 1 1 0; min-width: 0; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
 
-  /* Aurora more visible on mobile */
-  .aurora-layer { opacity: 0.7 !important; filter: blur(20px) !important; }
+  /* Dashboard visible on mobile */
+  .hero-dash-container { display: block !important; margin-top: 32px; padding: 0 12px; }
+  .hero-dash-container .dash-shell {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-dash-container .dash-sidebar { display: none; }
+  .hero-dash-container .dash-panel { display: none; }
+  .hero-dash-container .dash-main { border-right: none; padding: 14px 16px; }
+
+  /* Mobile hero building image */
+  .hero-mobile-building {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 20px;
+  }
 
   /* Feature cards */
   .feature-card { padding: 20px; }
@@ -2448,12 +2462,5 @@ section { position: relative; }
   .faq-q { font-size: 15px; padding: 16px 0; }
   .faq-a { font-size: 14px; }
 
-  /* Dashboard preview — smaller on mobile */
-  .dash-shell { min-height: 320px; }
-  .dash-sidebar { display: none; }
-  .dash-agent-card { padding: 12px; }
-  .dash-stats-card { padding: 12px; }
-  .dash-chart-card { padding: 12px; }
-  .dash-stat-val { font-size: 16px; }
-  .dash-stat-label { font-size: 10px; }
+  /* Dashboard preview — mobile adjustments handled above */
 }

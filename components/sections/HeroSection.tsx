@@ -641,6 +641,9 @@ export function HeroSection() {
               Réserver une démo
             </button>
           </motion.div>
+
+          {/* Mobile building image */}
+          <img src="/cta-haussmann.jpg" alt="Immeuble parisien" className="hero-mobile-building" />
         </div>
       </AuroraBackground>
 
