@@ -36,6 +36,24 @@ function AnimatedGroup({ children, className, variants, style, itemStyle }: {
   );
 }
 
+/* ── City carousel data (mobile) ── */
+const cityRow1 = [
+  { name: "Paris", src: "/city-paris.jpg" },
+  { name: "Lyon", src: "/city-lyon.jpg" },
+  { name: "Bordeaux", src: "/city-bordeaux.jpg" },
+  { name: "Montpellier", src: "/city-montpellier.jpg" },
+  { name: "Marseille", src: "/city-marseille.jpg" },
+  { name: "Toulouse", src: "/city-toulouse.jpg" },
+];
+const cityRow2 = [
+  { name: "Nice", src: "/city-nice.jpg" },
+  { name: "Nantes", src: "/city-nantes.jpg" },
+  { name: "Strasbourg", src: "/city-strasbourg.jpg" },
+  { name: "Lille", src: "/city-lille.jpg" },
+  { name: "Rennes", src: "/city-rennes.jpg" },
+  { name: "Aix-en-Provence", src: "/city-aix.jpg" },
+];
+
 /* ── Dashboard data per view ── */
 type ViewKey = "dashboard" | "calls" | "prospects" | "agenda" | "analyses";
 
@@ -615,7 +633,7 @@ export function HeroSection() {
             Le standard intelligent<br />
             pour agences immobilières.
           </h1>
-          <p className="hero-subtitle hero-mobile-only">
+          <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
             Rushh, votre agent conversationnel, décroche chaque appel,
             qualifie et vous envoie la fiche résumé. 24h/24, 7j/7.
           </p>
@@ -642,8 +660,25 @@ export function HeroSection() {
             </button>
           </motion.div>
 
-          {/* Mobile building image */}
-          <img src="/cta-haussmann.jpg" alt="Immeuble parisien" className="hero-mobile-building" />
+          {/* Mobile city carousel */}
+          <div className="hero-city-carousel">
+            <div className="hero-city-track hero-city-track-1">
+              {[...cityRow1, ...cityRow1].map((c, i) => (
+                <div key={i} className="hero-city-card">
+                  <img src={c.src} alt={c.name} />
+                  <span className="hero-city-label">{c.name}</span>
+                </div>
+              ))}
+            </div>
+            <div className="hero-city-track hero-city-track-2">
+              {[...cityRow2, ...cityRow2].map((c, i) => (
+                <div key={i} className="hero-city-card">
+                  <img src={c.src} alt={c.name} />
+                  <span className="hero-city-label">{c.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </AuroraBackground>
 
