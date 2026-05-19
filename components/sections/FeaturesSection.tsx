@@ -140,12 +140,12 @@ function FeatureCardQualif() {
 }
 
 const FICHE_ROWS = [
-  { label: "Téléphone", value: "06 42 18 55 09" },
-  { label: "Budget", value: "420 000 €" },
-  { label: "Type", value: "Appartement 3P" },
-  { label: "Quartier", value: "Batignolles" },
-  { label: "Délai", value: "3 mois" },
-  { label: "Source", value: "Annonce SeLoger" },
+  { label: "Téléphone", value: "06 42 18 55 09", arrow: true },
+  { label: "Budget", value: "420 000 €", arrow: true },
+  { label: "Type", value: "Appartement 3P", arrow: true },
+  { label: "Quartier", value: "Batignolles", arrow: true },
+  { label: "Délai", value: "3 mois", arrow: false },
+  { label: "Source", value: "Annonce SeLoger", arrow: false },
 ];
 
 function FeatureCardFiche() {
@@ -198,7 +198,7 @@ function FeatureCardFiche() {
                 <span className="fp-lbl">{r.label}</span>
                 <span className="fp-val">
                   {r.value}
-                  <svg className="fp-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  {r.arrow && <svg className="fp-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>}
                 </span>
               </div>
             ))}
