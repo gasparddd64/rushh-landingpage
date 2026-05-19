@@ -102,11 +102,11 @@ const qualColors: Record<string, { bg: string; color: string }> = {
 /* Agenda */
 const agendaDays = ["Lun", "Mar", "Mer", "Jeu", "Ven"];
 const agendaBlocks = [
-  [{ t: "9h", h: 25, label: "Visite T3", color: "#0047C6" }, { t: "14h", h: 20, label: "Estimation", color: "#8b5cf6" }],
-  [{ t: "10h", h: 30, label: "RDV mandat", color: "#10b981" }],
-  [{ t: "9h", h: 20, label: "Visite T2", color: "#0047C6" }, { t: "11h", h: 15, label: "Appel suivi", color: "#f59e0b" }, { t: "15h", h: 25, label: "Signature", color: "#8b5cf6" }],
-  [{ t: "14h", h: 20, label: "Photos bien", color: "#10b981" }, { t: "16h", h: 20, label: "Visite T4", color: "#0047C6" }],
-  [{ t: "10h", h: 35, label: "Journée portes ouvertes", color: "#ef4444" }],
+  [{ t: "9h", h: 22, label: "Visite T3 Paris 8e", color: "#0047C6" }, { t: "11h30", h: 18, label: "Estimation Apt", color: "#f59e0b" }, { t: "14h", h: 22, label: "RDV Notaire", color: "#8b5cf6" }, { t: "17h", h: 16, label: "Appel prospects", color: "#10b981" }],
+  [{ t: "9h30", h: 24, label: "RDV mandat exclu", color: "#10b981" }, { t: "13h", h: 18, label: "Photos pro T4", color: "#f59e0b" }, { t: "16h", h: 20, label: "Visite T2 Lyon", color: "#0047C6" }],
+  [{ t: "9h", h: 20, label: "Visite T2 Nantes", color: "#0047C6" }, { t: "11h", h: 16, label: "Appel suivi", color: "#f59e0b" }, { t: "14h", h: 22, label: "Signature compromis", color: "#8b5cf6" }, { t: "17h", h: 16, label: "Prospection tél.", color: "#10b981" }],
+  [{ t: "10h", h: 20, label: "Photos villa Nice", color: "#10b981" }, { t: "14h", h: 24, label: "Visite T4 Bord.", color: "#0047C6" }, { t: "16h30", h: 18, label: "Bilan vendeur", color: "#f59e0b" }],
+  [{ t: "9h", h: 30, label: "Portes ouvertes", color: "#ef4444" }, { t: "14h", h: 22, label: "Visite maison", color: "#0047C6" }, { t: "17h", h: 16, label: "Débrief équipe", color: "#8b5cf6" }],
 ];
 
 /* Analyses */
@@ -194,6 +194,23 @@ function CallsView() {
           <div className="dash-filter"><SlidersHorizontal size={13} /></div>
         </div>
       </div>
+      {/* Status strip */}
+      <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+        {[
+          { val: "847", label: "Décrochés", dot: "#10b981" },
+          { val: "127", label: "Manqués", dot: "#f59e0b" },
+          { val: "34", label: "Vocaux", dot: "#ef4444" },
+          { val: "93%", label: "Taux réponse", dot: "#0047C6" },
+        ].map((k) => (
+          <div key={k.label} style={{ flex: 1, background: "#f4f5f7", borderRadius: 8, padding: "6px 8px", display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ width: 7, height: 7, borderRadius: "50%", background: k.dot, flexShrink: 0 }} />
+            <div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>{k.val}</div>
+              <div style={{ fontSize: 9, color: "var(--muted)" }}>{k.label}</div>
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="dash-table">
         <div className="dash-table-head"><span>Contact</span><span>Durée</span><span>Résumé</span></div>
         {callsData.map((c, i) => (
@@ -228,15 +245,34 @@ function ProspectsView() {
           <div className="dash-filter"><SlidersHorizontal size={13} /></div>
         </div>
       </div>
+      {/* KPI strip */}
+      <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+        {[
+          { val: "342", label: "Total", bg: "#f4f5f7" },
+          { val: "218", label: "Chauds", bg: "rgba(239,68,68,0.06)" },
+          { val: "89", label: "Tièdes", bg: "rgba(245,158,11,0.06)" },
+          { val: "35", label: "Froids", bg: "rgba(0,71,198,0.06)" },
+        ].map((k) => (
+          <div key={k.label} style={{ flex: 1, background: k.bg, borderRadius: 8, padding: "6px 8px", textAlign: "center" }}>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>{k.val}</div>
+            <div style={{ fontSize: 9, color: "var(--muted)" }}>{k.label}</div>
+          </div>
+        ))}
+      </div>
       <div className="dash-table">
-        <div className="dash-table-head"><span>Nom</span><span>Source</span><span>Qualification</span></div>
+        <div className="dash-table-head"><span>Nom</span><span>Source</span><span>Score</span><span>Qualification</span></div>
         {prospectsData.map((p, i) => (
-          <div className="dash-table-row" key={i}>
+          <div className="dash-table-row" key={i} style={{ gridTemplateColumns: "1.3fr 0.9fr 0.8fr 0.7fr" }}>
             <span className="dash-cell-obj">{p.name}</span>
             <span style={{ fontSize: 12, color: "#666" }}>{p.source}</span>
-            <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <div style={{ flex: 1, height: 4, borderRadius: 2, background: "#eee", overflow: "hidden" }}>
+                <div style={{ width: `${p.score}%`, height: "100%", borderRadius: 2, background: qualColors[p.qual].color, transition: "width 0.5s" }} />
+              </div>
+              <span style={{ fontSize: 10, color: "#999", fontFamily: "var(--font-mono), monospace", minWidth: 24 }}>{p.score}%</span>
+            </span>
+            <span>
               <span className="dash-badge" style={{ background: qualColors[p.qual].bg, color: qualColors[p.qual].color }}>{p.qual}</span>
-              <span style={{ fontSize: 11, color: "#999", fontFamily: "var(--font-mono), monospace" }}>{p.score}%</span>
             </span>
           </div>
         ))}
@@ -252,26 +288,47 @@ function ProspectsView() {
 }
 
 function AgendaView() {
+  const today = 2; // Mercredi highlighted
   return (
     <>
       <div className="dash-main-header">
         <h3 className="dash-main-title">Mon agenda</h3>
         <div className="dash-main-actions">
-          <div className="dash-search"><Search size={13} /><span>Semaine 21</span></div>
+          <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
+            <span style={{ fontSize: 11, fontWeight: 600, color: "#0047C6", background: "rgba(0,71,198,0.08)", borderRadius: 6, padding: "4px 10px" }}>Semaine 21</span>
+            <span style={{ fontSize: 11, color: "var(--muted)" }}>19 – 23 mai</span>
+          </div>
         </div>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 6, flex: 1 }}>
+      {/* Summary strip */}
+      <div style={{ display: "flex", gap: 8, marginBottom: 10 }}>
+        {[
+          { val: "18", label: "RDV", color: "#0047C6" },
+          { val: "6", label: "Visites", color: "#10b981" },
+          { val: "3", label: "Signatures", color: "#8b5cf6" },
+          { val: "2", label: "Estimations", color: "#f59e0b" },
+        ].map((k) => (
+          <div key={k.label} style={{ flex: 1, borderRadius: 8, padding: "5px 6px", background: `${k.color}08`, borderLeft: `3px solid ${k.color}`, textAlign: "center" }}>
+            <div style={{ fontSize: 14, fontWeight: 700, color: k.color }}>{k.val}</div>
+            <div style={{ fontSize: 9, color: "var(--muted)" }}>{k.label}</div>
+          </div>
+        ))}
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 5, flex: 1, overflow: "hidden" }}>
         {agendaDays.map((day, di) => (
-          <div key={day} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            <span style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)", textAlign: "center", paddingBottom: 6, borderBottom: "1px solid rgba(0,0,0,0.06)" }}>{day}</span>
-            <div style={{ display: "flex", flexDirection: "column", gap: 4, flex: 1, paddingTop: 4 }}>
+          <div key={day} style={{ display: "flex", flexDirection: "column", gap: 3, background: di === today ? "rgba(0,71,198,0.02)" : "transparent", borderRadius: 8, padding: 3 }}>
+            <div style={{ textAlign: "center", paddingBottom: 4, borderBottom: di === today ? "2px solid #0047C6" : "1px solid rgba(0,0,0,0.06)" }}>
+              <span style={{ fontSize: 10, fontWeight: 600, color: di === today ? "#0047C6" : "var(--muted)" }}>{day}</span>
+              <span style={{ fontSize: 9, display: "block", color: di === today ? "#0047C6" : "#bbb" }}>{19 + di}</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 3, flex: 1, paddingTop: 3 }}>
               {agendaBlocks[di].map((block, bi) => (
                 <div key={bi} style={{
-                  background: `${block.color}10`, borderLeft: `3px solid ${block.color}`,
-                  borderRadius: 6, padding: "6px 6px", minHeight: block.h,
+                  background: `${block.color}10`, borderLeft: `2px solid ${block.color}`,
+                  borderRadius: 5, padding: "4px 5px", minHeight: block.h,
                 }}>
-                  <span style={{ fontSize: 9, color: block.color, fontWeight: 600, display: "block" }}>{block.t}</span>
-                  <span style={{ fontSize: 10, color: "#333", fontWeight: 500, lineHeight: 1.3 }}>{block.label}</span>
+                  <span style={{ fontSize: 8, color: block.color, fontWeight: 700, display: "block", opacity: 0.8 }}>{block.t}</span>
+                  <span style={{ fontSize: 9, color: "#333", fontWeight: 500, lineHeight: 1.2, display: "block" }}>{block.label}</span>
                 </div>
               ))}
             </div>
@@ -285,27 +342,52 @@ function AgendaView() {
 function AnalysesView() {
   const total = analysesPieData.reduce((s, d) => s + d.pct, 0);
   let cumul = 0;
+  const monthLabels = ["Jan", "Fév", "Mar", "Avr", "Mai", "Jun", "Jul", "Aoû", "Sep", "Oct", "Nov", "Déc"];
   return (
     <>
       <div className="dash-main-header">
         <h3 className="dash-main-title">Analyses</h3>
         <div className="dash-main-actions">
-          <div className="dash-search"><Search size={13} /><span>Ce mois</span></div>
+          <div style={{ display: "flex", gap: 4 }}>
+            <span style={{ fontSize: 11, fontWeight: 600, color: "#0047C6", background: "rgba(0,71,198,0.08)", borderRadius: 6, padding: "4px 10px" }}>Ce mois</span>
+            <span style={{ fontSize: 11, color: "var(--muted)", borderRadius: 6, padding: "4px 10px", background: "#f4f5f7" }}>Trimestre</span>
+            <span style={{ fontSize: 11, color: "var(--muted)", borderRadius: 6, padding: "4px 10px", background: "#f4f5f7" }}>Année</span>
+          </div>
         </div>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, flex: 1, alignContent: "start" }}>
-        {/* Bar chart */}
-        <div style={{ background: "#fafbfc", borderRadius: 12, padding: 14 }}>
-          <p style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", margin: "0 0 10px" }}>Appels / semaine</p>
-          <div style={{ display: "flex", alignItems: "flex-end", gap: 3, height: 80 }}>
+      {/* KPI strip */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, marginBottom: 10 }}>
+        {[
+          { val: "97%", label: "Satisfaction", sub: "+2%", icon: Star, color: "#10b981" },
+          { val: "1.2s", label: "Décrochage", sub: "-0.3s", icon: Clock, color: "#0047C6" },
+          { val: "4.8/5", label: "Note IA", sub: "+0.2", icon: TrendingUp, color: "#8b5cf6" },
+          { val: "+34%", label: "Croissance", sub: "vs mois préc.", icon: TrendingUp, color: "#0047C6" },
+        ].map((kpi) => (
+          <div key={kpi.label} style={{ background: "#fafbfc", borderRadius: 10, padding: "8px 6px", textAlign: "center" }}>
+            <kpi.icon size={12} style={{ color: kpi.color, marginBottom: 2 }} />
+            <div style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)", letterSpacing: "-0.02em" }}>{kpi.val}</div>
+            <div style={{ fontSize: 9, color: "var(--muted)" }}>{kpi.label}</div>
+            <div style={{ fontSize: 9, color: kpi.color, fontWeight: 600, marginTop: 1 }}>{kpi.sub}</div>
+          </div>
+        ))}
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "1.3fr 0.7fr", gap: 10, flex: 1, alignContent: "start" }}>
+        {/* Bar chart with labels */}
+        <div style={{ background: "#fafbfc", borderRadius: 12, padding: "10px 12px" }}>
+          <p style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", margin: "0 0 8px" }}>Appels / mois</p>
+          <div style={{ display: "flex", alignItems: "flex-end", gap: 2, height: 70 }}>
             {analysesBarHeights.map((h, i) => (
-              <div key={i} style={{ flex: 1, borderRadius: 3, background: "#0047C6", opacity: 0.7, height: `${h}%` }} />
+              <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+                <div style={{ width: "100%", borderRadius: 3, background: i === 11 ? "#0047C6" : "#0047C640", height: `${h}%` }} />
+                <span style={{ fontSize: 7, color: "#aaa" }}>{monthLabels[i]}</span>
+              </div>
             ))}
           </div>
         </div>
         {/* Donut */}
-        <div style={{ background: "#fafbfc", borderRadius: 12, padding: 14, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-          <svg width="90" height="90" viewBox="0 0 100 100" style={{ transform: "rotate(-90deg)" }}>
+        <div style={{ background: "#fafbfc", borderRadius: 12, padding: "10px 12px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <p style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", margin: "0 0 6px", alignSelf: "flex-start" }}>Répartition</p>
+          <svg width="70" height="70" viewBox="0 0 100 100" style={{ transform: "rotate(-90deg)" }}>
             {analysesPieData.map((d) => {
               const start = (cumul / total) * 283;
               cumul += d.pct;
@@ -315,28 +397,33 @@ function AnalysesView() {
               );
             })}
           </svg>
-          <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap", justifyContent: "center" }}>
+          <div style={{ display: "flex", gap: 6, marginTop: 6, flexWrap: "wrap", justifyContent: "center" }}>
             {analysesPieData.map((d) => (
-              <span key={d.label} style={{ fontSize: 9, color: "#666", display: "flex", alignItems: "center", gap: 3 }}>
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: d.color }} />{d.label}
+              <span key={d.label} style={{ fontSize: 8, color: "#666", display: "flex", alignItems: "center", gap: 2 }}>
+                <span style={{ width: 5, height: 5, borderRadius: "50%", background: d.color }} />{d.label} {d.pct}%
               </span>
             ))}
           </div>
         </div>
-        {/* KPI row */}
-        <div style={{ gridColumn: "1 / -1", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
-          {[
-            { val: "97%", label: "Satisfaction", icon: Star },
-            { val: "1.2s", label: "Temps décrochage", icon: Clock },
-            { val: "4.8/5", label: "Note IA", icon: TrendingUp },
-            { val: "+34%", label: "Croissance", icon: TrendingUp },
-          ].map((kpi) => (
-            <div key={kpi.label} style={{ background: "#fafbfc", borderRadius: 10, padding: "10px 8px", textAlign: "center" }}>
-              <kpi.icon size={14} style={{ color: "#0047C6", marginBottom: 4 }} />
-              <div style={{ fontSize: 15, fontWeight: 700, color: "var(--ink)", letterSpacing: "-0.02em" }}>{kpi.val}</div>
-              <div style={{ fontSize: 9, color: "var(--muted)" }}>{kpi.label}</div>
-            </div>
-          ))}
+        {/* Conversion funnel */}
+        <div style={{ gridColumn: "1 / -1", background: "#fafbfc", borderRadius: 12, padding: "10px 12px" }}>
+          <p style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", margin: "0 0 8px" }}>Tunnel de conversion</p>
+          <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+            {[
+              { label: "Appels reçus", val: 1284, pct: 100, color: "#0047C6" },
+              { label: "Qualifiés", val: 847, pct: 66, color: "#8b5cf6" },
+              { label: "RDV pris", val: 342, pct: 27, color: "#10b981" },
+              { label: "Mandats signés", val: 89, pct: 7, color: "#f59e0b" },
+            ].map((step, i) => (
+              <div key={step.label} style={{ flex: 1, textAlign: "center" }}>
+                <div style={{ height: 6, borderRadius: 3, background: "#eee", overflow: "hidden", marginBottom: 4 }}>
+                  <div style={{ width: `${step.pct}%`, height: "100%", background: step.color, borderRadius: 3 }} />
+                </div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>{step.val.toLocaleString("fr-FR")}</div>
+                <div style={{ fontSize: 8, color: "var(--muted)" }}>{step.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
@@ -354,8 +441,8 @@ const viewComponents: Record<ViewKey, () => React.ReactElement> = {
 /* ── Cursor SVG ── */
 function CursorIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ filter: "drop-shadow(1px 2px 3px rgba(0,0,0,0.3))" }}>
-      <path d="M5 3l14 8-6.5 1.5L11 19z" fill="#111" stroke="white" strokeWidth="1" />
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style={{ filter: "drop-shadow(1px 2px 4px rgba(0,0,0,0.35))" }}>
+      <path d="M5 3l14 8-6.5 1.5L11 19z" fill="#111" stroke="white" strokeWidth="1.2" />
     </svg>
   );
 }
@@ -421,7 +508,7 @@ export function HeroSection() {
       timelineRef.current = tl;
 
       // Fade cursor in
-      tl.to(cursor, { opacity: 1, duration: 0.5 });
+      tl.to(cursor, { opacity: 1, duration: 0.3 });
 
       const viewOrder: ViewKey[] = ["dashboard", "calls", "prospects", "agenda", "analyses"];
 
@@ -432,24 +519,24 @@ export function HeroSection() {
         tl.to(cursor, {
           x: pos.x - 6,
           y: pos.y - 4,
-          duration: 0.7,
+          duration: 0.4,
           ease: "power2.inOut",
         });
 
-        // Small pause then click
-        tl.to(cursor, { scale: 0.85, duration: 0.1 }, "+=0.15");
-        tl.to(cursor, { scale: 1, duration: 0.15 });
+        // Quick click
+        tl.to(cursor, { scale: 0.85, duration: 0.06 }, "+=0.08");
+        tl.to(cursor, { scale: 1, duration: 0.08 });
 
         // Ripple effect
         if (ripple) {
           tl.call(() => {
             gsap.set(ripple, { x: pos.x, y: pos.y, scale: 0, opacity: 0.5 });
-            gsap.to(ripple, { scale: 1.5, opacity: 0, duration: 0.5, ease: "power2.out" });
+            gsap.to(ripple, { scale: 1.5, opacity: 0, duration: 0.35, ease: "power2.out" });
           }, [], "<");
         }
 
         // Switch view
-        tl.call(() => { setActiveView(view); }, [], "<0.05");
+        tl.call(() => { setActiveView(view); }, [], "<0.03");
 
         // Move cursor to main content area to "browse"
         if (i < viewOrder.length - 1) {
@@ -457,23 +544,23 @@ export function HeroSection() {
           tl.to(cursor, {
             x: shellRect.width * 0.45 + (i % 2 === 0 ? 30 : -20),
             y: 140 + i * 30,
-            duration: 0.6,
+            duration: 0.35,
             ease: "power2.inOut",
-          }, "+=1.5");
+          }, "+=0.8");
 
           // Hover around a bit
           tl.to(cursor, {
             x: shellRect.width * 0.45 + (i % 2 === 0 ? -40 : 50),
             y: 200 + i * 15,
-            duration: 0.8,
+            duration: 0.45,
             ease: "sine.inOut",
-          }, "+=0.5");
+          }, "+=0.25");
         } else {
           // Last view: stay, then fade out
-          tl.to(cursor, { duration: 2 }); // pause
-          tl.to(cursor, { opacity: 0, duration: 0.4 });
+          tl.to(cursor, { duration: 1.2 }); // pause
+          tl.to(cursor, { opacity: 0, duration: 0.3 });
           tl.call(() => { setActiveView("dashboard"); });
-          tl.to(cursor, { duration: 0.5 }); // small gap before loop
+          tl.to(cursor, { duration: 0.3 }); // small gap before loop
         }
       });
     }, 1500); // wait for dashboard to render
