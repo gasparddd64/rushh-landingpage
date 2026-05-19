@@ -377,10 +377,12 @@ function AnalysesView() {
           <p style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", margin: "0 0 8px" }}>Appels / mois</p>
           <div style={{ display: "flex", alignItems: "flex-end", gap: 2, height: 70 }}>
             {analysesBarHeights.map((h, i) => (
-              <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
-                <div style={{ width: "100%", borderRadius: 3, background: i === 11 ? "#0047C6" : "#0047C640", height: `${h}%` }} />
-                <span style={{ fontSize: 7, color: "#aaa" }}>{monthLabels[i]}</span>
-              </div>
+              <div key={i} style={{ flex: 1, borderRadius: 3, background: i === 11 ? "#0047C6" : "rgba(0,71,198,0.25)", height: `${h}%` }} />
+            ))}
+          </div>
+          <div style={{ display: "flex", gap: 2, marginTop: 4 }}>
+            {monthLabels.map((m) => (
+              <span key={m} style={{ flex: 1, fontSize: 7, color: "#aaa", textAlign: "center" }}>{m}</span>
             ))}
           </div>
         </div>
@@ -465,6 +467,24 @@ export function HeroSection() {
   const [waveActive, setWaveActive] = useState(0);
   const [activeView, setActiveView] = useState<ViewKey>("dashboard");
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Handle user click on sidebar nav
+  const handleNavClick = useCallback((view: ViewKey) => {
+    setActiveView(view);
+    // Pause cursor animation and hide it
+    const tl = timelineRef.current;
+    const cursor = cursorRef.current;
+    if (tl) tl.pause();
+    if (cursor) gsap.to(cursor, { opacity: 0, duration: 0.2 });
+    // Clear existing resume timer
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    // Resume after 10 seconds
+    resumeTimerRef.current = setTimeout(() => {
+      if (tl) tl.resume();
+      if (cursor) gsap.to(cursor, { opacity: 1, duration: 0.3 });
+    }, 10000);
+  }, []);
 
   // Wave animation
   useEffect(() => {
@@ -568,6 +588,7 @@ export function HeroSection() {
     return () => {
       clearTimeout(timeout);
       timelineRef.current?.kill();
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
     };
   }, []);
 
@@ -673,6 +694,7 @@ export function HeroSection() {
                       key={v.key}
                       ref={(el) => { navRefs.current[i] = el; }}
                       className={`dash-nav-item ${activeView === v.key ? "active" : ""}`}
+                      onClick={() => handleNavClick(v.key)}
                     >
                       <v.icon size={15} /><span>{v.label}</span>
                     </div>
