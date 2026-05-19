@@ -2455,14 +2455,8 @@ section { position: relative; }
     text-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
 
-  /* Dashboard — scale down on mobile */
-  .hero-dash-container {
-    margin-top: 24px;
-    padding: 0;
-    transform: scale(0.52);
-    transform-origin: top center;
-    margin-bottom: -200px;
-  }
+  /* Dashboard — hidden on mobile */
+  .hero-dash-container { display: none !important; }
 
   /* Feature cards */
   .feature-card { padding: 20px; }

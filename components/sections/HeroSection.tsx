@@ -38,16 +38,16 @@ function AnimatedGroup({ children, className, variants, style, itemStyle }: {
 
 /* ── City carousel data (mobile) ── */
 const cityRow1 = [
-  { name: "Paris", src: "/city-paris.jpg" },
-  { name: "Lyon", src: "/city-lyon.jpg" },
-  { name: "Bordeaux", src: "/city-bordeaux.jpg" },
-  { name: "Marseille", src: "/city-marseille.jpg" },
-  { name: "Nice", src: "/city-nice.jpg" },
-  { name: "Toulouse", src: "/city-toulouse.jpg" },
-  { name: "Lille", src: "/city-lille.jpg" },
-  { name: "Strasbourg", src: "/city-strasbourg.jpg" },
-  { name: "Nantes", src: "/city-nantes.jpg" },
-  { name: "Biarritz", src: "/city-biarritz.jpg" },
+  { name: "Paris", src: "/city-paris-v2.jpg" },
+  { name: "Lyon", src: "/city-lyon-v2.jpg" },
+  { name: "Bordeaux", src: "/city-bordeaux-v2.jpg" },
+  { name: "Marseille", src: "/city-marseille-v2.jpg" },
+  { name: "Nice", src: "/city-nice-v2.jpg" },
+  { name: "Toulouse", src: "/city-toulouse-v2.jpg" },
+  { name: "Lille", src: "/city-lille-v2.jpg" },
+  { name: "Strasbourg", src: "/city-strasbourg-v2.jpg" },
+  { name: "Nantes", src: "/city-nantes-v2.jpg" },
+  { name: "Biarritz", src: "/city-biarritz-v2.jpg" },
 ];
 
 /* ── Dashboard data per view ── */
@@ -662,7 +662,6 @@ export function HeroSection() {
               {[...cityRow1, ...cityRow1].map((c, i) => (
                 <div key={i} className="hero-city-card">
                   <img src={c.src} alt={c.name} />
-                  <span className="hero-city-label">{c.name}</span>
                 </div>
               ))}
             </div>
