@@ -2459,7 +2459,7 @@ section { position: relative; }
   /* Why section — hidden on mobile */
   #why { display: none !important; }
 
-  /* Dashboard — visible on mobile, fixed size */
+  /* Dashboard — visible on mobile, FIXED size */
   .hero-dash-container {
     display: block !important;
     margin: 24px auto 0 !important;
@@ -2467,51 +2467,111 @@ section { position: relative; }
     width: calc(100% - 32px) !important;
     max-width: 100% !important;
     overflow: hidden !important;
-    height: 360px !important;
+    height: 340px !important;
+    max-height: 340px !important;
   }
   .hero-dash-container > div {
     border-radius: 14px 14px 0 0 !important;
     overflow: hidden !important;
-    height: 360px !important;
+    height: 340px !important;
+    max-height: 340px !important;
     max-width: 100% !important;
+    width: 100% !important;
   }
   .dash-shell {
-    grid-template-columns: 110px 1fr !important;
+    grid-template-columns: 100px 1fr !important;
     min-height: 0 !important;
-    height: 360px !important;
-    max-height: 360px !important;
+    height: 340px !important;
+    max-height: 340px !important;
     font-size: 10px !important;
     overflow: hidden !important;
     max-width: 100% !important;
     width: 100% !important;
   }
   .dash-panel { display: none !important; }
-  .dash-sidebar { padding: 10px 8px !important; overflow: hidden !important; }
-  .dash-sidebar-logo { gap: 6px !important; margin-bottom: 10px !important; }
-  .dash-sidebar-logo img { width: 24px !important; height: 24px !important; }
-  .dash-logo-text { font-size: 13px !important; }
-  .dash-nav-item { font-size: 10px !important; padding: 6px 8px !important; gap: 6px !important; }
-  .dash-nav-item svg { width: 12px !important; height: 12px !important; }
-  .dash-sidebar-user { padding-top: 8px !important; }
-  .dash-user-avatar { width: 22px !important; height: 22px !important; font-size: 9px !important; }
-  .dash-user-name { font-size: 10px !important; }
-  .dash-main {
-    padding: 10px !important;
+  .dash-sidebar {
+    padding: 10px 6px !important;
     overflow: hidden !important;
     max-height: 340px !important;
+    width: 100px !important;
+    min-width: 0 !important;
+  }
+  .dash-sidebar-logo { gap: 4px !important; margin-bottom: 8px !important; }
+  .dash-sidebar-logo img { width: 22px !important; height: 22px !important; }
+  .dash-logo-text { font-size: 12px !important; }
+  .dash-nav-item { font-size: 9px !important; padding: 5px 6px !important; gap: 5px !important; }
+  .dash-nav-item svg { width: 11px !important; height: 11px !important; }
+  .dash-sidebar-user { padding-top: 6px !important; }
+  .dash-user-avatar { width: 20px !important; height: 20px !important; font-size: 8px !important; }
+  .dash-user-name { font-size: 9px !important; }
+  .dash-main {
+    padding: 8px !important;
+    overflow: hidden !important;
+    height: 340px !important;
+    max-height: 340px !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .dash-main > div { overflow: hidden !important; max-height: 320px !important; }
+  .dash-main-header { margin-bottom: 6px !important; }
+  .dash-main-title { font-size: 11px !important; }
+  .dash-main-actions { display: none !important; }
+  .dash-table {
+    overflow: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+  .dash-table-head {
+    font-size: 7px !important;
+    overflow: hidden !important;
+  }
+  .dash-table-head span {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .dash-table-row {
+    font-size: 8px !important;
+    padding: 4px 0 !important;
+    overflow: hidden !important;
     max-width: 100% !important;
   }
-  .dash-main-header { margin-bottom: 8px !important; }
-  .dash-main-title { font-size: 12px !important; }
-  .dash-search { display: none !important; }
-  .dash-filter { display: none !important; }
-  .dash-table-head { font-size: 8px !important; }
-  .dash-table-row { font-size: 9px !important; padding: 5px 0 !important; }
-  .dash-cell-obj { font-size: 9px !important; }
-  .dash-cell-phone { font-size: 8px !important; }
-  .dash-badge { font-size: 8px !important; padding: 2px 5px !important; }
-  .dash-tabs { gap: 4px !important; }
-  .dash-tab { font-size: 9px !important; padding: 4px 8px !important; }
+  .dash-table-row span {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    min-width: 0 !important;
+  }
+  /* Hide rows beyond 4 */
+  .dash-table-row:nth-child(n+6) { display: none !important; }
+  .dash-cell-obj { font-size: 8px !important; }
+  .dash-cell-phone { font-size: 7px !important; }
+  .dash-badge { font-size: 7px !important; padding: 1px 4px !important; }
+  .dash-tabs { gap: 3px !important; }
+  .dash-tab { font-size: 8px !important; padding: 3px 6px !important; }
+  /* Force all inner grids/flex to not overflow */
+  .dash-main div, .dash-main span, .dash-main p {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .dash-main div[style*="grid"] {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  /* Calls view status strip */
+  .dash-main div[style*="gap: 8px"] { gap: 4px !important; font-size: 8px !important; }
+  /* Prospects row — reduce to 3 columns max */
+  .dash-table-row[style*="gridTemplateColumns"] { grid-template-columns: 1fr 0.7fr 0.6fr !important; }
+  .dash-table-row[style*="gridTemplateColumns"] span:nth-child(4) { display: none !important; }
+  /* Agenda — reduce columns and block sizes */
+  .dash-main div[style*="repeat(5"] { grid-template-columns: repeat(5, 1fr) !important; gap: 2px !important; font-size: 7px !important; }
+  /* Analyses — stack vertically */
+  .dash-main div[style*="1.3fr 0.7fr"] { grid-template-columns: 1fr !important; gap: 4px !important; }
+  .dash-main div[style*="repeat(4, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; gap: 4px !important; }
+  /* Conversion funnel */
+  .dash-main div[style*="gridColumn"] { font-size: 7px !important; }
 
   /* Feature cards */
   .feature-card { padding: 20px; }
