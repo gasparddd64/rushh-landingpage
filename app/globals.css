@@ -1068,7 +1068,7 @@ section { position: relative; }
 }
 .bargraph .bg-bar {
   flex: 1;
-  background: linear-gradient(180deg, #8b95a8, #b0b8c8);
+  background: linear-gradient(180deg, #0047C6, #3B82F6);
   border-radius: 2px;
   min-height: 4px;
   transition: height 0.18s ease;
