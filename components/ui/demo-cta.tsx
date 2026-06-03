@@ -5,13 +5,13 @@ export function DemoCTA({ variant = "blue" }: { variant?: "blue" | "white" }) {
   return (
     <div className="demo-cta-wrap">
       <button
-        onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
+        onClick={() => window.open("https://calendly.com/rushh/15-min-avec-gaspard", "_blank")}
         className={`demo-cta-btn ${isWhite ? "demo-cta-btn--white" : ""}`}
       >
         Réserver une démo
       </button>
       <button
-        onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
+        onClick={() => window.open("https://calendly.com/rushh/15-min-avec-gaspard", "_blank")}
         className={`demo-cta-arrow ${isWhite ? "demo-cta-arrow--white" : ""}`}
         aria-label="Réserver une démo"
       >

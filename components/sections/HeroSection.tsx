@@ -649,7 +649,7 @@ export function HeroSection() {
             </button>
 
             <button
-              onClick={() => window.open("https://calendly.com/hello-rushhmail/30min", "_blank")}
+              onClick={() => window.open("https://calendly.com/rushh/15-min-avec-gaspard", "_blank")}
               className="hero-btn-demo hero-cta-equal"
             >
               Réserver une démo
