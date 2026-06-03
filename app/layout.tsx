@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Rushh · Réceptionniste IA pour agences immobilières",
     description:
       "Rushh répond, qualifie et transmet la fiche prospect 24h/24. Zéro appel manqué, plus de mandats.",
-    images: [{ url: "/logo-rushh.png", width: 512, height: 512 }],
+    images: [{ url: "/logo-rushh-og.png", width: 512, height: 512 }],
   },
 };
 
