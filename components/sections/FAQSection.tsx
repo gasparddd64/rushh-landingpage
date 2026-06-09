@@ -5,10 +5,6 @@ import { PlusIcon } from "@/components/icons";
 
 const faqItems = [
   {
-    q: "Qu'est-ce qu'un agent vocal IA pour agence immobilière ?",
-    a: "Un agent vocal IA pour agence immobilière est un système qui décroche automatiquement vos appels entrants 24h/24, 7j/7. Il dialogue naturellement avec vos prospects, collecte leurs informations clés (budget, type de bien, localisation) et vous transmet une fiche qualifiée en temps réel — sans aucune intervention humaine.",
-  },
-  {
     q: "Est-ce que mes prospects savent qu'ils parlent à une IA ?",
     a: "Oui — Rushh se présente naturellement dès le début de l'appel. La transparence est essentielle, et nos clients constatent que ça ne nuit pas du tout à la qualité de la conversation, au contraire.",
   },

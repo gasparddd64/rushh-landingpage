@@ -21,7 +21,7 @@ export function CTASection() {
 
           {/* Right: photo */}
           <div className="cta-kz-photo">
-            <img src="/cta-haussmann.jpg" alt="Façade haussmannienne — Rushh décroche 100% des appels de votre agence immobilière, 24h/24" />
+            <img src="/cta-haussmann.jpg" alt="Immeuble haussmannien" />
           </div>
         </div>
       </div>
