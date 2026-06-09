@@ -184,7 +184,7 @@ function FeatureCardFiche() {
         <div className="fp-card">
           <div className="fp-head">
             <div className="fp-avatar">
-              <img src="/avatar-marie.jpg" alt="Marie Dubois" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src="/avatar-marie.jpg" alt="Fiche prospect acquéreur qualifiée automatiquement par Rushh, agent vocal IA immobilier" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             <div>
               <div className="fp-name">Marie Dubois</div>

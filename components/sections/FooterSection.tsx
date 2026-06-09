@@ -24,8 +24,8 @@ export function FooterSection() {
               <span className="footer-joe-name">Rushh</span>
             </Link>
             <p className="footer-joe-tagline">
-              Le standard intelligent<br />
-              pour les agences immobilières
+              L&apos;agent vocal IA dédié aux agences<br />
+              immobilières indépendantes
             </p>
             <p className="footer-joe-copy">&copy; 2026 Rushh. Tous droits réservés.</p>
           </div>

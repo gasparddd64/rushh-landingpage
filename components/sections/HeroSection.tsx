@@ -616,22 +616,34 @@ export function HeroSection() {
 
       <AuroraBackground showRadialGradient style={{ padding: "160px 24px 60px" }}>
         <div className="hero-inner">
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 6,
+            background: "var(--accent-soft)", color: "var(--accent)",
+            border: "1px solid rgba(0,71,198,0.2)", borderRadius: 999,
+            padding: "6px 14px", fontSize: 13, fontWeight: 600,
+            marginBottom: 20, letterSpacing: "0.01em",
+          }}>
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", display: "inline-block" }} />
+            Agent vocal IA • Immobilier
+          </div>
           <h1 className="hero-title hero-desktop-only">
-            Le standard intelligent<br />
-            pour agences immobilières.
+            Votre agence décroche.<br />
+            Même à 23h. Même le dimanche.
           </h1>
           <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
-            Rushh, votre agent conversationnel, décroche chaque appel,<br />
-            qualifie et vous envoie la fiche résumé. 24h/24, 7j/7.
+            Rushh, votre agent vocal IA, répond à 100% de vos appels entrants,<br />
+            qualifie chaque prospect et envoie la fiche complète à vos négociateurs.<br />
+            24h/24, 7j/7. Configuration en 48h.
           </p>
 
           <h1 className="hero-title hero-mobile-only">
-            Le standard intelligent<br />
-            pour agences immobilières.
+            Votre agence décroche.<br />
+            Même à 23h. Même le dimanche.
           </h1>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
-            Rushh, votre agent conversationnel, décroche chaque appel,
-            qualifie et vous envoie la fiche résumé. 24h/24, 7j/7.
+            Rushh, votre agent vocal IA, répond à 100% de vos appels entrants,
+            qualifie chaque prospect et envoie la fiche complète à vos négociateurs.
+            24h/24, 7j/7. Configuration en 48h.
           </p>
 
           <motion.div
@@ -645,7 +657,7 @@ export function HeroSection() {
               className="hero-btn-phone hero-cta-equal"
             >
               <Phone size={18} />
-              Appeler notre IA
+              Tester Rushh
             </button>
 
             <button
@@ -661,7 +673,7 @@ export function HeroSection() {
             <div className="hero-city-track hero-city-track-1">
               {[...cityRow1, ...cityRow1].map((c, i) => (
                 <div key={i} className="hero-city-card">
-                  <img src={c.src} alt={c.name} />
+                  <img src={c.src} alt={`Agence immobilière à ${c.name} — Rushh agent vocal IA`} />
                 </div>
               ))}
             </div>

@@ -54,7 +54,7 @@ export function TestimonialsSection() {
         <div className="tm-content">
           {/* Left: image */}
           <div className="tm-image">
-            <img src="/testimonial-handshake.jpg" alt="Poignée de main professionnelle" className="tm-image-photo" />
+            <img src="/testimonial-handshake.jpg" alt="Négociateur immobilier satisfait — témoignage client Rushh, agent vocal IA pour agences immobilières" className="tm-image-photo" />
           </div>
 
           {/* Right: 2 cards stacked */}

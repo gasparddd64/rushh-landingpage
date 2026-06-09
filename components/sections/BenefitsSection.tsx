@@ -3,7 +3,7 @@
 export function BenefitsSection() {
   const cards = [
     {
-      title: "Répond aux appels",
+      title: "Rushh décroche à la première sonnerie",
       desc: "Zéro appel manqué, même la nuit",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
