@@ -205,8 +205,11 @@ function PartnerCard({ p }: { p: Partner }) {
 ───────────────────────────────────────────── */
 export function PartenairesSection() {
   return (
-    <section style={{ background: "#f8fafc", padding: "100px 0", borderTop: "1px solid var(--line)" }} id="partenaires">
+    <section style={{ background: "#f8fafc", padding: "100px 0", borderTop: "1px solid var(--line)" }} id="partenaires" className="partenaires-section">
       <style>{`
+        @media (max-width: 768px) {
+          .partenaires-section { display: none !important; }
+        }
         .partner-card-v2 {
           position: relative;
           background: white;
