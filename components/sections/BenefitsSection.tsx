@@ -3,31 +3,8 @@
 export function BenefitsSection() {
   const cards = [
     {
-      title: "Répond aux appels",
-      desc: "Zéro appel manqué, même la nuit",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <circle cx="18" cy="4" r="3" fill="#0047C6" stroke="none"/>
-        </svg>
-      ),
-      rotate: "-2deg",
-    },
-    {
-      title: "Qualifie les leads",
-      desc: "Questions ciblées sur budget, type de bien, localisation",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M2 17l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-      rotate: "1deg",
-    },
-    {
       title: "Prend des RDV",
-      desc: "Connecté à vos agendas (Google, Outlook, etc.)",
+      desc: "Le rendez-vous est pris directement dans votre agenda.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
@@ -36,18 +13,6 @@ export function BenefitsSection() {
         </svg>
       ),
       rotate: "-1.5deg",
-    },
-    {
-      title: "Génère une synthèse d'appel",
-      desc: "Résumé, transcription, audio accessibles en 1 clic",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M14 2v6h6" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M8 13h8M8 17h5" stroke="#0047C6" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      ),
-      rotate: "2deg",
     },
     {
       title: "Transfère à vos équipes",
@@ -65,7 +30,7 @@ export function BenefitsSection() {
     },
     {
       title: "Remonte dans votre CRM",
-      desc: "Hektor, Apimo, Whise, etc.",
+      desc: "Vos infos remontent directement là où vous travaillez déjà.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" strokeWidth="2"/>
@@ -83,9 +48,9 @@ export function BenefitsSection() {
         <div className="section-head">
           <span className="section-eyebrow">Bénéfices</span>
           <h2 className="section-title">Tout ce que Rushh fait pour vous.</h2>
-          <p className="section-sub">De la réception d&apos;appel jusqu&apos;à votre CRM, tout est automatisé.</p>
+          <p className="section-sub">De l&apos;appel à la fiche transmise, rien ne vous échappe.</p>
         </div>
-        <div className="float-grid">
+        <div className="float-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
           {cards.map((c, i) => (
             <div
               key={i}
