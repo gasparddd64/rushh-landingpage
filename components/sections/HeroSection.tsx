@@ -617,21 +617,19 @@ export function HeroSection() {
       <AuroraBackground showRadialGradient style={{ padding: "160px 24px 60px" }}>
         <div className="hero-inner">
           <h1 className="hero-title hero-desktop-only">
-            Le standard intelligent<br />
-            pour agences immobilières.
+            Votre agence ne rate<br />
+            plus un client.
           </h1>
           <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
-            Rushh, votre agent conversationnel, décroche chaque appel,<br />
-            qualifie et vous envoie la fiche résumé. 24h/24, 7j/7.
+            Rushh décroche chaque appel, qualifie, vous transmet la fiche.
           </p>
 
           <h1 className="hero-title hero-mobile-only">
-            Le standard intelligent<br />
-            pour agences immobilières.
+            Votre agence ne rate<br />
+            plus un client.
           </h1>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
-            Rushh, votre agent conversationnel, décroche chaque appel,
-            qualifie et vous envoie la fiche résumé. 24h/24, 7j/7.
+            Rushh décroche chaque appel, qualifie, vous transmet la fiche.
           </p>
 
           <motion.div
@@ -752,7 +750,7 @@ export function HeroSection() {
                 <div className="dash-agent-card">
                   <div className="dash-agent-info">
                     <p className="dash-agent-label">Agent vocal</p>
-                    <p className="dash-agent-name">Thomas</p>
+                    <p className="dash-agent-name">Rushh</p>
                     <p className="dash-agent-phone">05 17 94 85 49</p>
                   </div>
                   <VoiceWave offset={waveActive} />

@@ -28,7 +28,7 @@ function FeatureCardCall() {
         <h3 className="feature-title">Décroché<br />instantanément</h3>
         <div className="feature-head-icon"><PhoneIcon size={18} /></div>
       </div>
-      <p className="feature-desc">Rushh répond dès la première sonnerie, 24 h/24 et 7 j/7. Aucun appel manqué, aucun prospect perdu.</p>
+      <p className="feature-desc">Rushh répond dès la première sonnerie, 24h/24 et 7j/7.</p>
 
       <div className="feature-visual-card">
         <div className="vc-call-head">
