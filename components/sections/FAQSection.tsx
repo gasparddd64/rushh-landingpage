@@ -14,7 +14,7 @@ const faqItems = [
   },
   {
     q: "Combien de temps pour être opérationnel ?",
-    a: "48h en moyenne. Un appel de découverte de 20 minutes, configuration de votre script sur mesure, tests, mise en ligne. Vous validez à chaque étape.",
+    a: "5 jours ouvrés en moyenne. Un appel de découverte de 20 minutes, configuration de votre script sur mesure, tests, mise en ligne. Vous validez à chaque étape.",
   },
   {
     q: "Est-ce que c'est conforme RGPD ?",
