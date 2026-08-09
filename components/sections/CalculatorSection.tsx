@@ -17,9 +17,8 @@ interface SliderField {
 
 const FIELDS: SliderField[] = [
   { key: "appelsJour", label: "Appels reçus par jour", min: 5, max: 100, step: 1, suffix: "", defaultValue: 15 },
-  { key: "manquesNb", label: "Appels manqués par jour", min: 1, max: 50, step: 1, suffix: "", defaultValue: 5 },
-  { key: "commission", label: "Commission moyenne", min: 1000, max: 20000, step: 500, suffix: "€", defaultValue: 4000 },
-  { key: "tauxConversion", label: "Taux de conversion", min: 5, max: 100, step: 5, suffix: "%", defaultValue: 20 },
+  { key: "manquesNb", label: "Appels manqués par jour", min: 1, max: 50, step: 1, suffix: "", defaultValue: 2 },
+  { key: "commission", label: "Commission moyenne", min: 100, max: 10000, step: 100, suffix: "€", defaultValue: 300 },
 ];
 
 type FormValues = Record<string, number>;
@@ -27,11 +26,9 @@ type FormValues = Record<string, number>;
 const defaults: FormValues = Object.fromEntries(FIELDS.map((f) => [f.key, f.defaultValue]));
 
 function compute(v: FormValues) {
-  const appelsManquesJour = v.manquesNb;
-  const appelsManquesMois = appelsManquesJour * 22;
-  const conversionsMois = appelsManquesMois * (v.tauxConversion / 100);
-  const perteMensuelle = conversionsMois * v.commission;
-  return { appelsManquesMois: Math.round(appelsManquesMois), conversionsMois: Math.round(conversionsMois), perteMensuelle: Math.round(perteMensuelle) };
+  const appelsManquesMois = v.manquesNb * 22;
+  const perteMensuelle = appelsManquesMois * v.commission;
+  return { appelsManquesMois: Math.round(appelsManquesMois), perteMensuelle: Math.round(perteMensuelle) };
 }
 
 /* ── Slider row ── */
@@ -126,14 +123,10 @@ export function CalculatorSection() {
                   <span className="calc-stat-val">{result.appelsManquesMois}</span>
                   <span className="calc-stat-label">appels manqués / mois</span>
                 </div>
-                <div className="calc-stat">
-                  <span className="calc-stat-val">{result.conversionsMois}</span>
-                  <span className="calc-stat-label">conversions perdues</span>
-                </div>
               </div>
 
               <div className="calc-rushh-line">
-                <p>Avec Rushh, récupérez jusqu&apos;à <strong>80%</strong> de ces opportunités perdues.</p>
+                <p>Avec Rushh, ces appels sont pris en charge — plus aucune opportunité qui part sans réponse.</p>
               </div>
 
               <DemoCTA variant="white" />
