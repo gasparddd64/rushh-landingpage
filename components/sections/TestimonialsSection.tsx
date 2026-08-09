@@ -11,7 +11,7 @@ const testimonials = [
     stars: 5,
   },
   {
-    quote: "Je reçois une fiche après chaque appel. Je sais exactement qui rappeler en priorité, pourquoi, et avec quoi. C'est un gain de temps énorme au quotidien.",
+    quote: "Enfin une vraie solution. Je n'ai plus à me soucier du téléphone qui sonne toute la journée quand je suis en rendez-vous — je sais que mes appels sont pris en charge, proprement et rapidement.",
     initials: "SR",
     name: "Sophie Roye",
     role: "Négociatrice immobilier",
