@@ -464,12 +464,26 @@ body { overflow-x: hidden; }
   background: white;
 }
 
+/* Desktop split: text left + 2×2 grid right */
+.sol-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.sol-layout-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 /* 2×2 grid */
 .sol-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 40px;
+  gap: 14px;
 }
 
 /* Base tile */
@@ -557,6 +571,8 @@ body { overflow-x: hidden; }
 
 /* Mobile step layout — hidden on desktop */
 .sol-mobile { display: none; }
+/* Desktop layout — shown by default */
+.sol-layout { /* shown on desktop */ }
 
 /* Step cards (mobile only) */
 .sol-steps-m {
@@ -608,8 +624,9 @@ body { overflow-x: hidden; }
 .sol-widget-note { font-size: 12px; color: var(--muted); margin-top: 8px; }
 
 /* ── Responsive ── */
-@media (max-width: 640px) {
-  .sol-grid { display: none; }
+@media (max-width: 768px) {
+  .sol-layout { display: none; }
+  .sol-closing { display: none; }
   .sol-mobile { display: block; }
 }
 

@@ -1,37 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { DemoCTA } from "@/components/ui/demo-cta";
 
 /* ══════════════════════════════════════════════
-   SHARED WIDGETS
+   SHARED BUBBLE HOOK
 ═══════════════════════════════════════════════ */
-
-/* Widget: live call timer */
-function Widget01() {
-  const [seconds, setSeconds] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setSeconds((s) => (s + 1) % 120), 1000);
-    return () => clearInterval(id);
-  }, []);
-  const m = Math.floor(seconds / 60);
-  const s = String(seconds % 60).padStart(2, "0");
-  return (
-    <div className="sol-widget">
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#10b981", display: "inline-block" }} />
-          <span style={{ fontSize: 14, fontWeight: 500, color: "var(--ink)" }}>+33 6 42 •• •• 09</span>
-        </div>
-        <span style={{ fontSize: 17, fontWeight: 700, color: "var(--ink)", fontVariantNumeric: "tabular-nums" }}>{m}:{s}</span>
-      </div>
-      <div style={{ fontSize: 13, color: "var(--muted)" }}>
-        Taux de décroché <strong style={{ color: "var(--ink)" }}>100%</strong>
-      </div>
-    </div>
-  );
-}
-
-/* Widget: animated chat bubbles */
 const BUBBLES = [
   { from: "caller", text: "Je cherche un 3 pièces dans le 17e…" },
   { from: "rushh",  text: "Vous avez un budget en tête ?" },
@@ -59,97 +33,9 @@ function useBubbleAnimation() {
   return shown;
 }
 
-function Widget02() {
-  const shown = useBubbleAnimation();
-  return (
-    <div className="sol-widget" style={{ display: "flex", flexDirection: "column", gap: 8, padding: "14px 14px" }}>
-      {BUBBLES.map((b, i) => (
-        <div key={i} style={{ display: "flex", justifyContent: b.from === "rushh" ? "flex-end" : "flex-start", opacity: i < shown ? 1 : 0, transform: i < shown ? "translateY(0)" : "translateY(5px)", transition: "opacity 0.3s ease, transform 0.3s ease" }}>
-          <div style={{ padding: "9px 13px", borderRadius: b.from === "rushh" ? "14px 14px 4px 14px" : "14px 14px 14px 4px", background: b.from === "rushh" ? "#0047C6" : "white", color: b.from === "rushh" ? "white" : "var(--ink)", fontSize: 13, lineHeight: 1.45, maxWidth: "86%", border: b.from === "caller" ? "1px solid var(--line)" : "none" }}>
-            {b.text}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/* Widget: qualification table */
-function Widget03() {
-  return (
-    <div className="sol-widget">
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 20px" }}>
-        {[
-          { label: "SECTEUR", value: "Paris 17e" },
-          { label: "BUDGET",  value: "500 – 600 k€" },
-          { label: "DÉLAI",   value: "3 à 6 mois" },
-        ].map((f) => (
-          <div key={f.label}>
-            <div style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.06em", marginBottom: 3 }}>{f.label}</div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: "var(--ink)" }}>{f.value}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* Widget: action / RDV */
-function Widget04() {
-  return (
-    <>
-      <div style={{ display: "flex", alignItems: "center", gap: 12, background: "white", border: "1px solid var(--line)", borderRadius: 12, padding: "12px 14px" }}>
-        <div style={{ width: 34, height: 34, borderRadius: 8, background: "rgba(0,71,198,0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0047C6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
-        </div>
-        <span style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>Rendez-vous proposé — demain 14h</span>
-      </div>
-      <div className="sol-widget-note">Résumé envoyé à l&apos;agence en parallèle.</div>
-    </>
-  );
-}
-
-/* Widget: fiche transmise (neutral version for mobile step card) */
-function Widget05Neutral() {
-  const [sent, setSent] = useState(false);
-  useEffect(() => {
-    let cancelled = false;
-    async function run() {
-      while (!cancelled) {
-        await new Promise<void>((r) => setTimeout(r, 1000));
-        if (!cancelled) setSent(true);
-        await new Promise<void>((r) => setTimeout(r, 3000));
-        if (!cancelled) setSent(false);
-        await new Promise<void>((r) => setTimeout(r, 600));
-      }
-    }
-    run();
-    return () => { cancelled = true; };
-  }, []);
-  return (
-    <>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "white", border: "1px solid var(--line)", borderRadius: 12, padding: "12px 16px" }}>
-        <div>
-          <div style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>Marie Dubois</div>
-          <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2 }}>T3 — Paris 17e</div>
-        </div>
-        <div style={{ fontSize: 13, fontWeight: 700, color: sent ? "#10b981" : "var(--muted)", transition: "color 0.4s ease" }}>
-          {sent ? "✓ Transmise" : "En attente…"}
-        </div>
-      </div>
-      <div className="sol-widget-note" style={{ opacity: sent ? 1 : 0, transition: "opacity 0.4s ease" }}>
-        Reçue il y a quelques secondes
-      </div>
-    </>
-  );
-}
-
 /* ══════════════════════════════════════════════
-   DESKTOP GRID — 2×2
+   ICONS
 ═══════════════════════════════════════════════ */
-
 function IconChat() {
   return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>;
 }
@@ -163,13 +49,16 @@ function IconFile() {
   return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>;
 }
 
-function WidgetChatDesktop() {
+/* ══════════════════════════════════════════════
+   DESKTOP CARD WIDGETS
+═══════════════════════════════════════════════ */
+function WidgetChat() {
   const shown = useBubbleAnimation();
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
       {BUBBLES.map((b, i) => (
         <div key={i} style={{ display: "flex", justifyContent: b.from === "rushh" ? "flex-end" : "flex-start", opacity: i < shown ? 1 : 0, transform: i < shown ? "translateY(0)" : "translateY(4px)", transition: "opacity 0.3s ease, transform 0.3s ease" }}>
-          <div style={{ padding: "8px 12px", borderRadius: b.from === "rushh" ? "12px 12px 3px 12px" : "12px 12px 12px 3px", background: b.from === "rushh" ? "#0047C6" : "white", color: b.from === "rushh" ? "white" : "var(--ink)", fontSize: 12.5, lineHeight: 1.45, maxWidth: "88%", border: b.from === "caller" ? "1px solid var(--line)" : "none" }}>
+          <div style={{ padding: "8px 12px", borderRadius: b.from === "rushh" ? "12px 12px 3px 12px" : "12px 12px 12px 3px", background: b.from === "rushh" ? "#0047C6" : "white", color: b.from === "rushh" ? "white" : "var(--ink)", fontSize: 12.5, lineHeight: 1.45, maxWidth: "90%", border: b.from === "caller" ? "1px solid var(--line)" : "none" }}>
             {b.text}
           </div>
         </div>
@@ -178,11 +67,10 @@ function WidgetChatDesktop() {
   );
 }
 
-function WidgetTableDesktop() {
-  const rows = [{ label: "SECTEUR", value: "Paris 17e" }, { label: "BUDGET", value: "500 – 600 k€" }, { label: "DÉLAI", value: "3 à 6 mois" }];
+function WidgetTable() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-      {rows.map((r) => (
+    <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>
+      {[{ label: "SECTEUR", value: "Paris 17e" }, { label: "BUDGET", value: "500 – 600 k€" }, { label: "DÉLAI", value: "3 à 6 mois" }].map((r) => (
         <div key={r.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <span style={{ fontSize: 10.5, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.07em" }}>{r.label}</span>
           <span style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>{r.value}</span>
@@ -192,7 +80,7 @@ function WidgetTableDesktop() {
   );
 }
 
-function WidgetActionDesktop() {
+function WidgetAction() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, background: "white", border: "1px solid var(--line)", borderRadius: 10, padding: "10px 12px" }}>
@@ -206,7 +94,7 @@ function WidgetActionDesktop() {
   );
 }
 
-function WidgetFicheDesktop() {
+function WidgetFiche() {
   const [sent, setSent] = useState(false);
   useEffect(() => {
     let cancelled = false;
@@ -240,24 +128,102 @@ function WidgetFicheDesktop() {
   );
 }
 
-const DESKTOP_CARDS = [
-  { icon: <IconChat />,      title: "Besoin compris",    desc: "Rushh identifie en quelques échanges la nature précise de la demande.",    widget: <WidgetChatDesktop />,   featured: false },
-  { icon: <IconList />,      title: "Prospect qualifié", desc: "Les informations clés sont collectées une à une.",                          widget: <WidgetTableDesktop />,  featured: false },
-  { icon: <IconCalendarD />, title: "Action engagée",    desc: "Rushh propose un rendez-vous ou transmet un message.",                       widget: <WidgetActionDesktop />, featured: false },
-  { icon: <IconFile />,      title: "Fiche transmise",   desc: "Votre équipe reçoit une fiche complète, prête à traiter.",                  widget: <WidgetFicheDesktop />,  featured: true  },
-];
-
 /* ══════════════════════════════════════════════
-   MOBILE — step cards (original layout)
+   MOBILE — step cards (original layout preserved)
 ═══════════════════════════════════════════════ */
-
-const MOBILE_STEPS = [
-  { num: "01", title: "Appel décroché",    desc: "Rushh répond à la première sonnerie, 24h/24, 7j/7.",                        widget: <Widget01 /> },
-  { num: "02", title: "Besoin compris",    desc: "Rushh identifie en quelques échanges la nature précise de la demande.",     widget: <Widget02 /> },
-  { num: "03", title: "Prospect qualifié", desc: "Les informations clés sont collectées une à une.",                          widget: <Widget03 /> },
-  { num: "04", title: "Action engagée",    desc: "Rushh propose un rendez-vous ou transmet un message.",                      widget: <Widget04 /> },
-  { num: "05", title: "Fiche transmise",   desc: "Votre équipe reçoit une fiche complète, prête à traiter.",                  widget: <Widget05Neutral /> },
-];
+function Widget01Mobile() {
+  const [seconds, setSeconds] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setSeconds((s) => (s + 1) % 120), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const m = Math.floor(seconds / 60);
+  const s = String(seconds % 60).padStart(2, "0");
+  return (
+    <div className="sol-widget">
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#10b981", display: "inline-block" }} />
+          <span style={{ fontSize: 14, fontWeight: 500, color: "var(--ink)" }}>+33 6 42 •• •• 09</span>
+        </div>
+        <span style={{ fontSize: 17, fontWeight: 700, color: "var(--ink)", fontVariantNumeric: "tabular-nums" }}>{m}:{s}</span>
+      </div>
+      <div style={{ fontSize: 13, color: "var(--muted)" }}>Taux de décroché <strong style={{ color: "var(--ink)" }}>100%</strong></div>
+    </div>
+  );
+}
+function Widget02Mobile() {
+  const shown = useBubbleAnimation();
+  return (
+    <div className="sol-widget" style={{ display: "flex", flexDirection: "column", gap: 8, padding: "14px 14px" }}>
+      {BUBBLES.map((b, i) => (
+        <div key={i} style={{ display: "flex", justifyContent: b.from === "rushh" ? "flex-end" : "flex-start", opacity: i < shown ? 1 : 0, transform: i < shown ? "translateY(0)" : "translateY(5px)", transition: "opacity 0.3s ease, transform 0.3s ease" }}>
+          <div style={{ padding: "9px 13px", borderRadius: b.from === "rushh" ? "14px 14px 4px 14px" : "14px 14px 14px 4px", background: b.from === "rushh" ? "#0047C6" : "white", color: b.from === "rushh" ? "white" : "var(--ink)", fontSize: 13, lineHeight: 1.45, maxWidth: "86%", border: b.from === "caller" ? "1px solid var(--line)" : "none" }}>
+            {b.text}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+function Widget03Mobile() {
+  return (
+    <div className="sol-widget">
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 20px" }}>
+        {[{ label: "SECTEUR", value: "Paris 17e" }, { label: "BUDGET", value: "500 – 600 k€" }, { label: "DÉLAI", value: "3 à 6 mois" }].map((f) => (
+          <div key={f.label}>
+            <div style={{ fontSize: 10, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.06em", marginBottom: 3 }}>{f.label}</div>
+            <div style={{ fontSize: 15, fontWeight: 700, color: "var(--ink)" }}>{f.value}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+function Widget04Mobile() {
+  return (
+    <>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, background: "white", border: "1px solid var(--line)", borderRadius: 12, padding: "12px 14px" }}>
+        <div style={{ width: 34, height: 34, borderRadius: 8, background: "rgba(0,71,198,0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0047C6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <span style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>Rendez-vous proposé — demain 14h</span>
+      </div>
+      <div className="sol-widget-note">Résumé envoyé à l&apos;agence en parallèle.</div>
+    </>
+  );
+}
+function Widget05Mobile() {
+  const [sent, setSent] = useState(false);
+  useEffect(() => {
+    let cancelled = false;
+    async function run() {
+      while (!cancelled) {
+        await new Promise<void>((r) => setTimeout(r, 1000));
+        if (!cancelled) setSent(true);
+        await new Promise<void>((r) => setTimeout(r, 3000));
+        if (!cancelled) setSent(false);
+        await new Promise<void>((r) => setTimeout(r, 600));
+      }
+    }
+    run();
+    return () => { cancelled = true; };
+  }, []);
+  return (
+    <>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "white", border: "1px solid var(--line)", borderRadius: 12, padding: "12px 16px" }}>
+        <div>
+          <div style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>Marie Dubois</div>
+          <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2 }}>T3 — Paris 17e</div>
+        </div>
+        <div style={{ fontSize: 13, fontWeight: 700, color: sent ? "#10b981" : "var(--muted)", transition: "color 0.4s ease" }}>
+          {sent ? "✓ Transmise" : "En attente…"}
+        </div>
+      </div>
+      <div className="sol-widget-note" style={{ opacity: sent ? 1 : 0, transition: "opacity 0.4s ease" }}>Reçue il y a quelques secondes</div>
+    </>
+  );
+}
 
 function ConnectorArrow({ fromRight }: { fromRight: boolean }) {
   return (
@@ -278,39 +244,67 @@ function ConnectorArrow({ fromRight }: { fromRight: boolean }) {
   );
 }
 
+const MOBILE_STEPS = [
+  { num: "01", title: "Appel décroché",    desc: "Rushh répond à la première sonnerie, 24h/24, 7j/7.",                    widget: <Widget01Mobile /> },
+  { num: "02", title: "Besoin compris",    desc: "Rushh identifie en quelques échanges la nature précise de la demande.", widget: <Widget02Mobile /> },
+  { num: "03", title: "Prospect qualifié", desc: "Les informations clés sont collectées une à une.",                      widget: <Widget03Mobile /> },
+  { num: "04", title: "Action engagée",    desc: "Rushh propose un rendez-vous ou transmet un message.",                  widget: <Widget04Mobile /> },
+  { num: "05", title: "Fiche transmise",   desc: "Votre équipe reçoit une fiche complète, prête à traiter.",              widget: <Widget05Mobile /> },
+];
+
 /* ══════════════════════════════════════════════
    MAIN
 ═══════════════════════════════════════════════ */
-
 export function SolutionSection() {
   return (
     <section className="section-pad solution-section" id="solution">
       <div className="wrap">
 
-        <div className="section-head">
-          <span className="section-eyebrow">La réponse</span>
-          <h2 className="section-title">Rushh, lui, n&apos;est jamais occupé.</h2>
-          <p className="section-sub" style={{ maxWidth: 580 }}>
-            Décroché à la première sonnerie, chaque appel est compris, qualifié, puis transmis à votre agence, prêt à être traité.
-          </p>
+        {/* ── Desktop: split layout (text left + 2×2 grid right) ── */}
+        <div className="sol-layout">
+          {/* Left: text */}
+          <div className="sol-layout-text">
+            <span className="section-eyebrow" style={{ marginBottom: 20 }}>La réponse</span>
+            <h2 className="section-title" style={{ textAlign: "left", margin: "16px 0 20px" }}>
+              Rushh, lui, n&apos;est jamais occupé.
+            </h2>
+            <p className="section-sub" style={{ textAlign: "left", margin: "0 0 36px", maxWidth: 400 }}>
+              Décroché à la première sonnerie, chaque appel est compris, qualifié, puis transmis à votre agence, prêt à être traité.
+            </p>
+            <DemoCTA />
+          </div>
+
+          {/* Right: 2×2 grid */}
+          <div className="sol-grid">
+            {[
+              { icon: <IconChat />,      title: "Besoin compris",    desc: "Rushh identifie en quelques échanges la nature précise de la demande.",  widget: <WidgetChat />,   featured: false },
+              { icon: <IconList />,      title: "Prospect qualifié", desc: "Les informations clés sont collectées une à une.",                        widget: <WidgetTable />,  featured: false },
+              { icon: <IconCalendarD />, title: "Action engagée",    desc: "Rushh propose un rendez-vous ou transmet un message.",                     widget: <WidgetAction />, featured: false },
+              { icon: <IconFile />,      title: "Fiche transmise",   desc: "Votre équipe reçoit une fiche complète, prête à traiter.",                widget: <WidgetFiche />,  featured: true  },
+            ].map((card, i) => (
+              <div key={i} className={`sol-tile${card.featured ? " sol-tile--featured" : ""}`}>
+                <div className={`sol-tile-icon${card.featured ? " sol-tile-icon--featured" : ""}`}>
+                  {card.icon}
+                </div>
+                <h3 className="sol-tile-title">{card.title}</h3>
+                <p className="sol-tile-desc">{card.desc}</p>
+                <div className="sol-tile-widget">{card.widget}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* ── Desktop: 2×2 grid ── */}
-        <div className="sol-grid">
-          {DESKTOP_CARDS.map((card, i) => (
-            <div key={i} className={`sol-tile${card.featured ? " sol-tile--featured" : ""}`}>
-              <div className={`sol-tile-icon${card.featured ? " sol-tile-icon--featured" : ""}`}>
-                {card.icon}
-              </div>
-              <h3 className="sol-tile-title">{card.title}</h3>
-              <p className="sol-tile-desc">{card.desc}</p>
-              <div className="sol-tile-widget">{card.widget}</div>
-            </div>
-          ))}
-        </div>
+        <p className="sol-closing">
+          Transaction, location ou gestion locative : le scénario s&apos;adapte au métier de votre agence, pas l&apos;inverse.
+        </p>
 
         {/* ── Mobile: original step cards ── */}
         <div className="sol-mobile">
+          <div className="section-head" style={{ marginBottom: 32 }}>
+            <span className="section-eyebrow">La réponse</span>
+            <h2 className="section-title">Rushh, lui, n&apos;est jamais occupé.</h2>
+            <p className="section-sub">Chaque appel est décroché, compris, qualifié, puis transmis à votre agence, prêt à être traité.</p>
+          </div>
           <div className="sol-steps-m">
             {MOBILE_STEPS.map((s, i) => (
               <div key={i}>
@@ -327,11 +321,10 @@ export function SolutionSection() {
               </div>
             ))}
           </div>
+          <p className="sol-closing" style={{ paddingTop: 24 }}>
+            Transaction, location ou gestion locative : le scénario s&apos;adapte au métier de votre agence, pas l&apos;inverse.
+          </p>
         </div>
-
-        <p className="sol-closing">
-          Transaction, location ou gestion locative : le scénario s&apos;adapte au métier de votre agence, pas l&apos;inverse.
-        </p>
 
       </div>
     </section>
