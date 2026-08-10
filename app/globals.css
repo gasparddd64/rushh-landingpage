@@ -508,98 +508,70 @@ body { overflow-x: hidden; }
   overflow: visible;
 }
 
-/* One step row (text + visual) */
-.sol-step {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: flex-end;
-}
-.sol-step--reverse {
-  direction: rtl;
-}
-.sol-step--reverse > * {
-  direction: ltr;
-}
-
-/* Text side */
-.sol-text {
+/* Step card row (alternating left / right) */
+.sol-card-row {
   display: flex;
-  flex-direction: column;
 }
+.sol-card-row--left  { justify-content: flex-start; }
+.sol-card-row--right { justify-content: flex-end; }
 
-/* Big numbered badge */
-.sol-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: #0047C6;
-  color: white;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  font-variant-numeric: tabular-nums;
-  margin-bottom: 20px;
-  flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(0,71,198,0.25);
-}
-
-.sol-title {
-  font-size: clamp(22px, 2.2vw, 30px);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: var(--ink);
-  margin-bottom: 14px;
-  line-height: 1.15;
-}
-.sol-desc {
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--muted);
-  margin-bottom: 20px;
-  max-width: 400px;
-}
-.sol-bullets {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.sol-bullet {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: #4b5563;
-}
-.sol-bullet-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #0047C6;
-  flex-shrink: 0;
-  opacity: 0.6;
-}
-
-/* Visual side */
-.sol-visual-wrap {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-.sol-visual {
-  width: 100%;
-  max-width: 400px;
-}
-.sol-visual-card {
+/* Outer card */
+.sol-card {
   background: white;
   border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.04);
+  border-radius: 20px;
+  padding: 28px 28px 24px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.04);
+}
+
+/* Blue pin dot at top of card */
+.sol-card-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #0047C6;
+  margin: 0 auto 20px;
+}
+
+.sol-card-num {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0047C6;
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.sol-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.sol-card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* Inner widget */
+.sol-widget {
+  background: var(--bg-soft);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+/* Note text below a widget */
+.sol-widget-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
 }
 
 /* Closing phrase */
@@ -616,16 +588,11 @@ body { overflow-x: hidden; }
 }
 
 /* ── Responsive ── */
-@media (max-width: 900px) {
-  .sol-step {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .sol-step--reverse { direction: ltr; }
-  .sol-visual-wrap { justify-content: flex-start; }
-  .sol-visual { max-width: 100%; }
-  .sol-connector { height: 36px; }
-  .sol-desc { max-width: 100%; }
+@media (max-width: 700px) {
+  .sol-card-row--left,
+  .sol-card-row--right { justify-content: center; }
+  .sol-card { max-width: 100%; }
+  .sol-connector-svg { height: 48px; }
 }
 
 /* ---------- PROBLEM STRIP ---------- */
