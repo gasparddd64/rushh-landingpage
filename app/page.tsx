@@ -3,8 +3,6 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
 import { WhySection } from "@/components/sections/WhySection";
-import { StepsSection } from "@/components/sections/StepsSection";
-import { CalculatorSection } from "@/components/sections/CalculatorSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
@@ -19,12 +17,10 @@ export default function Home() {
       <ProblemSection />
       <SolutionSection />
       <WhySection />
-      <StepsSection />
-      <CalculatorSection />
       <TestimonialsSection />
       <FAQSection />
       <CTASection />
-<FooterSection />
+      <FooterSection />
       <ScrollReveal />
     </>
   );
