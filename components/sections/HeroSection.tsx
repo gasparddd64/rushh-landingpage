@@ -621,7 +621,7 @@ export function HeroSection() {
             Personne ne décroche...
           </h1>
           <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
-            Rushh décroche chaque appel, qualifie, vous transmet la fiche.
+            Sauf quand Rushh prend le relais : il décroche, qualifie, transmet la fiche.
           </p>
 
           <h1 className="hero-title hero-mobile-only">
@@ -629,7 +629,7 @@ export function HeroSection() {
             Personne ne décroche...
           </h1>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
-            Rushh décroche chaque appel, qualifie, vous transmet la fiche.
+            Sauf quand Rushh prend le relais : il décroche, qualifie, transmet la fiche.
           </p>
 
           <motion.div
