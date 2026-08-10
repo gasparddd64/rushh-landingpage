@@ -513,7 +513,7 @@ body { overflow-x: hidden; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 .sol-step--reverse {
   direction: rtl;
