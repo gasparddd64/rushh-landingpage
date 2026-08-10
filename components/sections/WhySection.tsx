@@ -1,12 +1,11 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import { SparklesIcon, LightningIcon } from "@/components/icons";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 function IconShield() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
     </svg>
   );
@@ -14,98 +13,29 @@ function IconShield() {
 
 const ITEMS = [
   {
-    icon: <SparklesIcon size={20} />,
+    icon: <SparklesIcon size={18} />,
     title: "Conçu pour votre agence",
-    desc: "Chaque script est écrit pour votre façon de travailler, pas l'inverse. Transaction, location, gestion : Rushh s'adapte à vos métiers, pas le contraire.",
+    desc: "Chaque script est écrit pour votre façon de travailler. Transaction, location, gestion : Rushh s'adapte à vos métiers, pas le contraire.",
   },
   {
-    icon: <LightningIcon size={20} />,
+    icon: <LightningIcon size={18} />,
     title: "Déployé pour vous",
-    desc: "Aucune configuration technique de votre côté. Rushh se connecte à votre agenda et vos outils existants, mis en service en 5 jours ouvrés.",
+    desc: "Aucune configuration technique de votre côté. Rushh se connecte à votre agenda et vos outils, mis en service en 5 jours ouvrés.",
   },
   {
     icon: <IconShield />,
     title: "Accompagné dans le temps",
-    desc: "Le script évolue avec votre activité. Un ajustement, une correction, une nouvelle règle : ça se fait avec vous, pas en autonomie sur une interface.",
+    desc: "Le script évolue avec votre activité. Un ajustement, une correction, une nouvelle règle : ça se fait avec vous.",
   },
 ];
 
 export function WhySection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [activeIdx, setActiveIdx] = useState(0);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    // Mutable state in ref to avoid stale closures
-    const s = { hijacking: false, cooldown: false, active: 0 };
-
-    const onWheel = (e: WheelEvent) => {
-      if (!s.hijacking) return;
-      e.preventDefault();
-      if (s.cooldown) return;
-
-      if (e.deltaY > 5) {
-        // scroll down → next card
-        if (s.active < ITEMS.length - 1) {
-          s.cooldown = true;
-          s.active++;
-          setActiveIdx(s.active);
-          setTimeout(() => {
-            s.cooldown = false;
-            // All cards shown → release scroll
-            if (s.active >= ITEMS.length - 1) stopHijack();
-          }, 650);
-        }
-      } else if (e.deltaY < -5) {
-        // scroll up → previous card or release upward
-        if (s.active > 0) {
-          s.cooldown = true;
-          s.active--;
-          setActiveIdx(s.active);
-          setTimeout(() => { s.cooldown = false; }, 650);
-        } else {
-          stopHijack();
-        }
-      }
-    };
-
-    function startHijack() {
-      if (s.hijacking) return;
-      s.hijacking = true;
-      window.addEventListener("wheel", onWheel, { passive: false });
-    }
-
-    function stopHijack() {
-      s.hijacking = false;
-      window.removeEventListener("wheel", onWheel);
-    }
-
-    const onScroll = () => {
-      if (s.hijacking) return;
-      const rect = section.getBoundingClientRect();
-      // Hijack when section top lands near the top of the viewport
-      const atTop = rect.top <= 40 && rect.top >= -60;
-      if (atTop && s.active < ITEMS.length - 1) {
-        startHijack();
-      }
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      stopHijack();
-    };
-  }, []);
-
   return (
-    <section ref={sectionRef} className="section-pad" id="why">
+    <section className="section-pad" id="why">
       <div className="wrap">
         <div className="why-grid" style={{ alignItems: "center" }}>
 
-          {/* Left — unchanged */}
+          {/* Left */}
           <div>
             <span className="section-eyebrow" style={{ marginBottom: 24 }}>Pourquoi Rushh ?</span>
             <h2 className="section-title" style={{ textAlign: "left", margin: "16px 0 20px", maxWidth: 520 }}>
@@ -131,30 +61,38 @@ export function WhySection() {
             <DemoCTA />
           </div>
 
-          {/* Right — scroll-hijacked card stack */}
+          {/* Right — 3 cards stacked */}
           <div className="why-side">
-            <div style={{ position: "relative", height: 300, overflow: "visible" }}>
-              {ITEMS.map((item, i) => {
-                const offset = i - activeIdx;
-                const isPast = offset < 0;
-                return (
-                  <div
-                    key={i}
-                    className="why-card"
-                    style={{
-                      zIndex: 30 - i,
-                      transform: isPast
-                        ? "translateY(-60px) scale(0.95)"
-                        : `translateY(${offset * 26}px) scale(${1 - offset * 0.04})`,
-                      opacity: isPast ? 0 : offset === 0 ? 1 : 0.7 - offset * 0.2,
-                    }}
-                  >
-                    <div className="why-card-icon">{item.icon}</div>
-                    <div className="why-card-title">{item.title}</div>
-                    <p className="why-card-desc">{item.desc}</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {ITEMS.map((item, i) => (
+                <div key={i} style={{
+                  background: "white",
+                  border: "1px solid var(--line)",
+                  borderRadius: 16,
+                  padding: "18px 20px",
+                  display: "flex",
+                  gap: 14,
+                  alignItems: "flex-start",
+                }}>
+                  <div style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: 10,
+                    background: "var(--accent-soft)",
+                    color: "var(--accent)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}>
+                    {item.icon}
                   </div>
-                );
-              })}
+                  <div>
+                    <div style={{ fontSize: 15, fontWeight: 600, color: "var(--ink)", marginBottom: 4 }}>{item.title}</div>
+                    <p style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
