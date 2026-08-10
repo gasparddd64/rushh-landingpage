@@ -39,44 +39,42 @@ export function WhySection() {
     if (!section) return;
 
     const onScroll = () => {
-      const rect = section.getBoundingClientRect();
-      const scrolled = -rect.top; // px scrolled into the section
-      const scrollable = section.offsetHeight - window.innerHeight; // total scrollable range
+      const sectionH = section.offsetHeight;
+      const vh = window.innerHeight;
+      const scrollable = sectionH - vh;
       if (scrollable <= 0) return;
-      const progress = Math.max(0, Math.min(1, scrolled / scrollable));
-      // Map 0→1 to 0→2 (3 cards, 2 transitions)
+
+      const scrolledIn = -section.getBoundingClientRect().top;
+      if (scrolledIn < 0) {
+        // Above section — reset to first card
+        setActiveIdx(0);
+        return;
+      }
+      const progress = Math.min(1, scrolledIn / scrollable);
+      // 3 cards = 2 transitions at 33% and 66%
       const idx = Math.min(ITEMS.length - 1, Math.floor(progress * ITEMS.length));
       setActiveIdx(idx);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    // Run once on mount in case section is already in view
-    onScroll();
+    // Don't call onScroll on mount — keep activeIdx=0 (all 3 cards visible)
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    // Section is 3× viewport tall — provides the scroll room for 3 cards
-    <section
-      ref={sectionRef}
-      id="why"
-      style={{ height: `${ITEMS.length * 100}vh` }}
-    >
-      {/* Sticky inner — stays visible while you scroll through the 300vh */}
+    <section ref={sectionRef} id="why" style={{ height: `${ITEMS.length * 100}vh` }}>
       <div style={{
         position: "sticky",
         top: 0,
         height: "100vh",
         display: "flex",
         alignItems: "center",
-        padding: "0 24px",
-        boxSizing: "border-box",
         background: "white",
       }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", width: "100%" }}>
+        <div className="wrap" style={{ width: "100%" }}>
           <div className="why-grid" style={{ alignItems: "center" }}>
 
-            {/* Left column — unchanged */}
+            {/* Left — unchanged */}
             <div>
               <span className="section-eyebrow" style={{ marginBottom: 24 }}>Pourquoi Rushh ?</span>
               <h2 className="section-title" style={{ textAlign: "left", margin: "16px 0 20px", maxWidth: 520 }}>
@@ -102,9 +100,10 @@ export function WhySection() {
               <DemoCTA />
             </div>
 
-            {/* Right column — card stack driven by scroll position */}
+            {/* Right — card stack */}
             <div className="why-side">
-              <div style={{ position: "relative", height: 300 }}>
+              {/* overflow:visible so peeking cards aren't clipped */}
+              <div style={{ position: "relative", height: 280, overflow: "visible" }}>
                 {ITEMS.map((item, i) => {
                   const offset = i - activeIdx;
                   const isPast = offset < 0;
@@ -113,14 +112,11 @@ export function WhySection() {
                       key={i}
                       className="why-card"
                       style={{
+                        zIndex: 30 - i,
                         transform: isPast
-                          ? "translateY(-30px) scale(0.97)"
-                          : `translateY(${offset * 22}px) scale(${1 - offset * 0.04})`,
-                        opacity: isPast ? 0 : 1 - offset * 0.15,
-                        zIndex: 10 + ITEMS.length - i,
-                        boxShadow: offset === 0
-                          ? "0 8px 32px rgba(0,0,80,0.10), 0 2px 8px rgba(0,0,0,0.06)"
-                          : "0 2px 8px rgba(0,0,0,0.04)",
+                          ? "translateY(-40px) scale(0.96)"
+                          : `translateY(${offset * 24}px) scale(${1 - offset * 0.04})`,
+                        opacity: isPast ? 0 : 1,
                       }}
                     >
                       <div className="why-card-icon">{item.icon}</div>
