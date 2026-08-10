@@ -675,7 +675,8 @@ body { overflow-x: hidden; }
   max-width: 100vw;
   margin-top: -72px;
   padding-top: 0;
-  padding-bottom: 80px;
+  padding-bottom: 120px;
+  min-height: 700px;
 }
 /* Background full image — desktop only */
 .hero-bg-full {

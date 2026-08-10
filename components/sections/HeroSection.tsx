@@ -422,11 +422,6 @@ export function HeroSection() {
           </div>
         </div>
       </AuroraBackground>
-
-      {/* Call Timeline */}
-      <div style={{ padding: "0 24px", maxWidth: 920, margin: "0 auto", position: "relative", zIndex: 20 }}>
-        <CallTimeline />
-      </div>
     </section>
   );
 }
