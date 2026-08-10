@@ -611,8 +611,8 @@ body { overflow-x: hidden; }
   pointer-events: none;
   background: url('/hero-bg-desktop.png') center top / cover no-repeat;
   opacity: 0.65;
-  mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 92%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 92%);
+  mask-image: linear-gradient(to bottom, black 0%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 88%, transparent 100%);
 }
 .hero-bg-overlay {
   position: absolute;
