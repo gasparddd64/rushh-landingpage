@@ -493,12 +493,27 @@ body { overflow-x: hidden; }
   border-left: 2px dashed #c8d4ee;
 }
 
+/* SVG curved dashed arrow connector */
+.sol-connector-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+  overflow: visible;
+}
+.sol-connector-svg {
+  width: 100%;
+  max-width: 640px;
+  height: 64px;
+  overflow: visible;
+}
+
 /* One step row (text + visual) */
 .sol-step {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  align-items: center;
+  align-items: flex-start;
 }
 .sol-step--reverse {
   direction: rtl;

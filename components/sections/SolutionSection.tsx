@@ -340,6 +340,51 @@ const STEPS = [
   },
 ];
 
+/* ── Connector arrow SVG ──
+ * After odd steps (0,2,4): text is left, visual is right → arrow curves right→left
+ * After even steps (1,3):  text is right, visual is left → arrow curves left→right
+ */
+function ConnectorArrow({ fromRight }: { fromRight: boolean }) {
+  // fromRight = true: arrow goes from right side down to left (next step starts on right)
+  // fromRight = false: arrow goes from left side down to right
+  return (
+    <div className="sol-connector-wrap" aria-hidden>
+      <svg
+        viewBox="0 0 600 64"
+        preserveAspectRatio="none"
+        className="sol-connector-svg"
+      >
+        <defs>
+          <marker id={`arrow-${fromRight ? "r" : "l"}`} markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 L2,4 Z" fill="#c8d4ee" />
+          </marker>
+        </defs>
+        {fromRight ? (
+          // Curve: starts right-center, goes down-left, ends left-center
+          <path
+            d="M 500,4 C 500,40 100,24 100,60"
+            fill="none"
+            stroke="#c8d4ee"
+            strokeWidth="1.5"
+            strokeDasharray="6 5"
+            markerEnd={`url(#arrow-${fromRight ? "r" : "l"})`}
+          />
+        ) : (
+          // Curve: starts left-center, goes down-right, ends right-center
+          <path
+            d="M 100,4 C 100,40 500,24 500,60"
+            fill="none"
+            stroke="#c8d4ee"
+            strokeWidth="1.5"
+            strokeDasharray="6 5"
+            markerEnd={`url(#arrow-${fromRight ? "r" : "l"})`}
+          />
+        )}
+      </svg>
+    </div>
+  );
+}
+
 /* ── Main ── */
 export function SolutionSection() {
   return (
@@ -360,9 +405,9 @@ export function SolutionSection() {
           {STEPS.map((s, i) => {
             const isEven = i % 2 === 1;
             return (
-              <div key={i} className="sol-step-row">
-                {/* Connector */}
-                {i > 0 && <div className="sol-connector" aria-hidden />}
+              <div key={i}>
+                {/* Connector: fromRight=true after step 0,2,4 (text was on left → next on right) */}
+                {i > 0 && <ConnectorArrow fromRight={i % 2 === 0} />}
 
                 <div className={`sol-step ${isEven ? "sol-step--reverse" : ""}`}>
                   {/* Text side */}
