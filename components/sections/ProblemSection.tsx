@@ -56,13 +56,9 @@ export function ProblemSection() {
           <h2 className="section-title">Le téléphone ne sait pas<br />que vous êtes occupé.</h2>
           <p className="section-sub">Une visite, un rendez-vous, un appel déjà en cours — et pendant ce temps, un prospect essaie de vous joindre.</p>
         </div>
-        <div className="float-grid">
+        <div className="problem-strip">
           {cards.map((c, i) => (
-            <div
-              key={i}
-              className="float-card"
-              style={{ "--card-rotate": c.rotate } as React.CSSProperties}
-            >
+            <div key={i} className="problem-strip-item">
               <div className="float-card-icon">{c.icon}</div>
               <h3 className="float-card-title">{c.title}</h3>
               <p className="float-card-desc">{c.desc}</p>
