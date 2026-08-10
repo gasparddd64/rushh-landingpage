@@ -4,48 +4,42 @@ import { useState, useEffect } from "react";
 
 /* ── Visual 1 — Incoming call ── */
 function VisualCall() {
-  const [bars, setBars] = useState(() => Array.from({ length: 24 }, () => 0.15 + Math.random() * 0.2));
-  const [tick, setTick] = useState(0);
-  const sec = String(Math.floor(tick / 8) % 60).padStart(2, "0");
+  const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setBars((prev) => {
-        const next = prev.slice(1);
-        next.push(Math.max(0.1, Math.min(1, 0.35 + 0.55 * Math.abs(Math.sin(tick * 0.4)) + (Math.random() - 0.5) * 0.3)));
-        return next;
-      });
-      setTick((t) => t + 1);
-    }, 130);
+    const id = setInterval(() => setSeconds((s) => (s + 1) % 120), 1000);
     return () => clearInterval(id);
-  }, [tick]);
+  }, []);
+
+  const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const ss = String(seconds % 60).padStart(2, "0");
 
   return (
     <div className="sol-visual">
       <div className="sol-visual-card">
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 600, color: "var(--ink)", marginBottom: 3 }}>
-              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#10b981", flexShrink: 0 }} />
-              Appel entrant
-            </div>
-            <div style={{ fontSize: 11, fontFamily: "var(--font-mono), monospace", color: "var(--muted)" }}>+33 6 42 •• •• 09</div>
-          </div>
-          <div style={{ fontSize: 13, fontFamily: "var(--font-mono), monospace", color: "var(--accent)", fontWeight: 600 }}>0:{sec}</div>
+        <div style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 16 }}>
+          Appel entrant
         </div>
-        <div style={{ display: "flex", alignItems: "flex-end", gap: 2, height: 52, marginBottom: 14 }}>
-          {bars.map((h, i) => (
-            <div key={i} style={{ flex: 1, borderRadius: 2, minHeight: 3, height: `${h * 100}%`, background: "linear-gradient(180deg, #0047C6, #6ea3f7)", transition: "height 0.13s ease" }} />
-          ))}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
+          <div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)", marginBottom: 3 }}>+33 6 42 •• •• 09</div>
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#10b981", display: "inline-block" }} />
+              <span style={{ fontSize: 12, color: "#10b981", fontWeight: 600 }}>Décroché</span>
+            </div>
+          </div>
+          <div style={{ fontSize: 18, fontWeight: 300, color: "var(--accent)", letterSpacing: "0.04em", fontVariantNumeric: "tabular-nums" }}>
+            {mm}:{ss}
+          </div>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
           {[
-            { l: "Temps de réponse", v: "< 1 s", c: "var(--accent)" },
-            { l: "Taux de décroché", v: "100%", c: "#10b981" },
+            { label: "Temps de réponse", value: "< 1 s" },
+            { label: "Taux de décroché", value: "100 %" },
           ].map((k) => (
-            <div key={k.l} style={{ background: "var(--bg-soft)", borderRadius: 10, padding: "10px 12px" }}>
-              <div style={{ fontSize: 10, color: "var(--muted)", marginBottom: 3 }}>{k.l}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: k.c, letterSpacing: "-0.01em" }}>{k.v}</div>
+            <div key={k.label} style={{ background: "var(--bg-soft)", borderRadius: 10, padding: "10px 12px" }}>
+              <div style={{ fontSize: 10, color: "var(--muted)", marginBottom: 4 }}>{k.label}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: "var(--accent)" }}>{k.value}</div>
             </div>
           ))}
         </div>
@@ -54,12 +48,12 @@ function VisualCall() {
   );
 }
 
-/* ── Visual 2 — Conversation bubbles ── */
+/* ── Visual 2 — Conversation ── */
 const BUBBLES = [
   { from: "caller", text: "Bonjour, je cherche un 3 pièces dans le 17e…" },
-  { from: "rushh", text: "Bien sûr. Vous avez un budget approximatif en tête ?" },
+  { from: "rushh", text: "Bien sûr. Vous avez un budget en tête ?" },
   { from: "caller", text: "Entre 500 et 600 000 €." },
-  { from: "rushh", text: "Parfait. Et vous envisagez d'acheter pour quand ?" },
+  { from: "rushh", text: "Parfait. Et pour quand envisagez-vous d'acheter ?" },
 ];
 
 function VisualConversation() {
@@ -85,7 +79,9 @@ function VisualConversation() {
   return (
     <div className="sol-visual">
       <div className="sol-visual-card" style={{ padding: "18px 16px" }}>
-        <div style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 14 }}>Conversation en cours</div>
+        <div style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 14 }}>
+          Conversation en cours
+        </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {BUBBLES.map((b, i) => (
             <div
@@ -150,7 +146,9 @@ function VisualQualif() {
       <div className="sol-visual-card">
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: "var(--ink)" }}>Fiche de qualification</div>
-          <div style={{ fontSize: 10, fontWeight: 600, color: "#10b981", background: "rgba(16,185,129,0.08)", padding: "3px 8px", borderRadius: 6 }}>{filled}/{QFIELDS.length} champs</div>
+          <div style={{ fontSize: 10, fontWeight: 600, color: "#10b981", background: "rgba(16,185,129,0.08)", padding: "3px 8px", borderRadius: 6 }}>
+            {filled}/{QFIELDS.length} champs
+          </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           {QFIELDS.map((f, i) => (
@@ -179,6 +177,26 @@ function VisualQualif() {
 }
 
 /* ── Visual 4 — Action notification ── */
+function IconCalendar() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+    </svg>
+  );
+}
+
+function IconMail() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="M2 7l10 7 10-7"/>
+    </svg>
+  );
+}
+
 function VisualAction() {
   const [step, setStep] = useState(0);
 
@@ -199,15 +217,19 @@ function VisualAction() {
     return () => { cancelled = true; };
   }, []);
 
+  const actions = [
+    { icon: <IconCalendar />, label: "Rendez-vous proposé", sub: "Demain 14h — Agenda synchronisé", active: step >= 1 },
+    { icon: <IconMail />, label: "Message transmis", sub: "Résumé envoyé à l'agence", active: step >= 2 },
+  ];
+
   return (
     <div className="sol-visual">
       <div className="sol-visual-card">
-        <div style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 14 }}>Action déclenchée</div>
+        <div style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 14 }}>
+          Action déclenchée
+        </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          {[
-            { icon: "📅", label: "Rendez-vous proposé", sub: "Demain 14h — Agenda synchronisé", active: step >= 1 },
-            { icon: "✉️", label: "Message transmis", sub: "Résumé envoyé à l'agence", active: step >= 2 },
-          ].map((a, i) => (
+          {actions.map((a, i) => (
             <div key={i} style={{
               display: "flex", alignItems: "center", gap: 12,
               padding: "12px 14px",
@@ -217,13 +239,16 @@ function VisualAction() {
               background: a.active ? "rgba(0,71,198,0.04)" : "var(--bg-soft)",
               opacity: a.active ? 1 : 0.35,
               transition: "all 0.4s ease",
+              color: a.active ? "var(--accent)" : "var(--muted)",
             }}>
-              <span style={{ fontSize: 18 }}>{a.icon}</span>
+              {a.icon}
               <div>
                 <div style={{ fontSize: 12.5, fontWeight: 600, color: "var(--ink)" }}>{a.label}</div>
                 <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 2 }}>{a.sub}</div>
               </div>
-              {a.active && <div style={{ marginLeft: "auto", width: 8, height: 8, borderRadius: "50%", background: "#10b981", flexShrink: 0 }} />}
+              {a.active && (
+                <div style={{ marginLeft: "auto", width: 7, height: 7, borderRadius: "50%", background: "#10b981", flexShrink: 0 }} />
+              )}
             </div>
           ))}
         </div>
@@ -255,18 +280,28 @@ function VisualFiche() {
     <div className="sol-visual">
       <div className="sol-visual-card">
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
-          <div style={{ width: 38, height: 38, borderRadius: "50%", background: "linear-gradient(135deg, #e8c4a0, #d4a07a)", flexShrink: 0 }} />
+          <div style={{
+            width: 36, height: 36, borderRadius: "50%",
+            background: "var(--bg-soft)", border: "1px solid var(--line)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 13, fontWeight: 700, color: "var(--ink)", flexShrink: 0,
+          }}>
+            MD
+          </div>
           <div>
-            <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "-0.01em", color: "var(--ink)" }}>Marie Dubois</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>Marie Dubois</div>
             <div style={{ fontSize: 11, color: "var(--muted)" }}>Acquéreur qualifié</div>
           </div>
           <div style={{
             marginLeft: "auto", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 100,
             background: visible ? "rgba(16,185,129,0.1)" : "var(--bg-soft)",
             color: visible ? "#10b981" : "var(--muted)",
+            border: "1px solid",
+            borderColor: visible ? "rgba(16,185,129,0.2)" : "var(--line)",
             transition: "all 0.4s ease",
+            whiteSpace: "nowrap",
           }}>
-            {visible ? "✓ Transmise" : "En attente"}
+            {visible ? "Transmise" : "En attente"}
           </div>
         </div>
         <div style={{ borderTop: "1px solid var(--line)" }}>
@@ -288,13 +323,6 @@ function VisualFiche() {
               <span style={{ fontSize: 12, fontWeight: 600, color: "var(--ink)" }}>{r.v}</span>
             </div>
           ))}
-        </div>
-        <div style={{
-          marginTop: 12, textAlign: "center",
-          fontSize: 11, color: visible ? "#10b981" : "var(--muted)",
-          fontWeight: 600, transition: "color 0.4s ease",
-        }}>
-          {visible ? "Reçue il y a quelques secondes" : "En attente de qualification…"}
         </div>
       </div>
     </div>
@@ -340,45 +368,20 @@ const STEPS = [
   },
 ];
 
-/* ── Connector arrow SVG ──
- * After odd steps (0,2,4): text is left, visual is right → arrow curves right→left
- * After even steps (1,3):  text is right, visual is left → arrow curves left→right
- */
+/* ── Connector arrow SVG ── */
 function ConnectorArrow({ fromRight }: { fromRight: boolean }) {
-  // fromRight = true: arrow goes from right side down to left (next step starts on right)
-  // fromRight = false: arrow goes from left side down to right
   return (
     <div className="sol-connector-wrap" aria-hidden>
-      <svg
-        viewBox="0 0 600 64"
-        preserveAspectRatio="none"
-        className="sol-connector-svg"
-      >
+      <svg viewBox="0 0 600 64" preserveAspectRatio="none" className="sol-connector-svg">
         <defs>
           <marker id={`arrow-${fromRight ? "r" : "l"}`} markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
             <path d="M0,0 L8,4 L0,8 L2,4 Z" fill="#c8d4ee" />
           </marker>
         </defs>
         {fromRight ? (
-          // Curve: starts right-center, goes down-left, ends left-center
-          <path
-            d="M 500,4 C 500,40 100,24 100,60"
-            fill="none"
-            stroke="#c8d4ee"
-            strokeWidth="1.5"
-            strokeDasharray="6 5"
-            markerEnd={`url(#arrow-${fromRight ? "r" : "l"})`}
-          />
+          <path d="M 500,4 C 500,40 100,24 100,60" fill="none" stroke="#c8d4ee" strokeWidth="1.5" strokeDasharray="6 5" markerEnd="url(#arrow-r)" />
         ) : (
-          // Curve: starts left-center, goes down-right, ends right-center
-          <path
-            d="M 100,4 C 100,40 500,24 500,60"
-            fill="none"
-            stroke="#c8d4ee"
-            strokeWidth="1.5"
-            strokeDasharray="6 5"
-            markerEnd={`url(#arrow-${fromRight ? "r" : "l"})`}
-          />
+          <path d="M 100,4 C 100,40 500,24 500,60" fill="none" stroke="#c8d4ee" strokeWidth="1.5" strokeDasharray="6 5" markerEnd="url(#arrow-l)" />
         )}
       </svg>
     </div>
@@ -406,9 +409,7 @@ export function SolutionSection() {
             const isEven = i % 2 === 1;
             return (
               <div key={i}>
-                {/* Connector: fromRight=true after step 0,2,4 (text was on left → next on right) */}
                 {i > 0 && <ConnectorArrow fromRight={i % 2 === 0} />}
-
                 <div className={`sol-step ${isEven ? "sol-step--reverse" : ""}`}>
                   {/* Text side */}
                   <div className="sol-text">

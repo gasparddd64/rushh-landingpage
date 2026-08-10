@@ -587,7 +587,7 @@ body { overflow-x: hidden; }
 /* Visual side */
 .sol-visual-wrap {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 .sol-visual {
