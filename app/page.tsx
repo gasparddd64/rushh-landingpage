@@ -8,7 +8,6 @@ import { CalculatorSection } from "@/components/sections/CalculatorSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
-import { PartenairesSection } from "@/components/sections/PartenairesSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -25,8 +24,7 @@ export default function Home() {
       <TestimonialsSection />
       <FAQSection />
       <CTASection />
-      <PartenairesSection />
-      <FooterSection />
+<FooterSection />
       <ScrollReveal />
     </>
   );
