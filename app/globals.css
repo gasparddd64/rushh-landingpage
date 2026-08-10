@@ -146,6 +146,7 @@ body { overflow-x: hidden; }
   background: transparent;
   border: none;
   box-shadow: none;
+  position: relative;
 }
 .brand {
   display: flex;
@@ -161,18 +162,14 @@ body { overflow-x: hidden; }
   flex-shrink: 0;
   margin-top: -10px;
 }
-.nav-links {
-  display: flex; gap: 36px;
-  list-style: none;
+.nav-tubelight {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.nav-links a {
-  color: var(--ink-2);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s;
+@media (max-width: 768px) {
+  .nav-tubelight { display: none; }
 }
-.nav-links a:hover { color: var(--accent); }
 .nav-cta {
   display: flex; gap: 12px; align-items: center;
 }
