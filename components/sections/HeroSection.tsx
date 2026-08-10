@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { gsap } from "gsap";
-import { Phone, LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal, Clock, TrendingUp, MapPin, Star } from "lucide-react";
+import { LayoutDashboard, PhoneCall, Users, Calendar, BarChart3, Search, SlidersHorizontal, Clock, TrendingUp, MapPin, Star } from "lucide-react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { cn } from "@/lib/utils";
@@ -639,11 +639,10 @@ export function HeroSection() {
             className="hero-ctas"
           >
             <button
-              onClick={() => { window.location.href = "tel:0517948549"; }}
+              onClick={() => { document.getElementById("features")?.scrollIntoView({ behavior: "smooth" }); }}
               className="hero-btn-phone hero-cta-equal"
             >
-              <Phone size={18} />
-              Tester Rushh
+              Voir comment ça marche
             </button>
 
             <button
