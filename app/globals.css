@@ -465,6 +465,8 @@ body { overflow-x: hidden; }
 .problem-section {
   padding: 120px 0 100px;
   background: white;
+  position: relative;
+  z-index: 10;
 }
 .problem-head {
   text-align: center;
