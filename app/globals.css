@@ -669,28 +669,24 @@ body { overflow-x: hidden; }
 /* ---------- HERO ---------- */
 .hero-section {
   position: relative;
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow: hidden;
   text-align: center;
   width: 100%;
   max-width: 100vw;
   margin-top: -72px;
   padding-top: 0;
-  min-height: 900px;
+  min-height: 1100px;
 }
 /* Background full image — desktop only */
 .hero-bg-full {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -380px;
+  inset: 0;
   z-index: 3;
   pointer-events: none;
   background: url('/hero-bg-desktop.png') center top / cover no-repeat;
   opacity: 0.65;
-  mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 92%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 92%);
+  mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 90%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 90%);
 }
 .hero-bg-overlay {
   position: absolute;
