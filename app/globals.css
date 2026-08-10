@@ -465,8 +465,6 @@ body { overflow-x: hidden; }
 /* ---------- SOLUTION SECTION ---------- */
 .solution-section {
   background: white;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 
 /* Steps container */
@@ -584,7 +582,6 @@ body { overflow-x: hidden; }
   max-width: 560px;
   margin: 0 auto;
   padding-top: 48px;
-  border-top: 1px solid var(--line);
 }
 
 /* ── Responsive ── */

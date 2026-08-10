@@ -17,7 +17,7 @@ const contactLinks = [
 
 export function FooterSection() {
   return (
-    <footer style={{ background: "#f8f9fb", borderTop: "1px solid var(--line)", padding: "0 24px 32px" }}>
+    <footer style={{ background: "white", padding: "0 24px 32px" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "52px 0 28px" }}>
 
         {/* Top: 3 columns */}
