@@ -504,8 +504,8 @@ body { overflow-x: hidden; }
   display: flex;
   width: 100%;
 }
-.sol-card-row--left  { justify-content: flex-start; padding-left: 8%; }
-.sol-card-row--right { justify-content: flex-end;   padding-right: 8%; }
+.sol-card-row--left  { justify-content: flex-start; }
+.sol-card-row--right { justify-content: flex-end; }
 
 /* Outer card */
 .sol-card {
