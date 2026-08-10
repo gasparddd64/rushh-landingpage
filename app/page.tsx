@@ -2,7 +2,6 @@ import { Nav } from "@/components/sections/Nav";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
-import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { WhySection } from "@/components/sections/WhySection";
 import { StepsSection } from "@/components/sections/StepsSection";
 import { CalculatorSection } from "@/components/sections/CalculatorSection";
@@ -19,7 +18,6 @@ export default function Home() {
       <HeroSection />
       <ProblemSection />
       <SolutionSection />
-      <BenefitsSection />
       <WhySection />
       <StepsSection />
       <CalculatorSection />
