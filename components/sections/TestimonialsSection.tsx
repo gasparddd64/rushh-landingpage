@@ -12,9 +12,9 @@ const testimonials = [
   },
   {
     quote: "Enfin une vraie solution. Je n'ai plus à me soucier du téléphone qui sonne toute la journée quand je suis en rendez-vous — je sais que mes appels sont pris en charge, proprement et rapidement.",
-    initials: "SR",
-    name: "Sophie Roye",
-    role: "Négociatrice immobilier",
+    initials: "DW",
+    name: "David Wizo",
+    role: "Conseiller immobilier — Sceaux",
     stars: 5,
   },
 ];
