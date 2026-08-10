@@ -1551,74 +1551,48 @@ section { position: relative; }
   display: flex; flex-direction: column; gap: 24px;
   height: 100%;
 }
-/* Accordion */
-.why-accordion {
+/* Card stack */
+.why-card-stack {
+  position: relative;
+  height: 260px;
+}
+.why-card {
+  position: absolute;
+  inset: 0;
   background: white;
   border: 1px solid var(--line);
   border-radius: 18px;
-  overflow: hidden;
+  padding: 32px 28px;
+  transform-origin: top center;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.45s ease;
+  will-change: transform, opacity;
 }
-.why-acc-item {
-  border-bottom: 1px solid var(--line);
-}
-.why-acc-item:last-child { border-bottom: none; }
-
-.why-acc-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 20px 24px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  width: 100%;
-  text-align: left;
-  transition: background 0.15s ease;
-}
-.why-acc-header:hover { background: rgba(0,71,198,0.02); }
-
-.why-acc-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 11px;
+.why-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: var(--accent-soft);
   color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.25s ease, color 0.25s ease;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, color 0.3s ease;
 }
-.why-acc-item--open .why-acc-icon {
-  background: var(--accent);
-  color: white;
-}
-.why-acc-title {
-  font-size: 16px;
+.why-card-title {
+  font-size: 19px;
   font-weight: 600;
-  color: var(--ink);
   letter-spacing: -0.01em;
-  flex: 1;
+  color: var(--ink);
+  margin-bottom: 10px;
 }
-.why-acc-chevron {
+.why-card-desc {
+  font-size: 15px;
   color: var(--muted);
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-}
-.why-acc-item--open .why-acc-chevron { transform: rotate(180deg); }
-
-.why-acc-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.why-acc-item--open .why-acc-body { max-height: 180px; }
-
-.why-acc-body-inner {
-  padding: 0 24px 20px 78px;
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ---------- STEPS ---------- */
