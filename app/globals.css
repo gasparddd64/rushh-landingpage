@@ -464,109 +464,83 @@ body { overflow-x: hidden; }
   background: white;
 }
 
-/* Steps container */
-.sol-steps {
+/* 2×2 grid */
+.sol-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* Base tile */
+.sol-tile {
+  background: #f7f8fc;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 28px 28px 24px;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  margin-bottom: 72px;
+  gap: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 
-/* Dashed connector between rows */
-.sol-connector {
-  display: flex;
-  justify-content: center;
-  height: 56px;
-  position: relative;
-}
-.sol-connector::before {
-  content: "";
-  position: absolute;
-  top: 0; bottom: 0;
-  left: 50%;
-  width: 1px;
-  border-left: 2px dashed #c8d4ee;
+/* Featured tile (blue) */
+.sol-tile--featured {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 8px 32px rgba(0,71,198,0.22);
 }
 
-/* SVG curved dashed arrow connector */
-.sol-connector-wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 2px 0;
-  overflow: visible;
-}
-.sol-connector-svg {
-  width: 100%;
-  max-width: 640px;
+/* Icon badge */
+.sol-tile-icon {
+  width: 44px;
   height: 44px;
-  overflow: visible;
-}
-
-/* Step card row (alternating left / right) */
-.sol-card-row {
-  display: flex;
-}
-.sol-card-row--left  { justify-content: flex-start; }
-.sol-card-row--right { justify-content: flex-end; }
-
-/* Outer card */
-.sol-card {
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
   background: white;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 28px 28px 24px;
-  width: 100%;
-  max-width: 460px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.04);
-}
-
-/* Blue pin dot at top of card */
-.sol-card-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #0047C6;
-  margin: 0 auto 14px;
-}
-
-.sol-card-num {
-  font-size: 28px;
-  font-weight: 800;
-  color: #0047C6;
-  line-height: 1;
+  color: var(--accent);
+  flex-shrink: 0;
   margin-bottom: 4px;
-  letter-spacing: -0.02em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.sol-tile-icon--featured {
+  background: rgba(255,255,255,0.18);
+  color: white;
+  box-shadow: none;
 }
 
-.sol-card-title {
-  font-size: 18px;
+/* Tile title */
+.sol-tile-title {
+  font-size: 17px;
   font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.02em;
-  margin-bottom: 6px;
-  line-height: 1.2;
+  line-height: 1.25;
+}
+.sol-tile--featured .sol-tile-title {
+  color: white;
 }
 
-.sol-card-desc {
-  font-size: 13px;
-  line-height: 1.55;
+/* Tile description */
+.sol-tile-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
   color: var(--muted);
-  margin-bottom: 14px;
+  margin: 0;
+}
+.sol-tile--featured .sol-tile-desc {
+  color: rgba(255,255,255,0.72);
 }
 
-/* Inner widget */
-.sol-widget {
-  background: var(--bg-soft);
-  border-radius: 10px;
-  padding: 12px 14px;
+/* Mini widget area */
+.sol-tile-widget {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
 }
-
-/* Note text below a widget */
-.sol-widget-note {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 8px;
+.sol-tile--featured .sol-tile-widget {
+  border-top-color: rgba(255,255,255,0.2);
 }
 
 /* Closing phrase */
@@ -578,15 +552,65 @@ body { overflow-x: hidden; }
   font-style: italic;
   max-width: 560px;
   margin: 0 auto;
-  padding-top: 48px;
+  padding-top: 16px;
 }
 
+/* Mobile step layout — hidden on desktop */
+.sol-mobile { display: none; }
+
+/* Step cards (mobile only) */
+.sol-steps-m {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 48px;
+}
+.sol-connector-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2px 0;
+  overflow: visible;
+}
+.sol-connector-svg {
+  width: 100%;
+  max-width: 400px;
+  height: 44px;
+  overflow: visible;
+}
+.sol-card-row { display: flex; justify-content: center; }
+.sol-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px 22px 20px;
+  width: 100%;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.05);
+}
+.sol-card-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: #0047C6; margin: 0 auto 12px;
+}
+.sol-card-num {
+  font-size: 26px; font-weight: 800; color: #0047C6;
+  line-height: 1; margin-bottom: 4px; letter-spacing: -0.02em;
+}
+.sol-card-title {
+  font-size: 17px; font-weight: 700; color: var(--ink);
+  letter-spacing: -0.02em; margin-bottom: 5px; line-height: 1.2;
+}
+.sol-card-desc {
+  font-size: 13px; line-height: 1.55; color: var(--muted); margin-bottom: 12px;
+}
+.sol-widget {
+  background: var(--bg-soft); border-radius: 10px; padding: 12px 14px;
+}
+.sol-widget-note { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
 /* ── Responsive ── */
-@media (max-width: 700px) {
-  .sol-card-row--left,
-  .sol-card-row--right { justify-content: center; }
-  .sol-card { max-width: 100%; }
-  .sol-connector-svg { height: 48px; }
+@media (max-width: 640px) {
+  .sol-grid { display: none; }
+  .sol-mobile { display: block; }
 }
 
 /* ---------- PROBLEM STRIP ---------- */

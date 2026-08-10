@@ -57,6 +57,11 @@ export function WhySection() {
     <section className="section-pad" id="why">
       <div className="wrap">
         <div className="why-grid" style={{ alignItems: "flex-start" }}>
+          <div className="why-side">
+            {ITEMS.map((item, i) => (
+              <WhyTile key={i} icon={item.icon} title={item.title} desc={item.desc} />
+            ))}
+          </div>
           <div>
             <span className="section-eyebrow" style={{ marginBottom: 24 }}>Pourquoi Rushh ?</span>
             <h2 className="section-title" style={{ textAlign: "left", margin: "16px 0 20px", maxWidth: 520 }}>
@@ -80,11 +85,6 @@ export function WhySection() {
               </div>
             </div>
             <DemoCTA />
-          </div>
-          <div className="why-side">
-            {ITEMS.map((item, i) => (
-              <WhyTile key={i} icon={item.icon} title={item.title} desc={item.desc} />
-            ))}
           </div>
         </div>
       </div>
