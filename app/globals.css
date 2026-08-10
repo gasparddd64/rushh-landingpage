@@ -179,12 +179,12 @@ body { overflow-x: hidden; }
 .nav-cta .demo-cta-btn {
   padding: 8px 18px;
   font-size: 12px;
-  border-radius: 10px;
+  border-radius: 999px;
 }
 .nav-cta .demo-cta-arrow {
   width: 34px;
   height: 34px;
-  border-radius: 10px;
+  border-radius: 999px;
 }
 .nav-cta .demo-cta-arrow svg {
   width: 13px;
