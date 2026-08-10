@@ -650,7 +650,7 @@ export function HeroSection() {
               onClick={() => window.open("https://calendly.com/gaspardv/rushh", "_blank")}
               className="hero-btn-demo hero-cta-equal"
             >
-              Réserver une démo
+              Réserver ma démo
             </button>
           </motion.div>
 
