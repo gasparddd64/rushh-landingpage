@@ -1,11 +1,12 @@
 "use client";
 
+import { useRef, type MouseEvent } from "react";
 import { SparklesIcon, LightningIcon } from "@/components/icons";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 function IconShield() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
     </svg>
   );
@@ -13,12 +14,12 @@ function IconShield() {
 
 const ITEMS = [
   {
-    icon: <SparklesIcon size={18} />,
+    icon: <SparklesIcon size={20} />,
     title: "Conçu pour votre agence",
     desc: "Chaque script est écrit pour votre façon de travailler. Transaction, location, gestion : Rushh s'adapte à vos métiers, pas le contraire.",
   },
   {
-    icon: <LightningIcon size={18} />,
+    icon: <LightningIcon size={20} />,
     title: "Déployé pour vous",
     desc: "Aucune configuration technique de votre côté. Rushh se connecte à votre agenda et vos outils, mis en service en 5 jours ouvrés.",
   },
@@ -28,6 +29,28 @@ const ITEMS = [
     desc: "Le script évolue avec votre activité. Un ajustement, une correction, une nouvelle règle : ça se fait avec vous.",
   },
 ];
+
+function WhyTile({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const onMove = (e: MouseEvent) => {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty("--mx", ((e.clientX - r.left) / r.width) * 100 + "%");
+    el.style.setProperty("--my", ((e.clientY - r.top) / r.height) * 100 + "%");
+  };
+  return (
+    <div ref={ref} className="why-tile" onMouseMove={onMove}>
+      <div className="why-tile-head">
+        <div className="why-tile-icon" style={{ background: "var(--accent-soft)", color: "var(--accent)", width: 44, height: 44, borderRadius: 12, display: "grid", placeItems: "center" }}>
+          {icon}
+        </div>
+        <div className="why-tile-title">{title}</div>
+      </div>
+      <p className="why-tile-desc">{desc}</p>
+    </div>
+  );
+}
 
 export function WhySection() {
   return (
@@ -61,39 +84,11 @@ export function WhySection() {
             <DemoCTA />
           </div>
 
-          {/* Right — 3 cards stacked */}
+          {/* Right — 3 tiles */}
           <div className="why-side">
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {ITEMS.map((item, i) => (
-                <div key={i} style={{
-                  background: "white",
-                  border: "1px solid var(--line)",
-                  borderRadius: 16,
-                  padding: "18px 20px",
-                  display: "flex",
-                  gap: 14,
-                  alignItems: "flex-start",
-                }}>
-                  <div style={{
-                    width: 36,
-                    height: 36,
-                    borderRadius: 10,
-                    background: "var(--accent-soft)",
-                    color: "var(--accent)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                  }}>
-                    {item.icon}
-                  </div>
-                  <div>
-                    <div style={{ fontSize: 15, fontWeight: 600, color: "var(--ink)", marginBottom: 4 }}>{item.title}</div>
-                    <p style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {ITEMS.map((item, i) => (
+              <WhyTile key={i} icon={item.icon} title={item.title} desc={item.desc} />
+            ))}
           </div>
 
         </div>
