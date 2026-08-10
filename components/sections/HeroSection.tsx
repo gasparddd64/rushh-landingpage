@@ -617,16 +617,16 @@ export function HeroSection() {
       <AuroraBackground showRadialGradient style={{ padding: "160px 24px 60px" }}>
         <div className="hero-inner">
           <h1 className="hero-title hero-desktop-only">
-            Votre agence ne rate<br />
-            plus un client.
+            Vos clients appellent.<br />
+            Personne ne décroche...
           </h1>
           <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
             Rushh décroche chaque appel, qualifie, vous transmet la fiche.
           </p>
 
           <h1 className="hero-title hero-mobile-only">
-            Votre agence ne rate<br />
-            plus un client.
+            Vos clients appellent.<br />
+            Personne ne décroche...
           </h1>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
             Rushh décroche chaque appel, qualifie, vous transmet la fiche.
