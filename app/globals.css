@@ -840,10 +840,10 @@ body { overflow-x: hidden; }
   background: white;
 }
 
-/* Outer card — dark, like reference */
+/* Outer card — light */
 .integ-card {
-  background: #0e0f14;
-  border: 1px solid rgba(255,255,255,0.1);
+  background: white;
+  border: 1px solid var(--line);
   border-radius: 20px;
   padding: 40px 48px 36px;
   overflow: hidden;
@@ -861,7 +861,7 @@ body { overflow-x: hidden; }
 .integ-title {
   font-size: clamp(20px, 2.4vw, 28px);
   font-weight: 800;
-  color: white;
+  color: var(--ink);
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin: 0;
@@ -870,14 +870,14 @@ body { overflow-x: hidden; }
 .integ-sub {
   font-size: 14px;
   line-height: 1.7;
-  color: rgba(255,255,255,0.45);
+  color: var(--muted);
   margin: 0;
   padding-top: 4px;
 }
 
 .integ-divider {
   height: 1px;
-  background: rgba(255,255,255,0.1);
+  background: var(--line);
   margin-bottom: 36px;
 }
 
@@ -908,8 +908,8 @@ body { overflow-x: hidden; }
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  background: #1a1b22;
-  border: 1px solid rgba(255,255,255,0.08);
+  background: #f7f8fc;
+  border: 1px solid var(--line);
   border-radius: 16px;
   padding: 22px 20px 18px;
   width: 140px;
@@ -917,7 +917,7 @@ body { overflow-x: hidden; }
   transition: border-color 0.2s;
 }
 .integ-logo-card:hover {
-  border-color: rgba(255,255,255,0.2);
+  border-color: var(--line-strong);
 }
 
 .integ-logo-img {
@@ -930,7 +930,7 @@ body { overflow-x: hidden; }
 .integ-logo-name {
   font-size: 12px;
   font-weight: 600;
-  color: rgba(255,255,255,0.6);
+  color: var(--muted);
   text-align: center;
   line-height: 1.3;
   white-space: nowrap;
@@ -939,7 +939,7 @@ body { overflow-x: hidden; }
 .integ-note {
   text-align: center;
   font-size: 12px;
-  color: rgba(255,255,255,0.3);
+  color: var(--muted-2);
   margin-top: 28px;
 }
 
