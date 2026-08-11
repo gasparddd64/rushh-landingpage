@@ -1,5 +1,7 @@
 "use client";
 
+import { DemoCTA } from "@/components/ui/demo-cta";
+
 const BAD_ITEMS = [
   "Templates génériques",
   "Scénarios à créer vous-même",
@@ -104,12 +106,7 @@ export function CompareSection() {
 
         {/* CTAs */}
         <div className="cmp-ctas">
-          <button
-            className="cmp-cta-btn"
-            onClick={() => window.open("https://calendly.com/gaspardv/rushh", "_blank")}
-          >
-            Échanger sur votre agence
-          </button>
+          <DemoCTA />
           <a href="#solution" className="cmp-cta-link">
             Voir comment Rushh fonctionne →
           </a>
