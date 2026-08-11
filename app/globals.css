@@ -643,112 +643,196 @@ body { overflow-x: hidden; }
 
 /* ---------- COMPARE SECTION ---------- */
 .compare-section {
-  background: white;
+  background: #f7f8fc;
 }
 
-.cmp-table {
-  max-width: 860px;
-  margin: 0 auto;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.cmp-header {
+/* Two cards side by side */
+.cmp-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: #f7f8fc;
-  border-bottom: 1px solid var(--line);
+  gap: 20px;
+  max-width: 880px;
+  margin: 0 auto 40px;
 }
 
-.cmp-col-bad,
-.cmp-col-good {
-  padding: 14px 28px;
-  font-size: 13px;
-  font-weight: 600;
+/* Base card */
+.cmp-card {
+  border-radius: 20px;
+  padding: 32px;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 0;
 }
 
-.cmp-col-bad {
-  color: var(--muted);
-  border-right: 1px solid var(--line);
-}
-
-.cmp-col-good {
-  color: var(--ink);
+.cmp-card--bad {
   background: white;
+  border: 1px solid var(--line);
 }
 
-.cmp-good-badge {
+.cmp-card--good {
+  background: white;
+  border: 2px solid var(--accent);
+  box-shadow: 0 8px 32px rgba(0,71,198,0.12);
+}
+
+/* Card header */
+.cmp-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.cmp-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.cmp-card-icon--bad {
+  background: #f2f3f7;
+  color: #9095b3;
+}
+.cmp-card-icon--good {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.cmp-card-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.cmp-card-name--good {
+  color: var(--accent);
+}
+
+.cmp-card-sub {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+.cmp-card-sub--good {
+  color: var(--muted);
+}
+
+/* Badge */
+.cmp-badge {
   display: inline-block;
   background: var(--accent);
   color: white;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 3px 10px;
+  letter-spacing: 0.03em;
+  padding: 4px 12px;
   border-radius: 999px;
+  white-space: nowrap;
+  margin-left: auto;
+  align-self: flex-start;
 }
 
-.cmp-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* List */
+.cmp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.cmp-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  padding: 12px 0;
   border-top: 1px solid var(--line);
 }
+.cmp-list-item:first-child { border-top: none; }
 
-.cmp-row .cmp-col-bad {
-  font-size: 13.5px;
-  font-weight: 400;
-  color: #aab0c8;
-  padding: 18px 28px;
-  gap: 12px;
+.cmp-list-item--bad { color: #9095b3; }
+.cmp-list-item--good { color: var(--ink); font-weight: 500; }
+
+.cmp-icon-bad {
+  font-size: 12px;
+  color: #c8cce0;
+  flex-shrink: 0;
+  margin-top: 1px;
+  width: 18px;
+  text-align: center;
 }
 
-.cmp-row .cmp-col-good {
-  font-size: 13.5px;
+.cmp-icon-good {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Footer band on Rushh card */
+.cmp-footer {
+  margin-top: 24px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 12.5px;
   font-weight: 600;
-  color: var(--ink);
-  background: #f4f7ff;
-  border-left: 2px solid var(--accent);
-  padding: 18px 28px;
-  gap: 12px;
-}
-
-.cmp-x {
-  color: #d0d4e8;
-  font-size: 13px;
-  flex-shrink: 0;
-}
-
-.cmp-check {
   color: var(--accent);
-  font-size: 13px;
-  font-weight: 700;
-  flex-shrink: 0;
+  text-align: center;
+  letter-spacing: 0.01em;
 }
 
-@media (max-width: 640px) {
-  .cmp-table { border-radius: 16px; }
-  .cmp-header { display: none; }
-  .cmp-row {
+/* CTAs */
+.cmp-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cmp-cta-btn {
+  background: var(--accent);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.cmp-cta-btn:hover {
+  background: var(--accent-ink);
+  transform: translateY(-1px);
+}
+
+.cmp-cta-link {
+  font-size: 13.5px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cmp-cta-link:hover { color: var(--accent); }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .cmp-cards {
     grid-template-columns: 1fr;
-    padding: 0;
+    gap: 16px;
   }
-  .cmp-row .cmp-col-bad {
-    border-right: none;
-    border-bottom: none;
-    padding: 14px 20px 8px;
-    font-size: 13px;
-  }
-  .cmp-row .cmp-col-good {
-    border-left: none;
-    border-left: 2px solid var(--accent);
-    background: #f4f7ff;
-    padding: 10px 20px 14px;
-    font-size: 13.5px;
-  }
+  .cmp-badge { margin-left: 0; margin-top: 8px; }
+  .cmp-card { padding: 24px 20px; }
 }
 
 /* ---------- INTEGRATIONS SECTION ---------- */
