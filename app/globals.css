@@ -840,25 +840,28 @@ body { overflow-x: hidden; }
   background: white;
 }
 
+/* Outer card — dark, like reference */
 .integ-card {
-  border: 1px solid var(--line);
+  background: #0e0f14;
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 20px;
   padding: 40px 48px 36px;
-  background: white;
+  overflow: hidden;
 }
 
+/* Header: title left, sub right */
 .integ-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 32px;
   align-items: start;
   margin-bottom: 28px;
 }
 
 .integ-title {
-  font-size: clamp(22px, 2.8vw, 32px);
-  font-weight: 700;
-  color: var(--ink);
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 800;
+  color: white;
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin: 0;
@@ -867,67 +870,83 @@ body { overflow-x: hidden; }
 .integ-sub {
   font-size: 14px;
   line-height: 1.7;
-  color: var(--muted);
+  color: rgba(255,255,255,0.45);
   margin: 0;
-  padding-top: 6px;
+  padding-top: 4px;
 }
 
 .integ-divider {
   height: 1px;
-  background: var(--line);
+  background: rgba(255,255,255,0.1);
   margin-bottom: 36px;
 }
 
-.integ-logos {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+/* Marquee container */
+.integ-marquee-wrap {
+  overflow: hidden;
+  width: 100%;
 }
 
+.integ-marquee {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: integ-scroll 24s linear infinite;
+}
+.integ-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes integ-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Individual logo card */
 .integ-logo-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  background: #f7f8fc;
-  border: 1px solid var(--line);
+  gap: 12px;
+  background: #1a1b22;
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
-  padding: 24px 20px 20px;
-  min-width: 120px;
-  flex: 1;
-  max-width: 140px;
+  padding: 22px 20px 18px;
+  width: 140px;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.integ-logo-card:hover {
+  border-color: rgba(255,255,255,0.2);
 }
 
-.integ-logo-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.integ-logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 .integ-logo-name {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
-  color: var(--ink);
+  color: rgba(255,255,255,0.6);
   text-align: center;
   line-height: 1.3;
+  white-space: nowrap;
 }
 
 .integ-note {
   text-align: center;
-  font-size: 12.5px;
-  color: var(--muted-2);
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
   margin-top: 28px;
 }
 
 @media (max-width: 640px) {
   .integ-card { padding: 28px 20px 24px; }
   .integ-header { grid-template-columns: 1fr; gap: 12px; }
-  .integ-logos { justify-content: center; }
-  .integ-logo-card { min-width: 90px; max-width: 110px; padding: 18px 12px 14px; }
+  .integ-logo-card { width: 120px; padding: 18px 14px 14px; }
 }
 
 /* ---------- PROBLEM STRIP ---------- */
