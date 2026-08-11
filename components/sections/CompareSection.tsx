@@ -30,7 +30,7 @@ function IconDashboard() {
 }
 
 function IconRushh() {
-  return <img src="/logo-rushh-icon.png" alt="Rushh" style={{ width: 26, height: 26, objectFit: "contain" }} />;
+  return <img src="/logo-rushh-icon.png" alt="Rushh" style={{ width: 36, height: 36, objectFit: "contain" }} />;
 }
 
 export function CompareSection() {

@@ -697,7 +697,7 @@ body { overflow-x: hidden; }
   color: #9095b3;
 }
 .cmp-card-icon--good {
-  background: var(--accent-soft);
+  background: transparent;
   color: var(--accent);
 }
 
