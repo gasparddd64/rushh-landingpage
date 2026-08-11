@@ -66,7 +66,7 @@ function Widget01Mobile() {
         </div>
         <span style={{ fontSize: 17, fontWeight: 700, color: "var(--ink)", fontVariantNumeric: "tabular-nums" }}>{m}:{s}</span>
       </div>
-      <div style={{ fontSize: 13, color: "var(--muted)" }}>Taux de décroché <strong style={{ color: "var(--ink)" }}>100%</strong></div>
+      <div style={{ fontSize: 13, color: "var(--muted)" }}>Disponible <strong style={{ color: "var(--ink)" }}>24h/24, 7j/7</strong></div>
     </div>
   );
 }
@@ -163,7 +163,7 @@ function ConnectorArrow({ fromRight }: { fromRight: boolean }) {
 }
 
 const MOBILE_STEPS = [
-  { num: "01", title: "Appel décroché",    desc: "Rushh répond à la première sonnerie, 24h/24, 7j/7.",                    widget: <Widget01Mobile /> },
+  { num: "01", title: "Appel pris en charge", desc: "Rushh prend le relais dès que votre équipe n'est pas disponible, 24h/24, 7j/7.", widget: <Widget01Mobile /> },
   { num: "02", title: "Besoin compris",    desc: "Rushh identifie en quelques échanges la nature précise de la demande.", widget: <Widget02Mobile /> },
   { num: "03", title: "Prospect qualifié", desc: "Les informations clés sont collectées une à une.",                      widget: <Widget03Mobile /> },
   { num: "04", title: "Action engagée",    desc: "Rushh propose un rendez-vous ou transmet un message.",                  widget: <Widget04Mobile /> },

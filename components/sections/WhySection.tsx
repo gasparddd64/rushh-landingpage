@@ -67,16 +67,12 @@ export function WhySection() {
             </p>
             <div style={{ display: "flex", gap: 48, alignItems: "flex-end", marginBottom: 36, flexWrap: "wrap" as const }}>
               <div>
-                <div style={{ fontSize: 44, fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1, color: "var(--ink)" }}>100%</div>
-                <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 8 }}>Appels<br />décrochés</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 44, fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1, color: "var(--ink)" }}>0</div>
-                <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 8 }}>Appels<br />manqués</div>
+                <div style={{ fontSize: 44, fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1, color: "var(--ink)" }}>24h/24</div>
+                <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 8 }}>Disponible,<br />7j/7</div>
               </div>
               <div>
                 <div style={{ fontSize: 44, fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1, color: "var(--ink)" }}>5j</div>
-                <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 8 }}>Pour être<br />opérationnel</div>
+                <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 8 }}>Mise en production<br />cible</div>
               </div>
             </div>
             <DemoCTA />
