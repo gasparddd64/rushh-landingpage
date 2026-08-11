@@ -525,6 +525,14 @@ body { overflow-x: hidden; }
   display: flex;
   flex-direction: column;
   gap: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.sol-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+}
+.sol-tile--featured:hover {
+  box-shadow: 0 8px 32px rgba(0,71,198,0.28);
 }
 
 /* Featured tile (blue) */
