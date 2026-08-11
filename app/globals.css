@@ -2384,7 +2384,7 @@ section { position: relative; }
 .tm-image {
   border-radius: 20px;
   overflow: hidden;
-  background: #e8edf4;
+  background: white;
   min-height: 400px;
 }
 .tm-image-photo {
