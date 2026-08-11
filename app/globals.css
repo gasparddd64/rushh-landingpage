@@ -461,22 +461,52 @@ body { overflow-x: hidden; }
 
 /* ---------- SOLUTION SECTION ---------- */
 .solution-section {
-  background: white;
+  background: #0e0f14;
+  padding: 96px 0;
 }
 
 /* Desktop split: text left + 2×2 grid right */
 .sol-layout {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 56px;
+  grid-template-columns: 340px 1fr;
+  gap: 64px;
   align-items: center;
-  margin-bottom: 32px;
 }
 
 .sol-layout-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 0;
+}
+
+/* Text column — dark bg overrides */
+.sol-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  padding: 5px 14px;
+  margin-bottom: 24px;
+}
+.sol-title {
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.sol-sub {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 36px;
+  max-width: 320px;
 }
 
 /* 2×2 grid */
@@ -488,91 +518,61 @@ body { overflow-x: hidden; }
 
 /* Base tile */
 .sol-tile {
-  background: #f7f8fc;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 28px 28px 24px;
+  background: #1a1b22;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 32px 28px 36px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  gap: 0;
 }
 
 /* Featured tile (blue) */
 .sol-tile--featured {
   background: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 8px 32px rgba(0,71,198,0.22);
 }
 
-/* Icon badge */
+/* Icon badge — round circle */
 .sol-tile-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   display: grid;
   place-items: center;
-  background: white;
-  color: var(--accent);
+  background: var(--accent);
+  color: white;
   flex-shrink: 0;
-  margin-bottom: 4px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  margin-bottom: 28px;
 }
 .sol-tile-icon--featured {
-  background: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.22);
   color: white;
-  box-shadow: none;
 }
 
 /* Tile title */
 .sol-tile-title {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 700;
-  color: var(--ink);
+  color: white;
   letter-spacing: -0.02em;
   line-height: 1.25;
-}
-.sol-tile--featured .sol-tile-title {
-  color: white;
+  margin-bottom: 12px;
 }
 
 /* Tile description */
 .sol-tile-desc {
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.45);
   margin: 0;
 }
 .sol-tile--featured .sol-tile-desc {
-  color: rgba(255,255,255,0.72);
-}
-
-/* Mini widget area */
-.sol-tile-widget {
-  margin-top: auto;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-}
-.sol-tile--featured .sol-tile-widget {
-  border-top-color: rgba(255,255,255,0.2);
-}
-
-/* Closing phrase */
-.sol-closing {
-  text-align: center;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #8b9ab4;
-  font-style: italic;
-  max-width: 560px;
-  margin: 0 auto;
-  padding-top: 16px;
+  color: rgba(255,255,255,0.75);
 }
 
 /* Mobile step layout — hidden on desktop */
 .sol-mobile { display: none; }
-/* Desktop layout — shown by default */
-.sol-layout { /* shown on desktop */ }
 
 /* Step cards (mobile only) */
 .sol-steps-m {
@@ -626,8 +626,8 @@ body { overflow-x: hidden; }
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .sol-layout { display: none; }
-  .sol-closing { display: none; }
   .sol-mobile { display: block; }
+  .solution-section { background: white; padding: 64px 0; }
 }
 
 /* ---------- PROBLEM STRIP ---------- */

@@ -4,7 +4,23 @@ import { useState, useEffect } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 /* ══════════════════════════════════════════════
-   SHARED BUBBLE HOOK
+   ICONS
+═══════════════════════════════════════════════ */
+function IconChat() {
+  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>;
+}
+function IconList() {
+  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>;
+}
+function IconCalendarI() {
+  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>;
+}
+function IconFile() {
+  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>;
+}
+
+/* ══════════════════════════════════════════════
+   MOBILE — step cards (original layout preserved)
 ═══════════════════════════════════════════════ */
 const BUBBLES = [
   { from: "caller", text: "Je cherche un 3 pièces dans le 17e…" },
@@ -33,104 +49,6 @@ function useBubbleAnimation() {
   return shown;
 }
 
-/* ══════════════════════════════════════════════
-   ICONS
-═══════════════════════════════════════════════ */
-function IconChat() {
-  return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>;
-}
-function IconList() {
-  return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>;
-}
-function IconCalendarD() {
-  return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>;
-}
-function IconFile() {
-  return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>;
-}
-
-/* ══════════════════════════════════════════════
-   DESKTOP CARD WIDGETS
-═══════════════════════════════════════════════ */
-function WidgetChat() {
-  const shown = useBubbleAnimation();
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
-      {BUBBLES.map((b, i) => (
-        <div key={i} style={{ display: "flex", justifyContent: b.from === "rushh" ? "flex-end" : "flex-start", opacity: i < shown ? 1 : 0, transform: i < shown ? "translateY(0)" : "translateY(4px)", transition: "opacity 0.3s ease, transform 0.3s ease" }}>
-          <div style={{ padding: "8px 12px", borderRadius: b.from === "rushh" ? "12px 12px 3px 12px" : "12px 12px 12px 3px", background: b.from === "rushh" ? "#0047C6" : "white", color: b.from === "rushh" ? "white" : "var(--ink)", fontSize: 12.5, lineHeight: 1.45, maxWidth: "90%", border: b.from === "caller" ? "1px solid var(--line)" : "none" }}>
-            {b.text}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function WidgetTable() {
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>
-      {[{ label: "SECTEUR", value: "Paris 17e" }, { label: "BUDGET", value: "500 – 600 k€" }, { label: "DÉLAI", value: "3 à 6 mois" }].map((r) => (
-        <div key={r.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ fontSize: 10.5, fontWeight: 600, color: "var(--muted)", letterSpacing: "0.07em" }}>{r.label}</span>
-          <span style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>{r.value}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function WidgetAction() {
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 10, background: "white", border: "1px solid var(--line)", borderRadius: 10, padding: "10px 12px" }}>
-        <div style={{ width: 30, height: 30, borderRadius: 7, background: "var(--accent-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: "var(--accent)" }}>
-          <IconCalendarD />
-        </div>
-        <span style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>Rendez-vous proposé — demain 14h</span>
-      </div>
-      <div style={{ fontSize: 12, color: "var(--muted)" }}>Résumé envoyé à l&apos;agence en parallèle.</div>
-    </div>
-  );
-}
-
-function WidgetFiche() {
-  const [sent, setSent] = useState(false);
-  useEffect(() => {
-    let cancelled = false;
-    async function run() {
-      while (!cancelled) {
-        await new Promise<void>((r) => setTimeout(r, 1200));
-        if (!cancelled) setSent(true);
-        await new Promise<void>((r) => setTimeout(r, 3000));
-        if (!cancelled) setSent(false);
-        await new Promise<void>((r) => setTimeout(r, 600));
-      }
-    }
-    run();
-    return () => { cancelled = true; };
-  }, []);
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "rgba(255,255,255,0.14)", border: "1px solid rgba(255,255,255,0.22)", borderRadius: 10, padding: "11px 14px" }}>
-        <div>
-          <div style={{ fontSize: 13.5, fontWeight: 700, color: "white" }}>Marie Dubois</div>
-          <div style={{ fontSize: 12, color: "rgba(255,255,255,0.65)", marginTop: 2 }}>T3 — Paris 17e</div>
-        </div>
-        <div style={{ fontSize: 13, fontWeight: 700, color: sent ? "#86efac" : "rgba(255,255,255,0.45)", transition: "color 0.4s ease" }}>
-          {sent ? "✓ Transmise" : "En attente…"}
-        </div>
-      </div>
-      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", opacity: sent ? 1 : 0, transition: "opacity 0.4s ease" }}>
-        Reçue il y a quelques secondes
-      </div>
-    </div>
-  );
-}
-
-/* ══════════════════════════════════════════════
-   MOBILE — step cards (original layout preserved)
-═══════════════════════════════════════════════ */
 function Widget01Mobile() {
   const [seconds, setSeconds] = useState(0);
   useEffect(() => {
@@ -253,50 +171,70 @@ const MOBILE_STEPS = [
 ];
 
 /* ══════════════════════════════════════════════
+   DESKTOP CARDS DATA
+═══════════════════════════════════════════════ */
+const DESKTOP_CARDS = [
+  {
+    icon: <IconChat />,
+    title: "Besoin compris",
+    desc: "Rushh identifie en quelques échanges la nature précise de la demande.",
+    featured: true,
+  },
+  {
+    icon: <IconList />,
+    title: "Prospect qualifié",
+    desc: "Les informations clés sont collectées une à une.",
+    featured: false,
+  },
+  {
+    icon: <IconCalendarI />,
+    title: "Action engagée",
+    desc: "Rushh propose un rendez-vous ou transmet un message.",
+    featured: false,
+  },
+  {
+    icon: <IconFile />,
+    title: "Fiche transmise",
+    desc: "Votre équipe reçoit une fiche complète, prête à traiter.",
+    featured: false,
+  },
+];
+
+/* ══════════════════════════════════════════════
    MAIN
 ═══════════════════════════════════════════════ */
 export function SolutionSection() {
   return (
-    <section className="section-pad solution-section" id="solution">
+    <section className="solution-section" id="solution">
       <div className="wrap">
 
-        {/* ── Desktop: split layout (text left + 2×2 grid right) ── */}
+        {/* ── Desktop: split layout ── */}
         <div className="sol-layout">
           {/* Left: text */}
           <div className="sol-layout-text">
-            <span className="section-eyebrow" style={{ marginBottom: 20 }}>La réponse</span>
-            <h2 className="section-title" style={{ textAlign: "left", margin: "16px 0 20px" }}>
+            <span className="sol-eyebrow">La réponse</span>
+            <h2 className="sol-title">
               Rushh, lui, n&apos;est jamais occupé.
             </h2>
-            <p className="section-sub" style={{ textAlign: "left", margin: "0 0 36px", maxWidth: 400 }}>
+            <p className="sol-sub">
               Décroché à la première sonnerie, chaque appel est compris, qualifié, puis transmis à votre agence, prêt à être traité.
             </p>
-            <DemoCTA />
+            <DemoCTA variant="white" />
           </div>
 
           {/* Right: 2×2 grid */}
           <div className="sol-grid">
-            {[
-              { icon: <IconChat />,      title: "Besoin compris",    desc: "Rushh identifie en quelques échanges la nature précise de la demande.",  widget: <WidgetChat />,   featured: false },
-              { icon: <IconList />,      title: "Prospect qualifié", desc: "Les informations clés sont collectées une à une.",                        widget: <WidgetTable />,  featured: false },
-              { icon: <IconCalendarD />, title: "Action engagée",    desc: "Rushh propose un rendez-vous ou transmet un message.",                     widget: <WidgetAction />, featured: false },
-              { icon: <IconFile />,      title: "Fiche transmise",   desc: "Votre équipe reçoit une fiche complète, prête à traiter.",                widget: <WidgetFiche />,  featured: true  },
-            ].map((card, i) => (
+            {DESKTOP_CARDS.map((card, i) => (
               <div key={i} className={`sol-tile${card.featured ? " sol-tile--featured" : ""}`}>
                 <div className={`sol-tile-icon${card.featured ? " sol-tile-icon--featured" : ""}`}>
                   {card.icon}
                 </div>
                 <h3 className="sol-tile-title">{card.title}</h3>
                 <p className="sol-tile-desc">{card.desc}</p>
-                <div className="sol-tile-widget">{card.widget}</div>
               </div>
             ))}
           </div>
         </div>
-
-        <p className="sol-closing">
-          Transaction, location ou gestion locative : le scénario s&apos;adapte au métier de votre agence, pas l&apos;inverse.
-        </p>
 
         {/* ── Mobile: original step cards ── */}
         <div className="sol-mobile">
@@ -321,7 +259,7 @@ export function SolutionSection() {
               </div>
             ))}
           </div>
-          <p className="sol-closing" style={{ paddingTop: 24 }}>
+          <p style={{ textAlign: "center", fontSize: 14, lineHeight: 1.7, color: "#8b9ab4", fontStyle: "italic", maxWidth: 480, margin: "24px auto 0" }}>
             Transaction, location ou gestion locative : le scénario s&apos;adapte au métier de votre agence, pas l&apos;inverse.
           </p>
         </div>
