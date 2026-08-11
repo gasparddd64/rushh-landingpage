@@ -219,7 +219,7 @@ export function SolutionSection() {
             <p className="sol-sub">
               Décroché à la première sonnerie, chaque appel est compris, qualifié, puis transmis à votre agence, prêt à être traité.
             </p>
-            <DemoCTA variant="white" />
+            <DemoCTA />
           </div>
 
           {/* Right: 2×2 grid */}

@@ -461,7 +461,7 @@ body { overflow-x: hidden; }
 
 /* ---------- SOLUTION SECTION ---------- */
 .solution-section {
-  background: #0e0f14;
+  background: white;
   padding: 96px 0;
 }
 
@@ -480,15 +480,15 @@ body { overflow-x: hidden; }
   gap: 0;
 }
 
-/* Text column — dark bg overrides */
+/* Text column */
 .sol-eyebrow {
   display: inline-block;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--muted);
+  border: 1px solid var(--line);
   border-radius: 999px;
   padding: 5px 14px;
   margin-bottom: 24px;
@@ -496,7 +496,7 @@ body { overflow-x: hidden; }
 .sol-title {
   font-size: clamp(28px, 3.2vw, 44px);
   font-weight: 800;
-  color: white;
+  color: var(--ink);
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin-bottom: 20px;
@@ -504,7 +504,7 @@ body { overflow-x: hidden; }
 .sol-sub {
   font-size: 15px;
   line-height: 1.7;
-  color: rgba(255,255,255,0.5);
+  color: var(--muted);
   margin-bottom: 36px;
   max-width: 320px;
 }
@@ -518,8 +518,8 @@ body { overflow-x: hidden; }
 
 /* Base tile */
 .sol-tile {
-  background: #1a1b22;
-  border: 1px solid rgba(255,255,255,0.07);
+  background: #f7f8fc;
+  border: 1px solid var(--line);
   border-radius: 20px;
   padding: 32px 28px 36px;
   display: flex;
@@ -554,17 +554,20 @@ body { overflow-x: hidden; }
 .sol-tile-title {
   font-size: 19px;
   font-weight: 700;
-  color: white;
+  color: var(--ink);
   letter-spacing: -0.02em;
   line-height: 1.25;
   margin-bottom: 12px;
+}
+.sol-tile--featured .sol-tile-title {
+  color: white;
 }
 
 /* Tile description */
 .sol-tile-desc {
   font-size: 14px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.45);
+  color: var(--muted);
   margin: 0;
 }
 .sol-tile--featured .sol-tile-desc {
@@ -627,7 +630,7 @@ body { overflow-x: hidden; }
 @media (max-width: 768px) {
   .sol-layout { display: none; }
   .sol-mobile { display: block; }
-  .solution-section { background: white; padding: 64px 0; }
+  .solution-section { padding: 64px 0; }
 }
 
 /* ---------- COMPARE SECTION ---------- */
