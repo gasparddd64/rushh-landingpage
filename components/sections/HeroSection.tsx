@@ -372,7 +372,7 @@ export function HeroSection() {
       <div className="hero-bg-full" aria-hidden />
       <div className="hero-bg-overlay" aria-hidden />
 
-      <AuroraBackground showRadialGradient style={{ padding: "120px 24px 40px" }}>
+      <AuroraBackground showRadialGradient style={{ padding: "120px 24px 16px" }}>
         <div className="hero-inner">
           <h1 className="hero-title hero-desktop-only">
             Chaque appel reçoit<br />
