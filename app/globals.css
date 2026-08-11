@@ -1169,16 +1169,16 @@ body { overflow-x: hidden; }
   max-width: 100vw;
   margin-top: -72px;
   padding-top: 0;
-  padding-bottom: 50px;
+  padding-bottom: 320px;
   min-height: 540px;
 }
-/* Background full image — fixed height so fade ends just below CTAs */
+/* Background full image — fixed height, mask fades before problem section */
 .hero-bg-full {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 620px;
+  height: 850px;
   z-index: 3;
   pointer-events: none;
   background: url('/hero-bg-desktop.png') center top / cover no-repeat;
@@ -1191,7 +1191,7 @@ body { overflow-x: hidden; }
   top: 0;
   left: 0;
   right: 0;
-  height: 620px;
+  height: 850px;
   z-index: 4;
   pointer-events: none;
   background: radial-gradient(ellipse 55% 45% at 50% 28%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.55) 55%, transparent 100%);
