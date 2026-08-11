@@ -375,16 +375,16 @@ export function HeroSection() {
       <AuroraBackground showRadialGradient style={{ padding: "120px 24px 40px" }}>
         <div className="hero-inner">
           <h1 className="hero-title hero-desktop-only">
-            Le standard téléphonique<br />
-            pour les agences immobilières.
+            Chaque appel reçoit<br />
+            une vraie réponse.
           </h1>
           <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
             Rushh décroche, qualifie le prospect et transmet la fiche à votre agence — sans jamais laisser un appel sans réponse.
           </p>
 
           <h1 className="hero-title hero-mobile-only">
-            Le standard téléphonique<br />
-            pour les agences immobilières.
+            Chaque appel reçoit<br />
+            une vraie réponse.
           </h1>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
             Rushh décroche, qualifie le prospect et transmet la fiche à votre agence — sans jamais laisser un appel sans réponse.
