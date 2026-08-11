@@ -643,7 +643,7 @@ body { overflow-x: hidden; }
 
 /* ---------- COMPARE SECTION ---------- */
 .compare-section {
-  background: #f7f8fc;
+  background: white;
 }
 
 /* Two cards side by side */
@@ -899,7 +899,7 @@ body { overflow-x: hidden; }
 
 @keyframes integ-scroll {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-25%); }
 }
 
 /* Individual logo card */

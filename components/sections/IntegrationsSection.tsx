@@ -8,8 +8,8 @@ const TOOLS = [
   { name: "Whise",           logo: "/logo-whise.png" },
 ];
 
-// Double the list for seamless infinite scroll
-const ITEMS = [...TOOLS, ...TOOLS];
+// 4 copies → translate -25% = exactly one set, always seamless
+const ITEMS = [...TOOLS, ...TOOLS, ...TOOLS, ...TOOLS];
 
 export function IntegrationsSection() {
   return (
