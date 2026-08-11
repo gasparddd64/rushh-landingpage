@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Phone } from "lucide-react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 const NAV_LINKS = [
@@ -66,6 +67,13 @@ export function Nav() {
           ))}
         </div>
         <div className="mobile-menu-ctas">
+          <button
+            onClick={() => { window.location.href = "tel:0517948549"; setOpen(false); }}
+            className="mobile-menu-cta-phone"
+          >
+            <Phone size={16} />
+            Appeler notre IA
+          </button>
           <DemoCTA />
         </div>
       </div>

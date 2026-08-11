@@ -40,9 +40,7 @@ export function IntegrationsSection() {
             </div>
           </div>
 
-          <p className="integ-note">
-            Compatible avec votre environnement. Nous étudions vos outils lors du cadrage et mettons en place les connexions disponibles selon leur compatibilité technique.
-          </p>
+          <p className="integ-note">Et bien d&apos;autres, selon la compatibilité technique de votre outil.</p>
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ export function DemoCTA({ variant = "blue" }: { variant?: "blue" | "white" }) {
         onClick={() => window.open("https://calendly.com/gaspardv/rushh", "_blank")}
         className={`demo-cta-btn ${isWhite ? "demo-cta-btn--white" : ""}`}
       >
-        Réserver une démonstration
+        Réserver ma démo
       </button>
       <button
         onClick={() => window.open("https://calendly.com/gaspardv/rushh", "_blank")}
