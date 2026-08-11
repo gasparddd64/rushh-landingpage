@@ -1,20 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Zap, Star, HelpCircle, Wrench } from "lucide-react";
+import { Phone } from "lucide-react";
 import { DemoCTA } from "@/components/ui/demo-cta";
-import { TubelightNav } from "@/components/ui/tubelight-navbar";
 
-const navItems = [
-  { name: "Fonctionnalités", url: "#solution",  icon: Zap },
-  { name: "Pourquoi Rushh ?", url: "#why",      icon: Star },
-  { name: "FAQ",              url: "#faq",      icon: HelpCircle },
-];
-
-const mobileLinks = [
-  { text: "Fonctionnalités",  href: "#solution" },
-  { text: "Pourquoi Rushh ?", href: "#why" },
-  { text: "FAQ",              href: "#faq" },
+const NAV_LINKS = [
+  { label: "Comment ça marche", href: "#solution" },
+  { label: "Pourquoi Rushh",    href: "#why" },
+  { label: "Témoignages",       href: "#testimonials" },
+  { label: "FAQ",               href: "#faq" },
 ];
 
 export function Nav() {
@@ -23,16 +17,20 @@ export function Nav() {
   return (
     <>
       <nav className="nav">
-        <div className="wrap nav-inner">
+        <div className="nav-inner">
           {/* Logo */}
-          <div className="brand">
+          <a href="/" className="brand">
             <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
             <span>Rushh</span>
-          </div>
+          </a>
 
-          {/* Tubelight nav — center */}
-          <div className="nav-tubelight">
-            <TubelightNav items={navItems} />
+          {/* Center links */}
+          <div className="nav-links-center">
+            {NAV_LINKS.map((l) => (
+              <a key={l.href} href={l.href} className="nav-link">
+                {l.label}
+              </a>
+            ))}
           </div>
 
           {/* CTA */}
@@ -62,9 +60,9 @@ export function Nav() {
           </svg>
         </button>
         <div className="mobile-menu-links">
-          {mobileLinks.map((l) => (
-            <a key={l.text} href={l.href} className="mobile-menu-link" onClick={() => setOpen(false)}>
-              {l.text}
+          {NAV_LINKS.map((l) => (
+            <a key={l.href} href={l.href} className="mobile-menu-link" onClick={() => setOpen(false)}>
+              {l.label}
             </a>
           ))}
         </div>

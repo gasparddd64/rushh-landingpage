@@ -133,59 +133,92 @@ body { overflow-x: hidden; }
 .nav {
   position: relative;
   z-index: 50;
-  padding: 12px 20px 0;
+  padding: 0;
 }
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 68px;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 32px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  position: relative;
+  padding: 0 40px;
 }
 .brand {
   display: flex;
   align-items: center;
-  gap: 0px;
+  gap: 2px;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 22px;
   letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
 }
 .brand-logo {
-  width: 38px; height: 38px;
+  width: 36px; height: 36px;
   object-fit: contain;
   flex-shrink: 0;
-  margin-top: -10px;
+  margin-top: -8px;
 }
-.nav-tubelight {
+
+/* Center links */
+.nav-links-center {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-@media (max-width: 768px) {
-  .nav-tubelight { display: none; }
+.nav-link {
+  position: relative;
+  padding: 6px 14px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color 0.2s;
+  white-space: nowrap;
 }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.nav-link:hover {
+  color: var(--ink);
+}
+.nav-link:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* CTA */
 .nav-cta {
-  display: flex; gap: 12px; align-items: center;
+  display: flex; gap: 10px; align-items: center;
 }
 .nav-cta .demo-cta-btn {
-  padding: 8px 18px;
-  font-size: 12px;
+  padding: 9px 20px;
+  font-size: 13.5px;
   border-radius: 999px;
 }
 .nav-cta .demo-cta-arrow {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 999px;
 }
 .nav-cta .demo-cta-arrow svg {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
 }
 
 /* Hamburger — hidden on desktop */
@@ -282,7 +315,7 @@ body { overflow-x: hidden; }
 
 @media (max-width: 768px) {
   .nav-hamburger { display: flex; }
-  .nav-links { display: none !important; }
+  .nav-links-center { display: none !important; }
   .nav-cta { display: none !important; }
 }
 
