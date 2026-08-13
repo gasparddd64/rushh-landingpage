@@ -879,10 +879,10 @@ body { overflow-x: hidden; }
 
 /* Outer card — light */
 .integ-card {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 40px 48px 36px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   overflow: hidden;
 }
 
