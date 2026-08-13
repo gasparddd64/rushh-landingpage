@@ -49,7 +49,7 @@ export function ProblemSection() {
   ];
 
   return (
-    <section className="section-pad" id="problem" style={{ position: "relative", zIndex: 10 }}>
+    <section className="section-pad" id="problem" style={{ position: "relative", zIndex: 10, paddingTop: 160 }}>
       <div className="wrap">
         <div className="section-head">
           <span className="section-eyebrow">Le problème</span>
