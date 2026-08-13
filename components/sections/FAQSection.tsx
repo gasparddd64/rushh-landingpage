@@ -11,7 +11,7 @@ const FAQ = [
   },
   {
     q: "Mes clients vont-ils avoir l'impression de parler à un robot ?",
-    a: "C'est précisément pour cette raison que nous préférons vous faire entendre Rushh plutôt que vous demander de nous croire. Chaque Standard est travaillé pour offrir des échanges naturels et adaptés à votre agence.",
+    a: "C'est précisément pour cette raison que nous préférons vous faire entendre Rushh plutôt que vous demander de nous croire. Chaque Rushh est travaillé pour offrir des échanges naturels et adaptés à votre agence.",
     cta: true,
   },
   {
@@ -26,12 +26,17 @@ const FAQ = [
   },
   {
     q: "Est-ce à nous de configurer et maintenir le système ?",
-    a: "Non. C'est justement la différence entre Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre Standard avec vous.",
+    a: "Non. C'est justement la différence entre Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre Rushh avec vous.",
     cta: false,
   },
   {
     q: "Combien de temps faut-il pour déployer Rushh ?",
     a: "La mise en production cible est réalisée sous 5 jours ouvrés après réception de l'ensemble des éléments nécessaires au déploiement.",
+    cta: false,
+  },
+  {
+    q: "Combien ça coûte ?",
+    a: "Le tarif dépend du volume d'appels de votre agence et de la configuration retenue. Nous en discutons lors de la démonstration, après avoir compris votre fonctionnement.",
     cta: false,
   },
 ];

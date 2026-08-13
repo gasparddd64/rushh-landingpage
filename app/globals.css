@@ -616,62 +616,15 @@ body { overflow-x: hidden; }
   color: rgba(255,255,255,0.75);
 }
 
-/* Mobile step layout — hidden on desktop */
-.sol-mobile { display: none; }
-
-/* Step cards (mobile only) */
-.sol-steps-m {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-bottom: 48px;
-}
-.sol-connector-wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 2px 0;
-  overflow: visible;
-}
-.sol-connector-svg {
-  width: 100%;
-  max-width: 400px;
-  height: 44px;
-  overflow: visible;
-}
-.sol-card-row { display: flex; justify-content: center; }
-.sol-card {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 24px 22px 20px;
-  width: 100%;
-  box-shadow: 0 2px 14px rgba(0,0,0,0.05);
-}
-.sol-card-dot {
-  width: 9px; height: 9px; border-radius: 50%;
-  background: #0047C6; margin: 0 auto 12px;
-}
-.sol-card-num {
-  font-size: 26px; font-weight: 800; color: #0047C6;
-  line-height: 1; margin-bottom: 4px; letter-spacing: -0.02em;
-}
-.sol-card-title {
-  font-size: 17px; font-weight: 700; color: var(--ink);
-  letter-spacing: -0.02em; margin-bottom: 5px; line-height: 1.2;
-}
-.sol-card-desc {
-  font-size: 13px; line-height: 1.55; color: var(--muted); margin-bottom: 12px;
-}
-.sol-widget {
-  background: var(--bg-soft); border-radius: 10px; padding: 12px 14px;
-}
-.sol-widget-note { font-size: 12px; color: var(--muted); margin-top: 8px; }
-
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .sol-layout { display: none; }
-  .sol-mobile { display: block; }
+  .sol-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .sol-grid {
+    grid-template-columns: 1fr;
+  }
   .solution-section { padding: 64px 0; }
 }
 

@@ -25,7 +25,7 @@ export function FooterSection() {
           <div className="footer-col">
             <h3 className="footer-col-title">Navigation</h3>
             <nav className="footer-links">
-              <a href="#solution">Fonctionnalités</a>
+              <a href="#solution">Comment ça marche</a>
               <a href="#why">Pourquoi Rushh</a>
               <a href="#faq">FAQ</a>
               <a href="#testimonials">Témoignages</a>
@@ -64,9 +64,6 @@ export function FooterSection() {
         <div className="footer-bottom">
           <span>Données hébergées en France · Conforme RGPD</span>
           <nav className="footer-legal">
-            <a href="#">Mentions légales</a>
-            <a href="#">CGV</a>
-            <a href="#">Politique de confidentialité</a>
           </nav>
         </div>
       </div>

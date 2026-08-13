@@ -379,15 +379,15 @@ export function HeroSection() {
             une vraie réponse.
           </h1>
           <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
-            En visite, en rendez-vous ou déjà en ligne, votre équipe n&apos;est pas toujours disponible. Rushh prend le relais.
+            Rushh décroche, qualifie le prospect et transmet la fiche à votre agence.
           </p>
 
-          <h1 className="hero-title hero-mobile-only">
+          <p className="hero-title hero-mobile-only">
             Chaque appel reçoit<br />
             une vraie réponse.
-          </h1>
+          </p>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
-            En visite, en rendez-vous ou déjà en ligne, votre équipe n&apos;est pas toujours disponible. Rushh prend le relais.
+            Rushh décroche, qualifie le prospect et transmet la fiche à votre agence.
           </p>
 
           <motion.div

@@ -20,18 +20,23 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Rushh",
+  title: "Rushh — Le standard téléphonique des agences immobilières",
   description:
-    "Réceptionniste IA pour agences immobilières",
+    "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
   icons: {
     icon: "/favicon-32.png",
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Rushh",
+    title: "Rushh — Le standard téléphonique des agences immobilières",
     description:
-      "Réceptionniste IA pour agences immobilières",
+      "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
     images: [{ url: "/logo-rushh-og.png", width: 512, height: 512 }],
+  },
+  twitter: {
+    title: "Rushh — Le standard téléphonique des agences immobilières",
+    description:
+      "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
   },
 };
 

@@ -72,7 +72,7 @@ export function Nav() {
             className="mobile-menu-cta-phone"
           >
             <Phone size={16} />
-            Appeler notre IA
+            Réserver ma démo
           </button>
           <DemoCTA />
         </div>
