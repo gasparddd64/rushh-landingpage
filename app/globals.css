@@ -1515,7 +1515,7 @@ body { overflow-x: hidden; }
 
 /* ---------- SECTION ---------- */
 section { position: relative; }
-.section-pad { padding: 96px 0; }
+.section-pad { padding: 140px 0; }
 .section-head {
   max-width: 720px;
   margin: 0 auto 64px;
