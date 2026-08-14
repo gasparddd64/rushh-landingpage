@@ -36,7 +36,7 @@ export function FooterSection() {
           <div className="footer-col">
             <h3 className="footer-col-title">Contact</h3>
             <nav className="footer-links">
-              <a href="mailto:contact@rushh.fr">contact@rushh.fr</a>
+              <a href="mailto:hello@rushh.fr">hello@rushh.fr</a>
               <a href="tel:0517948549">05 17 94 85 49</a>
               <a href="https://calendly.com/gaspardv/rushh" target="_blank" rel="noopener noreferrer">Réserver une démo</a>
             </nav>
