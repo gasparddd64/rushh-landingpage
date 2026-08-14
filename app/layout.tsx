@@ -21,22 +21,31 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "Rushh — Le standard téléphonique des agences immobilières",
-  description:
-    "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
+  description: "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
   icons: {
     icon: "/favicon-32.png",
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Rushh — Le standard téléphonique des agences immobilières",
-    description:
-      "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
-    images: [{ url: "/logo-rushh-og.png", width: 512, height: 512 }],
+    description: "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
+    url: "https://www.rushh.fr",
+    siteName: "Rushh",
+    locale: "fr_FR",
+    type: "website",
+    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 1200, height: 630 }],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Rushh — Le standard téléphonique des agences immobilières",
-    description:
-      "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
+    description: "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
+  },
+  alternates: {
+    canonical: "https://www.rushh.fr",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
