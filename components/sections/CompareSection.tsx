@@ -98,8 +98,11 @@ export function CompareSection() {
                 </li>
               ))}
             </ul>
-            <div className="cmp-footer">
+            <div className="cmp-footer cmp-footer--desktop">
               Conçu avec vous · Déployé par Rushh · Suivi dans le temps
+            </div>
+            <div className="cmp-footer--mobile">
+              <DemoCTA />
             </div>
           </div>
         </div>

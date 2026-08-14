@@ -770,6 +770,7 @@ body { overflow-x: hidden; }
 }
 
 /* Footer band on Rushh card */
+.cmp-footer--mobile { display: none; }
 .cmp-footer {
   margin-top: 24px;
   background: var(--accent-soft);
@@ -825,6 +826,8 @@ body { overflow-x: hidden; }
   .cmp-card-head { flex-wrap: wrap; gap: 10px; }
   .cmp-badge { margin-left: 0; margin-top: 4px; flex-shrink: 0; }
   .cmp-list-item { font-size: 13px; }
+  .cmp-footer--desktop { display: none; }
+  .cmp-footer--mobile { display: block; margin-top: 24px; }
 }
 
 /* ---------- INTEGRATIONS SECTION ---------- */
