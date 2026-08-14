@@ -3015,7 +3015,7 @@ section { position: relative; }
 
   /* Hero CTAs — side by side on mobile */
   .hero-ctas { gap: 10px; max-width: 340px; width: 100%; justify-content: center; flex-wrap: nowrap; margin: 0 auto; }
-  .hero-ctas .hero-cta-equal { height: 50px; font-size: 14px; padding: 0 18px; border-radius: 999px; flex: 1 1 0; min-width: 0; }
+  .hero-ctas .hero-cta-equal { height: 48px; font-size: 13px; padding: 0 14px; border-radius: 999px; flex: 1 1 0; min-width: 0; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
 
   /* City carousel — visible on mobile */

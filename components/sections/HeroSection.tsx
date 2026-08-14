@@ -400,7 +400,7 @@ export function HeroSection() {
               onClick={() => { document.getElementById("features")?.scrollIntoView({ behavior: "smooth" }); }}
               className="hero-btn-phone hero-cta-equal"
             >
-              Voir comment ça marche
+              Découvrir Rushh
             </button>
             <button
               onClick={() => window.open("https://calendly.com/gaspardv/rushh", "_blank")}
