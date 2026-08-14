@@ -828,6 +828,7 @@ body { overflow-x: hidden; }
   .cmp-list-item { font-size: 13px; }
   .cmp-footer--desktop { display: none; }
   .cmp-footer--mobile { display: block; margin-top: 24px; }
+  .cmp-ctas { display: none; }
 }
 
 /* ---------- INTEGRATIONS SECTION ---------- */
