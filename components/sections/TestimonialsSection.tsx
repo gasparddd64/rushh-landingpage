@@ -4,17 +4,17 @@ import { useState } from "react";
 
 const testimonials = [
   {
-    quote: "La conversation est fluide, le ton est naturel et l'ambiance « open space » avec le bruit du clavier donne un bon feeling. On a l'impression de parler à une vraie assistante.",
-    initials: "FB",
-    name: "Florent Bringuier",
-    role: "Gérant — Mon Office Immobilier, Aix",
-    stars: 5,
-  },
-  {
     quote: "Enfin une vraie solution. Je n'ai plus à me soucier du téléphone qui sonne toute la journée quand je suis en rendez-vous — je sais que mes appels sont pris en charge, proprement et rapidement.",
     initials: "DH",
     name: "David Houiseau",
     role: "Conseiller immobilier — Sceaux",
+    stars: 5,
+  },
+  {
+    quote: "La conversation est fluide, le ton est naturel et l'ambiance « open space » avec le bruit du clavier donne un bon feeling. On a l'impression de parler à une vraie assistante.",
+    initials: "FB",
+    name: "Florent Bringuier",
+    role: "Gérant — Mon Office Immobilier, Aix",
     stars: 5,
   },
 ];
