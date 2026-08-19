@@ -45,7 +45,7 @@ function WhyTile({ icon, title, desc }: { icon: React.ReactNode; title: string; 
         <div className="why-tile-icon" style={{ background: "var(--accent-soft)", color: "var(--accent)", width: 44, height: 44, borderRadius: 12, display: "grid", placeItems: "center" }}>
           {icon}
         </div>
-        <div className="why-tile-title">{title}</div>
+        <h3 className="why-tile-title">{title}</h3>
       </div>
       <p className="why-tile-desc">{desc}</p>
     </div>

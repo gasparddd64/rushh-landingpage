@@ -11,7 +11,7 @@ const FAQ = [
   },
   {
     q: "Mes clients vont-ils avoir l'impression de parler à un robot ?",
-    a: "C'est précisément pour cette raison que nous préférons vous faire entendre Rushh plutôt que vous demander de nous croire. Chaque Rushh est travaillé pour offrir des échanges naturels et adaptés à votre agence.",
+    a: "C'est précisément pour cette raison que nous préférons vous faire entendre Rushh plutôt que vous demander de nous croire. Chaque déploiement est travaillé pour offrir des échanges naturels et adaptés à votre agence.",
     cta: true,
   },
   {
@@ -26,7 +26,7 @@ const FAQ = [
   },
   {
     q: "Est-ce à nous de configurer et maintenir le système ?",
-    a: "Non. C'est justement la différence entre Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre Rushh avec vous.",
+    a: "Non. C'est justement la différence entre Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre standard téléphonique avec vous.",
     cta: false,
   },
   {

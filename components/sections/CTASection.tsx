@@ -21,7 +21,7 @@ export function CTASection() {
 
           {/* Right: photo */}
           <div className="cta-kz-photo">
-            <img src="/cta-haussmann.jpg" alt="Immeuble haussmannien Paris — agence immobilière" />
+            <img src="/cta-haussmann.jpg" alt="Immeuble haussmannien Paris — agence immobilière" loading="lazy" />
           </div>
         </div>
       </div>

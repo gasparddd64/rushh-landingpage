@@ -21,14 +21,14 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "Rushh — Le standard téléphonique des agences immobilières",
-  description: "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
+  description: "Plus aucun appel sans réponse. Rushh décroche, qualifie et transmet la fiche à votre équipe — conçu et déployé pour votre agence en 5 jours.",
   icons: {
     icon: "/favicon-32.png",
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Rushh — Le standard téléphonique des agences immobilières",
-    description: "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
+    description: "Plus aucun appel sans réponse. Rushh décroche, qualifie et transmet la fiche à votre équipe — conçu et déployé pour votre agence en 5 jours.",
     url: "https://www.rushh.fr",
     siteName: "Rushh",
     locale: "fr_FR",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rushh — Le standard téléphonique des agences immobilières",
-    description: "Rushh décroche chaque appel de votre agence immobilière, qualifie le prospect et transmet la fiche à votre équipe. Conçu, déployé et suivi pour vous.",
+    description: "Plus aucun appel sans réponse. Rushh décroche, qualifie et transmet la fiche à votre équipe — conçu et déployé pour votre agence en 5 jours.",
   },
   alternates: {
     canonical: "https://www.rushh.fr",

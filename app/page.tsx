@@ -71,7 +71,7 @@ const faqSchema = {
       "name": "Mes clients vont-ils avoir l'impression de parler à un robot ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C'est précisément pour cette raison que nous préférons vous faire entendre Rushh plutôt que vous demander de nous croire. Chaque Rushh est travaillé pour offrir des échanges naturels et adaptés à votre agence.",
+        "text": "C'est précisément pour cette raison que nous préférons vous faire entendre Rushh plutôt que vous demander de nous croire. Chaque déploiement est travaillé pour offrir des échanges naturels et adaptés à votre agence.",
       },
     },
     {
@@ -95,7 +95,7 @@ const faqSchema = {
       "name": "Est-ce à nous de configurer et maintenir le système ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. C'est justement la différence entre Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre Rushh avec vous.",
+        "text": "Non. C'est justement la différence entre Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre standard téléphonique avec vous.",
       },
     },
     {

@@ -33,7 +33,7 @@ export function IntegrationsSection() {
             <div className="integ-marquee">
               {ITEMS.map((t, i) => (
                 <div key={i} className="integ-logo-card">
-                  <img src={t.logo} alt={t.name} className="integ-logo-img" />
+                  <img src={t.logo} alt={t.name} className="integ-logo-img" loading="lazy" />
                   <div className="integ-logo-name">{t.name}</div>
                 </div>
               ))}

@@ -396,18 +396,20 @@ export function HeroSection() {
             transition={{ type: "spring", bounce: 0.3, duration: 1.5, delay: 0.75 }}
             className="hero-ctas"
           >
-            <button
-              onClick={() => { document.getElementById("features")?.scrollIntoView({ behavior: "smooth" }); }}
+            <a
+              href="#solution"
               className="hero-btn-phone hero-cta-equal"
             >
               Découvrir Rushh
-            </button>
-            <button
-              onClick={() => window.open("https://calendly.com/gaspardv/rushh", "_blank")}
+            </a>
+            <a
+              href="https://calendly.com/gaspardv/rushh"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hero-btn-demo hero-cta-equal"
             >
               Réserver ma démo
-            </button>
+            </a>
           </motion.div>
 
           {/* Mobile city carousel */}
@@ -415,7 +417,7 @@ export function HeroSection() {
             <div className="hero-city-track hero-city-track-1">
               {[...cityRow1, ...cityRow1].map((c, i) => (
                 <div key={i} className="hero-city-card">
-                  <img src={c.src} alt={c.name} />
+                  <img src={c.src} alt={c.name} loading="lazy" />
                 </div>
               ))}
             </div>
