@@ -63,7 +63,7 @@ export function SolutionSection() {
               Rushh, lui, n&apos;est jamais occupé.
             </h2>
             <p className="sol-sub">
-              Décroché à la première sonnerie, chaque appel est compris, qualifié, puis transmis à votre agence, prêt à être traité.
+              Rushh est l&apos;agent vocal IA de votre agence immobilière : décroché à la première sonnerie, chaque appel est compris, qualifié, puis transmis à votre équipe, prêt à être traité.
             </p>
             <DemoCTA />
           </div>

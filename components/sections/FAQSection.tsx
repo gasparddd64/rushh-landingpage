@@ -5,6 +5,16 @@ import { DemoCTA } from "@/components/ui/demo-cta";
 
 const FAQ = [
   {
+    q: "Qu'est-ce qu'un agent vocal IA pour une agence immobilière ?",
+    a: "Un agent vocal IA pour agence immobilière est un assistant qui décroche vos appels 24 h/24, qualifie les prospects (acheteurs, vendeurs, locataires), prend les rendez-vous de visite et transmet une fiche complète à votre équipe. Rushh est conçu et paramétré spécifiquement pour les métiers de la transaction, la location et la gestion.",
+    cta: false,
+  },
+  {
+    q: "Quelle différence entre Rushh et un standard téléphonique ou une permanence téléphonique classique ?",
+    a: "Un standard classique fait patienter ou redirige l'appel. Rushh, lui, comprend la demande, qualifie le prospect et transmet une fiche prête à traiter — sans plateau d'appel ni script générique, avec un déploiement adapté à votre agence en 5 jours.",
+    cta: false,
+  },
+  {
     q: "Est-ce que Rushh remplace mon équipe ?",
     a: "Non. Rushh intervient lorsque votre équipe ne peut pas prendre en charge un appel, ou sur les situations que vous choisissez de lui confier. Vous définissez également les cas dans lesquels l'appel doit être transmis à un collaborateur.",
     cta: false,

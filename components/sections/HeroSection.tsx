@@ -374,6 +374,10 @@ export function HeroSection() {
 
       <AuroraBackground showRadialGradient style={{ padding: "200px 24px 40px" }}>
         <div className="hero-inner">
+          <span className="hero-badge">
+            <span className="hero-badge-dot" aria-hidden />
+            Agent vocal IA pour agences immobilières
+          </span>
           <h1 className="hero-title hero-desktop-only">
             Chaque appel reçoit<br />
             une vraie réponse.

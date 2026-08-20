@@ -54,10 +54,47 @@ const localBusinessSchema = {
   "priceRange": "€€€",
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Agent vocal IA pour agence immobilière",
+  "serviceType": "Agent vocal IA immobilier",
+  "description": "Agent vocal IA qui décroche, qualifie et transmet les appels d'une agence immobilière 24 h/24 : prospection, prise de rendez-vous, gestion locative.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rushh",
+    "url": "https://www.rushh.fr",
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "France",
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Agences immobilières",
+  },
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qu'un agent vocal IA pour une agence immobilière ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un agent vocal IA pour agence immobilière est un assistant qui décroche vos appels 24 h/24, qualifie les prospects (acheteurs, vendeurs, locataires), prend les rendez-vous de visite et transmet une fiche complète à votre équipe. Rushh est conçu et paramétré spécifiquement pour les métiers de la transaction, la location et la gestion.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle différence entre Rushh et un standard téléphonique ou une permanence téléphonique classique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un standard classique fait patienter ou redirige l'appel. Rushh, lui, comprend la demande, qualifie le prospect et transmet une fiche prête à traiter — sans plateau d'appel ni script générique, avec un déploiement adapté à votre agence en 5 jours.",
+      },
+    },
     {
       "@type": "Question",
       "name": "Est-ce que Rushh remplace mon équipe ?",
@@ -127,6 +164,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
         type="application/ld+json"
