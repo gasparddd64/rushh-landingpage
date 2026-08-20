@@ -5,7 +5,7 @@ export function DemoCTA({ variant = "blue" }: { variant?: "blue" | "white" }) {
   return (
     <div className="demo-cta-wrap">
       <a
-        href="https://calendly.com/gaspardv/rushh"
+        href="https://calendly.com/gaspard-david/demo"
         target="_blank"
         rel="noopener noreferrer"
         className={`demo-cta-btn ${isWhite ? "demo-cta-btn--white" : ""}`}
@@ -13,7 +13,7 @@ export function DemoCTA({ variant = "blue" }: { variant?: "blue" | "white" }) {
         Réserver ma démo
       </a>
       <a
-        href="https://calendly.com/gaspardv/rushh"
+        href="https://calendly.com/gaspard-david/demo"
         target="_blank"
         rel="noopener noreferrer"
         className={`demo-cta-arrow ${isWhite ? "demo-cta-arrow--white" : ""}`}

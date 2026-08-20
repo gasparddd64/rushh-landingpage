@@ -407,7 +407,7 @@ export function HeroSection() {
               Découvrir Rushh
             </a>
             <a
-              href="https://calendly.com/gaspardv/rushh"
+              href="https://calendly.com/gaspard-david/demo"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-btn-demo hero-cta-equal"

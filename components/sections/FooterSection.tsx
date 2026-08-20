@@ -38,7 +38,7 @@ export function FooterSection() {
             <nav className="footer-links">
               <a href="mailto:hello@rushh.fr">hello@rushh.fr</a>
               <a href="tel:0517948549">05 17 94 85 49</a>
-              <a href="https://calendly.com/gaspardv/rushh" target="_blank" rel="noopener noreferrer">Réserver une démo</a>
+              <a href="https://calendly.com/gaspard-david/demo" target="_blank" rel="noopener noreferrer">Réserver une démo</a>
             </nav>
           </div>
 
