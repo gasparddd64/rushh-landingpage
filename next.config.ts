@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/onboarding",
+        destination: "https://tally.so/r/D46M2Z",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
