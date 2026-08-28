@@ -26,7 +26,7 @@ const ITEMS = [
   {
     icon: <IconShield />,
     title: "Accompagné dans le temps",
-    desc: "Le script évolue avec votre activité. Un ajustement, une correction, une nouvelle règle : ça se fait avec vous.",
+    desc: "Votre Standard évolue avec votre activité. Un ajustement, une correction, une nouvelle règle : ça se fait avec vous.",
   },
 ];
 
