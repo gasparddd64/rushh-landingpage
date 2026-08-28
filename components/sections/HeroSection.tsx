@@ -376,7 +376,7 @@ export function HeroSection() {
         <div className="hero-inner">
           <span className="hero-badge">
             <span className="hero-badge-dot" aria-hidden />
-            Agent vocal IA pour agences immobilières
+            Standard téléphonique pour agences immobilières
           </span>
           <h1 className="hero-title hero-desktop-only">
             Chaque appel reçoit<br />
