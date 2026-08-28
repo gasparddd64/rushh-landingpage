@@ -404,7 +404,7 @@ export function HeroSection() {
               href="#solution"
               className="hero-btn-phone hero-cta-equal"
             >
-              Découvrir le Standard Rushh
+              Découvrir Rushh
             </a>
             <a
               href="https://calendly.com/gaspard-david/demo"

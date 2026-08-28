@@ -82,9 +82,8 @@ export function CompareSection() {
               </div>
               <div style={{ flex: 1 }}>
                 <div className="cmp-card-name cmp-card-name--good">Standard Rushh</div>
-                <div className="cmp-card-sub cmp-card-sub--good">Un standard conçu et suivi pour votre agence</div>
+                <div className="cmp-card-sub cmp-card-sub--good">Rushh conçu et suivi pour votre agence</div>
               </div>
-              <span className="cmp-badge">Service accompagné</span>
             </div>
             <ul className="cmp-list">
               {GOOD_ITEMS.map((item, i) => (

@@ -60,7 +60,7 @@ export function SolutionSection() {
           <div className="sol-layout-text">
             <span className="sol-eyebrow">La réponse</span>
             <h2 className="sol-title">
-              Le Standard Rushh, lui, n&apos;est jamais occupé.
+              Rushh, lui, n&apos;est jamais occupé.
             </h2>
             <p className="sol-sub">
               Le Standard Rushh prend le relais lorsque votre équipe n&apos;est pas disponible. Chaque appel est pris en charge, la demande est comprise et qualifiée, puis les informations utiles sont transmises à votre équipe.

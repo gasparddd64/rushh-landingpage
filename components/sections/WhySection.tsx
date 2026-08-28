@@ -58,7 +58,7 @@ export function WhySection() {
       <div className="wrap">
         <div className="why-grid" style={{ alignItems: "flex-start" }}>
           <div>
-            <span className="section-eyebrow" style={{ marginBottom: 24 }}>Pourquoi le Standard Rushh ?</span>
+            <span className="section-eyebrow" style={{ marginBottom: 24 }}>Pourquoi Rushh ?</span>
             <h2 className="section-title" style={{ textAlign: "left", margin: "16px 0 20px", maxWidth: 520 }}>
               Ce que votre agence gagne dès le premier appel.
             </h2>
