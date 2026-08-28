@@ -383,7 +383,7 @@ export function HeroSection() {
             une vraie réponse.
           </h1>
           <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
-            Rushh décroche, qualifie le prospect et transmet la fiche à votre agence.
+            Le Standard Rushh décroche, qualifie le prospect et transmet la fiche à votre agence.
           </p>
 
           <p className="hero-title hero-mobile-only">
@@ -391,7 +391,7 @@ export function HeroSection() {
             une vraie réponse.
           </p>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
-            Rushh décroche, qualifie le prospect et transmet la fiche à votre agence.
+            Le Standard Rushh décroche, qualifie le prospect et transmet la fiche à votre agence.
           </p>
 
           <motion.div
@@ -404,7 +404,7 @@ export function HeroSection() {
               href="#solution"
               className="hero-btn-phone hero-cta-equal"
             >
-              Découvrir Rushh
+              Découvrir le Standard Rushh
             </a>
             <a
               href="https://calendly.com/gaspard-david/demo"

@@ -84,23 +84,23 @@ const faqSchema = {
       "name": "Qu'est-ce qu'un agent vocal IA pour une agence immobilière ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un agent vocal IA pour agence immobilière est un assistant qui décroche vos appels 24 h/24, qualifie les prospects (acheteurs, vendeurs, locataires), prend les rendez-vous de visite et transmet une fiche complète à votre équipe. Rushh est conçu et paramétré spécifiquement pour les métiers de la transaction, la location et la gestion.",
+        "text": "Un agent vocal IA pour agence immobilière est un assistant qui décroche vos appels 24 h/24, qualifie les prospects (acheteurs, vendeurs, locataires), prend les rendez-vous de visite et transmet une fiche complète à votre équipe. Le Standard Rushh est conçu et paramétré spécifiquement pour les métiers de la transaction, la location et la gestion.",
       },
     },
     {
       "@type": "Question",
-      "name": "Quelle différence entre Rushh et un standard téléphonique ou une permanence téléphonique classique ?",
+      "name": "Quelle différence entre le Standard Rushh et un standard téléphonique ou une permanence téléphonique classique ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un standard classique fait patienter ou redirige l'appel. Rushh, lui, comprend la demande, qualifie le prospect et transmet une fiche prête à traiter — sans plateau d'appel ni script générique, avec un déploiement adapté à votre agence en 5 jours.",
+        "text": "Un standard classique fait patienter ou redirige l'appel. Le Standard Rushh, lui, comprend la demande, qualifie le prospect et transmet une fiche prête à traiter, sans plateau d'appel ni script générique, avec un déploiement adapté à votre agence en 5 jours.",
       },
     },
     {
       "@type": "Question",
-      "name": "Est-ce que Rushh remplace mon équipe ?",
+      "name": "Est-ce que le Standard Rushh remplace mon équipe ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. Rushh intervient lorsque votre équipe ne peut pas prendre en charge un appel, ou sur les situations que vous choisissez de lui confier. Vous définissez également les cas dans lesquels l'appel doit être transmis à un collaborateur.",
+        "text": "Non. Le Standard Rushh intervient lorsque votre équipe ne peut pas prendre en charge un appel, ou sur les situations que vous choisissez de lui confier. Vous définissez également les cas dans lesquels l'appel doit être transmis à un collaborateur.",
       },
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
       "name": "Mes clients vont-ils avoir l'impression de parler à un robot ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C'est précisément pour cette raison que nous préférons vous faire entendre Rushh plutôt que vous demander de nous croire. Chaque déploiement est travaillé pour offrir des échanges naturels et adaptés à votre agence.",
+        "text": "C'est précisément pour cette raison que nous préférons vous faire entendre le Standard Rushh plutôt que vous demander de nous croire. Chaque déploiement est travaillé pour offrir des échanges naturels et adaptés à votre agence.",
       },
     },
     {
@@ -116,7 +116,7 @@ const faqSchema = {
       "name": "Que se passe-t-il si un client veut parler à quelqu'un de l'agence ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Vous définissez vos règles. Selon la situation, Rushh peut transmettre l'appel, recueillir les informations nécessaires ou organiser la suite avec votre équipe.",
+        "text": "Vous définissez vos règles. Selon la situation, le Standard Rushh peut transmettre l'appel, recueillir les informations nécessaires ou organiser la suite avec votre équipe.",
       },
     },
     {
@@ -132,12 +132,12 @@ const faqSchema = {
       "name": "Est-ce à nous de configurer et maintenir le système ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. C'est justement la différence entre Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre standard téléphonique avec vous.",
+        "text": "Non. C'est justement la différence entre le Standard Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre standard téléphonique avec vous.",
       },
     },
     {
       "@type": "Question",
-      "name": "Combien de temps faut-il pour déployer Rushh ?",
+      "name": "Combien de temps faut-il pour déployer le Standard Rushh ?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "La mise en production cible est réalisée sous 5 jours ouvrés après réception de l'ensemble des éléments nécessaires au déploiement.",

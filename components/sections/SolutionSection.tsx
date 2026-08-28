@@ -25,7 +25,7 @@ const CARDS = [
   {
     icon: <IconChat />,
     title: "Besoin compris",
-    desc: "Rushh identifie en quelques échanges la nature précise de la demande.",
+    desc: "Le Standard Rushh identifie en quelques échanges la nature précise de la demande.",
     featured: true,
   },
   {
@@ -37,7 +37,7 @@ const CARDS = [
   {
     icon: <IconCalendarI />,
     title: "Action engagée",
-    desc: "Rushh propose un rendez-vous ou transmet un message.",
+    desc: "Le Standard Rushh propose un rendez-vous ou transmet un message.",
     featured: false,
   },
   {
@@ -60,7 +60,7 @@ export function SolutionSection() {
           <div className="sol-layout-text">
             <span className="sol-eyebrow">La réponse</span>
             <h2 className="sol-title">
-              Rushh, lui, n&apos;est jamais occupé.
+              Le Standard Rushh, lui, n&apos;est jamais occupé.
             </h2>
             <p className="sol-sub">
               Le Standard Rushh prend le relais lorsque votre équipe n&apos;est pas disponible. Chaque appel est pris en charge, la demande est comprise et qualifiée, puis les informations utiles sont transmises à votre équipe.

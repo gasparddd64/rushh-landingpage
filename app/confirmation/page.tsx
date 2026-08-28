@@ -5,7 +5,7 @@ import { BookingAnalytics } from "@/components/confirmation/BookingAnalytics";
 
 export const metadata: Metadata = {
   title: "Confirmation de rendez-vous | Rushh",
-  description: "Votre démonstration Rushh est confirmée.",
+  description: "Votre démonstration du Standard Rushh est confirmée.",
   robots: {
     index: false,
     follow: false,
@@ -47,7 +47,7 @@ export default async function ConfirmationPage({
       </svg>
 
       <div className="conf-topbar">
-        <a href="/" className="conf-brand" aria-label="Rushh — retour à l'accueil">
+        <a href="/" className="conf-brand" aria-label="Rushh, retour à l'accueil">
           <img src="/logo-rushh-icon.png" alt="" className="conf-brand-logo" />
           <span>Rushh</span>
         </a>
@@ -61,7 +61,7 @@ export default async function ConfirmationPage({
 
         <h1 className="conf-title">{title}</h1>
 
-        <p className="conf-subtitle">Votre démonstration Rushh est confirmée.</p>
+        <p className="conf-subtitle">Votre démonstration du Standard Rushh est confirmée.</p>
 
         {cardDateLabel && (
           <div className="conf-card">

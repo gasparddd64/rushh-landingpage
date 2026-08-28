@@ -24,7 +24,7 @@ export function ProblemSection() {
     },
     {
       title: "Hors horaires",
-      desc: "20h, le week-end, l'agence est fermée — mais les recherches immobilières, elles, ne s'arrêtent jamais.",
+      desc: "20h, le week-end, l'agence est fermée, mais les recherches immobilières, elles, ne s'arrêtent jamais.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
@@ -54,7 +54,7 @@ export function ProblemSection() {
         <div className="section-head">
           <span className="section-eyebrow">Le problème</span>
           <h2 className="section-title">Le téléphone ne sait pas<br />que vous êtes occupé.</h2>
-          <p className="section-sub">Une visite, un rendez-vous, un appel déjà en cours — et pendant ce temps, un prospect essaie de vous joindre.</p>
+          <p className="section-sub">Une visite, un rendez-vous, un appel déjà en cours. Pendant ce temps, un prospect essaie de vous joindre.</p>
         </div>
         <div className="problem-strip">
           {cards.map((c, i) => (

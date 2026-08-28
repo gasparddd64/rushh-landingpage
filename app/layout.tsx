@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "Agent vocal IA pour agence immobilière | Rushh",
-  description: "Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24. Standard téléphonique intelligent conçu et déployé pour votre agence en 5 jours.",
+  description: "Le Standard Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24, conçu et déployé pour votre agence en 5 jours.",
   keywords: [
     "agent vocal agence immo",
     "agent vocal IA agence immobilière",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Agent vocal IA pour agence immobilière | Rushh",
-    description: "Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24. Standard téléphonique intelligent conçu et déployé pour votre agence en 5 jours.",
+    description: "Le Standard Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24, conçu et déployé pour votre agence en 5 jours.",
     url: "https://www.rushh.fr",
     siteName: "Rushh",
     locale: "fr_FR",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Agent vocal IA pour agence immobilière | Rushh",
-    description: "Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24. Standard téléphonique intelligent conçu et déployé pour votre agence en 5 jours.",
+    description: "Le Standard Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24, conçu et déployé pour votre agence en 5 jours.",
   },
   alternates: {
     canonical: "https://www.rushh.fr",

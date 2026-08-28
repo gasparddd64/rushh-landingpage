@@ -21,7 +21,7 @@ export function IntegrationsSection() {
           <div className="integ-header">
             <h2 className="integ-title">Compatible avec vos outils.</h2>
             <p className="integ-sub">
-              Rushh se connecte à votre agenda et vos outils existants — aucun changement de votre côté.
+              Le Standard Rushh se connecte à votre agenda et vos outils existants. Aucun changement de votre côté.
             </p>
           </div>
 

@@ -16,12 +16,12 @@ const ITEMS = [
   {
     icon: <SparklesIcon size={20} />,
     title: "Conçu pour votre agence",
-    desc: "Chaque script est écrit pour votre façon de travailler. Transaction, location, gestion : Rushh s'adapte à vos métiers, pas le contraire.",
+    desc: "Chaque script est écrit pour votre façon de travailler. Transaction, location, gestion : le Standard Rushh s'adapte à vos métiers, pas le contraire.",
   },
   {
     icon: <LightningIcon size={20} />,
     title: "Déployé pour vous",
-    desc: "Aucune configuration technique de votre côté. Rushh se connecte à votre agenda et vos outils, mis en service en 5 jours ouvrés.",
+    desc: "Aucune configuration technique de votre côté. Le Standard Rushh se connecte à votre agenda et vos outils, mis en service en 5 jours ouvrés.",
   },
   {
     icon: <IconShield />,
@@ -58,7 +58,7 @@ export function WhySection() {
       <div className="wrap">
         <div className="why-grid" style={{ alignItems: "flex-start" }}>
           <div>
-            <span className="section-eyebrow" style={{ marginBottom: 24 }}>Pourquoi Rushh ?</span>
+            <span className="section-eyebrow" style={{ marginBottom: 24 }}>Pourquoi le Standard Rushh ?</span>
             <h2 className="section-title" style={{ textAlign: "left", margin: "16px 0 20px", maxWidth: 520 }}>
               Ce que votre agence gagne dès le premier appel.
             </h2>

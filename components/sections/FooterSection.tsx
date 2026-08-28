@@ -26,7 +26,7 @@ export function FooterSection() {
             <h3 className="footer-col-title">Navigation</h3>
             <nav className="footer-links">
               <a href="#solution">Comment ça marche</a>
-              <a href="#why">Pourquoi Rushh</a>
+              <a href="#why">Pourquoi le Standard Rushh</a>
               <a href="#faq">FAQ</a>
               <a href="#testimonials">Témoignages</a>
             </nav>

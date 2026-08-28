@@ -14,14 +14,14 @@ export function CTASection() {
               Combien d&apos;appels avez-vous manqués cette semaine ?
             </h2>
             <p className="cta-kz-desc">
-              Un seul appel raté peut coûter un mandat. Rushh décroche chaque appel, qualifie vos prospects et vous transmet une fiche complète — 24h/24, 7j/7.
+              Un seul appel raté peut coûter un mandat. Le Standard Rushh décroche chaque appel, qualifie vos prospects et vous transmet une fiche complète, 24h/24, 7j/7.
             </p>
             <DemoCTA />
           </div>
 
           {/* Right: photo */}
           <div className="cta-kz-photo">
-            <img src="/cta-haussmann.jpg" alt="Immeuble haussmannien Paris — agence immobilière" loading="lazy" />
+            <img src="/cta-haussmann.jpg" alt="Immeuble haussmannien Paris, agence immobilière" loading="lazy" />
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { DemoCTA } from "@/components/ui/demo-cta";
 
 const NAV_LINKS = [
   { label: "Comment ça marche", href: "#solution" },
-  { label: "Pourquoi Rushh",    href: "#why" },
+  { label: "Pourquoi le Standard Rushh", href: "#why" },
   { label: "Témoignages",       href: "#testimonials" },
   { label: "FAQ",               href: "#faq" },
 ];

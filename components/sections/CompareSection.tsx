@@ -15,7 +15,7 @@ const GOOD_ITEMS = [
   "Analyse de votre fonctionnement et de vos besoins",
   "Parcours d'appels conçus selon vos cas réels",
   "Connexion à votre environnement lorsqu'il est compatible",
-  "Un interlocuteur Rushh vous accompagne",
+  "Un interlocuteur du Standard Rushh vous accompagne",
   "Le standard évolue avec les besoins de votre agence",
   "Vous obtenez un standard prêt à travailler pour votre agence",
 ];
@@ -41,13 +41,13 @@ export function CompareSection() {
       <div className="wrap">
         {/* Header */}
         <div className="section-head">
-          <span className="section-eyebrow">Rushh n&apos;est pas un logiciel</span>
+          <span className="section-eyebrow">Le Standard Rushh n&apos;est pas un logiciel</span>
           <h2 className="section-title">
             Une équipe à vos côtés.<br />
             Pas un outil générique à configurer.
           </h2>
           <p className="section-sub" style={{ maxWidth: 520 }}>
-            Rushh conçoit, déploie et fait évoluer votre standard selon le fonctionnement réel de votre agence.
+            Notre équipe conçoit, déploie et fait évoluer votre Standard Rushh selon le fonctionnement réel de votre agence.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export function CompareSection() {
                 <IconRushh />
               </div>
               <div style={{ flex: 1 }}>
-                <div className="cmp-card-name cmp-card-name--good">Rushh</div>
+                <div className="cmp-card-name cmp-card-name--good">Standard Rushh</div>
                 <div className="cmp-card-sub cmp-card-sub--good">Un standard conçu et suivi pour votre agence</div>
               </div>
               <span className="cmp-badge">Service accompagné</span>
@@ -99,7 +99,7 @@ export function CompareSection() {
               ))}
             </ul>
             <div className="cmp-footer cmp-footer--desktop">
-              Conçu avec vous · Déployé par Rushh · Suivi dans le temps
+              Conçu avec vous · Déployé par l&apos;équipe Rushh · Suivi dans le temps
             </div>
             <div className="cmp-footer--mobile">
               <DemoCTA />
@@ -111,7 +111,7 @@ export function CompareSection() {
         <div className="cmp-ctas">
           <DemoCTA />
           <a href="#solution" className="cmp-cta-link">
-            Voir comment Rushh fonctionne →
+            Voir comment le Standard Rushh fonctionne →
           </a>
         </div>
       </div>
