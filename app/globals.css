@@ -775,13 +775,13 @@ body { overflow-x: hidden; }
   margin-top: 24px;
   background: var(--accent-soft);
   border-radius: 10px;
-  padding: 12px 16px;
-  font-size: 12px;
+  padding: 12px 10px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--accent);
   text-align: center;
-  letter-spacing: 0.01em;
-  white-space: normal;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 
 /* CTAs */
