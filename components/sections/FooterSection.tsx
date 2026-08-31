@@ -64,6 +64,7 @@ export function FooterSection() {
         <div className="footer-bottom">
           <span>Données hébergées en France · Conforme RGPD</span>
           <nav className="footer-legal">
+            <Link href="/cgv">CGV</Link>
           </nav>
         </div>
       </div>
