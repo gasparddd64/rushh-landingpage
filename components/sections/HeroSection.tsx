@@ -381,11 +381,11 @@ export function HeroSection() {
               </span>
 
               <h1 className="hero-title-v2">
-                Chaque appel mérite une prise en charge <em>à la hauteur de votre agence.</em>
+                Chaque appel mérite réponse <em>à la hauteur de votre agence.</em>
               </h1>
 
               <p className="hero-subtitle-v2">
-                Rushh prend le relais lorsque votre équipe est occupée, indisponible ou déjà en ligne. Chaque demande est accueillie, comprise et transmise selon votre fonctionnement.
+                Rushh prend le relais quand votre équipe n&apos;est pas disponible. Chaque appel est compris et traité selon vos règles.
               </p>
 
               <div className="hero-cta-group">
@@ -443,6 +443,10 @@ export function HeroSection() {
 
           <div className="hero-info-strip hero-desktop-only">
             <div className="hero-info-col">
+              <p className="hero-info-line">Votre métier : l&apos;immobilier.</p>
+              <p className="hero-info-line hero-info-line-strong">Le nôtre : garder le lien.</p>
+            </div>
+            <div className="hero-info-col">
               <p className="hero-info-title">Toujours disponible</p>
               <p className="hero-info-sub">Même quand votre équipe ne l&apos;est pas</p>
             </div>
@@ -463,11 +467,11 @@ export function HeroSection() {
           </span>
 
           <p className="hero-title hero-mobile-only">
-            Chaque appel mérite une prise en charge<br />
+            Chaque appel mérite réponse<br />
             à la hauteur de votre agence.
           </p>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
-            Rushh prend le relais lorsque votre équipe est occupée, indisponible ou déjà en ligne. Chaque demande est accueillie, comprise et transmise selon votre fonctionnement.
+            Rushh prend le relais quand votre équipe n&apos;est pas disponible. Chaque appel est compris et traité selon vos règles.
           </p>
 
           <motion.div
