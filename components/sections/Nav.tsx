@@ -4,10 +4,10 @@ import { useState } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 const NAV_LINKS = [
-  { label: "Comment ça marche", href: "#solution" },
-  { label: "Pourquoi le Standard Rushh", href: "#why" },
-  { label: "Témoignages",       href: "#testimonials" },
-  { label: "FAQ",               href: "#faq" },
+  { label: "L'expérience Rushh", href: "#solution" },
+  { label: "Notre différence", href: "#why" },
+  { label: "Nos clients", href: "#testimonials" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function Nav() {

@@ -18,7 +18,7 @@ export function ProblemSection() {
   ];
 
   return (
-    <section className="section-pad" id="problem" style={{ position: "relative", zIndex: 10, paddingTop: 160 }}>
+    <section className="section-pad" id="problem" style={{ position: "relative", zIndex: 10, paddingTop: 200 }}>
       <div className="wrap">
         <div className="problem-v2-head">
           <span className="section-eyebrow">Le quotidien d&apos;une agence</span>
