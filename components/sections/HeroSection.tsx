@@ -416,6 +416,46 @@ export function HeroSection() {
             </a>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", bounce: 0.3, duration: 1.2, delay: 0.95 }}
+            className="hero-trust"
+          >
+            <span className="hero-trust-item">
+              <svg className="hero-trust-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span className="hero-trust-text">
+                Pensé pour votre agence <span className="hero-trust-sep">·</span> Déployé par notre équipe
+              </span>
+            </span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", bounce: 0.25, duration: 1.2, delay: 1.1 }}
+            className="hero-info-strip"
+          >
+            <div className="hero-info-col hero-info-col-metier">
+              <p className="hero-info-line">Votre métier : l&apos;immobilier.</p>
+              <p className="hero-info-line hero-info-line-strong">Le nôtre : garder le lien.</p>
+            </div>
+            <div className="hero-info-col">
+              <p className="hero-info-title">24h/24</p>
+              <p className="hero-info-sub">Un accueil disponible</p>
+            </div>
+            <div className="hero-info-col">
+              <p className="hero-info-title">Sur mesure</p>
+              <p className="hero-info-sub">Votre ton, vos consignes</p>
+            </div>
+            <div className="hero-info-col">
+              <p className="hero-info-title">Une équipe</p>
+              <p className="hero-info-sub">À vos côtés dans la durée</p>
+            </div>
+          </motion.div>
+
           {/* Mobile city carousel */}
           <div className="hero-city-carousel">
             <div className="hero-city-track hero-city-track-1">
