@@ -9,14 +9,14 @@ export function CTASection() {
         <div className="cta-kz-grid">
           {/* Left: card */}
           <div className="cta-kz-card">
-            <span className="cta-kz-eyebrow">Ne ratez plus d&apos;appels</span>
+            <span className="cta-kz-eyebrow">Passez à Rushh</span>
             <h2 className="cta-kz-title">
-              Combien d&apos;appels avez-vous manqués cette semaine ?
+              Et si votre prochain appel était déjà pris en charge ?
             </h2>
             <p className="cta-kz-desc">
-              Un seul appel raté peut coûter un mandat. Le Standard Rushh décroche chaque appel, qualifie vos prospects et vous transmet une fiche complète, 24h/24, 7j/7.
+              Voyons ensemble comment Rushh s&apos;adapterait à votre agence, à vos métiers et à votre façon de travailler.
             </p>
-            <DemoCTA />
+            <DemoCTA label="Réserver un échange" />
           </div>
 
           {/* Right: photo */}

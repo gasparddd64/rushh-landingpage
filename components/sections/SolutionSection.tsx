@@ -25,25 +25,25 @@ const CARDS = [
   {
     icon: <IconChat />,
     title: "Besoin compris",
-    desc: "Le Standard Rushh identifie en quelques échanges la nature précise de la demande.",
+    desc: "Rushh identifie la raison de l'appel et comprend la situation.",
     featured: true,
   },
   {
     icon: <IconList />,
-    title: "Prospect qualifié",
-    desc: "Les informations clés sont collectées une à une.",
+    title: "Informations recueillies",
+    desc: "Les éléments utiles à votre équipe sont collectés au fil de l'échange.",
     featured: false,
   },
   {
     icon: <IconCalendarI />,
-    title: "Action engagée",
-    desc: "Le Standard Rushh propose un rendez-vous ou transmet un message.",
+    title: "Action adaptée",
+    desc: "Rendez-vous, transfert ou message, selon vos règles.",
     featured: false,
   },
   {
     icon: <IconFile />,
-    title: "Fiche transmise",
-    desc: "Votre équipe reçoit une fiche complète, prête à traiter.",
+    title: "Équipe informée",
+    desc: "Votre équipe reçoit le contexte utile pour reprendre la demande.",
     featured: false,
   },
 ];
@@ -63,9 +63,9 @@ export function SolutionSection() {
               Rushh, lui, n&apos;est jamais occupé.
             </h2>
             <p className="sol-sub">
-              Le Standard Rushh prend le relais lorsque votre équipe n&apos;est pas disponible. Chaque appel est pris en charge, la demande est comprise et qualifiée, puis les informations utiles sont transmises à votre équipe.
+              Lorsque votre équipe n&apos;est pas disponible, Rushh prend le relais. Il accueille l&apos;appel, comprend la demande et recueille les informations utiles avant de donner la suite prévue avec votre agence.
             </p>
-            <DemoCTA />
+            <DemoCTA label="Réserver un échange" />
           </div>
 
           {/* Right: 2×2 grid */}

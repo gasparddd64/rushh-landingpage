@@ -3,21 +3,19 @@
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 const BAD_ITEMS = [
-  "Templates génériques",
-  "Scénarios à créer vous-même",
-  "Intégrations à mettre en place",
-  "À vous de diagnostiquer les problèmes",
-  "À vous de reconfigurer chaque évolution",
-  "Vous achetez un outil",
+  "Paramétrer l'outil",
+  "Construire vos scénarios",
+  "Tester les parcours",
+  "Corriger les problèmes",
+  "Maintenir le système",
 ];
 
 const GOOD_ITEMS = [
-  "Analyse de votre fonctionnement et de vos besoins",
-  "Parcours d'appels conçus selon vos cas réels",
-  "Connexion à votre environnement lorsqu'il est compatible",
-  "Un interlocuteur du Standard Rushh vous accompagne",
-  "Le standard évolue avec les besoins de votre agence",
-  "Vous obtenez un standard prêt à travailler pour votre agence",
+  "Nous étudions votre fonctionnement",
+  "Nous préparons vos parcours d'appels",
+  "Nous testons avant la mise en service",
+  "Nous suivons son fonctionnement",
+  "Nous l'adaptons avec votre agence",
 ];
 
 function IconDashboard() {
@@ -61,7 +59,7 @@ export function CompareSection() {
               </div>
               <div>
                 <div className="cmp-card-name">Logiciel classique</div>
-                <div className="cmp-card-sub">Un outil à paramétrer et maintenir</div>
+                <div className="cmp-card-sub">À vous de le faire fonctionner</div>
               </div>
             </div>
             <ul className="cmp-list">
@@ -82,7 +80,7 @@ export function CompareSection() {
               </div>
               <div style={{ flex: 1 }}>
                 <div className="cmp-card-name cmp-card-name--good">Standard Rushh</div>
-                <div className="cmp-card-sub cmp-card-sub--good">Rushh conçu et suivi pour votre agence</div>
+                <div className="cmp-card-sub cmp-card-sub--good">Nous le faisons fonctionner pour vous</div>
               </div>
             </div>
             <ul className="cmp-list">
@@ -98,20 +96,17 @@ export function CompareSection() {
               ))}
             </ul>
             <div className="cmp-footer cmp-footer--desktop">
-              Conçu avec vous · Déployé par l&apos;équipe Rushh · Suivi dans le temps
+              Conçu avec vous · Déployé par Rushh · Suivi dans le temps
             </div>
             <div className="cmp-footer--mobile">
-              <DemoCTA />
+              <DemoCTA label="Réserver un échange" />
             </div>
           </div>
         </div>
 
         {/* CTAs */}
         <div className="cmp-ctas">
-          <DemoCTA />
-          <a href="#solution" className="cmp-cta-link">
-            Voir comment le Standard Rushh fonctionne →
-          </a>
+          <DemoCTA label="Réserver un échange" />
         </div>
       </div>
     </section>

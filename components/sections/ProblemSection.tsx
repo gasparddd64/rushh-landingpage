@@ -3,17 +3,17 @@ export function ProblemSection() {
     {
       num: "01",
       title: "En visite",
-      desc: "Votre attention appartient au client en face de vous.",
+      desc: "Votre attention est avec le client en face de vous.",
     },
     {
       num: "02",
       title: "Déjà en ligne",
-      desc: "Un nouvel appel arrive. Votre équipe est déjà mobilisée.",
+      desc: "Votre équipe échange déjà. Un autre appel arrive.",
     },
     {
       num: "03",
       title: "Après la fermeture",
-      desc: "Les projets immobiliers continuent après vos horaires.",
+      desc: "Vos clients continuent de vous appeler après vos horaires.",
     },
   ];
 
@@ -23,8 +23,7 @@ export function ProblemSection() {
         <div className="problem-v2-head">
           <span className="section-eyebrow">Le quotidien d&apos;une agence</span>
           <h2 className="section-title problem-v2-title">
-            Vous êtes sur le terrain.<br />
-            Le téléphone, lui, continue.
+            Vous êtes avec vos clients. Les appels, eux, n&apos;attendent pas.
           </h2>
         </div>
 
@@ -38,8 +37,8 @@ export function ProblemSection() {
           ))}
           <div className="problem-v2-card problem-v2-card--highlight">
             <span className="problem-v2-num problem-v2-num--highlight">Le relais Rushh</span>
-            <h3 className="problem-v2-card-title problem-v2-card-title--highlight">Le contact est pris.</h3>
-            <p className="problem-v2-card-desc problem-v2-card-desc--highlight">Un accueil, un projet compris, une suite à donner.</p>
+            <h3 className="problem-v2-card-title problem-v2-card-title--highlight">L&apos;appel trouve une réponse.</h3>
+            <p className="problem-v2-card-desc problem-v2-card-desc--highlight">La demande est comprise, les informations utiles sont recueillies et votre équipe sait quoi reprendre.</p>
           </div>
         </div>
       </div>

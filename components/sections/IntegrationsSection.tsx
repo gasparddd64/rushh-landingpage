@@ -21,7 +21,7 @@ export function IntegrationsSection() {
           <div className="integ-header">
             <h2 className="integ-title">Compatible avec vos outils.</h2>
             <p className="integ-sub">
-              Le Standard Rushh se connecte à votre agenda et vos outils existants. Aucun changement de votre côté.
+              Rushh s&apos;intègre à votre environnement pour s&apos;inscrire dans le fonctionnement de votre agence.
             </p>
           </div>
 
@@ -40,7 +40,7 @@ export function IntegrationsSection() {
             </div>
           </div>
 
-          <p className="integ-note">Et bien d&apos;autres, selon la compatibilité technique de votre outil.</p>
+          <p className="integ-note">Votre outil n&apos;est pas dans la liste ? Parlez-nous de votre environnement lors de l&apos;échange.</p>
         </div>
       </div>
     </section>

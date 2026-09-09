@@ -381,13 +381,11 @@ export function HeroSection() {
               </span>
 
               <h1 className="hero-title-v2">
-                Vos futurs mandats méritent une <em>vraie réponse.</em>
+                Chaque appel mérite une prise en charge <em>à la hauteur de votre agence.</em>
               </h1>
 
               <p className="hero-subtitle-v2">
-                En visite, en rendez-vous ou après la fermeture.<br />
-                Rushh prend vos appels et qualifie les projets.<br />
-                Votre équipe reprend la relation.
+                Rushh prend le relais lorsque votre équipe est occupée, indisponible ou déjà en ligne. Chaque demande est accueillie, comprise et transmise selon votre fonctionnement.
               </p>
 
               <div className="hero-cta-group">
@@ -406,7 +404,7 @@ export function HeroSection() {
                     rel="noopener noreferrer"
                     className="hero-btn-demo hero-cta-equal"
                   >
-                    Réserver ma démo
+                    Réserver un échange
                   </a>
                 </motion.div>
 
@@ -421,7 +419,7 @@ export function HeroSection() {
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <span className="hero-trust-text">
-                      Pensé pour votre agence <span className="hero-trust-sep">·</span> Déployé par notre équipe
+                      Pensé pour l&apos;immobilier <span className="hero-trust-sep">·</span> Adapté à votre organisation <span className="hero-trust-sep">·</span> Déployé par Rushh
                     </span>
                   </span>
                 </motion.div>
@@ -444,21 +442,17 @@ export function HeroSection() {
           </div>
 
           <div className="hero-info-strip hero-desktop-only">
-            <div className="hero-info-col hero-info-col-metier">
-              <p className="hero-info-line">Votre métier : l&apos;immobilier.</p>
-              <p className="hero-info-line hero-info-line-strong">Le nôtre : garder le lien.</p>
+            <div className="hero-info-col">
+              <p className="hero-info-title">Toujours disponible</p>
+              <p className="hero-info-sub">Même quand votre équipe ne l&apos;est pas</p>
             </div>
             <div className="hero-info-col">
-              <p className="hero-info-title">24h/24</p>
-              <p className="hero-info-sub">Un accueil disponible</p>
+              <p className="hero-info-title">Selon vos règles</p>
+              <p className="hero-info-sub">Votre fonctionnement reste le vôtre</p>
             </div>
             <div className="hero-info-col">
-              <p className="hero-info-title">Sur mesure</p>
-              <p className="hero-info-sub">Votre ton, vos consignes</p>
-            </div>
-            <div className="hero-info-col">
-              <p className="hero-info-title">Une équipe</p>
-              <p className="hero-info-sub">À vos côtés dans la durée</p>
+              <p className="hero-info-title">Prêt à reprendre</p>
+              <p className="hero-info-sub">Chaque demande arrive avec son contexte</p>
             </div>
           </div>
 
@@ -469,11 +463,11 @@ export function HeroSection() {
           </span>
 
           <p className="hero-title hero-mobile-only">
-            Chaque appel reçoit<br />
-            une vraie réponse.
+            Chaque appel mérite une prise en charge<br />
+            à la hauteur de votre agence.
           </p>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
-            Le Standard Rushh décroche, qualifie le prospect et transmet la fiche à votre agence.
+            Rushh prend le relais lorsque votre équipe est occupée, indisponible ou déjà en ligne. Chaque demande est accueillie, comprise et transmise selon votre fonctionnement.
           </p>
 
           <motion.div
@@ -494,7 +488,7 @@ export function HeroSection() {
               rel="noopener noreferrer"
               className="hero-btn-demo hero-cta-equal"
             >
-              Réserver ma démo
+              Réserver un échange
             </a>
           </motion.div>
 
@@ -509,7 +503,7 @@ export function HeroSection() {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               <span className="hero-trust-text">
-                Pensé pour votre agence <span className="hero-trust-sep">·</span> Déployé par notre équipe
+                Pensé pour l&apos;immobilier <span className="hero-trust-sep">·</span> Adapté à votre organisation <span className="hero-trust-sep">·</span> Déployé par Rushh
               </span>
             </span>
           </motion.div>
