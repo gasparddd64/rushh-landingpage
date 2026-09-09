@@ -1282,11 +1282,21 @@ body { overflow-x: hidden; }
 
 .hero-desktop-only { display: block; }
 .hero-mobile-only { display: none; }
+/* Compound selectors (higher specificity than any single-class component
+   rule) so these reliably hide regardless of where the component's own
+   display rule sits in the file. */
+.hero-badge.hero-mobile-only,
+.hero-title.hero-mobile-only,
+.hero-subtitle.hero-mobile-only,
+.hero-ctas.hero-mobile-only,
+.hero-trust.hero-mobile-only {
+  display: none;
+}
 
 /* ---------- HERO v2 — two-column desktop layout ---------- */
 .hero-section-v2 { padding-bottom: 240px; }
 .hero-grid-v2 {
-  display: grid;
+  display: grid !important;
   grid-template-columns: 1.15fr 1fr;
   align-items: center;
   gap: 56px;
@@ -1335,7 +1345,7 @@ body { overflow-x: hidden; }
 
 /* Info strip — "Votre métier / 24h/24 / Sur mesure / Une équipe" */
 .hero-info-strip {
-  display: flex;
+  display: flex !important;
   align-items: stretch;
   justify-content: center;
   gap: 0;
@@ -3188,6 +3198,20 @@ section { position: relative; }
   .hero-inner { padding: 0 16px; box-sizing: border-box; max-width: 100%; }
   .hero-desktop-only { display: none; }
   .hero-mobile-only { display: block; text-align: center; }
+  /* Reliably hide the desktop grid/strip (their own rules use !important
+     for display:grid/flex, so this must match both !important and a
+     higher specificity to win). */
+  .hero-grid-v2.hero-desktop-only,
+  .hero-info-strip.hero-desktop-only {
+    display: none !important;
+  }
+  /* Restore each mobile component's real display type — beats the base
+     compound "none" rule via matching specificity + later source order. */
+  .hero-badge.hero-mobile-only { display: inline-flex; }
+  .hero-title.hero-mobile-only,
+  .hero-subtitle.hero-mobile-only { display: block; }
+  .hero-ctas.hero-mobile-only,
+  .hero-trust.hero-mobile-only { display: flex; }
   .hero-bg-full { display: none; }
   .hero-bg-overlay { display: none; }
   .hero-title { font-size: clamp(24px, 6.5vw, 34px); text-align: center; word-wrap: break-word; }
