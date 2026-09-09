@@ -390,40 +390,42 @@ export function HeroSection() {
                 Votre équipe reprend la relation.
               </p>
 
-              <motion.div
-                initial={{ opacity: 0, filter: "blur(12px)", y: 12 }}
-                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                transition={{ type: "spring", bounce: 0.3, duration: 1.5, delay: 0.75 }}
-                className="hero-ctas"
-              >
-                <a href="#solution" className="hero-btn-phone hero-cta-equal">
-                  Découvrir Rushh
-                </a>
-                <a
-                  href="https://calendly.com/gaspard-david/demo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hero-btn-demo hero-cta-equal"
+              <div className="hero-cta-group">
+                <motion.div
+                  initial={{ opacity: 0, filter: "blur(12px)", y: 12 }}
+                  animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                  transition={{ type: "spring", bounce: 0.3, duration: 1.5, delay: 0.75 }}
+                  className="hero-ctas"
                 >
-                  Réserver ma démo
-                </a>
-              </motion.div>
+                  <a href="#solution" className="hero-btn-phone hero-cta-equal">
+                    Découvrir Rushh
+                  </a>
+                  <a
+                    href="https://calendly.com/gaspard-david/demo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hero-btn-demo hero-cta-equal"
+                  >
+                    Réserver ma démo
+                  </a>
+                </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ type: "spring", bounce: 0.3, duration: 1.2, delay: 0.95 }}
-                className="hero-trust"
-              >
-                <span className="hero-trust-item">
-                  <svg className="hero-trust-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span className="hero-trust-text">
-                    Pensé pour votre agence <span className="hero-trust-sep">·</span> Déployé par notre équipe
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ type: "spring", bounce: 0.3, duration: 1.2, delay: 0.95 }}
+                  className="hero-trust"
+                >
+                  <span className="hero-trust-item">
+                    <svg className="hero-trust-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span className="hero-trust-text">
+                      Pensé pour votre agence <span className="hero-trust-sep">·</span> Déployé par notre équipe
+                    </span>
                   </span>
-                </span>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
 
             <motion.div
