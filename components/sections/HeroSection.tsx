@@ -381,7 +381,7 @@ export function HeroSection() {
               </span>
 
               <h1 className="hero-title-v2">
-                Vos futurs mandats méritent une <em>nouvelle réponse.</em>
+                Vos futurs mandats méritent une <em>vraie réponse.</em>
               </h1>
 
               <p className="hero-subtitle-v2">
