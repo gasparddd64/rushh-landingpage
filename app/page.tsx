@@ -81,14 +81,6 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu'est-ce qu'un agent vocal IA pour une agence immobilière ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un agent vocal IA pour agence immobilière est un assistant qui décroche vos appels 24 h/24, qualifie les prospects (acheteurs, vendeurs, locataires), prend les rendez-vous de visite et transmet une fiche complète à votre équipe. Le Standard Rushh est conçu et paramétré spécifiquement pour les métiers de la transaction, la location et la gestion.",
-      },
-    },
-    {
-      "@type": "Question",
       "name": "Quelle différence entre le Standard Rushh et un standard téléphonique ou une permanence téléphonique classique ?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -105,26 +97,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Mes clients vont-ils avoir l'impression de parler à un robot ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "C'est précisément pour cette raison que nous préférons vous faire entendre le Standard Rushh plutôt que vous demander de nous croire. Chaque déploiement est travaillé pour offrir des échanges naturels et adaptés à votre agence.",
-      },
-    },
-    {
-      "@type": "Question",
       "name": "Que se passe-t-il si un client veut parler à quelqu'un de l'agence ?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Vous définissez vos règles. Selon la situation, le Standard Rushh peut transmettre l'appel, recueillir les informations nécessaires ou organiser la suite avec votre équipe.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Dois-je changer mon numéro de téléphone ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pas nécessairement. Nous étudions votre installation actuelle et définissons avec vous la configuration adaptée avant le déploiement.",
       },
     },
     {
@@ -141,14 +117,6 @@ const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "La mise en production cible est réalisée sous 5 jours ouvrés après réception de l'ensemble des éléments nécessaires au déploiement.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Combien ça coûte ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le tarif dépend du volume d'appels de votre agence et de la configuration retenue. Nous en discutons lors de la démonstration, après avoir compris votre fonctionnement.",
       },
     },
   ],

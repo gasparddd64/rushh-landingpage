@@ -5,11 +5,6 @@ import { DemoCTA } from "@/components/ui/demo-cta";
 
 const FAQ = [
   {
-    q: "Qu'est-ce qu'un agent vocal IA pour une agence immobilière ?",
-    a: "Un agent vocal IA pour agence immobilière est un assistant qui décroche vos appels 24 h/24, qualifie les prospects (acheteurs, vendeurs, locataires), prend les rendez-vous de visite et transmet une fiche complète à votre équipe. Le Standard Rushh est conçu et paramétré spécifiquement pour les métiers de la transaction, la location et la gestion.",
-    cta: false,
-  },
-  {
     q: "Quelle différence entre le Standard Rushh et un standard téléphonique ou une permanence téléphonique classique ?",
     a: "Un standard classique fait patienter ou redirige l'appel. Le Standard Rushh, lui, comprend la demande, qualifie le prospect et transmet une fiche prête à traiter, sans plateau d'appel ni script générique, avec un déploiement adapté à votre agence en 5 jours.",
     cta: false,
@@ -20,18 +15,8 @@ const FAQ = [
     cta: false,
   },
   {
-    q: "Mes clients vont-ils avoir l'impression de parler à un robot ?",
-    a: "C'est précisément pour cette raison que nous préférons vous faire entendre le Standard Rushh plutôt que vous demander de nous croire. Chaque déploiement est travaillé pour offrir des échanges naturels et adaptés à votre agence.",
-    cta: true,
-  },
-  {
     q: "Que se passe-t-il si un client veut parler à quelqu'un de l'agence ?",
     a: "Vous définissez vos règles. Selon la situation, le Standard Rushh peut transmettre l'appel, recueillir les informations nécessaires ou organiser la suite avec votre équipe.",
-    cta: false,
-  },
-  {
-    q: "Dois-je changer mon numéro de téléphone ?",
-    a: "Pas nécessairement. Nous étudions votre installation actuelle et définissons avec vous la configuration adaptée avant le déploiement.",
     cta: false,
   },
   {
@@ -42,11 +27,6 @@ const FAQ = [
   {
     q: "Combien de temps faut-il pour déployer le Standard Rushh ?",
     a: "La mise en production cible est réalisée sous 5 jours ouvrés après réception de l'ensemble des éléments nécessaires au déploiement.",
-    cta: false,
-  },
-  {
-    q: "Combien ça coûte ?",
-    a: "Le tarif dépend du volume d'appels de votre agence et de la configuration retenue. Nous en discutons lors de la démonstration, après avoir compris votre fonctionnement.",
     cta: false,
   },
 ];
