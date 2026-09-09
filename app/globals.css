@@ -989,6 +989,70 @@ body { overflow-x: hidden; }
   .problem-strip-item:first-child { border-top: none; }
 }
 
+/* ---------- PROBLEM SECTION v2 — "Le quotidien d'une agence" ---------- */
+.problem-v2-head {
+  max-width: 640px;
+  margin: 0 0 48px;
+  text-align: left;
+}
+.problem-v2-title {
+  text-align: left;
+  margin-left: 0;
+}
+.problem-v2-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.problem-v2-card {
+  background: #f6f7fb;
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.problem-v2-num {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted-2);
+  margin-bottom: 28px;
+}
+.problem-v2-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.problem-v2-card-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.problem-v2-card--highlight {
+  background: var(--accent);
+}
+.problem-v2-num--highlight {
+  color: rgba(255, 255, 255, 0.75);
+}
+.problem-v2-card-title--highlight {
+  color: white;
+}
+.problem-v2-card-desc--highlight {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 900px) {
+  .problem-v2-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .problem-v2-grid { grid-template-columns: 1fr; }
+  .problem-v2-head { text-align: center; margin-left: auto; margin-right: auto; }
+  .problem-v2-title { text-align: center; }
+}
+
 /* ---------- BTN RUSHH (animated pill) ---------- */
 .btn-rushh {
   position: relative;
@@ -1129,7 +1193,7 @@ body { overflow-x: hidden; }
   max-width: 100vw;
   margin-top: -72px;
   padding-top: 0;
-  padding-bottom: 200px;
+  padding-bottom: 260px;
   min-height: 540px;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -1140,7 +1204,7 @@ body { overflow-x: hidden; }
   top: 0;
   left: 0;
   right: 0;
-  height: 1060px;
+  height: 930px;
   z-index: 3;
   pointer-events: none;
   background: url('/hero-bg-desktop.png') center top / cover no-repeat;
@@ -1153,7 +1217,7 @@ body { overflow-x: hidden; }
   top: 0;
   left: 0;
   right: 0;
-  height: 1060px;
+  height: 930px;
   z-index: 4;
   pointer-events: none;
   background: radial-gradient(ellipse 55% 45% at 50% 28%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.55) 55%, transparent 100%);
@@ -1216,48 +1280,6 @@ body { overflow-x: hidden; }
   margin: 0 1px;
 }
 
-/* Info strip — "Votre métier / 24h/24 / Sur mesure / Une équipe" */
-.hero-info-strip {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 0;
-  max-width: 900px;
-  margin: 40px auto 0;
-  padding: 26px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.hero-info-col {
-  flex: 1 1 0;
-  min-width: 0;
-  padding: 0 28px;
-  text-align: left;
-  border-left: 1px solid var(--line);
-}
-.hero-info-col:first-child {
-  border-left: none;
-}
-.hero-info-line {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--muted);
-}
-.hero-info-line-strong {
-  font-weight: 700;
-  color: var(--ink);
-}
-.hero-info-title {
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 3px;
-}
-.hero-info-sub {
-  font-size: 13px;
-  color: var(--muted);
-}
 .hero-desktop-only { display: block; }
 .hero-mobile-only { display: none; }
 .hero-badge {
@@ -3078,24 +3100,11 @@ section { position: relative; }
   .hero-ctas .hero-cta-equal { height: 48px; font-size: 13px; padding: 0 14px; border-radius: 999px; flex: 1 1 0; min-width: 0; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
 
-  /* Trust line + info strip — mobile */
+  /* Trust line — mobile */
   .hero-trust { margin-top: 20px; padding: 0 12px; }
   .hero-trust-item { font-size: 12.5px; align-items: flex-start; }
   .hero-trust-check { margin-top: 2px; }
   .hero-trust-text { text-align: left; }
-  .hero-info-strip {
-    flex-direction: column;
-    gap: 14px;
-    margin: 28px auto 0;
-    padding: 22px 20px;
-  }
-  .hero-info-col {
-    border-left: none;
-    border-top: 1px solid var(--line);
-    padding: 14px 0 0;
-    text-align: center;
-  }
-  .hero-info-col:first-child { border-top: none; padding-top: 0; }
 
   /* City carousel — visible on mobile */
   .hero-city-carousel {

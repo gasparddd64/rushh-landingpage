@@ -432,30 +432,6 @@ export function HeroSection() {
             </span>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", bounce: 0.25, duration: 1.2, delay: 1.1 }}
-            className="hero-info-strip"
-          >
-            <div className="hero-info-col hero-info-col-metier">
-              <p className="hero-info-line">Votre métier : l&apos;immobilier.</p>
-              <p className="hero-info-line hero-info-line-strong">Le nôtre : garder le lien.</p>
-            </div>
-            <div className="hero-info-col">
-              <p className="hero-info-title">24h/24</p>
-              <p className="hero-info-sub">Un accueil disponible</p>
-            </div>
-            <div className="hero-info-col">
-              <p className="hero-info-title">Sur mesure</p>
-              <p className="hero-info-sub">Votre ton, vos consignes</p>
-            </div>
-            <div className="hero-info-col">
-              <p className="hero-info-title">Une équipe</p>
-              <p className="hero-info-sub">À vos côtés dans la durée</p>
-            </div>
-          </motion.div>
-
           {/* Mobile city carousel */}
           <div className="hero-city-carousel">
             <div className="hero-city-track hero-city-track-1">
