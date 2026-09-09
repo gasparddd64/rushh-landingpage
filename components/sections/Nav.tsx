@@ -4,10 +4,10 @@ import { useState } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 const NAV_LINKS = [
-  { label: "Comment ça marche", href: "#solution" },
-  { label: "Pourquoi le Standard Rushh", href: "#why" },
-  { label: "Témoignages",       href: "#testimonials" },
-  { label: "FAQ",               href: "#faq" },
+  { label: "L'expérience Rushh", href: "#solution" },
+  { label: "Notre différence", href: "#why" },
+  { label: "Nos clients", href: "#testimonials" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function Nav() {
@@ -18,9 +18,8 @@ export function Nav() {
       <nav className="nav">
         <div className="nav-inner">
           {/* Logo */}
-          <a href="/" className="brand">
-            <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
-            <span>Rushh</span>
+          <a href="/" className="brand brand-v2">
+            <span className="brand-name-v2">rushh<sup className="brand-reg">®</sup></span>
           </a>
 
           {/* Center links */}
