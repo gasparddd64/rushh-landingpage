@@ -208,22 +208,19 @@ body { overflow-x: hidden; }
   transform: scaleX(1);
 }
 
-/* CTA — fused into a single pill (button + arrow, no visible seam) */
+/* CTA */
 .nav-cta {
-  display: flex; align-items: center;
-}
-.nav-cta .demo-cta-wrap {
-  gap: 2px;
+  display: flex; gap: 10px; align-items: center;
 }
 .nav-cta .demo-cta-btn {
-  padding: 11px 10px 11px 22px;
+  padding: 9px 20px;
   font-size: 13.5px;
-  border-radius: 999px 0 0 999px;
+  border-radius: 999px;
 }
 .nav-cta .demo-cta-arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: 0 999px 999px 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
 }
 .nav-cta .demo-cta-arrow svg {
   width: 14px;
