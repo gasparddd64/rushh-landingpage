@@ -134,17 +134,22 @@ body { overflow-x: hidden; }
 .nav {
   position: relative;
   z-index: 50;
-  padding: 0;
+  padding: 20px 24px 0;
 }
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
+  height: 66px;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 40px;
-  border-bottom: 1px solid var(--line);
+  padding: 0 10px 0 26px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  box-shadow: 0 12px 32px -8px rgba(12, 16, 36, 0.12), 0 2px 8px rgba(12, 16, 36, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 .brand {
   display: flex;
@@ -203,19 +208,22 @@ body { overflow-x: hidden; }
   transform: scaleX(1);
 }
 
-/* CTA */
+/* CTA — fused into a single pill (button + arrow, no visible seam) */
 .nav-cta {
-  display: flex; gap: 10px; align-items: center;
+  display: flex; align-items: center;
+}
+.nav-cta .demo-cta-wrap {
+  gap: 2px;
 }
 .nav-cta .demo-cta-btn {
-  padding: 9px 20px;
+  padding: 11px 10px 11px 22px;
   font-size: 13.5px;
-  border-radius: 999px;
+  border-radius: 999px 0 0 999px;
 }
 .nav-cta .demo-cta-arrow {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  border-radius: 0 999px 999px 0;
 }
 .nav-cta .demo-cta-arrow svg {
   width: 14px;
