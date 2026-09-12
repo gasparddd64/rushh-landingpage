@@ -381,7 +381,7 @@ export function HeroSection() {
 
           <h1 className="hero-title hero-desktop-only">
             Chaque appel mérite réponse<br />
-            à la hauteur de votre agence.
+            à la hauteur de <em>votre agence.</em>
           </h1>
           <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
             Rushh prend le relais quand votre équipe n&apos;est pas disponible. Chaque appel est compris et traité selon vos règles.
@@ -389,7 +389,7 @@ export function HeroSection() {
 
           <p className="hero-title hero-mobile-only">
             Chaque appel mérite réponse<br />
-            à la hauteur de votre agence.
+            à la hauteur de <em>votre agence.</em>
           </p>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
             Rushh prend le relais quand votre équipe n&apos;est pas disponible. Chaque appel est compris et traité selon vos règles.
