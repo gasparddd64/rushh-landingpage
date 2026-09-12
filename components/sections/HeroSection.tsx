@@ -368,103 +368,24 @@ function CallTimeline() {
 /* ── Main Component ── */
 export function HeroSection() {
   return (
-    <section className="hero-section hero-section-v2">
+    <section className="hero-section">
+      <div className="hero-bg-full" aria-hidden />
+      <div className="hero-bg-overlay" aria-hidden />
+
       <AuroraBackground showRadialGradient style={{ padding: "200px 24px 40px" }}>
         <div className="hero-inner">
-
-          {/* ── Desktop: two-column hero ── */}
-          <div className="hero-grid-v2 hero-desktop-only">
-            <div className="hero-grid-text">
-              <span className="hero-badge">
-                <span className="hero-badge-dot" aria-hidden />
-                Standard téléphonique de l&apos;immobilier
-              </span>
-
-              <h1 className="hero-title-v2">
-                Chaque appel mérite réponse <em>à la hauteur de votre agence.</em>
-              </h1>
-
-              <p className="hero-subtitle-v2">
-                Rushh prend le relais quand votre équipe n&apos;est pas disponible. Chaque appel est compris et traité selon vos règles.
-              </p>
-
-              <div className="hero-cta-group">
-                <motion.div
-                  initial={{ opacity: 0, filter: "blur(12px)", y: 12 }}
-                  animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                  transition={{ type: "spring", bounce: 0.3, duration: 1.5, delay: 0.75 }}
-                  className="hero-ctas"
-                >
-                  <a href="#solution" className="hero-btn-phone hero-cta-equal">
-                    Découvrir Rushh
-                  </a>
-                  <a
-                    href="https://calendly.com/gaspard-david/demo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hero-btn-demo hero-cta-equal"
-                  >
-                    Réserver un échange
-                  </a>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ type: "spring", bounce: 0.3, duration: 1.2, delay: 0.95 }}
-                  className="hero-trust"
-                >
-                  <span className="hero-trust-item">
-                    <svg className="hero-trust-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span className="hero-trust-text">
-                      Pensé pour l&apos;immobilier <span className="hero-trust-sep">·</span> Adapté à votre organisation <span className="hero-trust-sep">·</span> Déployé par Rushh
-                    </span>
-                  </span>
-                </motion.div>
-              </div>
-            </div>
-
-            <motion.div
-              className="hero-grid-image"
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ type: "spring", bounce: 0.2, duration: 1.4, delay: 0.4 }}
-            >
-              <img
-                src="/cta-haussmann.jpg"
-                alt="Immeuble haussmannien, agence immobilière"
-                className="hero-grid-image-img"
-                loading="eager"
-              />
-            </motion.div>
-          </div>
-
-          <div className="hero-info-strip hero-desktop-only">
-            <div className="hero-info-col">
-              <p className="hero-info-line">Votre métier : l&apos;immobilier.</p>
-              <p className="hero-info-line hero-info-line-strong">Le nôtre : garder le lien.</p>
-            </div>
-            <div className="hero-info-col">
-              <p className="hero-info-title">Toujours disponible</p>
-              <p className="hero-info-sub">Même quand votre équipe ne l&apos;est pas</p>
-            </div>
-            <div className="hero-info-col">
-              <p className="hero-info-title">Selon vos règles</p>
-              <p className="hero-info-sub">Votre fonctionnement reste le vôtre</p>
-            </div>
-            <div className="hero-info-col">
-              <p className="hero-info-title">Prêt à reprendre</p>
-              <p className="hero-info-sub">Chaque demande arrive avec son contexte</p>
-            </div>
-          </div>
-
-          {/* ── Mobile: unchanged single-column hero ── */}
-          <span className="hero-badge hero-mobile-only">
+          <span className="hero-badge">
             <span className="hero-badge-dot" aria-hidden />
-            Standard téléphonique pour agences immobilières
+            Standard téléphonique de l&apos;immobilier
           </span>
+
+          <h1 className="hero-title hero-desktop-only">
+            Chaque appel mérite réponse<br />
+            à la hauteur de votre agence.
+          </h1>
+          <p className="hero-subtitle hero-subtitle-desktop hero-desktop-only">
+            Rushh prend le relais quand votre équipe n&apos;est pas disponible. Chaque appel est compris et traité selon vos règles.
+          </p>
 
           <p className="hero-title hero-mobile-only">
             Chaque appel mérite réponse<br />
@@ -478,7 +399,7 @@ export function HeroSection() {
             initial={{ opacity: 0, filter: "blur(12px)", y: 12 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ type: "spring", bounce: 0.3, duration: 1.5, delay: 0.75 }}
-            className="hero-ctas hero-mobile-only"
+            className="hero-ctas"
           >
             <a
               href="#solution"
@@ -500,7 +421,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", bounce: 0.3, duration: 1.2, delay: 0.95 }}
-            className="hero-trust hero-mobile-only"
+            className="hero-trust"
           >
             <span className="hero-trust-item">
               <svg className="hero-trust-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
