@@ -2652,14 +2652,26 @@ section { position: relative; }
   margin-top: 2px;
 }
 
-/* ---------- TESTIMONIALS (scrolling column) ---------- */
-.tm-marquee-wrap {
-  max-width: 560px;
+/* ---------- TESTIMONIALS (scrolling columns) ---------- */
+.tm-marquee-columns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1140px;
   margin: 56px auto 0;
   max-height: 620px;
   overflow: hidden;
   mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+.tm-marquee-col {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 360px;
+}
+.tm-marquee-col--md,
+.tm-marquee-col--lg {
+  display: none;
 }
 .tm-marquee-track {
   display: flex;
@@ -2714,8 +2726,15 @@ section { position: relative; }
   letter-spacing: 0.03em;
 }
 
+@media (min-width: 768px) {
+  .tm-marquee-col--md { display: block; }
+}
+@media (min-width: 1024px) {
+  .tm-marquee-col--lg { display: block; }
+}
 @media (max-width: 600px) {
-  .tm-marquee-wrap { max-height: 520px; margin-top: 40px; }
+  .tm-marquee-columns { max-height: 520px; margin-top: 40px; }
+  .tm-marquee-col { max-width: 420px; }
   .tm-marquee-card { padding: 20px; }
 }
 
