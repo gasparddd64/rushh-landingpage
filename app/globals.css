@@ -3571,7 +3571,7 @@ section { position: relative; }
   background: white;
   border-top: 1px solid var(--line);
   padding: 64px 0 0;
-  overflow: hidden;
+  position: relative;
 }
 
 /* Top CTA banner */
@@ -3631,7 +3631,7 @@ section { position: relative; }
   grid-template-columns: 1.8fr 1fr 1fr 1fr;
   gap: 48px;
   align-items: flex-start;
-  padding-bottom: 20px;
+  padding-bottom: 320px;
 }
 
 /* Brand column */
@@ -3712,9 +3712,15 @@ section { position: relative; }
   background: var(--bg-soft);
 }
 
-/* Giant wordmark — same width as the container, fully visible, flush against the bottom bar */
+/* Giant wordmark — pinned to the bottom of the footer, just above the legal bar */
 .footer-wordmark {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 76px;
   width: 100%;
+  max-width: 1240px;
+  padding: 0 32px;
   pointer-events: none;
   user-select: none;
 }
@@ -3761,12 +3767,13 @@ section { position: relative; }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 36px;
-    padding-bottom: 40px;
+    padding-bottom: 150px;
   }
   .footer-brand-col {
     grid-column: 1 / -1;
   }
   .footer-tagline { font-size: 20px; }
+  .footer-wordmark { padding: 0 20px; bottom: 137px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
   .footer-legal { flex-wrap: wrap; gap: 16px; }
 }
