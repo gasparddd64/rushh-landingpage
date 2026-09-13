@@ -28,13 +28,12 @@ export function IntegrationsSection() {
           {/* Divider */}
           <div className="integ-divider" />
 
-          {/* Marquee */}
-          <div className="integ-marquee-wrap">
+          {/* Capsule of logo bubbles */}
+          <div className="integ-capsule">
             <div className="integ-marquee">
               {ITEMS.map((t, i) => (
-                <div key={i} className="integ-logo-card">
+                <div key={i} className="integ-logo-bubble" title={t.name}>
                   <img src={t.logo} alt={t.name} className="integ-logo-img" loading="lazy" />
-                  <div className="integ-logo-name">{t.name}</div>
                 </div>
               ))}
             </div>
