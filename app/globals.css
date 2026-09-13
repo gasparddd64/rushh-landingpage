@@ -218,12 +218,12 @@ body { overflow-x: hidden; }
 .nav-cta .demo-cta-btn {
   padding: 9px 20px;
   font-size: 13.5px;
-  border-radius: 999px;
+  border-radius: 10px;
 }
 .nav-cta .demo-cta-arrow {
   width: 36px;
   height: 36px;
-  border-radius: 999px;
+  border-radius: 10px;
 }
 .nav-cta .demo-cta-arrow svg {
   width: 14px;
@@ -453,7 +453,7 @@ body { overflow-x: hidden; }
   background: linear-gradient(135deg, #0052d4 0%, #0047C6 60%, #003fa8 100%);
   color: white;
   border: none;
-  border-radius: 999px;
+  border-radius: 10px;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -477,7 +477,7 @@ body { overflow-x: hidden; }
 .demo-cta-arrow {
   width: 42px;
   height: 42px;
-  border-radius: 999px;
+  border-radius: 10px;
   background: linear-gradient(135deg, #0052d4 0%, #0047C6 60%, #003fa8 100%);
   color: white;
   border: none;
@@ -1461,23 +1461,21 @@ body { overflow-x: hidden; }
 .hero-btn-phone {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   height: 62px;
-  padding: 0 36px; border-radius: 999px;
-  background: #0a0a0a;
-  color: white;
+  padding: 0 36px; border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
   font-size: 16px; font-weight: 500; letter-spacing: -0.01em;
-  border: none; cursor: pointer; text-decoration: none;
-  transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s ease, background 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.07);
+  border: 1.5px solid var(--ink); cursor: pointer; text-decoration: none;
+  transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), background 0.2s;
 }
 .hero-btn-phone:hover {
   transform: translateY(-2px) scale(1.015);
-  background: #111;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.09);
+  background: rgba(12,16,36,0.06);
 }
 .hero-btn-demo {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   height: 62px;
-  padding: 0 36px; border-radius: 999px;
+  padding: 0 36px; border-radius: 10px;
   background: linear-gradient(135deg, #0052d4 0%, #0047C6 60%, #003fa8 100%);
   color: white;
   font-size: 16px; font-weight: 500; letter-spacing: -0.01em;
@@ -3310,7 +3308,7 @@ section { position: relative; }
 
   /* Hero CTAs — side by side on mobile */
   .hero-ctas { gap: 10px; max-width: 340px; width: 100%; justify-content: center; flex-wrap: nowrap; margin: 0 auto; }
-  .hero-ctas .hero-cta-equal { height: 48px; font-size: 13px; padding: 0 14px; border-radius: 999px; flex: 1 1 0; min-width: 0; }
+  .hero-ctas .hero-cta-equal { height: 48px; font-size: 13px; padding: 0 14px; border-radius: 10px; flex: 1 1 0; min-width: 0; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
 
   /* Trust line — mobile */
