@@ -144,12 +144,12 @@ export default function Home() {
       />
       <Nav />
       <HeroSection />
+      <TestimonialsSection />
       <ProblemSection />
       <SolutionSection />
       <WhySection />
       <CompareSection />
       <IntegrationsSection />
-      <TestimonialsSection />
       <FAQSection />
       <CTASection />
       <CalendlySection />
