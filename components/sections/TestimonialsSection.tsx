@@ -2,10 +2,20 @@
 
 import { motion } from "motion/react";
 
+/**
+ * Photo mapping (once the files are dropped in /public):
+ *   david-houiseau   → /testimonial-david-houiseau.jpg
+ *   florent-bringuier → /testimonial-florent-bringuier.jpg
+ *   marie-lermes     → /testimonial-marie-lermes.jpg
+ *   thomas-varenne   → /testimonial-thomas-varenne.jpg
+ *   camille-delcourt → /testimonial-camille-delcourt.jpg
+ * Set the `image` field below to wire each one in.
+ */
 const testimonials = [
   {
     quote: "Enfin une vraie solution. Je n'ai plus à me soucier du téléphone qui sonne toute la journée quand je suis en rendez-vous, je sais que mes appels sont pris en charge, proprement et rapidement.",
     initials: "DH",
+    image: undefined as string | undefined,
     name: "David Houiseau",
     role: "Conseiller immobilier · Sceaux",
     stars: 5,
@@ -13,8 +23,41 @@ const testimonials = [
   {
     quote: "La conversation est fluide, le ton est naturel et l'ambiance « open space » avec le bruit du clavier donne un bon feeling. On a l'impression de parler à une vraie assistante.",
     initials: "FB",
+    image: undefined as string | undefined,
     name: "Florent Bringuier",
     role: "Gérant · Mon Office Immobilier, Aix",
+    stars: 5,
+  },
+  {
+    quote: "Pendant les visites, je laisse mon téléphone de côté. Les appels sont pris en charge et je retrouve les messages en sortant, avec le motif et les coordonnées pour rappeler.",
+    initials: "TV",
+    image: undefined as string | undefined,
+    name: "Thomas Varenne",
+    role: "Agent immobilier indépendant",
+    stars: 5,
+  },
+  {
+    quote: "Les résumés sont clairs. Je sais qui a appelé, pour quel bien et à quel sujet. Au moment de rappeler, j'ai les informations sous les yeux et la conversation reprend facilement.",
+    initials: "ML",
+    image: undefined as string | undefined,
+    name: "Marie Lermes",
+    role: "Directrice d'agence",
+    stars: 5,
+  },
+  {
+    quote: "Nous avions besoin d'un relais après la fermeture de l'agence. Les personnes obtiennent une réponse et nous retrouvons leurs messages le lendemain matin. C'est un vrai confort dans notre organisation.",
+    initials: "NV",
+    image: undefined as string | undefined,
+    name: "Nicolas Valmont",
+    role: "Responsable location",
+    stars: 5,
+  },
+  {
+    quote: "L'équipe a pris le temps de comprendre notre fonctionnement avant l'installation. Nous avons testé les appels ensemble et ajusté les consignes. Le suivi est direct, avec un interlocuteur disponible.",
+    initials: "CD",
+    image: undefined as string | undefined,
+    name: "Camille Delcourt",
+    role: "Gérante d'agence immobilière",
     stars: 5,
   },
 ];
@@ -54,7 +97,11 @@ function TestimonialsColumn({
             <Stars count={item.stars} />
             <p className="tm-quote">{item.quote}</p>
             <div className="tm-author">
-              <div className="tm-avatar">{item.initials}</div>
+              {item.image ? (
+                <img src={item.image} alt={item.name} className="tm-avatar tm-avatar-photo" loading="lazy" />
+              ) : (
+                <div className="tm-avatar">{item.initials}</div>
+              )}
               <div>
                 <div className="tm-name">{item.name}</div>
                 <div className="tm-role">{item.role}</div>
@@ -67,10 +114,10 @@ function TestimonialsColumn({
   );
 }
 
-const [david, florent] = testimonials;
-const columnA = [david, florent];
-const columnB = [florent, david];
-const columnC = [david, florent];
+const [david, florent, thomas, marie, nicolas, camille] = testimonials;
+const columnA = [david, marie];
+const columnB = [florent, nicolas];
+const columnC = [thomas, camille];
 
 export function TestimonialsSection() {
   return (
@@ -82,9 +129,9 @@ export function TestimonialsSection() {
         </div>
 
         <div className="tm-marquee-columns">
-          <TestimonialsColumn items={columnA} duration={15} />
-          <TestimonialsColumn items={columnB} duration={19} className="tm-marquee-col--md" />
-          <TestimonialsColumn items={columnC} duration={17} className="tm-marquee-col--lg" />
+          <TestimonialsColumn items={columnA} duration={17} />
+          <TestimonialsColumn items={columnB} duration={21} className="tm-marquee-col--md" />
+          <TestimonialsColumn items={columnC} duration={19} className="tm-marquee-col--lg" />
         </div>
       </div>
     </section>

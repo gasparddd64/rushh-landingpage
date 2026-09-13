@@ -2696,6 +2696,9 @@ section { position: relative; }
   font-size: 13px;
   flex-shrink: 0;
 }
+.tm-avatar-photo {
+  object-fit: cover;
+}
 .tm-name {
   font-weight: 700;
   font-size: 13px;
