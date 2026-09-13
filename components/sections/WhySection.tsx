@@ -65,7 +65,7 @@ const METIERS = [
   {
     name: "Syndic",
     icon: <IconBuilding />,
-    img: "/city-bordeaux-v2.jpg",
+    img: "/metier-syndic.png",
     tag: "Syndic",
     title: "Un standard dédié à la copropriété",
     desc: "Copropriétaires et prestataires sont accueillis avec le bon niveau d'information, sans mobiliser votre équipe sur les demandes courantes.",
@@ -78,7 +78,7 @@ const METIERS = [
   {
     name: "Gérance",
     icon: <IconKey />,
-    img: "/city-lyon-v2.jpg",
+    img: "/metier-gerance.png",
     tag: "Gérance",
     title: "Vos locataires ne tombent plus sur répondeur",
     desc: "Sinistre, panne ou question administrative : Rushh comprend la demande, applique vos procédures et alerte votre équipe en cas d'urgence.",
@@ -91,7 +91,7 @@ const METIERS = [
   {
     name: "Transaction",
     icon: <IconHandshake />,
-    img: "/hero-building-left.jpg",
+    img: "/metier-transaction.png",
     tag: "Transaction",
     title: "Ne manquez plus jamais un acheteur",
     desc: "Rushh qualifie chaque appel reçu sur vos annonces, identifie le bien concerné et programme la visite selon vos disponibilités.",
@@ -104,7 +104,7 @@ const METIERS = [
   {
     name: "Location",
     icon: <IconHome />,
-    img: "/city-paris-v2.jpg",
+    img: "/metier-location.png",
     tag: "Location",
     title: "Un accueil parfait pour vos candidats locataires",
     desc: "Chaque appel sur un bien en location est pris en charge : les critères du candidat sont recueillis et la visite est planifiée sans effort pour votre équipe.",
