@@ -134,23 +134,17 @@ body { overflow-x: hidden; }
 .nav {
   position: relative;
   z-index: 50;
-  padding: 20px 24px 0;
+  padding: 0;
 }
 .nav-inner {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 66px;
+  height: 72px;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 10px 0 26px;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  box-shadow: 0 12px 32px -8px rgba(12, 16, 36, 0.12), 0 2px 8px rgba(12, 16, 36, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  padding: 0 32px;
 }
 .brand {
   display: flex;
@@ -213,21 +207,12 @@ body { overflow-x: hidden; }
 
 /* CTA */
 .nav-cta {
-  display: flex; gap: 10px; align-items: center;
+  display: flex; align-items: center;
 }
 .nav-cta .demo-cta-btn {
-  padding: 9px 20px;
-  font-size: 13.5px;
+  padding: 11px 24px;
+  font-size: 14px;
   border-radius: 10px;
-}
-.nav-cta .demo-cta-arrow {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-}
-.nav-cta .demo-cta-arrow svg {
-  width: 14px;
-  height: 14px;
 }
 
 /* Hamburger — hidden on desktop */
@@ -1198,7 +1183,7 @@ body { overflow-x: hidden; }
   text-align: center;
   width: 100%;
   max-width: 100vw;
-  margin-top: -86px;
+  margin-top: -72px;
   padding-top: 0;
   padding-bottom: 260px;
   min-height: 540px;

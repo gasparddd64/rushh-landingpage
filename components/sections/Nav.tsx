@@ -34,7 +34,7 @@ export function Nav() {
 
           {/* CTA */}
           <div className="nav-cta">
-            <DemoCTA label="Réserver un échange" />
+            <DemoCTA label="Réserver un échange" showArrow={false} />
           </div>
 
           {/* Hamburger */}
