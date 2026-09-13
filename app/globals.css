@@ -3712,11 +3712,9 @@ section { position: relative; }
   background: var(--bg-soft);
 }
 
-/* Giant wordmark — same width as the container, cropped flush against the bottom bar */
+/* Giant wordmark — same width as the container, fully visible, flush against the bottom bar */
 .footer-wordmark {
   width: 100%;
-  aspect-ratio: 2172 / 724;
-  overflow: hidden;
   pointer-events: none;
   user-select: none;
 }
@@ -3724,8 +3722,6 @@ section { position: relative; }
   width: 100%;
   height: auto;
   display: block;
-  transform: scale(1.18);
-  transform-origin: top center;
 }
 
 /* Bottom bar */
@@ -3771,8 +3767,6 @@ section { position: relative; }
     grid-column: 1 / -1;
   }
   .footer-tagline { font-size: 20px; }
-  .footer-wordmark-text,
-  .footer-wordmark-icon { font-size: clamp(60px, 22vw, 120px); }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
   .footer-legal { flex-wrap: wrap; gap: 16px; }
 }
