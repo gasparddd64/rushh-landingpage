@@ -1447,16 +1447,18 @@ body { overflow-x: hidden; }
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   height: 62px;
   padding: 0 36px; border-radius: 10px;
-  background: transparent;
+  background: #eceef1;
   color: var(--ink);
-  font-size: 16px; font-weight: 700; letter-spacing: -0.01em;
-  border: 1.5px solid rgba(12, 16, 36, 0.16); cursor: pointer; text-decoration: none;
-  transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), background 0.2s, border-color 0.2s;
+  font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
+  border: 1px solid rgba(16, 24, 40, 0.12); cursor: pointer; text-decoration: none;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), background 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 .hero-btn-phone:hover {
   transform: translateY(-2px) scale(1.015);
-  background: rgba(12,16,36,0.04);
-  border-color: rgba(12, 16, 36, 0.28);
+  background: #e3e6ea;
+  border-color: rgba(16, 24, 40, 0.2);
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.08);
 }
 .hero-btn-demo {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -2189,80 +2191,137 @@ section { position: relative; }
   text-align: center;
 }
 .metiers-title { text-align: center; }
-.metiers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+/* Outer grey shell holding the segmented tabs + panel */
+.metiers-shell {
+  background: #eef0f3;
+  border-radius: 28px;
+  padding: 14px;
 }
-.metiers-card {
-  position: relative;
-  aspect-ratio: 3 / 4;
+.metiers-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.metiers-tabs::-webkit-scrollbar { display: none; }
+.metiers-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.metiers-tab svg { opacity: 0.65; transition: opacity 0.2s, color 0.2s; }
+.metiers-tab:hover { color: var(--ink); }
+.metiers-tab--active {
+  background: white;
+  color: var(--ink);
+  box-shadow: 0 4px 16px rgba(16, 24, 40, 0.08);
+}
+.metiers-tab--active svg { opacity: 1; color: var(--accent); }
+
+/* Panel: image left, content right */
+.metiers-panel {
+  background: white;
   border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 540px;
   overflow: hidden;
-  isolation: isolate;
-  box-shadow: 0 1px 2px rgba(12,16,36,0.06);
 }
-.metiers-card-img {
+.metiers-panel-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+}
+.metiers-panel-image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s cubic-bezier(.22,.68,0,1.2);
 }
-.metiers-card:hover .metiers-card-img {
-  transform: scale(1.04);
-}
-.metiers-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(4,10,30,0.75) 0%, rgba(4,10,30,0.15) 45%, transparent 65%);
-  pointer-events: none;
-}
-.metiers-card-icon {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(6px);
-  color: var(--accent);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 2px 8px rgba(0,71,198,0.18);
-}
-.metiers-card-name {
-  position: absolute;
-  left: 20px;
-  bottom: 18px;
-  right: 20px;
-  color: white;
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-.metiers-card-name::before {
-  content: "";
-  display: block;
-  width: 22px;
-  height: 3px;
-  border-radius: 2px;
-  background: var(--accent);
-  margin-bottom: 10px;
-}
-.metiers-cta {
+.metiers-panel-content {
+  padding: 44px 60px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 48px;
+  overflow: hidden;
+}
+.metiers-tag {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.metiers-panel-title {
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.metiers-panel-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 26px;
+  max-width: 400px;
+}
+.metiers-panel-points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+.metiers-panel-points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.metiers-panel-points li svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.metiers-panel-cta {
+  margin-top: 28px;
+}
+.metiers-panel-cta .demo-cta-btn {
+  padding: 12px 22px;
+  font-size: 14px;
 }
 
-@media (max-width: 980px) {
-  .metiers-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 560px) {
-  .metiers-grid { grid-template-columns: 1fr; gap: 16px; }
-  .metiers-card { aspect-ratio: 4 / 3; }
+@media (max-width: 768px) {
+  .metiers-panel { grid-template-columns: 1fr; height: auto; }
+  .metiers-panel-image { height: 200px; }
+  .metiers-panel-content { padding: 32px 24px; overflow: visible; }
+  .metiers-panel-desc { max-width: none; }
+  .metiers-tab { padding: 12px 16px; font-size: 13px; }
 }
 
 /* ---------- STEPS ---------- */
