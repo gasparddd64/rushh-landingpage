@@ -18,7 +18,7 @@ export function CalendlySection() {
           <div
             className="calendly-inline-widget"
             data-url="https://calendly.com/gaspard-david/demo?hide_gdpr_banner=1&background_color=ffffff&text_color=0c1024&primary_color=0047c6"
-            style={{ minWidth: 320, height: 650 }}
+            style={{ minWidth: 320, height: 780 }}
           />
         </div>
       </div>

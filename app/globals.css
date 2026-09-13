@@ -1726,18 +1726,12 @@ section { position: relative; }
 .calendly-embed-wrap {
   max-width: 1100px;
   margin: 0 auto;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  background: var(--bg);
 }
 .calendly-inline-widget {
   width: 100%;
 }
 @media (max-width: 768px) {
-  .calendly-embed-wrap { border-radius: var(--radius); }
-  .calendly-inline-widget { height: 800px !important; }
+  .calendly-inline-widget { height: 900px !important; }
 }
 
 /* ---------- FEATURES GRID ---------- */
