@@ -3631,7 +3631,7 @@ section { position: relative; }
   grid-template-columns: 1.8fr 1fr 1fr 1fr;
   gap: 48px;
   align-items: flex-start;
-  padding-bottom: 56px;
+  padding-bottom: 20px;
 }
 
 /* Brand column */
@@ -3712,26 +3712,20 @@ section { position: relative; }
   background: var(--bg-soft);
 }
 
-/* Giant wordmark — full-bleed, edge to edge */
+/* Giant wordmark — same width as the container, cropped flush against the bottom bar */
 .footer-wordmark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 0 24px;
+  width: 100%;
+  aspect-ratio: 2172 / 724;
+  overflow: hidden;
   pointer-events: none;
   user-select: none;
 }
 .footer-wordmark-img {
   width: 100%;
-  max-width: 1600px;
   height: auto;
   display: block;
+  transform: scale(1.18);
+  transform-origin: top center;
 }
 
 /* Bottom bar */
