@@ -8,6 +8,7 @@ import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { CalendlySection } from "@/components/sections/CalendlySection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -151,6 +152,7 @@ export default function Home() {
       <TestimonialsSection />
       <FAQSection />
       <CTASection />
+      <CalendlySection />
       <FooterSection />
       <ScrollReveal />
     </>
