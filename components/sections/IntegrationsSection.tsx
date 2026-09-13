@@ -1,5 +1,7 @@
 "use client";
 
+import { DemoCTA } from "@/components/ui/demo-cta";
+
 const TOOLS = [
   { name: "Google Calendar", logo: "/logo-gcal.png" },
   { name: "Outlook",         logo: "/logo-outlook.png" },
@@ -8,30 +10,23 @@ const TOOLS = [
   { name: "Whise",           logo: "/logo-whise.png" },
 ];
 
-// 4 copies → translate -25% = exactly one set, always seamless
-const ITEMS = [...TOOLS, ...TOOLS, ...TOOLS, ...TOOLS];
-
 export function IntegrationsSection() {
   return (
     <section className="section-pad integ-section">
       <div className="wrap">
         <div className="integ-card">
-
-          {/* Header */}
-          <div className="integ-header">
+          {/* Header — centered */}
+          <div className="integ-head">
             <h2 className="integ-title">Compatible avec vos outils.</h2>
             <p className="integ-sub">
-              Rushh s&apos;intègre à votre environnement pour s&apos;inscrire dans le fonctionnement de votre agence.
+              Rushh s&apos;intègre à votre environnement pour s&apos;inscrire dans votre fonctionnement.
             </p>
           </div>
 
-          {/* Divider */}
-          <div className="integ-divider" />
-
-          {/* Capsule of logo bubbles */}
+          {/* Capsule of logo bubbles — static, no autoplay */}
           <div className="integ-capsule">
-            <div className="integ-marquee">
-              {ITEMS.map((t, i) => (
+            <div className="integ-row">
+              {TOOLS.map((t, i) => (
                 <div key={i} className="integ-logo-bubble" title={t.name}>
                   <img src={t.logo} alt={t.name} className="integ-logo-img" loading="lazy" />
                 </div>
@@ -39,7 +34,9 @@ export function IntegrationsSection() {
             </div>
           </div>
 
-          <p className="integ-note">Votre outil n&apos;est pas dans la liste ? Parlez-nous de votre environnement lors de l&apos;échange.</p>
+          <div className="integ-cta">
+            <DemoCTA label="Voir toutes les intégrations" />
+          </div>
         </div>
       </div>
     </section>
