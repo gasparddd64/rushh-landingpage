@@ -849,85 +849,108 @@ body { overflow-x: hidden; }
   background: white;
   border: 1px solid var(--line);
   border-radius: 20px;
-  padding: 56px 48px 48px;
+  padding: 40px 48px 36px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-/* Header: centered, stacked */
-.integ-head {
-  max-width: 520px;
-  text-align: center;
-  margin-bottom: 40px;
+/* Header: title left, sub right */
+.integ-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 28px;
 }
 
 .integ-title {
-  font-size: clamp(24px, 3vw, 34px);
+  font-size: clamp(20px, 2.4vw, 28px);
   font-weight: 800;
   color: var(--ink);
   letter-spacing: -0.03em;
   line-height: 1.2;
-  margin: 0 0 12px;
-}
-
-.integ-sub {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--muted);
   margin: 0;
 }
 
-/* Capsule — outline only, no fill, no autoplay */
-.integ-capsule {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 16px 20px;
-  max-width: 640px;
+.integ-sub {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+  padding-top: 4px;
+}
+
+.integ-divider {
+  height: 1px;
+  background: var(--line);
+  margin-bottom: 36px;
+}
+
+/* Marquee container */
+.integ-marquee-wrap {
+  overflow: hidden;
   width: 100%;
 }
 
-.integ-row {
+.integ-marquee {
   display: flex;
-  gap: 14px;
-  width: fit-content;
+  gap: 16px;
+  width: max-content;
+  animation: integ-scroll 24s linear infinite;
+}
+.integ-marquee:hover {
+  animation-play-state: paused;
 }
 
-/* Individual logo bubble — icon only, no label */
-.integ-logo-bubble {
-  display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: white;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
-  flex-shrink: 0;
-  transition: border-color 0.2s, transform 0.2s;
+@keyframes integ-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
 }
-.integ-logo-bubble:hover {
-  border-color: var(--accent);
-  transform: scale(1.12);
+
+/* Individual logo card */
+.integ-logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: #f7f8fc;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 20px 18px;
+  width: 140px;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.integ-logo-card:hover {
+  border-color: var(--line-strong);
 }
 
 .integ-logo-img {
-  width: 30px;
-  height: 30px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
+  border-radius: 10px;
 }
 
-.integ-cta {
-  margin-top: 36px;
+.integ-logo-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.integ-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted-2);
+  margin-top: 28px;
 }
 
 @media (max-width: 640px) {
-  .integ-card { padding: 36px 20px 32px; }
-  .integ-capsule { padding: 12px 14px; }
-  .integ-row { gap: 8px; }
-  .integ-logo-bubble { width: 48px; height: 48px; }
-  .integ-logo-img { width: 22px; height: 22px; }
+  .integ-card { padding: 28px 20px 24px; }
+  .integ-header { grid-template-columns: 1fr; gap: 12px; }
+  .integ-logo-card { width: 120px; padding: 18px 14px 14px; }
 }
 
 /* ---------- PROBLEM STRIP ---------- */
