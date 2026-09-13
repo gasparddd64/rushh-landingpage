@@ -1,11 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import { DemoCTA } from "@/components/ui/demo-cta";
 
 export function FooterSection() {
   return (
     <footer className="footer-section">
       <div className="wrap">
+
+        {/* Top CTA banner */}
+        <div className="footer-cta-banner">
+          <div className="footer-cta-text">
+            <span className="footer-cta-eyebrow">Le prochain contact compte.</span>
+            <h2 className="footer-cta-title">
+              Votre agence ferme.<br />
+              Votre standard reste<span className="footer-cta-dot">.</span>
+            </h2>
+          </div>
+          <div className="footer-cta-action">
+            <DemoCTA label="Réserver une démo" />
+            <span className="footer-cta-caption">Parlons de votre agence.</span>
+          </div>
+        </div>
+
         <div className="footer-grid">
 
           {/* Col 1 — Brand + tagline */}
@@ -16,9 +33,9 @@ export function FooterSection() {
             </Link>
             <p className="footer-tagline">
               Le standard téléphonique<br />
-              pour les agences immobilières.
+              pensé pour l&apos;immobilier.
             </p>
-            <p className="footer-copy">© 2026 Rushh. Tous droits réservés.</p>
+            <span className="footer-badge">À vos côtés, 24h/24</span>
           </div>
 
           {/* Col 2 — Navigation */}
@@ -26,9 +43,9 @@ export function FooterSection() {
             <h3 className="footer-col-title">Navigation</h3>
             <nav className="footer-links">
               <a href="#solution">Comment ça marche</a>
-              <a href="#why">Pourquoi le Standard Rushh</a>
-              <a href="#faq">FAQ</a>
+              <a href="#why">Pourquoi Rushh</a>
               <a href="#testimonials">Témoignages</a>
+              <a href="#faq">FAQ</a>
             </nav>
           </div>
 
@@ -38,7 +55,6 @@ export function FooterSection() {
             <nav className="footer-links">
               <a href="mailto:hello@rushh.fr">hello@rushh.fr</a>
               <a href="tel:0517948549">05 17 94 85 49</a>
-              <a href="https://calendly.com/gaspard-david/demo" target="_blank" rel="noopener noreferrer">Réserver une démo</a>
             </nav>
           </div>
 
@@ -60,9 +76,15 @@ export function FooterSection() {
 
         </div>
 
+        {/* Giant wordmark */}
+        <div className="footer-wordmark" aria-hidden="true">
+          <img src="/footer-rushh-wordmark.png" alt="" className="footer-wordmark-img" />
+        </div>
+
         {/* Bottom bar */}
         <div className="footer-bottom">
-          <span>Données hébergées en France · Conforme RGPD</span>
+          <span>© 2026 Rushh. Tous droits réservés.</span>
+          <span>Données hébergées en France</span>
           <nav className="footer-legal">
             <Link href="/cgv">CGV</Link>
           </nav>
@@ -71,4 +93,3 @@ export function FooterSection() {
     </footer>
   );
 }
-
