@@ -54,7 +54,6 @@ export function FooterSection() {
             <h3 className="footer-col-title">Contact</h3>
             <nav className="footer-links">
               <a href="mailto:hello@rushh.fr">hello@rushh.fr</a>
-              <a href="tel:0517948549">05 17 94 85 49</a>
             </nav>
           </div>
 
