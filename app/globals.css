@@ -3361,11 +3361,11 @@ section { position: relative; }
   .hero-ctas .hero-cta-equal { height: 48px; font-size: 13px; padding: 0 14px; border-radius: 10px; flex: 1 1 0; min-width: 0; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
 
-  /* Trust line — mobile */
+  /* Trust line — mobile, single line */
   .hero-trust { margin-top: 20px; padding: 0 12px; }
-  .hero-trust-item { font-size: 12.5px; align-items: flex-start; }
-  .hero-trust-check { margin-top: 2px; }
-  .hero-trust-text { text-align: left; }
+  .hero-trust-item { font-size: 11px; align-items: center; max-width: 100%; }
+  .hero-trust-check { flex-shrink: 0; }
+  .hero-trust-text { text-align: center; white-space: nowrap; }
 
   /* City carousel — visible on mobile */
   .hero-city-carousel {
