@@ -392,7 +392,7 @@ export function HeroSection() {
             pour <em>votre agence.</em>
           </p>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
-            Rushh prend le relais quand votre équipe n&apos;est pas disponible. Chaque appel est compris et traité selon vos règles.
+            Rushh prend le relais quand votre équipe n&apos;est pas disponible.
           </p>
 
           <motion.div
@@ -428,7 +428,7 @@ export function HeroSection() {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               <span className="hero-trust-text">
-                Pensé pour l&apos;immobilier <span className="hero-trust-sep">·</span> Adapté à votre organisation <span className="hero-trust-sep">·</span> Déployé par Rushh
+                Pensé pour l&apos;immobilier <span className="hero-trust-sep">·</span> Adapté à votre organisation <span className="hero-trust-sep hero-trust-desktop-only">·</span> <span className="hero-trust-desktop-only">Déployé par Rushh</span>
               </span>
             </span>
           </motion.div>

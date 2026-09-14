@@ -1280,6 +1280,7 @@ body { overflow-x: hidden; }
 
 .hero-desktop-only { display: block; }
 .hero-mobile-only { display: none; }
+.hero-trust-desktop-only { display: inline; }
 /* Compound selectors (higher specificity than any single-class component
    rule) so these reliably hide regardless of where the component's own
    display rule sits in the file. */
@@ -3342,14 +3343,15 @@ section { position: relative; }
   .hero-subtitle.hero-mobile-only { display: block; }
   .hero-ctas.hero-mobile-only,
   .hero-trust.hero-mobile-only { display: flex; }
+  .hero-trust-desktop-only { display: none; }
   .hero-bg-full { display: none; }
   .hero-bg-overlay { display: none; }
-  .hero-title { font-size: clamp(24px, 6.5vw, 34px); text-align: center; word-wrap: break-word; }
+  .hero-title { font-size: clamp(28px, 8vw, 40px); text-align: center; word-wrap: break-word; }
   .hero-subtitle { max-width: 100%; font-size: 14px; margin-bottom: 24px; color: var(--muted); text-align: center; padding: 0 8px; }
   .hero-badge { font-size: 11px; padding: 6px 12px; margin-bottom: 18px; white-space: nowrap; }
 
   /* Hero padding — clean look */
-  .aurora-wrap { padding-top: 90px !important; padding-bottom: 16px !important; padding-left: 0 !important; padding-right: 0 !important; }
+  .aurora-wrap { padding-top: 56px !important; padding-bottom: 16px !important; padding-left: 0 !important; padding-right: 0 !important; }
   .aurora-layer { opacity: 0 !important; }
   .hero-section { margin-top: 0; min-height: auto; background: white; overflow-x: hidden; padding-bottom: 0; }
   .hero-inner { display: flex; flex-direction: column; align-items: center; }
