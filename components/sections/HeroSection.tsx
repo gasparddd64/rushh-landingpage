@@ -376,7 +376,7 @@ export function HeroSection() {
         <div className="hero-inner">
           <span className="hero-badge">
             <span className="hero-badge-dot" aria-hidden />
-            Le Standard téléphonique IA des professionnels de l&apos;immobilier
+            Le Standard téléphonique IA pensé pour l&apos;immobilier
           </span>
 
           <h1 className="hero-title hero-desktop-only">
