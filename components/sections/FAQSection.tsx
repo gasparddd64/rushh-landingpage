@@ -10,6 +10,11 @@ const FAQ = [
     cta: false,
   },
   {
+    q: "Est-ce une intelligence artificielle qui répond aux appels ?",
+    a: "Oui. Le Standard Rushh s'appuie sur une intelligence artificielle vocale pour accueillir l'appel, comprendre la demande et recueillir les informations utiles. Elle traite le premier niveau selon vos règles, et transmet à votre équipe dès qu'un échange humain est nécessaire.",
+    cta: false,
+  },
+  {
     q: "Est-ce que le Standard Rushh remplace mon équipe ?",
     a: "Non. Le Standard Rushh intervient lorsque votre équipe ne peut pas prendre en charge un appel, ou sur les situations que vous choisissez de lui confier. Vous définissez également les cas dans lesquels l'appel doit être transmis à un collaborateur.",
     cta: false,

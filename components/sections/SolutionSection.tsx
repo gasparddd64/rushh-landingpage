@@ -63,7 +63,7 @@ export function SolutionSection() {
               Rushh, lui, n&apos;est jamais occupé.
             </h2>
             <p className="sol-sub">
-              Lorsque votre équipe n&apos;est pas disponible, Rushh prend le relais. Il accueille l&apos;appel, comprend la demande et recueille les informations utiles avant de donner la suite prévue avec votre agence.
+              Lorsque votre équipe n&apos;est pas disponible, le Standard Rushh prend le relais grâce à une intelligence artificielle vocale. Elle accueille l&apos;appel, comprend la demande et recueille les informations utiles — et passe la main à votre équipe dès que la situation le demande.
             </p>
             <DemoCTA label="Réserver un échange" />
           </div>
