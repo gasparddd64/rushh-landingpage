@@ -63,7 +63,7 @@ export function SolutionSection() {
               Rushh, lui, n&apos;est jamais occupé.
             </h2>
             <p className="sol-sub">
-              Lorsque votre équipe est en visite, déjà en ligne ou simplement indisponible, le Standard Rushh, alimenté par l&apos;IA et conçu autour des scénarios de l&apos;immobilier, prend le relais. Il décroche, comprend la demande et agit selon les règles de votre agence, avant de passer la main à votre équipe dès que la situation le nécessite.
+              Lorsque votre équipe est en visite, déjà en ligne ou indisponible, le Standard Rushh prend le relais. Alimenté par l&apos;intelligence artificielle et conçu pour les scénarios de l&apos;immobilier, il comprend la demande et agit selon vos règles.
             </p>
             <DemoCTA label="Réserver un échange" />
           </div>
