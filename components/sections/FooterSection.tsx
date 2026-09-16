@@ -32,7 +32,7 @@ export function FooterSection() {
               <span>Rushh</span>
             </Link>
             <p className="footer-tagline">
-              Le standard téléphonique<br />
+              Le Standard téléphonique IA<br />
               pensé pour l&apos;immobilier.
             </p>
             <span className="footer-badge">À vos côtés, 24h/24</span>

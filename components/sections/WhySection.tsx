@@ -125,8 +125,8 @@ export function WhySection() {
       <div className="wrap">
         <div className="metiers-head">
           <span className="section-eyebrow">Pensé pour l&apos;immobilier</span>
-          <h2 className="section-title metiers-title">Un Standard pour tous vos métiers.</h2>
-          <p className="section-sub">Rushh s&apos;adapte à chaque métier de votre agence et à sa façon de traiter les appels.</p>
+          <h2 className="section-title metiers-title">Un Standard conçu pour tous vos métiers.</h2>
+          <p className="section-sub">Rushh s&apos;appuie sur des scénarios propres à l&apos;immobilier, puis s&apos;adapte à chaque métier de votre agence et à votre façon de traiter les appels.</p>
         </div>
 
         <div className="metiers-shell">

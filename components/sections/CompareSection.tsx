@@ -12,7 +12,7 @@ const BAD_ITEMS = [
 
 const GOOD_ITEMS = [
   "Nous étudions votre fonctionnement",
-  "Nous préparons vos parcours d'appels",
+  "Nous adaptons nos scénarios immobiliers à votre organisation",
   "Nous testons avant la mise en service",
   "Nous suivons son fonctionnement",
   "Nous l'adaptons avec votre agence",
