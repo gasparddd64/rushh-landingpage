@@ -66,6 +66,7 @@ const METIERS = [
     name: "Syndic",
     icon: <IconBuilding />,
     img: "/metier-syndic.png",
+    imgWebp: "/metier-syndic.webp",
     tag: "Syndic",
     title: "Un standard dédié à la copropriété",
     desc: "Copropriétaires et prestataires sont accueillis avec le bon niveau d'information, sans mobiliser votre équipe sur les demandes courantes.",
@@ -79,6 +80,7 @@ const METIERS = [
     name: "Gérance",
     icon: <IconKey />,
     img: "/metier-gerance.png",
+    imgWebp: "/metier-gerance.webp",
     tag: "Gérance",
     title: "Vos locataires ne tombent plus sur répondeur",
     desc: "Sinistre, panne ou question administrative : Rushh comprend la demande, applique vos procédures et alerte votre équipe en cas d'urgence.",
@@ -92,6 +94,7 @@ const METIERS = [
     name: "Transaction",
     icon: <IconHandshake />,
     img: "/metier-transaction.png",
+    imgWebp: "/metier-transaction.webp",
     tag: "Transaction",
     title: "Ne manquez plus jamais un acheteur",
     desc: "Rushh qualifie chaque appel reçu sur vos annonces, identifie le bien concerné et programme la visite selon vos disponibilités.",
@@ -118,6 +121,7 @@ const METIERS = [
 
 export function WhySection() {
   const [active, setActive] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const current = METIERS[active];
 
   return (
@@ -127,6 +131,53 @@ export function WhySection() {
           <span className="section-eyebrow">Pensé pour l&apos;immobilier</span>
           <h2 className="section-title metiers-title">Un Standard conçu pour tous vos métiers.</h2>
           <p className="section-sub">Rushh s&apos;appuie sur des scénarios propres à l&apos;immobilier, puis s&apos;adapte à chaque métier de votre agence et à votre façon de traiter les appels.</p>
+        </div>
+
+        {/* Mobile accordion — desktop tabs hidden via CSS below 768px */}
+        <div className="metiers-accordion">
+          {METIERS.map((m, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div key={m.name} className={`metiers-acc-item${isOpen ? " metiers-acc-item--open" : ""}`}>
+                <button
+                  type="button"
+                  className="metiers-acc-header"
+                  aria-expanded={isOpen}
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                >
+                  <span className="metiers-acc-header-left">
+                    {m.icon}
+                    {m.name}
+                  </span>
+                  <svg className="metiers-acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+                <div className="metiers-acc-body-wrap">
+                  <div className="metiers-acc-body">
+                    <picture>
+                      {m.imgWebp && <source srcSet={m.imgWebp} type="image/webp" />}
+                      <img className="metiers-acc-img" src={m.img} alt={m.name} loading="lazy" />
+                    </picture>
+                    <span className="metiers-tag">{m.tag}</span>
+                    <h3 className="metiers-panel-title">{m.title}</h3>
+                    <p className="metiers-panel-desc">{m.desc}</p>
+                    <ul className="metiers-panel-points">
+                      {m.points.map((p) => (
+                        <li key={p}>
+                          <IconCheck />
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="metiers-panel-cta">
+                      <DemoCTA label="Réserver un échange" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className="metiers-shell">
@@ -148,15 +199,17 @@ export function WhySection() {
           <div className="metiers-panel">
             <div className="metiers-panel-image">
               <AnimatePresence mode="wait">
-                <motion.img
-                  key={current.img}
-                  src={current.img}
-                  alt={current.name}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                />
+                <picture key={current.img}>
+                  {current.imgWebp && <source srcSet={current.imgWebp} type="image/webp" />}
+                  <motion.img
+                    src={current.img}
+                    alt={current.name}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  />
+                </picture>
               </AnimatePresence>
             </div>
 

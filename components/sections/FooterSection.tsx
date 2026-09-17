@@ -74,7 +74,10 @@ export function FooterSection() {
 
         {/* Giant wordmark */}
         <div className="footer-wordmark" aria-hidden="true">
-          <img src="/footer-rushh-wordmark.png" alt="" className="footer-wordmark-img" />
+          <picture>
+            <source srcSet="/footer-rushh-wordmark.webp" type="image/webp" />
+            <img src="/footer-rushh-wordmark.png" alt="" className="footer-wordmark-img" />
+          </picture>
         </div>
 
         {/* Bottom bar */}

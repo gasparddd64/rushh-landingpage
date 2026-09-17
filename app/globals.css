@@ -13,7 +13,7 @@
   --ink: #0c1024;
   --ink-2: #2a2f4a;
   --muted: #6b7090;
-  --muted-2: #9095b3;
+  --muted-2: #636a91;
   --line: #e7e9f3;
   --line-strong: #d6d9ea;
   --accent: #0047C6;
@@ -1200,6 +1200,10 @@ body { overflow-x: hidden; }
   z-index: 3;
   pointer-events: none;
   background: url('/hero-bg-desktop.png') center top / cover no-repeat;
+  background-image: image-set(url('/hero-bg-desktop.webp') type('image/webp'), url('/hero-bg-desktop.png') type('image/png'));
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
   opacity: 0.65;
   mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
@@ -2198,6 +2202,70 @@ section { position: relative; }
   border-radius: 28px;
   padding: 14px;
 }
+
+/* Mobile accordion — hidden on desktop, shown ≤768px instead of .metiers-shell */
+.metiers-accordion {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+.metiers-acc-item {
+  background: #f7f8fa;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.metiers-acc-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.metiers-acc-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.metiers-acc-header-left svg { color: var(--accent); flex-shrink: 0; }
+.metiers-acc-chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.metiers-acc-item--open .metiers-acc-chevron { transform: rotate(180deg); }
+.metiers-acc-body-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+.metiers-acc-item--open .metiers-acc-body-wrap { grid-template-rows: 1fr; }
+.metiers-acc-body {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 16px;
+}
+.metiers-acc-item--open .metiers-acc-body { padding: 0 16px 18px; }
+.metiers-acc-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 14px;
+}
+.metiers-acc-body .metiers-tag { margin-bottom: 12px; }
+.metiers-acc-body .metiers-panel-title { font-size: 18px; margin-bottom: 8px; }
+.metiers-acc-body .metiers-panel-desc { font-size: 14px; margin-bottom: 16px; }
+.metiers-acc-body .metiers-panel-points { margin-bottom: 20px; }
+.metiers-acc-body .metiers-panel-points li { font-size: 13.5px; }
 .metiers-tabs {
   display: flex;
   gap: 4px;
@@ -3409,8 +3477,9 @@ section { position: relative; }
     text-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
 
-  /* Why section — hidden on mobile */
-  #why { display: none !important; }
+  /* Why section — tabs replaced by an accordion on mobile */
+  .metiers-shell { display: none; }
+  .metiers-accordion { display: flex; }
 
   /* Dashboard — visible on mobile, FIXED size */
   .hero-dash-container {
