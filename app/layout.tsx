@@ -73,6 +73,19 @@ export default function RootLayout({
       lang="fr"
       className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}
     >
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EZB9K3J95" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-0EZB9K3J95');
+            `,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
