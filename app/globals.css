@@ -4259,4 +4259,169 @@ section { position: relative; }
   .cgv-article p, .cgv-article li { font-size: 15px; }
 }
 
+/* ---------- VS / JOE AI PAGE ---------- */
+.vs-hero { padding-top: 180px; }
+.vs-hero-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.vs-hero-title { margin-bottom: 20px; }
+.vs-hero-sub { margin-bottom: 36px; }
+
+.vs-copy-block {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.vs-section-title { margin-bottom: 28px; }
+.vs-copy {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 20px;
+  text-align: left;
+}
+.vs-copy:last-child { margin-bottom: 0; }
+
+/* Comparison table */
+.vs-table-section { padding-top: 0; }
+.vs-table {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+}
+.vs-table-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+}
+.vs-table-row:not(:last-child) { border-bottom: 1px solid var(--line); }
+.vs-table-row--head { background: #f6f7fb; }
+.vs-table-cell {
+  padding: 20px 24px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+}
+.vs-table-row--head .vs-table-cell {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.vs-table-cell--label {
+  font-weight: 600;
+  color: var(--ink);
+  background: #fafbfd;
+}
+.vs-table-row--head .vs-table-cell--label { background: transparent; }
+.vs-table-cell--rushh {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-weight: 500;
+}
+.vs-table-row--head .vs-table-cell--rushh {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+.vs-table-note {
+  font-size: 12.5px;
+  color: var(--muted-2);
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Highlight section */
+.vs-highlight-section { padding-top: 0; }
+.vs-highlight {
+  background: linear-gradient(135deg, #0052d4 0%, #0047C6 60%, #003fa8 100%);
+  border-radius: var(--radius-xl);
+  padding: 64px 56px;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+.vs-highlight-title {
+  font-size: clamp(24px, 2.8vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: white;
+  margin-bottom: 28px;
+}
+.vs-highlight-copy {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 18px;
+  text-align: left;
+}
+.vs-highlight-copy--strong {
+  color: white;
+  font-weight: 600;
+}
+.vs-highlight > .demo-cta-wrap { margin-top: 12px; justify-content: center; display: inline-flex; }
+
+/* Honesty */
+.vs-honesty-section { padding-top: 0; }
+.vs-honesty-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #f6f7fb;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+}
+.vs-honesty-card p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--muted);
+  text-align: center;
+  margin: 0;
+}
+
+.vs-final-cta-card { text-align: center; align-items: center; max-width: 680px; margin: 0 auto; }
+.vs-final-cta-card .cta-kz-title { margin-bottom: 28px; }
+
+@media (max-width: 768px) {
+  .vs-hero { padding-top: 120px; }
+  .vs-copy { text-align: left; }
+  .vs-table-row {
+    grid-template-columns: 1fr;
+    padding: 18px 16px;
+    display: block;
+  }
+  .vs-table-row--head { display: none; }
+  .vs-table-cell { padding: 4px 0; display: block; }
+  .vs-table-cell--label {
+    background: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted-2);
+    font-weight: 700;
+    margin-top: 14px;
+  }
+  .vs-table-cell--label:first-child { margin-top: 0; }
+  .vs-table-cell--rushh {
+    background: none;
+    padding: 4px 0 4px 12px;
+    border-left: 3px solid var(--accent);
+    margin-top: 2px;
+  }
+  .vs-table-cell:not(.vs-table-cell--label)::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .vs-highlight { padding: 40px 24px; }
+}
+
 
