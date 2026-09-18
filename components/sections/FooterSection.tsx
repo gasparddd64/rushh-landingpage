@@ -46,6 +46,7 @@ export function FooterSection() {
               <a href="#why">Pourquoi Rushh</a>
               <a href="#testimonials">Témoignages</a>
               <a href="#faq">FAQ</a>
+              <a href="/vs/joe-ai">Rushh vs Joe AI</a>
             </nav>
           </div>
 
