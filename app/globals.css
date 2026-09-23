@@ -522,7 +522,7 @@ body { overflow-x: hidden; }
 }
 .sol-title {
   font-size: clamp(28px, 3.2vw, 44px);
-  font-weight: 800;
+  font-weight: 500;
   color: var(--ink);
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -1694,7 +1694,7 @@ section { position: relative; }
 }
 .section-title {
   font-size: clamp(32px, 4vw, 52px);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.03em;
   margin-bottom: 20px;
@@ -2873,7 +2873,7 @@ section { position: relative; }
 
 .faq-title {
   font-size: clamp(28px, 3vw, 40px);
-  font-weight: 800;
+  font-weight: 500;
   color: var(--ink);
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -3202,7 +3202,7 @@ section { position: relative; }
 }
 .cta-kz-title {
   font-size: clamp(26px, 3vw, 36px);
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.15;
   color: var(--ink);
@@ -3665,7 +3665,7 @@ section { position: relative; }
 }
 .footer-cta-title {
   font-size: clamp(28px, 3.4vw, 46px);
-  font-weight: 800;
+  font-weight: 500;
   color: var(--ink);
   letter-spacing: -0.03em;
   line-height: 1.15;
@@ -4350,7 +4350,7 @@ section { position: relative; }
 }
 .vs-highlight-title {
   font-size: clamp(24px, 2.8vw, 34px);
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.25;
   color: white;
