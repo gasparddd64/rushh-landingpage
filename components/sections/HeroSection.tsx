@@ -372,7 +372,7 @@ export function HeroSection() {
       <div className="hero-bg-full" aria-hidden />
       <div className="hero-bg-overlay" aria-hidden />
 
-      <AuroraBackground showRadialGradient style={{ padding: "200px 24px 40px" }}>
+      <AuroraBackground showRadialGradient style={{ padding: "160px 24px 40px" }}>
         <div className="hero-inner">
           <span className="hero-badge">
             <img src="/badge-verified.png" alt="" className="hero-badge-verified" width={15} height={15} />
@@ -406,7 +406,7 @@ export function HeroSection() {
               href="#solution"
               className="hero-btn-phone hero-cta-equal"
             >
-              Découvrir Rushh
+              Voir comment ça marche
             </a>
             <a
               href="https://calendly.com/gaspard-david/demo"
@@ -414,7 +414,7 @@ export function HeroSection() {
               rel="noopener noreferrer"
               className="hero-btn-demo hero-cta-equal"
             >
-              Réserver un échange
+              Réserver une démo
             </a>
           </motion.div>
 

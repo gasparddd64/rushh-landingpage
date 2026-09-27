@@ -3,19 +3,19 @@
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 const BAD_ITEMS = [
-  "Paramétrer l'outil",
-  "Construire vos scénarios",
+  "Configurer l'outil vous-même",
+  "Créer les scénarios",
   "Tester les parcours",
-  "Corriger les problèmes",
-  "Maintenir le système",
+  "Corriger les erreurs",
+  "Assurer le suivi au quotidien",
 ];
 
 const GOOD_ITEMS = [
-  "Nous étudions votre fonctionnement",
-  "Nous adaptons nos scénarios immobiliers à votre organisation",
+  "Nous analysons votre fonctionnement",
+  "Nous adaptons les scénarios à votre agence",
   "Nous testons avant la mise en service",
-  "Nous suivons son fonctionnement",
-  "Nous l'adaptons avec votre agence",
+  "Nous suivons les performances dans le temps",
+  "Nous faisons évoluer le standard avec vous",
 ];
 
 function IconDashboard() {
@@ -59,7 +59,7 @@ export function CompareSection() {
               </div>
               <div>
                 <div className="cmp-card-name">Logiciel classique</div>
-                <div className="cmp-card-sub">À vous de le faire fonctionner</div>
+                <div className="cmp-card-sub">À vous de tout gérer</div>
               </div>
             </div>
             <ul className="cmp-list">

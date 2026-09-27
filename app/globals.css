@@ -631,29 +631,29 @@ html { overflow-x: hidden; }
 .cmp-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 880px;
+  gap: 24px;
+  max-width: 920px;
   margin: 0 auto 40px;
 }
 
 /* Base card */
 .cmp-card {
-  border-radius: 20px;
-  padding: 32px;
+  border-radius: 22px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 
 .cmp-card--bad {
-  background: white;
+  background: #fafbfc;
   border: 1px solid var(--line);
 }
 
 .cmp-card--good {
-  background: white;
-  border: 2px solid var(--accent);
-  box-shadow: 0 8px 32px rgba(0,71,198,0.12);
+  background: rgba(0, 71, 198, 0.025);
+  border: 1.5px solid rgba(0, 71, 198, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 71, 198, 0.09), 0 2px 10px rgba(0, 71, 198, 0.05);
 }
 
 /* Card header */
@@ -661,20 +661,20 @@ html { overflow-x: hidden; }
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
   flex-wrap: wrap;
 }
 
 .cmp-card-icon {
   width: 56px;
   height: 56px;
-  border-radius: 12px;
+  border-radius: 14px;
   display: grid;
   place-items: center;
   flex-shrink: 0;
 }
 .cmp-card-icon--bad {
-  background: #f2f3f7;
+  background: #eef0f4;
   color: #9095b3;
 }
 .cmp-card-icon--good {
@@ -683,7 +683,7 @@ html { overflow-x: hidden; }
 }
 
 .cmp-card-name {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.01em;
@@ -691,12 +691,13 @@ html { overflow-x: hidden; }
 }
 .cmp-card-name--good {
   color: var(--accent);
+  font-weight: 800;
 }
 
 .cmp-card-sub {
-  font-size: 12.5px;
+  font-size: 13px;
   color: var(--muted);
-  margin-top: 3px;
+  margin-top: 4px;
   line-height: 1.4;
 }
 .cmp-card-sub--good {
@@ -731,25 +732,30 @@ html { overflow-x: hidden; }
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 13.5px;
-  line-height: 1.5;
-  padding: 12px 0;
+  font-size: 14px;
+  line-height: 1.55;
+  padding: 13px 0;
   border-top: 1px solid var(--line);
   min-width: 0;
   word-break: break-word;
 }
 .cmp-list-item:first-child { border-top: none; }
 
-.cmp-list-item--bad { color: #9095b3; }
-.cmp-list-item--good { color: var(--ink); font-weight: 500; }
+.cmp-list-item--bad { color: #a2a6bd; }
+.cmp-list-item--good { color: var(--ink); font-weight: 600; }
+.cmp-card--good .cmp-list-item { border-top-color: rgba(0, 71, 198, 0.12); }
 
 .cmp-icon-bad {
-  font-size: 12px;
-  color: #c8cce0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e4e6ee;
+  color: #9095b3;
+  font-size: 10px;
+  display: grid;
+  place-items: center;
   flex-shrink: 0;
   margin-top: 1px;
-  width: 18px;
-  text-align: center;
 }
 
 .cmp-icon-good {
@@ -757,25 +763,25 @@ html { overflow-x: hidden; }
   height: 20px;
   border-radius: 50%;
   background: var(--accent);
+  box-shadow: 0 2px 6px rgba(0, 71, 198, 0.25);
   display: grid;
   place-items: center;
   flex-shrink: 0;
   margin-top: 1px;
 }
 
-/* Footer band on Rushh card */
+/* Footer band on Rushh card — plain text, no fill, matches the hero badge label style */
 .cmp-footer--mobile { display: none; }
 .cmp-footer {
-  margin-top: 24px;
-  background: var(--accent-soft);
-  border-radius: 10px;
-  padding: 12px 10px;
-  font-size: 10px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 71, 198, 0.12);
+  font-size: 13px;
   font-weight: 600;
-  color: var(--accent);
+  letter-spacing: 0.01em;
+  color: var(--ink);
   text-align: center;
-  letter-spacing: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 /* CTAs */
@@ -1203,7 +1209,7 @@ html { overflow-x: hidden; }
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.65;
+  opacity: 0.56;
   mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
 }
@@ -1235,6 +1241,10 @@ html { overflow-x: hidden; }
   color: #111111;
   margin-bottom: 24px;
 }
+.hero-title.hero-desktop-only {
+  font-size: clamp(40px, 5.2vw, 64px);
+  margin-bottom: 34px;
+}
 .hero-title em {
   font-style: normal;
   font-family: inherit;
@@ -1265,8 +1275,8 @@ html { overflow-x: hidden; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
-  color: #6b7280;
+  font-size: 13px;
+  color: #8b91a8;
   font-weight: 500;
 }
 .hero-trust-item svg {
