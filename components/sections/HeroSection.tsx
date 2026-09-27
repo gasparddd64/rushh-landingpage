@@ -393,7 +393,8 @@ export function HeroSection() {
             <em>votre agence.</em>
           </p>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
-            Rushh prend le relais quand votre équipe n&apos;est pas disponible.
+            Rushh prend le relais quand votre<br />
+            équipe n&apos;est pas disponible.
           </p>
 
           <motion.div
