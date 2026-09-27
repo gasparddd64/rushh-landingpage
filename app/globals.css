@@ -1437,9 +1437,6 @@ html { overflow-x: hidden; }
 .hero-badge-verified {
   flex-shrink: 0;
 }
-.hero-badge-dot-mobile {
-  display: none;
-}
 @keyframes badgePulse {
   0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,71,198,0.4); }
   50% { opacity: 0.4; box-shadow: 0 0 6px 2px rgba(0,71,198,0.2); }
@@ -3394,28 +3391,16 @@ section { position: relative; }
   .wrap { padding: 0 20px; }
 
   /* Section titles & subtitles — 20-25% smaller */
-  .section-title { font-size: clamp(24px, 6vw, 36px); font-weight: 700; }
+  .section-title { font-size: clamp(24px, 6vw, 36px); font-weight: 800; }
   .section-sub { font-size: 15px; }
-  .hero-title { font-weight: 700; }
+  .hero-title { font-weight: 800; }
 
   /* Hero mobile — softer snap, forcing scroll on touch feels broken */
   html { scroll-snap-type: y proximity; }
   .hero-section { scroll-snap-stop: normal; }
 
-  /* Mobile keeps the pre-existing nav/badge/CTA look until validated on desktop */
-  .nav { position: relative; background: transparent; border-bottom: none; }
-  .hero-badge { background: rgba(0, 71, 198, 0.06); color: #0047C6; border-radius: 8px; border: 1px solid rgba(0, 71, 198, 0.15); }
-  .hero-badge-verified { display: none; }
-  .hero-badge-dot-mobile {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #0047C6;
-    animation: badgePulse 2s ease-in-out infinite;
-    flex-shrink: 0;
-  }
-  .hero-btn-phone { background: #eceef1; color: var(--ink); box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05); }
+  /* Mobile nav — sticky with the same divider line as desktop */
+  .nav { position: sticky; top: 0; background: #ffffff; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
 
   /* Hero mobile */
   .hero { padding: 40px 0 48px; }
