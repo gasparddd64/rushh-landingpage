@@ -659,9 +659,9 @@ html { overflow-x: hidden; }
 /* Card header */
 .cmp-card-head {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
