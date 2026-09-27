@@ -529,6 +529,9 @@ html { overflow-x: hidden; }
   line-height: 1.1;
   margin-bottom: 20px;
 }
+.sol-title-accent {
+  color: var(--accent);
+}
 .sol-sub {
   font-size: 15px;
   line-height: 1.7;
@@ -861,6 +864,9 @@ html { overflow-x: hidden; }
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin: 0;
+}
+.integ-title-accent {
+  color: var(--accent);
 }
 
 .integ-sub {
