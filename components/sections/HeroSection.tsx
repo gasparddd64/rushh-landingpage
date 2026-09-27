@@ -389,7 +389,7 @@ export function HeroSection() {
 
           <p className="hero-title hero-mobile-only">
             Chaque appel<br />
-            compte<br />
+            compte pour<br />
             <em>votre agence.</em>
           </p>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
