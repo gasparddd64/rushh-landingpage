@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
@@ -123,6 +123,13 @@ export function WhySection() {
   const [active, setActive] = useState(0);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const current = METIERS[active];
+
+  useEffect(() => {
+    METIERS.forEach((m) => {
+      const img = new Image();
+      img.src = m.imgWebp || m.img;
+    });
+  }, []);
 
   return (
     <section className="section-pad metiers-section" id="why">
