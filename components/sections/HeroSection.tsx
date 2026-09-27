@@ -388,8 +388,9 @@ export function HeroSection() {
           </p>
 
           <p className="hero-title hero-mobile-only">
-            Chaque appel compte<br />
-            pour <em>votre agence.</em>
+            Chaque appel<br />
+            compte<br />
+            <em>votre agence.</em>
           </p>
           <p className="hero-subtitle hero-mobile-only" style={{ textAlign: "center" }}>
             Rushh prend le relais quand votre équipe n&apos;est pas disponible.
