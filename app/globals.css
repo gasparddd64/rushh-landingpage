@@ -68,10 +68,9 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
 }
 
-body { overflow-x: hidden; }
+html { overflow-x: hidden; }
 
 ::selection { background: var(--accent); color: white; }
 
@@ -132,9 +131,13 @@ body { overflow-x: hidden; }
 
 /* ---------- NAV ---------- */
 .nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 50;
   padding: 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 .nav-inner {
   position: relative;
