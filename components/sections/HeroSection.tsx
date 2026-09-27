@@ -375,7 +375,15 @@ export function HeroSection() {
       <AuroraBackground showRadialGradient style={{ padding: "200px 24px 40px" }}>
         <div className="hero-inner">
           <span className="hero-badge">
-            <span className="hero-badge-dot" aria-hidden />
+            <svg className="hero-badge-star" width="14" height="14" viewBox="0 0 24 24" fill="url(#hero-badge-star-gradient)" aria-hidden>
+              <defs>
+                <linearGradient id="hero-badge-star-gradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#5B8DEF" />
+                  <stop offset="100%" stopColor="#0047C6" />
+                </linearGradient>
+              </defs>
+              <path d="M12 2c.6 3.6 1.4 6.1 2.6 7.4C15.9 10.6 18.4 11.4 22 12c-3.6.6-6.1 1.4-7.4 2.6C13.4 15.9 12.6 18.4 12 22c-.6-3.6-1.4-6.1-2.6-7.4C8.1 13.4 5.6 12.6 2 12c3.6-.6 6.1-1.4 7.4-2.6C10.6 8.1 11.4 5.6 12 2z" />
+            </svg>
             Le Standard téléphonique IA pensé pour l&apos;immobilier
           </span>
 
