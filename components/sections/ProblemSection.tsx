@@ -23,7 +23,7 @@ export function ProblemSection() {
         <div className="problem-v2-head">
           <span className="section-eyebrow">Le quotidien d&apos;une agence</span>
           <h2 className="section-title problem-v2-title">
-            Vous êtes avec vos clients. Les appels, eux, n&apos;attendent pas.
+            Vous êtes avec vos clients. Les appels, eux, <em>n&apos;attendent pas</em>.
           </h2>
         </div>
 

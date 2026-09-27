@@ -60,7 +60,7 @@ export function SolutionSection() {
           <div className="sol-layout-text">
             <span className="sol-eyebrow">La réponse</span>
             <h2 className="sol-title">
-              <span className="sol-title-accent">Rushh</span>, lui, n&apos;est jamais occupé.
+              Rushh, <span className="sol-title-accent">lui</span>, n&apos;est jamais occupé.
             </h2>
             <p className="sol-sub">
               Lorsque votre équipe est en visite, déjà en ligne ou indisponible, le Standard Rushh prend le relais. Alimenté par l&apos;intelligence artificielle et conçu pour les scénarios de l&apos;immobilier, il comprend la demande et agit selon vos règles.

@@ -19,7 +19,7 @@ export function IntegrationsSection() {
 
           {/* Header */}
           <div className="integ-header">
-            <h2 className="integ-title"><span className="integ-title-accent">Rushh</span> s&apos;intègre à vos outils.</h2>
+            <h2 className="integ-title">Rushh s&apos;intègre à <span className="integ-title-accent">vos outils</span>.</h2>
             <p className="integ-sub">
               Connectez Rushh à votre environnement existant, sans changer vos habitudes.
             </p>
