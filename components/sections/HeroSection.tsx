@@ -375,14 +375,12 @@ export function HeroSection() {
       <AuroraBackground showRadialGradient style={{ padding: "200px 24px 40px" }}>
         <div className="hero-inner">
           <span className="hero-badge">
-            <svg className="hero-badge-star" width="14" height="14" viewBox="0 0 24 24" fill="url(#hero-badge-star-gradient)" aria-hidden>
-              <defs>
-                <linearGradient id="hero-badge-star-gradient" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#5B8DEF" />
-                  <stop offset="100%" stopColor="#0047C6" />
-                </linearGradient>
-              </defs>
-              <path d="M12 2c.6 3.6 1.4 6.1 2.6 7.4C15.9 10.6 18.4 11.4 22 12c-3.6.6-6.1 1.4-7.4 2.6C13.4 15.9 12.6 18.4 12 22c-.6-3.6-1.4-6.1-2.6-7.4C8.1 13.4 5.6 12.6 2 12c3.6-.6 6.1-1.4 7.4-2.6C10.6 8.1 11.4 5.6 12 2z" />
+            <svg className="hero-badge-verified" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path
+                fill="#0047C6"
+                d="M12 .8l2.1 1.9 2.8-.6 1.2 2.6 2.8.7-.2 2.9 2.1 2-1.5 2.6 1.5 2.6-2.1 2 .2 2.9-2.8.7-1.2 2.6-2.8-.6L12 23.2l-2.1-1.9-2.8.6-1.2-2.6-2.8-.7.2-2.9-2.1-2 1.5-2.6L1.2 8.5l2.1-2-.2-2.9 2.8-.7L7.1 .3l2.8.6L12 .8z"
+              />
+              <path d="M8.2 12.4l2.6 2.6 5-5.2" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
             </svg>
             Le Standard téléphonique IA pensé pour l&apos;immobilier
           </span>
