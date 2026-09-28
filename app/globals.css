@@ -1207,30 +1207,29 @@ html { overflow-x: hidden; }
   top: 0;
   left: 0;
   right: 0;
-  height: 950px;
+  height: 930px;
   z-index: 3;
   pointer-events: none;
-  background-color: rgb(150, 197, 251);
-  background: rgb(150, 197, 251) url('/hero-bg-desktop.png') center bottom / contain no-repeat;
+  background: url('/hero-bg-desktop.png') center bottom / cover no-repeat;
   background-image: image-set(url('/hero-bg-desktop.webp') type('image/webp'), url('/hero-bg-desktop.png') type('image/png'));
   background-position: center bottom;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.95;
-  mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
 }
 .hero-bg-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 950px;
+  height: 930px;
   z-index: 4;
   pointer-events: none;
   background: radial-gradient(ellipse 55% 42% at 50% 24%, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.4) 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
 }
 .hero-inner {
   max-width: 1320px;
