@@ -1216,8 +1216,6 @@ html { overflow-x: hidden; }
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.95;
-  mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
 }
 .hero-bg-overlay {
   position: absolute;
@@ -1228,8 +1226,6 @@ html { overflow-x: hidden; }
   z-index: 4;
   pointer-events: none;
   background: radial-gradient(ellipse 55% 42% at 50% 24%, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.4) 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
 }
 .hero-inner {
   max-width: 1320px;
