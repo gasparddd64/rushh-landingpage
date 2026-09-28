@@ -3462,7 +3462,7 @@ section { position: relative; }
 
   /* Hero CTAs — stacked, hug their content, tight padding */
   .hero-ctas { flex-direction: column; gap: 10px; width: auto; align-items: center; justify-content: center; margin: 0 auto; }
-  .hero-ctas .hero-cta-equal { height: 44px; font-size: 15px; padding: 0 20px; border-radius: 999px; width: auto; flex: 0 0 auto; }
+  .hero-ctas .hero-cta-equal { height: 36px; font-size: 12px; padding: 0 14px; border-radius: 999px; width: auto; flex: 0 0 auto; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
 
   /* Trust line — mobile, single line */
