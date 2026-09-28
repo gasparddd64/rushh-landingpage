@@ -1209,7 +1209,9 @@ html { overflow-x: hidden; }
   pointer-events: none;
   background: url('/hero-bg-desktop.png') center bottom / cover no-repeat;
   background-image: image-set(url('/hero-bg-desktop.webp') type('image/webp'), url('/hero-bg-desktop.png') type('image/png'));
-  opacity: 1;
+  opacity: 0.92;
+  mask-image: linear-gradient(to bottom, black 0%, black 55%, rgba(0,0,0,0.75) 70%, rgba(0,0,0,0.35) 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, rgba(0,0,0,0.75) 70%, rgba(0,0,0,0.35) 85%, transparent 100%);
 }
 .hero-bg-overlay {
   position: absolute;
