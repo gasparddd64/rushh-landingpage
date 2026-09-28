@@ -1205,9 +1205,9 @@ html { overflow-x: hidden; }
 .hero-bg-full {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 930px;
+  left: 40px;
+  right: 40px;
+  height: 860px;
   z-index: 3;
   pointer-events: none;
   background: url('/hero-bg-desktop.png') center bottom / cover no-repeat;
@@ -1220,9 +1220,9 @@ html { overflow-x: hidden; }
 .hero-bg-overlay {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 930px;
+  left: 40px;
+  right: 40px;
+  height: 860px;
   z-index: 4;
   pointer-events: none;
   background: radial-gradient(ellipse 55% 42% at 50% 24%, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.4) 55%, transparent 100%);
@@ -1453,9 +1453,9 @@ html { overflow-x: hidden; }
   white-space: nowrap;
 }
 .hero-btn-phone {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  height: 40px;
-  padding: 0 18px; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 38px;
+  padding: 0 15px; border-radius: 999px;
   background: linear-gradient(135deg, #0052d4 0%, #0047C6 60%, #003fa8 100%);
   color: white;
   font-size: 13px; font-weight: 600; letter-spacing: -0.01em;
@@ -1469,8 +1469,8 @@ html { overflow-x: hidden; }
 }
 .hero-btn-demo {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  height: 40px;
-  padding: 0 18px; border-radius: 999px;
+  height: 38px;
+  padding: 0 15px; border-radius: 999px;
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(6px);
   color: #1a1a2e;
@@ -3421,6 +3421,8 @@ section { position: relative; }
   .hero-trust-desktop-only { display: none; }
   .hero-bg-full {
     display: block;
+    left: 0;
+    right: 0;
     height: 600px;
     background: url('/hero-bg-mobile.png') center bottom / cover no-repeat;
     background-image: image-set(url('/hero-bg-mobile.webp') type('image/webp'), url('/hero-bg-mobile.png') type('image/png'));
