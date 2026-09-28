@@ -133,19 +133,23 @@ html { overflow-x: hidden; }
   position: sticky;
   top: 0;
   z-index: 50;
-  padding: 0;
-  background: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 16px 24px 0;
+  background: transparent;
 }
 .nav-inner {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 64px;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 28px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(16, 24, 40, 0.06);
 }
 .brand {
   display: flex;
@@ -1414,16 +1418,16 @@ html { overflow-x: hidden; }
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 10px 19px;
+  gap: 8px;
+  padding: 8px 16px;
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(6px);
   color: #1a1a2e;
   border-radius: 999px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.01em;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   overflow: hidden;
 }
@@ -1465,12 +1469,12 @@ html { overflow-x: hidden; }
   white-space: nowrap;
 }
 .hero-btn-phone {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  height: 46px;
-  padding: 0 19px; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 40px;
+  padding: 0 16px; border-radius: 999px;
   background: linear-gradient(135deg, #0052d4 0%, #0047C6 60%, #003fa8 100%);
   color: white;
-  font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
+  font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
   border: none; cursor: pointer; text-decoration: none;
   transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s ease;
   box-shadow: 0 2px 12px rgba(0,71,198,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
@@ -1480,13 +1484,13 @@ html { overflow-x: hidden; }
   box-shadow: 0 10px 32px rgba(0,71,198,0.4), inset 0 1px 0 rgba(255,255,255,0.18);
 }
 .hero-btn-demo {
-  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
-  height: 46px;
-  padding: 0 19px; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 40px;
+  padding: 0 16px; border-radius: 999px;
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(6px);
   color: #1a1a2e;
-  font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
+  font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
   border: 1px solid rgba(255, 255, 255, 0.4); cursor: pointer; text-decoration: none;
   transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), background 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
@@ -3408,7 +3412,8 @@ section { position: relative; }
   .hero-section { scroll-snap-stop: normal; }
 
   /* Mobile nav — sticky with the same divider line as desktop */
-  .nav { position: sticky; top: 0; background: #ffffff; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+  .nav { position: sticky; top: 0; padding: 10px 12px 0; background: transparent; }
+  .nav-inner { height: 56px; border-radius: 22px; padding: 0 16px; }
 
   /* Hero mobile */
   .hero { padding: 40px 0 48px; }
