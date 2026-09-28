@@ -1210,9 +1210,9 @@ html { overflow-x: hidden; }
   height: 930px;
   z-index: 3;
   pointer-events: none;
-  background: url('/hero-bg-desktop.png') center top / cover no-repeat;
+  background: url('/hero-bg-desktop.png') center bottom / cover no-repeat;
   background-image: image-set(url('/hero-bg-desktop.webp') type('image/webp'), url('/hero-bg-desktop.png') type('image/png'));
-  background-position: center top;
+  background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.95;
