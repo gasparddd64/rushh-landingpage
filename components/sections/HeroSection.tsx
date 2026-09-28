@@ -375,8 +375,10 @@ export function HeroSection() {
       <AuroraBackground showRadialGradient style={{ padding: "160px 24px 40px" }}>
         <div className="hero-inner">
           <span className="hero-badge">
-            <img src="/badge-verified.png" alt="" className="hero-badge-verified" width={15} height={15} />
             Le Standard téléphonique IA pensé pour l&apos;immobilier
+            <svg className="hero-badge-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
           </span>
 
           <h1 className="hero-title hero-desktop-only">
