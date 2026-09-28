@@ -1418,6 +1418,7 @@ html { overflow-x: hidden; }
 }
 
 .hero-badge {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1431,6 +1432,24 @@ html { overflow-x: hidden; }
   letter-spacing: 0.01em;
   margin-bottom: 24px;
   border: 1px solid rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+}
+.hero-badge::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.75) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  animation: badge-shine 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes badge-shine {
+  0% { left: -60%; }
+  35% { left: 130%; }
+  100% { left: 130%; }
 }
 .hero-badge-arrow {
   flex-shrink: 0;
@@ -3441,9 +3460,9 @@ section { position: relative; }
   .hero-section { margin-top: 0; min-height: auto; background: white; overflow-x: hidden; padding-bottom: 40px; }
   .hero-inner { display: flex; flex-direction: column; align-items: center; }
 
-  /* Hero CTAs — stacked full-width on mobile, same style as desktop */
-  .hero-ctas { flex-direction: column; gap: 12px; max-width: 340px; width: 100%; justify-content: center; margin: 0 auto; }
-  .hero-ctas .hero-cta-equal { height: 44px; font-size: 13px; padding: 0 14px; border-radius: 999px; width: 100%; }
+  /* Hero CTAs — stacked, hug their content, tight padding */
+  .hero-ctas { flex-direction: column; gap: 10px; width: auto; align-items: center; justify-content: center; margin: 0 auto; }
+  .hero-ctas .hero-cta-equal { height: 44px; font-size: 15px; padding: 0 20px; border-radius: 999px; width: auto; flex: 0 0 auto; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
 
   /* Trust line — mobile, single line */
