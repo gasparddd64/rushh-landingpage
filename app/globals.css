@@ -1244,8 +1244,8 @@ html { overflow-x: hidden; }
   margin-bottom: 24px;
 }
 .hero-title.hero-desktop-only {
-  font-size: clamp(40px, 5.2vw, 64px);
-  margin-bottom: 34px;
+  font-size: clamp(32px, 4vw, 50px);
+  margin-bottom: 22px;
 }
 .hero-title em {
   font-style: normal;
@@ -1262,7 +1262,8 @@ html { overflow-x: hidden; }
 }
 .hero-subtitle-desktop {
   color: #4b5563;
-  font-size: 19px;
+  font-size: 15px;
+  margin-bottom: 28px !important;
 }
 /* Trust badges */
 .hero-trust {
@@ -1453,11 +1454,11 @@ html { overflow-x: hidden; }
 }
 .hero-btn-phone {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  height: 46px;
-  padding: 0 22px; border-radius: 999px;
+  height: 40px;
+  padding: 0 18px; border-radius: 999px;
   background: linear-gradient(135deg, #0052d4 0%, #0047C6 60%, #003fa8 100%);
   color: white;
-  font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+  font-size: 13px; font-weight: 600; letter-spacing: -0.01em;
   border: none; cursor: pointer; text-decoration: none;
   transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s ease;
   box-shadow: 0 2px 12px rgba(0,71,198,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
@@ -1468,12 +1469,12 @@ html { overflow-x: hidden; }
 }
 .hero-btn-demo {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  height: 46px;
-  padding: 0 22px; border-radius: 999px;
+  height: 40px;
+  padding: 0 18px; border-radius: 999px;
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(6px);
   color: #1a1a2e;
-  font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+  font-size: 13px; font-weight: 600; letter-spacing: -0.01em;
   border: 1px solid rgba(255, 255, 255, 0.4); cursor: pointer; text-decoration: none;
   transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), background 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
