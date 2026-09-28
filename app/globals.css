@@ -1209,16 +1209,14 @@ html { overflow-x: hidden; }
   pointer-events: none;
   background: url('/hero-bg-desktop.png') center bottom / cover no-repeat;
   background-image: image-set(url('/hero-bg-desktop.webp') type('image/webp'), url('/hero-bg-desktop.png') type('image/png'));
-  opacity: 0.85;
-  mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 92%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 92%);
+  opacity: 1;
 }
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
   z-index: 4;
   pointer-events: none;
-  background: radial-gradient(ellipse 55% 50% at 50% 35%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.55) 55%, transparent 100%);
+  background: radial-gradient(ellipse 55% 50% at 50% 35%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.3) 55%, transparent 100%);
 }
 .hero-inner {
   max-width: 1320px;
