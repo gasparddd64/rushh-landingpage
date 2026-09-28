@@ -1215,9 +1215,9 @@ html { overflow-x: hidden; }
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.56;
-  mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+  opacity: 0.95;
+  mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
 }
 .hero-bg-overlay {
   position: absolute;
@@ -1227,9 +1227,9 @@ html { overflow-x: hidden; }
   height: 930px;
   z-index: 4;
   pointer-events: none;
-  background: radial-gradient(ellipse 55% 45% at 50% 28%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.55) 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+  background: radial-gradient(ellipse 55% 42% at 50% 24%, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.4) 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
 }
 .hero-inner {
   max-width: 1320px;
@@ -1460,7 +1460,7 @@ html { overflow-x: hidden; }
 .hero-btn-phone {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   height: 62px;
-  padding: 0 36px; border-radius: 10px;
+  padding: 0 36px; border-radius: 999px;
   background: transparent;
   color: var(--ink);
   font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
@@ -1475,7 +1475,7 @@ html { overflow-x: hidden; }
 .hero-btn-demo {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   height: 62px;
-  padding: 0 36px; border-radius: 10px;
+  padding: 0 36px; border-radius: 999px;
   background: linear-gradient(135deg, #0052d4 0%, #0047C6 60%, #003fa8 100%);
   color: white;
   font-size: 16px; font-weight: 500; letter-spacing: -0.01em;
@@ -3437,7 +3437,7 @@ section { position: relative; }
 
   /* Hero CTAs — side by side on mobile */
   .hero-ctas { gap: 10px; max-width: 340px; width: 100%; justify-content: center; flex-wrap: nowrap; margin: 0 auto; }
-  .hero-ctas .hero-cta-equal { height: 48px; font-size: 13px; padding: 0 14px; border-radius: 10px; flex: 1 1 0; min-width: 0; }
+  .hero-ctas .hero-cta-equal { height: 48px; font-size: 13px; padding: 0 14px; border-radius: 999px; flex: 1 1 0; min-width: 0; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
 
   /* Trust line — mobile, single line */
