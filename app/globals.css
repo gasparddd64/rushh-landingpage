@@ -1237,8 +1237,8 @@ html { overflow-x: hidden; }
   margin-bottom: 24px;
 }
 .hero-title.hero-desktop-only {
-  font-size: clamp(32px, 4vw, 50px);
-  margin-bottom: 22px;
+  font-size: clamp(38px, 4.8vw, 60px);
+  margin-bottom: 26px;
 }
 .hero-title em {
   font-style: normal;
@@ -1255,8 +1255,8 @@ html { overflow-x: hidden; }
 }
 .hero-subtitle-desktop {
   color: #4b5563;
-  font-size: 15px;
-  margin-bottom: 28px !important;
+  font-size: 18px;
+  margin-bottom: 32px !important;
 }
 /* Trust badges */
 .hero-trust {
@@ -1414,16 +1414,16 @@ html { overflow-x: hidden; }
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
+  gap: 9px;
+  padding: 10px 19px;
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(6px);
   color: #1a1a2e;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.01em;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   overflow: hidden;
 }
@@ -1465,12 +1465,12 @@ html { overflow-x: hidden; }
   white-space: nowrap;
 }
 .hero-btn-phone {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  height: 38px;
-  padding: 0 15px; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 46px;
+  padding: 0 19px; border-radius: 999px;
   background: linear-gradient(135deg, #0052d4 0%, #0047C6 60%, #003fa8 100%);
   color: white;
-  font-size: 13px; font-weight: 600; letter-spacing: -0.01em;
+  font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
   border: none; cursor: pointer; text-decoration: none;
   transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s ease;
   box-shadow: 0 2px 12px rgba(0,71,198,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
@@ -1480,13 +1480,13 @@ html { overflow-x: hidden; }
   box-shadow: 0 10px 32px rgba(0,71,198,0.4), inset 0 1px 0 rgba(255,255,255,0.18);
 }
 .hero-btn-demo {
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  height: 38px;
-  padding: 0 15px; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  height: 46px;
+  padding: 0 19px; border-radius: 999px;
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(6px);
   color: #1a1a2e;
-  font-size: 13px; font-weight: 600; letter-spacing: -0.01em;
+  font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
   border: 1px solid rgba(255, 255, 255, 0.4); cursor: pointer; text-decoration: none;
   transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), background 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
