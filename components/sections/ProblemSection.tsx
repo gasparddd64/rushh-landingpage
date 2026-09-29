@@ -7,7 +7,8 @@ export function ProblemSection() {
       desc: "Pendant un rendez-vous, Rushh accueille les appels et recueille les informations utiles.",
     },
     {
-      img: "/metier-gerance.png",
+      img: "/problem-deja-en-ligne.png",
+      imgWebp: "/problem-deja-en-ligne.webp",
       title: "Déjà en ligne",
       desc: "Votre équipe échange déjà. Rushh traite le nouvel appel sans couper la conversation en cours.",
     },
