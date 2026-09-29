@@ -998,17 +998,83 @@ html { overflow-x: hidden; }
   .problem-strip-item:first-child { border-top: none; }
 }
 
-/* ---------- PROBLEM SECTION v3 — "Le quotidien d'une agence" ---------- */
-.problem-v3-head {
+/* ---------- PROBLEM SECTION — mobile keeps the original layout, desktop uses the image cards ---------- */
+.problem-mobile-only { display: none; }
+.problem-desktop-only { display: block; }
+
+/* ---------- PROBLEM SECTION v2 — original mobile layout ---------- */
+.problem-v2-head {
+  max-width: 640px;
+  margin: 0 0 72px;
+  text-align: left;
+}
+.problem-v2-title {
+  text-align: left;
+  margin-left: 0;
+}
+.problem-v2-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.problem-v2-card {
+  background: #f6f7fb;
+  border-radius: 16px;
+  padding: 28px 24px;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 48px;
+  flex-direction: column;
+}
+.problem-v2-num {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted-2);
+  margin-bottom: 28px;
+}
+.problem-v2-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.problem-v2-card-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.problem-v2-card--highlight {
+  background: var(--accent);
+}
+.problem-v2-num--highlight {
+  color: rgba(255, 255, 255, 0.75);
+}
+.problem-v2-card-title--highlight {
+  color: white;
+}
+.problem-v2-card-desc--highlight {
+  color: rgba(255, 255, 255, 0.85);
+}
+@media (max-width: 900px) {
+  .problem-v2-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .problem-v2-grid { grid-template-columns: 1fr; }
+  .problem-v2-head { text-align: center; margin-left: auto; margin-right: auto; }
+  .problem-v2-title { text-align: center; }
+}
+
+/* ---------- PROBLEM SECTION v3 — desktop image cards ---------- */
+.problem-v3-head {
   margin: 0 0 56px;
 }
 .problem-v3-head-left {
   max-width: 640px;
   text-align: left;
+}
+.problem-v3-eyebrow {
+  color: #4b5065;
 }
 .problem-v3-title {
   text-align: left;
@@ -1016,12 +1082,12 @@ html { overflow-x: hidden; }
   margin-bottom: 0;
 }
 .problem-v3-sub {
-  flex-shrink: 0;
-  max-width: 320px;
+  margin-top: 16px;
+  max-width: 480px;
   font-size: 16px;
   line-height: 1.6;
-  color: var(--muted);
-  text-align: right;
+  color: #4b5065;
+  text-align: left;
 }
 .problem-v3-grid {
   display: grid;
@@ -1051,13 +1117,9 @@ html { overflow-x: hidden; }
 .problem-v3-card-desc {
   font-size: 14px;
   line-height: 1.6;
-  color: var(--muted);
+  color: #4b5065;
 }
 
-@media (max-width: 900px) {
-  .problem-v3-head { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .problem-v3-sub { text-align: left; max-width: 100%; }
-}
 @media (max-width: 700px) {
   .problem-v3-grid { grid-template-columns: 1fr; }
 }
@@ -3411,9 +3473,13 @@ section { position: relative; }
   html { scroll-snap-type: y proximity; }
   .hero-section { scroll-snap-stop: normal; }
 
-  /* Mobile nav — sticky with the same divider line as desktop */
-  .nav { position: sticky; top: 0; padding: 10px 12px 0; background: transparent; }
-  .nav-inner { height: 56px; border-radius: 18px; padding: 0 16px; }
+  /* Mobile nav — plain sticky bar (kept separate from the desktop floating pill) */
+  .nav { position: sticky; top: 0; padding: 0; background: #ffffff; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+  .nav-inner { height: 64px; border-radius: 0; padding: 0 16px; background: transparent; backdrop-filter: none; border: none; box-shadow: none; }
+
+  /* Problem section — original layout on mobile */
+  .problem-mobile-only { display: block; }
+  .problem-desktop-only { display: none; }
 
   /* Hero mobile */
   .hero { padding: 40px 0 48px; }
@@ -3436,21 +3502,11 @@ section { position: relative; }
   .hero-ctas.hero-mobile-only,
   .hero-trust.hero-mobile-only { display: flex; }
   .hero-trust-desktop-only { display: none; }
-  .hero-bg-full {
-    display: block;
-    left: 0;
-    right: 0;
-    height: 600px;
-    background: url('/hero-bg-mobile.png') center bottom / cover no-repeat;
-    background-image: image-set(url('/hero-bg-mobile.webp') type('image/webp'), url('/hero-bg-mobile.png') type('image/png'));
-    background-position: center bottom;
-    background-size: cover;
-    opacity: 0.85;
-  }
+  .hero-bg-full { display: none; }
   .hero-bg-overlay { display: none; }
   .hero-title { font-size: clamp(28px, 8vw, 40px); text-align: center; word-wrap: break-word; }
   .hero-subtitle { max-width: 100%; font-size: 14px; margin-bottom: 24px; color: var(--muted); text-align: center; padding: 0 8px; }
-  .hero-badge { font-size: 10.5px; padding: 8px 14px; margin-bottom: 18px; white-space: nowrap; text-align: center; max-width: 100%; border-radius: 999px; line-height: 1.2; }
+  .hero-badge { font-size: 10.5px; padding: 8px 14px; margin-bottom: 18px; white-space: nowrap; text-align: center; max-width: 100%; border-radius: 999px; line-height: 1.2; background: #ffffff; border-color: rgba(0, 0, 0, 0.1); }
 
   /* Hero padding — clean look */
   .aurora-wrap { padding-top: 56px !important; padding-bottom: 16px !important; padding-left: 0 !important; padding-right: 0 !important; }
@@ -3462,6 +3518,9 @@ section { position: relative; }
   .hero-ctas { flex-direction: column; gap: 10px; width: auto; align-items: center; justify-content: center; margin: 0 auto; }
   .hero-ctas .hero-cta-equal { height: 36px; font-size: 12px; padding: 0 14px; border-radius: 999px; width: auto; flex: 0 0 auto; }
   .hero-ctas .hero-btn-phone { gap: 6px; }
+  /* No photo backdrop on mobile, so the glass style needs a visible fill */
+  .hero-ctas .hero-btn-demo { background: #ffffff; border-color: rgba(16, 24, 40, 0.14); }
+  .hero-ctas .hero-btn-demo:hover { background: #ffffff; }
 
   /* Trust line — mobile, single line */
   .hero-trust { margin-top: 20px; padding: 0 12px; }
@@ -3469,9 +3528,15 @@ section { position: relative; }
   .hero-trust-check { flex-shrink: 0; }
   .hero-trust-text { text-align: center; white-space: nowrap; }
 
-  /* City carousel — removed on mobile */
+  /* City carousel — visible on mobile */
   .hero-city-carousel {
-    display: none;
+    display: block;
+    margin-top: 28px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
   }
   .hero-city-track {
     display: flex;
