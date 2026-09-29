@@ -4,9 +4,9 @@ import { useState } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 const NAV_LINKS = [
-  { label: "L'expérience Rushh", href: "#solution" },
-  { label: "Notre différence", href: "#why" },
-  { label: "Nos clients", href: "#testimonials" },
+  { label: "Comment ça marche", href: "#solution" },
+  { label: "Pour votre agence", href: "#why" },
+  { label: "Cas d'usage", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
 ];
 
