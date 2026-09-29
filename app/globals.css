@@ -148,7 +148,7 @@ html { overflow-x: hidden; }
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(16, 24, 40, 0.08);
-  border-radius: 999px;
+  border-radius: 20px;
   box-shadow: 0 4px 20px rgba(16, 24, 40, 0.06);
 }
 .brand {
@@ -3413,7 +3413,7 @@ section { position: relative; }
 
   /* Mobile nav — sticky with the same divider line as desktop */
   .nav { position: sticky; top: 0; padding: 10px 12px 0; background: transparent; }
-  .nav-inner { height: 56px; border-radius: 22px; padding: 0 16px; }
+  .nav-inner { height: 56px; border-radius: 18px; padding: 0 16px; }
 
   /* Hero mobile */
   .hero { padding: 40px 0 48px; }
