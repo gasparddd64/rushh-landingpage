@@ -375,7 +375,7 @@ export function HeroSection() {
       <AuroraBackground showRadialGradient style={{ padding: "160px 24px 40px" }}>
         <div className="hero-inner">
           <span className="hero-badge">
-            Le Standard téléphonique IA pensé pour l&apos;immobilier
+            Le standard téléphonique IA conçu pour l&apos;immobilier
             <svg className="hero-badge-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
@@ -436,7 +436,7 @@ export function HeroSection() {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               <span className="hero-trust-text">
-                Pensé pour l&apos;immobilier <span className="hero-trust-sep">·</span> Adapté à votre organisation <span className="hero-trust-sep hero-trust-desktop-only">·</span> <span className="hero-trust-desktop-only">Déployé par Rushh</span>
+                Appels manqués <span className="hero-trust-sep">·</span> Doubles appels <span className="hero-trust-sep">·</span> Soirs &amp; week-ends
               </span>
             </span>
           </motion.div>
