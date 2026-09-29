@@ -1,7 +1,8 @@
 export function ProblemSection() {
   const cards = [
     {
-      img: "/metier-transaction.png",
+      img: "/problem-en-visite.png",
+      imgWebp: "/problem-en-visite.webp",
       title: "En visite",
       desc: "Pendant un rendez-vous, Rushh accueille les appels et recueille les informations utiles.",
     },
@@ -36,7 +37,10 @@ export function ProblemSection() {
           {cards.map((c, i) => (
             <div key={i} className="problem-v3-card">
               <div className="problem-v3-card-img">
-                <img src={c.img} alt={c.title} />
+                <picture>
+                  {"imgWebp" in c && c.imgWebp && <source srcSet={c.imgWebp} type="image/webp" />}
+                  <img src={c.img} alt={c.title} />
+                </picture>
               </div>
               <h3 className="problem-v3-card-title">{c.title}</h3>
               <p className="problem-v3-card-desc">{c.desc}</p>
