@@ -13,7 +13,8 @@ export function ProblemSection() {
       desc: "Votre équipe échange déjà. Rushh traite le nouvel appel sans couper la conversation en cours.",
     },
     {
-      img: "/metier-syndic.png",
+      img: "/problem-apres-fermeture.png",
+      imgWebp: "/problem-apres-fermeture.webp",
       title: "Après la fermeture",
       desc: "Vos clients continuent d'appeler après vos horaires. Rushh leur apporte une réponse.",
     },
