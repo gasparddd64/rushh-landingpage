@@ -5,7 +5,7 @@ import { SolutionSection } from "@/components/sections/SolutionSection";
 import { WhySection } from "@/components/sections/WhySection";
 import { CompareSection } from "@/components/sections/CompareSection";
 import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+// TestimonialsSection retiré de la page pour le moment — sera replacé ailleurs plus tard
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { CalendlySection } from "@/components/sections/CalendlySection";
@@ -144,7 +144,7 @@ export default function Home() {
       />
       <Nav />
       <HeroSection />
-      <TestimonialsSection />
+      {/* TestimonialsSection temporairement retiré — sera replacé ailleurs plus tard */}
       <ProblemSection />
       <SolutionSection />
       <WhySection />

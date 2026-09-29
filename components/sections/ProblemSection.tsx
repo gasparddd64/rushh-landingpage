@@ -1,45 +1,47 @@
 export function ProblemSection() {
   const cards = [
     {
-      num: "01",
+      img: "/metier-transaction.png",
       title: "En visite",
-      desc: "Votre attention est avec le client en face de vous.",
+      desc: "Pendant un rendez-vous, Rushh accueille les appels et recueille les informations utiles.",
     },
     {
-      num: "02",
+      img: "/metier-gerance.png",
       title: "Déjà en ligne",
-      desc: "Votre équipe échange déjà. Un autre appel arrive.",
+      desc: "Votre équipe échange déjà. Rushh traite le nouvel appel sans couper la conversation en cours.",
     },
     {
-      num: "03",
+      img: "/metier-syndic.png",
       title: "Après la fermeture",
-      desc: "Vos clients continuent de vous appeler après vos horaires.",
+      desc: "Vos clients continuent d'appeler après vos horaires. Rushh leur apporte une réponse.",
     },
   ];
 
   return (
-    <section className="section-pad" id="problem" style={{ position: "relative", zIndex: 10, paddingTop: 100, paddingBottom: 220 }}>
+    <section className="section-pad" id="problem">
       <div className="wrap">
-        <div className="problem-v2-head">
-          <span className="section-eyebrow">Le quotidien d&apos;une agence</span>
-          <h2 className="section-title problem-v2-title">
-            Vous êtes avec vos clients. Les appels, eux, <em>n&apos;attendent pas</em>.
-          </h2>
+        <div className="problem-v3-head">
+          <div className="problem-v3-head-left">
+            <span className="section-eyebrow">Le quotidien d&apos;une agence</span>
+            <h2 className="section-title problem-v3-title">
+              Vous êtes avec vos clients. Les appels, eux, <em>n&apos;attendent pas</em>.
+            </h2>
+          </div>
+          <p className="problem-v3-sub">
+            En visite, déjà en ligne ou après la fermeture : votre standard doit continuer de répondre.
+          </p>
         </div>
 
-        <div className="problem-v2-grid">
+        <div className="problem-v3-grid">
           {cards.map((c, i) => (
-            <div key={i} className="problem-v2-card">
-              <span className="problem-v2-num">{c.num} /</span>
-              <h3 className="problem-v2-card-title">{c.title}</h3>
-              <p className="problem-v2-card-desc">{c.desc}</p>
+            <div key={i} className="problem-v3-card">
+              <div className="problem-v3-card-img">
+                <img src={c.img} alt={c.title} />
+              </div>
+              <h3 className="problem-v3-card-title">{c.title}</h3>
+              <p className="problem-v3-card-desc">{c.desc}</p>
             </div>
           ))}
-          <div className="problem-v2-card problem-v2-card--highlight">
-            <span className="problem-v2-num problem-v2-num--highlight">Le relais Rushh</span>
-            <h3 className="problem-v2-card-title problem-v2-card-title--highlight">L&apos;appel trouve une réponse.</h3>
-            <p className="problem-v2-card-desc problem-v2-card-desc--highlight">La demande est comprise, les informations utiles sont recueillies et votre équipe sait quoi reprendre.</p>
-          </div>
         </div>
       </div>
     </section>
