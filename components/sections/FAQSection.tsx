@@ -2,84 +2,46 @@
 
 import { useState } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
-
-const FAQ = [
-  {
-    q: "Quelle différence entre le Standard Rushh et un standard téléphonique ou une permanence téléphonique classique ?",
-    a: "Un standard classique fait patienter ou redirige l'appel. Le Standard Rushh, lui, comprend la demande, qualifie le prospect et transmet une fiche prête à traiter, sans plateau d'appel ni script générique, avec un déploiement adapté à votre agence en 5 jours.",
-    cta: false,
-  },
-  {
-    q: "Est-ce une intelligence artificielle qui répond aux appels ?",
-    a: "Oui. Le Standard Rushh s'appuie sur une intelligence artificielle vocale pour accueillir l'appel, comprendre la demande et recueillir les informations utiles. Elle traite le premier niveau selon vos règles, et transmet à votre équipe dès qu'un échange humain est nécessaire.",
-    cta: false,
-  },
-  {
-    q: "Est-ce que le Standard Rushh remplace mon équipe ?",
-    a: "Non. Le Standard Rushh intervient lorsque votre équipe ne peut pas prendre en charge un appel, ou sur les situations que vous choisissez de lui confier. Vous définissez également les cas dans lesquels l'appel doit être transmis à un collaborateur.",
-    cta: false,
-  },
-  {
-    q: "Que se passe-t-il si un client veut parler à quelqu'un de l'agence ?",
-    a: "Vous définissez vos règles. Selon la situation, le Standard Rushh peut transmettre l'appel, recueillir les informations nécessaires ou organiser la suite avec votre équipe.",
-    cta: false,
-  },
-  {
-    q: "Est-ce à nous de configurer et maintenir le système ?",
-    a: "Non. C'est justement la différence entre le Standard Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre standard téléphonique avec vous.",
-    cta: false,
-  },
-  {
-    q: "Combien de temps faut-il pour déployer le Standard Rushh ?",
-    a: "La mise en production cible est réalisée sous 5 jours ouvrés après réception de l'ensemble des éléments nécessaires au déploiement.",
-    cta: false,
-  },
-];
+import { FAQ_ITEMS } from "@/lib/faq";
 
 export function FAQSection() {
-  const [open, setOpen] = useState<number | null>(null);
-
-  const toggle = (i: number) => setOpen(open === i ? null : i);
+  const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="section-pad faq-section" id="faq">
-      <div className="wrap">
-        <div className="faq-layout">
-          {/* Left: heading */}
-          <div className="faq-heading">
-            <span className="section-eyebrow">FAQ</span>
-            <h2 className="faq-title">Questions fréquentes.</h2>
-            <p className="faq-intro">
-              Ce que les directeurs d'agence nous posent avant de réserver une démonstration.
+    <section id="faq" aria-labelledby="faq-title">
+      <div className="lf-wrap">
+        <div className="fq-layout">
+          <div className="fq-left">
+            <span className="lf-pill">FAQ</span>
+            <h2 id="faq-title" className="lf-h2">Questions fréquentes.</h2>
+            <p className="lf-sub">
+              Ce que les directeurs d&apos;agence nous posent avant de réserver une démonstration.
             </p>
+            <div className="lf-card fq-cta">
+              <p>Parlons de votre agence.</p>
+              <DemoCTA label="Réserver une démo" showArrow={false} />
+            </div>
           </div>
 
-          {/* Right: accordion */}
-          <div className="faq-wrap">
-            {FAQ.map((item, i) => {
+          <div className="fq-list">
+            {FAQ_ITEMS.map((item, i) => {
               const isOpen = open === i;
               return (
-                <div key={i} className={`faq-item${isOpen ? " faq-item--open" : ""}`}>
+                <div key={item.q} className="lf-card fq-item" data-open={isOpen}>
                   <button
-                    className="faq-q"
-                    onClick={() => toggle(i)}
+                    type="button"
+                    className="fq-q"
+                    id={`faq-q-${i}`}
                     aria-expanded={isOpen}
+                    aria-controls={`faq-a-${i}`}
+                    onClick={() => setOpen(isOpen ? null : i)}
                   >
                     <span>{item.q}</span>
-                    <span className="faq-chevron" aria-hidden>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="6 9 12 15 18 9"/>
-                      </svg>
-                    </span>
+                    <span className="fq-icon" aria-hidden />
                   </button>
-                  <div className="faq-a" aria-hidden={!isOpen}>
-                    <div className="faq-a-inner">
+                  <div className="fq-a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+                    <div>
                       <p>{item.a}</p>
-                      {item.cta && (
-                        <div className="faq-cta">
-                          <DemoCTA />
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>

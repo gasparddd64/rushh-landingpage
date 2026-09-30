@@ -2,7 +2,7 @@
 
 export function DemoCTA({
   variant = "blue",
-  label = "Réserver ma démo",
+  label = "Réserver une démo",
   showArrow = true,
 }: {
   variant?: "blue" | "white";

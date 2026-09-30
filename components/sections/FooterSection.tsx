@@ -42,8 +42,8 @@ export function FooterSection() {
           <div className="footer-col">
             <h3 className="footer-col-title">Navigation</h3>
             <nav className="footer-links">
-              <a href="#solution">Comment ça marche</a>
-              <a href="#why">Pourquoi Rushh</a>
+              <a href="#relais">Comment ça marche</a>
+              <a href="#metiers">Pourquoi Rushh</a>
               <a href="#testimonials">Témoignages</a>
               <a href="#faq">FAQ</a>
               <a href="/vs/joe-ai">Rushh vs Joe AI</a>

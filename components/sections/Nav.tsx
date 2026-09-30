@@ -4,8 +4,8 @@ import { useState } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 const NAV_LINKS = [
-  { label: "L'expérience Rushh", href: "#solution" },
-  { label: "Notre différence", href: "#why" },
+  { label: "L'expérience Rushh", href: "#relais" },
+  { label: "Notre différence", href: "#metiers" },
   { label: "Nos clients", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -34,7 +34,7 @@ export function Nav() {
 
           {/* CTA */}
           <div className="nav-cta">
-            <DemoCTA label="Réserver un échange" showArrow={false} />
+            <DemoCTA label="Réserver une démo" showArrow={false} />
           </div>
 
           {/* Hamburger */}
@@ -66,7 +66,7 @@ export function Nav() {
           ))}
         </div>
         <div className="mobile-menu-ctas">
-          <DemoCTA label="Réserver un échange" />
+          <DemoCTA label="Réserver une démo" />
         </div>
       </div>
     </>

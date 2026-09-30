@@ -1,16 +1,16 @@
 import { Nav } from "@/components/sections/Nav";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ProblemSection } from "@/components/sections/ProblemSection";
-import { SolutionSection } from "@/components/sections/SolutionSection";
-import { WhySection } from "@/components/sections/WhySection";
-import { CompareSection } from "@/components/sections/CompareSection";
-import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { RelaySection } from "@/components/sections/RelaySection";
+import { MetiersSection } from "@/components/sections/MetiersSection";
+import { ToolsOrbitSection } from "@/components/sections/ToolsOrbitSection";
+import { ResultsSection } from "@/components/sections/ResultsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
-import { CTASection } from "@/components/sections/CTASection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { CalendlySection } from "@/components/sections/CalendlySection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { FAQ_ITEMS } from "@/lib/faq";
+import "./landing-flow.css";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -99,48 +99,11 @@ const serviceSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Quelle différence entre le Standard Rushh et un standard téléphonique ou une permanence téléphonique classique ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un standard classique fait patienter ou redirige l'appel. Le Standard Rushh, lui, comprend la demande, qualifie le prospect et transmet une fiche prête à traiter, sans plateau d'appel ni script générique, avec un déploiement adapté à votre agence en 5 jours.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Est-ce que le Standard Rushh remplace mon équipe ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Le Standard Rushh intervient lorsque votre équipe ne peut pas prendre en charge un appel, ou sur les situations que vous choisissez de lui confier. Vous définissez également les cas dans lesquels l'appel doit être transmis à un collaborateur.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Que se passe-t-il si un client veut parler à quelqu'un de l'agence ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Vous définissez vos règles. Selon la situation, le Standard Rushh peut transmettre l'appel, recueillir les informations nécessaires ou organiser la suite avec votre équipe.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Est-ce à nous de configurer et maintenir le système ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. C'est justement la différence entre le Standard Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre standard téléphonique avec vous.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Combien de temps faut-il pour déployer le Standard Rushh ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La mise en production cible est réalisée sous 5 jours ouvrés après réception de l'ensemble des éléments nécessaires au déploiement.",
-      },
-    },
-  ],
+  "mainEntity": FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a },
+  })),
 };
 
 export default function Home() {
@@ -164,14 +127,14 @@ export default function Home() {
       />
       <Nav />
       <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
-      <WhySection />
-      <CompareSection />
-      <IntegrationsSection />
+      <div className="lf">
+        <RelaySection />
+        <MetiersSection />
+        <ToolsOrbitSection />
+        <ResultsSection />
+        <FAQSection />
+      </div>
       <TestimonialsSection />
-      <FAQSection />
-      <CTASection />
       <CalendlySection />
       <FooterSection />
       <ScrollReveal />

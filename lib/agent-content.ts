@@ -12,8 +12,12 @@ export interface MarkdownPage {
 
 const FAQ: Array<{ q: string; a: string }> = [
   {
-    q: "Quelle différence entre le Standard Rushh et un standard téléphonique classique ?",
-    a: "Un standard classique fait patienter ou redirige l'appel. Le Standard Rushh, lui, comprend la demande, qualifie le prospect et transmet une fiche prête à traiter, sans plateau d'appel ni script générique, avec un déploiement adapté à l'agence en 5 jours.",
+    q: "Est-ce une intelligence artificielle qui répond aux appels ?",
+    a: "Oui. Le Standard Rushh s'appuie sur une intelligence artificielle vocale pour accueillir l'appel, comprendre la demande et recueillir les informations utiles. Elle traite le premier niveau selon les règles de l'agence, et transmet à l'équipe dès qu'un échange humain est nécessaire.",
+  },
+  {
+    q: "Le Standard Rushh est-il conforme au RGPD ?",
+    a: "Oui, Rushh est 100 % conforme au RGPD. Les informations recueillies pendant les appels sont utilisées uniquement pour traiter les demandes de l'agence, dans le cadre qu'elle définit.",
   },
   {
     q: "Est-ce que le Standard Rushh remplace l'équipe de l'agence ?",
