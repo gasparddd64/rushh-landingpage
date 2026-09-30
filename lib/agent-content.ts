@@ -122,7 +122,7 @@ Une question sur le Standard Rushh, une démo à organiser, ou un point sur un d
 
 ## Réserver un échange
 
-Pour réserver une démonstration du Standard Rushh, utilisez le formulaire de prise de rendez-vous disponible sur la page d'accueil (${SITE_URL}/), ou écrivez directement à hello@rushh.fr en précisant le nom de l'agence et le métier concerné (transaction, gérance, syndic).
+Pour réserver une démonstration du Standard Rushh, utilisez le bouton « Réserver une démo » de la page d'accueil (${SITE_URL}/), ou écrivez directement à hello@rushh.fr en précisant le nom de l'agence et le métier concerné (transaction, gérance, syndic).
 
 ## Éditeur
 
