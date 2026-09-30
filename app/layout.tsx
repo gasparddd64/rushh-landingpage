@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Instrument_Serif } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { CalendlyTracking } from "@/components/CalendlyTracking";
 
-const inter = Inter({
+const inter = Plus_Jakarta_Sans({
   variable: "--font-inter",
   subsets: ["latin"],
 });
