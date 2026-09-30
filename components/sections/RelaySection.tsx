@@ -146,36 +146,27 @@ const SCENARIOS: { title: string; desc: string; visual: ReactNode }[] = [
 ];
 
 /* ══════════════════════════════════════════════
-   Les 3 situations du quotidien
+   Les 3 situations du quotidien (texte seul, une par étape)
 ═══════════════════════════════════════════════ */
-const MOMENTS = [
-  {
-    title: "En visite",
-    desc: "Votre attention est avec le client en face de vous.",
-    img: "/problem-en-visite.webp",
-  },
-  {
-    title: "Déjà en ligne",
-    desc: "Votre équipe échange déjà. Un autre appel arrive.",
-    img: "/problem-deja-en-ligne.webp",
-  },
-  {
-    title: "Après la fermeture",
-    desc: "Vos clients continuent de vous appeler après vos horaires.",
-    img: "/problem-apres-fermeture.webp",
-  },
-];
+const MOMENTS = ["En visite", "Déjà en ligne", "Après la fermeture"];
 
 /* ══════════════════════════════════════════════
-   Mise en scène au scroll
-   0 → 46 %   les 3 situations apparaissent une à une
-   52 → 72 %  « L'appel trouve une réponse. » surgit au centre et « sonne »
-   72 → 92 %  il dézoome à sa place, le reste apparaît autour
-   dernier tiers : la 1ʳᵉ carte remonte (chevauchement CSS de la pile)
+   Mise en scène au scroll — UN roulement de molette = UNE étape
+   étape 0  « En visite » (apparaît à l'arrivée)
+   étape 1  + « Déjà en ligne »
+   étape 2  + « Après la fermeture »
+   étape 3  « L'appel trouve une réponse. » remplace les trois lignes
+   étape 4  il dézoome à sa place, le reste apparaît, la 1ʳᵉ carte remonte
 ═══════════════════════════════════════════════ */
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const ease = (t: number) => t * t * (3 - 2 * t);
+const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 const seg = (p: number, a: number, b: number) => ease(clamp01((p - a) / (b - a)));
+
+// Positions des 5 étapes le long de la scène (fraction de la distance épinglée)
+const STOPS = [0, 0.25, 0.5, 0.75, 1];
+const STEP_MS = 950;
+const GESTURE_GAP_MS = 160;
 
 // Décalage d'épinglage entre deux cartes (doit rester égal au --i * 26px du CSS)
 const PIN_STEP = 26;
@@ -188,7 +179,7 @@ export function RelaySection() {
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Scène épinglée : on convertit la progression du scroll en variables CSS
+  // Scène épinglée : progression du scroll → variables CSS, et molette → étapes discrètes
   useEffect(() => {
     const track = trackRef.current;
     const stage = stageRef.current;
@@ -196,12 +187,12 @@ export function RelaySection() {
     const move = moveRef.current;
     if (!track || !stage || !header || !move) return;
 
-    let dist = 1;
     let raf = 0;
+    // Toujours relu à la volée : la mise en page peut bouger (polices, images, redimensionnement)
+    const distance = () => Math.max(1, track.offsetHeight - stage.clientHeight);
 
     const measure = () => {
       const stageH = stage.clientHeight;
-      dist = Math.max(1, track.offsetHeight - stageH);
       const centerY = header.offsetTop + move.offsetTop + move.offsetHeight / 2;
       // centre visuel de la scène (la barre de navigation occupe le haut)
       stage.style.setProperty("--dy", `${(stageH + 64) / 2 - centerY}px`);
@@ -211,19 +202,20 @@ export function RelaySection() {
 
     const update = () => {
       raf = 0;
-      const p = clamp01(-track.getBoundingClientRect().top / dist);
+      const top = track.getBoundingClientRect().top;
+      const p = clamp01(-top / distance());
       const set = (k: string, v: number) => stage.style.setProperty(k, v.toFixed(4));
-      set("--intro", seg(p, 0, 0.05));
-      set("--s1", seg(p, 0.05, 0.13));
-      set("--s2", seg(p, 0.18, 0.26));
-      set("--s3", seg(p, 0.31, 0.39));
-      set("--out", seg(p, 0.46, 0.55));
-      set("--ring", seg(p, 0.52, 0.6));
-      const z = seg(p, 0.72, 0.9);
+      // « En visite » se révèle pendant que la scène entre à l'écran
+      set("--s1", ease(clamp01(1 - top / (window.innerHeight * 0.55))));
+      set("--s2", seg(p, STOPS[0], STOPS[1]));
+      set("--s3", seg(p, STOPS[1], STOPS[2]));
+      const swap = seg(p, STOPS[2], STOPS[3]);
+      set("--out", swap);
+      set("--ring", swap);
+      const z = seg(p, STOPS[3], STOPS[4]);
       set("--z", z);
       stage.style.setProperty("--mix", `${((1 - z) * 100).toFixed(1)}%`);
-      set("--hdr", seg(p, 0.8, 0.92));
-      stage.dataset.ring = p > 0.6 && p < 0.73 ? "on" : "off";
+      set("--hdr", seg(p, 0.83, 0.97));
     };
 
     const schedule = () => {
@@ -234,14 +226,133 @@ export function RelaySection() {
       schedule();
     };
 
+    /* ── Pilotage par étapes ── */
+    const stopY = (k: number) =>
+      track.getBoundingClientRect().top + window.scrollY + STOPS[k] * distance();
+    let animating = false;
+    let animStart = 0;
+    let lastInterceptTs = 0;
+    // Garde-fou : si l'onglet a été mis en veille pendant un pas, on ne reste pas bloqué
+    const isAnimating = () => {
+      if (animating && performance.now() - animStart > STEP_MS + 800) animating = false;
+      return animating;
+    };
+
+    const animateTo = (y1: number) => {
+      const y0 = window.scrollY;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const dur = reduce ? 0 : STEP_MS;
+      if (dur === 0) {
+        window.scrollTo(0, y1);
+        lastInterceptTs = performance.now();
+        return;
+      }
+      animating = true;
+      const t0 = performance.now();
+      animStart = t0;
+      const tick = () => {
+        const now = performance.now();
+        const u = clamp01((now - t0) / dur);
+        window.scrollTo(0, y0 + (y1 - y0) * easeInOutCubic(u));
+        lastInterceptTs = now;
+        if (u < 1) requestAnimationFrame(tick);
+        else animating = false;
+      };
+      requestAnimationFrame(tick);
+    };
+
+    // Renvoie la position d'arrivée si le geste doit être intercepté, sinon null (scroll normal)
+    const resolveTarget = (dir: 1 | -1, travel: number): number | null => {
+      const y = window.scrollY;
+      const eps = 2;
+      const first = stopY(0);
+      const last = stopY(STOPS.length - 1);
+      if (y < first - eps) return dir > 0 && y + travel >= first ? first : null;
+      if (y > last + eps) return dir < 0 && y - travel <= last ? last : null;
+      if (dir > 0) {
+        for (let k = 0; k < STOPS.length; k++) if (stopY(k) > y + eps) return stopY(k);
+        return null;
+      }
+      for (let k = STOPS.length - 1; k >= 0; k--) if (stopY(k) < y - eps) return stopY(k);
+      return null;
+    };
+
+    const onWheel = (e: WheelEvent) => {
+      if (e.ctrlKey || e.deltaY === 0) return;
+      const px = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaMode === 2 ? e.deltaY * window.innerHeight : e.deltaY;
+      const dir: 1 | -1 = px > 0 ? 1 : -1;
+      const now = performance.now();
+
+      // Geste déjà pris en charge (ou inertie qui le prolonge) : on l'absorbe
+      if (isAnimating() || now - lastInterceptTs < GESTURE_GAP_MS) {
+        if (e.cancelable) e.preventDefault();
+        lastInterceptTs = now;
+        return;
+      }
+      const target = resolveTarget(dir, Math.abs(px));
+      if (target === null) return;
+      if (e.cancelable) e.preventDefault();
+      lastInterceptTs = now;
+      animateTo(target);
+    };
+
+    // Tactile : un balayage = une étape
+    let touchY = 0;
+    let touchState: "idle" | "taken" | "free" | "done" = "idle";
+    const onTouchStart = (e: TouchEvent) => {
+      touchY = e.touches[0].clientY;
+      touchState = "idle";
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (touchState === "free") return;
+      const dy = touchY - e.touches[0].clientY;
+      const dir: 1 | -1 = dy > 0 ? 1 : -1;
+      if (touchState === "idle") {
+        if (Math.abs(dy) < 1) return;
+        touchState = resolveTarget(dir, window.innerHeight * 0.5) === null ? "free" : "taken";
+        if (touchState === "free") return;
+      }
+      if (e.cancelable) e.preventDefault();
+      if (touchState === "taken" && !isAnimating() && Math.abs(dy) > 28) {
+        const target = resolveTarget(dir, window.innerHeight * 0.5);
+        if (target !== null) animateTo(target);
+        touchState = "done";
+      }
+    };
+
+    const onKey = (e: KeyboardEvent) => {
+      const el = document.activeElement as HTMLElement | null;
+      if (el && /^(INPUT|TEXTAREA|SELECT|BUTTON|A)$/.test(el.tagName)) return;
+      let dir: 1 | -1 | 0 = 0;
+      let travel = 80;
+      if (e.key === "ArrowDown") dir = 1;
+      else if (e.key === "ArrowUp") dir = -1;
+      else if (e.key === "PageDown" || (e.key === " " && !e.shiftKey)) { dir = 1; travel = window.innerHeight * 0.9; }
+      else if (e.key === "PageUp" || (e.key === " " && e.shiftKey)) { dir = -1; travel = window.innerHeight * 0.9; }
+      if (!dir) return;
+      if (isAnimating()) { e.preventDefault(); return; }
+      const target = resolveTarget(dir, travel);
+      if (target === null) return;
+      e.preventDefault();
+      animateTo(target);
+    };
+
     measure();
     update();
     document.fonts?.ready.then(onResize);
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", onResize);
+    window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("keydown", onKey);
     return () => {
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("keydown", onKey);
       if (raf) cancelAnimationFrame(raf);
     };
   }, []);
@@ -289,29 +400,12 @@ export function RelaySection() {
   return (
     <section id="relais" className="rs-section" data-no-reveal aria-labelledby="relais-title">
       <div className="rs-track" ref={trackRef}>
-        <div className="rs-stage" ref={stageRef} data-ring="off">
-          {/* 1 · Les trois situations */}
-          <div className="rs-steps">
-            <div className="rs-steps-head">
-              <span className="lf-pill">Le quotidien d&apos;une agence</span>
-              <h2 className="lf-h2 rs-steps-title">
-                Vous êtes avec vos clients. Les appels, eux, <em>n&apos;attendent pas</em>.
-              </h2>
-            </div>
-            <ol className="rs-steps-list">
-              {MOMENTS.map((m, i) => (
-                <li key={m.title} className="rs-step" style={{ "--sv": `var(--s${i + 1})` } as CSSProperties}>
-                  <picture className="rs-step-img">
-                    <img src={m.img} alt="" loading="lazy" />
-                  </picture>
-                  <div className="rs-step-body">
-                    <span className="rs-step-num">0{i + 1}</span>
-                    <h3>{m.title}</h3>
-                    <p>{m.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+        <div className="rs-stage" ref={stageRef}>
+          {/* 1 · Les trois situations, une par roulement de molette */}
+          <div className="rs-lines">
+            {MOMENTS.map((m, i) => (
+              <p key={m} className={`rs-line rs-line--${i + 1}`}>{m}</p>
+            ))}
           </div>
 
           {/* 2 · L'appel trouve une réponse : surgit au centre, sonne, dézoome */}

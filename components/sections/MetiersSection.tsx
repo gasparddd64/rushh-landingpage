@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 /* ── Icônes (tracé fin, 18px) ── */
@@ -89,6 +89,36 @@ const METIERS = [
 export function MetiersSection() {
   const [active, setActive] = useState(0);
   const current = METIERS[active];
+  const barRef = useRef<HTMLDivElement>(null);
+  const pillRef = useRef<HTMLSpanElement>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const placed = useRef(false);
+
+  // Pastille qui glisse vers l'onglet actif (transitions.dev « tabs sliding »).
+  // Premier affichage et redimensionnement : position écrite sans transition.
+  useEffect(() => {
+    const pill = pillRef.current;
+    const tab = tabRefs.current[active];
+    if (!pill || !tab) return;
+    const place = (animate: boolean) => {
+      if (!animate) {
+        const prev = pill.style.transition;
+        pill.style.transition = "none";
+        pill.style.transform = `translateX(${tab.offsetLeft}px)`;
+        pill.style.width = `${tab.offsetWidth}px`;
+        void pill.offsetWidth;
+        pill.style.transition = prev;
+      } else {
+        pill.style.transform = `translateX(${tab.offsetLeft}px)`;
+        pill.style.width = `${tab.offsetWidth}px`;
+      }
+    };
+    place(placed.current);
+    placed.current = true;
+    const onResize = () => place(false);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [active]);
 
   return (
     <section id="metiers" aria-labelledby="metiers-title">
@@ -103,10 +133,12 @@ export function MetiersSection() {
           </p>
         </div>
 
-        <div className="mt-tabs" role="tablist" aria-label="Métiers de l'agence">
+        <div className="mt-tabs" role="tablist" aria-label="Métiers de l'agence" ref={barRef}>
+          <span className="mt-pill" ref={pillRef} aria-hidden />
           {METIERS.map((m, i) => (
             <button
               key={m.id}
+              ref={(el) => { tabRefs.current[i] = el; }}
               id={`metier-tab-${m.id}`}
               type="button"
               role="tab"

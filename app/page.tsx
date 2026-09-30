@@ -6,6 +6,7 @@ import { ToolsOrbitSection } from "@/components/sections/ToolsOrbitSection";
 import { ResultsSection } from "@/components/sections/ResultsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { ChiffresSection } from "@/components/sections/ChiffresSection";
 import { CalendlySection } from "@/components/sections/CalendlySection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -135,6 +136,9 @@ export default function Home() {
         <FAQSection />
       </div>
       <TestimonialsSection />
+      <div className="lf lf--soft">
+        <ChiffresSection />
+      </div>
       <CalendlySection />
       <FooterSection />
       <ScrollReveal />

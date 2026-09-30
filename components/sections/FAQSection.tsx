@@ -27,20 +27,22 @@ export function FAQSection() {
             {FAQ_ITEMS.map((item, i) => {
               const isOpen = open === i;
               return (
-                <div key={item.q} className="lf-card fq-item" data-open={isOpen}>
+                <div key={item.q} className="lf-card fq-item t-acc" data-open={isOpen}>
                   <button
                     type="button"
-                    className="fq-q"
+                    className="fq-q t-acc-head"
                     id={`faq-q-${i}`}
                     aria-expanded={isOpen}
                     aria-controls={`faq-a-${i}`}
                     onClick={() => setOpen(isOpen ? null : i)}
                   >
                     <span>{item.q}</span>
-                    <span className="fq-icon" aria-hidden />
+                    <span className="t-acc-chevron" aria-hidden>
+                      <svg viewBox="0 0 16 16"><path d="M4 6.5L8 10.5L12 6.5" /></svg>
+                    </span>
                   </button>
-                  <div className="fq-a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
-                    <div>
+                  <div className="t-acc-panel" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+                    <div className="t-acc-panel-inner">
                       <p>{item.a}</p>
                     </div>
                   </div>
