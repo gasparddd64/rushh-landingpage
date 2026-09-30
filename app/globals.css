@@ -1293,15 +1293,15 @@ html { overflow-x: hidden; }
 
 /* ---------- HERO — photo stage (header + hero structure) ---------- */
 .hero-x {
-  padding: 0 12px 12px;
+  padding: 0 8px 12px;
 }
 .hero-x-stage {
   position: relative;
-  max-width: 1920px;
+  width: 100%;
+  max-width: 2400px;
   margin: 0 auto;
-  aspect-ratio: 16 / 9;
-  min-height: 560px;
-  max-height: calc(100svh - 76px);
+  /* pleine largeur : la hauteur suit l'écran, l'image se recadre (cover) au lieu de rétrécir */
+  height: clamp(560px, calc(100svh - 76px), 960px);
   border-radius: 28px;
   overflow: hidden;
   background: transparent;

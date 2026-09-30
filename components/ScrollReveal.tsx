@@ -16,7 +16,7 @@ export function ScrollReveal() {
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
-    document.querySelectorAll("section:not(.hero-x)").forEach((el) => {
+    document.querySelectorAll("section:not(.hero-x):not([data-no-reveal])").forEach((el) => {
       el.classList.add("reveal");
       obs.observe(el);
     });

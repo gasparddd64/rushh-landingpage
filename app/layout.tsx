@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono, Instrument_Serif } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono, Instrument_Serif, Caveat } from "next/font/google";
 import "./globals.css";
 import { CalendlyTracking } from "@/components/CalendlyTracking";
 
@@ -17,6 +17,12 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-serif",
   weight: "400",
   style: ["normal", "italic"],
+  subsets: ["latin"],
+});
+
+// Écriture manuscrite des maquettes « notes d'agent » (section Le relais Rushh)
+const hand = Caveat({
+  variable: "--font-hand",
   subsets: ["latin"],
 });
 
@@ -72,7 +78,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} ${hand.variable}`}
     >
       <head>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EZB9K3J95" />
