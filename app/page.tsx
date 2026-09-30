@@ -28,6 +28,16 @@ const organizationSchema = {
     "postalCode": "64600",
     "addressCountry": "FR",
   },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "email": "hello@rushh.fr",
+      "telephone": "+33517948549",
+      "contactType": "customer service",
+      "areaServed": "FR",
+      "availableLanguage": ["French"],
+    },
+  ],
   "sameAs": [
     "https://www.linkedin.com/in/gaspardv/",
     "https://www.instagram.com/rushh.fr",
@@ -51,6 +61,16 @@ const localBusinessSchema = {
     "postalCode": "64600",
     "addressCountry": "FR",
   },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "email": "hello@rushh.fr",
+      "telephone": "+33517948549",
+      "contactType": "customer service",
+      "areaServed": "FR",
+      "availableLanguage": ["French"],
+    },
+  ],
   "areaServed": "FR",
   "priceRange": "€€€",
 };

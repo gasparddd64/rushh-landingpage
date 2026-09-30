@@ -47,6 +47,7 @@ export function FooterSection() {
               <a href="#testimonials">Témoignages</a>
               <a href="#faq">FAQ</a>
               <a href="/vs/joe-ai">Rushh vs Joe AI</a>
+              <Link href="/integrations">Intégrations</Link>
             </nav>
           </div>
 
@@ -55,6 +56,8 @@ export function FooterSection() {
             <h3 className="footer-col-title">Contact</h3>
             <nav className="footer-links">
               <a href="mailto:hello@rushh.fr">hello@rushh.fr</a>
+              <Link href="/contact">Nous contacter</Link>
+              <Link href="/about">À propos</Link>
             </nav>
           </div>
 
@@ -87,6 +90,7 @@ export function FooterSection() {
           <span>Données hébergées en France</span>
           <nav className="footer-legal">
             <Link href="/cgv">CGV</Link>
+            <Link href="/privacy">Confidentialité</Link>
           </nav>
         </div>
       </div>
