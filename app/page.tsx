@@ -3,10 +3,10 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { RelaySection } from "@/components/sections/RelaySection";
 import { MetiersSection } from "@/components/sections/MetiersSection";
 import { ToolsOrbitSection } from "@/components/sections/ToolsOrbitSection";
-import { ResultsSection } from "@/components/sections/ResultsSection";
+import { ChiffresSection } from "@/components/sections/ChiffresSection";
+import { CompareSection } from "@/components/sections/CompareSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { ChiffresSection } from "@/components/sections/ChiffresSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { FAQ_ITEMS } from "@/lib/faq";
@@ -131,9 +131,9 @@ export default function Home() {
         <RelaySection />
         <MetiersSection />
         <ToolsOrbitSection />
-        <ResultsSection />
-        <FAQSection />
         <ChiffresSection />
+        <FAQSection />
+        <CompareSection />
       </div>
       <TestimonialsSection />
       <FooterSection />

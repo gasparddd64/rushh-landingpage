@@ -1,9 +1,8 @@
-import { DemoCTA } from "@/components/ui/demo-cta"
 import { Stats } from "@/components/ui/stats"
 
 export function ChiffresSection() {
   return (
-    <section id="chiffres" aria-label="Rushh en chiffres">
+    <section id="chiffres" className="nb-section" aria-label="Rushh en chiffres">
       <div className="nb-wrap">
         <Stats
           hero={{ value: "+10 000", label: "minutes de conversations traitées" }}
@@ -18,10 +17,7 @@ export function ChiffresSection() {
             { value: "1,5", label: "mandat potentiel récupéré / mois*" },
           ]}
         />
-        <div className="nb-foot">
-          <p className="nb-note">*Estimation basée sur les opportunités prises en charge.</p>
-          <DemoCTA label="Réserver une démo" />
-        </div>
+        <p className="nb-note">*Estimation basée sur les opportunités prises en charge.</p>
       </div>
     </section>
   )
