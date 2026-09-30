@@ -1,149 +1,34 @@
 "use client";
 
-import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
-/* ══════════════════════════════════════════════
-   Petits éléments « écrits à la main »
-═══════════════════════════════════════════════ */
-function Arrow({ dir = "right" }: { dir?: "right" | "down" | "left" }) {
-  if (dir === "down") {
-    return (
-      <svg className="pp-arrow pp-arrow--down" viewBox="0 0 24 46" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-        <path d="M12 3c-4 11 3 22-1 37" />
-        <path d="M4 33c3 3 6 6 7 9 3-3 6-6 9-10" />
-      </svg>
-    );
-  }
-  return (
-    <svg className={`pp-arrow${dir === "left" ? " pp-arrow--left" : ""}`} viewBox="0 0 58 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M3 14c14-6 29 2 49-3" />
-      <path d="M44 4c4 4 7 6 10 7-4 3-7 6-10 10" />
-    </svg>
-  );
-}
-
-function Check() {
-  return (
-    <svg className="pp-check" viewBox="0 0 26 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M3 13c3 2 5 5 7 8C13 13 18 7 23 3" />
-    </svg>
-  );
-}
-
-/* ══════════════════════════════════════════════
-   Les 4 notes d'agent (une par scénario)
-═══════════════════════════════════════════════ */
-function NoteBesoin() {
-  return (
-    <div className="pp pp--l">
-      <span className="pp-tape" />
-      <p className="pp-title">Appel · Mme Lefèvre</p>
-      <p className="pp-meta">06 12 •• •• 48 — 14h02</p>
-      <ul className="pp-list">
-        <li>veut visiter un <b>T3</b></li>
-        <li>rue Victor Hugo</li>
-        <li>achat (pas de location)</li>
-      </ul>
-      <div className="pp-flow">
-        <span className="pp-box">Appel</span>
-        <Arrow />
-        <span className="pp-box">Besoin ?</span>
-        <Arrow />
-        <span className="pp-circle">Visite</span>
-      </div>
-    </div>
-  );
-}
-
-function NoteInfos() {
-  return (
-    <div className="pp pp--r">
-      <span className="pp-tape" />
-      <span className="pp-sticky">4 / 5<br />infos ✔</span>
-      <p className="pp-title">Fiche appel</p>
-      <ul className="pp-checks">
-        <li><Check /> Nom : Lefèvre</li>
-        <li><Check /> Tél : 06 12 •• •• 48</li>
-        <li><Check /> Bien : T3, rue V. Hugo</li>
-        <li><Check /> Budget : 420 000 €</li>
-        <li><span className="pp-empty" /> Dispo : jeudi ?</li>
-      </ul>
-      <div className="pp-flow pp-flow--end">
-        <Arrow dir="left" />
-        <span className="pp-note">encore à demander</span>
-      </div>
-    </div>
-  );
-}
-
-function NoteAction() {
-  return (
-    <div className="pp pp--l">
-      <span className="pp-tape" />
-      <p className="pp-title">Demande de visite</p>
-      <div className="pp-tree">
-        <div className="pp-row">
-          <span className="pp-box">Urgent ?</span>
-          <span className="pp-note">oui</span>
-          <Arrow />
-          <span className="pp-box pp-box--red">Transfert</span>
-        </div>
-        <div className="pp-row pp-row--down">
-          <span className="pp-note">non</span>
-          <Arrow dir="down" />
-        </div>
-        <div className="pp-row">
-          <span className="pp-circle pp-circle--green">RDV jeu. 14h30</span>
-        </div>
-        <p className="pp-small">sinon → message à l&apos;équipe</p>
-      </div>
-    </div>
-  );
-}
-
-function NoteEquipe() {
-  return (
-    <div className="pp pp--r">
-      <span className="pp-tape" />
-      <p className="pp-title">Pour Julien →</p>
-      <ul className="pp-list pp-list--dash">
-        <li>Mme Lefèvre, T3 V. Hugo</li>
-        <li>visite jeu. 14h30 <Check /></li>
-        <li>budget 420 k€</li>
-      </ul>
-      <div className="pp-flow">
-        <span className="pp-circle pp-circle--red">à rappeler</span>
-        <Arrow />
-        <span className="pp-note">avant jeudi</span>
-      </div>
-      <span className="pp-stamp">Fiche transmise</span>
-    </div>
-  );
-}
-
-const SCENARIOS: { title: string; desc: string; visual: ReactNode }[] = [
+const SCENARIOS = [
   {
     title: "Besoin compris",
     desc: "Rushh identifie la raison de l'appel et comprend la situation avant de transmettre.",
-    visual: <NoteBesoin />,
+    img: "/scenario-1.webp",
+    alt: "Post-it jaune collé sur un écran d'ordinateur : Mme Lefèvre, visite T3, Victor Hugo, budget OK",
   },
   {
     title: "Informations recueillies",
     desc: "Les éléments utiles à votre équipe sont collectés au fil de l'échange.",
-    visual: <NoteInfos />,
+    img: "/scenario-2.webp",
+    alt: "Post-it jaune posé sur un agenda : M. Bernard, rappel demain, achat maison, budget à voir",
   },
   {
     title: "Action adaptée",
     desc: "Rendez-vous, transfert ou message : Rushh applique les règles de votre agence.",
-    visual: <NoteAction />,
+    img: "/scenario-3.webp",
+    alt: "Post-it jaune sur un téléphone de bureau d'agence : Mme Martin, vendeuse, rappel demain, pour Sarah",
   },
   {
     title: "Équipe informée",
     desc: "Votre équipe reçoit le contexte utile pour reprendre la demande, sans tout redemander.",
-    visual: <NoteEquipe />,
+    img: "/scenario-4.webp",
+    alt: "Post-it jaune posé près d'un téléphone : M. Martin, achat résidence principale, T4 ou T5, Bordeaux, budget environ 650 000 euros",
   },
-];
+]
 
 /* ══════════════════════════════════════════════
    Les 3 situations du quotidien (texte seul, une par étape)
@@ -438,8 +323,8 @@ export function RelaySection() {
                   className={`lf-card rl-card${i % 2 === 1 ? " rl-card--flip" : ""}`}
                   ref={(el) => { cardRefs.current[i] = el; }}
                 >
-                  <div className="rl-visual" aria-hidden>
-                    {s.visual}
+                  <div className="rl-visual">
+                    <img src={s.img} alt={s.alt} loading="lazy" />
                   </div>
                   <div className="rl-content">
                     <span className="rl-num">0{i + 1} / 04</span>

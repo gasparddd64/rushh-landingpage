@@ -265,132 +265,15 @@
   margin-top: calc(450px - 100svh);
 }
 
-/* ---------- Panneau visuel : notes d'agent écrites à la main ---------- */
+/* ---------- Panneau visuel : photo du scénario ---------- */
 .rl-visual {
   position: relative;
-  display: grid;
-  place-items: center;
-  padding: 32px 20px;
+  min-height: 420px;
   border-radius: 14px;
   overflow: hidden;
-  background: radial-gradient(120% 90% at 30% 0%, #f9fbfe 0%, #e8eef7 100%);
+  background: #e8eef7;
 }
-.rl-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(12, 16, 36, 0.07) 1px, transparent 1.3px);
-  background-size: 20px 20px;
-}
-.pp {
-  --ink: #1c2f74;
-  --pen-red: #d64545;
-  position: relative;
-  width: min(420px, 100%);
-  padding: 26px 24px 24px 50px;
-  background-color: #fffdf7;
-  background-image:
-    linear-gradient(90deg, transparent 38px, rgba(214, 69, 69, 0.42) 38px, rgba(214, 69, 69, 0.42) 39.5px, transparent 39.5px),
-    repeating-linear-gradient(transparent 0, transparent 27px, rgba(58, 110, 200, 0.2) 27px, rgba(58, 110, 200, 0.2) 28px);
-  background-position: 0 0, 0 14px;
-  border-radius: 3px;
-  box-shadow: 0 1px 1px rgba(12, 16, 36, 0.08), 0 22px 34px -18px rgba(12, 16, 36, 0.38);
-  font-family: var(--font-hand), "Caveat", cursive;
-  font-size: 23px;
-  line-height: 28px;
-  color: var(--ink);
-}
-.pp--l { transform: rotate(-1.6deg); }
-.pp--r { transform: rotate(1.4deg); }
-.pp p, .pp ul { margin: 0; padding: 0; list-style: none; }
-.pp-tape {
-  position: absolute;
-  top: -11px;
-  left: 50%;
-  width: 78px;
-  height: 22px;
-  margin-left: -39px;
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(12, 16, 36, 0.07);
-  box-shadow: 0 1px 2px rgba(12, 16, 36, 0.1);
-  transform: rotate(-3deg);
-}
-.pp-title {
-  font-size: 29px;
-  font-weight: 700;
-  text-decoration: underline wavy rgba(0, 71, 198, 0.55);
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 6px;
-}
-.pp-meta { font-size: 19px; color: #5d6b99; }
-.pp-list { margin-top: 10px !important; }
-.pp-list li, .pp-checks li { display: flex; align-items: center; gap: 8px; }
-.pp-list li::before { content: "•"; font-weight: 700; color: var(--pen-red); }
-.pp-list--dash li::before { content: "–"; }
-.pp-list b { font-weight: 700; background: linear-gradient(transparent 55%, rgba(255, 224, 90, 0.75) 55%); }
-.pp-checks { margin-top: 12px !important; }
-.pp-check { width: 22px; height: 20px; flex: none; color: var(--pen-red); }
-.pp-list .pp-check { margin-left: 2px; }
-.pp-empty { width: 18px; height: 18px; flex: none; border: 2px solid var(--ink); border-radius: 4px; transform: rotate(-4deg); margin: 0 2px; }
-.pp-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 14px; }
-.pp-flow--end { justify-content: flex-end; }
-.pp-arrow { width: 40px; height: 22px; flex: none; color: var(--pen-red); }
-.pp-arrow--down { width: 22px; height: 40px; }
-.pp-arrow--left { transform: scaleX(-1); }
-.pp-box {
-  display: inline-block;
-  padding: 0 10px;
-  border: 2px solid var(--ink);
-  border-radius: 9px 11px 8px 12px;
-  line-height: 26px;
-  white-space: nowrap;
-}
-.pp-box--red { border-color: var(--pen-red); color: var(--pen-red); font-weight: 700; }
-.pp-circle {
-  display: inline-block;
-  padding: 1px 14px;
-  border: 2.5px solid var(--pen-red);
-  border-radius: 58% 42% 55% 45% / 52% 58% 42% 48%;
-  font-weight: 700;
-  transform: rotate(-2deg);
-}
-.pp-circle--green { border-color: #1f8f52; color: #14703e; }
-.pp-circle--red { border-color: var(--pen-red); }
-.pp-note { font-size: 20px; color: #5d6b99; }
-.pp-small { font-size: 20px; color: #5d6b99; margin-top: 10px !important; }
-.pp-tree { margin-top: 10px; }
-.pp-row { display: flex; align-items: center; gap: 8px; }
-.pp-row--down { padding-left: 26px; }
-.pp-tree .pp-row + .pp-row { margin-top: 2px; }
-.pp-sticky {
-  position: absolute;
-  top: -14px;
-  right: -16px;
-  padding: 10px 12px 12px;
-  background: #ffe98a;
-  box-shadow: 0 10px 16px -8px rgba(12, 16, 36, 0.35);
-  text-align: center;
-  font-size: 22px;
-  line-height: 24px;
-  font-weight: 700;
-  transform: rotate(5deg);
-}
-.pp-stamp {
-  position: absolute;
-  right: 18px;
-  bottom: 14px;
-  padding: 0 10px;
-  border: 2.5px solid #1f8f52;
-  border-radius: 6px;
-  color: #1f8f52;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 26px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  transform: rotate(-7deg);
-  opacity: 0.85;
-}
+.rl-visual img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
 
 /* ==========================================================================
    2 · MÉTIERS — onglets
@@ -757,9 +640,7 @@
 @media (max-width: 900px) {
   .rl-card { grid-template-columns: 1fr; min-height: 0; }
   .rl-card--flip .rl-visual { order: 0; }
-  .rl-visual { min-height: 320px; padding: 28px 16px; }
-  .pp { font-size: 20px; line-height: 26px; padding: 22px 18px 20px 44px; }
-  .pp-title { font-size: 25px; }
+  .rl-visual { min-height: 300px; }
   .rl-content { padding: 28px 20px 24px; gap: 20px; }
   .lf-head--split { flex-direction: column; align-items: flex-start; gap: 20px; }
   .lf-head--split .lf-sub { max-width: none; padding-bottom: 0; }
