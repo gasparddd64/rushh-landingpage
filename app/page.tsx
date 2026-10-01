@@ -1,6 +1,5 @@
 import { Nav } from "@/components/sections/Nav";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { TrustStrip } from "@/components/sections/TrustStrip";
 import { RgpdBand } from "@/components/sections/RgpdBand";
 import { RelaySection } from "@/components/sections/RelaySection";
 import { MetiersSection } from "@/components/sections/MetiersSection";
@@ -130,7 +129,6 @@ export default function Home() {
       <Nav />
       <HeroSection />
       <div className="lf">
-        <TrustStrip />
         <RelaySection />
         <MetiersSection />
         <ToolsOrbitSection />

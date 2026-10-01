@@ -779,34 +779,6 @@
 }
 .rl-chip svg { padding: 2px; width: 18px; height: 18px; border-radius: 50%; background: var(--lf-accent); color: #fff; }
 
-/* ---------- Bandeau de confiance (sous le hero) ---------- */
-.ts { padding: 28px 24px 8px; }
-.ts-inner {
-  max-width: 1160px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  padding: 18px 22px;
-  background: #fff;
-  border: 1px solid var(--lf-line);
-  border-radius: 20px;
-  box-shadow: var(--lf-card-shadow);
-}
-.ts-badge { display: flex; align-items: center; gap: 12px; padding-right: 28px; border-right: 1px solid var(--lf-line); flex-shrink: 0; }
-.ts-badge-icon {
-  display: grid; place-items: center;
-  width: 42px; height: 42px; border-radius: 50%;
-  background: var(--lf-accent-soft); color: var(--lf-accent);
-}
-.ts-badge-text strong { display: block; font-size: 16px; font-weight: 700; letter-spacing: -0.03em; color: var(--lf-ink); }
-.ts-badge-text small { display: block; margin-top: 1px; font-size: 12.5px; font-weight: 500; color: var(--lf-muted); }
-.ts-facts { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; padding: 0; list-style: none; }
-.ts-fact { display: flex; flex-direction: column; gap: 2px; }
-.ts-fact + .ts-fact { padding-left: 24px; border-left: 1px solid var(--lf-line); }
-.ts-fact-value { font-size: 24px; font-weight: 700; letter-spacing: -0.045em; line-height: 1.1; color: var(--lf-ink); }
-.ts-fact-label { font-size: 13px; font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; color: var(--lf-muted); }
-
 /* ---------- Encart 100 % RGPD ---------- */
 .lf .rg { padding: 0 0 8px; background: #fff; }
 .rg-card {
@@ -836,17 +808,10 @@
 .rg-points svg { flex-shrink: 0; margin-top: 1px; padding: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--lf-accent); color: #fff; }
 
 @media (max-width: 900px) {
-  .ts-inner { flex-direction: column; align-items: stretch; gap: 18px; padding: 18px; }
-  .ts-badge { padding: 0 0 16px; border-right: 0; border-bottom: 1px solid var(--lf-line); }
   .rg-card { grid-template-columns: auto 1fr; gap: 20px; padding: 26px 22px; }
   .rg-points { grid-column: 1 / -1; }
 }
 @media (max-width: 768px) {
-  .ts { padding: 20px 16px 4px; }
-  .ts-facts { grid-template-columns: 1fr; gap: 14px; }
-  .ts-fact { flex-direction: row; align-items: baseline; gap: 12px; }
-  .ts-fact + .ts-fact { padding-left: 0; border-left: 0; padding-top: 14px; border-top: 1px solid var(--lf-line); }
-  .ts-fact-value { min-width: 86px; font-size: 22px; }
   .rg-icon { width: 56px; height: 56px; }
   .rg-icon svg { width: 28px; height: 28px; }
 }
