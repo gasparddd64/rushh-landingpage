@@ -27,6 +27,13 @@ export function HeroSection() {
               <span className="hero-x-line">compte pour votre agence</span>
             </span>
           </h1>
+
+          <a className="hero-x-cta" href="#relais">
+            Découvrir Rushh
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

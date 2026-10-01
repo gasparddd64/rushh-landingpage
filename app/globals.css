@@ -1374,10 +1374,12 @@ html { overflow-x: hidden; }
 }
 .hero-x-mask--a .hero-x-line { animation-delay: 0.25s; }
 .hero-x-mask--b .hero-x-line { animation-delay: 0.42s; }
+/* Bouton du hero : affiché sur mobile uniquement (sur ordinateur le bouton est dans la barre du haut) */
+.hero-x-cta { display: none; }
 @keyframes heroRise { to { transform: translateY(0); } }
 @keyframes heroFade { to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
-  .hero-x-eyebrow { opacity: 1; animation: none; }
+  .hero-x-eyebrow, .hero-x-cta { opacity: 1; animation: none; }
   .hero-x-line { transform: none; animation: none; }
 }
 @media (max-width: 768px) {
@@ -1396,10 +1398,35 @@ html { overflow-x: hidden; }
       linear-gradient(180deg, rgba(8,12,24,0.08) 0%, rgba(8,12,24,0.06) 45%, rgba(8,12,24,0.62) 100%);
   }
   .hero-x-eyebrow { left: 20px; top: 24px; max-width: 70vw; font-size: 15px; }
-  .hero-x-mask { white-space: normal; }
-  .hero-x-title { font-size: clamp(36px, 10.5vw, 52px); }
-  .hero-x-mask--a { left: 14px; top: auto; bottom: 26%; }
-  .hero-x-mask--b { left: 14px; right: 14px; top: auto; bottom: 7%; }
+  /* Titre + bouton : un seul bloc collé en bas à gauche, aligné sur le texte du haut */
+  .hero-x-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 20px 64px;
+  }
+  .hero-x-title { font-size: clamp(36px, 10.5vw, 52px); line-height: 1; max-width: 100%; }
+  .hero-x-mask { position: static; white-space: normal; padding: 0.03em 0.06em 0.1em 0; }
+  .hero-x-mask--a { margin-bottom: -0.06em; }
+  .hero-x-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: transparent;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    opacity: 0;
+    animation: heroFade 0.8s ease 0.65s forwards;
+  }
+  .hero-x-cta:active { background: rgba(255, 255, 255, 0.14); }
 }
 
 .hero-title {
