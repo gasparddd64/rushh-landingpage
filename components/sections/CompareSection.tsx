@@ -1,6 +1,5 @@
 "use client";
 
-import { DemoCTA } from "@/components/ui/demo-cta";
 
 const BAD_ITEMS = [
   "Configurer l'outil vous-même",
@@ -98,15 +97,7 @@ export function CompareSection() {
             <div className="cmp-footer cmp-footer--desktop">
               Conçu avec vous · Déployé par Rushh · Suivi dans le temps
             </div>
-            <div className="cmp-footer--mobile">
-              <DemoCTA label="Réserver une démo" />
-            </div>
           </div>
-        </div>
-
-        {/* CTAs */}
-        <div className="cmp-ctas">
-          <DemoCTA label="Réserver une démo" />
         </div>
       </div>
     </section>

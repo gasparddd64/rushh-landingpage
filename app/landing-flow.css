@@ -131,7 +131,7 @@
 .rl-stack {
   display: flex;
   flex-direction: column;
-  gap: 96px;
+  gap: 200px;
   max-width: 1160px;
   margin: 0 auto;
   padding-bottom: 8px;
@@ -342,12 +342,22 @@
   justify-content: center;
   gap: 24px;
   padding: 32px 40px 32px 32px;
-  animation: mt-fade var(--duration-slow) var(--ease-smooth-out) both;
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition:
+    opacity var(--duration-slow) var(--ease-smooth-out),
+    transform var(--duration-slow) var(--ease-smooth-out),
+    visibility 0s linear var(--duration-slow);
 }
-@keyframes mt-fade {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: none; }
+.mt-copy[data-active="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
 }
+.mt-copies { display: grid; min-width: 0; }
 .mt-title {
   margin: 0;
   font-size: clamp(28px, 3.2vw, 38px);
@@ -357,21 +367,21 @@
 }
 .mt-desc {
   margin: -8px 0 0;
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: -0.015em;
   color: var(--lf-muted);
 }
-.mt-points { display: flex; flex-direction: column; gap: 18px; margin: 0; padding: 0; list-style: none; width: 100%; }
+.mt-points { display: flex; flex-direction: column; gap: 16px; margin: 0; padding: 0; list-style: none; width: 100%; }
 .mt-point { display: grid; grid-template-columns: 22px 1fr; gap: 14px; align-items: start; }
 .mt-point-icon {
   width: 22px; height: 26px;
   display: grid; place-items: center;
   color: var(--lf-ink);
 }
-.mt-point-title { display: block; font-size: 17px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.25; }
-.mt-point-desc { display: block; margin-top: 3px; font-size: 14px; font-weight: 500; line-height: 1.45; letter-spacing: -0.01em; color: var(--lf-muted); }
+.mt-point-title { display: block; font-size: 16px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.25; }
+.mt-point-desc { display: block; margin-top: 3px; font-size: 13.5px; font-weight: 500; line-height: 1.42; letter-spacing: -0.01em; color: var(--lf-muted); }
 .mt-media {
   position: relative;
   min-height: 520px;
@@ -573,7 +583,7 @@
 @media (max-width: 900px) {
   .rl-card { grid-template-columns: 1fr; min-height: 0; }
   .rl-card--flip .rl-visual { order: 0; }
-  .rl-visual { min-height: 300px; }
+  .rl-visual { min-height: 260px; }
   .rl-content { padding: 28px 20px 24px; gap: 20px; }
   .lf-head--split { flex-direction: column; align-items: flex-start; gap: 20px; }
   .lf-head--split .lf-sub { max-width: none; padding-bottom: 0; }
@@ -581,13 +591,12 @@
 @media (max-width: 768px) {
   .lf section { padding: 72px 0; }
   .lf-wrap { padding: 0 16px; }
-  .rl-stack { gap: 16px; }
-  .rl-item { position: static; }
+  .rl-stack { gap: 130px; }
+  .rl-item { top: calc(84px + var(--i) * 26px); }
   .rs-track { --rs-dist: 240svh; }
   .rs-stackwrap { margin-top: calc(400px - 100svh); }
   .rs-lines { padding: 84px 16px 24px; }
   .rs-header { top: 92px; gap: 18px; }
-  .rl-card { transform: none !important; }
   .mt-tabs { margin-top: 40px; padding: 4px; gap: 2px; }
   .mt-pill { top: 4px; bottom: 4px; }
   .mt-tab { padding: 11px 2px; }
@@ -600,7 +609,7 @@
   .rs-h2-move { transform: none; }
   .rs-line { transform: none; filter: none; }
   .orb-path { --orb-dur: 400s; --orb-step: 13.3334s; }
-  .mt-copy { animation: none; }
+  .mt-copy { transition: none !important; }
   .t-reel-strip { transition: none !important; filter: none !important; }
   .t-stagger-line { transition: none !important; }
   .t-acc-panel, .t-acc-panel-inner, .t-acc-chevron, .mt-pill, .mt-tab { transition: none !important; }
@@ -643,6 +652,8 @@
   position: relative;
   height: var(--reel-cell);
   overflow: hidden;
+  /* resserre les chiffres sans rogner leur bord (la fenêtre garde la largeur complète du glyphe) */
+  margin-right: -0.05em;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 7%, #000 93%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0%, #000 7%, #000 93%, transparent 100%);
 }
@@ -654,7 +665,7 @@
   transition-delay: calc(var(--col, 0) * var(--reel-stagger));
   will-change: transform;
 }
-.t-reel-digit { display: flex; align-items: center; justify-content: center; height: var(--reel-cell); }
+.t-reel-digit { display: flex; align-items: center; justify-content: center; height: var(--reel-cell); letter-spacing: 0; }
 
 /* ==========================================================================
    Section chiffres — fond blanc, texte noir

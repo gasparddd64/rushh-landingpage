@@ -163,21 +163,31 @@ export function MetiersSection() {
           role="tabpanel"
           aria-labelledby={`metier-tab-${current.id}`}
         >
-          <div className="mt-copy" key={current.id}>
-            <h3 className="mt-title">{current.title}</h3>
-            <p className="mt-desc">{current.desc}</p>
-            <ul className="mt-points">
-              {current.points.map((p) => (
-                <li key={p.title} className="mt-point">
-                  <span className="mt-point-icon"><Icon name={p.icon} /></span>
-                  <span>
-                    <span className="mt-point-title">{p.title}</span>
-                    <span className="mt-point-desc">{p.desc}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <DemoCTA label="Réserver une démo" showArrow={false} />
+          {/* Les 4 textes sont superposés dans la même cellule : le panneau garde toujours la hauteur du plus long */}
+          <div className="mt-copies">
+            {METIERS.map((m, i) => (
+              <div
+                key={m.id}
+                className="mt-copy"
+                data-active={active === i}
+                aria-hidden={active !== i}
+              >
+                <h3 className="mt-title">{m.title}</h3>
+                <p className="mt-desc">{m.desc}</p>
+                <ul className="mt-points">
+                  {m.points.map((p) => (
+                    <li key={p.title} className="mt-point">
+                      <span className="mt-point-icon"><Icon name={p.icon} /></span>
+                      <span>
+                        <span className="mt-point-title">{p.title}</span>
+                        <span className="mt-point-desc">{p.desc}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <DemoCTA label="Réserver une démo" showArrow={false} />
+              </div>
+            ))}
           </div>
 
           <div className="mt-media">

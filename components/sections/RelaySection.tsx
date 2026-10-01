@@ -123,7 +123,7 @@ export function RelaySection() {
 
   // Chaque carte se réduit légèrement quand la suivante vient la recouvrir.
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 769px) and (prefers-reduced-motion: no-preference)");
+    const mq = window.matchMedia("(prefers-reduced-motion: no-preference)");
     let raf = 0;
 
     const update = () => {
