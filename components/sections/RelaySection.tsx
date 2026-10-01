@@ -6,24 +6,28 @@ import { DemoCTA } from "@/components/ui/demo-cta";
 const SCENARIOS = [
   {
     title: "Besoin compris",
+    chip: "Motif identifié",
     desc: "Rushh identifie la raison de l'appel et comprend la situation avant de transmettre.",
     img: "/scenario-1.webp",
     alt: "Post-it jaune collé sur un écran d'ordinateur : Mme Lefèvre, visite T3, Victor Hugo, budget OK",
   },
   {
     title: "Informations recueillies",
+    chip: "Fiche complétée",
     desc: "Les éléments utiles à votre équipe sont collectés au fil de l'échange.",
     img: "/scenario-2.webp",
     alt: "Post-it jaune posé sur un agenda : M. Bernard, rappel demain, achat maison, budget à voir",
   },
   {
     title: "Action adaptée",
+    chip: "Règle de l'agence appliquée",
     desc: "Rendez-vous, transfert ou message : Rushh applique les règles de votre agence.",
     img: "/scenario-3.webp",
     alt: "Post-it jaune sur un téléphone de bureau d'agence : Mme Martin, vendeuse, rappel demain, pour Sarah",
   },
   {
     title: "Équipe informée",
+    chip: "Équipe notifiée",
     desc: "Votre équipe reçoit le contexte utile pour reprendre la demande, sans tout redemander.",
     img: "/scenario-4.webp",
     alt: "Post-it jaune posé près d'un téléphone : M. Martin, achat résidence principale, T4 ou T5, Bordeaux, budget environ 650 000 euros",
@@ -204,6 +208,10 @@ export function RelaySection() {
                 >
                   <div className="rl-visual">
                     <img src={s.img} alt={s.alt} loading="lazy" />
+                    <span className="rl-chip">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+                      {s.chip}
+                    </span>
                   </div>
                   <div className="rl-content">
                     <span className="rl-num">0{i + 1} / 04</span>

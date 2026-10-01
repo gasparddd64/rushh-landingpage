@@ -730,3 +730,123 @@
   .nb-hero-label { padding-bottom: 0; }
   .nb-stat p { font-size: 11px; letter-spacing: 0.04em; }
 }
+
+/* ==========================================================================
+   Texture & structure — moins de blanc vide
+   ========================================================================== */
+.lf { position: relative; isolation: isolate; }
+/* Trame de points très discrète, estompée en haut et en bas */
+.lf::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(rgba(12, 16, 36, 0.09) 1px, transparent 1.2px);
+  background-size: 26px 26px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 220px, #000 calc(100% - 220px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 220px, #000 calc(100% - 220px), transparent 100%);
+  pointer-events: none;
+}
+/* Halos bleus derrière les grands titres */
+.lf #metiers {
+  background:
+    radial-gradient(60% 320px at 50% 0, rgba(0, 71, 198, 0.08), transparent 70%),
+    linear-gradient(180deg, rgba(232, 240, 255, 0.55), rgba(232, 240, 255, 0) 55%);
+  border-top: 1px solid var(--lf-line);
+}
+.lf #faq { background: linear-gradient(180deg, rgba(232, 240, 255, 0.5), rgba(232, 240, 255, 0) 60%); border-top: 1px solid var(--lf-line); }
+.lf .compare-section { border-top: 1px solid var(--lf-line); }
+.lf .nb-section { border-top: 1px solid var(--lf-line); }
+
+/* Pastille « résultat » sur les photos des cartes */
+.rl-chip {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px 8px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 18px -6px rgba(12, 16, 36, 0.35);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--lf-ink);
+}
+.rl-chip svg { padding: 2px; width: 18px; height: 18px; border-radius: 50%; background: var(--lf-accent); color: #fff; }
+
+/* ---------- Bandeau de confiance (sous le hero) ---------- */
+.ts { padding: 28px 24px 8px; }
+.ts-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 18px 22px;
+  background: #fff;
+  border: 1px solid var(--lf-line);
+  border-radius: 20px;
+  box-shadow: var(--lf-card-shadow);
+}
+.ts-badge { display: flex; align-items: center; gap: 12px; padding-right: 28px; border-right: 1px solid var(--lf-line); flex-shrink: 0; }
+.ts-badge-icon {
+  display: grid; place-items: center;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--lf-accent-soft); color: var(--lf-accent);
+}
+.ts-badge-text strong { display: block; font-size: 16px; font-weight: 700; letter-spacing: -0.03em; color: var(--lf-ink); }
+.ts-badge-text small { display: block; margin-top: 1px; font-size: 12.5px; font-weight: 500; color: var(--lf-muted); }
+.ts-facts { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; padding: 0; list-style: none; }
+.ts-fact { display: flex; flex-direction: column; gap: 2px; }
+.ts-fact + .ts-fact { padding-left: 24px; border-left: 1px solid var(--lf-line); }
+.ts-fact-value { font-size: 24px; font-weight: 700; letter-spacing: -0.045em; line-height: 1.1; color: var(--lf-ink); }
+.ts-fact-label { font-size: 13px; font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; color: var(--lf-muted); }
+
+/* ---------- Encart 100 % RGPD ---------- */
+.lf .rg { padding: 0 0 8px; background: #fff; }
+.rg-card {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  padding: 32px 36px;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 71, 198, 0.16);
+  background:
+    radial-gradient(420px 220px at 0% 0%, rgba(0, 71, 198, 0.10), transparent 70%),
+    linear-gradient(180deg, #f4f8ff, #eef4ff);
+}
+.rg-icon {
+  display: grid; place-items: center;
+  width: 72px; height: 72px; border-radius: 50%;
+  background: #fff; color: var(--lf-accent);
+  box-shadow: 0 10px 24px -12px rgba(0, 71, 198, 0.5), inset 0 0 0 1px rgba(0, 71, 198, 0.14);
+}
+.rg-big { margin: 0 0 6px; font-size: clamp(30px, 3.6vw, 42px); font-weight: 700; letter-spacing: -0.05em; line-height: 1; color: var(--lf-accent); }
+.rg-text { margin: 0; max-width: 520px; font-size: 15px; font-weight: 500; line-height: 1.5; letter-spacing: -0.015em; color: var(--lf-muted); }
+.rg-points { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.rg-points li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; font-weight: 600; line-height: 1.35; letter-spacing: -0.015em; color: var(--lf-ink); }
+.rg-points svg { flex-shrink: 0; margin-top: 1px; padding: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--lf-accent); color: #fff; }
+
+@media (max-width: 900px) {
+  .ts-inner { flex-direction: column; align-items: stretch; gap: 18px; padding: 18px; }
+  .ts-badge { padding: 0 0 16px; border-right: 0; border-bottom: 1px solid var(--lf-line); }
+  .rg-card { grid-template-columns: auto 1fr; gap: 20px; padding: 26px 22px; }
+  .rg-points { grid-column: 1 / -1; }
+}
+@media (max-width: 768px) {
+  .ts { padding: 20px 16px 4px; }
+  .ts-facts { grid-template-columns: 1fr; gap: 14px; }
+  .ts-fact { flex-direction: row; align-items: baseline; gap: 12px; }
+  .ts-fact + .ts-fact { padding-left: 0; border-left: 0; padding-top: 14px; border-top: 1px solid var(--lf-line); }
+  .ts-fact-value { min-width: 86px; font-size: 22px; }
+  .rg-icon { width: 56px; height: 56px; }
+  .rg-icon svg { width: 28px; height: 28px; }
+}
