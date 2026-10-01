@@ -183,7 +183,7 @@
 /* ---------- Scène d'ouverture épinglée (situations → « L'appel trouve une réponse ») ---------- */
 .lf .rs-section { padding: 0 0 110px; }
 .rs-track {
-  --rs-dist: 360svh;
+  --rs-dist: 290svh;
   position: relative;
   height: calc(100svh + var(--rs-dist));
 }
@@ -583,7 +583,7 @@
   .lf-wrap { padding: 0 16px; }
   .rl-stack { gap: 16px; }
   .rl-item { position: static; }
-  .rs-track { --rs-dist: 320svh; }
+  .rs-track { --rs-dist: 240svh; }
   .rs-stackwrap { margin-top: calc(400px - 100svh); }
   .rs-lines { padding: 84px 16px 24px; }
   .rs-header { top: 92px; gap: 18px; }

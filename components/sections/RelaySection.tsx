@@ -36,7 +36,8 @@ const SCENARIOS = [
 const MOMENTS = ["En visite", "Déjà en ligne", "Après la fermeture"];
 
 /* ══════════════════════════════════════════════
-   Mise en scène au scroll — UN roulement de molette = UNE étape
+   Mise en scène au scroll — le défilement normal pilote la scène (aucun blocage :
+   on peut scroller vite ou lentement, au doigt comme à la molette)
    étape 0  « En visite » (apparaît à l'arrivée)
    étape 1  + « Déjà en ligne »
    étape 2  + « Après la fermeture »
@@ -45,13 +46,10 @@ const MOMENTS = ["En visite", "Déjà en ligne", "Après la fermeture"];
 ═══════════════════════════════════════════════ */
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const ease = (t: number) => t * t * (3 - 2 * t);
-const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 const seg = (p: number, a: number, b: number) => ease(clamp01((p - a) / (b - a)));
 
-// Positions des 5 étapes le long de la scène (fraction de la distance épinglée)
+// Positions des 5 étapes le long de la scène (chacune se déroule en continu avec le scroll) (fraction de la distance épinglée)
 const STOPS = [0, 0.25, 0.5, 0.75, 1];
-const STEP_MS = 950;
-const GESTURE_GAP_MS = 160;
 
 // Décalage d'épinglage entre deux cartes (doit rester égal au --i * 26px du CSS)
 const PIN_STEP = 26;
@@ -64,7 +62,7 @@ export function RelaySection() {
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Scène épinglée : progression du scroll → variables CSS, et molette → étapes discrètes
+  // Scène épinglée : progression du scroll → variables CSS
   useEffect(() => {
     const track = trackRef.current;
     const stage = stageRef.current;
@@ -111,133 +109,14 @@ export function RelaySection() {
       schedule();
     };
 
-    /* ── Pilotage par étapes ── */
-    const stopY = (k: number) =>
-      track.getBoundingClientRect().top + window.scrollY + STOPS[k] * distance();
-    let animating = false;
-    let animStart = 0;
-    let lastInterceptTs = 0;
-    // Garde-fou : si l'onglet a été mis en veille pendant un pas, on ne reste pas bloqué
-    const isAnimating = () => {
-      if (animating && performance.now() - animStart > STEP_MS + 800) animating = false;
-      return animating;
-    };
-
-    const animateTo = (y1: number) => {
-      const y0 = window.scrollY;
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const dur = reduce ? 0 : STEP_MS;
-      if (dur === 0) {
-        window.scrollTo(0, y1);
-        lastInterceptTs = performance.now();
-        return;
-      }
-      animating = true;
-      const t0 = performance.now();
-      animStart = t0;
-      const tick = () => {
-        const now = performance.now();
-        const u = clamp01((now - t0) / dur);
-        window.scrollTo(0, y0 + (y1 - y0) * easeInOutCubic(u));
-        lastInterceptTs = now;
-        if (u < 1) requestAnimationFrame(tick);
-        else animating = false;
-      };
-      requestAnimationFrame(tick);
-    };
-
-    // Renvoie la position d'arrivée si le geste doit être intercepté, sinon null (scroll normal)
-    const resolveTarget = (dir: 1 | -1, travel: number): number | null => {
-      const y = window.scrollY;
-      const eps = 2;
-      const first = stopY(0);
-      const last = stopY(STOPS.length - 1);
-      if (y < first - eps) return dir > 0 && y + travel >= first ? first : null;
-      if (y > last + eps) return dir < 0 && y - travel <= last ? last : null;
-      if (dir > 0) {
-        for (let k = 0; k < STOPS.length; k++) if (stopY(k) > y + eps) return stopY(k);
-        return null;
-      }
-      for (let k = STOPS.length - 1; k >= 0; k--) if (stopY(k) < y - eps) return stopY(k);
-      return null;
-    };
-
-    const onWheel = (e: WheelEvent) => {
-      if (e.ctrlKey || e.deltaY === 0) return;
-      const px = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaMode === 2 ? e.deltaY * window.innerHeight : e.deltaY;
-      const dir: 1 | -1 = px > 0 ? 1 : -1;
-      const now = performance.now();
-
-      // Geste déjà pris en charge (ou inertie qui le prolonge) : on l'absorbe
-      if (isAnimating() || now - lastInterceptTs < GESTURE_GAP_MS) {
-        if (e.cancelable) e.preventDefault();
-        lastInterceptTs = now;
-        return;
-      }
-      const target = resolveTarget(dir, Math.abs(px));
-      if (target === null) return;
-      if (e.cancelable) e.preventDefault();
-      lastInterceptTs = now;
-      animateTo(target);
-    };
-
-    // Tactile : un balayage = une étape
-    let touchY = 0;
-    let touchState: "idle" | "taken" | "free" | "done" = "idle";
-    const onTouchStart = (e: TouchEvent) => {
-      touchY = e.touches[0].clientY;
-      touchState = "idle";
-    };
-    const onTouchMove = (e: TouchEvent) => {
-      if (touchState === "free") return;
-      const dy = touchY - e.touches[0].clientY;
-      const dir: 1 | -1 = dy > 0 ? 1 : -1;
-      if (touchState === "idle") {
-        if (Math.abs(dy) < 1) return;
-        touchState = resolveTarget(dir, window.innerHeight * 0.5) === null ? "free" : "taken";
-        if (touchState === "free") return;
-      }
-      if (e.cancelable) e.preventDefault();
-      if (touchState === "taken" && !isAnimating() && Math.abs(dy) > 28) {
-        const target = resolveTarget(dir, window.innerHeight * 0.5);
-        if (target !== null) animateTo(target);
-        touchState = "done";
-      }
-    };
-
-    const onKey = (e: KeyboardEvent) => {
-      const el = document.activeElement as HTMLElement | null;
-      if (el && /^(INPUT|TEXTAREA|SELECT|BUTTON|A)$/.test(el.tagName)) return;
-      let dir: 1 | -1 | 0 = 0;
-      let travel = 80;
-      if (e.key === "ArrowDown") dir = 1;
-      else if (e.key === "ArrowUp") dir = -1;
-      else if (e.key === "PageDown" || (e.key === " " && !e.shiftKey)) { dir = 1; travel = window.innerHeight * 0.9; }
-      else if (e.key === "PageUp" || (e.key === " " && e.shiftKey)) { dir = -1; travel = window.innerHeight * 0.9; }
-      if (!dir) return;
-      if (isAnimating()) { e.preventDefault(); return; }
-      const target = resolveTarget(dir, travel);
-      if (target === null) return;
-      e.preventDefault();
-      animateTo(target);
-    };
-
     measure();
     update();
     document.fonts?.ready.then(onResize);
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", onResize);
-    window.addEventListener("wheel", onWheel, { passive: false });
-    window.addEventListener("touchstart", onTouchStart, { passive: true });
-    window.addEventListener("touchmove", onTouchMove, { passive: false });
-    window.addEventListener("keydown", onKey);
     return () => {
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", onResize);
-      window.removeEventListener("wheel", onWheel);
-      window.removeEventListener("touchstart", onTouchStart);
-      window.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("keydown", onKey);
       if (raf) cancelAnimationFrame(raf);
     };
   }, []);
@@ -286,7 +165,7 @@ export function RelaySection() {
     <section id="relais" className="rs-section" data-no-reveal aria-labelledby="relais-title">
       <div className="rs-track" ref={trackRef}>
         <div className="rs-stage" ref={stageRef}>
-          {/* 1 · Les trois situations, une par roulement de molette */}
+          {/* 1 · Les trois situations, qui apparaissent l'une après l'autre au scroll */}
           <div className="rs-lines">
             {MOMENTS.map((m, i) => (
               <p key={m} className={`rs-line rs-line--${i + 1}`}>{m}</p>
