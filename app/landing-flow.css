@@ -216,13 +216,14 @@
   line-height: 1.04;
   letter-spacing: -0.05em;
   color: var(--lf-ink);
-  opacity: 0;
+  opacity: var(--sv);
   transform: translateY(calc((1 - var(--sv)) * 34px));
-  filter: blur(calc((1 - var(--sv)) * 6px));
+  will-change: transform, opacity;
 }
-.rs-line--1 { --sv: var(--s1); opacity: calc(var(--s1) * (1 - 0.68 * var(--s2))); }
-.rs-line--2 { --sv: var(--s2); opacity: calc(var(--s2) * (1 - 0.68 * var(--s3))); }
-.rs-line--3 { --sv: var(--s3); opacity: var(--s3); }
+.rs-line-in { display: block; opacity: calc(1 - 0.68 * var(--sd, 0)); }
+.rs-line--1 { --sv: var(--s1); --sd: var(--s2); }
+.rs-line--2 { --sv: var(--s2); --sd: var(--s3); }
+.rs-line--3 { --sv: var(--s3); }
 
 .rs-header {
   position: absolute;
@@ -824,4 +825,83 @@
   .rg-row { grid-template-columns: 1fr; gap: 18px; }
   .rg-logo { width: 84px; height: 84px; }
   .rg-points li { font-size: 11px; letter-spacing: 0.04em; }
+}
+
+/* ==========================================================================
+   Scène épinglée pilotée par le scroll côté CSS (compositeur du navigateur)
+   → aucune mise à jour JS pendant le défilement, donc pas de tremblement sur téléphone.
+   Le code JS (variables --s1…--z) reste en secours pour les navigateurs sans animation-timeline.
+   ========================================================================== */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .rs-track { view-timeline: --rs block; }
+
+    .rs-lines, .rs-line, .rs-line-in, .rs-pill, .rs-sub, .rs-h2-move, .rs-h2 {
+      animation-duration: 1ms;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: --rs;
+      animation-range: contain 0% contain 100%;
+    }
+    .rs-lines { animation-name: rs-lines-out; }
+    .rs-line--1 { animation-name: rs-in-1; animation-range: entry 45% entry 100%; }
+    .rs-line--2 { animation-name: rs-in-2; }
+    .rs-line--3 { animation-name: rs-in-3; }
+    .rs-line--1 .rs-line-in { animation-name: rs-dim-1; }
+    .rs-line--2 .rs-line-in { animation-name: rs-dim-2; }
+    .rs-pill { animation-name: rs-pill-in; }
+    .rs-sub { animation-name: rs-sub-in; }
+    .rs-h2-move { animation-name: rs-zoom; }
+    .rs-h2 { animation-name: rs-ink; }
+
+    @keyframes rs-lines-out {
+      0%, 50% { opacity: 1; animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+      75%, 100% { opacity: 0; }
+    }
+    @keyframes rs-in-1 {
+      from { opacity: 0; transform: translateY(34px); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes rs-in-2 {
+      0% { opacity: 0; transform: translateY(34px); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+      25%, 100% { opacity: 1; transform: none; }
+    }
+    @keyframes rs-in-3 {
+      0%, 25% { opacity: 0; transform: translateY(34px); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+      50%, 100% { opacity: 1; transform: none; }
+    }
+    @keyframes rs-dim-1 {
+      0% { opacity: 1; animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+      25%, 100% { opacity: 0.32; }
+    }
+    @keyframes rs-dim-2 {
+      0%, 25% { opacity: 1; animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+      50%, 100% { opacity: 0.32; }
+    }
+    @keyframes rs-pill-in {
+      0%, 83% { opacity: 0; transform: translateY(-14px); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+      97%, 100% { opacity: 1; transform: none; }
+    }
+    @keyframes rs-sub-in {
+      0%, 83% { opacity: 0; transform: translateY(14px); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+      97%, 100% { opacity: 1; transform: none; }
+    }
+    @keyframes rs-zoom {
+      0%, 50% {
+        opacity: 0;
+        transform: translate3d(0, var(--dy), 0) scale(calc(var(--S) * 0.9));
+        animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+      }
+      75% {
+        opacity: 1;
+        transform: translate3d(0, var(--dy), 0) scale(var(--S));
+        animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+      }
+      100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+    }
+    @keyframes rs-ink {
+      0%, 75% { color: var(--lf-accent); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+      100% { color: var(--lf-ink); }
+    }
+  }
 }

@@ -87,8 +87,15 @@ export function RelaySection() {
       stage.style.setProperty("--S", String(Math.min(2.5, Math.max(1.2, scale))));
     };
 
+    // Navigateurs récents : la scène est animée par le scroll côté CSS (animation-timeline), sans JS ni décalage
+    const cssDriven =
+      typeof CSS !== "undefined" &&
+      CSS.supports("animation-timeline: view()") &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const update = () => {
       raf = 0;
+      if (cssDriven) return;
       const top = track.getBoundingClientRect().top;
       const p = clamp01(-top / distance());
       const set = (k: string, v: number) => stage.style.setProperty(k, v.toFixed(4));
@@ -172,7 +179,9 @@ export function RelaySection() {
           {/* 1 · Les trois situations, qui apparaissent l'une après l'autre au scroll */}
           <div className="rs-lines">
             {MOMENTS.map((m, i) => (
-              <p key={m} className={`rs-line rs-line--${i + 1}`}>{m}</p>
+              <p key={m} className={`rs-line rs-line--${i + 1}`}>
+                <span className="rs-line-in">{m}</span>
+              </p>
             ))}
           </div>
 
