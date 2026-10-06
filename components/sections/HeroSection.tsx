@@ -28,30 +28,12 @@ export function HeroSection() {
             </span>
           </h1>
 
-          <div className="hero-x-actions">
-            <a
-              className="listen-cta"
-              href="tel:+33517948549"
-              aria-label="Écouter Rushh : appeler le standard de démonstration au 05 17 94 85 49"
-            >
-              <span className="listen-cta-orb" aria-hidden>
-                <span className="listen-cta-bars">
-                  <i /><i /><i /><i /><i />
-                </span>
-              </span>
-              <span className="listen-cta-text">
-                <strong>Écouter Rushh</strong>
-                <small>05 17 94 85 49</small>
-              </span>
-            </a>
-
-            <a className="hero-x-cta" href="#relais">
-              Découvrir Rushh
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </a>
-          </div>
+          <a className="hero-x-cta" href="#relais">
+            Découvrir Rushh
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
