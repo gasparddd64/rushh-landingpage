@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { DemoCTA } from "@/components/ui/demo-cta";
 import { FAQ_ITEMS } from "@/lib/faq";
 
 export function FAQSection() {
@@ -17,10 +16,6 @@ export function FAQSection() {
             <p className="lf-sub">
               Ce que les directeurs d&apos;agence nous posent avant de réserver une démonstration.
             </p>
-            <div className="lf-card fq-cta">
-              <p>Parlons de votre agence.</p>
-              <DemoCTA label="Réserver une démo" showArrow={false} />
-            </div>
           </div>
 
           <div className="fq-list">
