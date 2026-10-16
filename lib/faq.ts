@@ -6,7 +6,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Le Standard Rushh est-il conforme au RGPD ?",
-    a: "Oui, Rushh est 100 % conforme au RGPD. Les informations recueillies pendant les appels sont utilisées uniquement pour traiter les demandes de votre agence, dans le cadre que vous définissez.",
+    a: "Oui, Rushh est conforme au RGPD. Les informations recueillies pendant les appels sont utilisées uniquement pour traiter les demandes de votre agence, dans le cadre que vous définissez.",
   },
   {
     q: "Est-ce que le Standard Rushh remplace mon équipe ?",

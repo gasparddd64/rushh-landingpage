@@ -768,7 +768,7 @@
 }
 .rl-chip svg { padding: 2px; width: 18px; height: 18px; border-radius: 50%; background: var(--lf-accent); color: #fff; }
 
-/* ---------- Bloc 100 % RGPD (dans la continuité de la section chiffres) ---------- */
+/* ---------- Bloc conforme au RGPD (dans la continuité de la section chiffres) ---------- */
 .lf .rg { padding: 0 0 110px; background: #fff; }
 .lf .nb-section { padding-bottom: 72px; }
 .rg-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
@@ -783,12 +783,11 @@
 .rg-logo { display: block; width: 104px; height: 104px; border-radius: 50%; }
 .rg-big {
   margin: 0 0 12px;
-  font-size: clamp(2.3rem, 5vw, 3.6rem);
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
   font-weight: 600;
   letter-spacing: -0.05em;
   line-height: 1;
   color: var(--lf-ink);
-  white-space: nowrap;
 }
 .rg-text { margin: 0; max-width: 520px; font-size: 15px; font-weight: 500; line-height: 1.5; letter-spacing: -0.015em; color: var(--lf-muted); }
 .rg-points { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
