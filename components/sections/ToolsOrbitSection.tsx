@@ -3,13 +3,12 @@ import type { CSSProperties } from "react";
 const TOOLS = [
   { name: "Google Calendar", logo: "/logo-gcal.png", fill: false },
   { name: "Outlook", logo: "/logo-outlook.png", fill: false },
-  { name: "Hektor", logo: "/logo-hektor.png", fill: false },
   { name: "Apimo", logo: "/logo-apimo.png", fill: true },
   { name: "Whise", logo: "/logo-whise.png", fill: false },
 ];
 
-// 30 tuiles réparties à intervalles réguliers sur la courbe (6 passages par outil)
-const TILES = Array.from({ length: 30 }, (_, k) => ({ k, tool: TOOLS[k % TOOLS.length] }));
+// 24 tuiles réparties à intervalles réguliers sur la courbe (6 passages par outil)
+const TILES = Array.from({ length: 24 }, (_, k) => ({ k, tool: TOOLS[k % TOOLS.length] }));
 
 export function ToolsOrbitSection() {
   return (

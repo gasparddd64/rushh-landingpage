@@ -56,7 +56,7 @@ Le Standard Rushh n'est pas un logiciel à configurer soi-même : une équipe co
 
 ## Intégrations
 
-Rushh s'intègre aux outils déjà utilisés par l'agence : Google Calendar, Outlook, Hektor, Apimo, Whise. Voir [/integrations](${SITE_URL}/integrations) pour le détail des intégrations disponibles.
+Rushh s'intègre aux outils déjà utilisés par l'agence : Google Calendar, Outlook, Apimo, Whise. Voir [/integrations](${SITE_URL}/integrations) pour le détail des intégrations disponibles.
 
 ## Ce que disent les agences
 
@@ -95,7 +95,7 @@ Les agences immobilières perdent des appels pendant les visites, après la ferm
 
 ## Pour qui
 
-Le Standard Rushh est pensé pour les métiers de l'immobilier : transaction, gérance locative et syndic de copropriété. Il s'intègre aux outils déjà utilisés par l'agence (Google Calendar, Outlook, Hektor, Apimo, Whise) sans changer les habitudes de l'équipe.
+Le Standard Rushh est pensé pour les métiers de l'immobilier : transaction, gérance locative et syndic de copropriété. Il s'intègre aux outils déjà utilisés par l'agence (Google Calendar, Outlook, Apimo, Whise) sans changer les habitudes de l'équipe.
 
 ## Données hébergées en France
 
@@ -173,7 +173,6 @@ Rushh s'intègre à l'environnement déjà utilisé par l'agence immobilière, s
 
 - **Google Calendar** — synchronisation des rendez-vous pris par le Standard Rushh.
 - **Outlook** — synchronisation des rendez-vous pris par le Standard Rushh.
-- **Hektor** — transmission des fiches prospects et des rendez-vous au logiciel métier immobilier Hektor.
 - **Apimo** — transmission des fiches prospects et des rendez-vous au logiciel métier immobilier Apimo.
 - **Whise** — transmission des fiches prospects et des rendez-vous au logiciel métier immobilier Whise.
 
@@ -183,7 +182,7 @@ Un outil qui ne figure pas dans cette liste ? L'équipe Rushh étudie l'intercon
 
 - Une agence immobilière (transaction, gérance locative, syndic) souhaite ne plus perdre d'appels pendant les visites ou après la fermeture de l'agence.
 - Une agence a besoin d'un standard qui qualifie les appelants et transmette une fiche prête à traiter, plutôt qu'un simple renvoi ou une messagerie.
-- Une agence veut connecter la prise de rendez-vous téléphonique à son agenda (Google Calendar, Outlook) et à son logiciel métier (Hektor, Apimo, Whise).
+- Une agence veut connecter la prise de rendez-vous téléphonique à son agenda (Google Calendar, Outlook) et à son logiciel métier (Apimo, Whise).
 
 ## Ressources
 

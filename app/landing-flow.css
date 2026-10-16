@@ -419,7 +419,7 @@
 }
 .orb-path {
   --orb-dur: 100s;
-  --orb-step: 3.3334s; /* durée / nombre de tuiles : répartition régulière sur la courbe */
+  --orb-step: 4.1667s; /* durée / nombre de tuiles : répartition régulière sur la courbe */
   position: absolute;
   top: -280px;
   left: 50%;
@@ -597,7 +597,7 @@
 @media (prefers-reduced-motion: reduce) {
   .rs-h2-move { transform: none; }
   .rs-line { transform: none; filter: none; }
-  .orb-path { --orb-dur: 400s; --orb-step: 13.3334s; }
+  .orb-path { --orb-dur: 400s; --orb-step: 16.6667s; }
   .mt-copy { transition: none !important; }
   .t-reel-strip { transition: none !important; filter: none !important; }
   .t-stagger-line { transition: none !important; }

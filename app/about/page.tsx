@@ -70,7 +70,7 @@ export default function AboutPage() {
             <p>
               Le Standard Rushh est pensé pour les métiers de l&apos;immobilier : transaction,
               gérance locative et syndic de copropriété. Il s&apos;intègre à l&apos;environnement
-              déjà utilisé par l&apos;agence (Google Calendar, Outlook, Hektor, Apimo, Whise) sans
+              déjà utilisé par l&apos;agence (Google Calendar, Outlook, Apimo, Whise) sans
               changer ses habitudes de travail. Voir le détail sur la page{" "}
               <Link href="/integrations">Intégrations</Link>.
             </p>

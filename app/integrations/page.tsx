@@ -5,7 +5,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 export const metadata: Metadata = {
   title: "Intégrations & ressources | Rushh",
   description:
-    "Rushh s'intègre à Google Calendar, Outlook, Hektor, Apimo et Whise. Découvrez les intégrations disponibles et quand utiliser le Standard téléphonique IA Rushh.",
+    "Rushh s'intègre à Google Calendar, Outlook, Apimo et Whise. Découvrez les intégrations disponibles et quand utiliser le Standard téléphonique IA Rushh.",
   alternates: {
     canonical: "https://www.rushh.fr/integrations",
   },
@@ -19,10 +19,6 @@ const INTEGRATIONS = [
   {
     name: "Outlook",
     desc: "Synchronisation des rendez-vous pris par le Standard Rushh directement dans l'agenda de l'agence.",
-  },
-  {
-    name: "Hektor",
-    desc: "Transmission des fiches prospects et des rendez-vous au logiciel métier immobilier Hektor.",
   },
   {
     name: "Apimo",
