@@ -3916,6 +3916,9 @@ section { position: relative; }
 .footer-cta-caption {
   font-size: 13px;
   color: var(--muted);
+  max-width: 17rem;
+  text-align: right;
+  line-height: 1.4;
 }
 
 /* Pill badge */
@@ -4069,6 +4072,7 @@ section { position: relative; }
     margin-bottom: 40px;
   }
   .footer-cta-action { align-items: flex-start; }
+  .footer-cta-caption { text-align: left; }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 36px;

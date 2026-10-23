@@ -13,13 +13,13 @@ export function FooterSection() {
           <div className="footer-cta-text">
             <span className="footer-cta-eyebrow">Le prochain contact compte.</span>
             <h2 className="footer-cta-title">
-              Votre agence ferme.<br />
-              Votre standard reste<span className="footer-cta-dot">.</span>
+              Vos équipes ne peuvent pas toujours répondre.<br />
+              Rushh, si<span className="footer-cta-dot">.</span>
             </h2>
           </div>
           <div className="footer-cta-action">
             <DemoCTA label="Réserver une démo" />
-            <span className="footer-cta-caption">Parlons de votre agence.</span>
+            <span className="footer-cta-caption">Découvrez comment Rushh peut s&apos;adapter à votre organisation.</span>
           </div>
         </div>
 

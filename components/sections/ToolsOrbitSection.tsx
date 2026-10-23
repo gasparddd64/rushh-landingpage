@@ -32,10 +32,10 @@ export function ToolsOrbitSection() {
           <span className="lf-pill">Vos outils</span>
           <h2 id="outils-title" className="lf-h2">Rushh s&apos;intègre à vos outils.</h2>
           <p className="lf-sub">
-            Connectez Rushh à votre environnement existant, sans changer vos habitudes.
+            Rushh s&apos;adapte à votre environnement et se connecte à vos outils existants, selon vos besoins.
           </p>
           <p className="orb-note">
-            Votre outil n&apos;est pas dans la liste ? Parlez-nous de votre environnement lors de l&apos;échange.
+            Vous utilisez un autre logiciel ? Parlons-en.
           </p>
           <ul className="lf-sr">
             {TOOLS.map((t) => (

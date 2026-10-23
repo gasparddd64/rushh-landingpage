@@ -21,7 +21,7 @@ const SCENARIOS = [
   {
     title: "Action adaptée",
     chip: "Règle de l'agence appliquée",
-    desc: "Rendez-vous, transfert ou message : Rushh applique les règles de votre agence.",
+    desc: "Rendez-vous, transfert ou message : Rushh applique les règles de votre organisation.",
     img: "/scenario-3.webp",
     alt: "Post-it jaune sur un téléphone de bureau d'agence : Mme Martin, vendeuse, rappel demain, pour Sarah",
   },
@@ -45,7 +45,7 @@ const MOMENTS = ["En visite", "Déjà en ligne", "Après la fermeture"];
    étape 0  « En visite » (apparaît à l'arrivée)
    étape 1  + « Déjà en ligne »
    étape 2  + « Après la fermeture »
-   étape 3  « L'appel trouve une réponse. » remplace les trois lignes
+   étape 3  « Vos équipes sont occupées. Rushh prend le relais. » remplace les trois lignes
    étape 4  il dézoome à sa place, le reste apparaît, la 1ʳᵉ carte remonte
 ═══════════════════════════════════════════════ */
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
@@ -185,16 +185,16 @@ export function RelaySection() {
             ))}
           </div>
 
-          {/* 2 · L'appel trouve une réponse : surgit au centre, sonne, dézoome */}
+          {/* 2 · Vos équipes sont occupées. Rushh prend le relais. : surgit au centre, puis dézoome */}
           <div className="rs-header" ref={headerRef}>
             <span className="lf-pill rs-pill">Le relais Rushh</span>
             <div className="rs-h2-move" ref={moveRef}>
               <h2 id="relais-title" className="lf-h2 rs-h2">
-                L&apos;appel trouve<br />une réponse.
+                Vos équipes sont occupées.<br />Rushh prend le relais.
               </h2>
             </div>
             <p className="lf-sub rs-sub">
-              La demande est comprise, les informations utiles sont recueillies et votre équipe sait quoi reprendre.
+              Rushh comprend chaque demande, recueille les informations essentielles et permet à vos équipes de reprendre les échanges au bon moment.
             </p>
           </div>
         </div>

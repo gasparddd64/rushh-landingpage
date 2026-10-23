@@ -11,7 +11,7 @@ const BAD_ITEMS = [
 
 const GOOD_ITEMS = [
   "Nous analysons votre fonctionnement",
-  "Nous adaptons les scénarios à votre agence",
+  "Nous adaptons les scénarios à votre organisation",
   "Nous testons avant la mise en service",
   "Nous suivons les performances dans le temps",
   "Nous faisons évoluer le standard avec vous",
@@ -44,7 +44,7 @@ export function CompareSection() {
             Pas un outil générique à configurer.
           </h2>
           <p className="lf-sub">
-            Notre équipe conçoit, déploie et fait évoluer votre Standard Rushh selon le fonctionnement réel de votre agence.
+            Nous concevons, déployons et faisons évoluer votre standard téléphonique selon votre organisation. Vous n&apos;avez rien à configurer ni à gérer.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export function CompareSection() {
               </div>
               <div style={{ flex: 1 }}>
                 <div className="cmp-card-name cmp-card-name--good">Standard Rushh</div>
-                <div className="cmp-card-sub cmp-card-sub--good">Nous le faisons fonctionner pour vous</div>
+                <div className="cmp-card-sub cmp-card-sub--good">Nous nous occupons de tout pour vous</div>
               </div>
             </div>
             <ul className="cmp-list">

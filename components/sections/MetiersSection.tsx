@@ -34,8 +34,8 @@ const METIERS = [
     img: "/metier-syndic.png",
     imgWebp: "/metier-syndic.webp",
     alt: "Façade d'un immeuble résidentiel moderne, vue depuis la rue",
-    title: "Un standard dédié à la copropriété",
-    desc: "Copropriétaires et prestataires sont accueillis avec le bon niveau d'information, sans mobiliser votre équipe sur les demandes courantes.",
+    title: "Moins d'appels répétitifs. Plus de temps pour vos copropriétés.",
+    desc: "Rushh prend en charge les demandes courantes des copropriétaires et prestataires, tout en transmettant les situations qui nécessitent votre intervention.",
     points: [
       { icon: "chat", title: "Réponses aux questions courantes", desc: "Les demandes récurrentes des copropriétaires trouvent une réponse immédiate, sans solliciter votre équipe." },
       { icon: "wrench", title: "Suivi des interventions prestataires", desc: "Les prestataires qui appellent sont identifiés et leur demande est consignée pour votre gestionnaire." },
@@ -48,8 +48,8 @@ const METIERS = [
     img: "/metier-gerance.png",
     imgWebp: "/metier-gerance.webp",
     alt: "Vue aérienne d'une ville et de ses immeubles au crépuscule",
-    title: "Vos locataires ne tombent plus sur répondeur",
-    desc: "Sinistre, panne ou question administrative : Rushh comprend la demande, applique vos procédures et alerte votre équipe en cas d'urgence.",
+    title: "Vos locataires obtiennent une réponse, même quand vous êtes occupé.",
+    desc: "Sinistre, panne ou question administrative : Rushh identifie les demandes, applique vos consignes et alerte votre équipe lorsque la situation l'exige.",
     points: [
       { icon: "clipboard", title: "Déclaration de sinistre guidée", desc: "Nature du sinistre, adresse, locataire concerné et degré d'urgence sont recueillis dès l'appel." },
       { icon: "shield", title: "Application de vos procédures", desc: "Vos consignes de gérance sont appliquées à chaque appel, de la simple question à la panne." },
@@ -62,8 +62,8 @@ const METIERS = [
     img: "/metier-transaction.png",
     imgWebp: "/metier-transaction.webp",
     alt: "Façade d'un immeuble haussmannien, bien à vendre",
-    title: "Ne manquez plus jamais un acheteur",
-    desc: "Rushh qualifie chaque appel reçu sur vos annonces, identifie le bien concerné et programme la visite selon vos disponibilités.",
+    title: "Ne laissez plus un appel manqué vous coûter un mandat ou une vente.",
+    desc: "Rushh prend en charge les appels de vos vendeurs et acquéreurs, qualifie leurs projets et transmet les opportunités à votre équipe.",
     points: [
       { icon: "search", title: "Identification du bien concerné", desc: "Votre équipe rappelle en sachant de quel bien parle l'acquéreur, sans avoir à le redemander." },
       { icon: "target", title: "Qualification du budget et du projet", desc: "Budget, projet d'achat et délais sont recueillis dès le premier appel pour prioriser vos rappels." },
@@ -76,8 +76,8 @@ const METIERS = [
     img: "/metier-location.png",
     imgWebp: undefined as string | undefined,
     alt: "Vue sur les toits de Paris et la tour Eiffel",
-    title: "Un accueil parfait pour vos candidats locataires",
-    desc: "Chaque appel sur un bien en location est pris en charge : les critères du candidat sont recueillis et la visite est planifiée sans effort pour votre équipe.",
+    title: "Vos demandes de location sont prises en charge, même pendant les visites.",
+    desc: "Rushh répond aux candidats locataires, recueille les informations utiles et facilite l'organisation des visites selon votre fonctionnement.",
     points: [
       { icon: "user", title: "Qualification du dossier candidat", desc: "Situation, date d'entrée souhaitée et critères essentiels sont recueillis selon vos règles." },
       { icon: "home", title: "Présentation des biens disponibles", desc: "Le candidat obtient les informations essentielles sur le bien qui l'intéresse." },
@@ -129,7 +129,7 @@ export function MetiersSection() {
             <h2 id="metiers-title" className="lf-h2">Un standard conçu pour tous vos métiers.</h2>
           </div>
           <p className="lf-sub">
-            Rushh s&apos;appuie sur des scénarios propres à l&apos;immobilier, puis s&apos;adapte à chaque métier de votre agence et à votre façon de traiter les appels.
+            Un standard téléphonique conçu pour les professionnels de l&apos;immobilier, qui s&apos;adapte à votre métier, vos équipes et votre façon de travailler.
           </p>
         </div>
 

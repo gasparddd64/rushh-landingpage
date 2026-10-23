@@ -1,3 +1,5 @@
+import type { ReactNode } from "react"
+
 import { SpinningNumber } from "@/components/ui/spinning-number"
 
 export type Stat = {
@@ -13,11 +15,14 @@ export function Stats({
   heroNote,
   photo,
   stats,
+  aside,
 }: {
   hero: Stat
   heroNote: string
   photo: { src: string; alt: string }
   stats: Stat[]
+  // bloc libre affiché à la suite des chiffres, dans la même rangée (ex. conformité RGPD)
+  aside?: ReactNode
 }) {
   return (
     <div>
@@ -46,6 +51,7 @@ export function Stats({
             <p>{s.label}</p>
           </div>
         ))}
+        {aside}
       </div>
     </div>
   )

@@ -1,6 +1,5 @@
 import { Nav } from "@/components/sections/Nav";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { RgpdBand } from "@/components/sections/RgpdBand";
 import { RelaySection } from "@/components/sections/RelaySection";
 import { MetiersSection } from "@/components/sections/MetiersSection";
 import { ToolsOrbitSection } from "@/components/sections/ToolsOrbitSection";
@@ -133,7 +132,6 @@ export default function Home() {
         <MetiersSection />
         <ToolsOrbitSection />
         <ChiffresSection />
-        <RgpdBand />
         <FAQSection />
         <CompareSection />
       </div>

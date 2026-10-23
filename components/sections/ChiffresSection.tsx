@@ -14,10 +14,19 @@ export function ChiffresSection() {
           stats={[
             { value: "92", unit: "%", label: "d'appels traités avec succès" },
             { value: "+7", unit: "h", label: "rendues aux équipes chaque semaine" },
-            { value: "1,5", label: "mandat potentiel récupéré / mois*" },
           ]}
+          aside={
+            <div className="nb-rgpd" role="listitem">
+              <div className="nb-rgpd-head">
+                <img className="nb-rgpd-logo" src="/rgpd-logo.webp" width={72} height={72} alt="Logo RGPD" loading="lazy" />
+                <p className="nb-rgpd-title">Conforme au RGPD</p>
+              </div>
+              <p className="nb-rgpd-text">
+                Les informations recueillies pendant les appels sont utilisées uniquement pour traiter les demandes de votre organisation, dans le cadre que vous définissez.
+              </p>
+            </div>
+          }
         />
-        <p className="nb-note">*Estimation basée sur les opportunités prises en charge.</p>
       </div>
     </section>
   )
