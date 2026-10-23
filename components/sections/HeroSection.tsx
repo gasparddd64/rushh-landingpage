@@ -12,19 +12,15 @@ export function HeroSection() {
 
         <div className="hero-x-copy">
           <p className="hero-x-eyebrow">
-            Le standard téléphonique IA
-            <br />
-            pensé pour les agences
-            <br />
-            immobilières
+            Le standard téléphonique IA sur mesure pour les professionnels de l&apos;immobilier
           </p>
 
           <h1 id="home-title" className="hero-x-title">
             <span className="hero-x-mask hero-x-mask--a">
-              <span className="hero-x-line">Chaque appel</span>
+              <span className="hero-x-line">Ne perdez plus d&apos;opportunités</span>
             </span>
             <span className="hero-x-mask hero-x-mask--b">
-              <span className="hero-x-line">compte pour votre agence</span>
+              <span className="hero-x-line">à cause des appels manqués.</span>
             </span>
           </h1>
 
