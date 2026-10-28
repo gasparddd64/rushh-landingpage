@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 import { JsonLd, SITE, SolShell } from "@/components/solutions/kit";
+import { categoryLabel } from "@/lib/articles/categories";
 import { CALLOUT_LABEL, formatFrenchDate, type Article, type Block } from "@/lib/articles/types";
 import "@/app/ressources/res.css";
 
@@ -93,7 +94,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: a.h1,
-    image: [`${SITE}${a.cover.src}`],
+    ...(a.cover ? { image: [`${SITE}${a.cover.src}`] } : {}),
     description: a.description,
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
@@ -108,7 +109,8 @@ export function ArticlePage({ article: a }: { article: Article }) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Accueil", item: SITE },
-      { "@type": "ListItem", position: 2, name: a.h1, item: url },
+      { "@type": "ListItem", position: 2, name: "Ressources", item: `${SITE}/ressources` },
+      { "@type": "ListItem", position: 3, name: a.h1, item: url },
     ],
   };
 
@@ -121,8 +123,9 @@ export function ArticlePage({ article: a }: { article: Article }) {
           <nav className="res-crumb" aria-label="Fil d'Ariane">
             <Link href="/">Accueil</Link>
             <span aria-hidden>›</span>
-            <span>Guide</span>
+            <Link href="/ressources">Ressources</Link>
           </nav>
+          <p className="res-cat">{categoryLabel(a.category)}</p>
           <h1 className="res-h1">{a.h1}</h1>
           <p className="res-meta">
             Publié le <time dateTime={a.datePublished}>{formatFrenchDate(a.datePublished)}</time>
@@ -135,6 +138,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
             <span className="res-answer-tag">En bref</span>
             <p>{a.answer}</p>
           </div>
+          {a.cover && (
           <figure className="res-cover">
             <Image
               src={a.cover.src}
@@ -145,6 +149,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
               priority
             />
           </figure>
+          )}
           <nav className="res-toc" aria-label="Sommaire">
             <details className="of-acc">
               <summary>Dans ce guide</summary>
@@ -197,6 +202,8 @@ export function ArticlePage({ article: a }: { article: Article }) {
               ))}
             </ul>
           </section>
+
+          <p className="res-back"><Link href="/ressources">← Toutes les ressources</Link></p>
 
           <aside className="res-cta" aria-labelledby="cta-t">
             <h2 id="cta-t">{a.cta.title}</h2>

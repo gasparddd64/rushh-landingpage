@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+<title id="title">Deux approches — Rushh Éditions 005</title>
+<desc id="description">Deux parcours d'appel comparés, une plateforme à configurer avec accompagnement optionnel et une prestation gérée, qui mènent au même résultat : un appel qualifié et transmis à l'équipe.</desc>
+<rect width="1200" height="630" fill="#F5F7FB"/>
+<g fill="none" stroke="#E4E9F1" stroke-width="1"><path d="M48 0V630 M438 0V630 M762 0V630 M1152 0V630"/><path d="M0 136H1200 M0 316H1200 M0 480H1200" stroke-dasharray="3 7"/></g>
+<g font-family="Inter, Helvetica Neue, Arial, sans-serif"><text x="76" y="76" fill="#17253D" font-size="15" font-weight="600" letter-spacing="2.1">RUSHH</text><text x="145" y="76" fill="#61718A" font-size="15" letter-spacing="1.5">/ ÉDITIONS</text><text x="1086" y="78" fill="#17253D" font-size="30" font-weight="300" letter-spacing="0.4">005</text></g>
+<line x1="76" y1="96" x2="96" y2="96" stroke="#61718A" stroke-width="1"/><line x1="1064" y1="54" x2="1064" y2="82" stroke="#61718A" stroke-width="1"/>
+<g fill="none" stroke-linecap="round" stroke-width="3">
+<path d="M76 230H330" stroke="#17253D"/><path d="M76 400H330" stroke="#17253D"/>
+<path d="M350 230H520 M600 230H740" stroke="#61718A" stroke-width="2.5"/>
+<path d="M350 400H740" stroke="#61718A" stroke-width="2.5"/>
+<path d="M740 230H780Q800 230 800 250V292Q800 315 822 315H850" stroke="#246DF0"/>
+<path d="M740 400H780Q800 400 800 380V338Q800 315 822 315H850" stroke="#246DF0"/>
+</g>
+<rect x="520" y="214" width="80" height="32" rx="5" fill="#FFFFFF" stroke="#61718A" stroke-width="1.5"/>
+<g stroke="#61718A" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M538 221V239 M560 221V239 M582 221V239"/></g><g fill="#FFFFFF" stroke="#61718A" stroke-width="1.5"><circle cx="538" cy="227" r="3.5"/><circle cx="560" cy="234" r="3.5"/><circle cx="582" cy="228" r="3.5"/></g>
+<circle cx="350" cy="230" r="5.5" fill="#61718A"/><circle cx="350" cy="400" r="5.5" fill="#61718A"/>
+<circle cx="850" cy="315" r="6" fill="#F5F7FB" stroke="#246DF0" stroke-width="3"/>
+<rect x="866" y="262" width="266" height="106" rx="7" fill="#FFFFFF" stroke="#E4E9F1" stroke-width="1.5"/>
+<g font-family="Inter, Helvetica Neue, Arial, sans-serif"><text x="888" y="300" font-size="17" font-weight="600" fill="#17253D">Appel traité</text><text x="888" y="326" font-size="14" fill="#61718A">Qualifié, transmis</text><text x="888" y="350" font-size="14" fill="#61718A">à l'équipe</text></g>
+<g font-family="Inter, Helvetica Neue, Arial, sans-serif"><text x="76" y="212" font-size="17" font-weight="600" fill="#17253D">Fonio</text><text x="76" y="256" font-size="14" fill="#61718A">Plateforme, accompagnement en option</text>
+<text x="76" y="382" font-size="17" font-weight="600" fill="#17253D">Rushh</text><text x="76" y="426" font-size="14" fill="#61718A">Prestation gérée, appels entrants</text></g><g font-family="Inter, Helvetica Neue, Arial, sans-serif"><text x="76" y="547" font-size="40" font-weight="400" letter-spacing="-1.1" fill="#17253D">Deux <tspan fill="#61718A">approches.</tspan></text></g>
+<line x1="76" y1="570" x2="108" y2="570" stroke="#17253D" stroke-width="1.5"/>
+</svg>

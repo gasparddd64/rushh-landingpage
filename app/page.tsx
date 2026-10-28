@@ -41,8 +41,7 @@ const organizationSchema = {
   ],
   "sameAs": [
     "https://www.linkedin.com/in/gaspardv/",
-    "https://www.instagram.com/rushh.fr",
-    "https://www.youtube.com/@rushh",
+    "https://www.instagram.com/rushh.immo/",
   ],
 };
 

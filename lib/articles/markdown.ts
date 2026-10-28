@@ -42,8 +42,8 @@ export function articleToMarkdown(a: Article): string {
     `# ${a.h1}`,
     `Publié le ${formatFrenchDate(a.datePublished)}. Mis à jour le ${formatFrenchDate(a.dateModified)}. Rédaction Rushh.`,
     `**En bref.** ${a.answer}`,
-    `![${a.cover.alt}](${SITE_URL}${a.cover.src})`,
   ];
+  if (a.cover) parts.splice(3, 0, `![${a.cover.alt}](${SITE_URL}${a.cover.src})`);
   for (const s of a.sections) {
     parts.push(`## ${s.h2}`);
     for (const b of s.blocks) parts.push(blockToMarkdown(b));

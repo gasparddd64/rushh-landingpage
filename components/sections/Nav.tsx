@@ -5,9 +5,9 @@ import { useState } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 const NAV_LINKS = [
-  { label: "L'expérience Rushh", href: "/#relais" },
-  { label: "Notre différence", href: "/#metiers" },
-  { label: "Nos clients", href: "/#testimonials" },
+  { label: "Le standard Rushh", href: "/#relais" },
+  { label: "Pourquoi Rushh", href: "/#metiers" },
+  { label: "Blog", href: "/ressources" },
   { label: "FAQ", href: "/#faq" },
 ];
 
@@ -26,11 +26,17 @@ export function Nav() {
 
           {/* Center links */}
           <div className="nav-links-center">
-            {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} className="nav-link">
-                {l.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((l) =>
+              l.href.includes("#") ? (
+                <a key={l.href} href={l.href} className="nav-link">
+                  {l.label}
+                </a>
+              ) : (
+                <Link key={l.href} href={l.href} className="nav-link">
+                  {l.label}
+                </Link>
+              ),
+            )}
           </div>
 
           {/* CTA */}
@@ -60,11 +66,17 @@ export function Nav() {
           </svg>
         </button>
         <div className="mobile-menu-links">
-          {NAV_LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="mobile-menu-link" onClick={() => setOpen(false)}>
-              {l.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((l) =>
+            l.href.includes("#") ? (
+              <a key={l.href} href={l.href} className="mobile-menu-link" onClick={() => setOpen(false)}>
+                {l.label}
+              </a>
+            ) : (
+              <Link key={l.href} href={l.href} className="mobile-menu-link" onClick={() => setOpen(false)}>
+                {l.label}
+              </Link>
+            ),
+          )}
         </div>
         <div className="mobile-menu-ctas">
           <DemoCTA label="Réserver une démo" />

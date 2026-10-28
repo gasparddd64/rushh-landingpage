@@ -70,8 +70,7 @@ export default function PrivacyPage() {
             <p>
               <strong>Traitements propres à Rushh.</strong> Rushh agit en qualité de responsable de traitement
               pour sa propre gestion commerciale, contractuelle et comptable, pour le support, pour la sécurité
-              de ses systèmes, pour le respect de ses obligations légales et pour la mesure d&apos;audience de
-              ce site (voir « Cookies et mesure d&apos;audience »).
+              de ses systèmes et pour le respect de ses obligations légales.
             </p>
           </section>
 
@@ -98,14 +97,7 @@ export default function PrivacyPage() {
           <section className="cgv-article" id="cookies">
             <h2>Cookies et mesure d&apos;audience</h2>
             <p>
-              Le site rushh.fr utilise Google Analytics pour mesurer son audience. Cet outil n&apos;est activé qu&apos;avec
-              votre accord : avant votre choix, aucun script ni cookie Google Analytics n&apos;est chargé. Vous pouvez
-              accepter ou refuser les statistiques avec la même facilité, et modifier votre choix à tout moment avec le
-              bouton « Gérer les cookies » en bas de chaque page.
-            </p>
-            <p>
-              Votre choix est mémorisé dans votre navigateur pendant 6 mois, puis la question vous est posée de
-              nouveau. Refuser les statistiques n&apos;a aucune conséquence sur l&apos;utilisation du site.
+              Le site rushh.fr n&apos;utilise aucun outil de mesure d&apos;audience ni aucun cookie de suivi : il n&apos;affiche donc pas de bandeau de consentement. Les services tiers que vous choisissez d&apos;utiliser depuis le site, par exemple la réservation d&apos;une démonstration via Calendly, relèvent de leurs propres politiques de confidentialité.
             </p>
           </section>
 

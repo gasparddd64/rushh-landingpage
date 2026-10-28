@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Nav } from "@/components/sections/Nav";
 import { DemoCTA } from "@/components/ui/demo-cta";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -109,17 +110,7 @@ export const Cross = () => (
 export function SolShell({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <main className={`offre sol${className ? ` ${className}` : ""}`}>
-      <header className="nav">
-        <div className="nav-inner">
-          <Link href="/" className="brand">
-            <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
-            <span>Rushh</span>
-          </Link>
-          <div className="nav-cta">
-            <DemoCTA label="Réserver une démo" showArrow={false} />
-          </div>
-        </div>
-      </header>
+      <Nav />
       <div className="lf">{children}</div>
       <FooterSection />
       <ScrollReveal />

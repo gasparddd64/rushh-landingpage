@@ -8,6 +8,7 @@ export const qualification: Article = {
     height: 840,
     alt: "Illustration : deux appels entrants, un vendeur qui demande une estimation et un acquéreur qui recherche un bien, convergent vers une qualification puis une fiche de contact identifié, demande qualifiée, transmise à l'équipe.",
   },
+  category: "appels-qualification",
   title: "Qualifier un appel vendeur ou acquéreur : méthode | Rushh",
   description:
     "Quelles informations recueillir et transmettre quand un vendeur ou un acquéreur appelle ? Méthode, informations utiles et deux fiches modèles fictives.",

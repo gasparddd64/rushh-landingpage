@@ -4,6 +4,8 @@
  * Syntaxe inline des textes : **gras** et [texte](url) uniquement.
  */
 
+import type { CategoryId } from "./categories";
+
 export type CalloutKind = "fact" | "example" | "reco" | "hypo";
 
 export type Block =
@@ -39,10 +41,14 @@ export interface ArticleCover {
 
 export interface Article {
   path: string;
-  cover: ArticleCover;
+  cover?: ArticleCover;
+  /** Identifiant d'une catégorie de lib/articles/categories.ts. */
+  category: CategoryId;
   title: string;
   description: string;
   h1: string;
+  /** Titre court pour les cartes du catalogue (le H1 et le title SEO ne changent pas). */
+  shortTitle?: string;
   /** Réponse directe, affichée avant tout le reste. */
   answer: string;
   datePublished: string;

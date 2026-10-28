@@ -51,6 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: 'https://www.rushh.fr/ressources',
+      lastModified: new Date('2026-10-29'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
       url: 'https://www.rushh.fr/ressources/appels-manques-immobilier',
       lastModified: new Date('2026-10-28'),
       changeFrequency: 'monthly',
@@ -65,6 +71,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://www.rushh.fr/ressources/qualification-appels-vendeurs-acquereurs',
       lastModified: new Date('2026-10-28'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/comparatif/standards-telephoniques-ia-immobilier',
+      lastModified: new Date('2026-10-29'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.rushh.fr/vs/fonio',
+      lastModified: new Date('2026-10-29'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/choisir-standard-telephonique-ia-immobilier',
+      lastModified: new Date('2026-10-29'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },

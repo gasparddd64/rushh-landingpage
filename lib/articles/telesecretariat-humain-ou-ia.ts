@@ -8,6 +8,7 @@ export const telesecretariat: Article = {
     height: 840,
     alt: "Illustration comparant trois parcours d'un appel : réception humaine selon les disponibilités, logiciel IA à configurer et suivre, et Standard Rushh conçu, déployé et suivi, pris en charge pour l'agence.",
   },
+  category: "standards-ia-comparatifs",
   title: "Télésecrétariat humain ou IA en immobilier | Rushh",
   description:
     "Télésecrétariat humain, logiciel IA à configurer ou service IA pris en charge : comparaison honnête de trois organisations pour les appels d'une agence.",
@@ -247,6 +248,11 @@ export const telesecretariat: Article = {
       href: "/ressources/appels-manques-immobilier",
       label: "Appels manqués en agence immobilière",
       text: "Mesurer vos appels manqués avant de choisir une organisation.",
+    },
+    {
+      href: "/ressources/choisir-standard-telephonique-ia-immobilier",
+      label: "Choisir un standard téléphonique IA",
+      text: "Scénarios à tester, intégrations, données, coûts et checklist de décision.",
     },
     {
       href: "/vs/joe-ai",

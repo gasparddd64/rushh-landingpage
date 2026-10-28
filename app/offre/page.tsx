@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { Nav } from "@/components/sections/Nav";
 import { DemoCTA } from "@/components/ui/demo-cta";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -141,17 +142,7 @@ export default function OffrePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      <header className="nav">
-        <div className="nav-inner">
-          <Link href="/" className="brand">
-            <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
-            <span>Rushh</span>
-          </Link>
-          <div className="nav-cta">
-            <DemoCTA label="Réserver une démo" showArrow={false} />
-          </div>
-        </div>
-      </header>
+      <Nav />
 
       <div className="lf">
         {/* ── Hero : résultat attendu, puis bénéfices ── */}

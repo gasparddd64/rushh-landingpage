@@ -8,6 +8,7 @@ export const appelsManques: Article = {
     height: 840,
     alt: "Illustration : une ligne d'appel qui s'interrompt puis reprend, et aboutit à une fiche « Demande vendeur », estimation à Paris 11e, demande à transmettre.",
   },
+  category: "appels-qualification",
   title: "Appels manqués en agence immobilière : les mesurer | Rushh",
   description:
     "Comment identifier, mesurer et réduire les appels manqués d'une agence immobilière : journal d'appels, motifs, rappels, tableau de suivi et checklist.",

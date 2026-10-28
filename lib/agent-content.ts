@@ -5,6 +5,7 @@
 
 import { ARTICLES } from "./articles";
 import { articleToMarkdown } from "./articles/markdown";
+import { CATALOGUE_TITLE, catalogueToMarkdown } from "./articles/catalogue-markdown";
 import * as mandataires from "./solutions/mandataires-immobiliers";
 import * as gestionLocative from "./solutions/gestion-locative";
 
@@ -153,7 +154,7 @@ Rushh est édité par Gaspard David, Entrepreneur Individuel (EI), exerçant sou
 
 Appels pris en charge pour une agence cliente. Pour les traitements réalisés exclusivement pour le compte de l'agence dans le cadre de la gestion des appels, l'agence cliente agit en principe en qualité de responsable de traitement et Rushh en qualité de sous-traitant, sous réserve de la qualification juridique résultant des traitements effectivement mis en œuvre. Ces traitements sont encadrés par un accord de traitement de données (DPA) prévu au contrat.
 
-Traitements propres à Rushh. Rushh agit en qualité de responsable de traitement pour sa propre gestion commerciale, contractuelle et comptable, pour le support, pour la sécurité de ses systèmes, pour le respect de ses obligations légales et pour la mesure d'audience de ce site (voir « Cookies et mesure d'audience »).
+Traitements propres à Rushh. Rushh agit en qualité de responsable de traitement pour sa propre gestion commerciale, contractuelle et comptable, pour le support, pour la sécurité de ses systèmes, pour le respect de ses obligations légales.
 
 ## Données traitées
 
@@ -165,9 +166,7 @@ Pour toute question sur l'hébergement des données et sur les sous-traitants in
 
 ## Cookies et mesure d'audience
 
-Le site rushh.fr utilise Google Analytics pour mesurer son audience. Cet outil n'est activé qu'avec votre accord : avant votre choix, aucun script ni cookie Google Analytics n'est chargé. Vous pouvez accepter ou refuser les statistiques avec la même facilité, et modifier votre choix à tout moment avec le bouton « Gérer les cookies » en bas de chaque page.
-
-Votre choix est mémorisé dans votre navigateur pendant 6 mois, puis la question vous est posée de nouveau. Refuser les statistiques n'a aucune conséquence sur l'utilisation du site.
+Le site rushh.fr n'utilise aucun outil de mesure d'audience ni aucun cookie de suivi : il n'affiche donc pas de bandeau de consentement. Les services tiers que vous choisissez d'utiliser depuis le site, par exemple la réservation d'une démonstration via Calendly, relèvent de leurs propres politiques de confidentialité.
 
 ## Vos droits
 
@@ -619,6 +618,8 @@ Retour à l'accueil : ${SITE_URL}/
 `,
   },
 };
+
+MARKDOWN_PAGES["/ressources"] = { title: CATALOGUE_TITLE, markdown: catalogueToMarkdown() };
 
 // Guides /ressources/* : le Markdown est généré depuis les mêmes données que la page rendue.
 for (const article of ARTICLES) {
