@@ -5,6 +5,8 @@
 
 import { ARTICLES } from "./articles";
 import { articleToMarkdown } from "./articles/markdown";
+import * as mandataires from "./solutions/mandataires-immobiliers";
+import * as gestionLocative from "./solutions/gestion-locative";
 
 export const SITE_URL = "https://www.rushh.fr";
 
@@ -463,7 +465,7 @@ La mise en service est visée sous 5 jours ouvrés après réception des éléme
 
 Tarification sur devis. Réserver une démo personnalisée : [https://calendly.com/gaspard-david/demo](https://calendly.com/gaspard-david/demo)
 
-Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Ligne de démonstration](${SITE_URL}/demonstrations) · [Intégrations](${SITE_URL}/integrations) · [Réseaux et groupes d'agences](${SITE_URL}/solutions/multi-sites)
+Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Ligne de démonstration](${SITE_URL}/demonstrations) · [Intégrations](${SITE_URL}/integrations) · [Mandataires immobiliers](${SITE_URL}/solutions/mandataires-immobiliers) · [Réseaux et groupes d'agences](${SITE_URL}/solutions/multi-sites)
 `,
   },
   "/solutions/syndics": {
@@ -533,9 +535,11 @@ Cette page décrit une organisation possible, à étudier avec vous. Elle ne pr�
 
 Tarification sur devis. Réserver une démo personnalisée : [https://calendly.com/gaspard-david/demo](https://calendly.com/gaspard-david/demo)
 
-Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Intégrations](${SITE_URL}/integrations) · [Réseaux et groupes d'agences](${SITE_URL}/solutions/multi-sites)
+Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Intégrations](${SITE_URL}/integrations) · [Gestion locative](${SITE_URL}/solutions/gestion-locative) · [Réseaux et groupes d'agences](${SITE_URL}/solutions/multi-sites)
 `,
   },
+  [mandataires.PATH]: { title: mandataires.TITLE, markdown: mandataires.toMarkdown() },
+  [gestionLocative.PATH]: { title: gestionLocative.TITLE, markdown: gestionLocative.toMarkdown() },
   "/solutions/multi-sites": {
     title: "Standard téléphonique IA multi-agences pour l'immobilier | Rushh",
     markdown: `# Un standard téléphonique IA adapté aux réseaux et groupes d'agences immobilières

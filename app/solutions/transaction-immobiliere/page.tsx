@@ -226,6 +226,7 @@ export default function TransactionPage() {
           { href: "/offre", label: "L'offre Rushh" },
           { href: "/demonstrations", label: "Ligne de démonstration" },
           { href: "/integrations", label: "Intégrations" },
+          { href: "/solutions/mandataires-immobiliers", label: "Mandataires immobiliers" },
           { href: "/solutions/multi-sites", label: "Réseaux et groupes d'agences" },
         ]}
       />

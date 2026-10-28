@@ -25,6 +25,8 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Offer (what is included, how deployment works, quote-based pricing): https://www.rushh.fr/offre
 - Demo line (test the Standard by phone, fictional agency in Paris): https://www.rushh.fr/demonstrations
 - Transaction (seller and buyer calls): https://www.rushh.fr/solutions/transaction-immobiliere
+- Independent real-estate agents (mandataires): https://www.rushh.fr/solutions/mandataires-immobiliers
+- Rental management (gestion locative): https://www.rushh.fr/solutions/gestion-locative
 - Property management companies (syndics): https://www.rushh.fr/solutions/syndics
 - Networks and groups of agencies (multi-sites): https://www.rushh.fr/solutions/multi-sites
 - Guide, missed calls in a real-estate agency: https://www.rushh.fr/ressources/appels-manques-immobilier

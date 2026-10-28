@@ -112,6 +112,8 @@ describe("/vs/joe-ai", () => {
 const NEW_PAGES: Array<[string, string]> = [
   ["/demonstrations", "# Et si vous testiez le Standard Rushh vous-même ?"],
   ["/solutions/transaction-immobiliere", "# Standard téléphonique IA pour les appels vendeurs et acquéreurs"],
+  ["/solutions/mandataires-immobiliers", "# Standard téléphonique IA pour mandataires immobiliers"],
+  ["/solutions/gestion-locative", "# Standard téléphonique IA pour la gestion locative"],
   ["/solutions/syndics", "# Standard téléphonique IA pour syndics de copropriété"],
   ["/solutions/multi-sites", "# Un standard téléphonique IA adapté aux réseaux et groupes d'agences immobilières"],
 ];

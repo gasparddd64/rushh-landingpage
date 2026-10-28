@@ -247,6 +247,7 @@ export default function SyndicsPage() {
         links={[
           { href: "/offre", label: "L'offre Rushh" },
           { href: "/integrations", label: "Intégrations" },
+          { href: "/solutions/gestion-locative", label: "Gestion locative" },
           { href: "/solutions/multi-sites", label: "Réseaux et groupes d'agences" },
         ]}
       />

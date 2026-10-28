@@ -51,6 +51,8 @@ export function FooterSection() {
               <Link href="/offre">L&apos;offre Rushh</Link>
               <Link href="/demonstrations">Démonstration</Link>
               <Link href="/solutions/transaction-immobiliere">Transaction</Link>
+              <Link href="/solutions/mandataires-immobiliers">Mandataires</Link>
+              <Link href="/solutions/gestion-locative">Gestion locative</Link>
               <Link href="/solutions/syndics">Syndics</Link>
               <Link href="/solutions/multi-sites">Multi-agences</Link>
               <Link href="/integrations">Intégrations</Link>
