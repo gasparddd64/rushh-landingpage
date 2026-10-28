@@ -1,13 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 const NAV_LINKS = [
-  { label: "L'expérience Rushh", href: "#relais" },
-  { label: "Notre différence", href: "#metiers" },
-  { label: "Nos clients", href: "#testimonials" },
-  { label: "FAQ", href: "#faq" },
+  { label: "L'expérience Rushh", href: "/#relais" },
+  { label: "Notre différence", href: "/#metiers" },
+  { label: "Nos clients", href: "/#testimonials" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export function Nav() {
@@ -18,10 +19,10 @@ export function Nav() {
       <nav className="nav">
         <div className="nav-inner">
           {/* Logo */}
-          <a href="/" className="brand">
+          <Link href="/" className="brand">
             <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
             <span>Rushh</span>
-          </a>
+          </Link>
 
           {/* Center links */}
           <div className="nav-links-center">

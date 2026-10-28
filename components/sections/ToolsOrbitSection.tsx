@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 
-const TOOLS = [
+export const TOOLS = [
   { name: "Google Calendar", logo: "/logo-gcal.png", fill: false },
   { name: "Outlook", logo: "/logo-outlook.png", fill: false },
   { name: "Apimo", logo: "/logo-apimo.png", fill: true },

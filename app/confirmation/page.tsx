@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Calendar } from "lucide-react";
 import { parseConfirmationParams, type SearchParamsInput } from "@/lib/confirmation";
 import { BookingAnalytics } from "@/components/confirmation/BookingAnalytics";
@@ -47,10 +48,10 @@ export default async function ConfirmationPage({
       </svg>
 
       <div className="conf-topbar">
-        <a href="/" className="conf-brand" aria-label="Rushh, retour à l'accueil">
+        <Link href="/" className="conf-brand" aria-label="Rushh, retour à l'accueil">
           <img src="/logo-rushh-icon.png" alt="" className="conf-brand-logo" />
           <span>Rushh</span>
-        </a>
+        </Link>
       </div>
 
       <div className="conf-content">
@@ -90,9 +91,9 @@ export default async function ConfirmationPage({
       </div>
 
       <div className="conf-footer">
-        <a href="/" className="conf-back">
+        <Link href="/" className="conf-back">
           rushh.fr
-        </a>
+        </Link>
       </div>
 
       {data.hasBookingSignal && (

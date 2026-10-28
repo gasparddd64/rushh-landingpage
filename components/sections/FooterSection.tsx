@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { DemoCTA } from "@/components/ui/demo-cta";
+import { CookieSettingsButton } from "@/components/CookieSettingsButton";
 
 export function FooterSection() {
   return (
@@ -39,14 +40,19 @@ export function FooterSection() {
           </div>
 
           {/* Col 2 — Navigation */}
-          <div className="footer-col">
+          <div className="footer-col footer-col--nav">
             <h3 className="footer-col-title">Navigation</h3>
             <nav className="footer-links">
-              <a href="#relais">Comment ça marche</a>
-              <a href="#metiers">Pourquoi Rushh</a>
-              <a href="#testimonials">Témoignages</a>
-              <a href="#faq">FAQ</a>
+              <Link href="/#relais">Comment ça marche</Link>
+              <Link href="/#metiers">Pourquoi Rushh</Link>
+              <Link href="/#testimonials">Témoignages</Link>
+              <Link href="/#faq">FAQ</Link>
               <a href="/vs/joe-ai">Rushh vs Joe AI</a>
+              <Link href="/offre">L&apos;offre Rushh</Link>
+              <Link href="/demonstrations">Démonstration</Link>
+              <Link href="/solutions/transaction-immobiliere">Transaction</Link>
+              <Link href="/solutions/syndics">Syndics</Link>
+              <Link href="/solutions/multi-sites">Multi-agences</Link>
               <Link href="/integrations">Intégrations</Link>
             </nav>
           </div>
@@ -87,10 +93,14 @@ export function FooterSection() {
         {/* Bottom bar */}
         <div className="footer-bottom">
           <span>© 2026 Rushh. Tous droits réservés.</span>
-          <span>Données hébergées en France</span>
+          <span className="footer-rgpd">
+            <img src="/rgpd-logo.webp" width={20} height={20} alt="" loading="lazy" />
+            Conforme au RGPD
+          </span>
           <nav className="footer-legal">
             <Link href="/cgv">CGV</Link>
             <Link href="/privacy">Confidentialité</Link>
+            <CookieSettingsButton />
           </nav>
         </div>
       </div>

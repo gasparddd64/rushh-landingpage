@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { CalendlyTracking } from "@/components/CalendlyTracking";
+import { ConsentManager } from "@/components/ConsentManager";
 
 const inter = Plus_Jakarta_Sans({
   variable: "--font-inter",
@@ -22,7 +23,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "Agent vocal IA pour agence immobilière | Rushh",
-  description: "Le Standard Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24, conçu et déployé pour votre agence en 5 jours.",
+  description: "Le Standard Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24, conçu pour votre organisation.",
   keywords: [
     "agent vocal agence immo",
     "agent vocal IA agence immobilière",
@@ -43,17 +44,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Agent vocal IA pour agence immobilière | Rushh",
-    description: "Le Standard Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24, conçu et déployé pour votre agence en 5 jours.",
+    description: "Le Standard Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24, conçu pour votre organisation.",
     url: "https://www.rushh.fr",
     siteName: "Rushh",
     locale: "fr_FR",
     type: "website",
-    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 1200, height: 630 }],
+    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 365, height: 365 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Agent vocal IA pour agence immobilière | Rushh",
-    description: "Le Standard Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24, conçu et déployé pour votre agence en 5 jours.",
+    description: "Le Standard Rushh est l'agent vocal IA pour agence immobilière : il décroche, qualifie et transmet chaque appel 24 h/24, conçu pour votre organisation.",
   },
   alternates: {
     canonical: "https://www.rushh.fr",
@@ -74,21 +75,9 @@ export default function RootLayout({
       lang="fr"
       className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}
     >
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EZB9K3J95" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-0EZB9K3J95');
-            `,
-          }}
-        />
-      </head>
       <body>
         <CalendlyTracking />
+        <ConsentManager />
         {children}
       </body>
     </html>

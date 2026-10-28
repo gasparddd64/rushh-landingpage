@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { withSocial } from "@/lib/seo";
 import Link from "next/link";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: "Contact Rushh | Standard téléphonique IA pour l'immobilier",
   description:
     "Contactez l'équipe Rushh pour une démonstration du Standard téléphonique IA, ou pour toute question sur un déploiement en cours.",
@@ -11,6 +12,8 @@ export const metadata: Metadata = {
     canonical: "https://www.rushh.fr/contact",
   },
 };
+
+export const metadata: Metadata = withSocial(baseMetadata, "/contact");
 
 export default function ContactPage() {
   return (

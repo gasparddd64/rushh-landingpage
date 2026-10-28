@@ -1,0 +1,436 @@
+/* ==========================================================================
+   Page /offre : landing commerciale. Réutilise les variables, composants et
+   conventions de l'accueil (landing-flow.css). Tout est scopé sous .offre.
+   ========================================================================== */
+.offre { --of-navy: #0b1230; }
+.offre .lf-wrap { max-width: 1160px; }
+.offre .lf section { padding: 96px 0; }
+
+/* ---------- Hero ---------- */
+.offre .of-hero {
+  position: relative;
+  padding: 84px 0 40px;
+  text-align: center;
+}
+.offre .of-hero::before {
+  content: "";
+  position: absolute;
+  inset: -40px 0 auto;
+  height: 520px;
+  z-index: -1;
+  background:
+    radial-gradient(50% 60% at 50% 0%, rgba(0, 71, 198, 0.13), transparent 70%),
+    radial-gradient(30% 40% at 85% 20%, rgba(80, 150, 255, 0.10), transparent 70%);
+  pointer-events: none;
+}
+.offre .of-hero .lf-pill { margin-bottom: 26px; }
+.offre .of-h1 {
+  margin: 0 auto;
+  max-width: 940px;
+  font-size: clamp(32px, 4.8vw, 60px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  color: var(--lf-ink);
+  text-wrap: balance;
+}
+.offre .of-h1 em { font-style: normal; color: var(--lf-accent); }
+.offre .of-lead {
+  margin: 24px auto 0;
+  max-width: 660px;
+  font-size: clamp(16px, 1.6vw, 19px);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+  color: var(--lf-muted);
+  text-wrap: pretty;
+}
+.offre .of-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  margin-top: 34px;
+}
+.offre .of-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 6px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--lf-ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-fast) var(--ease-smooth-out);
+}
+.offre .of-ghost:hover { border-bottom-color: var(--lf-ink); }
+.offre .of-ghost svg { width: 16px; height: 16px; }
+.offre .of-note {
+  margin: 18px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(24, 32, 58, 0.55);
+}
+
+/* ---------- Cartes de bénéfices ---------- */
+.offre .of-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 56px auto 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+.offre .of-benefit {
+  padding: 26px 26px 28px;
+  transition: transform var(--duration-medium) var(--ease-smooth-out), box-shadow var(--duration-medium) var(--ease-smooth-out);
+}
+.offre .of-benefit:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(12, 16, 36, 0.04), 0 26px 44px -26px rgba(0, 71, 198, 0.3); }
+.offre .of-ic {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: var(--lf-accent-soft);
+  border: 1px solid rgba(0, 71, 198, 0.14);
+  color: var(--lf-accent);
+}
+.offre .of-ic svg { width: 22px; height: 22px; }
+.offre .of-benefit h3 { margin: 0 0 8px; font-size: 20px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.2; color: var(--lf-ink); }
+.offre .of-benefit p { margin: 0; font-size: 15px; font-weight: 500; line-height: 1.55; letter-spacing: -0.015em; color: var(--lf-muted); }
+
+/* ---------- Schéma du parcours ---------- */
+.offre .of-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 52px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: of;
+}
+.offre .of-flow-step {
+  position: relative;
+  margin-right: 34px;
+  padding: 24px 22px 26px;
+}
+.offre .of-flow-step:last-child { margin-right: 0; }
+/* flèche entre deux étapes */
+.offre .of-flow-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -34px;
+  width: 34px;
+  height: 2px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, rgba(0, 71, 198, 0.15), rgba(0, 71, 198, 0.7));
+}
+.offre .of-flow-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -34px;
+  width: 8px;
+  height: 8px;
+  transform: translateY(-50%) rotate(45deg);
+  border-top: 2px solid rgba(0, 71, 198, 0.75);
+  border-right: 2px solid rgba(0, 71, 198, 0.75);
+  margin-right: 1px;
+  z-index: 1;
+}
+.offre .of-flow-n {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--lf-ink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.offre .of-flow-step h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.22; color: var(--lf-ink); }
+.offre .of-flow-step p { margin: 0; font-size: 14px; font-weight: 500; line-height: 1.5; letter-spacing: -0.01em; color: var(--lf-muted); }
+.offre .of-flow-step--end {
+  border-color: rgba(0, 71, 198, 0.35);
+  background: linear-gradient(180deg, #fff, var(--lf-accent-soft));
+  box-shadow: 0 1px 2px rgba(12, 16, 36, 0.04), 0 26px 44px -26px rgba(0, 71, 198, 0.45);
+}
+.offre .of-flow-step--end .of-flow-n { background: var(--lf-accent); }
+
+.offre .of-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.offre .of-chips li {
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--lf-line);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--lf-ink);
+}
+.offre .of-caption {
+  max-width: 640px;
+  margin: 22px auto 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--lf-muted);
+}
+
+/* ---------- Accompagnement : vous / Rushh ---------- */
+.offre .of-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 20px;
+  margin-top: 52px;
+}
+.offre .of-panel { padding: 34px 34px 36px; border-radius: 24px; }
+.offre .of-panel h3 { margin: 0 0 20px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lf-muted); }
+.offre .of-ticks { display: flex; flex-direction: column; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.offre .of-ticks li { display: flex; align-items: flex-start; gap: 12px; font-size: 17px; font-weight: 600; line-height: 1.35; letter-spacing: -0.025em; color: var(--lf-ink); }
+.offre .of-ticks svg { flex: none; width: 24px; height: 24px; margin-top: 1px; padding: 5px; border-radius: 50%; background: var(--lf-accent-soft); color: var(--lf-accent); }
+.offre .of-panel--rushh {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(110, 165, 255, 0.42), transparent 60%),
+    linear-gradient(160deg, #0b5be6 0%, #0047c6 48%, #002c82 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 34px 54px -30px rgba(0, 71, 198, 0.8);
+}
+.offre .of-panel--rushh h3 { color: rgba(255, 255, 255, 0.78); }
+.offre .of-panel--rushh .of-ticks li { color: #fff; }
+.offre .of-panel--rushh .of-ticks svg { background: rgba(255, 255, 255, 0.18); color: #fff; }
+
+/* ---------- Bloc d'adaptation (sombre) ---------- */
+.offre .of-bespoke {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  gap: 48px;
+  align-items: center;
+  padding: 56px;
+  border-radius: 32px;
+  color: #fff;
+  background:
+    radial-gradient(60% 80% at 100% 0%, rgba(0, 71, 198, 0.55), transparent 70%),
+    linear-gradient(160deg, #101a45 0%, var(--of-navy) 100%);
+  box-shadow: 0 40px 80px -40px rgba(11, 18, 48, 0.7);
+}
+.offre .of-bespoke .lf-pill { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color: #fff; box-shadow: none; }
+.offre .of-bespoke .lf-h2 { margin-top: 20px; color: #fff; }
+.offre .of-bespoke .lf-sub { margin-top: 16px; color: rgba(255, 255, 255, 0.72); }
+.offre .of-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.offre .of-tile { padding: 22px 22px 24px; border-radius: 20px; background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.14); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.offre .of-tile h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; letter-spacing: -0.03em; color: #fff; }
+.offre .of-tile p { margin: 0; font-size: 14.5px; font-weight: 500; line-height: 1.5; letter-spacing: -0.01em; color: rgba(255, 255, 255, 0.72); }
+.offre .of-tile a { color: #fff; font-weight: 600; text-underline-offset: 3px; text-decoration-color: rgba(255, 255, 255, 0.5); }
+.offre .of-tile a:hover { text-decoration-color: #fff; }
+
+/* ---------- Mise en service : frise ---------- */
+.offre .of-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 52px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.offre .of-step { padding: 26px 26px 28px; }
+.offre .of-step-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.offre .of-step-n { font-size: 44px; font-weight: 700; letter-spacing: -0.06em; line-height: 1; color: var(--lf-accent); opacity: 0.9; }
+.offre .of-step h3 { margin: 0 0 8px; font-size: 20px; font-weight: 700; letter-spacing: -0.035em; color: var(--lf-ink); }
+.offre .of-step p { margin: 0; font-size: 15px; font-weight: 500; line-height: 1.55; letter-spacing: -0.015em; color: var(--lf-muted); }
+.offre .of-delay {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 22px;
+  padding: 22px 26px;
+  border-radius: 20px;
+  background: var(--lf-accent-soft);
+  border: 1px solid rgba(0, 71, 198, 0.2);
+}
+.offre .of-delay .of-ic { margin: 0; flex: none; background: #fff; }
+.offre .of-delay > div > strong { display: block; font-size: 18px; font-weight: 700; letter-spacing: -0.03em; color: var(--lf-ink); }
+.offre .of-delay > div > span { display: block; margin-top: 3px; font-size: 14px; font-weight: 500; line-height: 1.45; color: var(--lf-muted); }
+.offre .of-delay > div a { color: var(--lf-accent); font-weight: 600; text-underline-offset: 3px; }
+
+/* ---------- Ce que reçoit l'équipe ---------- */
+.offre .of-receive { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.offre .of-receive .lf-h2 { margin-top: 18px; }
+.offre .of-receive .of-ticks { margin-top: 28px; }
+.offre .of-limit { margin: 26px 0 0; padding-top: 20px; border-top: 1px solid var(--lf-line); font-size: 14px; font-weight: 500; line-height: 1.55; color: var(--lf-muted); }
+.offre .of-mock { padding: 24px; border-radius: 24px; }
+.offre .of-mock-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.offre .of-mock-title { font-size: 15px; font-weight: 700; letter-spacing: -0.025em; color: var(--lf-ink); }
+.offre .of-mock-tag { padding: 5px 11px; border-radius: 999px; background: var(--lf-accent-soft); font-size: 12px; font-weight: 700; color: var(--lf-accent); }
+.offre .of-mock-row { padding: 14px 0; border-top: 1px solid var(--lf-line); }
+.offre .of-mock-row span { display: block; margin-bottom: 3px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--lf-muted); }
+.offre .of-mock-row b { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; color: var(--lf-ink); }
+
+/* ---------- Appel à l'action final ---------- */
+.offre .of-final {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 40px 60px;
+  border-radius: 32px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background:
+    radial-gradient(70% 90% at 100% 0%, rgba(110, 165, 255, 0.45), transparent 60%),
+    linear-gradient(160deg, #0b5be6 0%, #0047c6 48%, #002c82 100%);
+  box-shadow: 0 40px 70px -36px rgba(0, 71, 198, 0.85);
+}
+.offre .of-final h2 { margin: 18px auto 0; max-width: 680px; font-size: clamp(30px, 4vw, 46px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.08; color: #fff; text-wrap: balance; }
+.offre .of-final p { margin: 18px auto 0; max-width: 600px; font-size: 17px; font-weight: 500; line-height: 1.55; letter-spacing: -0.015em; color: rgba(255, 255, 255, 0.85); }
+.offre .of-badge { display: inline-flex; padding: 8px 16px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.28); font-size: 14px; font-weight: 600; letter-spacing: -0.02em; color: #fff; }
+.offre .of-final .of-actions { margin-top: 32px; }
+.offre .of-final .demo-cta-btn { background: #fff; color: var(--lf-accent); box-shadow: 0 16px 30px -16px rgba(0, 0, 0, 0.6); }
+.offre .of-final .demo-cta-btn:hover { background: #f1f6ff; }
+.offre .of-more { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 26px; margin-top: 34px; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+.offre .of-more a { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; color: #fff; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.45); text-underline-offset: 4px; }
+.offre .of-more a:hover { text-decoration-color: #fff; }
+
+/* ---------- Accordéons : à plat sur grand écran, repliés sur mobile ---------- */
+.offre .of-acc > summary { list-style: none; }
+.offre .of-acc > summary::-webkit-details-marker { display: none; }
+@media (min-width: 769px) {
+  .offre .of-acc::details-content { content-visibility: visible; display: block; }
+  .offre .of-acc > summary { display: block; pointer-events: none; cursor: default; }
+  .offre .of-acc.of-acc--label > summary { display: none; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1023px) {
+  .offre .lf section { padding: 80px 0; }
+  .offre .of-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .offre .of-flow-step { margin-right: 0; }
+  .offre .of-flow-step::before, .offre .of-flow-step::after { display: none !important; }
+  .offre .of-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .offre .of-bespoke { grid-template-columns: 1fr; gap: 32px; padding: 40px; }
+  .offre .of-receive { grid-template-columns: 1fr; gap: 36px; }
+}
+@media (max-width: 768px) {
+  .offre .lf section { padding: 34px 0; }
+  .offre .lf .lf-pill { display: none; }
+  .offre .lf-head--center { gap: 12px; }
+  .offre .lf-h2 { font-size: 28px; line-height: 1.1; }
+  .offre .lf-sub { font-size: 15px; }
+
+  /* Hero : la proposition tient dans le premier écran */
+  .offre .of-hero { padding: 30px 0 8px; }
+  .offre .of-h1 { font-size: 30px; line-height: 1.08; }
+  .offre .of-lead { margin-top: 14px; font-size: 16px; line-height: 1.5; }
+  .offre .of-actions { flex-direction: column; gap: 4px; margin-top: 22px; }
+  .offre .of-actions .demo-cta-wrap, .offre .of-actions .demo-cta-btn { width: 100%; justify-content: center; text-align: center; }
+  .offre .of-ghost { display: none; }
+  .offre .of-note { margin-top: 12px; font-size: 12.5px; }
+
+  /* Bénéfices : trois lignes sobres, sans cartes ni icônes */
+  .offre .of-benefits { grid-template-columns: 1fr; gap: 0; margin-top: 26px; }
+  .offre .of-benefit { padding: 14px 0; border: 0; border-top: 1px solid var(--lf-line); border-radius: 0; background: none; box-shadow: none; }
+  .offre .of-benefit:hover { transform: none; box-shadow: none; }
+  .offre .of-benefit .of-ic { display: none; }
+  .offre .of-benefit h3 { margin-bottom: 4px; font-size: 17px; }
+  .offre .of-benefit p { font-size: 14.5px; line-height: 1.5; }
+
+  /* Parcours : fil vertical, étapes sans cartes */
+  .offre .of-flow { grid-template-columns: 1fr; gap: 0; margin-top: 24px; }
+  .offre .of-flow-step, .offre .of-flow-step--end { position: relative; margin: 0; padding: 0 0 18px 46px; border: 0; border-radius: 0; background: none; box-shadow: none; }
+  .offre .of-flow-step:last-child { padding-bottom: 0; }
+  .offre .of-flow-step::before { display: none !important; }
+  .offre .of-flow-step:not(:last-child)::after { display: block !important; top: 34px; bottom: 4px; left: 14px; right: auto; width: 2px; height: auto; transform: none; background: rgba(0, 71, 198, 0.22); }
+  .offre .of-flow-n { position: absolute; top: 0; left: 0; margin: 0; }
+  .offre .of-flow-step h3 { margin-bottom: 2px; font-size: 17px; }
+  .offre .of-flow-step p { font-size: 14.5px; }
+
+  /* Accordéons natifs */
+  .offre .of-acc--label { margin-top: 22px; border: 1px solid var(--lf-line); border-radius: 16px; background: #fff; box-shadow: var(--lf-card-shadow); }
+  .offre .of-acc > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 14px 18px; font-size: 16px; font-weight: 700; letter-spacing: -0.025em; color: var(--lf-ink); cursor: pointer; list-style: none; -webkit-tap-highlight-color: transparent; }
+  .offre .of-acc > summary::-webkit-details-marker { display: none; }
+  .offre .of-acc > summary::after { content: ""; flex: none; width: 9px; height: 9px; margin-left: 8px; border-right: 2px solid var(--lf-accent); border-bottom: 2px solid var(--lf-accent); transform: translateY(-2px) rotate(45deg); transition: transform var(--duration-fast) var(--ease-smooth-out); }
+  .offre .of-acc[open] > summary::after { transform: translateY(2px) rotate(-135deg); }
+  .offre .of-acc > summary:focus-visible { outline: 2px solid var(--lf-accent); outline-offset: 2px; border-radius: 16px; }
+  .offre .of-acc--label .of-acc-body { padding: 0 18px 18px; }
+  .offre .of-chips { gap: 8px; margin-top: 4px; justify-content: flex-start; }
+  .offre .of-chips li { padding: 7px 13px; font-size: 13.5px; }
+  .offre .of-caption { margin: 16px 0 0; text-align: left; font-size: 14.5px; }
+
+  /* Accompagnement */
+  .offre .of-split { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
+  .offre .of-panel { padding: 20px 20px 22px; border-radius: 20px; }
+  .offre .of-panel h3 { margin-bottom: 14px; }
+  .offre .of-ticks { gap: 10px; }
+  .offre .of-ticks li { font-size: 15.5px; }
+
+  /* Adaptation */
+  .offre .of-bespoke { gap: 20px; padding: 26px 18px; border-radius: 24px; }
+  .offre .of-bespoke .lf-h2 { margin-top: 0; }
+  .offre .of-bespoke .lf-sub { margin-top: 10px; }
+  .offre .of-tiles { grid-template-columns: 1fr; gap: 10px; }
+  .offre .of-tile { padding: 14px 16px 16px; border-radius: 16px; }
+  .offre .of-tile h3 { margin-bottom: 4px; font-size: 16px; }
+  .offre .of-tile p { font-size: 14.5px; }
+  .offre .of-tile .of-acc > summary { min-height: 0; padding: 0; font-size: inherit; }
+  .offre .of-tile .of-acc > summary h3 { margin: 0; }
+  .offre .of-tile .of-acc > summary::after { border-color: #fff; }
+  .offre .of-tile .of-acc[open] > summary h3 { margin-bottom: 6px; }
+
+  /* Mise en service : délai d'abord, étapes dans l'accordéon */
+  .offre .of-wrap--steps { display: flex; flex-direction: column; }
+  .offre .of-wrap--steps .of-delay { order: 2; margin-top: 20px; }
+  .offre .of-wrap--steps .of-acc { order: 3; }
+  .offre .of-delay { flex-direction: row; align-items: flex-start; gap: 14px; padding: 16px; border-radius: 16px; }
+  .offre .of-delay .of-ic { width: 38px; height: 38px; margin: 0; border-radius: 12px; }
+  .offre .of-delay .of-ic svg { width: 18px; height: 18px; }
+  .offre .of-delay > div > strong { font-size: 16px; line-height: 1.3; }
+  .offre .of-delay > div > span { font-size: 13.5px; }
+  .offre .of-steps { grid-template-columns: 1fr; gap: 0; margin: 0; }
+  .offre .of-step { display: grid; grid-template-columns: 38px 1fr; column-gap: 12px; padding: 12px 0; border: 0; border-top: 1px solid var(--lf-line); border-radius: 0; background: none; box-shadow: none; }
+  .offre .of-step:first-child { border-top: 0; }
+  .offre .of-step-top { grid-row: 1 / 3; margin: 0; }
+  .offre .of-step-n { font-size: 22px; }
+  .offre .of-step h3 { margin: 0 0 2px; font-size: 16px; }
+  .offre .of-step p { font-size: 14.5px; }
+
+  /* Ce que reçoit l'équipe : le titre devient la ligne de l'accordéon */
+  .offre .of-receive { gap: 0; }
+  .offre .of-mock { display: none; }
+  .offre .of-acc--head { border: 1px solid var(--lf-line); border-radius: 16px; background: #fff; box-shadow: var(--lf-card-shadow); }
+  .offre .of-acc--head > summary { padding: 4px 18px; }
+  .offre .of-acc--head > summary .lf-h2 { margin: 0; font-size: 19px; line-height: 1.25; letter-spacing: -0.03em; }
+  .offre .of-acc--head .of-acc-body { padding: 0 18px 18px; }
+  .offre .of-receive .of-ticks { margin-top: 4px; }
+  .offre .of-limit { margin-top: 16px; padding-top: 14px; }
+
+  /* CTA final */
+  .offre .of-final { padding: 34px 20px 30px; border-radius: 24px; }
+  .offre .of-final h2 { margin-top: 14px; font-size: 27px; }
+  .offre .of-final p { margin-top: 12px; font-size: 15.5px; }
+  .offre .of-final .of-actions { margin-top: 22px; }
+  .offre .of-more { gap: 4px 22px; margin-top: 22px; padding-top: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .offre .of-benefit, .offre .of-ghost { transition: none; }
+  .offre .of-benefit:hover { transform: none; }
+}

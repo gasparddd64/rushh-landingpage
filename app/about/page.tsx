@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { withSocial } from "@/lib/seo";
 import Link from "next/link";
 import { FooterSection } from "@/components/sections/FooterSection";
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: "À propos de Rushh | Standard téléphonique IA pour l'immobilier",
   description:
     "Rushh conçoit et déploie le Standard téléphonique IA pensé pour l'immobilier. Découvrez qui édite Rushh, sa mission et ses coordonnées.",
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
     canonical: "https://www.rushh.fr/about",
   },
 };
+
+export const metadata: Metadata = withSocial(baseMetadata, "/about");
 
 export default function AboutPage() {
   return (
@@ -77,8 +80,12 @@ export default function AboutPage() {
           </section>
 
           <section className="cgv-article">
-            <h2>Données hébergées en France</h2>
-            <p>Les données traitées par le Standard Rushh sont hébergées en France.</p>
+            <h2>Conforme au RGPD</h2>
+            <p>
+              Les informations recueillies pendant les appels sont utilisées uniquement pour traiter les
+              demandes de l&apos;agence cliente, dans le cadre qu&apos;elle définit. Voir la{" "}
+              <Link href="/privacy">politique de confidentialité</Link>.
+            </p>
           </section>
 
           <section className="cgv-article">

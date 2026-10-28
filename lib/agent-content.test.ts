@@ -58,12 +58,108 @@ describe("isKnownRoute", () => {
     expect(isKnownRoute("/contact")).toBe(true);
   });
 
-  it("treats authenticated app surfaces as known routes", () => {
-    expect(isKnownRoute("/dashboard")).toBe(true);
+  it("treats the removed prospecting mock-up routes as unknown", () => {
+    for (const path of ["/dashboard", "/inbox", "/campaigns", "/prospects"]) {
+      expect(isKnownRoute(path)).toBe(false);
+      expect(getMarkdownPage(path)).toBeNull();
+    }
   });
 
   it("treats an arbitrary path as unknown", () => {
     expect(isKnownRoute("/__ora-404-probe-1jfjtn6l")).toBe(false);
+  });
+});
+
+describe("/offre", () => {
+  it("is a known route with a Markdown mirror", () => {
+    expect(isKnownRoute("/offre")).toBe(true);
+    expect(getMarkdownPage("/offre")?.markdown).toContain("# L'offre Rushh");
+  });
+
+  it("states quote-based pricing, the official lead time, and shows no price", () => {
+    const md = getMarkdownPage("/offre")?.markdown ?? "";
+    expect(md).toContain("sur devis");
+    expect(md).toContain("5 jours ouvrés après réception des éléments");
+    expect(md).not.toMatch(/€|euros?\b/i);
+  });
+});
+
+describe("/vs/joe-ai", () => {
+  const md = () => getMarkdownPage("/vs/joe-ai")?.markdown ?? "";
+
+  it("mirrors the comparison page with its own H1", () => {
+    expect(md()).toContain("# Rushh ou Joe AI : quelle solution pour les appels de votre agence immobilière ?");
+  });
+
+  it("cites the primary Joe AI source with its verification date", () => {
+    expect(md()).toContain("https://www.getjoe-ai.com/");
+    expect(md()).toContain("28 octobre 2026");
+  });
+
+  it("acknowledges Joe AI support, keeps quote-based pricing and shows no Rushh price", () => {
+    expect(md()).toContain("Joe AI propose lui aussi de l'accompagnement et de la personnalisation");
+    expect(md()).toContain("Sur devis");
+    expect(md()).toContain("5 jours ouvrés après réception des éléments");
+    expect(md()).not.toMatch(/€|euros?\b/i);
+  });
+
+  it("links to /offre, /integrations and the home page", () => {
+    expect(md()).toContain("/offre");
+    expect(md()).toContain("/integrations");
+  });
+});
+
+const NEW_PAGES: Array<[string, string]> = [
+  ["/demonstrations", "# Et si vous testiez le Standard Rushh vous-même ?"],
+  ["/solutions/transaction-immobiliere", "# Standard téléphonique IA pour les appels vendeurs et acquéreurs"],
+  ["/solutions/syndics", "# Standard téléphonique IA pour syndics de copropriété"],
+  ["/solutions/multi-sites", "# Un standard téléphonique IA adapté aux réseaux et groupes d'agences immobilières"],
+];
+
+describe.each(NEW_PAGES)("%s", (path, h1) => {
+  const md = () => getMarkdownPage(path)?.markdown ?? "";
+
+  it("is a known route with a Markdown mirror and its own H1", () => {
+    expect(isKnownRoute(path)).toBe(true);
+    expect(md()).toContain(h1);
+    expect(md().match(/^# /gm)).toHaveLength(1);
+  });
+
+  it("states quote-based pricing, links the Calendly, and shows no Rushh price or Hektor", () => {
+    expect(md()).toContain("Tarification sur devis");
+    expect(md()).toContain("https://calendly.com/gaspard-david/demo");
+    expect(md()).not.toMatch(/euros?\b/i);
+    expect(md()).not.toMatch(/hektor/i);
+  });
+});
+
+describe("new pages specifics", () => {
+  it("/demonstrations exposes the demo number and the fictional-agency disclaimer", () => {
+    const md = getMarkdownPage("/demonstrations")?.markdown ?? "";
+    expect(md).toContain("01 76 63 57 09");
+    expect(md).toContain("tel:+33176635709");
+    expect(md).toContain("agence immobilière fictive");
+    expect(md).toContain("dépendent de la configuration de la ligne");
+  });
+
+  it("transaction labels its scenarios as fictional and promises no mandate", () => {
+    const md = getMarkdownPage("/solutions/transaction-immobiliere")?.markdown ?? "";
+    expect(md).toContain("exemples fictifs");
+    expect(md).toContain("Aucun mandat ni rendez-vous n'est garanti");
+    expect(md).toContain("5 jours ouvrés après réception des éléments");
+  });
+
+  it("syndics states its limits (no diagnosis, no emergency handling)", () => {
+    const md = getMarkdownPage("/solutions/syndics")?.markdown ?? "";
+    expect(md).toContain("aucun diagnostic technique");
+    expect(md).toContain("ne remplace pas les services d'urgence");
+    expect(md).toContain("connexion validée");
+  });
+
+  it("multi-sites claims no completed deployment and flags its example as illustrative", () => {
+    const md = getMarkdownPage("/solutions/multi-sites")?.markdown ?? "";
+    expect(md).toContain("Exemple illustratif");
+    expect(md).toContain("aucune référence client");
   });
 });
 

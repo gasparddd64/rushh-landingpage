@@ -5,6 +5,7 @@ import { MetiersSection } from "@/components/sections/MetiersSection";
 import { ToolsOrbitSection } from "@/components/sections/ToolsOrbitSection";
 import { ChiffresSection } from "@/components/sections/ChiffresSection";
 import { CompareSection } from "@/components/sections/CompareSection";
+import { DemoLineSection } from "@/components/sections/DemoLineSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FooterSection } from "@/components/sections/FooterSection";
@@ -72,7 +73,6 @@ const localBusinessSchema = {
     },
   ],
   "areaServed": "FR",
-  "priceRange": "€€€",
 };
 
 const serviceSchema = {
@@ -80,7 +80,7 @@ const serviceSchema = {
   "@type": "Service",
   "name": "Agent vocal IA pour agence immobilière",
   "serviceType": "Agent vocal IA immobilier",
-  "description": "Agent vocal IA qui décroche, qualifie et transmet les appels d'une agence immobilière 24 h/24 : prospection, prise de rendez-vous, gestion locative.",
+  "description": "Standard téléphonique alimenté par intelligence artificielle pour les professionnels de l'immobilier, prenant en charge les appels entrants selon les règles du client.",
   "provider": {
     "@type": "Organization",
     "name": "Rushh",
@@ -132,6 +132,7 @@ export default function Home() {
         <MetiersSection />
         <ToolsOrbitSection />
         <ChiffresSection />
+        <DemoLineSection />
         <FAQSection />
         <CompareSection />
       </div>

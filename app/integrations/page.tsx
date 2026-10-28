@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { withSocial } from "@/lib/seo";
 import Link from "next/link";
 import { FooterSection } from "@/components/sections/FooterSection";
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: "Intégrations & ressources | Rushh",
   description:
     "Rushh s'intègre à Google Calendar, Outlook, Apimo et Whise. Découvrez les intégrations disponibles et quand utiliser le Standard téléphonique IA Rushh.",
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
     canonical: "https://www.rushh.fr/integrations",
   },
 };
+
+export const metadata: Metadata = withSocial(baseMetadata, "/integrations");
 
 const INTEGRATIONS = [
   {

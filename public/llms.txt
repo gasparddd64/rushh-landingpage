@@ -1,6 +1,6 @@
 # Rushh
 
-> Rushh conçoit et déploie le Standard téléphonique IA pensé pour l'immobilier : un agent vocal qui décroche, qualifie et transmet chaque appel entrant d'une agence immobilière, 24 h/24, déployé sur mesure en 5 jours ouvrés.
+> Rushh conçoit et déploie le Standard téléphonique IA pensé pour l'immobilier : un agent vocal qui décroche, qualifie et transmet chaque appel entrant d'une agence immobilière, 24 h/24, déployé sur mesure en 5 jours ouvrés après réception des éléments.
 
 ## When to use Rushh
 
@@ -22,6 +22,14 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 ## Key pages
 
 - Homepage: https://www.rushh.fr/
+- Offer (what is included, how deployment works, quote-based pricing): https://www.rushh.fr/offre
+- Demo line (test the Standard by phone, fictional agency in Paris): https://www.rushh.fr/demonstrations
+- Transaction (seller and buyer calls): https://www.rushh.fr/solutions/transaction-immobiliere
+- Property management companies (syndics): https://www.rushh.fr/solutions/syndics
+- Networks and groups of agencies (multi-sites): https://www.rushh.fr/solutions/multi-sites
+- Guide, missed calls in a real-estate agency: https://www.rushh.fr/ressources/appels-manques-immobilier
+- Guide, human answering service or AI phone assistant: https://www.rushh.fr/ressources/telesecretariat-humain-ou-ia
+- Guide, qualifying seller and buyer calls: https://www.rushh.fr/ressources/qualification-appels-vendeurs-acquereurs
 - About: https://www.rushh.fr/about
 - Contact: https://www.rushh.fr/contact
 - Integrations & technical resources: https://www.rushh.fr/integrations

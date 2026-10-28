@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { withSocial } from "@/lib/seo";
 import Link from "next/link";
 import { FooterSection } from "@/components/sections/FooterSection";
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: "Conditions Générales de Vente | Rushh",
   description: "Consultez les Conditions Générales de Vente de Rushh.",
   robots: {
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
     canonical: "https://www.rushh.fr/cgv",
   },
 };
+
+export const metadata: Metadata = withSocial(baseMetadata, "/cgv");
 
 type Block =
   | { type: "p"; text: string }

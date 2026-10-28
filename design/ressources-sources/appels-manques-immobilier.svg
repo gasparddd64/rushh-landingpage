@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">L'appel manqué — Rushh Éditions 001</title>
+  <desc id="description">Une ligne téléphonique bleu nuit s'interrompt puis reprend en bleu Rushh et rejoint une demande vendeur d'estimation à Paris 11e.</desc>
+  <rect width="1200" height="630" fill="#F5F7FB"/>
+  <!-- Grille éditoriale, trait fin et discontinu -->
+  <g fill="none" stroke="#E4E9F1" stroke-width="1">
+    <path d="M48 0V630 M438 0V630 M762 0V630 M1152 0V630"/>
+    <path d="M0 136H1200 M0 316H1200 M0 480H1200" stroke-dasharray="3 7"/>
+  </g>
+  <!-- Signatures de collection -->
+  <g font-family="Inter, Helvetica Neue, Arial, sans-serif" fill="#17253D">
+    <text x="76" y="76" font-size="15" font-weight="600" letter-spacing="2.1">RUSHH</text>
+    <text x="145" y="76" font-size="15" font-weight="400" fill="#61718A" letter-spacing="1.5">/ ÉDITIONS</text>
+    <text x="1086" y="78" font-size="30" font-weight="300" letter-spacing="0.4">001</text>
+  </g>
+  <line x1="76" y1="96" x2="96" y2="96" stroke="#61718A" stroke-width="1"/>
+  <line x1="1064" y1="54" x2="1064" y2="82" stroke="#61718A" stroke-width="1"/>
+  <!-- Parcours : appel interrompu, prise en charge rétablie -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+    <path d="M76 304H398" stroke="#17253D"/>
+    <path d="M468 304H720Q748 304 748 276V259Q748 237 770 237H851" stroke="#246DF0"/>
+    <path d="M433 284L445 324" stroke="#246DF0"/>
+  </g>
+  <circle cx="398" cy="304" r="7" fill="#17253D"/>
+  <circle cx="468" cy="304" r="7" fill="#246DF0"/>
+  <circle cx="851" cy="237" r="7" fill="#F5F7FB" stroke="#246DF0" stroke-width="3"/>
+  <!-- Fiche métier simplifiée (illustration, pas interface produit) -->
+  <rect x="864" y="198" width="268" height="219" rx="7" fill="#FFFFFF" stroke="#D6DEEA" stroke-width="1.5"/>
+  <path d="M871 198H1125Q1132 198 1132 205V252H864V205Q864 198 871 198Z" fill="#17253D"/>
+  <g font-family="Inter, Helvetica Neue, Arial, sans-serif">
+    <text x="886" y="232" fill="#FFFFFF" font-size="15" font-weight="600" letter-spacing="1.1">DEMANDE VENDEUR</text>
+    <rect x="886" y="277" width="126" height="29" rx="4" fill="#E7EEFC"/>
+    <text x="900" y="296" fill="#246DF0" font-size="13" font-weight="600" letter-spacing="1">ESTIMATION</text>
+    <text x="886" y="351" fill="#17253D" font-size="26" font-weight="600">Paris 11e</text>
+    <path d="M886 373H1110" stroke="#E4E9F1" stroke-width="1.5"/>
+    <text x="886" y="399" fill="#61718A" font-size="14" font-weight="400">Demande à transmettre</text>
+  </g>
+  <!-- Titre éditorial discret / placement commun à la série -->
+  <g font-family="Inter, Helvetica Neue, Arial, sans-serif">
+    <text x="76" y="547" font-size="40" font-weight="400" letter-spacing="-1.1" fill="#17253D">L'appel <tspan fill="#61718A">manqué.</tspan></text>
+  </g>
+  <line x1="76" y1="570" x2="108" y2="570" stroke="#17253D" stroke-width="1.5"/>
+</svg>

@@ -88,7 +88,7 @@ export interface ChatMessage {
   role: "user" | "agent";
   type: "text" | "leads_table" | "campaign_card" | "message_preview" | "chart";
   text: string;
-  data?: any;
+  data?: unknown;
 }
 
 export interface ChatConversation {

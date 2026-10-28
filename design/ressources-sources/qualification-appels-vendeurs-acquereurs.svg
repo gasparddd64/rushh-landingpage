@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+<title id="title">Le bon contact — Rushh Éditions 003</title>
+<desc id="description">Deux appels entrants, vendeur demandant une estimation et acquéreur recherchant un bien, convergent vers une qualification puis une fiche de contact identifié, demande qualifiée et information transmise à l'équipe.</desc>
+<rect width="1200" height="630" fill="#F5F7FB"/>
+<g fill="none" stroke="#E4E9F1" stroke-width="1"><path d="M48 0V630 M438 0V630 M762 0V630 M1152 0V630"/><path d="M0 136H1200 M0 316H1200 M0 480H1200" stroke-dasharray="3 7"/></g>
+<g font-family="Inter, Helvetica Neue, Arial, sans-serif"><text x="76" y="76" fill="#17253D" font-size="15" font-weight="600" letter-spacing="2.1">RUSHH</text><text x="145" y="76" fill="#61718A" font-size="15" letter-spacing="1.5">/ ÉDITIONS</text><text x="1086" y="78" fill="#17253D" font-size="30" font-weight="300" letter-spacing="0.4">003</text></g>
+<line x1="76" y1="96" x2="96" y2="96" stroke="#61718A" stroke-width="1"/><line x1="1064" y1="54" x2="1064" y2="82" stroke="#61718A" stroke-width="1"/>
+<!-- Two distinct inbound enquiries: compact labels are part of the diagram, not interface cards. -->
+<g font-family="Inter, Helvetica Neue, Arial, sans-serif">
+<text x="76" y="204" fill="#17253D" font-size="17" font-weight="600">Vendeur</text><text x="76" y="227" fill="#61718A" font-size="14">Estimation</text>
+<text x="76" y="374" fill="#17253D" font-size="17" font-weight="600">Acquéreur</text><text x="76" y="397" fill="#61718A" font-size="14">Recherche de bien</text>
+</g>
+<!-- Navy incoming routes, precisely symmetrical blue convergence. -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+<path d="M228 218H408" stroke="#17253D"/><path d="M228 388H408" stroke="#17253D"/>
+<path d="M408 218H526Q560 218 560 252V278Q560 303 590 303H622" stroke="#246DF0"/>
+<path d="M408 388H526Q560 388 560 354V328Q560 303 590 303H622" stroke="#246DF0"/>
+<path d="M646 303H849" stroke="#246DF0"/>
+</g>
+<circle cx="408" cy="218" r="6" fill="#17253D"/><circle cx="408" cy="388" r="6" fill="#17253D"/>
+<circle cx="634" cy="303" r="12" fill="#F5F7FB" stroke="#246DF0" stroke-width="3"/>
+<circle cx="634" cy="303" r="3" fill="#246DF0"/>
+<g font-family="Inter, Helvetica Neue, Arial, sans-serif"><text x="634" y="274" text-anchor="middle" fill="#61718A" font-size="12" font-weight="600" letter-spacing="1.15">QUALIFICATION</text></g>
+<circle cx="849" cy="303" r="6" fill="#F5F7FB" stroke="#246DF0" stroke-width="3"/>
+<!-- Single quiet editorial contact record. -->
+<rect x="862" y="202" width="270" height="220" rx="7" fill="#FFFFFF" stroke="#E4E9F1" stroke-width="1.5"/>
+<path d="M869 202H1125Q1132 202 1132 209V255H862V209Q862 202 869 202Z" fill="#17253D"/>
+<g font-family="Inter, Helvetica Neue, Arial, sans-serif"><text x="882" y="235" fill="#FFFFFF" font-size="15" font-weight="600" letter-spacing="0.8">FICHE CONTACT</text></g>
+<g fill="none" stroke="#246DF0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M883 290L888 295L898 283"/><path d="M883 338L888 343L898 331"/><path d="M883 386L888 391L898 379"/></g>
+<g font-family="Inter, Helvetica Neue, Arial, sans-serif" fill="#17253D" font-size="15"><text x="910" y="294">Contact identifié</text><text x="910" y="342">Demande qualifiée</text><text x="910" y="390">Transmis à l’équipe</text></g>
+<g stroke="#E4E9F1" stroke-width="1"><line x1="882" y1="313" x2="1112" y2="313"/><line x1="882" y1="361" x2="1112" y2="361"/></g>
+<g font-family="Inter, Helvetica Neue, Arial, sans-serif"><text x="76" y="547" font-size="40" font-weight="400" letter-spacing="-1.1" fill="#17253D">Le bon <tspan fill="#61718A">contact.</tspan></text></g>
+<line x1="76" y1="570" x2="108" y2="570" stroke="#17253D" stroke-width="1.5"/>
+</svg>
