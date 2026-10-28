@@ -307,7 +307,8 @@ html { overflow-x: hidden; }
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+/* Menu hamburger jusqu'à 900 px : en dessous, les liens du centre touchent le bouton de démo. */
+@media (max-width: 900px) {
   .nav-hamburger { display: flex; }
   .nav-links-center { display: none !important; }
   .nav-cta { display: none !important; }
