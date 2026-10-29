@@ -4,16 +4,17 @@ import { describe, expect, it } from "vitest";
 import sitemap from "../../app/sitemap";
 import { getMarkdownPage, isKnownRoute } from "../agent-content";
 import { ARTICLES, CATEGORIES, FEATURED_PATH, type Article, type Block } from "./index";
+import { CATALOGUE } from "./catalogue";
 import { articleToMarkdown } from "./markdown";
 
 const REQUIRED_LINKS: Record<string, string[]> = {
   "/ressources/appels-manques-immobilier": ["/solutions/transaction-immobiliere", "/offre"],
   "/ressources/telesecretariat-humain-ou-ia": ["/offre", "/demonstrations"],
-  "/ressources/qualification-appels-vendeurs-acquereurs": ["/solutions/transaction-immobiliere", "/demonstrations"],
-  "/comparatif/standards-telephoniques-ia-immobilier": ["/offre", "/demonstrations", "/vs/fonio", "/vs/joe-ai", "/ressources/choisir-standard-telephonique-ia-immobilier"],
-  "/vs/fonio": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/ressources/choisir-standard-telephonique-ia-immobilier", "/vs/joe-ai"],
-  "/ressources/choisir-standard-telephonique-ia-immobilier": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/ressources/telesecretariat-humain-ou-ia"],
-  "/ressources/prise-rendez-vous-ia-immobilier": ["/offre", "/demonstrations", "/ressources/qualification-appels-vendeurs-acquereurs"],
+  "/ressources/qualification-appels-vendeurs-acquereurs": ["/solutions/transaction-immobiliere", "/demonstrations", "/ressources/prise-rendez-vous-ia-immobilier"],
+  "/comparatif/standards-telephoniques-ia-immobilier": ["/offre", "/demonstrations", "/vs/fonio", "/vs/joe-ai", "/vs/volubilimo", "/ressources/choisir-standard-telephonique-ia-immobilier"],
+  "/vs/fonio": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/ressources/choisir-standard-telephonique-ia-immobilier", "/vs/joe-ai", "/vs/volubilimo"],
+  "/ressources/choisir-standard-telephonique-ia-immobilier": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/ressources/telesecretariat-humain-ou-ia", "/ressources/prise-rendez-vous-ia-immobilier"],
+  "/ressources/prise-rendez-vous-ia-immobilier": ["/offre", "/demonstrations", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/choisir-standard-telephonique-ia-immobilier"],
   "/vs/volubilimo": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/ressources/prise-rendez-vous-ia-immobilier"],
 };
 
@@ -173,45 +174,78 @@ describe("guide-specific requirements", () => {
   });
 });
 
-describe("catalogue /ressources", () => {
+describe("catalogue /ressources (le Blog)", () => {
   const md = getMarkdownPage("/ressources")?.markdown ?? "";
 
-  it("is a known route with a Markdown mirror, one H1, and links to every publication", () => {
+  it("is a known route with a Markdown mirror, one H1, and links to all nine publications", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
+    expect(md).toContain("# Le Blog Rushh");
     expect(ARTICLES).toHaveLength(8);
-    for (const a of ARTICLES) expect(md).toContain(`(https://www.rushh.fr${a.path})`);
+    expect(CATALOGUE).toHaveLength(9);
+    for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
 
-  it("has no empty or unknown category, and the featured article exists", () => {
-    for (const c of CATEGORIES) expect(ARTICLES.some((a) => a.category === c.id), c.id).toBe(true);
-    for (const a of ARTICLES) expect(CATEGORIES.map((c) => c.id), a.path).toContain(a.category);
-    expect(ARTICLES.map((a) => a.path)).toContain(FEATURED_PATH);
+  it("has no empty or unknown category, and the featured publication exists", () => {
+    for (const c of CATEGORIES) expect(CATALOGUE.some((e) => e.category === c.id), c.id).toBe(true);
+    for (const e of CATALOGUE) expect(CATEGORIES.map((c) => c.id), e.path).toContain(e.category);
+    expect(CATALOGUE.map((e) => e.path)).toContain(FEATURED_PATH);
   });
 
-  it("distributes the eight publications as briefed", () => {
-    const by = (c: string) => ARTICLES.filter((a) => a.category === c).map((a) => a.path).sort();
-    expect(by("appels-qualification")).toEqual([
+  it("offers the three filters: all (9), guides (5), comparatifs (4)", () => {
+    expect(CATEGORIES.map((c) => c.label)).toEqual(["Guides & conseils", "Comparatifs"]);
+    const by = (c: string) => CATALOGUE.filter((e) => e.category === c).map((e) => e.path).sort();
+    expect(by("guides")).toEqual([
       "/ressources/appels-manques-immobilier",
+      "/ressources/choisir-standard-telephonique-ia-immobilier",
       "/ressources/prise-rendez-vous-ia-immobilier",
       "/ressources/qualification-appels-vendeurs-acquereurs",
-    ]);
-    expect(by("standards-ia-comparatifs")).toEqual([
-      "/comparatif/standards-telephoniques-ia-immobilier",
-      "/ressources/choisir-standard-telephonique-ia-immobilier",
       "/ressources/telesecretariat-humain-ou-ia",
+    ]);
+    expect(by("comparatifs")).toEqual([
+      "/comparatif/standards-telephoniques-ia-immobilier",
       "/vs/fonio",
+      "/vs/joe-ai",
       "/vs/volubilimo",
     ]);
   });
 
-  it("gives every publication a cover, and keeps article URLs unchanged", () => {
-    for (const a of ARTICLES) expect(a.cover, a.path).toBeDefined();
+  it("lists Joe AI with its real URL, a cover, and no invented date", () => {
+    const joe = CATALOGUE.find((e) => e.path === "/vs/joe-ai")!;
+    expect(joe).toBeDefined();
+    expect(ARTICLES.some((a) => a.path === "/vs/joe-ai")).toBe(false);
+    expect(Object.keys(joe)).not.toContain("date");
+    expect(joe.category).toBe("comparatifs");
+  });
+
+  it("gives every card a cover that matches the real PNG, a short title and an editorial summary distinct from the meta description", () => {
+    for (const e of CATALOGUE) {
+      const buf = readFileSync(join(process.cwd(), "public", e.cover.src));
+      expect(buf.readUInt32BE(16), e.path).toBe(e.cover.width);
+      expect(buf.readUInt32BE(20), e.path).toBe(e.cover.height);
+      expect(e.cover.alt.length).toBeGreaterThan(60);
+      expect(e.title.length, e.path).toBeLessThanOrEqual(50);
+      expect(e.summary.length, e.path).toBeLessThanOrEqual(130);
+      const a = ARTICLES.find((x) => x.path === e.path);
+      if (a) expect(e.summary, e.path).not.toBe(a.description);
+    }
   });
 
   it("mirrors no Rushh price", () => {
     expect(md).not.toMatch(/€|euros?\b/i);
+  });
+});
+
+describe("article endings", () => {
+  it("merges the Rushh block and the closing invitation into one block, with no separate final CTA in the mirror", () => {
+    for (const a of ARTICLES) {
+      const md = articleToMarkdown(a);
+      expect(md, a.path).toContain(`### ${a.cta.title}`);
+      expect(md, a.path).not.toContain(`\n## ${a.cta.title}`);
+      expect(md.indexOf("## Comment Rushh répond"), a.path).toBeLessThan(md.indexOf(`### ${a.cta.title}`));
+      expect(md.indexOf(`### ${a.cta.title}`), a.path).toBeLessThan(md.indexOf("## Sources et méthode"));
+    }
   });
 });
 

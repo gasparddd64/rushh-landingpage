@@ -1,23 +1,26 @@
 /**
- * Catégories du catalogue /ressources. Pour en ajouter une : l'ajouter ici, puis y rattacher au moins un article
- * (un test refuse les catégories vides).
+ * Filtres du catalogue /blog (URL /ressources). Pour en ajouter un : l'ajouter ici, puis y rattacher au moins une
+ * publication (un test refuse les catégories vides). Les identifiants sont internes : aucune URL de catégorie.
  */
 export const CATEGORIES = [
   {
-    id: "appels-qualification",
-    label: "Appels & qualification",
-    description: "Mesurer les appels manqués et qualifier les demandes des vendeurs et des acquéreurs.",
+    id: "guides",
+    label: "Guides & conseils",
+    cardLabel: "Guide",
+    description: "Mesurer les appels manqués, qualifier les demandes, organiser les rendez-vous et choisir avec méthode.",
   },
   {
-    id: "standards-ia-comparatifs",
-    label: "Standards IA & comparatifs",
-    description: "Comparer les organisations et les solutions de standard téléphonique IA, et choisir avec méthode.",
+    id: "comparatifs",
+    label: "Comparatifs",
+    cardLabel: "Comparatif",
+    description: "Rushh face aux autres standards téléphoniques IA : sources datées et critères explicites, sans classement.",
   },
 ] as const;
 
 export type CategoryId = (typeof CATEGORIES)[number]["id"];
 
 export const categoryLabel = (id: CategoryId): string => CATEGORIES.find((c) => c.id === id)!.label;
+export const categoryCardLabel = (id: CategoryId): string => CATEGORIES.find((c) => c.id === id)!.cardLabel;
 
-/** Article mis à la une en tête de /ressources. */
+/** Publication mise en avant en tête du Blog. */
 export const FEATURED_PATH = "/comparatif/standards-telephoniques-ia-immobilier";

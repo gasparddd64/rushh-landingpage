@@ -4,7 +4,7 @@ const CONSULTED = "Consulté le 28 octobre 2026.";
 
 export const vsFonio: Article = {
   path: "/vs/fonio",
-  category: "standards-ia-comparatifs",
+  category: "comparatifs",
   cover: {
     src: "/ressources/vs-fonio.png",
     width: 1600,
@@ -14,7 +14,9 @@ export const vsFonio: Article = {
   title: "Alternative à Fonio pour l'immobilier : Rushh ou Fonio ? | Rushh",
   description:
     "Fonio ou Rushh pour les appels d'une agence immobilière ? Comparaison sourcée, consultée le 28 octobre 2026 : positionnement, accompagnement, tarifs.",
-  shortTitle: "Alternative à Fonio pour l'immobilier : Rushh ou Fonio ?",
+  shortTitle: "Rushh ou Fonio : que choisir ?",
+  summary:
+    "Une plateforme à configurer face à une prestation gérée : accompagnement, canaux et tarification.",
   h1: "Alternative à Fonio pour l'immobilier : Rushh ou Fonio, que choisir pour les appels de votre agence ?",
   answer:
     "Fonio est une plateforme d'assistants téléphoniques IA qui propose des pages dédiées à l'immobilier, une création en libre-service et des forfaits d'accompagnement payants. Rushh est une prestation entièrement gérée, spécialisée dans les appels entrants des professionnels de l'immobilier. Les deux répondent aux appels, qualifient et peuvent transférer ou prendre un rendez-vous ; la différence porte surtout sur qui conçoit et suit le standard, sur la spécialisation immobilière et sur le modèle de tarification.",
@@ -185,7 +187,7 @@ export const vsFonio: Article = {
         },
         {
           t: "p",
-          text: "Pour situer ces deux logiques parmi les autres solutions du marché, voir le [comparatif des standards téléphoniques IA pour l'immobilier](/comparatif/standards-telephoniques-ia-immobilier). Pour une comparaison avec un autre service accompagné, voir [Rushh ou Joe AI](/vs/joe-ai).",
+          text: "Pour situer ces deux logiques parmi les autres solutions du marché, voir le [comparatif des standards téléphoniques IA pour l'immobilier](/comparatif/standards-telephoniques-ia-immobilier). Pour une comparaison avec un autre service accompagné, voir [Rushh ou Joe AI](/vs/joe-ai) ; pour une offre immobilière annonçant aussi des appels sortants, [Rushh ou Volubilimo](/vs/volubilimo).",
         },
       ],
     },

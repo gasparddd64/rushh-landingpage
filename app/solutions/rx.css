@@ -151,7 +151,11 @@
 .res .rx-answer ul { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
 .res .rx-answer li { display: flex; gap: 12px; align-items: flex-start; margin: 0; font-size: 15.5px; font-weight: 500; line-height: 1.5; color: var(--lf-ink); }
 .res .rx-answer li svg { flex: none; width: 20px; height: 20px; margin-top: 1px; padding: 3px; border-radius: 50%; background: var(--lf-accent); color: #fff; }
-.res .rx-answer-links { display: flex; flex-wrap: wrap; gap: 4px 26px; margin-top: 8px; }
+.res .rx-answer-cta { margin-top: 26px; padding-top: 22px; border-top: 1px solid rgba(0, 71, 198, 0.16); }
+.res .res-body .rx-answer-cta h3 { margin: 0; font-size: 19px; line-height: 1.25; letter-spacing: -0.03em; color: var(--lf-ink); }
+.res .rx-answer-cta p { margin: 8px 0 0; font-size: 15.5px; line-height: 1.6; color: var(--lf-ink); }
+.res .res-body .rx-answer .demo-cta-btn { color: #fff; }
+.res .rx-answer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px; margin-top: 18px; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1023px) {

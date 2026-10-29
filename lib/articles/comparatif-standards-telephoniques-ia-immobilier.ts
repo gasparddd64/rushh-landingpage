@@ -4,7 +4,7 @@ const CONSULTED = "Consulté le 28 octobre 2026.";
 
 export const comparatif: Article = {
   path: "/comparatif/standards-telephoniques-ia-immobilier",
-  category: "standards-ia-comparatifs",
+  category: "comparatifs",
   cover: {
     src: "/ressources/comparatif-standards-telephoniques-ia-immobilier.png",
     width: 1600,
@@ -14,7 +14,9 @@ export const comparatif: Article = {
   title: "Standards téléphoniques IA pour l'immobilier : comparatif | Rushh",
   description:
     "Comparatif sourcé de cinq solutions pour les appels d'une agence : Rushh, Joe AI, Fonio, AInora et Orateur. Informations consultées le 28 octobre 2026.",
-  shortTitle: "Comparatif des standards téléphoniques IA pour l'immobilier",
+  shortTitle: "Comparatif des standards téléphoniques IA",
+  summary:
+    "Cinq solutions comparées sur huit critères, avec des sources datées : Rushh, Joe AI, Fonio, AInora et Orateur.",
   h1: "Quel standard téléphonique IA choisir pour une agence immobilière ? Comparatif de cinq solutions",
   answer:
     "Il n'existe pas de meilleur standard téléphonique IA pour toutes les agences : le bon choix dépend de ce que vous voulez déléguer. Ce comparatif met côte à côte Rushh, Joe AI, Fonio, AInora et Orateur sur huit critères, à partir de leurs pages officielles consultées le 28 octobre 2026. Il ne contient ni classement ni note. Rushh convient surtout à une agence qui veut déléguer entièrement la conception et le suivi de ses appels entrants ; d'autres solutions couvrent davantage de canaux, publient leurs tarifs ou se configurent seul.",
@@ -252,7 +254,7 @@ export const comparatif: Article = {
         },
         {
           t: "p",
-          text: "Pour entendre Rushh, appelez la [ligne de démonstration](/demonstrations), une agence fictive à Paris. Pour une comparaison détaillée avec un concurrent, voir [Rushh ou Joe AI](/vs/joe-ai) et [Rushh ou Fonio](/vs/fonio).",
+          text: "Pour entendre Rushh, appelez la [ligne de démonstration](/demonstrations), une agence fictive à Paris. Pour une comparaison détaillée avec un concurrent, voir [Rushh ou Joe AI](/vs/joe-ai), [Rushh ou Fonio](/vs/fonio) et [Rushh ou Volubilimo](/vs/volubilimo).",
         },
       ],
     },

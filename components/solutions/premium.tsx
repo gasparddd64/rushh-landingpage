@@ -276,18 +276,22 @@ export function RxProof({
   );
 }
 
-/* ── Bloc « Comment Rushh répond à ce besoin » des articles ── */
+/* ── Bloc « Comment Rushh répond à ce besoin » des articles, avec l'invitation finale ── */
 export function RushhAnswer({
   title,
   text,
   points,
   links,
+  cta,
 }: {
   title: string;
   text: string;
   points: string[];
   links: { href: string; label: string }[];
+  /** Invitation de fin d'article, fusionnée dans le même bloc. */
+  cta?: { title: string; text: string; links: { href: string; label: string }[] };
 }) {
+  const allLinks = cta ? mergeLinks(links, cta.links) : links;
   return (
     <aside className="rx-answer" aria-labelledby="rx-answer-t">
       <span className="rx-eyebrow">Comment Rushh répond à ce besoin</span>
@@ -298,8 +302,15 @@ export function RushhAnswer({
           <li key={p}><Tick />{p}</li>
         ))}
       </ul>
+      {cta && (
+        <div className="rx-answer-cta">
+          <h3>{cta.title}</h3>
+          <p>{cta.text}</p>
+        </div>
+      )}
       <div className="rx-answer-links">
-        {links.map((l) => (
+        {cta && <DemoCTA label="Réserver une démo" showArrow={false} />}
+        {allLinks.map((l) => (
           <Link key={l.href} href={l.href} className="rx-link">
             {l.label}
             <IconArrow />
@@ -308,4 +319,9 @@ export function RushhAnswer({
       </div>
     </aside>
   );
+}
+
+/** Réunit deux listes de liens sans doublon d'URL. */
+export function mergeLinks<T extends { href: string }>(a: T[], b: T[]): T[] {
+  return [...a, ...b.filter((l) => !a.some((x) => x.href === l.href))];
 }

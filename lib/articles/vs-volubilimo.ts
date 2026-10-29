@@ -4,7 +4,7 @@ const CONSULTED = "Consulté le 29 octobre 2026.";
 
 export const vsVolubilimo: Article = {
   path: "/vs/volubilimo",
-  category: "standards-ia-comparatifs",
+  category: "comparatifs",
   cover: {
     src: "/ressources/volubilimo.png",
     width: 1600,
@@ -14,7 +14,9 @@ export const vsVolubilimo: Article = {
   title: "Rushh ou Volubilimo : comparer deux standards IA immobiliers",
   description:
     "Rushh ou Volubilimo pour l'immobilier ? Comparez appels entrants, rendez-vous, intégrations, accompagnement et périmètre avant de choisir.",
-  shortTitle: "Rushh ou Volubilimo : comparer deux standards IA immobiliers",
+  shortTitle: "Rushh ou Volubilimo : deux approches comparées",
+  summary:
+    "Deux offres immobilières aux fonctions proches : ce qui les distingue vraiment, sans classement.",
   h1: "Rushh et Volubilimo : comparer deux approches du standard téléphonique IA immobilier",
   answer:
     "Rushh et Volubilimo revendiquent tous deux une spécialisation immobilière et des fonctions qui se recoupent : appels, qualification, rendez-vous, transmission. Volubilimo annonce un périmètre plus large, avec des appels sortants. Rushh se concentre sur les appels entrants, dans une prestation entièrement gérée : conception, tests, mise en service et suivi. Aucun classement ici : la démonstration et le contrat doivent départager.",

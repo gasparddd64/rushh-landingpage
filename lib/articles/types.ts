@@ -49,6 +49,8 @@ export interface Article {
   h1: string;
   /** Titre court pour les cartes du catalogue (le H1 et le title SEO ne changent pas). */
   shortTitle?: string;
+  /** Résumé éditorial de 1 à 2 lignes pour les cartes du catalogue (distinct de la meta description). */
+  summary?: string;
   /** Réponse directe, affichée avant tout le reste. */
   answer: string;
   datePublished: string;

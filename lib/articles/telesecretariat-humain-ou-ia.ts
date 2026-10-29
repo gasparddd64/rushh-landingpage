@@ -8,10 +8,13 @@ export const telesecretariat: Article = {
     height: 840,
     alt: "Illustration comparant trois parcours d'un appel : réception humaine selon les disponibilités, logiciel IA à configurer et suivre, et Standard Rushh conçu, déployé et suivi, pris en charge pour l'agence.",
   },
-  category: "standards-ia-comparatifs",
+  category: "guides",
   title: "Télésecrétariat humain ou IA en immobilier | Rushh",
   description:
     "Télésecrétariat humain, logiciel IA à configurer ou service IA pris en charge : comparaison honnête de trois organisations pour les appels d'une agence.",
+  shortTitle: "Télésecrétariat humain ou standard IA ?",
+  summary:
+    "Télésecrétariat humain, logiciel à configurer ou service géré : trois organisations comparées sur neuf critères.",
   h1: "Télésecrétariat humain ou standard téléphonique IA : que choisir en immobilier ?",
   answer:
     "Il n'existe pas de meilleur choix universel. Un télésecrétariat humain convient quand les échanges demandent de la nuance. Un logiciel IA à configurer convient si vous voulez piloter vous-même et avez le temps de le maintenir. Un service IA pris en charge, comme celui de Rushh, convient si vous voulez déléguer la conception et le suivi. Beaucoup d'agences finiront par combiner humain et IA.",

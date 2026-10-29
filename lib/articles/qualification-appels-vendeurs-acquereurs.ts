@@ -8,10 +8,13 @@ export const qualification: Article = {
     height: 840,
     alt: "Illustration : deux appels entrants, un vendeur qui demande une estimation et un acquéreur qui recherche un bien, convergent vers une qualification puis une fiche de contact identifié, demande qualifiée, transmise à l'équipe.",
   },
-  category: "appels-qualification",
+  category: "guides",
   title: "Qualifier un appel vendeur ou acquéreur : méthode | Rushh",
   description:
     "Quelles informations recueillir et transmettre quand un vendeur ou un acquéreur appelle ? Méthode, informations utiles et deux fiches modèles fictives.",
+  shortTitle: "Qualifier un appel vendeur ou acquéreur",
+  summary:
+    "Les informations à recueillir quand un vendeur ou un acquéreur appelle, avec deux fiches modèles fictives.",
   h1: "Comment qualifier les appels vendeurs et acquéreurs en agence immobilière ?",
   answer:
     "Qualifier un appel, c'est identifier son motif, recueillir uniquement les informations utiles à la prochaine action, puis les transmettre au négociateur dans un résumé structuré, avec une prochaine étape claire. Pour un vendeur : le bien, sa localisation, le projet et le souhait d'estimation. Pour un acquéreur : l'annonce ou la recherche, les critères, le projet et la demande de visite. Ne collectez pas plus que nécessaire.",
@@ -206,7 +209,7 @@ export const qualification: Article = {
           t: "ul",
           items: [
             "transmettre au négociateur pour un rappel ;",
-            "proposer un rendez-vous (estimation, visite) selon vos règles ;",
+            "proposer un rendez-vous (estimation, visite) selon vos règles, comme le détaille le [guide de la prise de rendez-vous par IA](/ressources/prise-rendez-vous-ia-immobilier) ;",
             "transférer l'appel à un collaborateur ;",
             "répondre à une question simple et clore la demande.",
           ],

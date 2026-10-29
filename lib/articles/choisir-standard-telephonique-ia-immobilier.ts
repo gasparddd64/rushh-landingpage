@@ -2,7 +2,7 @@ import type { Article } from "./types";
 
 export const choisir: Article = {
   path: "/ressources/choisir-standard-telephonique-ia-immobilier",
-  category: "standards-ia-comparatifs",
+  category: "guides",
   cover: {
     src: "/ressources/choisir-standard-telephonique-ia-immobilier.png",
     width: 1600,
@@ -13,6 +13,8 @@ export const choisir: Article = {
   description:
     "Questions à poser, scénarios d'appels, intégrations, RGPD, coûts, déploiement : choisir un standard téléphonique IA, quel que soit le fournisseur.",
   shortTitle: "Comment choisir un standard téléphonique IA ?",
+  summary:
+    "Les questions à poser, les appels à tester et les points à vérifier, quel que soit le fournisseur.",
   h1: "Comment choisir un standard téléphonique IA pour une agence immobilière ?",
   answer:
     "Choisissez à partir de vos propres appels, pas des promesses d'une brochure. Définissez ce que le standard doit faire, testez-le avec des scénarios réels, faites confirmer par écrit les intégrations, les données et les coûts, puis vérifiez qui assure la maintenance. Ce guide vaut pour n'importe quel fournisseur, Rushh compris, et se termine par une checklist de décision.",
@@ -100,7 +102,7 @@ export const choisir: Article = {
       blocks: [
         {
           t: "p",
-          text: "Une liste de logos ne dit pas ce que fait réellement la connexion. Demandez une réponse précise pour votre logiciel métier et votre agenda.",
+          text: "Une liste de logos ne dit pas ce que fait réellement la connexion. Demandez une réponse précise pour votre logiciel métier et votre agenda. Pour la réservation elle-même, voir le [guide de la prise de rendez-vous par IA](/ressources/prise-rendez-vous-ia-immobilier).",
         },
         {
           t: "checklist",

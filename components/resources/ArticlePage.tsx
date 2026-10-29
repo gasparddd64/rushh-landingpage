@@ -110,7 +110,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Accueil", item: SITE },
-      { "@type": "ListItem", position: 2, name: "Ressources", item: `${SITE}/ressources` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/ressources` },
       { "@type": "ListItem", position: 3, name: a.h1, item: url },
     ],
   };
@@ -124,7 +124,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
           <nav className="res-crumb" aria-label="Fil d'Ariane">
             <Link href="/">Accueil</Link>
             <span aria-hidden>›</span>
-            <Link href="/ressources">Ressources</Link>
+            <Link href="/ressources">Blog</Link>
           </nav>
           <p className="res-cat">{categoryLabel(a.category)}</p>
           <h1 className="res-h1">{a.h1}</h1>
@@ -173,7 +173,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
             </section>
           ))}
 
-          {a.rushh && <RushhAnswer {...a.rushh} />}
+          {a.rushh && <RushhAnswer {...a.rushh} cta={a.cta} />}
 
           <section id="sources" aria-labelledby="sources-t" className="res-sources" data-no-reveal>
             <h2 id="sources-t">Sources et méthode</h2>
@@ -206,18 +206,20 @@ export function ArticlePage({ article: a }: { article: Article }) {
             </ul>
           </section>
 
-          <p className="res-back"><Link href="/ressources">← Toutes les ressources</Link></p>
+          <p className="res-back"><Link href="/ressources">← Tout le Blog</Link></p>
 
-          <aside className="res-cta" aria-labelledby="cta-t">
-            <h2 id="cta-t">{a.cta.title}</h2>
-            <p>{a.cta.text}</p>
-            <div className="res-cta-actions">
-              <DemoCTA label="Réserver une démo" showArrow={false} />
-              {a.cta.links.map((l) => (
-                <Link key={l.href} href={l.href} className="res-cta-link">{l.label}</Link>
-              ))}
-            </div>
-          </aside>
+          {!a.rushh && (
+            <aside className="res-cta" aria-labelledby="cta-t">
+              <h2 id="cta-t">{a.cta.title}</h2>
+              <p>{a.cta.text}</p>
+              <div className="res-cta-actions">
+                <DemoCTA label="Réserver une démo" showArrow={false} />
+                {a.cta.links.map((l) => (
+                  <Link key={l.href} href={l.href} className="res-cta-link">{l.label}</Link>
+                ))}
+              </div>
+            </aside>
+          )}
         </div>
       </article>
     </SolShell>

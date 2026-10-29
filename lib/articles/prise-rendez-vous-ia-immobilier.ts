@@ -2,7 +2,7 @@ import type { Article } from "./types";
 
 export const priseRendezVous: Article = {
   path: "/ressources/prise-rendez-vous-ia-immobilier",
-  category: "appels-qualification",
+  category: "guides",
   cover: {
     src: "/ressources/prise-rendez-vous-ia-immobilier.png",
     width: 1600,
@@ -12,7 +12,9 @@ export const priseRendezVous: Article = {
   title: "Prise de rendez-vous par IA dans l'immobilier | Rushh",
   description:
     "Comment un standard téléphonique IA qualifie les appels entrants et organise les rendez-vous immobiliers : estimation, visite, agenda et confirmation.",
-  shortTitle: "Prise de rendez-vous par IA dans l'immobilier",
+  shortTitle: "Prise de rendez-vous par IA en immobilier",
+  summary:
+    "Répondre, qualifier, réserver : ce qu'une IA peut confirmer, et ce qu'elle doit laisser à l'équipe.",
   h1: "Prise de rendez-vous par IA : comment ça fonctionne dans l'immobilier ?",
   answer:
     "Un standard téléphonique IA peut recevoir l'appel, comprendre la demande, recueillir les informations utiles et, si les règles et l'agenda le permettent, enregistrer un rendez-vous. Sans agenda accessible ni créneau fiable, il doit présenter la demande comme « à confirmer » et la transmettre à l'équipe, sans inventer de réservation.",
@@ -114,7 +116,7 @@ export const priseRendezVous: Article = {
         },
         {
           t: "p",
-          text: "Le renvoi d'appel et la réponse directe sont deux modes possibles selon l'opérateur et la configuration. Les connexions à Google Calendar ou Outlook dépendent des accès et du scénario effectivement déployé.",
+          text: "Le renvoi d'appel et la réponse directe sont deux modes possibles selon l'opérateur et la configuration. Les connexions à Google Calendar ou Outlook dépendent des accès et du scénario effectivement déployé. Pour comparer des fournisseurs sur ces points, voir le [guide pour choisir un standard téléphonique IA](/ressources/choisir-standard-telephonique-ia-immobilier).",
         },
         {
           t: "checklist",

@@ -52,7 +52,11 @@ export function articleToMarkdown(a: Article): string {
     parts.push(`## Comment Rushh répond à ce besoin : ${a.rushh.title}`);
     parts.push(abs(a.rushh.text));
     parts.push(a.rushh.points.map((x) => `- ${abs(x)}`).join("\n"));
-    parts.push(a.rushh.links.map((l) => `[${l.label}](${SITE_URL}${l.href})`).join(" · "));
+    // L'invitation de fin d'article est fusionnée dans ce bloc, comme sur la page.
+    parts.push(`### ${a.cta.title}`);
+    parts.push(`${a.cta.text} Réserver une démo : [${CALENDLY}](${CALENDLY})`);
+    const links = [...a.rushh.links, ...a.cta.links.filter((l) => !a.rushh!.links.some((x) => x.href === l.href))];
+    parts.push(links.map((l) => `[${l.label}](${SITE_URL}${l.href})`).join(" · "));
   }
   parts.push("## Sources et méthode");
   if (a.sources.length > 0) {
@@ -61,8 +65,10 @@ export function articleToMarkdown(a: Article): string {
   parts.push(a.sourcesNote);
   parts.push("## À lire aussi");
   parts.push(a.related.map((r) => `- [${r.label}](${SITE_URL}${r.href}) : ${r.text}`).join("\n"));
-  parts.push(`## ${a.cta.title}`);
-  parts.push(`${a.cta.text} Réserver une démo : [${CALENDLY}](${CALENDLY})`);
-  parts.push(a.cta.links.map((l) => `[${l.label}](${SITE_URL}${l.href})`).join(" · "));
+  if (!a.rushh) {
+    parts.push(`## ${a.cta.title}`);
+    parts.push(`${a.cta.text} Réserver une démo : [${CALENDLY}](${CALENDLY})`);
+    parts.push(a.cta.links.map((l) => `[${l.label}](${SITE_URL}${l.href})`).join(" · "));
+  }
   return parts.join("\n\n") + "\n";
 }

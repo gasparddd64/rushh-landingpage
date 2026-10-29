@@ -8,10 +8,13 @@ export const appelsManques: Article = {
     height: 840,
     alt: "Illustration : une ligne d'appel qui s'interrompt puis reprend, et aboutit à une fiche « Demande vendeur », estimation à Paris 11e, demande à transmettre.",
   },
-  category: "appels-qualification",
+  category: "guides",
   title: "Appels manqués en agence immobilière : les mesurer | Rushh",
   description:
     "Comment identifier, mesurer et réduire les appels manqués d'une agence immobilière : journal d'appels, motifs, rappels, tableau de suivi et checklist.",
+  shortTitle: "Mesurer et réduire les appels manqués",
+  summary:
+    "Un journal d'appels, des motifs et un tableau de suivi pour savoir ce que vous perdez vraiment.",
   h1: "Appels manqués en agence immobilière : comment éviter de perdre des opportunités ?",
   answer:
     "Pour réduire les appels manqués, mesurez-les d'abord : exportez le journal d'appels de votre ligne, séparez les appels décrochés des appels manqués, classez les motifs que vous connaissez, désignez qui rappelle et dans quel délai, puis comparez la même période après chaque changement d'organisation. Un appel manqué n'est pas automatiquement une opportunité perdue : c'est une demande dont il faut vérifier l'issue.",
