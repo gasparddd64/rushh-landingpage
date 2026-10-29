@@ -316,6 +316,20 @@ export const comparatif: Article = {
   ],
   sourcesNote:
     "Chaque information concernant un concurrent provient des pages officielles listées ci-dessus, consultées le 28 octobre 2026 : ce sont des déclarations commerciales, que nous n'avons pas vérifiées par un test. Les points « à vérifier » et les repères par situation sont des recommandations de Rushh. Rushh édite cette page et figure dans le comparatif. Pour corriger une information, écrivez à hello@rushh.fr.",
+  rushh: {
+    title: "Où Rushh est pertinent, et comment le vérifier",
+    text: "Rushh convient surtout à une agence qui veut déléguer entièrement la conception, la mise en place et le suivi de son standard. Si vous cherchez un outil multicanal, une grille tarifaire publique ou une création en libre-service, d'autres solutions du tableau sont plus proches de votre besoin.",
+    points: [
+      "Une prestation prise en charge de A à Z : analyse, scénarios, connexions, tests, suivi et améliorations",
+      "Une spécialisation dans les appels entrants des professionnels de l'immobilier",
+      "Une voix naturelle et réactive, personnalisable, que vous pouvez écouter avant de décider",
+      "Une plateforme de suivi : résumé, transcription, statut et attribution de chaque opportunité",
+    ],
+    links: [
+      { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
+      { href: "/offre", label: "Voir l'offre Rushh" },
+    ],
+  },
   related: [
     {
       href: "/ressources/choisir-standard-telephonique-ia-immobilier",
@@ -334,8 +348,8 @@ export const comparatif: Article = {
     },
   ],
   cta: {
-    title: "Voir un standard téléphonique IA entièrement pris en charge",
-    text: "Appelez la ligne de démonstration ou demandez une démonstration personnalisée. Tarification sur devis.",
+    title: "Comparez la voix et le suivi sur vos propres scénarios",
+    text: "Un tableau ne montre ni la voix ni la rapidité. Appelez la ligne de démonstration Rushh, puis jouez les mêmes scénarios avec les autres solutions de votre sélection. Tarification Rushh sur devis.",
     links: [
       { href: "/demonstrations", label: "Ligne de démonstration" },
       { href: "/offre", label: "L'offre Rushh" },

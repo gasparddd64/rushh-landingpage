@@ -256,6 +256,20 @@ export const choisir: Article = {
   ],
   sourcesNote:
     "Les points de contrôle juridiques s'appuient sur les pages officielles listées ci-dessus et ne constituent pas un avis juridique individuel. Les scénarios, questions et checklists sont des recommandations de Rushh, établies sans test d'un fournisseur en particulier. Rushh est l'éditeur de ce guide et l'un des fournisseurs possibles : lisez-le avec cette réserve.",
+  rushh: {
+    title: "Appliquer cette grille à Rushh",
+    text: "Voici comment Rushh répond aux questions du guide, pour que vous puissiez les vérifier pendant une démonstration plutôt que de nous croire sur parole.",
+    points: [
+      "Qui conçoit et suit le standard : l'équipe Rushh, de l'analyse au suivi continu",
+      "Périmètre : les appels entrants, selon vos règles, sans appels sortants",
+      "Connexions : agendas et logiciels compatibles, dont Apimo et Whise, confirmés avec vous avant la mise en service",
+      "Preuve : une ligne de démonstration à appeler, puis une démonstration adaptée à votre agence",
+    ],
+    links: [
+      { href: "/demonstrations", label: "Appeler la ligne de démonstration" },
+      { href: "/offre", label: "Voir l'offre Rushh" },
+    ],
+  },
   related: [
     {
       href: "/comparatif/standards-telephoniques-ia-immobilier",
@@ -274,8 +288,8 @@ export const choisir: Article = {
     },
   ],
   cta: {
-    title: "Tester Rushh avec vos propres appels",
-    text: "Appelez la ligne de démonstration ou demandez une démonstration personnalisée. Tarification sur devis.",
+    title: "Passez cette grille sur une démonstration Rushh",
+    text: "Appelez la ligne de démonstration avec vos propres scénarios, puis demandez une démonstration adaptée à votre agence. Tarification sur devis.",
     links: [
       { href: "/demonstrations", label: "Ligne de démonstration" },
       { href: "/offre", label: "L'offre Rushh" },

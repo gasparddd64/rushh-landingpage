@@ -8,6 +8,7 @@ import { articleToMarkdown } from "./articles/markdown";
 import { CATALOGUE_TITLE, catalogueToMarkdown } from "./articles/catalogue-markdown";
 import * as mandataires from "./solutions/mandataires-immobiliers";
 import * as gestionLocative from "./solutions/gestion-locative";
+import { DEMO_LISTEN, MULTI, OFFRE, SYNDICS, TRANSACTION, premiumToMd } from "./solutions/premium";
 
 export const SITE_URL = "https://www.rushh.fr";
 
@@ -235,6 +236,7 @@ Mise en service visée sous 5 jours ouvrés après réception des éléments né
 
 Le Standard est un outil d'assistance, sans promesse de résultat commercial.
 
+${premiumToMd(OFFRE)}
 ## Demander une démonstration et un devis
 
 Tarification sur devis. Lors d'une démonstration, nous regardons votre fonctionnement et nous vous montrons comment le Standard Rushh s'adapterait à votre organisation. Le devis est établi selon votre organisation et le périmètre retenu.
@@ -335,6 +337,8 @@ Joe AI propose lui aussi de l'accompagnement et de la personnalisation. Rushh se
 | Intégrations | Certains outils selon vos besoins, confirmés avec vous | Logiciels métier listés sur son site, ajout possible sur demande |
 | Tarification | Sur devis | Non affichée sur son site |
 
+Les différences de voix et de réactivité ne se lisent pas dans un tableau : jouez les mêmes scénarios chez chaque fournisseur, y compris sur la ligne de démonstration Rushh.
+
 Source Joe AI : https://www.getjoe-ai.com/ (page d'accueil et FAQ), consultée le 28 octobre 2026. Ces informations sont celles annoncées par Joe AI ; elles peuvent évoluer.
 
 ## Et si vous testiez le Standard Rushh vous-même ?
@@ -352,11 +356,19 @@ Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Intégrations](${S
     title: "Démonstration : testez le Standard Rushh par téléphone | Rushh",
     markdown: `# Et si vous testiez le Standard Rushh vous-même ?
 
-Découvrez comment Rushh prend en charge un appel immobilier. Appelez notre ligne de démonstration et jouez le rôle d'un vendeur ou d'un acquéreur.
+Découvrez comment Rushh prend en charge un appel immobilier. Appelez notre ligne de démonstration et jouez le rôle d'un vendeur ou d'un acquéreur : vous jugez la voix, la rapidité et la façon dont l'appel est conduit.
 
 **Ligne de démonstration : 01 76 63 57 09** (tel:+33176635709)
 
 La ligne simule une agence immobilière fictive Rushh, située à Paris.
+
+## ${DEMO_LISTEN.title}
+
+${DEMO_LISTEN.sub}
+
+${DEMO_LISTEN.items.map((i) => `- **${i.title}** : ${i.text}`).join("\n")}
+
+${DEMO_LISTEN.closing}
 
 ## Quelques phrases pour démarrer l'appel
 
@@ -382,7 +394,7 @@ Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Transaction immobi
 
 **Vous êtes en visite. Vos prochaines opportunités continuent d'appeler.**
 
-Rushh prend en charge les demandes commerciales entrantes pendant que vos négociateurs sont indisponibles, puis transmet à votre équipe une demande prête à traiter. Standard téléphonique alimenté par intelligence artificielle. Tarification sur devis.
+${TRANSACTION.lead} Standard téléphonique alimenté par intelligence artificielle. Tarification sur devis.
 
 Réserver une démo : [https://calendly.com/gaspard-david/demo](https://calendly.com/gaspard-david/demo)
 
@@ -434,6 +446,7 @@ Exemples illustratifs : les informations recueillies et les actions dépendent d
 
 Le Standard est un outil d'assistance, sans promesse de résultat commercial.
 
+${premiumToMd(TRANSACTION)}
 ## Questions fréquentes sur la transaction
 
 ### Le Standard prend-il des rendez-vous de visite ?
@@ -473,7 +486,7 @@ Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Ligne de démonstr
 
 **Les appels continuent quand vos gestionnaires sont occupés.**
 
-Voici une organisation possible de la prise en charge des appels de copropriétaires et de prestataires. Les scénarios sont étudiés avec vous, selon le fonctionnement de votre cabinet. Standard téléphonique alimenté par intelligence artificielle. Tarification sur devis.
+${SYNDICS.lead} Standard téléphonique alimenté par intelligence artificielle. Tarification sur devis.
 
 Réserver une démo : [https://calendly.com/gaspard-david/demo](https://calendly.com/gaspard-david/demo)
 
@@ -530,6 +543,7 @@ Ses limites :
 
 Cette page décrit une organisation possible, à étudier avec vous. Elle ne présente aucune référence client ni résultat chiffré. Voir aussi [L'offre Rushh](${SITE_URL}/offre).
 
+${premiumToMd(SYNDICS)}
 ## Étudions l'organisation téléphonique de votre cabinet
 
 Tarification sur devis. Réserver une démo personnalisée : [https://calendly.com/gaspard-david/demo](https://calendly.com/gaspard-david/demo)
@@ -545,7 +559,7 @@ Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Intégrations](${S
 
 **Une même exigence d'accueil, des réalités différentes d'une agence à l'autre.**
 
-Rushh aide à centraliser certaines règles d'accueil tout en respectant les spécificités de chaque agence. Vous nous expliquez votre organisation, nous nous occupons du reste. Standard téléphonique alimenté par intelligence artificielle. Tarification sur devis.
+${MULTI.lead} Standard téléphonique alimenté par intelligence artificielle. Tarification sur devis.
 
 Réserver une démo : [https://calendly.com/gaspard-david/demo](https://calendly.com/gaspard-david/demo)
 
@@ -601,6 +615,7 @@ Le délai de mise en service visé est de 5 jours ouvrés après réception des 
 
 À savoir : cette page décrit une méthode et une organisation possibles, à étudier avec vous. Elle ne présente aucune référence client ni résultat chiffré.
 
+${premiumToMd(MULTI)}
 ## Étudions les règles de votre réseau
 
 Tarification sur devis. Réserver une démo personnalisée : [https://calendly.com/gaspard-david/demo](https://calendly.com/gaspard-david/demo)

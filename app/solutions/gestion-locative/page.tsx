@@ -4,21 +4,20 @@ import { ToolsStrip } from "@/components/solutions/ToolsStrip";
 import {
   Faq,
   FinalCta,
-  Flow,
   IconArrow,
   JsonLd,
   SectionHead,
-  SolHero,
   SolShell,
   Cross,
   Ticks,
   buildMetadata,
   webPageSchema,
 } from "@/components/solutions/kit";
+import { RxDiff, RxHero, RxProof, RxRoute, RxStakes } from "@/components/solutions/premium";
 import { faqSchema } from "@/lib/solutions/markdown";
 import {
-  DESCRIPTION, FAQ, FINAL, FLOW, H1, HOOK, LABEL, LEAD, MANAGED, NOTE, PATH, PATHS, PROBLEM, ROUTING, SEE_ALSO,
-  TITLE, TOOLS_NOTE, URGENT,
+  DESCRIPTION, DIFF, FAQ, FINAL, FLOW, H1, HERO_SAMPLE, HOOK, LABEL, LEAD, MANAGED, NOTE, PATH, PATHS, PROBLEM, PROOF,
+  ROUTING, SEE_ALSO, TITLE, TOOLS_NOTE, URGENT,
 } from "@/lib/solutions/gestion-locative";
 
 export const metadata = buildMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
@@ -29,33 +28,26 @@ export default function GestionLocativePage() {
       <JsonLd data={webPageSchema({ title: TITLE, description: DESCRIPTION, path: PATH })} />
       <JsonLd data={faqSchema(FAQ)} />
 
-      <SolHero
+      <RxHero
         id="gestion-locative-title"
         label={LABEL}
         title={<>{H1.before}<em>{H1.em}</em>{H1.after}</>}
         hook={HOOK}
         lead={LEAD}
-        secondary={{ href: "#parcours", label: "Voir quatre parcours" }}
+        sample={HERO_SAMPLE}
         note={NOTE}
       />
 
-      <section aria-labelledby="difficulte-title">
-        <div className="lf-wrap">
-          <SectionHead pill={PROBLEM.pill} id="difficulte-title" title={PROBLEM.title} sub={PROBLEM.sub} />
-          <ul className="of-chips">
-            {PROBLEM.chips.map((c) => (
-              <li key={c}>{c}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <RxStakes id="difficulte-title" pill={PROBLEM.pill} title={PROBLEM.title} sub={PROBLEM.sub} items={PROBLEM.stakes} closing={PROBLEM.closing} />
+      <div className="lf-wrap">
+        <ul className="of-chips" aria-label="Exemples de demandes reçues">
+          {PROBLEM.chips.map((c) => (
+            <li key={c}>{c}</li>
+          ))}
+        </ul>
+      </div>
 
-      <section aria-labelledby="qualification-title">
-        <div className="lf-wrap">
-          <SectionHead pill={FLOW.pill} id="qualification-title" title={FLOW.title} sub={FLOW.sub} />
-          <Flow items={FLOW.steps} />
-        </div>
-      </section>
+      <RxRoute id="qualification-title" pill={FLOW.pill} title={FLOW.title} sub={FLOW.sub} steps={FLOW.steps} />
 
       <section id="parcours" aria-labelledby="parcours-title">
         <div className="lf-wrap">
@@ -103,6 +95,8 @@ export default function GestionLocativePage() {
         </div>
       </section>
 
+      <RxDiff id="diff-title" pill={DIFF.pill} title={DIFF.title} sub={DIFF.sub} items={DIFF.items} />
+
       <section aria-labelledby="gere-title">
         <div className="lf-wrap">
           <div className="sol-handoff">
@@ -124,6 +118,8 @@ export default function GestionLocativePage() {
       <div className="lf-wrap">
         <p className="sol-note">{TOOLS_NOTE}</p>
       </div>
+
+      <RxProof id="proof-title" title={PROOF.title} text={PROOF.text} say={PROOF.say} />
 
       <section aria-labelledby="faq-title">
         <div className="lf-wrap">

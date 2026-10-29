@@ -16,7 +16,7 @@ export const telesecretariat: Article = {
   answer:
     "Il n'existe pas de meilleur choix universel. Un télésecrétariat humain convient quand les échanges demandent de la nuance. Un logiciel IA à configurer convient si vous voulez piloter vous-même et avez le temps de le maintenir. Un service IA pris en charge, comme celui de Rushh, convient si vous voulez déléguer la conception et le suivi. Beaucoup d'agences finiront par combiner humain et IA.",
   datePublished: "2026-10-28",
-  dateModified: "2026-10-28",
+  dateModified: "2026-10-29",
   sections: [
     {
       id: "trois-modeles",
@@ -243,6 +243,20 @@ export const telesecretariat: Article = {
   ],
   sourcesNote:
     "Les comparaisons entre modèles sont des descriptions types, sans nom de fournisseur ni tarif. Les recommandations sont des pratiques proposées par Rushh. Rushh est l'éditeur de ce guide et l'un des modèles décrits : lisez les critères avec cette réserve.",
+  rushh: {
+    title: "Ce que Rushh apporte entre ces deux approches",
+    text: "Un standard IA géré par Rushh ne remplace pas votre équipe : il couvre les moments où personne ne peut décrocher et laisse les échanges qui comptent à vos collaborateurs.",
+    points: [
+      "Une prise en charge selon vos règles : tous les appels, appels manqués, ligne occupée ou hors horaires",
+      "Plusieurs appels simultanés, selon l'infrastructure déployée",
+      "Un transfert vers un humain quand vos règles l'exigent et que la personne est disponible",
+      "Un suivi de chaque appel dans la plateforme : résumé, transcription, statut",
+    ],
+    links: [
+      { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
+      { href: "/offre", label: "Voir l'offre Rushh" },
+    ],
+  },
   related: [
     {
       href: "/ressources/appels-manques-immobilier",
@@ -261,8 +275,8 @@ export const telesecretariat: Article = {
     },
   ],
   cta: {
-    title: "Voir un standard téléphonique IA pris en charge",
-    text: "Appelez la ligne de démonstration ou demandez une démonstration personnalisée. Tarification sur devis.",
+    title: "Entendez la différence avec un standard IA pris en charge",
+    text: "Appelez la ligne de démonstration pour juger la voix et la réactivité, puis demandez une démonstration adaptée à votre agence. Tarification sur devis.",
     links: [
       { href: "/demonstrations", label: "Ligne de démonstration" },
       { href: "/offre", label: "L'offre Rushh" },

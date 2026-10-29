@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Composants premium des pages commerciales, comparatifs et articles
+   (components/solutions/premium.tsx). Tout est préfixé .rx- : aucun sélecteur
+   de l'accueil n'est touché, aucune règle globale n'est ajoutée.
+   Palette : navy #0b1230, bleu Rushh var(--lf-accent), bleu vif #246df0.
+   ========================================================================== */
+
+.rx-hero, .rx-section, .rx-answer { --rx-navy: #0b1230; --rx-blue: #246df0; --rx-slate: #61718a; --rx-rule: #e4e9f1; }
+
+/* ---------- Typographie ---------- */
+.offre .rx-eyebrow, .rx-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lf-accent);
+}
+.rx-eyebrow::before { content: ""; width: 22px; height: 1.5px; background: currentColor; }
+.rx-eyebrow--light { color: #8fb4ff; }
+.offre .rx-h1 {
+  margin: 0;
+  max-width: 16em;
+  font-size: clamp(33px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  color: var(--lf-ink);
+  text-wrap: balance;
+}
+.offre .rx-h1 em { font-style: normal; color: var(--lf-accent); }
+.offre .rx-h2 {
+  margin: 0;
+  font-size: clamp(27px, 3.2vw, 42px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--lf-ink);
+  text-wrap: balance;
+}
+.offre .rx-sub { margin: 18px 0 0; max-width: 560px; font-size: 17px; font-weight: 500; line-height: 1.55; letter-spacing: -0.015em; color: var(--lf-muted); text-wrap: pretty; }
+.offre .rx-hook { margin: 22px 0 0; max-width: 30em; font-size: clamp(20px, 2.1vw, 26px); font-weight: 700; line-height: 1.22; letter-spacing: -0.035em; color: var(--lf-accent); text-wrap: balance; }
+.offre .rx-lead { margin: 16px 0 0; max-width: 34em; font-size: clamp(16px, 1.45vw, 18.5px); font-weight: 500; line-height: 1.6; letter-spacing: -0.015em; color: var(--lf-muted); text-wrap: pretty; }
+.offre .rx-note { margin: 18px 0 0; font-size: 13px; font-weight: 500; color: rgba(24, 32, 58, 0.55); }
+.offre .rx-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; margin-top: 34px; }
+
+.rx-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 15px; font-weight: 600; letter-spacing: -0.02em; color: var(--lf-accent); text-decoration: none; border-bottom: 1px solid transparent; }
+.rx-link:hover { border-bottom-color: currentColor; }
+.rx-link svg { width: 15px; height: 15px; }
+.rx-link--light { color: #fff; }
+
+.offre .lf section.rx-section { padding: 88px 0; }
+.offre .lf section.rx-section--flush { padding: 40px 0; }
+.rx-n { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; color: var(--rx-blue); }
+
+/* ---------- Hero ---------- */
+.offre .rx-hero { position: relative; padding: 72px 0 56px; text-align: left; }
+.offre .rx-hero::before {
+  content: "";
+  position: absolute;
+  inset: -40px 0 auto;
+  height: 560px;
+  z-index: -1;
+  background:
+    radial-gradient(46% 60% at 18% 0%, rgba(0, 71, 198, 0.10), transparent 70%),
+    radial-gradient(34% 44% at 92% 24%, rgba(80, 150, 255, 0.10), transparent 70%);
+  pointer-events: none;
+}
+.rx-hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: 64px; align-items: center; }
+.rx-hero-grid:not(:has(.rx-call)) { grid-template-columns: minmax(0, 1fr); }
+
+/* ---------- Appel type (visuel de hero) ---------- */
+.rx-call { margin: 0; border-radius: 28px; background: var(--rx-navy); color: #fff; box-shadow: 0 40px 70px -40px rgba(11, 18, 48, 0.7); overflow: hidden; }
+.rx-call-in { padding: 30px 32px 26px; }
+.rx-call-tag { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8fb4ff; }
+.rx-call-who { margin: 14px 0 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.62); }
+.rx-call blockquote { margin: 8px 0 0; font-size: clamp(19px, 1.9vw, 23px); font-weight: 600; line-height: 1.32; letter-spacing: -0.03em; }
+.rx-call blockquote::before { content: "« "; color: var(--rx-blue); }
+.rx-call blockquote::after { content: " »"; color: var(--rx-blue); }
+.rx-call-route { display: flex; align-items: center; gap: 14px; padding: 0 32px; }
+.rx-call-route i { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(36, 109, 240, 0.9), rgba(36, 109, 240, 0.25)); }
+.rx-call-route span { padding: 6px 14px; border: 1px solid rgba(36, 109, 240, 0.7); border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #cfe0ff; }
+.rx-call-out { margin: 22px 14px 14px; padding: 8px 20px 20px; border-radius: 20px; background: #fff; color: var(--lf-ink); }
+.rx-call-out dl { margin: 0; }
+.rx-call-out dl > div { display: flex; justify-content: space-between; gap: 18px; padding: 13px 0; border-bottom: 1px solid var(--rx-rule); font-size: 14.5px; line-height: 1.4; }
+.rx-call-out dt { font-weight: 600; color: var(--rx-slate); }
+.rx-call-out dd { margin: 0; font-weight: 600; text-align: right; letter-spacing: -0.015em; }
+.rx-call-done { display: flex; align-items: center; gap: 10px; margin: 16px 0 0; font-size: 14.5px; font-weight: 700; letter-spacing: -0.015em; color: var(--lf-accent); }
+.rx-call-done svg { width: 20px; height: 20px; padding: 3px; border-radius: 50%; background: var(--lf-accent); color: #fff; flex: none; }
+
+/* ---------- Enjeux ---------- */
+.rx-stakes { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; }
+.rx-stakes-head { position: sticky; top: 110px; }
+.rx-stakes-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rx-rule); }
+.rx-stakes-list li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 8px; padding: 26px 0; border-bottom: 1px solid var(--rx-rule); }
+.rx-stakes-list .rx-n { padding-top: 5px; }
+.rx-stakes-list h3 { margin: 0; font-size: 21px; font-weight: 700; line-height: 1.2; letter-spacing: -0.035em; color: var(--lf-ink); }
+.rx-stakes-list p { margin: 8px 0 0; font-size: 16px; font-weight: 500; line-height: 1.55; letter-spacing: -0.012em; color: var(--lf-muted); }
+.rx-closing { grid-column: 1 / -1; margin: 0; max-width: 40em; font-size: clamp(19px, 2vw, 24px); font-weight: 600; line-height: 1.35; letter-spacing: -0.03em; color: var(--lf-ink); }
+
+/* ---------- Parcours d'appel ---------- */
+.rx-route { padding: 56px 56px 52px; border-radius: 32px; background: var(--rx-navy); color: #fff; overflow: hidden; position: relative; }
+.rx-route::before { content: ""; position: absolute; inset: 0; background: radial-gradient(50% 70% at 100% 0%, rgba(36, 109, 240, 0.28), transparent 70%); pointer-events: none; }
+.rx-route > * { position: relative; }
+.offre .rx-route .rx-h2 { color: #fff; max-width: 18em; }
+.offre .rx-route .rx-sub { color: rgba(255, 255, 255, 0.68); }
+.rx-route ol { display: grid; grid-template-columns: repeat(var(--rx-steps, 5), minmax(0, 1fr)); gap: 0 28px; margin: 52px 0 0; padding: 0; list-style: none; }
+.rx-route li { position: relative; padding-top: 34px; }
+.rx-route li::before { content: ""; position: absolute; top: 5px; left: 0; right: -28px; height: 2px; background: rgba(36, 109, 240, 0.45); }
+.rx-route li:last-child::before { right: 0; background: linear-gradient(90deg, rgba(36, 109, 240, 0.45), transparent); }
+.rx-route li::after { content: ""; position: absolute; top: 0; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--rx-navy); border: 3px solid var(--rx-blue); }
+.rx-route-n { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #8fb4ff; }
+.rx-route h3 { margin: 6px 0 0; font-size: 18px; font-weight: 700; line-height: 1.2; letter-spacing: -0.03em; }
+.rx-route p { margin: 8px 0 0; font-size: 14.5px; font-weight: 500; line-height: 1.5; color: rgba(255, 255, 255, 0.66); }
+.rx-route-foot { margin: 44px 0 0; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.14); max-width: 46em; font-size: 15px; font-weight: 500; line-height: 1.55; color: rgba(255, 255, 255, 0.7); }
+.rx-route-foot a { color: #fff; text-underline-offset: 3px; }
+
+/* ---------- Différenciateurs ---------- */
+.rx-diff-head { max-width: 640px; }
+.rx-diff { margin: 44px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--lf-ink); }
+.rx-diff li { display: grid; grid-template-columns: 56px minmax(0, 1fr) minmax(0, 1.15fr); gap: 20px 40px; align-items: start; padding: 34px 0 36px; border-bottom: 1px solid var(--rx-rule); }
+.rx-diff .rx-n { padding-top: 8px; }
+.rx-diff h3 { margin: 0; font-size: clamp(22px, 2.3vw, 29px); font-weight: 700; line-height: 1.14; letter-spacing: -0.04em; color: var(--lf-ink); text-wrap: balance; }
+.rx-diff p { margin: 4px 0 0; font-size: 16.5px; font-weight: 500; line-height: 1.6; letter-spacing: -0.012em; color: var(--lf-muted); }
+
+/* ---------- Preuve : ligne de démonstration ---------- */
+.rx-proof { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; align-items: center; padding: 56px; border-radius: 32px; background: var(--rx-navy); color: #fff; position: relative; overflow: hidden; }
+.rx-proof::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 0% 100%, rgba(36, 109, 240, 0.26), transparent 70%); pointer-events: none; }
+.rx-proof > * { position: relative; }
+.offre .rx-proof .rx-h2 { color: #fff; }
+.rx-proof-copy p { margin: 16px 0 0; max-width: 34em; font-size: 16.5px; font-weight: 500; line-height: 1.6; color: rgba(255, 255, 255, 0.72); }
+.rx-proof-copy ul { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.rx-proof-copy li { padding: 12px 16px; border-radius: 14px 14px 14px 4px; background: rgba(255, 255, 255, 0.08); font-size: 15px; font-weight: 600; line-height: 1.4; color: #eaf1ff; }
+.rx-proof-copy li::before { content: "« "; color: #8fb4ff; }
+.rx-proof-copy li::after { content: " »"; color: #8fb4ff; }
+.rx-proof-act { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.rx-call-btn { display: inline-flex; align-items: center; gap: 14px; padding: 16px 30px; border-radius: 999px; background: #fff; color: var(--rx-navy); text-decoration: none; font-size: clamp(24px, 2.8vw, 34px); font-weight: 700; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; transition: transform var(--duration-fast) var(--ease-smooth-out); }
+.rx-call-btn:hover { transform: translateY(-2px); }
+.rx-call-btn svg { width: 24px; height: 24px; color: var(--lf-accent); flex: none; }
+.rx-proof-act > p { margin: 0; font-size: 13.5px; font-weight: 500; line-height: 1.5; color: rgba(255, 255, 255, 0.58); }
+.rx-proof-links { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; margin-top: 6px; }
+
+/* ---------- Bloc « Comment Rushh répond » (articles) ---------- */
+.res .rx-answer { margin: 52px 0 0; padding: 34px 36px 30px; border-radius: 24px; background: var(--lf-accent-soft); border: 1px solid rgba(0, 71, 198, 0.14); }
+.res .rx-answer .rx-eyebrow { margin-bottom: 14px; }
+.res .res-body .rx-answer h2 { margin: 0; padding: 0; border: 0; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.15; letter-spacing: -0.04em; color: var(--lf-ink); }
+.res .rx-answer > p { margin: 14px 0 0; font-size: 16.5px; line-height: 1.6; color: var(--lf-ink); }
+.res .rx-answer ul { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.res .rx-answer li { display: flex; gap: 12px; align-items: flex-start; margin: 0; font-size: 15.5px; font-weight: 500; line-height: 1.5; color: var(--lf-ink); }
+.res .rx-answer li svg { flex: none; width: 20px; height: 20px; margin-top: 1px; padding: 3px; border-radius: 50%; background: var(--lf-accent); color: #fff; }
+.res .rx-answer-links { display: flex; flex-wrap: wrap; gap: 4px 26px; margin-top: 8px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1023px) {
+  .rx-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+  .rx-stakes { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .rx-stakes-head { position: static; }
+  .rx-route { padding: 44px 36px 40px; }
+  .rx-route ol { grid-template-columns: minmax(0, 1fr); gap: 0; margin-top: 34px; }
+  .rx-route li { padding: 0 0 26px 38px; }
+  .rx-route li::before { top: 12px; bottom: 0; left: 5px; right: auto; width: 2px; height: auto; }
+  .rx-route li:last-child::before { right: auto; background: linear-gradient(180deg, rgba(36, 109, 240, 0.45), transparent); }
+  .rx-diff li { grid-template-columns: 44px minmax(0, 1fr); }
+  .rx-diff li > div { grid-column: 2; }
+  .rx-proof { grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 44px 36px; }
+}
+@media (max-width: 768px) {
+  .offre .lf section.rx-section { padding: 52px 0; }
+  .offre .lf section.rx-section--flush { padding: 22px 0; }
+  .offre .rx-hero { padding: 40px 0 34px; }
+  .offre .rx-h1 { font-size: 31px; }
+  .offre .rx-hook { margin-top: 16px; font-size: 19px; }
+  .offre .rx-lead { font-size: 15.5px; }
+  .offre .rx-actions { margin-top: 24px; gap: 8px 18px; }
+  .offre .rx-h2 { font-size: 26px; }
+  .offre .rx-sub { margin-top: 12px; font-size: 15.5px; }
+  .rx-call { border-radius: 22px; }
+  .rx-call-in { padding: 22px 20px 20px; }
+  .rx-call-route { padding: 0 20px; }
+  .rx-call-out { margin: 18px 10px 10px; padding: 4px 16px 16px; }
+  .rx-call-out dl > div { font-size: 14px; padding: 11px 0; }
+  .rx-stakes-list li { grid-template-columns: 34px minmax(0, 1fr); padding: 20px 0; }
+  .rx-stakes-list h3 { font-size: 18.5px; }
+  .rx-stakes-list p { font-size: 15px; }
+  .rx-route { padding: 32px 22px 28px; border-radius: 24px; }
+  .rx-route-foot { margin-top: 22px; font-size: 14px; }
+  .rx-diff { margin-top: 28px; }
+  .rx-diff li { padding: 24px 0 26px; gap: 10px 14px; }
+  .rx-diff p { font-size: 15.5px; }
+  .rx-proof { padding: 32px 22px; border-radius: 24px; }
+  .rx-call-btn { width: 100%; justify-content: center; padding: 15px 20px; font-size: 27px; }
+  .res .rx-answer { margin-top: 36px; padding: 24px 20px 22px; border-radius: 20px; }
+  .res .rx-answer > p { font-size: 15.5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rx-call-btn { transition: none; }
+  .rx-call-btn:hover { transform: none; }
+}

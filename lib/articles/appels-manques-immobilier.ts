@@ -16,7 +16,7 @@ export const appelsManques: Article = {
   answer:
     "Pour réduire les appels manqués, mesurez-les d'abord : exportez le journal d'appels de votre ligne, séparez les appels décrochés des appels manqués, classez les motifs que vous connaissez, désignez qui rappelle et dans quel délai, puis comparez la même période après chaque changement d'organisation. Un appel manqué n'est pas automatiquement une opportunité perdue : c'est une demande dont il faut vérifier l'issue.",
   datePublished: "2026-10-28",
-  dateModified: "2026-10-28",
+  dateModified: "2026-10-29",
   sections: [
     {
       id: "pourquoi",
@@ -232,6 +232,20 @@ export const appelsManques: Article = {
   sources: [],
   sourcesNote:
     "Ce guide ne s'appuie sur aucune statistique externe. Les exemples sont fictifs et les délais proposés sont des exemples à adapter ; les recommandations sont des pratiques proposées par Rushh, pas des obligations. Les informations sur l'offre Rushh sont celles de la page L'offre Rushh.",
+  rushh: {
+    title: "Ce que devient un appel que vous ne pouvez pas prendre",
+    text: "Un propriétaire ou un acquéreur appelle pendant une visite : Rushh décroche, recueille le motif et les informations utiles, puis transmet une demande exploitable. Vous voyez ce qu'il reste à faire, au lieu d'un numéro non lu.",
+    points: [
+      "Prise en charge selon vos règles : tous les appels, appels manqués, ligne occupée ou hors horaires",
+      "Qualification : motif, projet et coordonnées indiquées par l'appelant",
+      "Rendez-vous sur un agenda connecté, ou demande transmise à votre équipe",
+      "Suivi : résumé et statut de chaque appel dans la plateforme Rushh",
+    ],
+    links: [
+      { href: "/solutions/transaction-immobiliere", label: "Voir la page transaction immobilière" },
+      { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
+    ],
+  },
   related: [
     {
       href: "/ressources/telesecretariat-humain-ou-ia",

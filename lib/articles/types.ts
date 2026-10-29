@@ -56,6 +56,8 @@ export interface Article {
   sections: ArticleSection[];
   sources: ArticleSource[];
   sourcesNote: string;
+  /** Bloc « Comment Rushh répond à ce besoin », affiché après le corps du guide. */
+  rushh?: { title: string; text: string; points: string[]; links: { href: string; label: string }[] };
   related: { href: string; label: string; text: string }[];
   cta: { title: string; text: string; links: { href: string; label: string }[] };
 }

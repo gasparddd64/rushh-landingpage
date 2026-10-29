@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { RxDiff, RxHero, RxProof } from "@/components/solutions/premium";
+import { MULTI } from "@/lib/solutions/premium";
 import { ToolsStrip } from "@/components/solutions/ToolsStrip";
 import {
   Benefits,
@@ -9,7 +11,6 @@ import {
   IconList,
   JsonLd,
   SectionHead,
-  SolHero,
   SolShell,
   Ticks,
   buildMetadata,
@@ -80,13 +81,13 @@ export default function MultiSitesPage() {
     <SolShell>
       <JsonLd data={webPageSchema({ title: TITLE, description: DESCRIPTION, path: PATH })} />
 
-      <SolHero
+      <RxHero
         id="multisites-title"
         label="Réseaux et groupes d'agences"
         title={<>Un standard téléphonique IA adapté aux <em>réseaux et groupes d&apos;agences</em> immobilières</>}
         hook="Une même exigence d'accueil, des réalités différentes d'une agence à l'autre."
-        lead="Rushh aide à centraliser certaines règles d'accueil tout en respectant les spécificités de chaque agence. Vous nous expliquez votre organisation, nous nous occupons du reste."
-        secondary={{ href: "#exemple", label: "Voir un exemple" }}
+        lead={MULTI.lead}
+        sample={MULTI.sample}
         note="Standard téléphonique alimenté par intelligence artificielle · Tarification sur devis"
       />
 
@@ -161,6 +162,8 @@ export default function MultiSitesPage() {
         </div>
       </section>
 
+      <RxDiff id="diff-title" pill={MULTI.diff.pill} title={MULTI.diff.title} sub={MULTI.diff.sub} items={MULTI.diff.items} />
+
       <ToolsStrip />
 
       <section aria-labelledby="suivi-title">
@@ -183,6 +186,8 @@ export default function MultiSitesPage() {
           </div>
         </div>
       </section>
+
+      <RxProof id="proof-title" title={MULTI.proof.title} text={MULTI.proof.text} say={MULTI.proof.say} />
 
       <FinalCta
         id="multisites-final-title"

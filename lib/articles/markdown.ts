@@ -48,6 +48,12 @@ export function articleToMarkdown(a: Article): string {
     parts.push(`## ${s.h2}`);
     for (const b of s.blocks) parts.push(blockToMarkdown(b));
   }
+  if (a.rushh) {
+    parts.push(`## Comment Rushh répond à ce besoin : ${a.rushh.title}`);
+    parts.push(abs(a.rushh.text));
+    parts.push(a.rushh.points.map((x) => `- ${abs(x)}`).join("\n"));
+    parts.push(a.rushh.links.map((l) => `[${l.label}](${SITE_URL}${l.href})`).join(" · "));
+  }
   parts.push("## Sources et méthode");
   if (a.sources.length > 0) {
     parts.push(a.sources.map((s) => `- [${s.label}](${s.url}) : ${s.usedFor}`).join("\n"));

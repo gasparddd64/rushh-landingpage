@@ -254,6 +254,20 @@ export const vsFonio: Article = {
   ],
   sourcesNote:
     "Toutes les informations sur Fonio proviennent de ses pages officielles, consultées le 28 octobre 2026 : ce sont des déclarations commerciales, que nous n'avons pas vérifiées par un test. Les tarifs, hors taxes, peuvent changer. L'absence d'une fonction sur une page ne prouve pas qu'elle n'existe pas. Les repères par situation et les questions sont des recommandations de Rushh. Rushh édite cette page et en est partie prenante. Pour corriger une information, écrivez à hello@rushh.fr.",
+  rushh: {
+    title: "Quand Rushh est pertinent face à Fonio",
+    text: "Fonio propose une plateforme polyvalente, avec création en libre-service et accompagnement en option. Rushh propose une prestation gérée de bout en bout, centrée sur les appels entrants de l'immobilier. Si vous ne voulez ni configurer, ni tester, ni suivre vous-même votre standard, c'est le contexte où Rushh est le plus pertinent.",
+    points: [
+      "Vous préférez déléguer la conception et le suivi du standard plutôt que de les piloter",
+      "Votre besoin porte sur les appels entrants d'une agence, d'un mandataire ou d'un cabinet immobilier",
+      "Vous voulez retrouver chaque appel comme une opportunité suivie : résumé, statut, attribution",
+      "Vous souhaitez un devis établi selon votre organisation plutôt qu'une grille de forfaits",
+    ],
+    links: [
+      { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
+      { href: "/offre", label: "Voir l'offre Rushh" },
+    ],
+  },
   related: [
     {
       href: "/comparatif/standards-telephoniques-ia-immobilier",
@@ -272,8 +286,8 @@ export const vsFonio: Article = {
     },
   ],
   cta: {
-    title: "Voir un standard téléphonique IA entièrement pris en charge",
-    text: "Appelez la ligne de démonstration ou demandez une démonstration personnalisée. Tarification sur devis.",
+    title: "Comparez les deux sur le même appel",
+    text: "Appelez la ligne de démonstration Rushh, puis jouez le même scénario avec une démonstration de Fonio : la voix, la rapidité et la suite donnée se jugent à l'oreille. Tarification Rushh sur devis.",
     links: [
       { href: "/demonstrations", label: "Ligne de démonstration" },
       { href: "/offre", label: "L'offre Rushh" },

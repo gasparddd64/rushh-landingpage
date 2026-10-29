@@ -4,20 +4,19 @@ import { TOOLS } from "@/components/sections/ToolsOrbitSection";
 import {
   Faq,
   FinalCta,
-  Flow,
   IconArrow,
   JsonLd,
   SectionHead,
-  SolHero,
   SolShell,
   Ticks,
   buildMetadata,
   webPageSchema,
 } from "@/components/solutions/kit";
+import { RxDiff, RxHero, RxProof, RxRoute, RxStakes } from "@/components/solutions/premium";
 import { faqSchema } from "@/lib/solutions/markdown";
 import {
-  DESCRIPTION, FAQ, FINAL, FLOW, H1, HOOK, LABEL, LEAD, MANAGED, MODES, NOTE, PATH, PROBLEM, SITUATIONS, TITLE,
-  TOOLS_SECTION,
+  DESCRIPTION, DIFF, FAQ, FINAL, FLOW, H1, HERO_SAMPLE, HOOK, LABEL, LEAD, MANAGED, MODES, NOTE, PATH, PROBLEM, PROOF,
+  SITUATIONS, TITLE, TOOLS_SECTION,
 } from "@/lib/solutions/mandataires-immobiliers";
 
 export const metadata = buildMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
@@ -28,42 +27,19 @@ export default function MandatairesPage() {
       <JsonLd data={webPageSchema({ title: TITLE, description: DESCRIPTION, path: PATH })} />
       <JsonLd data={faqSchema(FAQ)} />
 
-      <SolHero
+      <RxHero
         id="mandataires-title"
         label={LABEL}
         title={<>{H1.before}<em>{H1.em}</em>{H1.after}</>}
         hook={HOOK}
         lead={LEAD}
-        secondary={{ href: "#situations", label: "Voir trois situations" }}
+        sample={HERO_SAMPLE}
         note={NOTE}
       />
 
-      <section aria-labelledby="probleme-title">
-        <div className="lf-wrap">
-          <div className="of-bespoke">
-            <div>
-              <span className="lf-pill">{PROBLEM.pill}</span>
-              <h2 id="probleme-title" className="lf-h2">{PROBLEM.title}</h2>
-              <p className="lf-sub">{PROBLEM.sub}</p>
-            </div>
-            <ul className="of-tiles">
-              {PROBLEM.tiles.map((t) => (
-                <li key={t.title} className="of-tile">
-                  <h3>{t.title}</h3>
-                  <p>{t.text}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <RxStakes id="probleme-title" pill={PROBLEM.pill} title={PROBLEM.title} sub={PROBLEM.sub} items={PROBLEM.tiles} closing={PROBLEM.closing} />
 
-      <section aria-labelledby="fonctionnement-title">
-        <div className="lf-wrap">
-          <SectionHead pill={FLOW.pill} id="fonctionnement-title" title={FLOW.title} sub={FLOW.sub} />
-          <Flow items={FLOW.steps} />
-        </div>
-      </section>
+      <RxRoute id="fonctionnement-title" pill={FLOW.pill} title={FLOW.title} sub={FLOW.sub} steps={FLOW.steps} foot={FLOW.foot} />
 
       <section id="situations" aria-labelledby="situations-title">
         <div className="lf-wrap">
@@ -75,6 +51,8 @@ export default function MandatairesPage() {
           </p>
         </div>
       </section>
+
+      <RxDiff id="diff-title" pill={DIFF.pill} title={DIFF.title} sub={DIFF.sub} items={DIFF.items} />
 
       <section aria-labelledby="modes-title">
         <div className="lf-wrap">
@@ -131,6 +109,8 @@ export default function MandatairesPage() {
           </p>
         </div>
       </section>
+
+      <RxProof id="proof-title" title={PROOF.title} text={PROOF.text} say={PROOF.say} />
 
       <section aria-labelledby="faq-title">
         <div className="lf-wrap">

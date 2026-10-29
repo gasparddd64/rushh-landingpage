@@ -12,31 +12,77 @@ export const H1 = { before: "Standard téléphonique IA pour ", em: "mandataires
 export const LABEL = "Mandataires immobiliers";
 export const HOOK = "Vous êtes en visite. Votre téléphone continue de sonner.";
 export const LEAD =
-  "Rushh prend en charge vos appels entrants pendant vos visites, estimations et déplacements, puis vous transmet des demandes claires à traiter à votre retour. Sans imposer de nouvelle organisation technique.";
+  "Un propriétaire appelle pendant votre visite ? Rushh décroche, recueille son projet et prépare la suite, jusqu'à proposer une estimation selon vos disponibilités lorsque votre agenda est connecté. Vous retrouvez une demande claire à rappeler, pas un appel manqué.";
+
+export const HERO_SAMPLE = {
+  caller: "Propriétaire vendeur",
+  quote: "Bonjour, je pense vendre ma maison et j'aimerais une estimation.",
+  rows: [
+    ["Motif", "Estimation d'un bien"],
+    ["Projet", "Vente, tel que décrit par l'appelant"],
+    ["Coordonnées", "Celles indiquées par l'appelant"],
+    ["Suite", "Rendez-vous ou rappel, selon vos règles"],
+  ] as [string, string][],
+  outcome: "Demande transmise, prête à rappeler",
+};
 export const NOTE = "Standard téléphonique alimenté par intelligence artificielle · Tarification sur devis";
 
 export const PROBLEM = {
   pill: "Le problème opérationnel",
-  title: "Seul sur le terrain, impossible de tout décrocher",
-  sub: "Un mandataire gère seul les appels de vendeurs et d'acquéreurs, en plus de ses visites. Chaque appel manqué reste une demande sans réponse, parfois rappelée trop tard.",
+  title: "Le téléphone sonne quand vous êtes le moins disponible",
+  sub: "Un mandataire travaille seul. Les appels de vendeurs et d'acquéreurs arrivent pendant les visites, les estimations et les trajets, c'est-à-dire au moment où ils sont les plus difficiles à prendre.",
   tiles: [
-    { title: "Pendant une visite", text: "Décrocher, c'est interrompre un acquéreur qui vous consacre son temps." },
-    { title: "Pendant une estimation", text: "Un propriétaire attend toute votre attention, pas un échange haché par le téléphone." },
-    { title: "Pendant un déplacement", text: "Il est rarement possible de noter une demande ni de consulter un agenda." },
-    { title: "Pendant un rendez-vous", text: "Vendeurs et acquéreurs appellent en même temps, sans se coordonner." },
+    { title: "Pendant une visite", text: "Décrocher, c'est interrompre l'acquéreur qui vous consacre son temps. Ne pas décrocher, c'est laisser un contact sans réponse." },
+    { title: "Pendant une estimation", text: "Un propriétaire vous consacre son temps : vous ne pouvez pas le partager avec un autre vendeur qui appelle au même moment." },
+    { title: "Sur la route", text: "Impossible de noter une demande ou de consulter votre agenda en conduisant. Le rappel se fait de mémoire, plus tard." },
+    { title: "Le soir et le week-end", text: "Un appel hors horaires attend le lendemain, sauf si le Standard couvre ces créneaux selon vos règles." },
   ],
+  closing:
+    "Un propriétaire qui n'obtient pas de réponse reste libre d'appeler un autre professionnel. Quand les demandes sont plus rares, chacune mérite d'être traitée.",
 };
 
 export const FLOW = {
   pill: "Comment ça fonctionne",
-  title: "De l'appel à votre retour de visite",
-  sub: "Chaque appel suit les règles validées avec vous.",
+  title: "De l'appel à une demande prête à rappeler",
+  sub: "Pendant que vous êtes en visite, le Standard conduit l'appel selon les règles validées avec vous.",
   steps: [
     { title: "Appel entrant", text: "Un vendeur, un acquéreur ou un client appelle pendant que vous êtes indisponible." },
     { title: "Identification du motif", text: "Le Standard décroche et comprend s'il s'agit d'une estimation, d'une visite ou d'un autre sujet." },
     { title: "Qualification", text: "Il recueille les informations utiles : le projet, le bien concerné, les coordonnées indiquées par l'appelant." },
     { title: "Rendez-vous si approprié", text: "Selon vos règles et votre agenda connecté, il propose un créneau. Sinon, il note la demande." },
     { title: "Transmission", text: "Vous recevez la demande avec son contexte et vous rappelez au bon moment." },
+  ],
+  foot: "Rushh ne promet ni mandat ni rendez-vous : il remet la demande entre vos mains, déjà renseignée.",
+};
+
+export const DIFF = {
+  pill: "Pourquoi Rushh",
+  title: "Ce qui compte quand on travaille seul",
+  sub: "Trois différences à vérifier par vous-même, au téléphone et dans la mise en place.",
+  items: [
+    {
+      title: "Une voix naturelle, pas un menu téléphonique",
+      text: "L'appelant explique son besoin normalement et reçoit une réponse rapide, sans parcourir un menu rigide. La voix est personnalisable, et peut être clonée avec l'autorisation de son titulaire.",
+      link: { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
+    },
+    {
+      title: "Une prestation prise en charge de A à Z",
+      text: "Seul, vous n'avez ni le temps ni l'envie de configurer un outil. Rushh analyse votre fonctionnement, construit les scénarios, connecte vos outils, teste, puis suit et améliore le Standard avec vous.",
+      link: { href: "/offre", label: "Voir ce que Rushh prend en charge" },
+    },
+    {
+      title: "Des questions de professionnel de l'immobilier",
+      text: "Projet, bien, secteur, disponibilités : le Standard distingue une estimation, une visite et un rappel, puis agit selon vos règles : créneau d'estimation sur votre agenda connecté, SMS de confirmation, fiche transmise à votre logiciel lorsque la connexion est configurée. Vous recevez l'essentiel, pas une simple trace d'appel.",
+    },
+  ],
+};
+
+export const PROOF = {
+  title: "Écoutez-le avant de décider",
+  text: "Appelez la ligne de démonstration et jouez le rôle d'un vendeur ou d'un acquéreur : vous jugez vous-même la voix, la vitesse de réponse et la façon dont l'appel est conduit.",
+  say: [
+    "Bonjour, je souhaite faire estimer mon appartement à Paris.",
+    "J'aimerais organiser une visite pour un appartement.",
   ],
 };
 
@@ -162,7 +208,7 @@ export const FAQ: Faq[] = [
 
 export const FINAL = {
   title: "Pendant vos visites, Rushh prend vos appels",
-  text: "Lors d'une démonstration personnalisée, nous regardons comment le Standard s'adapterait à votre activité. Le devis est établi selon votre organisation.",
+  text: "Lors d'une démonstration personnalisée, nous regardons ensemble comment le Standard prendrait vos appels de vendeurs et d'acquéreurs. Le devis est établi selon votre organisation.",
   links: [
     { href: "/offre", label: "L'offre Rushh" },
     { href: "/demonstrations", label: "Ligne de démonstration" },
@@ -186,11 +232,15 @@ ${PROBLEM.sub}
 
 ${PROBLEM.tiles.map((t) => `- **${t.title}** : ${t.text}`).join("\n")}
 
+${PROBLEM.closing}
+
 ## ${FLOW.title}
 
 ${FLOW.sub}
 
 ${FLOW.steps.map((s, i) => `${i + 1}. **${s.title}** : ${s.text}`).join("\n")}
+
+${FLOW.foot}
 
 ## ${SITUATIONS.title}
 
@@ -199,6 +249,18 @@ ${SITUATIONS.sub}
 ${SITUATIONS.items.map(exampleToMd).join("\n\n")}
 
 ${SITUATIONS.note}
+
+## ${DIFF.title}
+
+${DIFF.sub}
+
+${DIFF.items.map((d) => `### ${d.title}\n\n${d.text}`).join("\n\n")}
+
+## ${PROOF.title}
+
+${PROOF.text} Ligne de démonstration (agence fictive à Paris) : 01 76 63 57 09.
+
+${bullets(PROOF.say.map((q) => `« ${q} »`))}
 
 ## ${MODES.title}
 

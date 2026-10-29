@@ -5,6 +5,8 @@ import { Nav } from "@/components/sections/Nav";
 import { DemoCTA } from "@/components/ui/demo-cta";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { RxDiff, RxProof } from "@/components/solutions/premium";
+import { OFFRE } from "@/lib/solutions/premium";
 import { ToolsStrip } from "@/components/solutions/ToolsStrip";
 import { OfferAccordions } from "./OfferAccordions";
 import "../landing-flow.css";
@@ -349,6 +351,9 @@ export default function OffrePage() {
             </div>
           </div>
         </section>
+
+        <RxDiff id="diff-title" pill={OFFRE.diff.pill} title={OFFRE.diff.title} sub={OFFRE.diff.sub} items={OFFRE.diff.items} />
+        <RxProof id="proof-title" title={OFFRE.proof.title} text={OFFRE.proof.text} say={OFFRE.proof.say} />
 
         {/* ── 6. Démonstration et devis ── */}
         <section aria-labelledby="demo-title">

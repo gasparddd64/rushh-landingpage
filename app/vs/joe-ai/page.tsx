@@ -336,6 +336,10 @@ export default function JoeAIVsPage() {
                 <strong>Rushh</strong> répond si vous cherchez un Standard dédié aux appels entrants, conçu autour de
                 votre organisation et suivi par une équipe.
               </p>
+              <p>
+                Les différences de voix et de réactivité ne se lisent pas dans un tableau : jouez les mêmes scénarios
+                chez chaque fournisseur, y compris sur la ligne de démonstration Rushh.
+              </p>
             </div>
 
             <p className="vs-source">

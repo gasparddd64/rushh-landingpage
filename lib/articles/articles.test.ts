@@ -20,7 +20,7 @@ const COMPETITOR_PRICE_PAGES = new Set(["/comparatif/standards-telephoniques-ia-
 
 /** Texte de ce qui concerne Rushh : tout le texte hors cellules concurrentes, plus les lignes/colonnes Rushh des tableaux. */
 function rushhText(a: Article): string {
-  const parts: string[] = [a.title, a.description, a.h1, a.answer, a.sourcesNote];
+  const parts: string[] = [a.title, a.description, a.h1, a.answer, a.sourcesNote, ...(a.rushh ? [a.rushh.text, ...a.rushh.points] : []), a.cta.text];
   for (const s of a.sections) {
     parts.push(s.h2);
     for (const b of s.blocks) {
@@ -58,11 +58,16 @@ function allText(a: Article): string {
         return [b.title, ...b.rows.flat(), b.note ?? ""].join(" ");
     }
   };
-  return [a.title, a.description, a.h1, a.answer, a.sourcesNote, ...a.sections.flatMap((s) => [s.h2, ...s.blocks.map(blockText)])].join("\n");
+  const rushh = a.rushh ? [a.rushh.title, a.rushh.text, ...a.rushh.points] : [];
+  return [a.title, a.description, a.h1, a.answer, a.sourcesNote, ...rushh, a.cta.title, a.cta.text, ...a.sections.flatMap((s) => [s.h2, ...s.blocks.map(blockText)])].join("\n");
 }
 
 function internalLinks(a: Article): string[] {
-  const text = allText(a) + a.related.map((r) => `[x](${r.href})`).join("") + a.cta.links.map((l) => `[x](${l.href})`).join("");
+  const text =
+    allText(a) +
+    a.related.map((r) => `[x](${r.href})`).join("") +
+    a.cta.links.map((l) => `[x](${l.href})`).join("") +
+    (a.rushh?.links ?? []).map((l) => `[x](${l.href})`).join("");
   return [...text.matchAll(/\]\((\/[^)#]*)\)/g)].map((m) => m[1]);
 }
 

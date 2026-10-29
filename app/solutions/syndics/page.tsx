@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { RxDiff, RxHero, RxProof } from "@/components/solutions/premium";
+import { SYNDICS } from "@/lib/solutions/premium";
 import { ToolsStrip } from "@/components/solutions/ToolsStrip";
 import {
   Benefits,
@@ -10,7 +12,6 @@ import {
   IconUsers,
   JsonLd,
   SectionHead,
-  SolHero,
   SolShell,
   Ticks,
   buildMetadata,
@@ -86,13 +87,13 @@ export default function SyndicsPage() {
     <SolShell>
       <JsonLd data={webPageSchema({ title: TITLE, description: DESCRIPTION, path: PATH })} />
 
-      <SolHero
+      <RxHero
         id="syndics-title"
         label="Syndics de copropriété"
         title={<>Standard téléphonique IA pour <em>syndics de copropriété</em></>}
         hook="Les appels continuent quand vos gestionnaires sont occupés."
-        lead="Voici une organisation possible de la prise en charge des appels de copropriétaires et de prestataires. Les scénarios sont étudiés avec vous, selon le fonctionnement de votre cabinet."
-        secondary={{ href: "#limites", label: "Voir les limites" }}
+        lead={SYNDICS.lead}
+        sample={SYNDICS.sample}
         note="Standard téléphonique alimenté par intelligence artificielle · Tarification sur devis"
       />
 
@@ -209,6 +210,8 @@ export default function SyndicsPage() {
         </div>
       </section>
 
+      <RxDiff id="diff-title" pill={SYNDICS.diff.pill} title={SYNDICS.diff.title} sub={SYNDICS.diff.sub} items={SYNDICS.diff.items} />
+
       <ToolsStrip />
 
       <section id="limites" aria-labelledby="limites-title">
@@ -239,6 +242,8 @@ export default function SyndicsPage() {
           </p>
         </div>
       </section>
+
+      <RxProof id="proof-title" title={SYNDICS.proof.title} text={SYNDICS.proof.text} say={SYNDICS.proof.say} />
 
       <FinalCta
         id="syndics-final-title"

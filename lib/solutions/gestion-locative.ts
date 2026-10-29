@@ -12,13 +12,31 @@ export const H1 = { before: "Standard téléphonique IA pour la ", em: "gestion 
 export const LABEL = "Gestion locative";
 export const HOOK = "Locataires, bailleurs, candidats : un seul téléphone, des demandes très différentes.";
 export const LEAD =
-  "Rushh identifie le motif de chaque appel et transmet à votre équipe les informations utiles, pour que vos gestionnaires ne soient pas mobilisés sur chaque appel. Les règles sont définies avec vous.";
+  "Un locataire signale une panne, un candidat veut visiter, un bailleur demande un point : Rushh identifie qui appelle et pourquoi, puis transmet à la bonne personne une demande déjà renseignée. Vos gestionnaires ne sont plus mobilisés sur chaque appel, et les règles sont définies avec vous.";
+
+export const HERO_SAMPLE = {
+  caller: "Locataire",
+  quote: "Le chauffage ne fonctionne plus dans mon logement.",
+  rows: [
+    ["Appelant", "Locataire"],
+    ["Nature du problème", "Chauffage hors service, selon ses mots"],
+    ["Priorité", "Selon vos critères"],
+    ["Transmis à", "La personne que vous désignez"],
+  ] as [string, string][],
+  outcome: "Signalement transmis avec son contexte",
+};
 export const NOTE = "Standard téléphonique alimenté par intelligence artificielle · Tarification sur devis";
 
 export const PROBLEM = {
   pill: "La difficulté",
-  title: "Un téléphone qui mélange tout",
-  sub: "Un même numéro reçoit en quelques heures un signalement de panne, une question sur une quittance, une demande de visite et un propriétaire qui veut un point. Chaque appel interrompt un gestionnaire, et tous n'ont pas la même urgence.",
+  title: "Un seul numéro, des demandes qui n'ont rien en commun",
+  sub: "En quelques heures, le même téléphone reçoit un signalement de panne, une question sur une quittance, une demande de visite et un bailleur qui veut un point. Chaque appel interrompt un gestionnaire, et tous n'ont pas la même urgence.",
+  stakes: [
+    { title: "Tout arrive au même endroit", text: "Un candidat à la location, un locataire inquiet et un propriétaire attendent la même personne, au même moment." },
+    { title: "Chaque appel interrompt un dossier", text: "Un gestionnaire qui décroche quitte ce qu'il traitait, même quand l'appel pouvait attendre ou être orienté ailleurs." },
+    { title: "L'urgence ne se voit qu'après coup", text: "Sans motif ni priorité consignés, un signalement important peut attendre derrière une simple question de quittance." },
+  ],
+  closing: "Savoir qui appelle, pourquoi, et à qui transmettre : c'est ce que le Standard prend en charge avant que la demande ne vous atteigne.",
   chips: [
     "Panne ou désordre signalé",
     "Quittance, loyer, charges",
@@ -40,6 +58,37 @@ export const FLOW = {
     { title: "Quel motif ?", text: "Il pose les questions utiles pour cerner la demande : technique, administrative, location, rendez-vous." },
     { title: "Quelle priorité ?", text: "Il applique vos critères de priorité et vos consignes d'escalade." },
     { title: "Transmission", text: "La demande part vers la bonne personne, avec les informations recueillies." },
+  ],
+};
+
+export const DIFF = {
+  pill: "Pourquoi Rushh",
+  title: "Trois choses qui comptent pour un cabinet de gestion",
+  sub: "À vérifier par vous-même, au téléphone et lors de la mise en place.",
+  items: [
+    {
+      title: "Des demandes triées avant d'arriver à vos équipes",
+      text: "Locataire, bailleur, candidat, prestataire : le Standard identifie l'appelant, cerne le motif et applique votre répartition. Vos gestionnaires reçoivent des demandes déjà renseignées plutôt qu'une file d'appels bruts.",
+    },
+    {
+      title: "Vos consignes d'urgence, écrites avec vous et testées",
+      text: "Ce qui est urgent se définit dans votre cabinet. Rushh rédige les consignes d'escalade avec vous, les teste avant la mise en service et les ajuste ensuite, sans rien promettre au-delà de ce qui a été validé.",
+      link: { href: "/offre", label: "Voir la démarche de mise en place" },
+    },
+    {
+      title: "Une voix naturelle qui laisse parler l'appelant",
+      text: "Un locataire expliquant une panne n'a pas à parcourir un menu : il décrit sa situation avec ses mots et obtient des échanges rapides. À écouter sur la ligne de démonstration.",
+      link: { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
+    },
+  ],
+};
+
+export const PROOF = {
+  title: "Écoutez comment un appel est conduit",
+  text: "La ligne de démonstration simule une agence immobilière fictive. Jouez le rôle d'un acquéreur ou d'un vendeur : vous jugez la voix, la réactivité et la manière de qualifier une demande.",
+  say: [
+    "Bonjour, j'aimerais organiser une visite pour un appartement.",
+    "Est-ce que vous pouvez transmettre un message à votre équipe ?",
   ],
 };
 
@@ -213,6 +262,10 @@ ${PROBLEM.sub}
 
 Exemples de demandes : ${PROBLEM.chips.map((c) => c.toLowerCase()).join(" ; ")}.
 
+${PROBLEM.stakes.map((t) => `- **${t.title}** : ${t.text}`).join("\n")}
+
+${PROBLEM.closing}
+
 ## ${FLOW.title}
 
 ${FLOW.sub}
@@ -250,6 +303,18 @@ ${ROUTING.label} :
 ${arrowsToMd(ROUTING.rows)}
 
 ${ROUTING.note}
+
+## ${DIFF.title}
+
+${DIFF.sub}
+
+${DIFF.items.map((d) => `### ${d.title}\n\n${d.text}`).join("\n\n")}
+
+## ${PROOF.title}
+
+${PROOF.text} Ligne de démonstration (agence fictive à Paris) : 01 76 63 57 09.
+
+${bullets(PROOF.say.map((q) => `« ${q} »`))}
 
 ## ${MANAGED.title}
 

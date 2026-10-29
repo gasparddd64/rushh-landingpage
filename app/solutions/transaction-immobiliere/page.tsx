@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { RxDiff, RxHero, RxProof } from "@/components/solutions/premium";
+import { TRANSACTION } from "@/lib/solutions/premium";
 import { ToolsStrip } from "@/components/solutions/ToolsStrip";
 import {
   Benefits,
@@ -10,7 +12,6 @@ import {
   IconPhone,
   JsonLd,
   SectionHead,
-  SolHero,
   SolShell,
   Ticks,
   buildMetadata,
@@ -115,13 +116,13 @@ export default function TransactionPage() {
       <JsonLd data={webPageSchema({ title: TITLE, description: DESCRIPTION, path: PATH })} />
       <JsonLd data={faqSchema} />
 
-      <SolHero
+      <RxHero
         id="transaction-title"
         label="Transaction immobilière"
         title={<>Standard téléphonique IA pour les appels <em>vendeurs et acquéreurs</em></>}
         hook="Vous êtes en visite. Vos prochaines opportunités continuent d'appeler."
-        lead="Rushh prend en charge les demandes commerciales entrantes pendant que vos négociateurs sont indisponibles, puis transmet à votre équipe une demande prête à traiter."
-        secondary={{ href: "#scenarios", label: "Voir deux exemples d'appels" }}
+        lead={TRANSACTION.lead}
+        sample={TRANSACTION.sample}
         note="Standard téléphonique alimenté par intelligence artificielle · Tarification sur devis"
       />
 
@@ -209,6 +210,8 @@ export default function TransactionPage() {
         </div>
       </section>
 
+      <RxDiff id="diff-title" pill={TRANSACTION.diff.pill} title={TRANSACTION.diff.title} sub={TRANSACTION.diff.sub} items={TRANSACTION.diff.items} />
+
       <ToolsStrip />
 
       <section aria-labelledby="faq-title">
@@ -217,6 +220,8 @@ export default function TransactionPage() {
           <Faq items={FAQ} />
         </div>
       </section>
+
+      <RxProof id="proof-title" title={TRANSACTION.proof.title} text={TRANSACTION.proof.text} say={TRANSACTION.proof.say} />
 
       <FinalCta
         id="transaction-final-title"

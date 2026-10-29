@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 import { JsonLd, SITE, SolShell } from "@/components/solutions/kit";
+import { RushhAnswer } from "@/components/solutions/premium";
 import { categoryLabel } from "@/lib/articles/categories";
 import { CALLOUT_LABEL, formatFrenchDate, type Article, type Block } from "@/lib/articles/types";
 import "@/app/ressources/res.css";
@@ -171,6 +172,8 @@ export function ArticlePage({ article: a }: { article: Article }) {
               {s.blocks.map((b, i) => <BlockView key={i} b={b} />)}
             </section>
           ))}
+
+          {a.rushh && <RushhAnswer {...a.rushh} />}
 
           <section id="sources" aria-labelledby="sources-t" className="res-sources" data-no-reveal>
             <h2 id="sources-t">Sources et méthode</h2>

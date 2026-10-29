@@ -5,11 +5,12 @@ import {
   IconPhone,
   JsonLd,
   SectionHead,
-  SolHero,
   SolShell,
   buildMetadata,
   webPageSchema,
 } from "@/components/solutions/kit";
+import { RxHero, RxStakes } from "@/components/solutions/premium";
+import { DEMO_LISTEN } from "@/lib/solutions/premium";
 
 const PATH = "/demonstrations";
 const TITLE = "Démonstration : testez le Standard Rushh par téléphone | Rushh";
@@ -30,20 +31,33 @@ export default function DemonstrationsPage() {
     <SolShell>
       <JsonLd data={webPageSchema({ title: TITLE, description: DESCRIPTION, path: PATH })} />
 
-      <SolHero
+      <RxHero
         id="demo-title"
         label="Ligne de démonstration"
         title="Et si vous testiez le Standard Rushh vous-même ?"
-        lead="Découvrez comment Rushh prend en charge un appel immobilier. Appelez notre ligne de démonstration et jouez le rôle d'un vendeur ou d'un acquéreur."
+        lead="Découvrez comment Rushh prend en charge un appel immobilier. Appelez notre ligne de démonstration et jouez le rôle d'un vendeur ou d'un acquéreur : vous jugez la voix, la rapidité et la façon dont l'appel est conduit."
+        sample={{
+          caller: "Vous, au téléphone",
+          quote: "Bonjour, je souhaite faire estimer mon appartement à Paris.",
+          rows: [
+            ["Motif", "Estimation d'un bien"],
+            ["Bien", "Appartement à Paris"],
+            ["Suite", "Selon la configuration de la ligne"],
+          ],
+          outcome: "Ce que le Standard peut consigner",
+        }}
       >
-        <a className="sol-call" href={DEMO_PHONE_HREF} aria-label={`Appeler la ligne de démonstration Rushh au ${DEMO_PHONE_LABEL}`}>
-          <IconPhone />
-          {DEMO_PHONE_LABEL}
-        </a>
-        <p className="sol-fict">
-          La ligne simule une agence immobilière fictive Rushh, située à Paris.
-        </p>
-      </SolHero>
+        <div className="rx-actions">
+          <a className="sol-call" href={DEMO_PHONE_HREF} aria-label={`Appeler la ligne de démonstration Rushh au ${DEMO_PHONE_LABEL}`}>
+            <IconPhone />
+            {DEMO_PHONE_LABEL}
+          </a>
+        </div>
+        <p className="rx-note">La ligne simule une agence immobilière fictive Rushh, située à Paris.</p>
+      </RxHero>
+
+      <RxStakes id={DEMO_LISTEN.id} pill={DEMO_LISTEN.pill} title={DEMO_LISTEN.title} sub={DEMO_LISTEN.sub} items={DEMO_LISTEN.items} closing={DEMO_LISTEN.closing} />
+
 
       <section aria-labelledby="say-title">
         <div className="lf-wrap">
@@ -70,6 +84,8 @@ export default function DemonstrationsPage() {
       <FinalCta
         id="demo-final-title"
         title="Vous souhaitez découvrir Rushh adapté à votre agence ?"
+        text="Lors d'une démonstration personnalisée, nous reprenons vos propres scénarios d'appel et nous regardons comment le Standard s'adapterait à votre organisation."
+        label="Réserver une démo adaptée à votre agence"
         links={[
           { href: "/offre", label: "L'offre Rushh" },
           { href: "/solutions/transaction-immobiliere", label: "Transaction immobilière" },

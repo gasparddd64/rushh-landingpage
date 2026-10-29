@@ -16,7 +16,7 @@ export const qualification: Article = {
   answer:
     "Qualifier un appel, c'est identifier son motif, recueillir uniquement les informations utiles à la prochaine action, puis les transmettre au négociateur dans un résumé structuré, avec une prochaine étape claire. Pour un vendeur : le bien, sa localisation, le projet et le souhait d'estimation. Pour un acquéreur : l'annonce ou la recherche, les critères, le projet et la demande de visite. Ne collectez pas plus que nécessaire.",
   datePublished: "2026-10-28",
-  dateModified: "2026-10-28",
+  dateModified: "2026-10-29",
   sections: [
     {
       id: "definition",
@@ -278,6 +278,20 @@ export const qualification: Article = {
   ],
   sourcesNote:
     "Les fiches sont des exemples fictifs ; les listes d'informations sont des recommandations pratiques de Rushh, à adapter à votre organisation. Ce guide n'est pas un avis juridique.",
+  rushh: {
+    title: "La qualification, conduite par le Standard",
+    text: "Les fiches de ce guide peuvent devenir les questions que le Standard pose à chaque appelant : vous les validez avec nous, il les applique sans reposer ce qui a déjà été répondu.",
+    points: [
+      "Des questions définies avec vous pour vendeurs, acquéreurs, locataires et autres contacts",
+      "Une priorisation des demandes selon vos critères : projet urgent, disponibilité, secteur",
+      "Une transmission à l'équipe, et au logiciel immobilier (Apimo, Whise) lorsque la connexion et les droits sont configurés",
+      "Une collecte limitée aux informations utiles, avec les règles définies ensemble",
+    ],
+    links: [
+      { href: "/solutions/mandataires-immobiliers", label: "Voir la page mandataires" },
+      { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
+    ],
+  },
   related: [
     {
       href: "/ressources/appels-manques-immobilier",
