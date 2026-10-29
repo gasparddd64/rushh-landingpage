@@ -155,9 +155,7 @@ export default function OffrePage() {
               L&apos;offre Rushh : un <em>standard téléphonique</em> conçu et suivi pour votre organisation.
             </h1>
             <p className="of-lead">
-              Quand votre équipe ne peut pas répondre, Rushh prend le relais : les appels sont compris,
-              qualifiés et transmis selon vos règles. Vous nous expliquez votre fonctionnement, nous
-              nous occupons du reste.
+              Vous cherchez une IA qui répond au téléphone de votre agence immobilière ? Rushh met en place un standard téléphonique alimenté par intelligence artificielle, qui prend vos appels entrants, qualifie les demandes et peut organiser des rendez-vous selon vos disponibilités. Conçu sur mesure pour les professionnels de l&apos;immobilier, il est testé, déployé et suivi par l&apos;équipe Rushh : vous nous expliquez votre fonctionnement, nous nous occupons du reste.
             </p>
             <div className="of-actions">
               <DemoCTA label="Réserver une démo" showArrow={false} />
@@ -186,7 +184,7 @@ export default function OffrePage() {
             <div className="lf-head--center">
               <span className="lf-pill">Le parcours d&apos;un appel</span>
               <h2 id="prise-en-charge-title" className="lf-h2">Ce que le Standard Rushh prend en charge</h2>
-              <p className="lf-sub">Du premier mot de l&apos;appelant à la transmission à votre équipe, selon les règles validées avec vous.</p>
+              <p className="lf-sub">Rushh traite automatiquement vos appels entrants, du premier mot de l&apos;appelant à la transmission à votre équipe, selon les règles validées avec vous.</p>
             </div>
             <ol className="of-flow">
               {FLOW.map((s, i) => (
@@ -371,6 +369,7 @@ export default function OffrePage() {
               </div>
               <nav className="of-more" aria-label="Pour aller plus loin">
                 <Link href="/integrations">Intégrations</Link>
+                <Link href="/comparatif/standards-telephoniques-ia-immobilier">Comparatif des standards IA</Link>
                 <Link href="/vs/joe-ai">Rushh vs Joe AI</Link>
                 <Link href="/">Retour à l&apos;accueil</Link>
               </nav>

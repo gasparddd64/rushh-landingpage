@@ -40,7 +40,7 @@ const pageSchema = {
   url: URL,
   description: DESCRIPTION,
   inLanguage: "fr-FR",
-  dateModified: "2026-10-28",
+  dateModified: "2026-10-29",
   isPartOf: { "@type": "WebSite", name: "Rushh", url: "https://www.rushh.fr" },
   about: { "@type": "Organization", name: "Rushh", url: "https://www.rushh.fr" },
 };
@@ -297,7 +297,7 @@ export default function JoeAIVsPage() {
               <span className="lf-pill">Comparatif factuel</span>
               <h2 id="comparatif-title" className="lf-h2">Rushh et Joe AI : ce que chacun annonce</h2>
               <p className="lf-sub">
-                Joe AI propose lui aussi de l&apos;accompagnement et de la personnalisation. Rushh se concentre sur
+                Vous comparez Rushh à Joe AI, ou cherchez une alternative à Joe AI pour les appels de votre agence ? Joe AI propose lui aussi de l&apos;accompagnement et de la personnalisation. Rushh se concentre sur
                 les appels entrants, Joe AI annonce une offre multicanale.
               </p>
             </div>

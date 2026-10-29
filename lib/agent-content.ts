@@ -182,7 +182,7 @@ Pour toute question relative à la confidentialité des données, contactez hell
     title: "L'offre Rushh : standard téléphonique IA pour l'immobilier | Rushh",
     markdown: `# L'offre Rushh : un standard téléphonique conçu et suivi pour votre organisation
 
-Quand votre équipe ne peut pas répondre, Rushh prend le relais : les appels sont compris, qualifiés et transmis selon vos règles. Rushh propose un standard téléphonique alimenté par intelligence artificielle, conçu, testé, déployé, suivi et optimisé pour les professionnels de l'immobilier. Vous nous expliquez votre fonctionnement, nous nous occupons du reste.
+Vous cherchez une IA qui répond au téléphone de votre agence immobilière ? Rushh met en place un standard téléphonique alimenté par intelligence artificielle, qui prend vos appels entrants, qualifie les demandes et peut organiser des rendez-vous selon vos disponibilités. Conçu sur mesure pour les professionnels de l'immobilier, il est testé, déployé et suivi par l'équipe Rushh : vous nous expliquez votre fonctionnement, nous nous occupons du reste.
 
 - Moins d'appels laissés sans réponse : quand votre équipe est en visite, en rendez-vous ou déjà au téléphone, Rushh décroche et prend la demande en charge.
 - Moins d'interruptions pour vos équipes : votre équipe ne décroche plus que ce qui mérite vraiment un humain, selon les règles que vous définissez.
@@ -190,7 +190,7 @@ Quand votre équipe ne peut pas répondre, Rushh prend le relais : les appels so
 
 ## Ce que le Standard Rushh prend en charge
 
-Du premier mot de l'appelant à la transmission à votre équipe, selon les règles validées avec vous :
+Rushh traite automatiquement vos appels entrants, du premier mot de l'appelant à la transmission à votre équipe, selon les règles validées avec vous :
 
 1. **Appel entrant** : un vendeur, un acquéreur, un locataire, un copropriétaire ou un prestataire appelle.
 2. **Rushh comprend** : le Standard décroche et identifie la demande dès les premiers mots.
@@ -243,7 +243,7 @@ Tarification sur devis. Lors d'une démonstration, nous regardons votre fonction
 
 Réserver une démo : [https://calendly.com/gaspard-david/demo](https://calendly.com/gaspard-david/demo)
 
-Pour aller plus loin : [Intégrations](${SITE_URL}/integrations) · [Rushh vs Joe AI](${SITE_URL}/vs/joe-ai) · [Accueil](${SITE_URL}/)
+Pour aller plus loin : [Intégrations](${SITE_URL}/integrations) · [Comparatif des standards IA](${SITE_URL}/comparatif/standards-telephoniques-ia-immobilier) · [Rushh vs Joe AI](${SITE_URL}/vs/joe-ai) · [Accueil](${SITE_URL}/)
 `,
   },
   "/integrations": {
@@ -326,7 +326,7 @@ Analyse, conception, tests, validation, mise en service, amélioration continue.
 
 ## Rushh et Joe AI : ce que chacun annonce
 
-Joe AI propose lui aussi de l'accompagnement et de la personnalisation. Rushh se concentre sur les appels entrants, Joe AI annonce une offre multicanale.
+Vous comparez Rushh à Joe AI, ou cherchez une alternative à Joe AI pour les appels de votre agence ? Joe AI propose lui aussi de l'accompagnement et de la personnalisation. Rushh se concentre sur les appels entrants, Joe AI annonce une offre multicanale.
 
 | Critère | Rushh | Joe AI |
 |---|---|---|
@@ -356,7 +356,7 @@ Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Intégrations](${S
     title: "Démonstration : testez le Standard Rushh par téléphone | Rushh",
     markdown: `# Et si vous testiez le Standard Rushh vous-même ?
 
-Découvrez comment Rushh prend en charge un appel immobilier. Appelez notre ligne de démonstration et jouez le rôle d'un vendeur ou d'un acquéreur : vous jugez la voix, la rapidité et la façon dont l'appel est conduit.
+Découvrez comment Rushh prend en charge un appel immobilier. Appelez notre ligne de démonstration et écoutez une IA répondre au téléphone d'une agence immobilière : jouez le rôle d'un vendeur ou d'un acquéreur, et jugez la voix, la rapidité et la façon dont l'appel est conduit.
 
 **Ligne de démonstration : 01 76 63 57 09** (tel:+33176635709)
 
@@ -385,7 +385,7 @@ Démonstration sur une agence fictive. Les réponses et les actions dépendent d
 
 Tarification sur devis. Réserver une démo personnalisée : [https://calendly.com/gaspard-david/demo](https://calendly.com/gaspard-david/demo)
 
-Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Transaction immobilière](${SITE_URL}/solutions/transaction-immobiliere) · [Accueil](${SITE_URL}/)
+Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Transaction immobilière](${SITE_URL}/solutions/transaction-immobiliere) · [Comparer avec d'autres solutions](${SITE_URL}/comparatif/standards-telephoniques-ia-immobilier) · [Rushh ou Joe AI](${SITE_URL}/vs/joe-ai)
 `,
   },
   "/solutions/transaction-immobiliere": {

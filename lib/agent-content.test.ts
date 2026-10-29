@@ -174,3 +174,28 @@ describe("build404Markdown", () => {
     expect(body).toContain("/llms.txt");
   });
 });
+
+describe("search-intent wording (SEO ciblé)", () => {
+  const md = (p: string) => getMarkdownPage(p)?.markdown ?? "";
+
+  it("/offre states what Rushh is in the words visitors search, and keeps the official positioning", () => {
+    const t = md("/offre");
+    expect(t).toContain("IA qui répond au téléphone de votre agence immobilière");
+    expect(t).toContain("standard téléphonique alimenté par intelligence artificielle");
+    expect(t).toContain("/comparatif/standards-telephoniques-ia-immobilier");
+    expect(t).not.toMatch(/meilleur(e)? (voix|solution|standard)/i);
+  });
+
+  it("/demonstrations says visitors can hear an AI answer the phone, and links to the comparisons", () => {
+    const t = md("/demonstrations");
+    expect(t).toContain("écoutez une IA répondre au téléphone");
+    expect(t).toContain("/vs/joe-ai");
+    expect(t).toContain("/comparatif/standards-telephoniques-ia-immobilier");
+  });
+
+  it("/vs/joe-ai answers the « alternative à Joe AI » intent without ranking", () => {
+    const t = md("/vs/joe-ai");
+    expect(t).toContain("alternative à Joe AI");
+    expect(t).not.toMatch(/meilleur/i);
+  });
+});

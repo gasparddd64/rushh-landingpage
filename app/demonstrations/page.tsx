@@ -35,7 +35,7 @@ export default function DemonstrationsPage() {
         id="demo-title"
         label="Ligne de démonstration"
         title="Et si vous testiez le Standard Rushh vous-même ?"
-        lead="Découvrez comment Rushh prend en charge un appel immobilier. Appelez notre ligne de démonstration et jouez le rôle d'un vendeur ou d'un acquéreur : vous jugez la voix, la rapidité et la façon dont l'appel est conduit."
+        lead="Découvrez comment Rushh prend en charge un appel immobilier. Appelez notre ligne de démonstration et écoutez une IA répondre au téléphone d'une agence immobilière : jouez le rôle d'un vendeur ou d'un acquéreur, et jugez la voix, la rapidité et la façon dont l'appel est conduit."
         sample={{
           caller: "Vous, au téléphone",
           quote: "Bonjour, je souhaite faire estimer mon appartement à Paris.",
@@ -89,7 +89,8 @@ export default function DemonstrationsPage() {
         links={[
           { href: "/offre", label: "L'offre Rushh" },
           { href: "/solutions/transaction-immobiliere", label: "Transaction immobilière" },
-          { href: "/", label: "Retour à l'accueil" },
+          { href: "/comparatif/standards-telephoniques-ia-immobilier", label: "Comparer avec d'autres solutions" },
+          { href: "/vs/joe-ai", label: "Rushh ou Joe AI" },
         ]}
       />
     </SolShell>
