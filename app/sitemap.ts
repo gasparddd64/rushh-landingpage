@@ -93,6 +93,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: 'https://www.rushh.fr/ressources/prise-rendez-vous-ia-immobilier',
+      lastModified: new Date('2026-10-29'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/vs/volubilimo',
+      lastModified: new Date('2026-10-29'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: 'https://www.rushh.fr/cgv',
       lastModified: new Date(),
       changeFrequency: 'monthly',

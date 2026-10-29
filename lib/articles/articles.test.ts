@@ -13,6 +13,8 @@ const REQUIRED_LINKS: Record<string, string[]> = {
   "/comparatif/standards-telephoniques-ia-immobilier": ["/offre", "/demonstrations", "/vs/fonio", "/vs/joe-ai", "/ressources/choisir-standard-telephonique-ia-immobilier"],
   "/vs/fonio": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/ressources/choisir-standard-telephonique-ia-immobilier", "/vs/joe-ai"],
   "/ressources/choisir-standard-telephonique-ia-immobilier": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/ressources/telesecretariat-humain-ou-ia"],
+  "/ressources/prise-rendez-vous-ia-immobilier": ["/offre", "/demonstrations", "/ressources/qualification-appels-vendeurs-acquereurs"],
+  "/vs/volubilimo": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/ressources/prise-rendez-vous-ia-immobilier"],
 };
 
 // Pages qui citent légitimement des prix publics de concurrents (sourcés) ; les prix Rushh restent interdits partout.
@@ -177,7 +179,7 @@ describe("catalogue /ressources", () => {
   it("is a known route with a Markdown mirror, one H1, and links to every publication", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
-    expect(ARTICLES).toHaveLength(6);
+    expect(ARTICLES).toHaveLength(8);
     for (const a of ARTICLES) expect(md).toContain(`(https://www.rushh.fr${a.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
@@ -188,10 +190,11 @@ describe("catalogue /ressources", () => {
     expect(ARTICLES.map((a) => a.path)).toContain(FEATURED_PATH);
   });
 
-  it("distributes the six publications as briefed", () => {
+  it("distributes the eight publications as briefed", () => {
     const by = (c: string) => ARTICLES.filter((a) => a.category === c).map((a) => a.path).sort();
     expect(by("appels-qualification")).toEqual([
       "/ressources/appels-manques-immobilier",
+      "/ressources/prise-rendez-vous-ia-immobilier",
       "/ressources/qualification-appels-vendeurs-acquereurs",
     ]);
     expect(by("standards-ia-comparatifs")).toEqual([
@@ -199,6 +202,7 @@ describe("catalogue /ressources", () => {
       "/ressources/choisir-standard-telephonique-ia-immobilier",
       "/ressources/telesecretariat-humain-ou-ia",
       "/vs/fonio",
+      "/vs/volubilimo",
     ]);
   });
 
@@ -225,7 +229,7 @@ describe("catalogue card titles and dates", () => {
     expect(published("/ressources/appels-manques-immobilier")).toBe("2026-10-28");
     expect(published("/ressources/telesecretariat-humain-ou-ia")).toBe("2026-10-28");
     expect(published("/ressources/qualification-appels-vendeurs-acquereurs")).toBe("2026-10-28");
-    for (const p of ["/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/ressources/choisir-standard-telephonique-ia-immobilier"]) {
+    for (const p of ["/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/ressources/choisir-standard-telephonique-ia-immobilier", "/ressources/prise-rendez-vous-ia-immobilier", "/vs/volubilimo"]) {
       expect(published(p) > "2026-10-28", p).toBe(true);
     }
   });

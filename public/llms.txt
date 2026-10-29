@@ -40,6 +40,8 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Rushh vs Fonio (comparison, sourced and dated): https://www.rushh.fr/vs/fonio
 - Comparison of AI phone answering solutions for real estate (sourced and dated): https://www.rushh.fr/comparatif/standards-telephoniques-ia-immobilier
 - Guide, how to choose an AI phone answering service: https://www.rushh.fr/ressources/choisir-standard-telephonique-ia-immobilier
+- Guide, AI appointment booking in real estate: https://www.rushh.fr/ressources/prise-rendez-vous-ia-immobilier
+- Rushh vs Volubilimo (comparison, sourced and dated): https://www.rushh.fr/vs/volubilimo
 - Terms of sale (CGV): https://www.rushh.fr/cgv
 - Privacy: https://www.rushh.fr/privacy
 - Sitemap: https://www.rushh.fr/sitemap.xml
