@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources',
-      lastModified: new Date('2026-10-29'),
+      lastModified: new Date('2026-10-31'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
@@ -95,6 +95,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://www.rushh.fr/ressources/prise-rendez-vous-ia-immobilier',
       lastModified: new Date('2026-10-29'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/cout-standard-telephonique-ia-immobilier',
+      lastModified: new Date('2026-10-31'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/permanence-telephonique-agence-immobiliere',
+      lastModified: new Date('2026-10-31'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/appel-vendeur-estimation-immobiliere',
+      lastModified: new Date('2026-10-31'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/standard-telephonique-ia-apimo',
+      lastModified: new Date('2026-10-31'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },

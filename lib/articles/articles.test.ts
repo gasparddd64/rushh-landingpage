@@ -15,11 +15,17 @@ const REQUIRED_LINKS: Record<string, string[]> = {
   "/vs/fonio": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/ressources/choisir-standard-telephonique-ia-immobilier", "/vs/joe-ai", "/vs/volubilimo"],
   "/ressources/choisir-standard-telephonique-ia-immobilier": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/ressources/telesecretariat-humain-ou-ia", "/ressources/prise-rendez-vous-ia-immobilier"],
   "/ressources/prise-rendez-vous-ia-immobilier": ["/offre", "/demonstrations", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/choisir-standard-telephonique-ia-immobilier"],
+  "/ressources/cout-standard-telephonique-ia-immobilier": ["/offre", "/demonstrations", "/ressources/choisir-standard-telephonique-ia-immobilier", "/comparatif/standards-telephoniques-ia-immobilier", "/ressources/telesecretariat-humain-ou-ia"],
+  "/ressources/permanence-telephonique-agence-immobiliere": ["/offre", "/demonstrations", "/solutions/transaction-immobiliere", "/solutions/gestion-locative", "/solutions/syndics", "/ressources/telesecretariat-humain-ou-ia"],
+  "/ressources/appel-vendeur-estimation-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/prise-rendez-vous-ia-immobilier"],
+  "/ressources/standard-telephonique-ia-apimo": ["/offre", "/integrations", "/ressources/qualification-appels-vendeurs-acquereurs"],
   "/vs/volubilimo": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/ressources/prise-rendez-vous-ia-immobilier"],
 };
 
 // Pages qui citent légitimement des prix publics de concurrents (sourcés) ; les prix Rushh restent interdits partout.
 const COMPETITOR_PRICE_PAGES = new Set(["/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio"]);
+// Page pédagogique dont la simulation est chiffrée en euros FICTIFS : ni tarif Rushh ni tarif concurrent.
+const FICTIONAL_PRICE_PAGES = new Set(["/ressources/cout-standard-telephonique-ia-immobilier"]);
 
 /** Texte de ce qui concerne Rushh : tout le texte hors cellules concurrentes, plus les lignes/colonnes Rushh des tableaux. */
 function rushhText(a: Article): string {
@@ -109,6 +115,11 @@ describe.each(ARTICLES.map((a) => [a.path, a] as const))("guide %s", (path, a) =
     if (COMPETITOR_PRICE_PAGES.has(path)) {
       expect(rushhText(a)).not.toMatch(/€|euros?\b/i);
       expect(t).toContain("Sur devis");
+    } else if (FICTIONAL_PRICE_PAGES.has(path)) {
+      expect(rushhText(a)).not.toMatch(/€|euros?\b/i);
+      expect(t).toMatch(/entièrement fictifs/);
+      expect(t).toMatch(/ni des tarifs de Rushh ni ceux d'un concurrent/);
+      expect(t).toContain("sur devis");
     } else {
       expect(t).not.toMatch(/€|euros?\b/i);
     }
@@ -177,12 +188,12 @@ describe("guide-specific requirements", () => {
 describe("catalogue /ressources (le Blog)", () => {
   const md = getMarkdownPage("/ressources")?.markdown ?? "";
 
-  it("is a known route with a Markdown mirror, one H1, and links to all nine publications", () => {
+  it("is a known route with a Markdown mirror, one H1, and links to all thirteen publications", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(md).toContain("# Le Blog Rushh");
-    expect(ARTICLES).toHaveLength(8);
-    expect(CATALOGUE).toHaveLength(9);
+    expect(ARTICLES).toHaveLength(12);
+    expect(CATALOGUE).toHaveLength(13);
     for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
@@ -193,14 +204,18 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(CATALOGUE.map((e) => e.path)).toContain(FEATURED_PATH);
   });
 
-  it("offers the three filters: all (9), guides (5), comparatifs (4)", () => {
+  it("offers the three filters: all (13), guides (9), comparatifs (4)", () => {
     expect(CATEGORIES.map((c) => c.label)).toEqual(["Guides & conseils", "Comparatifs"]);
     const by = (c: string) => CATALOGUE.filter((e) => e.category === c).map((e) => e.path).sort();
     expect(by("guides")).toEqual([
+      "/ressources/appel-vendeur-estimation-immobiliere",
       "/ressources/appels-manques-immobilier",
       "/ressources/choisir-standard-telephonique-ia-immobilier",
+      "/ressources/cout-standard-telephonique-ia-immobilier",
+      "/ressources/permanence-telephonique-agence-immobiliere",
       "/ressources/prise-rendez-vous-ia-immobilier",
       "/ressources/qualification-appels-vendeurs-acquereurs",
+      "/ressources/standard-telephonique-ia-apimo",
       "/ressources/telesecretariat-humain-ou-ia",
     ]);
     expect(by("comparatifs")).toEqual([
@@ -266,5 +281,55 @@ describe("catalogue card titles and dates", () => {
     for (const p of ["/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/ressources/choisir-standard-telephonique-ia-immobilier", "/ressources/prise-rendez-vous-ia-immobilier", "/vs/volubilimo"]) {
       expect(published(p) > "2026-10-28", p).toBe(true);
     }
+    for (const p of ["/ressources/cout-standard-telephonique-ia-immobilier", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/appel-vendeur-estimation-immobiliere", "/ressources/standard-telephonique-ia-apimo"]) {
+      expect(published(p), p).toBe("2026-10-31");
+    }
+  });
+});
+
+describe("wave 1 (Nov. 2026) guides", () => {
+  const get = (p: string) => ARTICLES.find((a) => a.path === p)!;
+
+  it("the cost guide's euro simulation is explicit, fictional and consistent with its own calculations", () => {
+    const a = get("/ressources/cout-standard-telephonique-ia-immobilier");
+    const t = allText(a);
+    expect(t).not.toMatch(/unités de compte/);
+    expect(t).toContain("montants entièrement fictifs");
+    expect(t).toContain("Hypothèses");
+    // les calculs affichés se recalculent à partir des hypothèses
+    const cost = (abo: number, incl: number, over: number, minutes: number, install = 0) => abo + Math.max(0, minutes - incl) * over + install;
+    expect(cost(35, 100, 0.4, 600)).toBe(235);
+    expect(cost(90, 400, 0.2, 1200)).toBe(250);
+    expect(cost(150, 800, 0.15, 600, 40)).toBe(190);
+    expect(cost(150, 800, 0.15, 1200, 40)).toBe(250);
+    expect(cost(35, 100, 0.4, 1200)).toBe(475);
+    expect(cost(90, 400, 0.2, 600)).toBe(130);
+    expect(t).toContain("Offre 1 à 600 minutes : 35 + (600 − 100) × 0,40 = 235");
+  });
+
+  it("the Apimo guide never claims an official partnership, a native or certified plug-in, or documented agendas", () => {
+    const a = get("/ressources/standard-telephonique-ia-apimo");
+    const t = allText(a);
+    expect(t).toContain("ne se présente pas comme partenaire officiel");
+    expect(t).toContain("ne présente pas cette connexion comme native, certifiée ou prête à l'emploi");
+    expect(t).not.toMatch(/\b(est|sommes|restons)\s+(un\s+)?partenaire officiel/i);
+    expect(t).not.toMatch(/plug-in (natif|certifié) (disponible|existe)/i);
+    expect(a.sources.map((s) => s.url)).toEqual(expect.arrayContaining(["https://apimo.com/api/webservice", "https://apimo.com/api"]));
+  });
+
+  it("the seller-call guide never announces a price or a mandate, and its dialogue is labelled fictional", () => {
+    const a = get("/ressources/appel-vendeur-estimation-immobiliere");
+    const fiche = a.sections.flatMap((s) => s.blocks).find((b) => b.t === "fiche");
+    expect(fiche && fiche.t === "fiche" && fiche.note).toContain("fictif");
+    expect(allText(a)).toContain("Annoncer une valeur");
+    expect(allText(a)).toContain("Dialogue fictif");
+  });
+
+  it("the permanence guide holds a four-row, four-column transfer matrix and is not presented as Rushh-first", () => {
+    const a = get("/ressources/permanence-telephonique-agence-immobiliere");
+    const m = a.sections.flatMap((s) => s.blocks).find((b) => b.t === "table" && b.caption.startsWith("Matrice de transfert"));
+    expect(m && m.t === "table" && m.rows).toHaveLength(4);
+    expect(m && m.t === "table" && m.head).toHaveLength(4);
+    expect(allText(a)).toContain("Aucun mode n'est supérieur dans l'absolu");
   });
 });
