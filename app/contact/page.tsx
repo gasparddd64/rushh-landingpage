@@ -5,7 +5,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { DemoCTA } from "@/components/ui/demo-cta";
 
 const baseMetadata: Metadata = {
-  title: "Contact Rushh | Standard téléphonique IA pour l'immobilier",
+  title: "Contact Rushh immo | Standard téléphonique IA pour l'immobilier",
   description:
     "Contactez l'équipe Rushh pour une démonstration du Standard téléphonique IA, ou pour toute question sur un déploiement en cours.",
   alternates: {

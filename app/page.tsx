@@ -11,13 +11,16 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { FAQ_ITEMS } from "@/lib/faq";
+import { BRAND_NAME, BRAND_SHORT, ORG_ID, SITE, WEBSITE_ID, orgRef } from "@/lib/brand";
 import "./landing-flow.css";
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Rushh",
-  "url": "https://www.rushh.fr",
+  "@id": ORG_ID,
+  "name": BRAND_NAME,
+  "alternateName": BRAND_SHORT,
+  "url": SITE,
   "logo": "https://www.rushh.fr/logo-rushh.png",
   "description": "Standard téléphonique conçu et déployé pour les agences immobilières françaises.",
   "email": "hello@rushh.fr",
@@ -48,8 +51,10 @@ const organizationSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Rushh",
-  "url": "https://www.rushh.fr",
+  "@id": ORG_ID,
+  "name": BRAND_NAME,
+  "alternateName": BRAND_SHORT,
+  "url": SITE,
   "logo": "https://www.rushh.fr/logo-rushh.png",
   "description": "Standard téléphonique conçu et déployé pour les agences immobilières françaises.",
   "email": "hello@rushh.fr",
@@ -80,11 +85,7 @@ const serviceSchema = {
   "name": "Agent vocal IA pour agence immobilière",
   "serviceType": "Agent vocal IA immobilier",
   "description": "Standard téléphonique alimenté par intelligence artificielle pour les professionnels de l'immobilier, prenant en charge les appels entrants selon les règles du client.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Rushh",
-    "url": "https://www.rushh.fr",
-  },
+  "provider": orgRef,
   "areaServed": {
     "@type": "Country",
     "name": "France",
@@ -93,6 +94,17 @@ const serviceSchema = {
     "@type": "Audience",
     "audienceType": "Agences immobilières",
   },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": WEBSITE_ID,
+  "name": BRAND_NAME,
+  "alternateName": BRAND_SHORT,
+  "url": SITE,
+  "inLanguage": "fr-FR",
+  "publisher": orgRef,
 };
 
 const faqSchema = {
@@ -108,6 +120,10 @@ const faqSchema = {
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

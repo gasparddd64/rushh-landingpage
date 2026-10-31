@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 const baseMetadata: Metadata = {
-  title: "Intégrations & ressources | Rushh",
+  title: "Intégrations CRM immobiliers et API | Rushh immo",
   description:
     "Rushh s'intègre à Google Calendar, Outlook, Apimo et Whise. Découvrez les intégrations disponibles et quand utiliser le Standard téléphonique IA Rushh.",
   alternates: {

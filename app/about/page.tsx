@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 const baseMetadata: Metadata = {
-  title: "À propos de Rushh | Standard téléphonique IA pour l'immobilier",
+  title: "À propos de Rushh immo | Standard téléphonique IA pour l'immobilier",
   description:
     "Rushh conçoit et déploie le Standard téléphonique IA pensé pour l'immobilier. Découvrez qui édite Rushh, sa mission et ses coordonnées.",
   alternates: {

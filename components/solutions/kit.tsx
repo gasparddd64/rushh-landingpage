@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BRAND_NAME, orgRef, websiteRef } from "@/lib/brand";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/sections/Nav";
@@ -23,7 +24,7 @@ export interface SocialImage {
 }
 
 // Visuel de partage par défaut (fichier carré existant) : dimensions réelles du fichier.
-const DEFAULT_SOCIAL_IMAGE: SocialImage = { src: "/logo-rushh-og.png", width: 365, height: 365, alt: "Rushh" };
+const DEFAULT_SOCIAL_IMAGE: SocialImage = { src: "/logo-rushh-og.png", width: 365, height: 365, alt: BRAND_NAME };
 
 export function buildMetadata({
   title,
@@ -45,7 +46,7 @@ export function buildMetadata({
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, siteName: "Rushh", locale: "fr_FR", type, images },
+    openGraph: { title, description, url, siteName: BRAND_NAME, locale: "fr_FR", type, images },
     twitter: {
       card: image ? "summary_large_image" : "summary",
       title,
@@ -63,8 +64,8 @@ export function webPageSchema({ title, description, path }: { title: string; des
     url: `${SITE}${path}`,
     description,
     inLanguage: "fr-FR",
-    isPartOf: { "@type": "WebSite", name: "Rushh", url: SITE },
-    about: { "@type": "Organization", name: "Rushh", url: SITE },
+    isPartOf: websiteRef,
+    about: orgRef,
   };
 }
 

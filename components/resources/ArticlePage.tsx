@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { orgRef } from "@/lib/brand";
 import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
@@ -102,8 +103,8 @@ export function ArticlePage({ article: a }: { article: Article }) {
     inLanguage: "fr-FR",
     datePublished: a.datePublished,
     dateModified: a.dateModified,
-    author: { "@type": "Organization", name: "Rushh", url: SITE },
-    publisher: { "@type": "Organization", name: "Rushh", url: SITE },
+    author: orgRef,
+    publisher: orgRef,
   };
   const breadcrumbSchema = {
     "@context": "https://schema.org",

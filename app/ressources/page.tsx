@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { websiteRef } from "@/lib/brand";
 import { Catalogue, type CatalogueItem } from "@/components/resources/Catalogue";
 import { JsonLd, SITE, SolShell, buildMetadata } from "@/components/solutions/kit";
 import { CATALOGUE } from "@/lib/articles/catalogue";
@@ -30,7 +31,7 @@ export default function RessourcesPage() {
     url: `${SITE}${PATH}`,
     description: DESCRIPTION,
     inLanguage: "fr-FR",
-    isPartOf: { "@type": "WebSite", name: "Rushh", url: SITE },
+    isPartOf: websiteRef,
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: items.length,

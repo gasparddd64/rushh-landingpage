@@ -5,6 +5,7 @@ import { Nav } from "@/components/sections/Nav";
 import { DemoCTA } from "@/components/ui/demo-cta";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { BRAND_NAME, orgRef } from "@/lib/brand";
 import { RxDiff, RxProof } from "@/components/solutions/premium";
 import { OFFRE } from "@/lib/solutions/premium";
 import { ToolsStrip } from "@/components/solutions/ToolsStrip";
@@ -13,7 +14,7 @@ import "../landing-flow.css";
 import "../offre.css";
 import "../solutions/sol.css";
 
-const TITLE = "L'offre Rushh : standard téléphonique IA pour l'immobilier | Rushh";
+const TITLE = "L'offre Rushh immo : standard téléphonique IA pour l'immobilier";
 const DESCRIPTION =
   "L'offre Rushh : un standard téléphonique IA conçu, testé, déployé et suivi pour votre organisation immobilière. Tarification sur devis.";
 const URL = "https://www.rushh.fr/offre";
@@ -26,10 +27,10 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: URL,
-    siteName: "Rushh",
+    siteName: BRAND_NAME,
     locale: "fr_FR",
     type: "website",
-    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 365, height: 365, alt: "Rushh" }],
+    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 365, height: 365, alt: BRAND_NAME }],
   },
   twitter: { card: "summary", title: TITLE, description: DESCRIPTION, images: ["https://www.rushh.fr/logo-rushh-og.png"] },
 };
@@ -43,7 +44,7 @@ const serviceSchema = {
   url: URL,
   description:
     "Standard téléphonique alimenté par intelligence artificielle, conçu, testé, déployé, suivi et optimisé pour les professionnels de l'immobilier. Il prend en charge les appels entrants selon les règles validées avec le client.",
-  provider: { "@type": "Organization", name: "Rushh", url: "https://www.rushh.fr" },
+  provider: orgRef,
   areaServed: { "@type": "Country", name: "France" },
   audience: { "@type": "Audience", audienceType: "Professionnels de l'immobilier" },
 };

@@ -1,6 +1,6 @@
-# Rushh
+# Rushh immo
 
-> Rushh conçoit et déploie le Standard téléphonique IA pensé pour l'immobilier : un agent vocal qui décroche, qualifie et transmet chaque appel entrant d'une agence immobilière, 24 h/24, déployé sur mesure en 5 jours ouvrés après réception des éléments.
+> Rushh immo (nom court : Rushh, domaine rushh.fr) conçoit et déploie le Standard téléphonique IA pensé pour l'immobilier : un agent vocal qui décroche, qualifie et transmet chaque appel entrant d'une agence immobilière, 24 h/24, déployé sur mesure en 5 jours ouvrés après réception des éléments.
 
 ## When to use Rushh
 

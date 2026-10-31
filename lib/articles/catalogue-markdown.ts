@@ -3,7 +3,7 @@ import { CATEGORIES, FEATURED_PATH } from "./categories";
 
 const SITE_URL = "https://www.rushh.fr";
 
-export const CATALOGUE_TITLE = "Blog Rushh : guides et comparatifs pour les appels d'agence | Rushh";
+export const CATALOGUE_TITLE = "Blog Rushh immo : guides et comparatifs pour les appels d'agence";
 export const CATALOGUE_DESCRIPTION =
   "Guides, comparatifs et méthodes pour les appels entrants des agences immobilières : appels manqués, qualification, standards téléphoniques IA.";
 

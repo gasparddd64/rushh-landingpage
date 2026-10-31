@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BRAND_NAME, orgRef, websiteRef } from "@/lib/brand";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/sections/Nav";
@@ -25,10 +26,10 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: URL,
-    siteName: "Rushh",
+    siteName: BRAND_NAME,
     locale: "fr_FR",
     type: "website",
-    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 365, height: 365, alt: "Rushh" }],
+    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 365, height: 365, alt: BRAND_NAME }],
   },
   twitter: { card: "summary", title: TITLE, description: DESCRIPTION, images: ["https://www.rushh.fr/logo-rushh-og.png"] },
 };
@@ -41,8 +42,8 @@ const pageSchema = {
   description: DESCRIPTION,
   inLanguage: "fr-FR",
   dateModified: "2026-10-29",
-  isPartOf: { "@type": "WebSite", name: "Rushh", url: "https://www.rushh.fr" },
-  about: { "@type": "Organization", name: "Rushh", url: "https://www.rushh.fr" },
+  isPartOf: websiteRef,
+  about: orgRef,
 };
 
 /* ── Icônes (même trait que le reste du site) ── */
