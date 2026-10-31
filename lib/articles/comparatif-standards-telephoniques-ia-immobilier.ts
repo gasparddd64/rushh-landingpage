@@ -21,7 +21,7 @@ export const comparatif: Article = {
   answer:
     "Il n'existe pas de meilleur standard téléphonique IA pour toutes les agences : le bon choix dépend de ce que vous voulez déléguer. Ce comparatif met côte à côte Rushh, Joe AI, Fonio, AInora et Orateur sur huit critères, à partir de leurs pages officielles consultées le 28 octobre 2026. Il ne contient ni classement ni note. Rushh convient surtout à une agence qui veut déléguer entièrement la conception et le suivi de ses appels entrants ; d'autres solutions couvrent davantage de canaux, publient leurs tarifs ou se configurent seul.",
   datePublished: "2026-10-29",
-  dateModified: "2026-10-29",
+  dateModified: "2026-10-31",
   sections: [
     {
       id: "methode",
@@ -347,6 +347,16 @@ export const comparatif: Article = {
       href: "/vs/joe-ai",
       label: "Rushh ou Joe AI",
       text: "Comparatif factuel entre deux services IA, sources datées.",
+    },
+    {
+      href: "/vs/airagent",
+      label: "Rushh ou AirAgent",
+      text: "Un agent vocal à lancer vite face à une prestation gérée.",
+    },
+    {
+      href: "/vs/vokai",
+      label: "Rushh ou VOKAI",
+      text: "Deux offres immobilières dédiées aux appels entrants.",
     },
   ],
   cta: {

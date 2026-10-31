@@ -19,13 +19,17 @@ const REQUIRED_LINKS: Record<string, string[]> = {
   "/ressources/permanence-telephonique-agence-immobiliere": ["/offre", "/demonstrations", "/solutions/transaction-immobiliere", "/solutions/gestion-locative", "/solutions/syndics", "/ressources/telesecretariat-humain-ou-ia"],
   "/ressources/appel-vendeur-estimation-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/prise-rendez-vous-ia-immobilier"],
   "/ressources/standard-telephonique-ia-apimo": ["/offre", "/integrations", "/ressources/qualification-appels-vendeurs-acquereurs"],
+  "/ressources/standard-telephonique-ia-whise": ["/offre", "/integrations", "/ressources/choisir-standard-telephonique-ia-immobilier", "/ressources/standard-telephonique-ia-apimo"],
+  "/vs/airagent": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/vs/volubilimo"],
+  "/vs/vokai": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/vs/volubilimo"],
+  "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere": ["/offre", "/demonstrations", "/ressources/cout-standard-telephonique-ia-immobilier", "/ressources/appels-manques-immobilier", "/ressources/prise-rendez-vous-ia-immobilier", "/ressources/permanence-telephonique-agence-immobiliere"],
   "/vs/volubilimo": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/ressources/prise-rendez-vous-ia-immobilier"],
 };
 
 // Pages qui citent légitimement des prix publics de concurrents (sourcés) ; les prix Rushh restent interdits partout.
 const COMPETITOR_PRICE_PAGES = new Set(["/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio"]);
 // Page pédagogique dont la simulation est chiffrée en euros FICTIFS : ni tarif Rushh ni tarif concurrent.
-const FICTIONAL_PRICE_PAGES = new Set(["/ressources/cout-standard-telephonique-ia-immobilier"]);
+const FICTIONAL_PRICE_PAGES = new Set(["/ressources/cout-standard-telephonique-ia-immobilier", "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere"]);
 
 /** Texte de ce qui concerne Rushh : tout le texte hors cellules concurrentes, plus les lignes/colonnes Rushh des tableaux. */
 function rushhText(a: Article): string {
@@ -117,8 +121,8 @@ describe.each(ARTICLES.map((a) => [a.path, a] as const))("guide %s", (path, a) =
       expect(t).toContain("Sur devis");
     } else if (FICTIONAL_PRICE_PAGES.has(path)) {
       expect(rushhText(a)).not.toMatch(/€|euros?\b/i);
-      expect(t).toMatch(/entièrement fictifs/);
-      expect(t).toMatch(/ni des tarifs de Rushh ni ceux d'un concurrent/);
+      expect(t).toMatch(/entièrement fictifs?/);
+      expect(t).toMatch(/ni des tarifs de Rushh ni (ceux d'un concurrent|des tarifs de concurrents)/);
       expect(t).toContain("sur devis");
     } else {
       expect(t).not.toMatch(/€|euros?\b/i);
@@ -188,12 +192,12 @@ describe("guide-specific requirements", () => {
 describe("catalogue /ressources (le Blog)", () => {
   const md = getMarkdownPage("/ressources")?.markdown ?? "";
 
-  it("is a known route with a Markdown mirror, one H1, and links to all thirteen publications", () => {
+  it("is a known route with a Markdown mirror, one H1, and links to all seventeen publications", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(md).toContain("# Le Blog Rushh");
-    expect(ARTICLES).toHaveLength(12);
-    expect(CATALOGUE).toHaveLength(13);
+    expect(ARTICLES).toHaveLength(16);
+    expect(CATALOGUE).toHaveLength(17);
     for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
@@ -204,7 +208,7 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(CATALOGUE.map((e) => e.path)).toContain(FEATURED_PATH);
   });
 
-  it("offers the three filters: all (13), guides (9), comparatifs (4)", () => {
+  it("offers the three filters: all (17), guides (11), comparatifs (6)", () => {
     expect(CATEGORIES.map((c) => c.label)).toEqual(["Guides & conseils", "Comparatifs"]);
     const by = (c: string) => CATALOGUE.filter((e) => e.category === c).map((e) => e.path).sort();
     expect(by("guides")).toEqual([
@@ -215,13 +219,17 @@ describe("catalogue /ressources (le Blog)", () => {
       "/ressources/permanence-telephonique-agence-immobiliere",
       "/ressources/prise-rendez-vous-ia-immobilier",
       "/ressources/qualification-appels-vendeurs-acquereurs",
+      "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere",
       "/ressources/standard-telephonique-ia-apimo",
+      "/ressources/standard-telephonique-ia-whise",
       "/ressources/telesecretariat-humain-ou-ia",
     ]);
     expect(by("comparatifs")).toEqual([
       "/comparatif/standards-telephoniques-ia-immobilier",
+      "/vs/airagent",
       "/vs/fonio",
       "/vs/joe-ai",
+      "/vs/vokai",
       "/vs/volubilimo",
     ]);
   });
@@ -281,7 +289,7 @@ describe("catalogue card titles and dates", () => {
     for (const p of ["/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/ressources/choisir-standard-telephonique-ia-immobilier", "/ressources/prise-rendez-vous-ia-immobilier", "/vs/volubilimo"]) {
       expect(published(p) > "2026-10-28", p).toBe(true);
     }
-    for (const p of ["/ressources/cout-standard-telephonique-ia-immobilier", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/appel-vendeur-estimation-immobiliere", "/ressources/standard-telephonique-ia-apimo"]) {
+    for (const p of ["/ressources/cout-standard-telephonique-ia-immobilier", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/appel-vendeur-estimation-immobiliere", "/ressources/standard-telephonique-ia-apimo", "/ressources/standard-telephonique-ia-whise", "/vs/airagent", "/vs/vokai", "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere"]) {
       expect(published(p), p).toBe("2026-10-31");
     }
   });
@@ -331,5 +339,64 @@ describe("wave 1 (Nov. 2026) guides", () => {
     expect(m && m.t === "table" && m.rows).toHaveLength(4);
     expect(m && m.t === "table" && m.head).toHaveLength(4);
     expect(allText(a)).toContain("Aucun mode n'est supérieur dans l'absolu");
+  });
+});
+
+describe("wave 2 (Nov. 2026) guides and comparisons", () => {
+  const get = (p: string) => ARTICLES.find((a) => a.path === p)!;
+  const comparisons = ["/vs/airagent", "/vs/vokai"];
+
+  it("each comparison is dated, sourced from the competitor's official site, and ranks nobody", () => {
+    for (const p of comparisons) {
+      const a = get(p);
+      expect(a.category).toBe("comparatifs");
+      expect(a.sources.some((x) => /airagent\.fr|vokai\.fr/.test(x.url)), p).toBe(true);
+      expect(allText(a), p).toContain("Consulté le 31 octobre 2026");
+      expect(allText(a), p).toContain("Aucun classement");
+      expect(allText(a), p).not.toMatch(/meilleur|numéro 1|n°\s?1|supérieur(e)? à/i);
+      expect(allText(a), p).toContain("Rushh édite cette page et en est partie prenante");
+    }
+  });
+
+  it("the comparisons recognise the competitor's real-estate offer instead of calling it generic", () => {
+    expect(allText(get("/vs/airagent"))).toContain("page consacrée à l'immobilier");
+    expect(allText(get("/vs/airagent"))).toContain("il serait inexact de le présenter comme un outil purement généraliste");
+    expect(allText(get("/vs/vokai"))).toContain("offre explicitement dédiée à l'immobilier");
+    expect(allText(get("/vs/vokai"))).toContain("Rushh ne revendique ici aucune supériorité technique");
+  });
+
+  it("the VOKAI comparison repeats none of the competitor's unverified figures or testimonials", () => {
+    const t = allText(get("/vs/vokai"));
+    expect(t).not.toMatch(/47\s?%|90 secondes|500 ms|\+150|3 000 appels|8 000/);
+  });
+
+  it("the Whise guide keeps its prudence: no official partnership, no native or certified connection, no documented resources invented", () => {
+    const a = get("/ressources/standard-telephonique-ia-whise");
+    const t = allText(a);
+    expect(t).toContain("ne se présente pas comme partenaire officiel de Whise");
+    expect(t).toContain("ne présente pas cette connexion comme native, certifiée ou prête à l'emploi");
+    expect(t).not.toMatch(/\b(est|sommes|restons)\s+(un\s+)?partenaire officiel/i);
+    expect(a.sources.map((s) => s.url)).toContain("https://www.whise.eu/fr-fr/marketplace/");
+  });
+
+  it("the profitability guide's euro example is explicit, fictional and arithmetically consistent, and promises no result", () => {
+    const a = get("/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere");
+    const t = allText(a);
+    expect(t).toContain("Exemple entièrement fictif");
+    expect(t).toContain("ne sont ni des tarifs de Rushh ni des tarifs de concurrents");
+    expect(t).toContain("Rushh ne promet aucun résultat commercial");
+    expect(Math.round((240 / 3600) * 1000) / 1000).toBe(0.067);
+    expect(3600 / 240).toBe(15);
+    expect(3600 / 5).toBe(720);
+    expect(Math.round((240 / 720) * 100) / 100).toBe(0.33);
+    expect(rushhText(a)).not.toMatch(/€|euros?\b/i);
+  });
+
+  it("the profitability guide differs in intent from the missed-calls and cost guides, and links to both", () => {
+    const a = get("/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere");
+    const links = internalLinks(a);
+    expect(links).toContain("/ressources/appels-manques-immobilier");
+    expect(links).toContain("/ressources/cout-standard-telephonique-ia-immobilier");
+    expect(a.h1).not.toBe(get("/ressources/appels-manques-immobilier").h1);
   });
 });

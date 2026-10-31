@@ -76,7 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/comparatif/standards-telephoniques-ia-immobilier',
-      lastModified: new Date('2026-10-29'),
+      lastModified: new Date('2026-10-31'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
@@ -118,6 +118,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/standard-telephonique-ia-apimo',
+      lastModified: new Date('2026-10-31'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/standard-telephonique-ia-whise',
+      lastModified: new Date('2026-10-31'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere',
+      lastModified: new Date('2026-10-31'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/vs/airagent',
+      lastModified: new Date('2026-10-31'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/vs/vokai',
       lastModified: new Date('2026-10-31'),
       changeFrequency: 'monthly',
       priority: 0.6,

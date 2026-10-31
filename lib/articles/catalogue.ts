@@ -40,11 +40,15 @@ const ORDER = [
   "/ressources/choisir-standard-telephonique-ia-immobilier",
   "/ressources/cout-standard-telephonique-ia-immobilier",
   "/ressources/standard-telephonique-ia-apimo",
+  "/ressources/standard-telephonique-ia-whise",
+  "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere",
   "/ressources/telesecretariat-humain-ou-ia",
   "/comparatif/standards-telephoniques-ia-immobilier",
   "/vs/joe-ai",
   "/vs/fonio",
   "/vs/volubilimo",
+  "/vs/airagent",
+  "/vs/vokai",
 ];
 
 function build(): CatalogueEntry[] {

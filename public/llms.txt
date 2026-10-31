@@ -45,7 +45,11 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Guide, organising a real-estate agency phone reception: https://www.rushh.fr/ressources/permanence-telephonique-agence-immobiliere
 - Guide, seller call before a valuation appointment: https://www.rushh.fr/ressources/appel-vendeur-estimation-immobiliere
 - Guide, connecting an AI phone answering service to Apimo: https://www.rushh.fr/ressources/standard-telephonique-ia-apimo
+- Guide, connecting an AI phone answering service to Whise: https://www.rushh.fr/ressources/standard-telephonique-ia-whise
+- Guide, is an AI phone answering service profitable for an agency (break-even method): https://www.rushh.fr/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere
 - Rushh vs Volubilimo (comparison, sourced and dated): https://www.rushh.fr/vs/volubilimo
+- Rushh vs AirAgent (comparison, sourced and dated): https://www.rushh.fr/vs/airagent
+- Rushh vs VOKAI (comparison, sourced and dated): https://www.rushh.fr/vs/vokai
 - Terms of sale (CGV): https://www.rushh.fr/cgv
 - Privacy: https://www.rushh.fr/privacy
 - Sitemap: https://www.rushh.fr/sitemap.xml
