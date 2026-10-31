@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { CalendlyTracking } from "@/components/CalendlyTracking";
+import { ConsentManager } from "@/components/ConsentManager";
+import { ConversionTracking } from "@/components/ConversionTracking";
 
 const inter = Plus_Jakarta_Sans({
   variable: "--font-inter",
@@ -76,6 +78,8 @@ export default function RootLayout({
     >
       <body>
         <CalendlyTracking />
+        <ConversionTracking />
+        <ConsentManager />
         {children}
       </body>
     </html>

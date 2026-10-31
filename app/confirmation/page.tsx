@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Calendar } from "lucide-react";
 import { parseConfirmationParams, type SearchParamsInput } from "@/lib/confirmation";
 import { BookingAnalytics } from "@/components/confirmation/BookingAnalytics";
+import { ConfirmationUrlCleaner } from "@/components/confirmation/ConfirmationUrlCleaner";
 
 export const metadata: Metadata = {
   title: "Confirmation de rendez-vous | Rushh",
@@ -96,10 +97,12 @@ export default async function ConfirmationPage({
         </Link>
       </div>
 
-      {data.hasBookingSignal && (
+      <ConfirmationUrlCleaner />
+
+      {data.bookingRef && (
         <BookingAnalytics
+          bookingRef={data.bookingRef}
           eventType={data.eventTypeName}
-          bookingDate={bookingDate}
           utmSource={data.utmSource}
           utmMedium={data.utmMedium}
           utmCampaign={data.utmCampaign}

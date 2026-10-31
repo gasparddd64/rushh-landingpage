@@ -9,6 +9,8 @@ export interface ConfirmationData {
   utmMedium?: string;
   utmCampaign?: string;
   hasBookingSignal: boolean;
+  /** Référence Calendly (uuid) lue dans l'URL : sert à dédupliquer, ne prouve PAS une réservation. */
+  bookingRef?: string;
 }
 
 const DEFAULT_TIMEZONE = "Europe/Paris";
@@ -117,6 +119,9 @@ export function parseConfirmationParams(params: SearchParamsInput): Confirmation
     ])
   );
 
+  const refRaw = pick(params, ["invitee_uuid", "event_uuid"]);
+  const bookingRef = refRaw && /^[A-Za-z0-9-]{8,64}$/.test(refRaw) ? refRaw : undefined;
+
   return {
     firstName,
     dateLabel,
@@ -126,5 +131,6 @@ export function parseConfirmationParams(params: SearchParamsInput): Confirmation
     utmMedium,
     utmCampaign,
     hasBookingSignal,
+    bookingRef,
   };
 }

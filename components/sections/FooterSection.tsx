@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { DemoCTA } from "@/components/ui/demo-cta";
+import { CookieSettingsButton } from "@/components/CookieSettingsButton";
 
 export function FooterSection() {
   return (
@@ -112,6 +113,7 @@ export function FooterSection() {
           <nav className="footer-legal">
             <Link href="/cgv">CGV</Link>
             <Link href="/privacy">Confidentialité</Link>
+            <CookieSettingsButton />
           </nav>
         </div>
       </div>

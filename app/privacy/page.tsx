@@ -37,7 +37,7 @@ export default function PrivacyPage() {
             <br />
             confidentialité
           </h1>
-          <p className="cgv-updated">Dernière mise à jour : 28 octobre 2026</p>
+          <p className="cgv-updated">Dernière mise à jour : 31 octobre 2026</p>
         </div>
 
         <div className="cgv-content">
@@ -70,7 +70,8 @@ export default function PrivacyPage() {
             <p>
               <strong>Traitements propres à Rushh.</strong> Rushh agit en qualité de responsable de traitement
               pour sa propre gestion commerciale, contractuelle et comptable, pour le support, pour la sécurité
-              de ses systèmes et pour le respect de ses obligations légales.
+              de ses systèmes, pour le respect de ses obligations légales et, avec votre accord, pour la mesure
+              d&apos;audience de ce site (voir « Cookies et mesure d&apos;audience »).
             </p>
           </section>
 
@@ -97,7 +98,41 @@ export default function PrivacyPage() {
           <section className="cgv-article" id="cookies">
             <h2>Cookies et mesure d&apos;audience</h2>
             <p>
-              Le site rushh.fr n&apos;utilise aucun outil de mesure d&apos;audience ni aucun cookie de suivi : il n&apos;affiche donc pas de bandeau de consentement. Les services tiers que vous choisissez d&apos;utiliser depuis le site, par exemple la réservation d&apos;une démonstration via Calendly, relèvent de leurs propres politiques de confidentialité.
+              <strong>Google Analytics 4, uniquement avec votre accord.</strong> Le site rushh.fr utilise Google
+              Analytics 4 (Google) pour mesurer sa fréquentation et savoir combien de visiteurs cliquent sur
+              « Réserver une démo » ou sur le numéro de la ligne de démonstration. Avant votre choix, aucun script ni
+              cookie Google Analytics n&apos;est chargé. Si vous acceptez, Google Analytics dépose des cookies (de type
+              <code>_ga</code> et <code>_ga_*</code>) et reçoit des informations sur votre navigation : pages
+              consultées, clics sur ces boutons, type d&apos;appareil et de navigateur, provenance de la visite. Ces
+              traitements peuvent impliquer un transfert de données hors de l&apos;Union européenne, encadré par les
+              garanties que Google met en œuvre.
+            </p>
+            <p>
+              <strong>Aucune donnée personnelle dans les événements.</strong> Rushh n&apos;envoie à Google Analytics ni
+              nom, ni adresse e-mail, ni numéro de téléphone. Les adresses de pages sont nettoyées avant envoi : les
+              informations que Calendly peut ajouter à l&apos;adresse de retour après une réservation ne sont pas
+              transmises.
+            </p>
+            <p>
+              <strong>Accepter, refuser, changer d&apos;avis.</strong> Accepter et refuser sont aussi simples l&apos;un
+              que l&apos;autre. Vous pouvez modifier votre choix à tout moment avec le bouton « Gérer les cookies » en
+              bas de chaque page : un refus ou un retrait arrête la collecte et supprime les cookies Google Analytics
+              déposés. Votre choix est mémorisé dans votre navigateur pendant 6 mois, puis la question vous est posée de
+              nouveau. Refuser n&apos;a aucune conséquence sur l&apos;utilisation du site. Avec votre accord seulement,
+              le site mémorise aussi dans votre navigateur la source de votre visite (par exemple une campagne) pendant
+              la session et un identifiant technique qui évite de compter deux fois un retour sur la page de confirmation.
+            </p>
+            <p>
+              <strong>Réservation via Calendly.</strong> Le bouton « Réserver une démo » ouvre Calendly (calendly.com)
+              dans un nouvel onglet. Calendly est un service tiers qui traite les informations saisies pour la
+              réservation selon sa propre politique de confidentialité. Rushh mesure uniquement les clics sur ce
+              bouton et sur le numéro de la ligne de démonstration, pas les réservations effectuées sur Calendly :
+              Rushh ne reçoit pas d&apos;événement de réservation dans Google Analytics. Rushh ajoute au lien des
+              paramètres indiquant la provenance de la demande (campagne d&apos;origine, ou page du site si elle est
+              inconnue) : ils ne contiennent aucune donnée personnelle et sont consultables dans Calendly. Si Calendly
+              vous renvoie vers la page de confirmation de rushh.fr, l&apos;adresse peut contenir les informations que
+              vous avez saisies : elles servent uniquement à afficher la confirmation et sont retirées de la barre
+              d&apos;adresse dès que la page est affichée.
             </p>
           </section>
 
