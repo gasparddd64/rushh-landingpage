@@ -157,6 +157,12 @@ html { overflow-x: hidden; }
   color: var(--ink);
   text-decoration: none;
 }
+.brand-immo {
+  font-size: 0.46em;
+  font-weight: inherit;
+  letter-spacing: 0;
+  margin-left: 0.28em;
+}
 .brand-logo {
   width: 36px; height: 36px;
   object-fit: contain;
@@ -4035,10 +4041,31 @@ section { position: relative; }
   pointer-events: none;
   user-select: none;
 }
+.footer-wordmark {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.2cqw;
+  container-type: inline-size;
+}
+.footer-wordmark picture { flex: 0 0 77%; }
 .footer-wordmark-img {
   width: 100%;
   height: auto;
   display: block;
+}
+/* « immo » : même police que la marque, en plus petit, aligné sur la ligne de base de « Rushh » */
+.footer-wordmark-immo {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 800;
+  font-size: 6.4cqw;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 4.9cqw;
+  background: linear-gradient(180deg, #1a6dff 0%, #5b9bff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Bottom bar */

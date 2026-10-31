@@ -29,8 +29,8 @@ export function FooterSection() {
           {/* Col 1 — Brand + tagline */}
           <div className="footer-brand-col">
             <Link href="/" className="footer-logo">
-              <img src="/logo-rushh.png" alt="Rushh" style={{ width: 32, height: 32, objectFit: "contain" }} />
-              <span>Rushh</span>
+              <img src="/logo-rushh.png" alt="Rushh immo" style={{ width: 32, height: 32, objectFit: "contain" }} />
+              <span>Rushh<span className="brand-immo">immo</span></span>
             </Link>
             <p className="footer-tagline">
               Le Standard téléphonique IA<br />
@@ -50,7 +50,7 @@ export function FooterSection() {
 
           {/* Groupes de liens */}
           <div className="footer-col">
-            <h3 className="footer-col-title">Rushh</h3>
+            <h3 className="footer-col-title">Rushh immo</h3>
             <nav className="footer-links" aria-label="Rushh">
               <Link href="/#relais">Comment ça marche</Link>
               <Link href="/#metiers">Pourquoi Rushh</Link>
@@ -101,6 +101,7 @@ export function FooterSection() {
             <source srcSet="/footer-rushh-wordmark.webp" type="image/webp" />
             <img src="/footer-rushh-wordmark.png" alt="" className="footer-wordmark-img" />
           </picture>
+          <span className="footer-wordmark-immo">immo</span>
         </div>
 
         {/* Bottom bar */}

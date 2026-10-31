@@ -384,8 +384,8 @@ export default function CGVPage() {
       <header className="nav">
         <div className="nav-inner" style={{ justifyContent: "space-between" }}>
           <Link href="/" className="brand">
-            <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
-            <span>Rushh</span>
+            <img src="/logo-rushh.png" alt="Rushh immo" className="brand-logo" />
+            <span>Rushh<span className="brand-immo">immo</span></span>
           </Link>
           <Link href="/" className="nav-link cgv-back-link">
             ← Retour au site

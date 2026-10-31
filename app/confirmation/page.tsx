@@ -49,9 +49,9 @@ export default async function ConfirmationPage({
       </svg>
 
       <div className="conf-topbar">
-        <Link href="/" className="conf-brand" aria-label="Rushh, retour à l'accueil">
+        <Link href="/" className="conf-brand" aria-label="Rushh immo, retour à l'accueil">
           <img src="/logo-rushh-icon.png" alt="" className="conf-brand-logo" />
-          <span>Rushh</span>
+          <span>Rushh<span className="brand-immo">immo</span></span>
         </Link>
       </div>
 

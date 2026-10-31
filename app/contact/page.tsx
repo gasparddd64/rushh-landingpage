@@ -21,8 +21,8 @@ export default function ContactPage() {
       <header className="nav">
         <div className="nav-inner" style={{ justifyContent: "space-between" }}>
           <Link href="/" className="brand">
-            <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
-            <span>Rushh</span>
+            <img src="/logo-rushh.png" alt="Rushh immo" className="brand-logo" />
+            <span>Rushh<span className="brand-immo">immo</span></span>
           </Link>
           <Link href="/" className="nav-link cgv-back-link">
             ← Retour au site
@@ -34,7 +34,7 @@ export default function ContactPage() {
         <div className="cgv-hero">
           <span className="section-eyebrow">Contact</span>
           <h1 className="cgv-h1">
-            Contacter <em>Rushh</em>
+            Contacter <em>Rushh immo</em>
           </h1>
         </div>
 

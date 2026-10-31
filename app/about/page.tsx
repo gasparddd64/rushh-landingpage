@@ -20,8 +20,8 @@ export default function AboutPage() {
       <header className="nav">
         <div className="nav-inner" style={{ justifyContent: "space-between" }}>
           <Link href="/" className="brand">
-            <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
-            <span>Rushh</span>
+            <img src="/logo-rushh.png" alt="Rushh immo" className="brand-logo" />
+            <span>Rushh<span className="brand-immo">immo</span></span>
           </Link>
           <Link href="/" className="nav-link cgv-back-link">
             ← Retour au site
@@ -33,7 +33,7 @@ export default function AboutPage() {
         <div className="cgv-hero">
           <span className="section-eyebrow">À propos</span>
           <h1 className="cgv-h1">
-            À propos de <em>Rushh</em>
+            À propos de <em>Rushh immo</em>
           </h1>
         </div>
 

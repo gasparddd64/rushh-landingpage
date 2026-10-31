@@ -20,8 +20,8 @@ export function Nav() {
         <div className="nav-inner">
           {/* Logo */}
           <Link href="/" className="brand">
-            <img src="/logo-rushh.png" alt="Rushh" className="brand-logo" />
-            <span>Rushh</span>
+            <img src="/logo-rushh.png" alt="Rushh immo" className="brand-logo" />
+            <span>Rushh<span className="brand-immo">immo</span></span>
           </Link>
 
           {/* Center links */}
