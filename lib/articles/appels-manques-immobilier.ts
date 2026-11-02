@@ -19,7 +19,7 @@ export const appelsManques: Article = {
   answer:
     "Pour réduire les appels manqués, mesurez-les d'abord : exportez le journal d'appels de votre ligne, séparez les appels décrochés des appels manqués, classez les motifs que vous connaissez, désignez qui rappelle et dans quel délai, puis comparez la même période après chaque changement d'organisation. Un appel manqué n'est pas automatiquement une opportunité perdue : c'est une demande dont il faut vérifier l'issue.",
   datePublished: "2026-10-28",
-  dateModified: "2026-10-29",
+  dateModified: "2026-11-02",
   sections: [
     {
       id: "pourquoi",
@@ -250,6 +250,11 @@ export const appelsManques: Article = {
     ],
   },
   related: [
+    {
+      href: "/ressources/repondeur-ou-standard-ia-agence-immobiliere",
+      label: "Répondeur ou standard IA",
+      text: "Ce que vit l'appelant selon le mode de réponse.",
+    },
     {
       href: "/ressources/telesecretariat-humain-ou-ia",
       label: "Télésecrétariat humain ou standard téléphonique IA",

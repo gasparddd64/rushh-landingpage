@@ -20,8 +20,13 @@ import { appelsSoirWeekEnd } from "./appels-agence-immobiliere-soir-week-end";
 import { qualifierLocatairesBailleurs } from "./qualifier-appels-locataires-bailleurs";
 import type { Article } from "./types";
 
-export const ARTICLES: Article[] = [appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs];
+import { standardSyndicUrgents } from "./standard-syndic-appels-urgents";
+import { standardIaAgenda } from "./standard-ia-google-agenda-outlook-immobilier";
+import { standardIaRgpd } from "./standard-telephonique-ia-immobilier-rgpd";
+import { repondeurOuStandardIa } from "./repondeur-ou-standard-ia-agence-immobiliere";
 
-export { appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs };
+export const ARTICLES: Article[] = [appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs, standardSyndicUrgents, standardIaAgenda, standardIaRgpd, repondeurOuStandardIa];
+
+export { appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs, standardSyndicUrgents, standardIaAgenda, standardIaRgpd, repondeurOuStandardIa };
 export * from "./types";
 export * from "./categories";

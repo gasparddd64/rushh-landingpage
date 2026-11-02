@@ -51,6 +51,10 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Guide, answering agency calls in the evening and at weekends (hourly matrix): https://www.rushh.fr/ressources/appels-agence-immobiliere-soir-week-end
 - Guide, qualifying tenant and landlord calls in rental management: https://www.rushh.fr/ressources/qualifier-appels-locataires-bailleurs
 - Guide, is an AI phone answering service profitable for an agency (break-even method): https://www.rushh.fr/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere
+- Guide, handling urgent calls for a property-management (syndic) firm: priority, transmission and escalation matrix: https://www.rushh.fr/ressources/standard-syndic-appels-urgents
+- Guide, AI phone answering with Google Calendar and Outlook for real-estate appointments: https://www.rushh.fr/ressources/standard-ia-google-agenda-outlook-immobilier
+- Guide, AI phone answering and GDPR: eight questions to ask before deploying: https://www.rushh.fr/ressources/standard-telephonique-ia-immobilier-rgpd
+- Guide, voicemail or AI phone answering for a real-estate agency: https://www.rushh.fr/ressources/repondeur-ou-standard-ia-agence-immobiliere
 - Rushh vs Volubilimo (comparison, sourced and dated): https://www.rushh.fr/vs/volubilimo
 - Rushh vs AirAgent (comparison, sourced and dated): https://www.rushh.fr/vs/airagent
 - Rushh vs VOKAI (comparison, sourced and dated): https://www.rushh.fr/vs/vokai

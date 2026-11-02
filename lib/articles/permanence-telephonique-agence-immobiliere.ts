@@ -218,6 +218,11 @@ export const permanenceTelephonique: Article = {
   },
   related: [
     {
+      href: "/ressources/standard-syndic-appels-urgents",
+      label: "Appels urgents d'un syndic",
+      text: "Une matrice de priorité, de transmission et d'escalade.",
+    },
+    {
       href: "/solutions/transaction-immobiliere",
       label: "Standard pour la transaction",
       text: "Estimations et visites pendant que l'équipe est sur le terrain.",

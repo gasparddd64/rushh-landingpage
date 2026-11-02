@@ -19,7 +19,7 @@ export const telesecretariat: Article = {
   answer:
     "Il n'existe pas de meilleur choix universel. Un télésecrétariat humain convient quand les échanges demandent de la nuance. Un logiciel IA à configurer convient si vous voulez piloter vous-même et avez le temps de le maintenir. Un service IA pris en charge, comme celui de Rushh, convient si vous voulez déléguer la conception et le suivi. Beaucoup d'agences finiront par combiner humain et IA.",
   datePublished: "2026-10-28",
-  dateModified: "2026-10-29",
+  dateModified: "2026-11-02",
   sections: [
     {
       id: "trois-modeles",
@@ -261,6 +261,11 @@ export const telesecretariat: Article = {
     ],
   },
   related: [
+    {
+      href: "/ressources/standard-telephonique-ia-immobilier-rgpd",
+      label: "Standard IA et RGPD",
+      text: "Huit questions à poser avant de déployer.",
+    },
     {
       href: "/ressources/appels-manques-immobilier",
       label: "Appels manqués en agence immobilière",

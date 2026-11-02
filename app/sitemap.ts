@@ -58,13 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/appels-manques-immobilier',
-      lastModified: new Date('2026-10-28'),
+      lastModified: new Date('2026-11-02'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: 'https://www.rushh.fr/ressources/telesecretariat-humain-ou-ia',
-      lastModified: new Date('2026-10-28'),
+      lastModified: new Date('2026-11-02'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -94,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/prise-rendez-vous-ia-immobilier',
-      lastModified: new Date('2026-10-29'),
+      lastModified: new Date('2026-11-02'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -166,6 +166,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/qualifier-appels-locataires-bailleurs',
+      lastModified: new Date('2026-11-02'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/standard-syndic-appels-urgents',
+      lastModified: new Date('2026-11-02'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/standard-ia-google-agenda-outlook-immobilier',
+      lastModified: new Date('2026-11-02'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/standard-telephonique-ia-immobilier-rgpd',
+      lastModified: new Date('2026-11-02'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/repondeur-ou-standard-ia-agence-immobiliere',
       lastModified: new Date('2026-11-02'),
       changeFrequency: 'monthly',
       priority: 0.6,

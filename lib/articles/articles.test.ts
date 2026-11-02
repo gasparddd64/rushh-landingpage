@@ -27,6 +27,10 @@ const REQUIRED_LINKS: Record<string, string[]> = {
   "/ressources/filtrer-demarchage-telephonique-agence-immobiliere": ["/offre", "/demonstrations", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/choisir-standard-telephonique-ia-immobilier"],
   "/ressources/appels-agence-immobiliere-soir-week-end": ["/offre", "/demonstrations", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/renvoi-appel-ou-decroche-ia-immobilier", "/ressources/prise-rendez-vous-ia-immobilier"],
   "/ressources/qualifier-appels-locataires-bailleurs": ["/offre", "/demonstrations", "/solutions/gestion-locative", "/integrations", "/ressources/permanence-telephonique-agence-immobiliere"],
+  "/ressources/standard-syndic-appels-urgents": ["/offre", "/demonstrations", "/solutions/syndics", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/standard-telephonique-ia-immobilier-rgpd"],
+  "/ressources/standard-ia-google-agenda-outlook-immobilier": ["/offre", "/demonstrations", "/integrations", "/ressources/prise-rendez-vous-ia-immobilier"],
+  "/ressources/standard-telephonique-ia-immobilier-rgpd": ["/offre", "/demonstrations", "/privacy"],
+  "/ressources/repondeur-ou-standard-ia-agence-immobiliere": ["/offre", "/demonstrations", "/ressources/appels-manques-immobilier", "/ressources/standard-telephonique-ia-immobilier-rgpd"],
   "/vs/volubilimo": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/ressources/prise-rendez-vous-ia-immobilier"],
 };
 
@@ -196,12 +200,12 @@ describe("guide-specific requirements", () => {
 describe("catalogue /ressources (le Blog)", () => {
   const md = getMarkdownPage("/ressources")?.markdown ?? "";
 
-  it("is a known route with a Markdown mirror, one H1, and links to all twenty-one publications", () => {
+  it("is a known route with a Markdown mirror, one H1, and links to all twenty-five publications", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(md).toContain("# Le Blog Rushh");
-    expect(ARTICLES).toHaveLength(20);
-    expect(CATALOGUE).toHaveLength(21);
+    expect(ARTICLES).toHaveLength(24);
+    expect(CATALOGUE).toHaveLength(25);
     for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
@@ -212,7 +216,7 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(CATALOGUE.map((e) => e.path)).toContain(FEATURED_PATH);
   });
 
-  it("offers the three filters: all (21), guides (15), comparatifs (6)", () => {
+  it("offers the three filters: all (25), guides (19), comparatifs (6)", () => {
     expect(CATEGORIES.map((c) => c.label)).toEqual(["Guides & conseils", "Comparatifs"]);
     const by = (c: string) => CATALOGUE.filter((e) => e.category === c).map((e) => e.path).sort();
     expect(by("guides")).toEqual([
@@ -228,7 +232,11 @@ describe("catalogue /ressources (le Blog)", () => {
       "/ressources/qualifier-appels-locataires-bailleurs",
       "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere",
       "/ressources/renvoi-appel-ou-decroche-ia-immobilier",
+      "/ressources/repondeur-ou-standard-ia-agence-immobiliere",
+      "/ressources/standard-ia-google-agenda-outlook-immobilier",
+      "/ressources/standard-syndic-appels-urgents",
       "/ressources/standard-telephonique-ia-apimo",
+      "/ressources/standard-telephonique-ia-immobilier-rgpd",
       "/ressources/standard-telephonique-ia-whise",
       "/ressources/telesecretariat-humain-ou-ia",
     ]);
@@ -300,7 +308,7 @@ describe("catalogue card titles and dates", () => {
     for (const p of ["/ressources/cout-standard-telephonique-ia-immobilier", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/appel-vendeur-estimation-immobiliere", "/ressources/standard-telephonique-ia-apimo", "/ressources/standard-telephonique-ia-whise", "/vs/airagent", "/vs/vokai", "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere"]) {
       expect(published(p), p).toBe("2026-10-31");
     }
-    for (const p of ["/ressources/renvoi-appel-ou-decroche-ia-immobilier", "/ressources/filtrer-demarchage-telephonique-agence-immobiliere", "/ressources/appels-agence-immobiliere-soir-week-end", "/ressources/qualifier-appels-locataires-bailleurs"]) {
+    for (const p of ["/ressources/renvoi-appel-ou-decroche-ia-immobilier", "/ressources/filtrer-demarchage-telephonique-agence-immobiliere", "/ressources/appels-agence-immobiliere-soir-week-end", "/ressources/qualifier-appels-locataires-bailleurs", "/ressources/standard-syndic-appels-urgents", "/ressources/standard-ia-google-agenda-outlook-immobilier", "/ressources/standard-telephonique-ia-immobilier-rgpd", "/ressources/repondeur-ou-standard-ia-agence-immobiliere"]) {
       expect(published(p), p).toBe("2026-11-02");
     }
   });
@@ -460,5 +468,51 @@ describe("wave 3 (Nov. 2026) guides", () => {
       expect(internalLinks(get(p)), p).toContain("/ressources/permanence-telephonique-agence-immobiliere");
       expect(get(p).h1, p).not.toBe(get("/ressources/permanence-telephonique-agence-immobiliere").h1);
     }
+  });
+});
+
+describe("wave 4 (Nov. 2026) guides", () => {
+  const get = (p: string) => ARTICLES.find((a) => a.path === p)!;
+  const tables = (a: Article) => a.sections.flatMap((s) => s.blocks).filter((b) => b.t === "table");
+
+  it("the syndic guide has a six-row, five-column priority matrix and never lets the AI diagnose", () => {
+    const a = get("/ressources/standard-syndic-appels-urgents");
+    const m = tables(a)[0];
+    expect(m.t === "table" && m.rows).toHaveLength(6);
+    expect(m.t === "table" && m.head).toHaveLength(5);
+    expect(allText(a)).toContain("Il ne diagnostique pas");
+    expect(allText(a)).toContain("le syndic ou son astreinte qualifie et décide");
+    expect(a.sources.map((s) => s.url).some((u) => u.includes("anil.org"))).toBe(true);
+  });
+
+  it("the calendar guide describes a six-step journey, names both providers' official docs and promises no unconfirmed appointment", () => {
+    const a = get("/ressources/standard-ia-google-agenda-outlook-immobilier");
+    const tree = a.sections.flatMap((s) => s.blocks).find((b) => b.t === "ol");
+    expect(tree && tree.t === "ol" && tree.items).toHaveLength(6);
+    const urls = a.sources.map((s) => s.url);
+    expect(urls.some((u) => u.includes("developers.google.com"))).toBe(true);
+    expect(urls.some((u) => u.includes("learn.microsoft.com"))).toBe(true);
+    expect(allText(a)).toContain("rendez-vous n'est annoncé comme pris que lorsqu'un créneau a été confirmé");
+    expect(allText(a)).toContain("Aucune connexion n'est « native »");
+  });
+
+  it("the GDPR guide lists eight questions, cites official sources, and promises no automatic compliance or legal advice", () => {
+    const a = get("/ressources/standard-telephonique-ia-immobilier-rgpd");
+    const m = tables(a)[0];
+    expect(m.t === "table" && m.rows).toHaveLength(8);
+    const urls = a.sources.map((s) => s.url);
+    expect(urls.some((u) => u.includes("cnil.fr"))).toBe(true);
+    expect(urls.some((u) => u.includes("eur-lex.europa.eu"))).toBe(true);
+    expect(allText(a)).toContain("Aucun outil ne rend une agence conforme automatiquement");
+    expect(allText(a)).toContain("pas de conseil juridique personnalisé");
+  });
+
+  it("the voicemail guide compares three modes without any figure and differs from the missed-calls guide", () => {
+    const a = get("/ressources/repondeur-ou-standard-ia-agence-immobiliere");
+    const m = tables(a)[0];
+    expect(m.t === "table" && m.head).toHaveLength(4);
+    expect(allText(a)).toContain("aucun taux de messages laissés");
+    expect(a.h1).not.toBe(get("/ressources/appels-manques-immobilier").h1);
+    expect(internalLinks(a)).toContain("/ressources/appels-manques-immobilier");
   });
 });

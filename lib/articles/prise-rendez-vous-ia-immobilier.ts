@@ -19,7 +19,7 @@ export const priseRendezVous: Article = {
   answer:
     "Un standard téléphonique IA peut recevoir l'appel, comprendre la demande, recueillir les informations utiles et, si les règles et l'agenda le permettent, enregistrer un rendez-vous. Sans agenda accessible ni créneau fiable, il doit présenter la demande comme « à confirmer » et la transmettre à l'équipe, sans inventer de réservation.",
   datePublished: "2026-10-29",
-  dateModified: "2026-10-29",
+  dateModified: "2026-11-02",
   sections: [
     {
       id: "contexte",
@@ -198,6 +198,11 @@ export const priseRendezVous: Article = {
     ],
   },
   related: [
+    {
+      href: "/ressources/standard-ia-google-agenda-outlook-immobilier",
+      label: "Standard IA avec Google Agenda et Outlook",
+      text: "Préparer son agenda et suivre le parcours jusqu'au rendez-vous.",
+    },
     {
       href: "/ressources/qualification-appels-vendeurs-acquereurs",
       label: "Qualifier les appels vendeurs et acquéreurs",
