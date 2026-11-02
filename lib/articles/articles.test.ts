@@ -23,6 +23,10 @@ const REQUIRED_LINKS: Record<string, string[]> = {
   "/vs/airagent": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/vs/volubilimo"],
   "/vs/vokai": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/vs/volubilimo"],
   "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere": ["/offre", "/demonstrations", "/ressources/cout-standard-telephonique-ia-immobilier", "/ressources/appels-manques-immobilier", "/ressources/prise-rendez-vous-ia-immobilier", "/ressources/permanence-telephonique-agence-immobiliere"],
+  "/ressources/renvoi-appel-ou-decroche-ia-immobilier": ["/offre", "/demonstrations", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/appels-agence-immobiliere-soir-week-end", "/ressources/choisir-standard-telephonique-ia-immobilier"],
+  "/ressources/filtrer-demarchage-telephonique-agence-immobiliere": ["/offre", "/demonstrations", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/choisir-standard-telephonique-ia-immobilier"],
+  "/ressources/appels-agence-immobiliere-soir-week-end": ["/offre", "/demonstrations", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/renvoi-appel-ou-decroche-ia-immobilier", "/ressources/prise-rendez-vous-ia-immobilier"],
+  "/ressources/qualifier-appels-locataires-bailleurs": ["/offre", "/demonstrations", "/solutions/gestion-locative", "/integrations", "/ressources/permanence-telephonique-agence-immobiliere"],
   "/vs/volubilimo": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/ressources/prise-rendez-vous-ia-immobilier"],
 };
 
@@ -192,12 +196,12 @@ describe("guide-specific requirements", () => {
 describe("catalogue /ressources (le Blog)", () => {
   const md = getMarkdownPage("/ressources")?.markdown ?? "";
 
-  it("is a known route with a Markdown mirror, one H1, and links to all seventeen publications", () => {
+  it("is a known route with a Markdown mirror, one H1, and links to all twenty-one publications", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(md).toContain("# Le Blog Rushh");
-    expect(ARTICLES).toHaveLength(16);
-    expect(CATALOGUE).toHaveLength(17);
+    expect(ARTICLES).toHaveLength(20);
+    expect(CATALOGUE).toHaveLength(21);
     for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
@@ -208,18 +212,22 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(CATALOGUE.map((e) => e.path)).toContain(FEATURED_PATH);
   });
 
-  it("offers the three filters: all (17), guides (11), comparatifs (6)", () => {
+  it("offers the three filters: all (21), guides (15), comparatifs (6)", () => {
     expect(CATEGORIES.map((c) => c.label)).toEqual(["Guides & conseils", "Comparatifs"]);
     const by = (c: string) => CATALOGUE.filter((e) => e.category === c).map((e) => e.path).sort();
     expect(by("guides")).toEqual([
       "/ressources/appel-vendeur-estimation-immobiliere",
+      "/ressources/appels-agence-immobiliere-soir-week-end",
       "/ressources/appels-manques-immobilier",
       "/ressources/choisir-standard-telephonique-ia-immobilier",
       "/ressources/cout-standard-telephonique-ia-immobilier",
+      "/ressources/filtrer-demarchage-telephonique-agence-immobiliere",
       "/ressources/permanence-telephonique-agence-immobiliere",
       "/ressources/prise-rendez-vous-ia-immobilier",
       "/ressources/qualification-appels-vendeurs-acquereurs",
+      "/ressources/qualifier-appels-locataires-bailleurs",
       "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere",
+      "/ressources/renvoi-appel-ou-decroche-ia-immobilier",
       "/ressources/standard-telephonique-ia-apimo",
       "/ressources/standard-telephonique-ia-whise",
       "/ressources/telesecretariat-humain-ou-ia",
@@ -291,6 +299,9 @@ describe("catalogue card titles and dates", () => {
     }
     for (const p of ["/ressources/cout-standard-telephonique-ia-immobilier", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/appel-vendeur-estimation-immobiliere", "/ressources/standard-telephonique-ia-apimo", "/ressources/standard-telephonique-ia-whise", "/vs/airagent", "/vs/vokai", "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere"]) {
       expect(published(p), p).toBe("2026-10-31");
+    }
+    for (const p of ["/ressources/renvoi-appel-ou-decroche-ia-immobilier", "/ressources/filtrer-demarchage-telephonique-agence-immobiliere", "/ressources/appels-agence-immobiliere-soir-week-end", "/ressources/qualifier-appels-locataires-bailleurs"]) {
+      expect(published(p), p).toBe("2026-11-02");
     }
   });
 });
@@ -398,5 +409,56 @@ describe("wave 2 (Nov. 2026) guides and comparisons", () => {
     expect(links).toContain("/ressources/appels-manques-immobilier");
     expect(links).toContain("/ressources/cout-standard-telephonique-ia-immobilier");
     expect(a.h1).not.toBe(get("/ressources/appels-manques-immobilier").h1);
+  });
+});
+
+describe("wave 3 (Nov. 2026) guides", () => {
+  const get = (p: string) => ARTICLES.find((a) => a.path === p)!;
+  const tables = (a: Article) => a.sections.flatMap((s) => s.blocks).filter((b) => b.t === "table");
+
+  it("the forwarding guide holds a real five-question decision tree and a situation table, and invents no operator feature", () => {
+    const a = get("/ressources/renvoi-appel-ou-decroche-ia-immobilier");
+    const tree = a.sections.flatMap((s) => s.blocks).find((b) => b.t === "ol");
+    expect(tree && tree.t === "ol" && tree.items).toHaveLength(5);
+    expect(tables(a)[0].t === "table" && tables(a)[0].head).toEqual(["Situation", "Mode conseillé", "Réglage à demander", "Point de vigilance"]);
+    expect(allText(a)).toContain("Rushh n'en présume aucune");
+    expect(a.sources.map((s) => s.url)).toContain("https://assistance.free.fr/articles/1755");
+  });
+
+  it("the solicitation guide promises no perfect filtering and keeps the doubt rule", () => {
+    const a = get("/ressources/filtrer-demarchage-telephonique-agence-immobiliere");
+    const t = allText(a);
+    expect(t).toContain("Aucun filtre n'est parfait");
+    expect(t).toContain("La règle du doute");
+    expect(t).toContain("Cas limites fictifs");
+    const profiles = tables(a)[0];
+    expect(profiles.t === "table" && profiles.rows).toHaveLength(5);
+  });
+
+  it("the evening/weekend guide has a five-slot, four-column hourly matrix and states the 24/7 availability", () => {
+    const a = get("/ressources/appels-agence-immobiliere-soir-week-end");
+    const m = tables(a)[0];
+    expect(m.t === "table" && m.rows).toHaveLength(5);
+    expect(m.t === "table" && m.head).toHaveLength(4);
+    expect(allText(a)).toContain("24 h/24 et 7 j/7");
+    expect(allText(a)).toContain("ne diagnostique pas");
+  });
+
+  it("the tenant/landlord guide lists seven reasons, cites the decree on rental files, and gives no legal advice", () => {
+    const a = get("/ressources/qualifier-appels-locataires-bailleurs");
+    const m = tables(a)[0];
+    expect(m.t === "table" && m.rows).toHaveLength(7);
+    expect(m.t === "table" && m.head).toHaveLength(5);
+    expect(allText(a)).toContain("décret n° 2015-1437 du 5 novembre 2015");
+    expect(allText(a)).toContain("Pas d'avis juridique");
+    expect(allText(a)).toContain("Pas de pièces de dossier par téléphone");
+    expect(a.sources.map((s) => s.url).some((u) => u.includes("anil.org"))).toBe(true);
+  });
+
+  it("the four guides each differ from the permanence guide and link to it", () => {
+    for (const p of ["/ressources/renvoi-appel-ou-decroche-ia-immobilier", "/ressources/filtrer-demarchage-telephonique-agence-immobiliere", "/ressources/appels-agence-immobiliere-soir-week-end", "/ressources/qualifier-appels-locataires-bailleurs"]) {
+      expect(internalLinks(get(p)), p).toContain("/ressources/permanence-telephonique-agence-immobiliere");
+      expect(get(p).h1, p).not.toBe(get("/ressources/permanence-telephonique-agence-immobiliere").h1);
+    }
   });
 });

@@ -106,7 +106,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/permanence-telephonique-agence-immobiliere',
-      lastModified: new Date('2026-10-31'),
+      lastModified: new Date('2026-11-02'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -143,6 +143,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://www.rushh.fr/vs/vokai',
       lastModified: new Date('2026-10-31'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/renvoi-appel-ou-decroche-ia-immobilier',
+      lastModified: new Date('2026-11-02'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/filtrer-demarchage-telephonique-agence-immobiliere',
+      lastModified: new Date('2026-11-02'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/appels-agence-immobiliere-soir-week-end',
+      lastModified: new Date('2026-11-02'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/qualifier-appels-locataires-bailleurs',
+      lastModified: new Date('2026-11-02'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },

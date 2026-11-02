@@ -18,7 +18,7 @@ export const permanenceTelephonique: Article = {
   answer:
     "Une permanence téléphonique efficace commence par des décisions, pas par un outil : quels appels traiter, à quelles heures, dans quel ordre de priorité, qui prévenir et comment transmettre. Ces règles s'appliquent ensuite au mode retenu : équipe interne, prestataire humain ou standard IA. Aucun mode n'est supérieur dans l'absolu, et beaucoup d'agences en combinent plusieurs.",
   datePublished: "2026-10-31",
-  dateModified: "2026-10-31",
+  dateModified: "2026-11-02",
   sections: [
     {
       id: "urgent",
@@ -231,6 +231,16 @@ export const permanenceTelephonique: Article = {
       href: "/solutions/syndics",
       label: "Standard pour les syndics",
       text: "Messages et escalade définis par le syndic.",
+    },
+    {
+      href: "/ressources/renvoi-appel-ou-decroche-ia-immobilier",
+      label: "Renvoi d'appel ou décrochage direct",
+      text: "Choisir qui décroche en premier.",
+    },
+    {
+      href: "/ressources/appels-agence-immobiliere-soir-week-end",
+      label: "Appels le soir et le week-end",
+      text: "La matrice horaire hors horaires d'ouverture.",
     },
   ],
   cta: {
