@@ -13,12 +13,12 @@ export const vsAirAgent: Article = {
   },
   title: "Rushh ou AirAgent : comparer pour une agence immobilière",
   description:
-    "AirAgent ou Rushh pour les appels d'une agence immobilière : deux façons d'équiper une agence, et comment choisir.",
+    "AirAgent ou Rushh pour les appels d'une agence immobilière : accompagnement, connexions et suivi à comparer.",
   shortTitle: "Rushh ou AirAgent : que choisir ?",
-  summary: "Deux façons d'équiper une agence pour ses appels.",
+  summary: "Accompagnement, connexions et suivi : les périmètres à comparer pour votre agence.",
   h1: "Rushh ou AirAgent : quelle solution pour les appels d'une agence immobilière ?",
   answer:
-    "AirAgent et Rushh proposent chacun une offre pour les appels des agences immobilières ; elles diffèrent surtout par la façon de démarrer et de faire évoluer le standard.",
+    "AirAgent et Rushh proposent chacun une offre pour les appels des agences immobilières ; comparez le périmètre de configuration, de connexion et de suivi proposé.",
   datePublished: "2026-10-31",
   dateModified: "2026-11-03",
   intro: [
@@ -28,7 +28,7 @@ export const vsAirAgent: Article = {
     },
     {
       "t": "p",
-      "text": "Ils diffèrent surtout par la façon de démarrer et de faire évoluer le standard."
+      "text": "Comparez les modalités de prise en charge et leur adaptation aux besoins de votre agence."
     }
   ],
   sections: [
@@ -42,24 +42,24 @@ export const vsAirAgent: Article = {
         },
         {
           "t": "p",
-          "text": "C'est une offre à regarder si vous cherchez un outil que votre équipe pilote elle-même."
+          "text": "AirAgent présente aussi une [configuration par ses experts](https://airagent.fr/alternative-a-ringcentral/). La configuration autonome n'est donc pas une obligation pour le client."
         }
       ]
     },
     {
       "id": "criteres",
-      "h2": "Deux façons de démarrer",
+      "h2": "Les périmètres à comparer",
       "blocks": [
         {
           "t": "ul",
           "items": [
-            "Démarrer vite, en autonomie : l'agence configure, teste et ajuste ses scénarios, avec l'accompagnement que le fournisseur propose.",
-            "Déléguer : un prestataire conçoit, configure, teste et suit le standard."
+            "Mise en place : qui conçoit les scénarios immobiliers, réalise les connexions et valide les tests avec l'agence ?",
+            "Suivi : qui ajuste les règles, avec quel accompagnement et dans quel périmètre convenu ?"
           ]
         },
         {
           "t": "statement",
-          "text": "Aucune des deux n'est meilleure en soi : tout dépend du temps que votre équipe souhaite y consacrer."
+          "text": "Comparez ces éléments sur votre organisation et sur les prestations effectivement proposées."
         }
       ]
     },
@@ -69,11 +69,11 @@ export const vsAirAgent: Article = {
       "blocks": [
         {
           "t": "p",
-          "text": "Une agence veut distinguer les appels de gestion locative. Avec un outil à piloter soi-même, quelqu'un de l'équipe crée le nouveau scénario."
+          "text": "Une agence veut distinguer les appels de gestion locative. Elle demande à chaque prestataire comment ce scénario sera conçu, testé puis ajusté."
         },
         {
           "t": "p",
-          "text": "En [prestation gérée](/ressources/choisir-standard-telephonique-ia-immobilier), l'agence décrit le besoin et le prestataire l'intègre."
+          "text": "Chez Rushh, l'agence décrit le besoin et notre équipe prend en charge le scénario et ses tests. Chez AirAgent, elle vérifie le périmètre de l'accompagnement proposé."
         }
       ]
     },
@@ -105,7 +105,7 @@ export const vsAirAgent: Article = {
         },
         {
           "t": "button",
-          "label": "Réserver une démonstration",
+          "label": "Tester le standard par téléphone",
           "href": "/demonstrations"
         }
       ]

@@ -53,7 +53,7 @@ export const vsJoeAi: Article = {
         {
           "t": "ul",
           "items": [
-            "**Les canaux dont vous avez besoin :** le téléphone seul, ou aussi la messagerie et le site web ?",
+            "**Les canaux dont vous avez besoin :** Rushh traite les appels entrants avec rendez-vous, transferts et SMS ou e-mails automatiques selon les scénarios. Joe AI propose aussi des canaux conversationnels comme la messagerie et le site web.",
             "**Le suivi des demandes :** comment retrouvez-vous chaque demande, avec son résumé et son statut, après l'appel ?",
             "**Qui s'occupe de la technique :** configuration, connexions, tests, ajustements : l'agence, le fournisseur, ou les deux ?"
           ]
@@ -96,7 +96,7 @@ export const vsJoeAi: Article = {
         },
         {
           "t": "button",
-          "label": "Réserver une démonstration",
+          "label": "Tester le standard par téléphone",
           "href": "/demonstrations"
         }
       ]

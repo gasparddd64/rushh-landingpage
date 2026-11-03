@@ -63,7 +63,7 @@ Le Standard Rushh n'est pas un logiciel à configurer soi-même : une équipe co
 
 ## Intégrations
 
-Rushh s'intègre aux outils déjà utilisés par l'agence : Google Calendar, Outlook, Apimo, Whise. Voir [/integrations](${SITE_URL}/integrations) pour le détail des intégrations disponibles.
+Rushh connecte vos agendas et réalise des connexions personnalisées avec vos logiciels immobiliers, comme Apimo ou Whise, lorsque les API et les autorisations nécessaires sont disponibles. Voir [/integrations](${SITE_URL}/integrations) pour le détail des intégrations disponibles.
 
 ## Ce que disent les agences
 
@@ -167,7 +167,13 @@ Pour toute question sur l'hébergement des données et sur les sous-traitants in
 
 ## Cookies et mesure d'audience
 
-Le site rushh.fr n'utilise aucun outil de mesure d'audience ni aucun cookie de suivi : il n'affiche donc pas de bandeau de consentement. Les services tiers que vous choisissez d'utiliser depuis le site, par exemple la réservation d'une démonstration via Calendly, relèvent de leurs propres politiques de confidentialité.
+Google Analytics 4, uniquement avec votre accord. Le site rushh.fr utilise Google Analytics 4 (Google) pour mesurer sa fréquentation et savoir combien de visiteurs cliquent sur « Réserver une démo » ou sur le numéro de la ligne de démonstration. Avant votre choix, aucun script ni cookie Google Analytics n'est chargé. Si vous acceptez, Google Analytics dépose des cookies (de type _ga et _ga_*) et reçoit des informations sur votre navigation : pages consultées, clics sur ces boutons, type d'appareil et de navigateur, provenance de la visite. Ces traitements peuvent impliquer un transfert de données hors de l'Union européenne, encadré par les garanties que Google met en œuvre.
+
+Aucune donnée personnelle dans les événements. Rushh n'envoie à Google Analytics ni nom, ni adresse e-mail, ni numéro de téléphone. Les adresses de pages sont nettoyées avant envoi : les informations que Calendly peut ajouter à l'adresse de retour après une réservation ne sont pas transmises.
+
+Accepter, refuser, changer d'avis. Accepter et refuser sont aussi simples l'un que l'autre. Vous pouvez modifier votre choix à tout moment avec le bouton « Gérer les cookies » en bas de chaque page : un refus ou un retrait arrête la collecte et supprime les cookies Google Analytics déposés. Votre choix est mémorisé dans votre navigateur pendant 6 mois, puis la question vous est posée de nouveau. Refuser n'a aucune conséquence sur l'utilisation du site. Avec votre accord seulement, le site mémorise aussi dans votre navigateur la source de votre visite (par exemple une campagne) pendant la session et un identifiant technique qui évite de compter deux fois un retour sur la page de confirmation.
+
+Réservation via Calendly. Le bouton « Réserver une démo » ouvre Calendly (calendly.com) dans un nouvel onglet. Calendly est un service tiers qui traite les informations saisies pour la réservation selon sa propre politique de confidentialité. Rushh mesure uniquement les clics sur ce bouton et sur le numéro de la ligne de démonstration, pas les réservations effectuées sur Calendly : Rushh ne reçoit pas d'événement de réservation dans Google Analytics. Rushh ajoute au lien des paramètres indiquant la provenance de la demande (campagne d'origine, ou page du site si elle est inconnue) : ils ne contiennent aucune donnée personnelle et sont consultables dans Calendly. Si Calendly vous renvoie vers la page de confirmation de rushh.fr, l'adresse peut contenir les informations que vous avez saisies : elles servent uniquement à afficher la confirmation et sont retirées de la barre d'adresse dès que la page est affichée.
 
 ## Vos droits
 
@@ -256,14 +262,14 @@ Pour aller plus loin : [Intégrations](${SITE_URL}/integrations) · [Comparatif 
     title: "Intégrations CRM immobiliers et API | Rushh immo",
     markdown: `# Intégrations & ressources techniques — Rushh
 
-Rushh s'intègre à l'environnement déjà utilisé par l'agence immobilière, sans changer ses habitudes de travail.
+Rushh réalise des connexions personnalisées avec vos logiciels immobiliers lorsque les API et les autorisations nécessaires sont disponibles.
 
 ## Intégrations disponibles
 
 - **Google Calendar** — synchronisation des rendez-vous pris par le Standard Rushh.
 - **Outlook** — synchronisation des rendez-vous pris par le Standard Rushh.
-- **Apimo** — transmission des fiches prospects et des rendez-vous au logiciel métier immobilier Apimo.
-- **Whise** — transmission des fiches prospects et des rendez-vous au logiciel métier immobilier Whise.
+- **Apimo** — connexion personnalisée à Apimo : lecture et transmission des informations convenues selon les accès API et les autorisations disponibles.
+- **Whise** — connexion personnalisée à Whise : lecture et transmission des informations convenues selon les accès API et les autorisations disponibles.
 
 Un outil qui ne figure pas dans cette liste ? L'équipe Rushh étudie l'interconnexion possible lors de l'échange de mise en place.
 
@@ -462,7 +468,7 @@ Exemple illustratif :
 - Incident dans les parties communes → Marqué prioritaire, avec alerte au gestionnaire si vous le décidez
 - Appel d'un prestataire → Orienté vers le gestionnaire qui suit le dossier
 
-Configurations à étudier avec vous, et non fonctionnalités déjà démontrées.
+Exemples de répartition à adapter et à tester avec votre cabinet selon les règles validées ensemble.
 
 ## Transmission au gestionnaire
 
@@ -566,10 +572,10 @@ Pour aller plus loin : [L'offre Rushh](${SITE_URL}/offre) · [Intégrations](${S
 `,
   },
   "/confirmation": {
-    title: "Rendez-vous confirmé | Rushh",
-    markdown: `# Rendez-vous confirmé
+    title: "Votre démonstration | Rushh",
+    markdown: `# Votre démonstration Rushh
 
-Votre demande d'échange avec l'équipe Rushh a bien été prise en compte.
+Si vous avez réservé, consultez votre e-mail Calendly pour retrouver les détails de votre réservation. Sinon, [réservez une démo](https://calendly.com/gaspard-david/demo).
 
 Retour à l'accueil : ${SITE_URL}/
 `,

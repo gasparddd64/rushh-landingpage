@@ -321,7 +321,7 @@ describe("validated-text page /comparatif/standards-telephoniques-ia-immobilier"
       "Quel standard téléphonique IA choisir pour l'immobilier ?",
       "Rushh va plus loin que la simple réception téléphonique",
       "Un appel vendeur ne doit pas finir en simple message",
-      "[Réserver une démonstration](https://www.rushh.fr/demonstrations)",
+      "[Tester le standard par téléphone](https://www.rushh.fr/demonstrations)",
       "Une solution personnalisée, entièrement prise en charge par notre équipe.",
     ]) expect(md).toContain(phrase);
     const all = `${md}\n${a.title}\n${a.description}\n${a.summary}`;

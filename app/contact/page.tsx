@@ -53,8 +53,7 @@ export default function ContactPage() {
           <section className="cgv-article">
             <h2>Réserver un échange</h2>
             <p>
-              Pour réserver une démonstration du Standard Rushh, utilisez le formulaire de prise
-              de rendez-vous ci-dessous, ou écrivez directement à{" "}
+              Pour réserver une démonstration du Standard Rushh, ouvrez notre calendrier avec le bouton « Réserver une démo », ou écrivez directement à{" "}
               <a href="mailto:hello@rushh.fr">hello@rushh.fr</a> en précisant le nom de l&apos;agence
               et le métier concerné (transaction, gérance, syndic).
             </p>

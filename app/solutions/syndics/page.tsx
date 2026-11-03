@@ -183,7 +183,7 @@ export default function SyndicsPage() {
             ))}
           </ul>
           <p className="sol-note">
-            Configurations à étudier avec vous, et non fonctionnalités déjà démontrées.
+            Exemples de répartition à adapter et à tester avec votre cabinet selon les règles validées ensemble.
           </p>
         </div>
       </section>

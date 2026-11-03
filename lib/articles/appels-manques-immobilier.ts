@@ -202,7 +202,7 @@ export const appelsManques: Article = {
           t: "statement",
           text: "Découvrez comment Rushh prend en charge les appels entrants de votre agence, sans interrompre votre activité.",
         },
-        { t: "button", label: "Réserver une démonstration", href: "/demonstrations" },
+        { t: "button", label: "Tester le standard par téléphone", href: "/demonstrations" },
       ],
     },
   ],

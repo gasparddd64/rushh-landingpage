@@ -174,7 +174,7 @@ export const comparatif: Article = {
           t: "p",
           text: "Découvrez comment Rushh prend en charge les appels, qualifie les demandes et organise les opportunités pour les professionnels de l'immobilier.",
         },
-        { t: "button", label: "Réserver une démonstration", href: "/demonstrations" },
+        { t: "button", label: "Tester le standard par téléphone", href: "/demonstrations" },
         { t: "p", text: "Une solution personnalisée, entièrement prise en charge par notre équipe." },
       ],
     },

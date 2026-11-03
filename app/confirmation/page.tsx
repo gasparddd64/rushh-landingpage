@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Calendar } from "lucide-react";
+import { DemoCTA } from "@/components/ui/demo-cta";
 import { parseConfirmationParams, type SearchParamsInput } from "@/lib/confirmation";
 import { BookingAnalytics } from "@/components/confirmation/BookingAnalytics";
 import { ConfirmationUrlCleaner } from "@/components/confirmation/ConfirmationUrlCleaner";
 
 export const metadata: Metadata = {
-  title: "Confirmation de rendez-vous | Rushh",
-  description: "Votre démonstration du Standard Rushh est confirmée.",
+  title: "Votre démonstration | Rushh",
+  description: "Consultez votre e-mail Calendly pour retrouver les détails de votre réservation.",
   robots: {
     index: false,
     follow: false,
@@ -25,14 +25,6 @@ export default async function ConfirmationPage({
   const params = await searchParams;
   const data = parseConfirmationParams(params);
 
-  const title = data.firstName ? `C’est réservé, ${data.firstName}.` : "C’est réservé.";
-  const bookingDate =
-    data.dateLabel && data.timeLabel
-      ? `${data.dateLabel} à ${data.timeLabel}`
-      : data.dateLabel;
-  const cardDateLabel = data.dateLabel
-    ? data.dateLabel.charAt(0).toUpperCase() + data.dateLabel.slice(1)
-    : undefined;
 
   return (
     <main className="conf-page">
@@ -58,27 +50,15 @@ export default async function ConfirmationPage({
       <div className="conf-content">
         <div className="conf-badge">
           <span className="conf-badge-dot" />
-          Rendez-vous confirmé
+          Votre démonstration
         </div>
 
-        <h1 className="conf-title">{title}</h1>
+        <h1 className="conf-title">Votre démonstration Rushh</h1>
 
-        <p className="conf-subtitle">Votre démonstration du Standard Rushh est confirmée.</p>
+        <p className="conf-subtitle">Consultez votre e-mail Calendly pour retrouver les détails de votre réservation.</p>
 
-        {cardDateLabel && (
-          <div className="conf-card">
-            <Calendar aria-hidden="true" />
-            <span className="conf-card-date">{cardDateLabel}</span>
-            {data.timeLabel && (
-              <>
-                <span className="conf-card-sep" aria-hidden="true" />
-                <span className="conf-card-time">{data.timeLabel}</span>
-              </>
-            )}
-          </div>
-        )}
-
-        <p className="conf-body">Vous recevrez toutes les informations du rendez-vous par e-mail.</p>
+        <p className="conf-body">Si vous avez réservé, votre e-mail Calendly fait foi. Sinon, choisissez un créneau pour découvrir Rushh.</p>
+        <DemoCTA label="Réserver une démo" />
 
         <span className="conf-divider" aria-hidden="true" />
 

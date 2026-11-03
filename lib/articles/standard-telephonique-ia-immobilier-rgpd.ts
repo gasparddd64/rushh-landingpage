@@ -84,7 +84,7 @@ export const standardIaRgpd: Article = {
       "blocks": [
         {
           "t": "p",
-          "text": "Un propriétaire appelle pour une estimation. Le standard indique qu'il s'agit d'un assistant, puis recueille le type de bien, sa localisation, un nom et un numéro de rappel : rien de plus que nécessaire pour proposer un rendez-vous."
+          "text": "Un propriétaire appelle pour une estimation. Le standard indique qu'il s'agit d'un assistant vocal utilisant l'intelligence artificielle, puis recueille le type de bien, sa localisation, un nom et un numéro de rappel : rien de plus que nécessaire pour proposer un rendez-vous."
         }
       ]
     },
@@ -116,7 +116,7 @@ export const standardIaRgpd: Article = {
         },
         {
           "t": "button",
-          "label": "Réserver une démonstration",
+          "label": "Tester le standard par téléphone",
           "href": "/demonstrations"
         }
       ]

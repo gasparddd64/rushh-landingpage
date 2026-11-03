@@ -61,8 +61,8 @@ export default function RessourcesPage() {
           <p className="res-cat">Blog Rushh</p>
           <h1 className="ri-h1">Le Blog Rushh : guides et comparatifs pour les appels de votre agence immobilière</h1>
           <p className="ri-lead">
-            Mesurer les appels manqués, qualifier les demandes, comparer les standards téléphoniques IA : des contenus
-            sourcés et datés, utiles quel que soit le fournisseur que vous choisirez.
+            Mesurer les appels manqués, qualifier les demandes, comparer les standards téléphoniques IA : des guides
+            pratiques et des comparatifs, avec les références utiles, quel que soit le fournisseur que vous choisirez.
           </p>
         </header>
 

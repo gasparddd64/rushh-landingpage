@@ -209,7 +209,7 @@ export const qualification: Article = {
           t: "p",
           text: "Avec Rushh, cette qualification peut être réalisée dès le premier appel, même lorsque vos collaborateurs sont indisponibles.",
         },
-        { t: "button", label: "Réserver une démonstration", href: "/demonstrations" },
+        { t: "button", label: "Tester le standard par téléphone", href: "/demonstrations" },
         { t: "p", text: "Découvrez comment Rushh qualifie les demandes vendeurs et acquéreurs pour votre agence." },
       ],
     },

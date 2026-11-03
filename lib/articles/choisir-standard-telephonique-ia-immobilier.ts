@@ -130,7 +130,7 @@ export const choisir: Article = {
         },
         {
           "t": "button",
-          "label": "Réserver une démonstration",
+          "label": "Tester le standard par téléphone",
           "href": "/demonstrations"
         }
       ]

@@ -13,7 +13,7 @@ export function catalogueToMarkdown(): string {
   const featured = CATALOGUE.find((e) => e.path === FEATURED_PATH);
   const parts = [
     "# Le Blog Rushh : guides et comparatifs pour les appels de votre agence immobilière",
-    "Mesurer les appels manqués, qualifier les demandes, comparer les standards téléphoniques IA : des contenus sourcés et datés, utiles quel que soit le fournisseur choisi. Rushh est un standard téléphonique alimenté par intelligence artificielle, conçu, configuré et suivi pour les professionnels de l'immobilier. Tarification sur devis.",
+    "Mesurer les appels manqués, qualifier les demandes, comparer les standards téléphoniques IA : des guides pratiques et des comparatifs, avec les références utiles, utiles quel que soit le fournisseur choisi. Rushh est un standard téléphonique alimenté par intelligence artificielle, conçu, configuré et suivi pour les professionnels de l'immobilier. Tarification sur devis.",
   ];
   if (featured) parts.push("## À lire en premier", entry(featured));
   for (const c of CATEGORIES) {

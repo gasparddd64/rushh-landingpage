@@ -9,16 +9,16 @@ export const vsFonio: Article = {
     src: "/ressources/vs-fonio.png",
     width: 1600,
     height: 840,
-    alt: "Illustration : deux façons d'équiper une agence pour ses appels, une plateforme d'assistants IA à piloter soi-même et une prestation entièrement gérée.",
+    alt: "Illustration : deux façons d'équiper une agence pour ses appels, les niveaux d'accompagnement de Fonio et la prestation immobilière entièrement gérée de Rushh.",
   },
   title: "Alternative à Fonio pour l'immobilier : Rushh ou Fonio ? | Rushh",
   description:
-    "Fonio ou Rushh pour les appels d'une agence immobilière ? Une plateforme à piloter soi-même face à une prestation entièrement gérée.",
+    "Fonio ou Rushh pour les appels d'une agence immobilière ? Les niveaux d'accompagnement de Fonio et la prestation immobilière entièrement gérée de Rushh.",
   shortTitle: "Rushh ou Fonio : que choisir ?",
-  summary: "Une plateforme à piloter soi-même face à une prestation entièrement gérée.",
+  summary: "Les niveaux d'accompagnement de Fonio et la prestation immobilière entièrement gérée de Rushh.",
   h1: "Alternative à Fonio pour l'immobilier : Rushh ou Fonio, que choisir pour les appels de votre agence ?",
   answer:
-    "Fonio est une plateforme d'assistants IA à créer et piloter soi-même ; Rushh est une prestation entièrement gérée, spécialisée dans l'immobilier.",
+    "Fonio propose une plateforme d'assistants IA avec différents niveaux d'accompagnement ; Rushh assure entièrement la conception et le suivi d'un standard spécialisé dans l'immobilier.",
   datePublished: "2026-10-29",
   dateModified: "2026-11-03",
   intro: [
@@ -34,19 +34,19 @@ export const vsFonio: Article = {
   sections: [
     {
       "id": "question",
-      "h2": "Une question utile : piloter soi-même ou déléguer ?",
+      "h2": "Quel périmètre d'accompagnement choisir ?",
       "blocks": [
         {
           "t": "p",
-          "text": "D'après [le site de Fonio](https://www.fonio.ai/fr/integrations), consulté le 28 octobre 2026, c'est une plateforme d'assistants IA que l'on crée et que l'on pilote soi-même. Elle propose plusieurs canaux, dont la voix, WhatsApp et le chat web, des connexions à des outils et un accompagnement par un expert, proposé en option : elle n'est donc pas réservée aux agences qui configurent seules."
+          "text": "D'après [le site de Fonio](https://www.fonio.ai/fr/integrations), consulté le 28 octobre 2026, c'est une plateforme configurable d'assistants IA. Elle propose plusieurs canaux, dont la voix, WhatsApp et le chat web, des connexions à des outils et un accompagnement par un expert, proposé en option : elle n'est donc pas réservée aux agences qui configurent seules."
         },
         {
           "t": "p",
-          "text": "C'est un bon choix pour une agence qui veut garder la main sur la configuration de ses assistants."
+          "text": "Ses [offres de configuration et de suivi](https://www.fonio.ai/fr/configurations/) permettent aussi de faire appel à des experts, selon le niveau d'accompagnement choisi."
         },
         {
           "t": "statement",
-          "text": "L'autre approche consiste à confier la conception, les connexions, les tests et le suivi à un prestataire."
+          "text": "Comparez le périmètre de conception, de connexion, de tests et de suivi inclus dans chaque proposition."
         }
       ]
     },
@@ -56,11 +56,11 @@ export const vsFonio: Article = {
       "blocks": [
         {
           "t": "p",
-          "text": "Une agence modifie ses horaires et ses règles de transfert. Avec une plateforme à piloter soi-même, quelqu'un de l'équipe met à jour les scénarios, avec ou sans l'accompagnement optionnel du fournisseur."
+          "text": "Une agence modifie ses horaires et ses règles de transfert. Chez Fonio, la prise en charge des mises à jour dépend du niveau d'accompagnement choisi."
         },
         {
           "t": "p",
-          "text": "Avec une prestation gérée, l'agence décrit le changement et c'est l'équipe du prestataire qui ajuste le standard."
+          "text": "Chez Rushh, l'agence décrit le changement et notre équipe ajuste le standard dans le périmètre convenu."
         }
       ]
     },
@@ -92,7 +92,7 @@ export const vsFonio: Article = {
         },
         {
           "t": "button",
-          "label": "Réserver une démonstration",
+          "label": "Tester le standard par téléphone",
           "href": "/demonstrations"
         }
       ]

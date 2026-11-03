@@ -80,7 +80,7 @@ export const telesecretariat: Article = {
         },
         {
           "t": "p",
-          "text": "Avec un répondeur, l'agence retrouve deux messages à rappeler. Avec une prise en charge qui qualifie, elle retrouve deux demandes identifiées, chacune avec sa prochaine action."
+          "text": "Un télésecrétariat humain comme un standard IA peuvent qualifier ces appels selon la prestation choisie. Pour ce même scénario, comparez les horaires couverts, les informations recueillies, la possibilité de réserver un rendez-vous, la transmission à l'équipe et le suivi de chaque demande."
         }
       ]
     },
@@ -116,7 +116,7 @@ export const telesecretariat: Article = {
         },
         {
           "t": "button",
-          "label": "Réserver une démonstration",
+          "label": "Tester le standard par téléphone",
           "href": "/demonstrations"
         }
       ]

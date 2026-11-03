@@ -176,7 +176,7 @@ export const ROUTING = {
     ["Propriétaire bailleur", "Gestionnaire du mandat"],
     ["Demande urgente", "Personne désignée pour les urgences"],
   ] as [string, string][],
-  note: "Configurations à étudier avec vous, et non fonctionnalités déjà démontrées.",
+  note: "Exemples de répartition à adapter et à tester avec votre cabinet selon les règles validées ensemble.",
 };
 
 export const MANAGED = {

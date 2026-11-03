@@ -52,7 +52,7 @@ export const FLOW = {
     { title: "Rendez-vous si approprié", text: "Selon vos règles et votre agenda connecté, il propose un créneau. Sinon, il note la demande." },
     { title: "Transmission", text: "Vous recevez la demande avec son contexte et vous rappelez au bon moment." },
   ],
-  foot: "Rushh ne promet ni mandat ni rendez-vous : il remet la demande entre vos mains, déjà renseignée.",
+  foot: "Rushh peut réserver un rendez-vous sur votre agenda connecté selon les règles convenues, ou vous transmettre une demande qualifiée.",
 };
 
 export const DIFF = {
@@ -178,7 +178,7 @@ export const TOOLS_SECTION = {
 export const FAQ: Faq[] = [
   {
     q: "Pourquoi un standard téléphonique quand on travaille seul ?",
-    a: "Parce que c'est précisément quand vous êtes seul que personne ne décroche à votre place. Le Standard prend le relais pendant vos visites et vos déplacements, et vous remettez à votre retour des demandes déjà renseignées.",
+    a: "Parce que c'est précisément quand vous êtes seul que personne ne décroche à votre place. Le Standard prend le relais pendant vos visites et vos déplacements, et vous retrouvez à votre retour des demandes déjà renseignées.",
   },
   {
     q: "Puis-je garder mon numéro actuel ?",

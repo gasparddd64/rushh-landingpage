@@ -28,7 +28,7 @@ export const filtrerDemarchage: Article = {
     },
     {
       "t": "p",
-      "text": "Une règle simple suffit pour trier."
+      "text": "Des règles explicites permettent de filtrer les appels. En cas de doute, la demande est conservée pour vérification humaine."
     }
   ],
   sections: [
@@ -131,7 +131,7 @@ export const filtrerDemarchage: Article = {
         },
         {
           "t": "button",
-          "label": "Réserver une démonstration",
+          "label": "Tester le standard par téléphone",
           "href": "/demonstrations"
         }
       ]

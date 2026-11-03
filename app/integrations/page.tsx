@@ -6,7 +6,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 const baseMetadata: Metadata = {
   title: "Intégrations CRM immobiliers et API | Rushh immo",
   description:
-    "Rushh s'intègre à Google Calendar, Outlook, Apimo et Whise. Découvrez les intégrations disponibles et quand utiliser le Standard téléphonique IA Rushh.",
+    "Agendas connectés et connexions personnalisées aux logiciels immobiliers, comme Apimo et Whise, selon les API et autorisations disponibles.",
   alternates: {
     canonical: "https://www.rushh.fr/integrations",
   },
@@ -25,11 +25,11 @@ const INTEGRATIONS = [
   },
   {
     name: "Apimo",
-    desc: "Transmission des fiches prospects et des rendez-vous au logiciel métier immobilier Apimo.",
+    desc: "Connexion personnalisée à Apimo : lecture et transmission des informations convenues selon les accès API et les autorisations disponibles.",
   },
   {
     name: "Whise",
-    desc: "Transmission des fiches prospects et des rendez-vous au logiciel métier immobilier Whise.",
+    desc: "Connexion personnalisée à Whise : lecture et transmission des informations convenues selon les accès API et les autorisations disponibles.",
   },
 ];
 
@@ -62,8 +62,7 @@ export default function IntegrationsPage() {
           <section className="cgv-article">
             <h2>Rushh s&apos;intègre à vos outils</h2>
             <p>
-              Rushh s&apos;intègre à l&apos;environnement déjà utilisé par l&apos;agence
-              immobilière, sans changer ses habitudes de travail.
+              Rushh réalise des connexions personnalisées avec vos logiciels immobiliers lorsque les API et les autorisations nécessaires sont disponibles.
             </p>
             <ul>
               {INTEGRATIONS.map((integ) => (
