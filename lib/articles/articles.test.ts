@@ -37,6 +37,7 @@ const REQUIRED_LINKS: Record<string, string[]> = {
 // Pages au texte validé : seuls les liens présents dans le texte (ou posés sur ses mots) sont exigés.
 const BARE_LINKS: Record<string, string[]> = {
   "/comparatif/standards-telephoniques-ia-immobilier": ["/demonstrations", "/vs/fonio", "/vs/joe-ai"],
+  "/ressources/appels-manques-immobilier": ["/demonstrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/permanence-telephonique-agence-immobiliere"],
 };
 
 // Pages qui citent légitimement des prix publics de concurrents (sourcés) ; les prix Rushh restent interdits partout.
@@ -143,7 +144,7 @@ describe.each(ARTICLES.map((a) => [a.path, a] as const))("guide %s", (path, a) =
     expect(t).not.toMatch(/€|euros?\b/i);
     if (COMPETITOR_PRICE_PAGES.has(path) && !a.bare) expect(t).toMatch(/Sur devis|Tarification personnalisée/);
     expect(t).not.toMatch(/hektor/i);
-    expect(t).not.toMatch(/garantit|garanti(e|s)? (de|un|des)/i);
+    expect(t.replace(/rien ne garantit/gi, "")).not.toMatch(/garantit|garanti(e|s)? (de|un|des)/i);
   });
 
   it("lists every cited source URL in the Markdown mirror", () => {
@@ -177,11 +178,15 @@ describe.each(ARTICLES.map((a) => [a.path, a] as const))("guide %s", (path, a) =
 describe("guide-specific requirements", () => {
   const get = (p: string) => ARTICLES.find((a) => a.path === p)!;
 
-  it("missed-calls guide provides the tracking table with the six requested columns", () => {
-    const table = get("/ressources/appels-manques-immobilier").sections
-      .flatMap((s) => s.blocks)
-      .find((b) => b.t === "table" && b.head.length === 6);
-    expect(table && table.t === "table" && table.head).toEqual(["Date", "Créneau", "Statut d'appel", "Motif connu", "Rappel", "Suite donnée"]);
+  it("missed-calls guide keeps the validated four-step method and its four-row Rushh table", () => {
+    const a = get("/ressources/appels-manques-immobilier");
+    expect(a.bare).toBe(true);
+    const steps = a.sections.flatMap((s) => s.blocks).filter((b) => b.t === "h3" && /^[1-4]\. /.test(b.text));
+    expect(steps).toHaveLength(4);
+    const table = a.sections.flatMap((s) => s.blocks).find((b) => b.t === "table");
+    expect(table && table.t === "table" && table.head).toEqual(["La méthode", "Ce que fait Rushh"]);
+    expect(table && table.t === "table" && table.rows).toHaveLength(4);
+    expect(articleToMarkdown(a)).not.toMatch(/journal d'appels|Tableau de suivi|Sources et méthode/i);
   });
 
   it("comparison guide compares the three models on nine criteria and cites its legal source", () => {

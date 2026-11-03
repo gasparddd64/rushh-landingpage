@@ -58,7 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/appels-manques-immobilier',
-      lastModified: new Date('2026-11-02'),
+      lastModified: new Date('2026-11-03'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },

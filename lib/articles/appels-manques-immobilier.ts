@@ -1,7 +1,9 @@
 import type { Article } from "./types";
 
+/** Texte validé : à reproduire tel quel, sans reformulation (voir `bare` dans types.ts). */
 export const appelsManques: Article = {
   path: "/ressources/appels-manques-immobilier",
+  bare: true,
   cover: {
     src: "/ressources/appels-manques-immobilier.png",
     width: 1600,
@@ -9,269 +11,203 @@ export const appelsManques: Article = {
     alt: "Illustration : une ligne d'appel qui s'interrompt puis reprend, et aboutit à une fiche « Demande vendeur », estimation à Paris 11e, demande à transmettre.",
   },
   category: "guides",
-  title: "Appels manqués en agence immobilière : les mesurer | Rushh",
+  title: "Appels manqués en agence immobilière : que faire ? | Rushh",
   description:
-    "Comment identifier, mesurer et réduire les appels manqués d'une agence immobilière : journal d'appels, motifs, rappels, tableau de suivi et checklist.",
-  shortTitle: "Mesurer et réduire les appels manqués",
-  summary:
-    "Un journal d'appels, des motifs et un tableau de suivi pour savoir ce que vous perdez vraiment.",
+    "Un appel manqué peut être une opportunité perdue. La méthode en 4 étapes : répondre, qualifier, faire avancer chaque demande et assurer son suivi.",
+  shortTitle: "Éviter les appels manqués : méthode en 4 étapes",
+  summary: "Répondre, qualifier, faire avancer, suivre : la méthode en 4 étapes pour ne plus perdre d'opportunités.",
   h1: "Appels manqués en agence immobilière : comment éviter de perdre des opportunités ?",
   answer:
-    "Pour réduire les appels manqués, mesurez-les d'abord : exportez le journal d'appels de votre ligne, séparez les appels décrochés des appels manqués, classez les motifs que vous connaissez, désignez qui rappelle et dans quel délai, puis comparez la même période après chaque changement d'organisation. Un appel manqué n'est pas automatiquement une opportunité perdue : c'est une demande dont il faut vérifier l'issue.",
+    "Un propriétaire appelle pour faire estimer son appartement. Vous êtes en visite et personne ne décroche. Quelques minutes plus tard, il contacte une autre agence.",
   datePublished: "2026-10-28",
-  dateModified: "2026-11-02",
+  dateModified: "2026-11-03",
+  intro: [
+    {
+      t: "p",
+      text: "Un propriétaire appelle pour faire estimer son appartement. Vous êtes en visite et personne ne décroche. Quelques minutes plus tard, il contacte une autre agence.",
+    },
+    {
+      t: "p",
+      text: "Dans l'immobilier, **un appel manqué peut être une opportunité commerciale perdue**. Et le problème ne concerne pas uniquement les horaires d'ouverture : visites, rendez-vous, déplacements et appels simultanés rendent les équipes difficiles à joindre.",
+    },
+    {
+      t: "p",
+      text: "Alors, comment éviter que des demandes vendeurs et acquéreurs passent entre les mailles du filet ?",
+    },
+  ],
   sections: [
     {
-      id: "pourquoi",
-      h2: "Pourquoi une agence manque-t-elle des appels ?",
+      id: "cout",
+      h2: "Pourquoi les appels manqués coûtent-ils cher en immobilier ?",
       blocks: [
         {
           t: "p",
-          text: "Un appel manqué est un appel entrant qui n'est pas décroché, ou que l'appelant abandonne avant d'avoir une réponse. Dans une agence, les causes sont rarement mystérieuses :",
+          text: "Un appel entrant peut correspondre à une simple question, mais aussi à une demande d'estimation, un projet de vente ou une visite.",
         },
+        { t: "p", text: "Lorsqu'un prospect ne parvient pas à joindre votre agence, rien ne garantit qu'il rappellera." },
+        {
+          t: "statement",
+          text: "Le coût potentiel ne se limite donc pas à un appel : il peut concerner un rendez-vous, un mandat ou une transaction.",
+        },
+        {
+          t: "p",
+          text: "Pour autant, tous les appels manqués ne représentent pas une affaire perdue. Leur impact financier dépend du nombre de demandes réellement commerciales, de leur valeur et de votre capacité à les récupérer.",
+        },
+        {
+          t: "p",
+          text: "Le véritable enjeu est de ne pas laisser une opportunité dépendre du moment où votre équipe est disponible.",
+        },
+      ],
+    },
+    {
+      id: "methode",
+      h2: "Comment éviter de perdre des opportunités ? La méthode en 4 étapes",
+      blocks: [
+        { t: "h3", text: "1. Assurer une réponse à chaque appel entrant" },
+        { t: "p", text: "Une agence ne peut pas demander à ses négociateurs d'être disponibles en permanence." },
+        {
+          t: "p",
+          text: "Il faut donc prévoir une prise en charge téléphonique lorsque l'équipe est en visite, déjà en ligne, absente ou lorsque l'agence est fermée.",
+        },
+        {
+          t: "statement",
+          text: "L'objectif : qu'un client puisse obtenir une réponse sans attendre qu'un collaborateur soit disponible.",
+        },
+        { t: "h3", text: "2. Identifier et qualifier immédiatement la demande" },
+        { t: "p", text: "Décrocher ne suffit pas." },
+        {
+          t: "p",
+          text: "Un vendeur qui souhaite une estimation n'a pas les mêmes attentes qu'un acquéreur qui appelle pour une annonce.",
+        },
+        { t: "p", text: "Dès le premier échange, il faut identifier :" },
         {
           t: "ul",
           items: [
-            "les négociateurs sont en visite, en rendez-vous ou déjà au téléphone ;",
-            "plusieurs appels arrivent en même temps sur un seul numéro ;",
-            "les appels tombent pendant la pause du midi, en soirée ou le week-end ;",
-            "un renvoi d'appel est mal configuré, ou un mobile est éteint ;",
-            "une absence ou un congé n'a pas été anticipé dans l'organisation.",
+            "Le motif de l'appel.",
+            "Le projet de l'interlocuteur.",
+            "Les informations nécessaires pour traiter sa demande.",
+            "La suite à organiser.",
           ],
         },
+        { t: "statement", text: "Une demande qualifiée est plus facile à traiter qu'un simple numéro à rappeler." },
+        { t: "h3", text: "3. Faire avancer la demande dès le premier appel" },
         {
-          t: "callout",
-          kind: "reco",
-          text: "Ne supposez pas la cause : lisez-la dans vos données. Le journal d'appels montre à quels créneaux vous manquez des appels, et donc laquelle de ces causes domine chez vous.",
+          t: "p",
+          text: "Une fois le besoin identifié, il faut éviter de laisser systématiquement le client attendre un rappel.",
+        },
+        {
+          t: "p",
+          text: "Selon la situation, la bonne suite peut être de proposer un rendez-vous, de transmettre l'appel à un collaborateur ou de recueillir les informations nécessaires.",
+        },
+        {
+          t: "p",
+          text: "L'objectif est simple : **faire avancer la demande dès le premier contact, lorsque c'est possible.**",
+        },
+        { t: "h3", text: "4. Centraliser les opportunités et assurer leur suivi" },
+        { t: "p", text: "Même un appel décroché peut devenir inutile si les informations recueillies se perdent." },
+        {
+          t: "p",
+          text: "Chaque demande doit pouvoir être retrouvée avec son motif, ses coordonnées, les informations importantes et son statut.",
+        },
+        { t: "p", text: "L'équipe sait alors qui a appelé, pourquoi et quelle action reste à effectuer." },
+        {
+          t: "statement",
+          text: "Répondre, qualifier, agir et suivre : ces quatre étapes forment une véritable organisation des appels entrants.",
         },
       ],
     },
     {
-      id: "appel-manque-ou-opportunite-perdue",
-      h2: "Un appel manqué est-il une opportunité perdue ?",
+      id: "solutions",
+      h2: "Répondeur, rappel manuel ou permanence téléphonique ?",
       blocks: [
+        { t: "p", text: "Plusieurs solutions permettent de limiter les appels manqués." },
         {
           t: "p",
-          text: "Non, pas automatiquement. Deux notions doivent rester séparées :",
-        },
-        {
-          t: "ul",
-          items: [
-            "**Appel manqué** : un appel entrant qui n'a pas été décroché. C'est un fait mesurable dans votre journal d'appels.",
-            "**Demande perdue** : une demande qui n'a abouti à aucune suite (ni rappel, ni réponse, ni rendez-vous). C'est une issue, que seul un suivi permet de constater.",
-          ],
+          text: "Le [répondeur](/ressources/repondeur-ou-standard-ia-agence-immobiliere) enregistre un message, mais dépend de la volonté de l'appelant d'en laisser un. Le rappel manuel permet de reprendre contact, mais suppose qu'un collaborateur soit disponible à temps.",
         },
         {
           t: "p",
-          text: "Un appel manqué peut être un démarchage, une erreur de numéro, un prestataire, ou un appelant qui rappelle quelques minutes plus tard. Il peut aussi être une vraie demande de visite ou d'estimation. Tant que vous n'avez pas suivi son issue, vous ne savez pas laquelle de ces situations vous avez en face de vous.",
+          text: "Un [secrétariat téléphonique](/ressources/telesecretariat-humain-ou-ia) peut assurer une réponse et recueillir des informations, selon ses horaires et les prestations prévues.",
         },
         {
-          t: "callout",
-          kind: "reco",
-          text: "N'attribuez pas de montant (commission, mandat) à un appel manqué. Sans suivi de l'issue, ce montant serait une estimation sans méthode.",
+          t: "p",
+          text: "Pour aller plus loin, il faut une solution capable de **répondre, comprendre la demande et organiser sa suite**, sans mobiliser systématiquement l'équipe.",
         },
       ],
     },
     {
-      id: "journal-d-appels",
-      h2: "Comment récupérer et analyser son journal d'appels ?",
-      blocks: [
-        {
-          t: "ol",
-          items: [
-            "**Identifiez les sources.** Opérateur, solution de téléphonie, mobiles des négociateurs, renvois : listez par où arrivent réellement les appels.",
-            "**Exportez une période représentative.** Plusieurs semaines complètes valent mieux qu'une journée, pour inclure des semaines calmes et des semaines chargées.",
-            "**Gardez les colonnes utiles.** Date, heure, numéro, durée, décroché ou non, ligne appelée.",
-            "**Regroupez par créneau.** Par exemple : matin, pause du midi, après-midi, soirée, week-end.",
-            "**Repérez les répétitions.** Un même numéro qui appelle plusieurs fois sans réponse mérite un rappel prioritaire.",
-          ],
-        },
-        {
-          t: "callout",
-          kind: "reco",
-          text: "Un journal d'appels contient des numéros de téléphone : traitez-le avec la même prudence que vos fichiers clients et limitez-en l'accès aux personnes qui en ont besoin.",
-        },
-      ],
-    },
-    {
-      id: "motifs",
-      h2: "Comment classer les motifs d'appel ?",
+      id: "rushh",
+      h2: "Comment Rushh applique cette méthode",
       blocks: [
         {
           t: "p",
-          text: "Pour un appel manqué, le motif n'est connu que si l'appelant a laissé un message, a rappelé ou a été joint. Dans les autres cas, notez « motif inconnu » plutôt que de le deviner. Quelques catégories suffisent pour commencer :",
+          text: "Rushh est un standard téléphonique alimenté par intelligence artificielle, conçu pour les professionnels de l'immobilier.",
         },
-        {
-          t: "ul",
-          items: [
-            "demande de visite ;",
-            "estimation ou projet de vente ;",
-            "renseignement sur un bien ou une annonce ;",
-            "suivi d'un dossier en cours ;",
-            "prestataire, fournisseur ou démarchage ;",
-            "motif inconnu.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "rappels",
-      h2: "Qui rappelle, et dans quel délai ?",
-      blocks: [
-        {
-          t: "p",
-          text: "Un appel manqué sans responsable désigné reste un appel manqué. Fixez trois règles simples :",
-        },
-        {
-          t: "ul",
-          items: [
-            "**Un responsable par créneau** : une personne identifiée tient la liste des appels à rappeler.",
-            "**Un délai cible** : à définir selon votre agence, par exemple dans la même demi-journée.",
-            "**Un nombre de tentatives** : par exemple deux tentatives sur deux jours, puis le statut « sans réponse ».",
-          ],
-        },
-        {
-          t: "p",
-          text: "Ces valeurs sont des exemples à adapter. Ce qui compte, c'est que chaque appel à rappeler ait un nom, un délai et un statut.",
-        },
-      ],
-    },
-    {
-      id: "tableau-de-suivi",
-      h2: "Un tableau de suivi à reprendre",
-      blocks: [
-        {
-          t: "p",
-          text: "Ce tableau tient dans n'importe quel tableur. Une ligne par appel manqué ou par demande suivie :",
-        },
+        { t: "p", text: "Il réunit les quatre étapes dans un même fonctionnement :" },
         {
           t: "table",
-          caption: "Modèle de suivi des appels (exemples fictifs)",
-          head: ["Date", "Créneau", "Statut d'appel", "Motif connu", "Rappel", "Suite donnée"],
+          caption: "",
+          head: ["La méthode", "Ce que fait Rushh"],
           rows: [
-            ["12/05", "12 h – 14 h", "Manqué", "Demande de visite (message vocal)", "Rappelé à 14 h 20", "Visite proposée jeudi"],
-            ["12/05", "17 h – 19 h", "Manqué", "Inconnu", "À rappeler", "—"],
-            ["13/05", "9 h – 12 h", "Décroché", "Estimation", "Sans objet", "Transmis au négociateur"],
+            ["Répondre", "Prend en charge les appels entrants 24 h/24 et 7 j/7."],
+            ["Qualifier", "Identifie les vendeurs, acquéreurs, locataires, bailleurs et autres interlocuteurs."],
+            ["Faire avancer", "Peut prendre un rendez-vous, transférer un appel ou envoyer une confirmation par SMS ou e-mail."],
+            ["Assurer le suivi", "Classe les demandes dans sa plateforme métier avec leurs coordonnées, leur résumé et leur statut."],
           ],
-          note: "Exemple fictif : ces lignes illustrent le format, pas des données réelles.",
+        },
+        { t: "h3", text: "Exemple : un propriétaire appelle pendant une visite" },
+        {
+          t: "p",
+          text: "Vous êtes avec un acquéreur lorsqu'un propriétaire contacte votre agence pour faire estimer son bien.",
+        },
+        {
+          t: "p",
+          text: "Rushh décroche, identifie sa demande, recueille les informations utiles et peut lui proposer un rendez-vous sur votre agenda connecté.",
+        },
+        {
+          t: "p",
+          text: "L'opportunité vendeur est ensuite retrouvable dans votre plateforme Rushh, avec les coordonnées du propriétaire, le résumé de l'échange et son suivi.",
+        },
+        {
+          t: "statement",
+          text: "Vous n'avez pas interrompu votre visite. Et la demande du propriétaire a pu avancer sans attendre votre disponibilité.",
         },
       ],
     },
     {
-      id: "organisations",
-      h2: "Quelle organisation choisir pour réduire les appels manqués ?",
+      id: "adapte",
+      h2: "Un fonctionnement adapté à votre agence",
       blocks: [
         {
           t: "p",
-          text: "Plusieurs organisations sont possibles. Aucune n'est la bonne pour toutes les agences : le journal d'appels indique à quels créneaux vous avez besoin d'aide.",
-        },
-        {
-          t: "table",
-          caption: "Organisations possibles pour les appels entrants",
-          head: ["Organisation", "Utile quand", "Limite à connaître"],
-          rows: [
-            ["Renvoi vers un mobile ou rotation interne", "Les manques sont ponctuels et l'équipe est réactive", "Repose sur la disponibilité des personnes"],
-            ["Messagerie vocale et rappel", "Les appelants acceptent de laisser un message", "Certains appelants raccrochent sans message"],
-            ["Télésecrétariat humain", "Les échanges demandent de la nuance", "Plages horaires et périmètre définis par le prestataire"],
-            ["Standard téléphonique IA", "Les appels tombent quand l'équipe est indisponible", "Appliquent les règles validées, avec reprise humaine pour le reste"],
-          ],
+          text: "Rushh peut répondre directement aux appels ou intervenir lorsque votre équipe est indisponible.",
         },
         {
           t: "p",
-          text: "Pour comparer en détail le télésecrétariat humain et les standards IA, lisez [Télésecrétariat humain ou standard téléphonique IA](/ressources/telesecretariat-humain-ou-ia).",
+          text: "Notre équipe prend en charge la conception, la personnalisation, les connexions nécessaires, les tests et le suivi du standard.",
         },
         {
           t: "p",
-          text: "Rushh propose l'une de ces options : un standard téléphonique alimenté par intelligence artificielle, pour les appels entrants uniquement, conçu, configuré, testé et suivi par Rushh selon vos règles. Voir [l'offre Rushh](/offre) (tarification sur devis) et, pour les appels vendeurs et acquéreurs pendant les visites, la page [transaction immobilière](/solutions/transaction-immobiliere).",
+          text: "Vous n'avez pas à organiser vous-même une [permanence téléphonique](/ressources/permanence-telephonique-agence-immobiliere) supplémentaire.",
         },
       ],
     },
     {
-      id: "mesurer",
-      h2: "Comment mesurer l'évolution après un changement ?",
+      id: "demonstration",
+      h2: "Ne laissez plus vos opportunités dépendre de votre disponibilité",
       blocks: [
+        { t: "p", text: "Un appel vendeur ou acquéreur peut arriver à n'importe quel moment." },
+        { t: "p", text: "L'essentiel est de pouvoir lui répondre, comprendre son besoin et organiser la suite." },
         {
-          t: "p",
-          text: "Trois indicateurs suffisent, à calculer sur la même durée et les mêmes créneaux avant et après le changement :",
+          t: "statement",
+          text: "Découvrez comment Rushh prend en charge les appels entrants de votre agence, sans interrompre votre activité.",
         },
-        {
-          t: "ul",
-          items: [
-            "**Taux d'appels manqués** : appels manqués divisés par appels entrants.",
-            "**Part des appels rappelés dans le délai cible** : parmi les appels à rappeler, ceux rappelés à temps.",
-            "**Part des motifs connus** : parmi les appels manqués, ceux dont vous avez pu identifier le motif.",
-          ],
-        },
-        {
-          t: "callout",
-          kind: "hypo",
-          text: "Avec peu d'appels par semaine, une variation d'un ou deux appels n'est probablement pas un signal. Comparez des périodes assez longues, et notez les événements qui ont pu influencer le volume (congés, nouvelle annonce, changement d'horaires).",
-        },
-      ],
-    },
-    {
-      id: "checklist",
-      h2: "Checklist à appliquer cette semaine",
-      blocks: [
-        {
-          t: "checklist",
-          items: [
-            "Lister tous les numéros et renvois par lesquels arrivent les appels.",
-            "Exporter le journal d'appels de plusieurs semaines complètes.",
-            "Séparer appels décrochés et appels manqués.",
-            "Regrouper les appels manqués par créneau.",
-            "Repérer les numéros qui ont appelé plusieurs fois sans réponse.",
-            "Rappeler ces numéros en priorité.",
-            "Noter le motif lorsqu'il est connu, « inconnu » sinon.",
-            "Désigner un responsable des rappels par créneau.",
-            "Fixer un délai cible et un nombre de tentatives.",
-            "Copier le tableau de suivi et le remplir chaque jour.",
-            "Fixer une date pour comparer la période suivante.",
-          ],
-        },
+        { t: "button", label: "Réserver une démonstration", href: "/demonstrations" },
       ],
     },
   ],
   sources: [],
-  sourcesNote:
-    "Ce guide ne s'appuie sur aucune statistique externe. Les exemples sont fictifs et les délais proposés sont des exemples à adapter ; les recommandations sont des pratiques proposées par Rushh, pas des obligations. Les informations sur l'offre Rushh sont celles de la page L'offre Rushh.",
-  rushh: {
-    title: "Ce que devient un appel que vous ne pouvez pas prendre",
-    text: "Un propriétaire ou un acquéreur appelle pendant une visite : Rushh décroche, recueille le motif et les informations utiles, puis transmet une demande exploitable. Vous voyez ce qu'il reste à faire, au lieu d'un numéro non lu.",
-    points: [
-      "Prise en charge selon vos règles : tous les appels, appels manqués, ligne occupée ou hors horaires",
-      "Qualification : motif, projet et coordonnées indiquées par l'appelant",
-      "Rendez-vous sur un agenda connecté, ou demande transmise à votre équipe",
-      "Suivi : résumé et statut de chaque appel dans la plateforme Rushh",
-    ],
-    links: [
-      { href: "/solutions/transaction-immobiliere", label: "Voir la page transaction immobilière" },
-      { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
-    ],
-  },
-  related: [
-    {
-      href: "/ressources/repondeur-ou-standard-ia-agence-immobiliere",
-      label: "Répondeur ou standard IA",
-      text: "Ce que vit l'appelant selon le mode de réponse.",
-    },
-    {
-      href: "/ressources/telesecretariat-humain-ou-ia",
-      label: "Télésecrétariat humain ou standard téléphonique IA",
-      text: "Comparer les organisations possibles pour prendre les appels.",
-    },
-    {
-      href: "/ressources/qualification-appels-vendeurs-acquereurs",
-      label: "Qualifier les appels vendeurs et acquéreurs",
-      text: "Quelles informations recueillir quand une demande arrive.",
-    },
-  ],
-  cta: {
-    title: "Voir comment Rushh prend les appels pendant vos visites",
-    text: "Testez la ligne de démonstration ou demandez une démonstration personnalisée. Tarification sur devis.",
-    links: [
-      { href: "/demonstrations", label: "Ligne de démonstration" },
-      { href: "/offre", label: "L'offre Rushh" },
-    ],
-  },
+  sourcesNote: "",
+  related: [],
+  cta: { title: "Ne laissez plus vos opportunités dépendre de votre disponibilité", text: "", links: [] },
 };
