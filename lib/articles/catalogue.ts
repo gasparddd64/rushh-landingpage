@@ -15,20 +15,7 @@ export interface CatalogueEntry {
  * Pages qui figurent au catalogue sans être des articles : leur contenu, leur URL et leurs données structurées
  * restent ceux de la page elle-même ; le catalogue ne porte que la carte (et aucune date).
  */
-const PAGES: CatalogueEntry[] = [
-  {
-    path: "/vs/joe-ai",
-    title: "Rushh ou Joe AI : quelle solution ?",
-    summary: "Une offre multicanale face à un service centré sur les appels entrants, d'après leurs sites officiels.",
-    category: "comparatifs",
-    cover: {
-      src: "/ressources/vs-joe-ai.png",
-      width: 1600,
-      height: 840,
-      alt: "Deux services d'appel comparés, Rushh centré sur les appels entrants et Joe AI proposant plusieurs canaux, qui convergent vers le même test : vos propres appels. Aucun classement n'est établi.",
-    },
-  },
-];
+const PAGES: CatalogueEntry[] = [];
 
 /** Ordre de lecture : du constat à la décision, puis les comparaisons de marques. */
 const ORDER = [

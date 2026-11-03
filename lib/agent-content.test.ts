@@ -86,31 +86,6 @@ describe("/offre", () => {
   });
 });
 
-describe("/vs/joe-ai", () => {
-  const md = () => getMarkdownPage("/vs/joe-ai")?.markdown ?? "";
-
-  it("mirrors the comparison page with its own H1", () => {
-    expect(md()).toContain("# Rushh ou Joe AI : quelle solution pour les appels de votre agence immobilière ?");
-  });
-
-  it("cites the primary Joe AI source with its verification date", () => {
-    expect(md()).toContain("https://www.getjoe-ai.com/");
-    expect(md()).toContain("28 octobre 2026");
-  });
-
-  it("acknowledges Joe AI support, keeps quote-based pricing and shows no Rushh price", () => {
-    expect(md()).toContain("Joe AI propose lui aussi de l'accompagnement et de la personnalisation");
-    expect(md()).toContain("Sur devis");
-    expect(md()).toContain("5 jours ouvrés après réception des éléments");
-    expect(md()).not.toMatch(/€|euros?\b/i);
-  });
-
-  it("links to /offre, /integrations and the home page", () => {
-    expect(md()).toContain("/offre");
-    expect(md()).toContain("/integrations");
-  });
-});
-
 const NEW_PAGES: Array<[string, string]> = [
   ["/demonstrations", "# Et si vous testiez le Standard Rushh vous-même ?"],
   ["/solutions/transaction-immobiliere", "# Standard téléphonique IA pour les appels vendeurs et acquéreurs"],

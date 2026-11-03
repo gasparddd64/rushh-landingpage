@@ -232,7 +232,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/vs/joe-ai',
-      lastModified: new Date(),
+      lastModified: new Date('2026-11-03'),
       changeFrequency: 'monthly',
       priority: 0.4,
     },

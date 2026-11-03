@@ -202,7 +202,7 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(md).toContain("# Le Blog Rushh");
-    expect(ARTICLES).toHaveLength(24);
+    expect(ARTICLES).toHaveLength(25);
     expect(CATALOGUE).toHaveLength(25);
     for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
@@ -251,7 +251,7 @@ describe("catalogue /ressources (le Blog)", () => {
   it("lists Joe AI with its real URL, a cover, and no invented date", () => {
     const joe = CATALOGUE.find((e) => e.path === "/vs/joe-ai")!;
     expect(joe).toBeDefined();
-    expect(ARTICLES.some((a) => a.path === "/vs/joe-ai")).toBe(false);
+    expect(ARTICLES.some((a) => a.path === "/vs/joe-ai")).toBe(true);
     expect(Object.keys(joe)).not.toContain("date");
     expect(joe.category).toBe("comparatifs");
   });
@@ -348,8 +348,8 @@ describe("refonte éditoriale : règles communes aux pages au texte réécrit", 
   const bare = ARTICLES.filter((x) => x.bare && !PROTECTED.has(x.path));
   const wc = (md: string) => md.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").split(/\s+/).length;
 
-  it("covers the 18 rewritten pages, all articles being now in the new format", () => {
-    expect(bare).toHaveLength(18);
+  it("covers the 19 rewritten pages (18 guides/comparisons + Joe AI), all articles being now in the new format", () => {
+    expect(bare).toHaveLength(19);
     expect(ARTICLES.every((x) => x.bare)).toBe(true);
   });
 
@@ -381,10 +381,47 @@ describe("refonte éditoriale : règles communes aux pages au texte réécrit", 
   });
 
   it("competitor pages cite the competitor's official site with a consultation date", () => {
-    for (const [p, host] of [["/vs/fonio", "fonio.ai"], ["/vs/volubilimo", "volubilimo.com"], ["/vs/airagent", "airagent.fr"], ["/vs/vokai", "vokai.fr"]]) {
+    for (const [p, host] of [["/vs/fonio", "fonio.ai"], ["/vs/volubilimo", "volubilimo.com"], ["/vs/airagent", "airagent.fr"], ["/vs/vokai", "vokai.fr"], ["/vs/joe-ai", "getjoe-ai.com"]]) {
       const md = articleToMarkdown(ARTICLES.find((x) => x.path === p)!);
       expect(md, p).toContain(host);
-      expect(md, p).toMatch(/consultée? le \d+ octobre 2026/);
+      expect(md, p).toMatch(/consultée? le \d+ (octobre|novembre) 2026/);
     }
+  });
+});
+
+describe("/vs/joe-ai (comparatif refondu)", () => {
+  const a = ARTICLES.find((x) => x.path === "/vs/joe-ai")!;
+  const md = articleToMarkdown(a);
+
+  it("serves the validated Markdown with absolute Rushh links and no Claude URL", () => {
+    const served = getMarkdownPage(a.path);
+    expect(served?.markdown).toBe(md);
+    expect(isKnownRoute(a.path)).toBe(true);
+    for (const path of ["/offre", "/demonstrations", "/ressources/choisir-standard-telephonique-ia-immobilier"]) {
+      expect(md).toContain(`](https://www.rushh.fr${path})`);
+    }
+    expect(md).not.toMatch(/claude\.ai|\]\(\//i);
+  });
+
+  it("preserves the creation date from Git and exposes one canonical sitemap entry", () => {
+    // 94ab765 (2026-09-18): Add /vs/joe-ai comparison page.
+    expect(a.datePublished).toBe("2026-09-18");
+    expect(a.dateModified).toBe("2026-11-03");
+    const entries = sitemap().filter((entry) => entry.url === "https://www.rushh.fr/vs/joe-ai");
+    expect(entries).toHaveLength(1);
+    expect(entries[0].lastModified).toEqual(new Date(a.dateModified));
+  });
+
+  it("is short, follows the validated structure and stays favourable without disparaging Joe AI", () => {
+    expect(md.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").split(/\s+/).length).toBeLessThanOrEqual(500);
+    expect(md).toContain("## Ce que propose Joe AI");
+    expect(md).toContain("## Pourquoi choisir Rushh");
+    expect(md).toContain("consulté le 3 novembre 2026");
+    expect(md).not.toMatch(/générique|uniquement en libre-service|\bessais?\b|\bjours\b|délai|€|sur devis|\|---\|/i);
+  });
+
+  it("presents Rushh as inbound-call focused with appointments, live transfer, automatic SMS and e-mails, and a business platform", () => {
+    for (const t of ["agenda connecté", "transfère l'appel en direct", "SMS et des e-mails automatiques", "plateforme métier", "alternative à Joe AI"]) expect(md).toContain(t);
+    expect(md).not.toMatch(/voix uniquement|uniquement la voix/i);
   });
 });
