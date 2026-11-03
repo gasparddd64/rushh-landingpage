@@ -120,6 +120,43 @@ function BlockView({ b }: { b: Block }) {
   }
 }
 
+/** Pages au texte validé : chaque sous-titre devient une carte lisible (numéro, titre, texte), sans changer un mot. */
+function BareBlocks({ blocks }: { blocks: Block[] }) {
+  const out: ReactNode[] = [];
+  let i = 0;
+  while (i < blocks.length) {
+    const b = blocks[i];
+    if (b.t !== "h3") {
+      out.push(<BlockView key={i} b={b} />);
+      i++;
+      continue;
+    }
+    const body: Block[] = [];
+    let j = i + 1;
+    while (j < blocks.length && blocks[j].t !== "h3" && blocks[j].t !== "statement" && blocks[j].t !== "button") {
+      body.push(blocks[j]);
+      j++;
+    }
+    const m = /^(\d+)\.\s+(.*)$/.exec(b.text);
+    out.push(
+      <div key={i} className={m ? "res-step" : "res-step res-step--plain"}>
+        <h3>
+          {m ? (
+            <>
+              <span className="res-n">{m[1]}.</span> {m[2]}
+            </>
+          ) : (
+            b.text
+          )}
+        </h3>
+        {body.map((x, k) => <BlockView key={k} b={x} />)}
+      </div>,
+    );
+    i = j;
+  }
+  return <>{out}</>;
+}
+
 const FAQ_IDS = new Set(["faq"]);
 
 /** FAQ : chaque question devient un <details> natif ; les réponses restent dans le HTML. */
@@ -191,7 +228,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
             {a.sections.map((s, i) => (
               <section key={s.id} id={s.id} aria-labelledby={`${s.id}-t`} data-no-reveal className={i === a.sections.length - 1 ? "res-final" : undefined}>
                 <h2 id={`${s.id}-t`}>{s.h2}</h2>
-                {s.blocks.map((b, j) => <BlockView key={j} b={b} />)}
+                <BareBlocks blocks={s.blocks} />
               </section>
             ))}
           </div>
