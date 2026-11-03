@@ -22,6 +22,6 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Combien de temps faut-il pour déployer le Standard Rushh ?",
-    a: "La mise en production cible est réalisée sous 5 jours ouvrés après réception de l'ensemble des éléments nécessaires au déploiement.",
+    a: "La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.",
   },
 ];

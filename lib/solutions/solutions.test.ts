@@ -31,7 +31,8 @@ describe.each(PAGES)("page $name", ({ mod, own }) => {
 
   it("respecte les règles commerciales", () => {
     expect(md).toContain("Tarification sur devis");
-    expect(md).toContain("5 jours ouvrés après réception des éléments");
+    expect(md).toContain("La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.");
+    expect(md).not.toMatch(/(?:5|cinq(?: \(5\))?) jours ouvrés/i);
     expect(md).toContain("exemple fictif");
     expect(md).not.toMatch(/€|euros?\b|\d\s?%/i);
     expect(md.replace("n'est garanti", "").replace("garantit-il", "")).not.toMatch(/garanti|100 ?%|hébergé|hébergement|hektor/i);

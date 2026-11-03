@@ -96,7 +96,7 @@ const FAQ = [
   },
   {
     q: "Combien de temps faut-il pour le mettre en service ?",
-    a: "La mise en service est visée sous 5 jours ouvrés après réception des éléments nécessaires. Ce délai est un objectif indicatif. La tarification se fait sur devis.",
+    a: "La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires. La tarification se fait sur devis.",
   },
 ];
 

@@ -40,7 +40,7 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
   {
     q: "Combien de temps faut-il pour déployer le Standard Rushh ?",
-    a: "La mise en production cible est réalisée sous 5 jours ouvrés après réception de l'ensemble des éléments nécessaires au déploiement.",
+    a: "La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.",
   },
 ];
 
@@ -51,7 +51,7 @@ export const MARKDOWN_PAGES: Record<string, MarkdownPage> = {
     title: "Rushh immo — Agent vocal IA pour agence immobilière",
     markdown: `# Rushh — Agent vocal IA pour agence immobilière
 
-Rushh conçoit et déploie un standard téléphonique IA sur-mesure pour les agences immobilières : il décroche, qualifie et transmet chaque appel 24 h/24, avec un déploiement adapté à l'agence en 5 jours ouvrés après réception des éléments.
+Rushh conçoit et déploie un standard téléphonique IA sur-mesure pour les agences immobilières : il décroche, qualifie et transmet chaque appel 24 h/24, avec un déploiement adapté à l’agence. La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.
 
 ## Chaque appel compte pour votre agence
 
@@ -413,7 +413,7 @@ Non. Le Standard est un outil d'assistance : il ne promet aucun résultat commer
 
 ### Combien de temps faut-il pour le mettre en service ?
 
-La mise en service est visée sous 5 jours ouvrés après réception des éléments nécessaires. Ce délai est un objectif indicatif. La tarification se fait sur devis.
+La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires. La tarification se fait sur devis.
 
 ## Votre équipe est en visite. Rushh prend les appels.
 
@@ -547,7 +547,7 @@ Vous nous expliquez votre organisation, l'équipe Rushh s'occupe du reste.
 4. **Tester** : nous testons les appels avant toute mise en service.
 5. **Valider et déployer** : vous validez, puis le Standard prend en charge les appels selon le périmètre convenu.
 
-Le délai de mise en service visé est de 5 jours ouvrés après réception des éléments : il s'agit d'un objectif indicatif. Pour plusieurs agences, le périmètre et le calendrier sont définis avec vous lors du devis. Voir [L'offre Rushh](${SITE_URL}/offre).
+La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires. Pour plusieurs agences, le périmètre et le calendrier sont définis avec vous lors du devis. Voir [L'offre Rushh](${SITE_URL}/offre).
 
 ## Tests, suivi et exceptions
 

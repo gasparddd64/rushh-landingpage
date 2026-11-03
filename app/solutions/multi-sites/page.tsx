@@ -155,8 +155,8 @@ export default function MultiSitesPage() {
           />
           <Flow items={METHOD} />
           <p className="sol-note">
-            Le délai de mise en service visé est de 5 jours ouvrés après réception des éléments : il s&apos;agit d&apos;un
-            objectif indicatif. Pour plusieurs agences, le périmètre et le calendrier sont définis avec vous lors du
+            La mise en service est organisée avec vous après validation du périmètre technique et réception des
+            éléments nécessaires. Pour plusieurs agences, le périmètre et le calendrier sont définis avec vous lors du
             devis. Voir <Link href="/offre">L&apos;offre Rushh</Link>.
           </p>
         </div>

@@ -198,7 +198,7 @@ export const MANAGED = {
     "Vos horaires et le fonctionnement de votre permanence",
     "Les outils à connecter, le cas échéant",
   ],
-  delay: "Mise en service visée sous 5 jours ouvrés après réception des éléments nécessaires. Ce délai est un objectif indicatif.",
+  delay: "La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.",
 };
 
 export const TOOLS_NOTE =
@@ -227,7 +227,7 @@ export const FAQ: Faq[] = [
   },
   {
     q: "Dois-je le configurer moi-même ?",
-    a: "Non. Rushh conçoit, configure, teste et suit le Standard avec vous. La mise en service est visée sous 5 jours ouvrés après réception des éléments nécessaires, et la tarification se fait sur devis.",
+    a: "Non. Rushh conçoit, configure, teste et suit le Standard avec vous. La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires. La tarification se fait sur devis.",
   },
 ];
 

@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { FAQ_ITEMS } from "./faq";
 import { describe, expect, it } from "vitest";
 import {
   build404Markdown,
@@ -125,7 +127,8 @@ describe("new pages specifics", () => {
     const md = getMarkdownPage("/solutions/transaction-immobiliere")?.markdown ?? "";
     expect(md).toContain("exemples fictifs");
     expect(md).toContain("Aucun mandat ni rendez-vous n'est garanti");
-    expect(md).toContain("5 jours ouvrés après réception des éléments");
+    expect(md).toContain("La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.");
+    expect(md).not.toMatch(/(?:5|cinq(?: \(5\))?) jours ouvrés/i);
   });
 
   it("syndics states its limits (no diagnosis, no emergency handling)", () => {
@@ -174,5 +177,29 @@ describe("search-intent wording (SEO ciblé)", () => {
     const t = md("/vs/joe-ai");
     expect(t).toContain("alternative à Joe AI");
     expect(t).not.toMatch(/meilleur/i);
+  });
+});
+
+
+describe("mise en service : périmètre validé, sans promesse de délai fixe", () => {
+  const expected = "La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.";
+  const fixedDelay = /(?:5|cinq(?: \(5\))?)\s+jours?\s+ouvr[ée]s?/i;
+
+  it.each(["/", "/solutions/transaction-immobiliere", "/solutions/mandataires-immobiliers", "/solutions/gestion-locative", "/solutions/multi-sites"])("%s expose les conditions de mise en service dans son miroir Markdown", (path) => {
+    const md = getMarkdownPage(path)?.markdown ?? "";
+    expect(md).toContain(expected);
+    expect(md).not.toMatch(fixedDelay);
+  });
+
+  it("la FAQ publique, ses données structurées et son miroir donnent la même réponse", () => {
+    const faq = FAQ_ITEMS.find((item) => item.q === "Combien de temps faut-il pour déployer le Standard Rushh ?")!;
+    expect(faq.a).toBe(expected);
+    expect(getMarkdownPage("/")?.markdown).toContain(`### ${faq.q}\n\n${faq.a}`);
+  });
+
+  it("le guide pour moteurs IA ne promet aucun délai fixe", () => {
+    const llms = readFileSync("public/llms.txt", "utf8");
+    expect(llms).toContain(expected);
+    expect(llms).not.toMatch(fixedDelay);
   });
 });
