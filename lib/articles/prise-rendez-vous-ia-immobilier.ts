@@ -1,231 +1,261 @@
 import type { Article } from "./types";
 
+/** Texte validé : à reproduire tel quel, sans reformulation (voir `bare` dans types.ts). */
 export const priseRendezVous: Article = {
   path: "/ressources/prise-rendez-vous-ia-immobilier",
+  bare: true,
   category: "guides",
   cover: {
     src: "/ressources/prise-rendez-vous-ia-immobilier.png",
     width: 1600,
     height: 840,
-    alt: "Un appel vendeur et un appel acquéreur passent par la vérification de l'agenda : soit la disponibilité est vérifiée et le créneau enregistré, soit la demande est transmise à l'équipe pour confirmation.",
+    alt: "Un appel vendeur et un appel acquéreur passent par la vérification de l'agenda : soit la disponibilité est vérifiée et le créneau enregistré, soit la demande est transmise à l'équipe.",
   },
   title: "Prise de rendez-vous par IA dans l'immobilier | Rushh",
   description:
-    "Comment un standard téléphonique IA qualifie les appels entrants et organise les rendez-vous immobiliers : estimation, visite, agenda et confirmation.",
+    "Comprendre la demande, consulter l'agenda, confirmer le rendez-vous : comment un standard téléphonique IA organise les rendez-vous d'une agence.",
   shortTitle: "Prise de rendez-vous par IA en immobilier",
-  summary:
-    "Répondre, qualifier, réserver : ce qu'une IA peut confirmer, et ce qu'elle doit laisser à l'équipe.",
+  summary: "Comprendre la demande, trouver un créneau, confirmer : comment l'IA prend des rendez-vous en agence.",
   h1: "Prise de rendez-vous par IA : comment ça fonctionne dans l'immobilier ?",
   answer:
-    "Un standard téléphonique IA peut recevoir l'appel, comprendre la demande, recueillir les informations utiles et, si les règles et l'agenda le permettent, enregistrer un rendez-vous. Sans agenda accessible ni créneau fiable, il doit présenter la demande comme « à confirmer » et la transmettre à l'équipe, sans inventer de réservation.",
+    "Un standard téléphonique IA permet de transformer une demande entrante en rendez-vous, sans interrompre les agents immobiliers.",
   datePublished: "2026-10-29",
-  dateModified: "2026-11-02",
+  dateModified: "2026-11-03",
+  intro: [
+    {
+      "t": "p",
+      "text": "Un propriétaire appelle pour faire estimer son appartement. Un acquéreur souhaite visiter un bien. Mais votre équipe est en rendez-vous, en déplacement ou déjà au téléphone."
+    },
+    {
+      "t": "p",
+      "text": "Dans ces situations, attendre qu'un négociateur soit disponible pour rappeler peut ralentir la prise de rendez-vous, voire faire perdre une opportunité."
+    },
+    {
+      "t": "p",
+      "text": "Un standard téléphonique IA permet de transformer une demande entrante en rendez-vous, sans interrompre les agents immobiliers."
+    },
+    {
+      "t": "p",
+      "text": "Mais comment fonctionne réellement cette prise de rendez-vous automatisée ?"
+    }
+  ],
   sections: [
     {
-      id: "contexte",
-      h2: "Un téléphone, des demandes très différentes",
-      blocks: [
+      "id": "fonctionnement",
+      "h2": "Comment une IA peut-elle prendre des rendez-vous ?",
+      "blocks": [
         {
-          t: "p",
-          text: "Un vendeur appelle pendant une visite. Un acquéreur veut réserver un créneau pour découvrir un appartement. Un propriétaire souhaite parler à l'agence au sujet de son mandat. Le téléphone concentre des demandes très différentes, souvent au moment où l'agent ne peut pas décrocher.",
+          "t": "p",
+          "text": "Une prise de rendez-vous efficace repose sur trois étapes : comprendre la demande, trouver un créneau disponible et confirmer le rendez-vous."
         },
         {
-          t: "p",
-          text: "Un standard téléphonique alimenté par intelligence artificielle peut recevoir ces appels, identifier la demande, recueillir des informations utiles et, si les règles et les agendas le permettent, organiser un rendez-vous. La difficulté réelle ne réside pas dans le fait de prononcer « c'est réservé », mais dans la fiabilité de chaque étape.",
+          "t": "h3",
+          "text": "1. Comprendre et qualifier la demande"
         },
-      ],
+        {
+          "t": "p",
+          "text": "Avant de proposer un créneau, le standard doit identifier pourquoi la personne appelle."
+        },
+        {
+          "t": "p",
+          "text": "Pour une [estimation immobilière](/ressources/appel-vendeur-estimation-immobiliere), il peut recueillir le type de bien, sa localisation et le projet du propriétaire."
+        },
+        {
+          "t": "p",
+          "text": "Pour une visite, il doit identifier le bien concerné, comprendre la demande de l'acquéreur et recueillir ses disponibilités."
+        },
+        {
+          "t": "p",
+          "text": "Cette [qualification](/ressources/qualification-appels-vendeurs-acquereurs) permet d'orienter l'appel vers le bon type de rendez-vous, sans poser des questions inutiles."
+        },
+        {
+          "t": "h3",
+          "text": "2. Consulter les disponibilités de l'agenda"
+        },
+        {
+          "t": "p",
+          "text": "Une fois le besoin identifié, le standard consulte les disponibilités de l'[agenda connecté](/ressources/standard-ia-google-agenda-outlook-immobilier)."
+        },
+        {
+          "t": "p",
+          "text": "Il peut ainsi proposer un créneau adapté au type de rendez-vous : estimation, visite ou échange avec un négociateur."
+        },
+        {
+          "t": "p",
+          "text": "Les horaires, les durées et les personnes concernées dépendent de l'organisation de l'agence."
+        },
+        {
+          "t": "p",
+          "text": "L'objectif est de proposer un rendez-vous compatible avec les disponibilités réelles de l'équipe."
+        },
+        {
+          "t": "h3",
+          "text": "3. Réserver et confirmer le rendez-vous"
+        },
+        {
+          "t": "p",
+          "text": "Lorsque l'appelant choisit un créneau disponible, celui-ci est enregistré dans l'agenda."
+        },
+        {
+          "t": "p",
+          "text": "Une confirmation peut ensuite être envoyée par SMS ou par e-mail, avec les informations utiles : date, heure et objet du rendez-vous."
+        },
+        {
+          "t": "p",
+          "text": "L'équipe dispose également du contexte de la demande pour préparer l'échange."
+        },
+        {
+          "t": "p",
+          "text": "Si la situation nécessite l'intervention d'un collaborateur ou qu'aucun créneau ne peut être confirmé, le standard peut transmettre la demande avec les informations recueillies."
+        },
+        {
+          "t": "statement",
+          "text": "Le principe : réserver directement lorsque c'est possible, et organiser une suite claire dans les autres situations."
+        }
+      ]
     },
     {
-      id: "trois-actions",
-      h2: "Répondre, qualifier et réserver : trois actions différentes",
-      blocks: [
+      "id": "exemple",
+      "h2": "Exemple : un propriétaire appelle pendant une visite",
+      "blocks": [
         {
-          t: "p",
-          text: "Répondre consiste à accueillir l'appelant. Qualifier consiste à comprendre son intention : estimation, visite, demande concernant un bien ou suivi de dossier. Réserver exige davantage : un agenda accessible, un créneau disponible, les bonnes autorisations et des règles de confirmation claires. Un simple message transmis à l'agent n'est pas un rendez-vous confirmé.",
+          "t": "p",
+          "text": "Vous êtes en visite avec un acquéreur lorsqu'un propriétaire contacte votre agence pour faire estimer sa maison."
         },
         {
-          t: "p",
-          text: "Cette distinction évite deux erreurs fréquentes : perdre une opportunité faute de suite donnée, ou créer un faux rendez-vous en promettant un créneau non vérifié.",
+          "t": "p",
+          "text": "Plutôt que de tomber sur un répondeur, il échange avec un standard IA."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Le standard identifie sa demande, recueille les informations utiles sur le bien et consulte les disponibilités de votre agenda."
+        },
+        {
+          "t": "p",
+          "text": "Le propriétaire choisit un créneau d'estimation, le rendez-vous est enregistré et une confirmation lui est envoyée."
+        },
+        {
+          "t": "p",
+          "text": "Pendant ce temps, vous poursuivez votre visite sans interruption."
+        },
+        {
+          "t": "statement",
+          "text": "Résultat : le propriétaire a obtenu un rendez-vous et vous retrouvez les informations nécessaires pour préparer votre estimation."
+        },
+        {
+          "t": "p",
+          "text": "Cet exemple illustre un parcours possible lorsque l'agenda est connecté et que la réservation est autorisée."
+        }
+      ]
     },
     {
-      id: "cinq-etapes",
-      h2: "Les cinq étapes d'un rendez-vous correctement pris",
-      blocks: [
-        { t: "h3", text: "1. Reconnaître le motif de l'appel" },
+      "id": "pourquoi",
+      "h2": "Pourquoi automatiser les rendez-vous immobiliers ?",
+      "blocks": [
         {
-          t: "p",
-          text: "Une estimation de maison, une visite d'appartement et un renseignement sur un dossier de location ne suivent pas le même parcours. Le standard doit identifier rapidement le sujet sans poser à tous les appelants le même questionnaire.",
+          "t": "p",
+          "text": "La prise de rendez-vous ne consiste pas uniquement à remplir un agenda."
         },
-        { t: "h3", text: "2. Recueillir uniquement les informations utiles" },
         {
-          t: "p",
-          text: "Pour un vendeur, il peut être pertinent de noter le secteur, le type de bien et le motif de la prise de contact. Pour une visite, il faut identifier le bien concerné et le moyen de joindre l'acquéreur. Lorsque des informations ont déjà été données, inutile de les demander deux fois. Les informations personnelles doivent être limitées aux besoins du service.",
+          "t": "p",
+          "text": "Elle permet aussi de :"
         },
-        { t: "h3", text: "3. Appliquer les règles du professionnel" },
         {
-          t: "p",
-          text: "Un mandataire peut accepter des créneaux d'estimation directement. Une agence peut exiger qu'un négociateur confirme certaines visites. Un gestionnaire peut réserver des rendez-vous seulement pour certains motifs. Le standard doit suivre ces règles, et non imposer une façon de travailler unique.",
+          "t": "ul",
+          "items": [
+            "Répondre plus rapidement aux vendeurs et aux acquéreurs.",
+            "Éviter les rappels inutiles pour trouver un créneau.",
+            "Réduire les interruptions pendant les visites et les estimations.",
+            "Qualifier les demandes avant qu'elles arrivent aux négociateurs.",
+            "Organiser le suivi commercial des opportunités entrantes."
+          ]
         },
-        { t: "h3", text: "4. Vérifier le calendrier" },
         {
-          t: "p",
-          text: "Si un agenda compatible est connecté et que le scénario autorise l'action, le système peut rechercher un créneau disponible et l'enregistrer. Sans accès ou sans disponibilité fiable, il doit prendre une préférence horaire et transmettre une demande à confirmer. Il ne doit pas annoncer une réservation fictive.",
-        },
-        { t: "h3", text: "5. Confirmer et transmettre" },
-        {
-          t: "p",
-          text: "Une confirmation utile précise la date, l'heure, l'objet du rendez-vous et les éventuelles modalités. L'équipe immobilière reçoit les éléments de contexte dont elle a besoin. Le canal de notification dépend des fonctionnalités activées et des choix du client.",
-        },
-      ],
+          "t": "p",
+          "text": "L'intérêt est de faire avancer les projets dès le premier appel, tout en laissant les professionnels se concentrer sur leur activité."
+        }
+      ]
     },
     {
-      id: "situations",
-      h2: "Trois situations immobilières concrètes",
-      blocks: [
+      "id": "rushh",
+      "h2": "Comment Rushh prend en charge vos rendez-vous",
+      "blocks": [
         {
-          t: "callout",
-          kind: "example",
-          text: "Les exemples suivants sont fictifs : ils illustrent des configurations possibles, pas des résultats de clients Rushh.",
+          "t": "p",
+          "text": "Rushh est un standard téléphonique alimenté par intelligence artificielle, spécialisé dans l'immobilier."
         },
-        { t: "h3", text: "Estimation d'un appartement" },
         {
-          t: "p",
-          text: "Un propriétaire souhaite faire estimer un T3 à Paris. Le standard relève le secteur et les informations nécessaires, puis propose un créneau d'échange si l'agenda le permet. Sinon, il transmet la demande à l'équipe avec une préférence horaire. L'agent sait pourquoi rappeler.",
+          "t": "p",
+          "text": "Il applique ce fonctionnement aux appels entrants de votre agence."
         },
-        { t: "h3", text: "Visite d'un bien" },
         {
-          t: "p",
-          text: "Un acquéreur appelle pour un appartement vu en annonce. Plusieurs biens peuvent correspondre à sa description. Le standard vérifie l'identification du bien avant de parler d'une visite. Selon la configuration, il propose un créneau autorisé ou enregistre la demande pour confirmation humaine.",
+          "t": "p",
+          "text": "Lorsqu'un vendeur ou un acquéreur appelle, Rushh peut identifier son projet, recueillir les informations utiles, consulter votre agenda connecté et réserver un rendez-vous selon vos règles."
         },
-        { t: "h3", text: "Appel pendant une visite" },
         {
-          t: "p",
-          text: "Un client rappelle au sujet d'un dossier en cours. Proposer automatiquement un rendez-vous serait inadapté. Il vaut mieux qualifier le message, identifier le bon interlocuteur et transmettre le contexte sans interrompre inutilement la visite en cours.",
+          "t": "p",
+          "text": "Il peut ensuite envoyer une confirmation par SMS ou e-mail."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Et la prise de rendez-vous ne s'arrête pas à votre calendrier."
+        },
+        {
+          "t": "p",
+          "text": "Dans la plateforme métier Rushh, les demandes sont organisées par type d'opportunité : vendeur, acquéreur, locataire, bailleur ou autre interlocuteur."
+        },
+        {
+          "t": "p",
+          "text": "Vous retrouvez les coordonnées de l'appelant, le résumé de sa demande, son statut et les informations utiles à son suivi."
+        },
+        {
+          "t": "p",
+          "text": "Rushh peut également se connecter à votre [logiciel immobilier](/integrations) lorsque son API et les autorisations disponibles le permettent."
+        },
+        {
+          "t": "h3",
+          "text": "Une installation entièrement prise en charge"
+        },
+        {
+          "t": "p",
+          "text": "Notre équipe configure les scénarios, les règles de rendez-vous, les connexions nécessaires et les tests."
+        },
+        {
+          "t": "p",
+          "text": "Le standard est ensuite suivi et ajusté en fonction du fonctionnement de votre agence."
+        },
+        {
+          "t": "p",
+          "text": "Vous n'avez pas à configurer vous-même un système de réservation : Rushh s'en charge."
+        }
+      ]
     },
     {
-      id: "preparer",
-      h2: "Ce qu'il faut préparer avant d'activer la réservation",
-      blocks: [
+      "id": "demonstration",
+      "h2": "Obtenez des rendez-vous sans interrompre vos journées",
+      "blocks": [
         {
-          t: "p",
-          text: "Le professionnel définit les catégories de rendez-vous, les durées, les horaires, les délais entre visites, les personnes ou agendas concernés et les situations nécessitant une validation humaine. Il faut aussi tester les indisponibilités d'agenda, les annulations, les demandes ambiguës et les appels hors secteur.",
+          "t": "p",
+          "text": "Vos prochains vendeurs et acquéreurs peuvent appeler pendant que vous êtes déjà occupé."
         },
         {
-          t: "p",
-          text: "Le renvoi d'appel et la réponse directe sont deux modes possibles selon l'opérateur et la configuration. Les connexions à Google Calendar ou Outlook dépendent des accès et du scénario effectivement déployé. Pour comparer des fournisseurs sur ces points, voir le [guide pour choisir un standard téléphonique IA](/ressources/choisir-standard-telephonique-ia-immobilier).",
+          "t": "p",
+          "text": "Avec une prise de rendez-vous automatisée, leurs demandes peuvent avancer sans attendre votre disponibilité."
         },
         {
-          t: "checklist",
-          items: [
-            "Catégories de rendez-vous (estimation, visite, autre) et durée de chacune",
-            "Horaires, délais entre deux visites, agendas et personnes concernés",
-            "Situations qui exigent une validation humaine",
-            "Test d'un agenda sans créneau, d'une annulation, d'une demande ambiguë et d'un appel hors secteur",
-          ],
+          "t": "button",
+          "label": "Réserver une démonstration",
+          "href": "/demonstrations"
         },
-      ],
-    },
-    {
-      id: "indicateurs",
-      h2: "Quels indicateurs ont du sens ?",
-      blocks: [
         {
-          t: "p",
-          text: "Il faut distinguer les appels pris en charge, les demandes qualifiées, les rendez-vous réellement inscrits au calendrier et les demandes de rappel. Un appel traité n'est pas automatiquement un rendez-vous, et un rendez-vous n'assure pas un mandat.",
-        },
-      ],
-    },
-    {
-      id: "faq",
-      h2: "Questions fréquentes",
-      blocks: [
-        { t: "h3", text: "Une IA peut-elle confirmer une visite ?" },
-        {
-          t: "p",
-          text: "Oui, si le bien, les disponibilités et les règles de réservation sont connus et que l'outil connecté permet l'enregistrement. Sinon, elle doit présenter la demande comme restant à confirmer.",
-        },
-        { t: "h3", text: "Peut-elle organiser un rendez-vous d'estimation ?" },
-        { t: "p", text: "Oui, selon les consignes de qualification et l'accès à l'agenda du professionnel." },
-        { t: "h3", text: "Faut-il changer le numéro de l'agence ?" },
-        { t: "p", text: "Pas nécessairement : un renvoi d'appel peut convenir selon l'opérateur et l'installation retenue." },
-        { t: "h3", text: "Que se passe-t-il quand l'agenda est indisponible ?" },
-        { t: "p", text: "Le standard doit enregistrer une demande ou proposer un rappel, sans inventer de créneau." },
-        { t: "h3", text: "Quels agendas sont envisageables ?" },
-        { t: "p", text: "Notamment Google Calendar et Outlook, selon les accès et la configuration validée." },
-        { t: "h3", text: "Est-ce que cela apporte plus de mandats ?" },
-        {
-          t: "p",
-          text: "Aucun résultat n'est promis. Le standard améliore la prise en charge des demandes, mais les résultats commerciaux dépendent de nombreux facteurs.",
-        },
-      ],
-    },
+          "t": "p",
+          "text": "Découvrez comment Rushh qualifie les appels et organise les rendez-vous pour votre agence immobilière."
+        }
+      ]
+    }
   ],
-  sources: [
-    {
-      label: "CNIL : le principe de minimisation des données",
-      url: "https://www.cnil.fr/fr/definition/minimisation",
-      usedFor: "Limiter les informations personnelles recueillies au strict besoin du service. Consulté le 28 octobre 2026.",
-    },
-    {
-      label: "Rushh : l'offre",
-      url: "https://www.rushh.fr/offre",
-      usedFor: "Périmètre de la prestation gérée et tarification sur devis.",
-    },
-    {
-      label: "Rushh : intégrations",
-      url: "https://www.rushh.fr/integrations",
-      usedFor: "Connexions d'agenda possibles, selon le contexte technique.",
-    },
-  ],
-  sourcesNote:
-    "Ce guide décrit une méthode, pas un résultat mesuré : les situations sont fictives et les recommandations sont celles de Rushh, à adapter à votre organisation. Les fonctions réellement disponibles (agenda, notifications, connexions) dépendent de la configuration validée avec chaque client. Rushh édite cette page et en est partie prenante.",
-  rushh: {
-    title: "Du bon appel au bon rendez-vous, sans que vous configuriez quoi que ce soit",
-    text: "Rushh conçoit, configure, teste, déploie et suit un standard téléphonique IA spécialisé dans les appels entrants de l'immobilier, adapté à l'organisation du professionnel. L'objectif : donner à chaque appel une suite utile, avec une voix naturelle et des échanges réactifs. Rendez-vous lorsque c'est possible, transmission structurée lorsqu'une décision humaine est nécessaire.",
-    points: [
-      "Des scénarios écrits pour l'immobilier : estimation, visite, suivi de dossier, appel pendant une visite",
-      "Vos règles appliquées : quels motifs donnent un rendez-vous, lesquels attendent une validation humaine",
-      "Une demande à confirmer présentée comme telle, jamais une réservation inventée",
-      "Une prestation entièrement prise en charge : vous n'avez pas à construire les scénarios techniques",
-    ],
-    links: [
-      { href: "/demonstrations", label: "Tester la ligne de démonstration" },
-      { href: "/offre", label: "Comprendre l'offre" },
-    ],
-  },
-  related: [
-    {
-      href: "/ressources/standard-ia-google-agenda-outlook-immobilier",
-      label: "Standard IA avec Google Agenda et Outlook",
-      text: "Préparer son agenda et suivre le parcours jusqu'au rendez-vous.",
-    },
-    {
-      href: "/ressources/qualification-appels-vendeurs-acquereurs",
-      label: "Qualifier les appels vendeurs et acquéreurs",
-      text: "Les informations à recueillir selon le profil de l'appelant.",
-    },
-    {
-      href: "/ressources/appels-manques-immobilier",
-      label: "Appels manqués en agence immobilière",
-      text: "Mesurer ce qu'il advient des appels sans réponse.",
-    },
-    {
-      href: "/solutions/mandataires-immobiliers",
-      label: "Standard pour mandataires",
-      text: "Estimations et visites pendant que vous êtes en rendez-vous.",
-    },
-  ],
-  cta: {
-    title: "Écoutez un appel d'estimation ou de visite",
-    text: "Appelez la ligne de démonstration, une agence fictive à Paris, et jouez une demande de visite ou d'estimation : la voix, la réactivité et la suite donnée se jugent à l'oreille. Tarification sur devis.",
-    links: [
-      { href: "/demonstrations", label: "Ligne de démonstration" },
-      { href: "/offre", label: "L'offre Rushh" },
-      { href: "/solutions/transaction-immobiliere", label: "Transaction immobilière" },
-    ],
-  },
+  sources: [],
+  sourcesNote: "",
+  related: [],
+  cta: { title: "Obtenez des rendez-vous sans interrompre vos journées", text: "", links: [] },
 };

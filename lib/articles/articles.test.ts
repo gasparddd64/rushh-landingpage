@@ -38,6 +38,7 @@ const REQUIRED_LINKS: Record<string, string[]> = {
 const BARE_LINKS: Record<string, string[]> = {
   "/comparatif/standards-telephoniques-ia-immobilier": ["/demonstrations", "/vs/fonio", "/vs/joe-ai"],
   "/ressources/qualification-appels-vendeurs-acquereurs": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/prise-rendez-vous-ia-immobilier"],
+  "/ressources/prise-rendez-vous-ia-immobilier": ["/demonstrations", "/integrations", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/standard-ia-google-agenda-outlook-immobilier", "/ressources/appel-vendeur-estimation-immobiliere"],
   "/ressources/appels-manques-immobilier": ["/demonstrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/permanence-telephonique-agence-immobiliere"],
 };
 
