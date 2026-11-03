@@ -37,6 +37,7 @@ const REQUIRED_LINKS: Record<string, string[]> = {
 // Pages au texte validé : seuls les liens présents dans le texte (ou posés sur ses mots) sont exigés.
 const BARE_LINKS: Record<string, string[]> = {
   "/comparatif/standards-telephoniques-ia-immobilier": ["/demonstrations", "/vs/fonio", "/vs/joe-ai"],
+  "/ressources/qualification-appels-vendeurs-acquereurs": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/prise-rendez-vous-ia-immobilier"],
   "/ressources/appels-manques-immobilier": ["/demonstrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/permanence-telephonique-agence-immobiliere"],
 };
 
@@ -200,12 +201,13 @@ describe("guide-specific requirements", () => {
     expect(allText(a)).toContain("Rushh n'est pas la seule solution possible");
   });
 
-  it("qualification guide has two clearly fictional fiches and cites the CNIL", () => {
+  it("qualification guide keeps the validated seller (4) and buyer (4) steps and no fictional fiche", () => {
     const a = get("/ressources/qualification-appels-vendeurs-acquereurs");
-    const fiches = a.sections.flatMap((s) => s.blocks).filter((b) => b.t === "fiche");
-    expect(fiches).toHaveLength(2);
-    for (const f of fiches) expect(f.t === "fiche" && f.note).toContain("fictif");
-    expect(a.sources.map((s) => s.url)).toContain("https://www.cnil.fr/fr/definition/minimisation");
+    expect(a.bare).toBe(true);
+    const blocks = a.sections.flatMap((s) => s.blocks);
+    expect(blocks.filter((b) => b.t === "h3" && /^[1-4]\. /.test(b.text))).toHaveLength(8);
+    expect(blocks.filter((b) => b.t === "fiche")).toHaveLength(0);
+    expect(articleToMarkdown(a)).not.toMatch(/fictif|CNIL|minimisation|Sources et méthode/i);
   });
 });
 

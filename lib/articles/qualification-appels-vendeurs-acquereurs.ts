@@ -1,328 +1,221 @@
 import type { Article } from "./types";
 
+/** Texte validé : à reproduire tel quel, sans reformulation (voir `bare` dans types.ts). */
 export const qualification: Article = {
   path: "/ressources/qualification-appels-vendeurs-acquereurs",
+  bare: true,
   cover: {
     src: "/ressources/qualification-appels-vendeurs-acquereurs.png",
     width: 1600,
     height: 840,
-    alt: "Illustration : deux appels entrants, un vendeur qui demande une estimation et un acquéreur qui recherche un bien, convergent vers une qualification puis une fiche de contact identifié, demande qualifiée, transmise à l'équipe.",
+    alt: "Illustration : deux appels entrants, un vendeur qui demande une estimation et un acquéreur qui recherche un bien, convergent vers une qualification puis une demande qualifiée avec une prochaine action.",
   },
   category: "guides",
   title: "Qualifier un appel vendeur ou acquéreur : méthode | Rushh",
   description:
-    "Quelles informations recueillir et transmettre quand un vendeur ou un acquéreur appelle ? Méthode, informations utiles et deux fiches modèles fictives.",
+    "Comment qualifier un appel vendeur ou acquéreur en agence immobilière : les informations à recueillir, la méthode commune et son application avec Rushh.",
   shortTitle: "Qualifier un appel vendeur ou acquéreur",
-  summary:
-    "Les informations à recueillir quand un vendeur ou un acquéreur appelle, avec deux fiches modèles fictives.",
+  summary: "Les informations à recueillir quand un vendeur ou un acquéreur appelle, et la méthode : qualifier, agir, suivre.",
   h1: "Comment qualifier les appels vendeurs et acquéreurs en agence immobilière ?",
   answer:
-    "Qualifier un appel, c'est identifier son motif et recueillir seulement ce qui sert la prochaine action, puis le transmettre dans un résumé structuré. Vendeur : bien, localisation, projet, estimation. Acquéreur : annonce ou recherche, critères, visite.",
-  keyPoints: [
-    "Chaque question doit servir une action : rappeler, rendez-vous, visite ou transfert.",
-    "Chaque appel finit par un résumé, une action, un responsable et une échéance.",
-  ],
+    "Un propriétaire appelle pour faire estimer son bien. Un acquéreur souhaite visiter un appartement. Dans les deux cas, décrocher ne suffit pas : encore faut-il comprendre leur projet et organiser la suite.",
   datePublished: "2026-10-28",
-  dateModified: "2026-11-02",
+  dateModified: "2026-11-03",
+  intro: [
+    {
+      t: "p",
+      text: "Un propriétaire appelle pour faire estimer son bien. Un acquéreur souhaite visiter un appartement. Dans les deux cas, décrocher ne suffit pas : encore faut-il comprendre leur projet et organiser la suite.",
+    },
+    {
+      t: "p",
+      text: "Une bonne qualification transforme un simple appel en opportunité identifiée, avec les bonnes informations et une prochaine action claire.",
+    },
+  ],
   sections: [
     {
-      id: "definition",
-      h2: "Que veut dire qualifier un appel ?",
+      id: "pourquoi",
+      h2: "Pourquoi qualifier les appels entrants ?",
       blocks: [
         {
           t: "p",
-          text: "Qualifier un appel, c'est comprendre la demande et recueillir de quoi y donner suite. Ce n'est pas décider : accepter un mandat, fixer un prix ou valider un projet d'achat restent des décisions humaines.",
+          text: "Dans une [agence immobilière](/solutions/transaction-immobiliere), tous les appels n'ont pas le même objectif.",
         },
-        {
-          t: "callout",
-          kind: "reco",
-          text: "Règle de travail : chaque information demandée doit servir la prochaine action (rappeler, proposer un rendez-vous, organiser une visite, transférer). Si elle ne sert à rien à ce stade, ne la demandez pas.",
-        },
-      ],
-    },
-    {
-      id: "motif",
-      h2: "Identifier le motif avant de poser des questions",
-      blocks: [
         {
           t: "p",
-          text: "Laissez d'abord l'appelant dire pourquoi il appelle, avec ses mots, puis reformulez pour confirmer. Les questions viennent ensuite, dans l'ordre utile à ce motif. Les motifs se classent en quelques familles :",
+          text: "Un vendeur peut vouloir connaître la valeur de son bien, préparer une vente ou simplement se renseigner. Un acquéreur peut appeler pour une annonce précise ou rechercher un bien correspondant à ses critères.",
         },
-        {
-          t: "ul",
-          items: [
-            "souhait de vendre ou demande d'estimation ;",
-            "recherche d'un bien à acheter ;",
-            "demande d'information sur une annonce ;",
-            "demande de visite ;",
-            "suivi d'un dossier en cours ;",
-            "message à transmettre à un collaborateur.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "ne-pas-redemander",
-      h2: "Éviter de redemander ce qui a déjà été dit",
-      blocks: [
         {
           t: "p",
-          text: "Faire répéter son projet à l'appelant quand le négociateur le rappelle fait perdre du temps à tout le monde. Trois habitudes l'évitent :",
+          text: "Sans qualification, le négociateur doit souvent rappeler pour comprendre la demande, reposer les mêmes questions et organiser la suite.",
         },
         {
-          t: "ul",
-          items: [
-            "noter au fil de la conversation, pas à la fin ;",
-            "transmettre un résumé complet avec la demande, pour que le négociateur démarre avec le contexte ;",
-            "lorsque l'appelant est déjà connu, relier l'appel à son dossier si votre organisation le permet.",
-          ],
+          t: "p",
+          text: "L'objectif est simple : savoir qui appelle, ce qu'il recherche et quelle action doit suivre.",
         },
       ],
     },
     {
       id: "vendeur",
-      h2: "Quelles informations recueillir auprès d'un vendeur ?",
+      h2: "Comment qualifier un appel vendeur ?",
       blocks: [
         {
-          t: "table",
-          caption: "Informations à recueillir lors d'un premier appel vendeur",
-          head: ["Information", "Pourquoi", "Niveau"],
-          rows: [
-            ["Nom et moyen de rappel", "Pouvoir rappeler", "Indispensable"],
-            ["Nature du bien (appartement, maison…)", "Orienter vers le bon négociateur", "Indispensable"],
-            ["Localisation (commune ou quartier)", "Vérifier le secteur couvert", "Indispensable"],
-            ["Projet (vente, estimation, simple renseignement)", "Définir la prochaine action", "Indispensable"],
-            ["Calendrier envisagé", "Prioriser le rappel", "Utile"],
-            ["Souhait d'estimation", "Proposer un rendez-vous d'estimation", "Utile"],
-            ["Origine de l'appel (annonce, recommandation…)", "Suivre d'où viennent les demandes", "Utile"],
-            ["Adresse exacte, détails financiers du ménage", "Rarement nécessaire au premier appel", "À éviter à ce stade"],
-          ],
-          note: "Recommandation pratique : le niveau « indispensable » peut varier selon votre organisation.",
+          t: "p",
+          text: "Lorsqu'un propriétaire contacte votre agence, quatre informations permettent de comprendre l'essentiel de son projet.",
+        },
+        { t: "h3", text: "1. Le bien et sa localisation" },
+        {
+          t: "p",
+          text: "S'agit-il d'une maison, d'un appartement ou d'un autre type de bien ? Dans quelle ville ou quel secteur se trouve-t-il ?",
+        },
+        {
+          t: "p",
+          text: "Ces informations permettent d'identifier le bien concerné et de vérifier s'il correspond au secteur d'activité de l'agence.",
+        },
+        { t: "h3", text: "2. La nature du projet" },
+        { t: "p", text: "Le propriétaire souhaite-t-il vendre, obtenir une estimation ou simplement se renseigner ?" },
+        { t: "p", text: "La réponse permet d'adapter la suite de l'échange." },
+        { t: "h3", text: "3. Le calendrier envisagé" },
+        { t: "p", text: "La vente est-elle prévue rapidement, dans quelques mois ou à plus long terme ?" },
+        { t: "p", text: "Cela aide à comprendre l'avancement du projet et à organiser le suivi." },
+        { t: "h3", text: "4. Les coordonnées et la prochaine étape" },
+        {
+          t: "p",
+          text: "Recueillez les coordonnées utiles et, lorsque cela correspond à la demande, proposez un [rendez-vous d'estimation](/ressources/appel-vendeur-estimation-immobiliere).",
+        },
+        {
+          t: "statement",
+          text: "Résultat : une demande vendeur identifiée, avec un projet clair et une prochaine action à organiser.",
         },
       ],
     },
     {
       id: "acquereur",
-      h2: "Quelles informations recueillir auprès d'un acquéreur ?",
+      h2: "Comment qualifier un appel acquéreur ?",
       blocks: [
+        { t: "p", text: "Pour un acquéreur, les questions sont différentes." },
+        { t: "h3", text: "1. Identifier le bien ou la recherche" },
+        { t: "p", text: "L'appel concerne-t-il une annonce précise ou une recherche plus générale ?" },
         {
-          t: "table",
-          caption: "Informations à recueillir lors d'un premier appel acquéreur",
-          head: ["Information", "Pourquoi", "Niveau"],
-          rows: [
-            ["Nom et moyen de rappel", "Pouvoir rappeler", "Indispensable"],
-            ["Annonce concernée ou recherche en cours", "Savoir de quel bien ou de quelle recherche il s'agit", "Indispensable"],
-            ["Critères (type de bien, secteur, nombre de pièces)", "Orienter la réponse du négociateur", "Indispensable"],
-            ["Demande de visite et disponibilités", "Organiser la suite", "Indispensable si visite demandée"],
-            ["Projet (résidence principale, investissement)", "Adapter la conversation", "Utile"],
-            ["Budget", "Vérifier l'adéquation, si l'appelant souhaite l'indiquer", "Utile, facultatif"],
-            ["Plan de financement, revenus, situation personnelle", "À aborder plus tard, si nécessaire", "À éviter à ce stade"],
-          ],
-          note: "Recommandation pratique : un appelant peut préférer ne pas donner son budget au premier appel ; notez « non communiqué ».",
+          t: "p",
+          text: "S'il s'agit d'une recherche, identifiez les critères principaux : secteur, type de bien et caractéristiques souhaitées.",
         },
+        { t: "h3", text: "2. Comprendre le budget et le financement" },
         {
-          t: "rushh",
-          title: "Vendeur ou acquéreur : la demande arrive déjà classée",
-          text: "Rushh décroche, identifie le motif, recueille ces informations et classe la demande par nature dans sa plateforme métier (**opportunité vendeur** ou **acheteur**), avec résumé et statut. Un rendez-vous peut être proposé sur les agendas connectés.",
-          link: { href: "/solutions/transaction-immobiliere", label: "Voir Rushh pour la transaction" },
-        },
-      ],
-    },
-    {
-      id: "minimisation",
-      h2: "Quelles informations éviter, et pourquoi ?",
-      takeaway: "Ne demandez pas ce qui ne sert pas la prochaine action : la CNIL appelle cela la minimisation.",
-      fold: true,
-      blocks: [
-        {
-          t: "callout",
-          kind: "fact",
-          text: "Le RGPD demande que les données personnelles collectées soient « adéquates, pertinentes et limitées » à ce qui est nécessaire pour la finalité du traitement : c'est le principe de minimisation, tel que le définit la CNIL (voir Sources).",
+          t: "p",
+          text: "Le budget recherché permet de mieux cerner les biens susceptibles de correspondre au projet.",
         },
         {
           t: "p",
-          text: "Appliqué à un appel, le principe se traduit simplement : demandez ce qui sert la prochaine action, rien de plus. Sauf nécessité claire, ne recueillez pas d'informations sur la santé, la situation familiale détaillée ou les revenus lors d'un premier appel.",
+          text: "Lorsque c'est pertinent, vous pouvez également demander où en est l'acquéreur dans son financement, sans transformer ce premier échange en étude financière.",
+        },
+        { t: "h3", text: "3. Connaître le calendrier du projet" },
+        {
+          t: "p",
+          text: "L'acquéreur souhaite-t-il acheter rapidement ou commence-t-il ses recherches ? Souhaite-t-il organiser une visite ?",
+        },
+        { t: "h3", text: "4. Organiser la suite" },
+        {
+          t: "p",
+          text: "Recueillez ses coordonnées et ses disponibilités pour proposer une visite ou transmettre sa demande au bon interlocuteur.",
+        },
+        {
+          t: "statement",
+          text: "Résultat : une demande acquéreur qualifiée, avec des critères identifiés et une prochaine étape précise.",
         },
       ],
     },
     {
-      id: "resume",
-      h2: "Comment structurer un résumé pour le négociateur ?",
+      id: "methode",
+      h2: "La méthode commune : qualifier, agir et suivre",
       blocks: [
         {
           t: "p",
-          text: "Un bon résumé se lit en quinze secondes et se termine par une action. Reprenez ces champs, dans cet ordre :",
-        },
-        {
-          t: "ol",
-          items: [
-            "Date et heure de l'appel.",
-            "Appelant : nom et moyen de rappel.",
-            "Motif, formulé en une phrase.",
-            "Bien ou recherche concernée.",
-            "Informations utiles recueillies.",
-            "Ce qui a été indiqué à l'appelant.",
-            "Prochaine action, responsable et échéance.",
-            "Point d'attention, et transfert humain nécessaire ou non.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "fiches",
-      h2: "Deux fiches modèles à reprendre",
-      takeaway: "Deux fiches fictives à reprendre telles quelles, une pour un vendeur et une pour un acquéreur.",
-      fold: true,
-      blocks: [
-        {
-          t: "callout",
-          kind: "example",
-          text: "Ces deux fiches sont fictives : elles montrent le format, pas de vrais appelants. Reprenez les champs, pas les valeurs.",
-        },
-        {
-          t: "fiche",
-          title: "Fiche 1 : appel vendeur, projet d'estimation",
-          rows: [
-            ["Date et heure", "Mardi, 16 h 40"],
-            ["Appelant", "Mme D. (exemple fictif), rappel au numéro affiché"],
-            ["Motif", "Souhaite faire estimer sa maison avant de décider de vendre"],
-            ["Bien", "Maison de 5 pièces, environ 110 m² (indiqués par l'appelante), à Rennes"],
-            ["Informations utiles", "Projet de vente envisagé dans les six mois ; maison actuellement occupée"],
-            ["Indiqué à l'appelante", "Un négociateur la rappellera pour proposer un rendez-vous d'estimation"],
-            ["Prochaine action", "Rappeler pour proposer un rendez-vous, avant jeudi midi"],
-            ["Point d'attention", "Préfère être rappelée en fin de journée. Transfert humain : non"],
-          ],
-          note: "Exemple fictif.",
-        },
-        {
-          t: "fiche",
-          title: "Fiche 2 : appel acquéreur, demande de visite",
-          rows: [
-            ["Date et heure", "Jeudi, 11 h 05"],
-            ["Appelant", "M. L. (exemple fictif), rappel au numéro affiché"],
-            ["Motif", "Souhaite visiter un appartement vu en annonce"],
-            ["Bien concerné", "T3 de l'annonce n° A-1042 (référence fictive)"],
-            ["Informations utiles", "Recherche une résidence principale ; budget non communiqué ; disponible samedi matin"],
-            ["Indiqué à l'appelant", "Les disponibilités de visite seront confirmées par le négociateur"],
-            ["Prochaine action", "Confirmer la visite de samedi matin et rappeler l'appelant, avant vendredi 17 h"],
-            ["Point d'attention", "Aucun. Transfert humain : non"],
-          ],
-          note: "Exemple fictif.",
-        },
-      ],
-    },
-    {
-      id: "prochaine-action",
-      h2: "Quelle prochaine action définir ?",
-      blocks: [
-        {
-          t: "p",
-          text: "Chaque fiche se termine par une action, un responsable et une échéance. Les actions possibles sont peu nombreuses :",
+          text: "Qu'il s'agisse d'un vendeur ou d'un acquéreur, une qualification efficace repose sur trois principes :",
         },
         {
           t: "ul",
           items: [
-            "transmettre au négociateur pour un rappel ;",
-            "proposer un rendez-vous (estimation, visite) selon vos règles, comme le détaille le [guide de la prise de rendez-vous par IA](/ressources/prise-rendez-vous-ia-immobilier) ;",
-            "transférer l'appel à un collaborateur ;",
-            "répondre à une question simple et clore la demande.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "transfert",
-      h2: "Quand transférer à un humain ?",
-      blocks: [
-        {
-          t: "p",
-          text: "Prévoyez à l'avance les situations qui passent directement à une personne :",
-        },
-        {
-          t: "ul",
-          items: [
-            "l'appelant demande à parler à un humain ;",
-            "il s'agit d'un litige, d'une réclamation ou d'un appelant mécontent ;",
-            "la demande concerne un dossier en cours avec un négociateur identifié ;",
-            "la demande sort des scénarios prévus ;",
-            "la situation paraît urgente ou sensible.",
+            "**Comprendre :** identifier le motif de l'appel et recueillir les informations réellement utiles.",
+            "**Agir :** proposer un rendez-vous, transmettre l'appel ou organiser un suivi adapté.",
+            "**Suivre :** conserver les informations, le statut de la demande et la prochaine action.",
           ],
         },
         {
           t: "p",
-          text: "Si un appelant doit savoir qu'il échange avec une IA, voir [Télésecrétariat humain ou standard téléphonique IA](/ressources/telesecretariat-humain-ou-ia).",
+          text: "Une qualification ne doit pas devenir un interrogatoire. Les questions doivent rester naturelles et adaptées au projet exprimé.",
+        },
+        {
+          t: "p",
+          text: "Le plus important n'est pas la quantité d'informations collectées, mais la capacité de l'agence à exploiter la demande après l'appel.",
         },
       ],
     },
     {
-      id: "avec-rushh",
-      h2: "Et avec un standard téléphonique IA ?",
+      id: "rushh",
+      h2: "Comment Rushh applique cette méthode",
       blocks: [
         {
           t: "p",
-          text: "Ces fiches deviennent les questions du standard : l'équipe Rushh les définit avec vous, les teste et assure le suivi, sans configuration de votre côté. Le standard recueille et transmet ; il ne prend aucune décision immobilière importante à votre place et ne promet ni mandat ni rendez-vous. Voir la page [transaction immobilière](/solutions/transaction-immobiliere) ou testez la [ligne de démonstration](/demonstrations).",
+          text: "Rushh est un standard téléphonique alimenté par intelligence artificielle, spécialisé dans l'immobilier.",
+        },
+        {
+          t: "p",
+          text: "Il prend en charge les appels entrants et adapte ses questions selon le projet de l'interlocuteur.",
+        },
+        { t: "h3", text: "Exemple : un propriétaire appelle pendant une visite" },
+        {
+          t: "p",
+          text: "Vous accompagnez un acquéreur lorsqu'un propriétaire appelle pour obtenir une estimation.",
+        },
+        {
+          t: "p",
+          text: "Rushh décroche, identifie la demande vendeur, recueille le type de bien, sa localisation et le calendrier envisagé.",
+        },
+        {
+          t: "p",
+          text: "Selon les scénarios configurés et les disponibilités de votre [agenda connecté](/ressources/prise-rendez-vous-ia-immobilier), il peut directement proposer un rendez-vous d'estimation.",
+        },
+        {
+          t: "p",
+          text: "La demande est ensuite classée dans la plateforme métier Rushh, avec les coordonnées du propriétaire, le résumé de l'appel et son statut.",
+        },
+        {
+          t: "statement",
+          text: "Votre équipe retrouve une opportunité vendeur identifiée, sans avoir interrompu sa visite ni devoir reprendre toute la conversation.",
+        },
+        {
+          t: "p",
+          text: "Le même fonctionnement s'applique aux acquéreurs : identification de l'annonce ou des critères de recherche, qualification du projet et organisation de la suite.",
+        },
+        {
+          t: "p",
+          text: "Rushh peut également transmettre les informations à votre [logiciel immobilier](/integrations) lorsque son API et les autorisations disponibles le permettent.",
+        },
+        {
+          t: "p",
+          text: "Notre équipe prend en charge la configuration, les tests, l'installation et le suivi du standard selon le fonctionnement de votre agence.",
         },
       ],
     },
     {
-      id: "checklist",
-      h2: "Checklist : vérifier vos trois derniers appels",
+      id: "demonstration",
+      h2: "Transformez vos appels en opportunités exploitables",
       blocks: [
         {
-          t: "checklist",
-          items: [
-            "Reprendre trois appels vendeurs ou acquéreurs récents.",
-            "Vérifier que le motif est écrit en une phrase.",
-            "Vérifier que chaque information notée a servi la prochaine action.",
-            "Supprimer les champs que personne n'utilise.",
-            "Contrôler que chaque fiche se termine par une action, un responsable et une échéance.",
-            "Lister les situations à transférer directement à un humain.",
-          ],
+          t: "p",
+          text: "Un appel qualifié permet à votre équipe de comprendre immédiatement le projet de son interlocuteur et de savoir quelle action entreprendre.",
         },
+        {
+          t: "p",
+          text: "Avec Rushh, cette qualification peut être réalisée dès le premier appel, même lorsque vos collaborateurs sont indisponibles.",
+        },
+        { t: "button", label: "Réserver une démonstration", href: "/demonstrations" },
+        { t: "p", text: "Découvrez comment Rushh qualifie les demandes vendeurs et acquéreurs pour votre agence." },
       ],
     },
   ],
-  sources: [
-    {
-      label: "CNIL : définition de la minimisation des données",
-      url: "https://www.cnil.fr/fr/definition/minimisation",
-      usedFor: "Principe selon lequel les données doivent être « adéquates, pertinentes et limitées » à ce qui est nécessaire. Page consultée le 28 octobre 2026.",
-    },
-  ],
-  sourcesNote:
-    "Les fiches sont des exemples fictifs ; les listes d'informations sont des recommandations pratiques de Rushh, à adapter à votre organisation. Ce guide n'est pas un avis juridique.",
-  rushh: {
-    title: "La qualification, conduite par le Standard",
-    text: "Les fiches de ce guide peuvent devenir les questions que le Standard pose à chaque appelant : vous les validez avec nous, il les applique sans reposer ce qui a déjà été répondu.",
-    points: [
-      "Des questions définies avec vous pour vendeurs, acquéreurs, locataires et autres contacts",
-      "Une priorisation des demandes selon vos critères : projet urgent, disponibilité, secteur",
-      "Une transmission à l'équipe, et au logiciel immobilier (Apimo, Whise) lorsque la connexion et les droits sont configurés",
-      "Une collecte limitée aux informations utiles, avec les règles définies ensemble",
-    ],
-    links: [
-      { href: "/solutions/mandataires-immobiliers", label: "Voir la page mandataires" },
-      { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
-    ],
-  },
-  related: [
-    {
-      href: "/ressources/appels-manques-immobilier",
-      label: "Appels manqués en agence immobilière",
-      text: "Mesurer et rappeler les appels que vous n'avez pas pu prendre.",
-    },
-    {
-      href: "/ressources/telesecretariat-humain-ou-ia",
-      label: "Télésecrétariat humain ou standard téléphonique IA",
-      text: "Choisir qui prend vos appels entrants.",
-    },
-  ],
-  cta: {
-    title: "Voir ces fiches appliquées à un appel réel",
-    text: "Appelez la ligne de démonstration, ou demandez une démonstration personnalisée. Tarification sur devis.",
-    links: [
-      { href: "/demonstrations", label: "Ligne de démonstration" },
-      { href: "/solutions/transaction-immobiliere", label: "Transaction immobilière" },
-    ],
-  },
+  sources: [],
+  sourcesNote: "",
+  related: [],
+  cta: { title: "Transformez vos appels en opportunités exploitables", text: "", links: [] },
 };
