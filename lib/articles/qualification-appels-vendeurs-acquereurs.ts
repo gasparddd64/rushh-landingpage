@@ -17,9 +17,13 @@ export const qualification: Article = {
     "Les informations à recueillir quand un vendeur ou un acquéreur appelle, avec deux fiches modèles fictives.",
   h1: "Comment qualifier les appels vendeurs et acquéreurs en agence immobilière ?",
   answer:
-    "Qualifier un appel, c'est identifier son motif, recueillir uniquement les informations utiles à la prochaine action, puis les transmettre au négociateur dans un résumé structuré, avec une prochaine étape claire. Pour un vendeur : le bien, sa localisation, le projet et le souhait d'estimation. Pour un acquéreur : l'annonce ou la recherche, les critères, le projet et la demande de visite. Ne collectez pas plus que nécessaire.",
+    "Qualifier un appel, c'est identifier son motif et recueillir seulement ce qui sert la prochaine action, puis le transmettre dans un résumé structuré. Vendeur : bien, localisation, projet, estimation. Acquéreur : annonce ou recherche, critères, visite.",
+  keyPoints: [
+    "Chaque question doit servir une action : rappeler, rendez-vous, visite ou transfert.",
+    "Chaque appel finit par un résumé, une action, un responsable et une échéance.",
+  ],
   datePublished: "2026-10-28",
-  dateModified: "2026-10-29",
+  dateModified: "2026-11-02",
   sections: [
     {
       id: "definition",
@@ -116,11 +120,19 @@ export const qualification: Article = {
           ],
           note: "Recommandation pratique : un appelant peut préférer ne pas donner son budget au premier appel ; notez « non communiqué ».",
         },
+        {
+          t: "rushh",
+          title: "Vendeur ou acquéreur : la demande arrive déjà classée",
+          text: "Rushh décroche, identifie le motif, recueille ces informations et classe la demande par nature dans sa plateforme métier (**opportunité vendeur** ou **acheteur**), avec résumé et statut. Un rendez-vous peut être proposé sur les agendas connectés.",
+          link: { href: "/solutions/transaction-immobiliere", label: "Voir Rushh pour la transaction" },
+        },
       ],
     },
     {
       id: "minimisation",
       h2: "Quelles informations éviter, et pourquoi ?",
+      takeaway: "Ne demandez pas ce qui ne sert pas la prochaine action : la CNIL appelle cela la minimisation.",
+      fold: true,
       blocks: [
         {
           t: "callout",
@@ -159,6 +171,8 @@ export const qualification: Article = {
     {
       id: "fiches",
       h2: "Deux fiches modèles à reprendre",
+      takeaway: "Deux fiches fictives à reprendre telles quelles, une pour un vendeur et une pour un acquéreur.",
+      fold: true,
       blocks: [
         {
           t: "callout",
@@ -246,11 +260,7 @@ export const qualification: Article = {
       blocks: [
         {
           t: "p",
-          text: "Ces fiches et ces règles de transfert peuvent être configurées dans un standard téléphonique alimenté par intelligence artificielle. Chez Rushh, elles sont définies avec vous, testées avant la mise en service, et appliquées selon la configuration et les connexions validées. Le Standard recueille et transmet : il ne prend aucune décision immobilière importante à votre place, et il ne promet ni mandat ni rendez-vous.",
-        },
-        {
-          t: "p",
-          text: "Voir comment cela s'applique à la vente et à l'achat sur la page [transaction immobilière](/solutions/transaction-immobiliere), ou testez un appel sur la [ligne de démonstration](/demonstrations).",
+          text: "Ces fiches deviennent les questions du standard : l'équipe Rushh les définit avec vous, les teste et assure le suivi, sans configuration de votre côté. Le standard recueille et transmet ; il ne prend aucune décision immobilière importante à votre place et ne promet ni mandat ni rendez-vous. Voir la page [transaction immobilière](/solutions/transaction-immobiliere) ou testez la [ligne de démonstration](/demonstrations).",
         },
       ],
     },

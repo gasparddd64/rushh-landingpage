@@ -66,31 +66,26 @@ export const coutStandard: Article = {
     },
     {
       id: "simulations",
-      h2: "Trois exemples de budget : une simulation, pas un prix Rushh",
+      h2: "Trois structures de facturation : pourquoi le classement change avec le volume",
       blocks: [
         {
-          t: "callout",
-          kind: "example",
-          text: "Simulation pédagogique aux montants entièrement fictifs. Les prix ci-dessous ne sont ni des tarifs de Rushh ni ceux d'un concurrent : ils servent uniquement à montrer comment se calcule un coût total. Ne les utilisez pas comme repère de marché.",
-        },
-        {
           t: "p",
-          text: "Hypothèses : une agence reçoit environ 300 appels entrants par mois, de deux minutes en moyenne, soit 600 minutes. Trois offres imaginaires sont comparées, en euros par mois, hors taxes. L'offre 1 affiche un abonnement de 35 € avec 100 minutes incluses, puis 0,40 € par minute au-delà. L'offre 2 affiche 90 € avec 400 minutes incluses, puis 0,20 € par minute. L'offre 3 affiche 150 € avec 800 minutes incluses, puis 0,15 € par minute, et des frais d'installation de 480 € étalés sur 12 mois, soit 40 € par mois.",
+          text: "Pour un même volume d'appels, trois structures de facturation donnent des coûts très différents, sans qu'aucun montant ne soit nécessaire pour le comprendre. Le tableau compare ce qui pèse sur le coût et ce qu'il faut demander.",
         },
         {
           t: "table",
-          caption: "Coût mensuel simulé selon le volume d'appels (montants fictifs, en euros hors taxes)",
-          head: ["Offre imaginaire", "Prix affiché", "Mois à 600 minutes", "Mois à 1 200 minutes"],
+          caption: "Trois structures de facturation et ce qui fait varier le coût",
+          head: ["Structure", "Ce qui pèse sur le coût", "Ce qu'il faut demander"],
           rows: [
-            ["Offre 1 : abonnement bas, dépassement élevé", "35 €", "235 €", "475 €"],
-            ["Offre 2 : abonnement intermédiaire", "90 €", "130 €", "250 €"],
-            ["Offre 3 : abonnement haut, volume large, installation facturée", "150 €", "190 €", "250 €"],
+            ["Abonnement bas, dépassement élevé", "Le prix de chaque minute au-delà du volume inclus", "Le coût du mois le plus chargé, pas seulement du mois moyen"],
+            ["Abonnement intermédiaire, volume confortable", "Le volume inclus et le tarif du dépassement éventuel", "Ce qui se passe si le volume inclus est dépassé deux mois de suite"],
+            ["Abonnement haut, volume large, installation facturée", "L'installation, étalée ou non, et le volume réellement utilisé", "Si l'installation et les intégrations sont comprises ou facturées à part"],
           ],
-          note: "Calculs fictifs. Offre 1 à 600 minutes : 35 + (600 − 100) × 0,40 = 235. Offre 2 à 1 200 minutes : 90 + (1 200 − 400) × 0,20 = 250. Offre 3 à 600 minutes : 150 + 0 + 40 d'installation étalée = 190 ; à 1 200 minutes : 150 + (1 200 − 800) × 0,15 + 40 = 250.",
+          note: "Comparaison de structures, sans montant : les prix réels changent d'un fournisseur et d'une date à l'autre. Demandez un devis chiffré sur vos propres volumes.",
         },
         {
           t: "p",
-          text: "Dans cette simulation, l'offre qui paraît la moins chère (l'offre 1) devient la plus coûteuse dès que le volume dépasse le forfait. L'offre 3, la plus chère à l'affichage, passe devant l'offre 1 dès 600 minutes et rejoint l'offre 2 à 1 200 minutes. Le classement change avec le volume : c'est pourquoi un devis doit être comparé sur vos propres chiffres.",
+          text: "L'offre qui paraît la moins chère à l'affichage peut devenir la plus coûteuse dès que le volume dépasse le forfait, et l'offre la plus chère à l'affichage peut devenir la plus avantageuse si le volume est élevé. Le classement change avec le volume : c'est pourquoi un devis doit être comparé sur vos propres chiffres.",
         },
       ],
     },
@@ -168,7 +163,7 @@ export const coutStandard: Article = {
     },
   ],
   sourcesNote:
-    "Ce guide décrit une méthode de calcul. Les trois offres de la simulation sont imaginaires et leurs montants fictifs, chiffrés pour la pédagogie : ils ne représentent ni un tarif de Rushh ni celui d'un fournisseur existant. Les prix réels des fournisseurs changent ; vérifiez-les sur leurs sites à la date de votre décision. Rushh édite cette page et en est partie prenante.",
+    "Ce guide décrit une méthode de comparaison et ne contient aucun montant. Les prix des fournisseurs changent : demandez un devis à la date de votre décision. Rushh édite cette page et en est partie prenante.",
   rushh: {
     title: "Un périmètre clair, un devis lisible, et un standard pris en charge de bout en bout",
     text: "Rushh conçoit, configure, teste, déploie et suit un standard téléphonique IA spécialisé dans les appels entrants de l'immobilier. La tarification se fait sur devis, après un échange sur vos appels et votre organisation : l'objectif est que chaque ligne de coût soit compréhensible avant de s'engager.",

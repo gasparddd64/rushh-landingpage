@@ -79,20 +79,20 @@ export const rentabiliteStandard: Article = {
         {
           t: "callout",
           kind: "example",
-          text: "Exemple entièrement fictif. Les montants et les taux ci-dessous sont inventés pour montrer le calcul : ce ne sont ni des tarifs de Rushh ni des tarifs de concurrents, et ils ne décrivent aucun résultat réel. Ne les utilisez pas comme repère.",
+          text: "Exemple entièrement fictif, exprimé en unités : C désigne le coût mensuel du standard, quel qu'il soit. Les valeurs ci-dessous sont inventées pour montrer le calcul et ne décrivent aucun résultat réel. Ne les utilisez pas comme repère.",
         },
         {
           t: "table",
           caption: "Exemple fictif de seuil de rentabilité",
           head: ["Hypothèse fictive", "Valeur", "Calcul"],
           rows: [
-            ["Coût mensuel du standard", "240 €", "Donnée 1"],
-            ["Valeur moyenne d'une affaire (honoraires nets)", "3 600 €", "Donnée 2"],
+            ["Coût mensuel du standard", "C", "Donnée 1"],
+            ["Valeur moyenne d'une affaire (honoraires nets)", "15 C", "Donnée 2, fictive"],
             ["Taux de transformation d'un rendez-vous", "1 sur 5", "Donnée 3"],
-            ["Seuil en affaires", "0,067 affaire par mois", "240 ÷ 3 600"],
-            ["Une seule affaire couvre", "15 mois de coût", "3 600 ÷ 240"],
-            ["Valeur d'un rendez-vous", "720 €", "3 600 ÷ 5"],
-            ["Seuil en rendez-vous", "1 rendez-vous tous les 3 mois", "240 ÷ 720 = 0,33 par mois"],
+            ["Seuil en affaires", "0,067 affaire par mois", "C ÷ 15 C = 1 ÷ 15"],
+            ["Une seule affaire couvre", "15 mois de coût", "15 C ÷ C"],
+            ["Valeur d'un rendez-vous", "3 C", "15 C ÷ 5"],
+            ["Seuil en rendez-vous", "1 rendez-vous tous les 3 mois", "C ÷ 3 C = 0,33 par mois"],
           ],
           note: "Calculs fictifs. Un seuil bas ne prouve pas que le standard fera récupérer ces rendez-vous : il dit seulement ce qu'il faut récupérer pour que l'opération soit neutre.",
         },
@@ -183,7 +183,7 @@ export const rentabiliteStandard: Article = {
     },
   ],
   sourcesNote:
-    "Ce guide décrit une méthode de calcul, sans source externe : aucune donnée de marché n'est reprise. L'exemple chiffré est entièrement fictif : ses montants et ses taux sont inventés et ne représentent ni un tarif de Rushh, ni un tarif de concurrent, ni un résultat. Rushh ne promet aucun résultat commercial. Rushh édite cette page et en est partie prenante.",
+    "Ce guide décrit une méthode de calcul, sans source externe : aucune donnée de marché n'est reprise. L'exemple chiffré est entièrement fictif : ses valeurs et ses taux sont inventés et ne représentent ni un tarif, ni un résultat. Rushh ne promet aucun résultat commercial. Rushh édite cette page et en est partie prenante.",
   rushh: {
     title: "Un devis sur votre organisation, un test que vous pouvez juger vous-même",
     text: "Rushh conçoit, configure, teste, déploie et suit un standard téléphonique IA spécialisé dans les appels entrants de l'immobilier. La tarification se fait sur devis, après un échange sur vos appels : vous pouvez ensuite appliquer à ce devis le calcul de ce guide, et écouter la ligne de démonstration avant de décider.",

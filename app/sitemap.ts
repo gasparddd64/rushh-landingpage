@@ -76,7 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/comparatif/standards-telephoniques-ia-immobilier',
-      lastModified: new Date('2026-10-31'),
+      lastModified: new Date('2026-11-03'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },

@@ -16,9 +16,9 @@ export const standardApimo: Article = {
   summary: "Ce que l'API Apimo documente, quels droits sont nécessaires et ce qu'une connexion sur mesure permet.",
   h1: "Comment connecter un standard téléphonique IA au CRM Apimo ?",
   answer:
-    "Rushh réalise sur mesure des connexions avec les logiciels immobiliers accessibles par API, dont Apimo lorsque l'agence dispose des accès et des droits nécessaires. Les actions possibles (créer un lead, le rattacher à une annonce, mettre à jour une fiche) dépendent de ces droits et d'une validation avec l'agence. Il ne s'agit pas d'un plug-in universel présenté comme natif ou certifié.",
+    "Rushh connecte sur mesure Apimo, comme tout logiciel immobilier doté d'une API, lorsque l'agence dispose des accès et des droits. Ce n'est ni un plug-in universel, ni une connexion native ou certifiée : les actions se définissent et se valident avec chaque agence.",
   datePublished: "2026-10-31",
-  dateModified: "2026-10-31",
+  dateModified: "2026-11-02",
   sections: [
     {
       id: "api-apimo",
@@ -51,12 +51,18 @@ export const standardApimo: Article = {
         { t: "h3", text: "Un appel vendeur" },
         {
           t: "p",
-          text: "Un propriétaire appelle pour une estimation. Le standard recueille le projet, le secteur, le type de bien et le moyen de le rappeler. Si l'agence a ouvert le droit d'envoyer des leads, une fiche peut être créée dans Apimo avec ces informations et le motif de l'appel. Sinon, la demande est transmise à l'équipe par le canal de repli prévu (notification ou e-mail).",
+          text: "Un propriétaire appelle pour une estimation. Le standard recueille le projet, le secteur, le type de bien et le moyen de le rappeler. Si l'agence a ouvert le droit d'envoyer des leads, une fiche peut être créée dans Apimo avec ces informations et le motif de l'appel. Sinon, la demande reste exploitable dans la plateforme Rushh et est transmise à l'équipe par le canal de repli prévu (notification ou e-mail).",
         },
         { t: "h3", text: "Un appel acquéreur" },
         {
           t: "p",
           text: "Un acquéreur appelle au sujet d'une annonce. Si le bien peut être identifié (référence donnée par l'appelant, ou lecture des annonces autorisée), le lead peut être rattaché à cette annonce. Si le bien est ambigu, le standard le dit et transmet la demande sans choisir à la place de l'acquéreur.",
+        },
+        {
+          t: "rushh",
+          title: "Une demande qualifiée, avec ou sans connexion",
+          text: "Rushh classe chaque appel par nature (**opportunité vendeur**, **opportunité acheteur**, locataire, bailleur) dans sa plateforme métier, avec résumé et statut. Si l'agence ouvre les droits, la même demande peut aussi partir dans Apimo.",
+          link: { href: "/integrations", label: "Voir les intégrations" },
         },
       ],
     },
@@ -109,6 +115,8 @@ export const standardApimo: Article = {
     {
       id: "validation",
       h2: "Ce qui doit être validé avec l'agence",
+      takeaway: "Six points à valider avec l'agence avant d'ouvrir la connexion.",
+      fold: true,
       blocks: [
         {
           t: "ul",
@@ -126,6 +134,8 @@ export const standardApimo: Article = {
     {
       id: "checklist",
       h2: "Checklist d'intégration sans casser le CRM",
+      takeaway: "Six contrôles pour connecter le CRM sans le perturber.",
+      fold: true,
       blocks: [
         {
           t: "checklist",
@@ -234,7 +244,7 @@ export const standardApimo: Article = {
   ],
   cta: {
     title: "Parlez de votre logiciel et de vos accès",
-    text: "Réservez une démonstration adaptée à votre agence : nous regardons avec vous ce qui peut être connecté, avec quels droits, et ce qui reste en transmission simple. Tarification sur devis.",
+    text: "Réservez une démonstration adaptée à votre agence : nous regardons avec vous ce qui peut être connecté, avec quels droits, et ce qui reste en transmission simple. Obtenez une proposition adaptée à votre agence.",
     links: [
       { href: "/integrations", label: "Intégrations" },
       { href: "/demonstrations", label: "Ligne de démonstration" },

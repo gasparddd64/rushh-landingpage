@@ -19,13 +19,22 @@ export const vsFonio: Article = {
     "Une plateforme à configurer face à une prestation gérée : accompagnement, canaux et tarification.",
   h1: "Alternative à Fonio pour l'immobilier : Rushh ou Fonio, que choisir pour les appels de votre agence ?",
   answer:
-    "Fonio est une plateforme d'assistants téléphoniques IA qui propose des pages dédiées à l'immobilier, une création en libre-service et des forfaits d'accompagnement payants. Rushh est une prestation entièrement gérée, spécialisée dans les appels entrants des professionnels de l'immobilier. Les deux répondent aux appels, qualifient et peuvent transférer ou prendre un rendez-vous ; la différence porte surtout sur qui conçoit et suit le standard, sur la spécialisation immobilière et sur le modèle de tarification.",
+    "Fonio : une plateforme d'assistants IA à créer et piloter soi-même. Rushh : une prestation entièrement gérée, spécialisée dans les appels immobiliers. Tous deux qualifient et prennent des rendez-vous ; la différence porte sur qui conçoit et suit le standard.",
+  rushhBrief:
+    "standard téléphonique IA immobilier entièrement pris en charge : qualification, rendez-vous, plateforme métier.",
+  verdict: {
+    otherName: "Fonio",
+    rushhIf: ["un standard conçu et suivi pour vous", "une solution pour appels d'agence immobilière", "des demandes classées par opportunité"],
+    otherIf: ["un assistant à piloter soi-même", "une grille de forfaits publique", "WhatsApp ou chat web"],
+  },
   datePublished: "2026-10-29",
-  dateModified: "2026-10-29",
+  dateModified: "2026-11-02",
   sections: [
     {
       id: "fonio",
       h2: "Ce que Fonio propose, d'après son site",
+      takeaway: "Fonio propose bien la réservation de rendez-vous, le transfert d'appel et un accompagnement payant : ce n'est pas un simple outil à configurer seul.",
+      fold: true,
       blocks: [
         {
           t: "p",
@@ -58,12 +67,12 @@ export const vsFonio: Article = {
         {
           t: "ul",
           items: [
-            "**Appels entrants** : le Standard décroche, identifie le motif, recueille les informations utiles, puis transmet à l'équipe selon les règles validées avec l'agence.",
-            "**Prestation entièrement gérée** : Rushh analyse le fonctionnement de l'agence, configure les scénarios, personnalise, connecte les outils compatibles, teste, met en service, puis assure le suivi, le support et la maintenance. L'agence ne configure pas elle-même un logiciel.",
-            "**Spécialisation immobilière** : scénarios pour la transaction, la gestion locative, le syndic et les réseaux d'agences. Voir les pages [mandataires](/solutions/mandataires-immobiliers), [gestion locative](/solutions/gestion-locative) et [syndics](/solutions/syndics).",
-            "**Rendez-vous et outils** : rendez-vous et transfert selon le périmètre validé ; connexions possibles à Google Calendar, Outlook, Apimo et Whise, selon le contexte technique et confirmées avec l'agence.",
-            "**Mise en service** : visée sous 5 jours ouvrés après réception des éléments nécessaires, à titre indicatif. Tarification sur devis.",
-            "**Limites** : Rushh ne fait pas d'appels sortants et ne couvre ni SMS, ni WhatsApp, ni chat web.",
+            "**Appels entrants 24 h/24** : réponse directe ou renvoi conditionnel ; le Standard identifie le motif et qualifie vendeurs, acquéreurs, locataires, bailleurs, fournisseurs et prestataires.",
+            "**Plateforme métier Rushh** : chaque demande est classée par type d'opportunité, avec résumé, statut et suivi ; SMS et e-mails envoyés selon les scénarios configurés.",
+            "**Rendez-vous et intégrations** : agendas connectés (Google Calendar, Outlook), connexions CRM et API sur mesure (Apimo, Whise ou tout logiciel doté d'une API), sous réserve des accès.",
+            "**Prestation entièrement gérée** : conception, personnalisation des scénarios et de la voix (clonage vocal selon la configuration), tests, installation, suivi et maintenance. L'agence ne configure rien.",
+            "**Spécialisation immobilière** : transaction, gestion locative, syndic et réseaux d'agences. Voir les pages [mandataires](/solutions/mandataires-immobiliers), [gestion locative](/solutions/gestion-locative) et [syndics](/solutions/syndics).",
+            "**Périmètre** : Rushh se concentre sur les appels entrants et ne fait pas d'appels sortants. Les capacités ci-dessus sont activées selon la configuration de chaque agence.",
           ],
         },
       ],
@@ -74,7 +83,7 @@ export const vsFonio: Article = {
       blocks: [
         {
           t: "table",
-          caption: "Fonio et Rushh comparés sur huit critères",
+          caption: "Fonio et Rushh : les quatre différences qui comptent",
           head: ["Critère", "Fonio", "Rushh"],
           rows: [
             [
@@ -95,8 +104,19 @@ export const vsFonio: Article = {
             [
               "Canaux",
               "Voix, WhatsApp et chat web ; appels sortants dans les forfaits voix",
-              "Appels entrants uniquement",
+              "Appels entrants ; SMS et e-mails pour confirmations et informations, selon les scénarios",
             ],
+          ],
+        },
+        {
+          t: "detail",
+          summary: "Voir les quatre autres critères : intégrations, mise en service, tarification, données",
+          blocks: [
+            {
+              t: "table",
+              caption: "Fonio et Rushh : intégrations, mise en service, tarification et données",
+              head: ["Critère", "Fonio", "Rushh"],
+              rows: [
             [
               "Intégrations immobilières citées",
               "Stora, onOffice, Win-CASA, Hostaway, Aareon PowerHaus, Objego, entre autres ; Make, n8n et API ; Apimo et Whise non cités sur les pages consultées",
@@ -109,22 +129,26 @@ export const vsFonio: Article = {
             ],
             [
               "Tarification",
-              "Publique : voix à partir de 99 € par mois (1 000 minutes), 299 € (3 600 minutes), à partir de 539 € ; hors taxes, facturation annuelle. Accompagnement de 99 € à 899 € par mois, configuration complexe à partir de 1 000 €",
-              "Sur devis",
+              "Grille publique sur le site du fournisseur, à vérifier à la date du choix ; accompagnement payant en option",
+              "Tarification personnalisée selon l'agence",
             ],
             [
               "Données (déclaré)",
               "Hébergement dans l'UE ; conforme au RGPD et à l'EU AI Act",
               "Conditions d'hébergement et sous-traitants précisés sur demande et dans le contrat (DPA)",
             ],
+              ],
+              note: "Fonio : pages officielles listées en fin de page, consultées le 28 octobre 2026. Rushh : pages /offre, /integrations et /privacy de ce site.",
+            },
           ],
-          note: "Fonio : pages officielles listées en fin de page, tarifs relevés le 28 octobre 2026. Rushh : pages /offre, /integrations et /privacy de ce site.",
         },
       ],
     },
     {
       id: "contextes",
       h2: "Dans quels contextes chaque approche peut convenir",
+      takeaway: "Selon votre situation, l'une ou l'autre approche peut convenir.",
+      fold: true,
       blocks: [
         {
           t: "table",
@@ -194,6 +218,8 @@ export const vsFonio: Article = {
     {
       id: "questions",
       h2: "Dix questions à poser à Fonio comme à Rushh",
+      takeaway: "Dix questions à poser à tous les fournisseurs, Rushh compris.",
+      fold: true,
       blocks: [
         {
           t: "checklist",
@@ -241,7 +267,7 @@ export const vsFonio: Article = {
     {
       label: "Fonio : configurations (Care et Setups)",
       url: "https://www.fonio.ai/fr/configurations",
-      usedFor: `Forfaits d'accompagnement par un expert, de 99 € à 899 € par mois, configuration complexe à partir de 1 000 €. ${CONSULTED}`,
+      usedFor: `Accompagnement par un expert en option, configuration complexe. ${CONSULTED}`,
     },
     {
       label: "Rushh : l'offre",

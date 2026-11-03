@@ -1,371 +1,186 @@
 import type { Article } from "./types";
 
-const CONSULTED = "Consulté le 28 octobre 2026.";
-
+/** Texte validé : à reproduire tel quel, sans reformulation (voir `bare` dans types.ts). */
 export const comparatif: Article = {
   path: "/comparatif/standards-telephoniques-ia-immobilier",
   category: "comparatifs",
+  bare: true,
   cover: {
     src: "/ressources/comparatif-standards-telephoniques-ia-immobilier.png",
     width: 1600,
     height: 840,
-    alt: "Matrice de cinq solutions et huit critères, chaque cellule étant indiquée et sourcée ou à vérifier, sans classement : illustration du comparatif des standards téléphoniques IA pour l'immobilier.",
+    alt: "Illustration de la page Quel standard téléphonique IA choisir pour l'immobilier.",
   },
-  title: "Standards téléphoniques IA pour l'immobilier : comparatif | Rushh",
+  title: "Quel standard téléphonique IA choisir pour l'immobilier ? | Rushh",
   description:
-    "Comparatif sourcé de cinq solutions pour les appels d'une agence : Rushh, Joe AI, Fonio, AInora et Orateur. Informations consultées le 28 octobre 2026.",
-  shortTitle: "Comparatif des standards téléphoniques IA",
+    "Répondre aux appels, faire avancer les demandes, exploiter chaque opportunité : ce qui compte dans un standard téléphonique IA pour l'immobilier.",
+  shortTitle: "Quel standard téléphonique IA choisir ?",
   summary:
-    "Cinq solutions comparées sur huit critères, avec des sources datées : Rushh, Joe AI, Fonio, AInora et Orateur.",
-  h1: "Quel standard téléphonique IA choisir pour une agence immobilière ? Comparatif de cinq solutions",
+    "Répondre, faire avancer les demandes, exploiter chaque opportunité : ce qui compte dans un standard téléphonique IA.",
+  h1: "Quel standard téléphonique IA choisir pour l'immobilier ?",
   answer:
-    "Il n'existe pas de meilleur standard téléphonique IA pour toutes les agences : le bon choix dépend de ce que vous voulez déléguer. Ce comparatif met côte à côte Rushh, Joe AI, Fonio, AInora et Orateur sur huit critères, à partir de leurs pages officielles consultées le 28 octobre 2026. Il ne contient ni classement ni note. Rushh convient surtout à une agence qui veut déléguer entièrement la conception et le suivi de ses appels entrants ; d'autres solutions couvrent davantage de canaux, publient leurs tarifs ou se configurent seul.",
+    "Tous les standards téléphoniques IA promettent de répondre à vos appels. Mais décrocher ne suffit pas : ce qui compte, c'est ce que deviennent vos demandes après l'appel.",
   datePublished: "2026-10-29",
-  dateModified: "2026-10-31",
+  dateModified: "2026-11-03",
+  intro: [
+    {
+      t: "p",
+      text: "Tous les standards téléphoniques IA promettent de répondre à vos appels. Mais décrocher ne suffit pas : ce qui compte, c'est ce que deviennent vos demandes après l'appel.",
+    },
+    {
+      t: "statement",
+      text: "Rushh va plus loin que la simple réception téléphonique : chaque appel est qualifié, organisé et transformé en opportunité exploitable pour votre activité.",
+    },
+  ],
   sections: [
     {
-      id: "methode",
-      h2: "Comment lire ce comparatif ?",
+      id: "ce-qui-compte",
+      h2: "Ce qui compte vraiment dans un standard téléphonique IA",
+      blocks: [
+        { t: "p", text: "Un standard efficace doit faire trois choses :" },
+        { t: "h3", text: "1. Répondre à vos appels" },
+        {
+          t: "p",
+          text: "Quand vous êtes en visite, en rendez-vous ou indisponible, vos clients doivent pouvoir joindre votre agence.",
+        },
+        { t: "h3", text: "2. Faire avancer les demandes" },
+        {
+          t: "p",
+          text: "Un vendeur veut une estimation. Un acquéreur souhaite visiter un bien. Un locataire a une question. Le standard doit comprendre leur besoin, recueillir les bonnes informations et organiser la suite.",
+        },
+        { t: "h3", text: "3. Vous permettre d'exploiter chaque opportunité" },
+        {
+          t: "p",
+          text: "Répondre au téléphone n'a que peu d'intérêt si les informations se perdent ensuite. Les demandes doivent être organisées, accessibles et prêtes à être traitées.",
+        },
+      ],
+    },
+    {
+      id: "pourquoi-rushh",
+      h2: "Pourquoi choisir Rushh immo ?",
       blocks: [
         {
           t: "p",
-          text: "Les cinq solutions ont un point commun : leur site officiel présente une offre de réponse téléphonique par intelligence artificielle destinée aux professionnels de l'immobilier. La liste n'est pas exhaustive et ne reflète pas la qualité des services : nous n'avons testé aucune des solutions concurrentes.",
+          text: "Rushh est un standard téléphonique alimenté par intelligence artificielle, conçu pour les professionnels de l'immobilier.",
+        },
+        { t: "p", text: "Il ne se contente pas de décrocher." },
+        {
+          t: "table",
+          caption: "",
+          head: ["Ce que fait Rushh", "Ce que cela change pour vous"],
+          rows: [
+            ["Répond aux appels entrants 24 h/24 et 7 j/7", "Vous restez joignable pendant vos visites, vos rendez-vous et après la fermeture."],
+            ["Identifie et qualifie les demandes", "Vous distinguez immédiatement vendeurs, acquéreurs, locataires, bailleurs et prestataires."],
+            ["Prend des rendez-vous", "Les demandes peuvent avancer sans attendre votre prochain rappel."],
+            ["Envoie des SMS et des e-mails", "Les confirmations et informations utiles sont transmises automatiquement."],
+            ["Se connecte à vos outils", "Les informations peuvent circuler avec votre logiciel immobilier lorsque son API le permet."],
+            ["Organise les opportunités dans sa plateforme métier", "Vous retrouvez les demandes, leurs coordonnées, leur résumé et leur statut au même endroit."],
+          ],
+        },
+        { t: "h3", text: "Un standard adapté à votre fonctionnement" },
+        { t: "p", text: "Chaque professionnel de l'immobilier travaille différemment." },
+        {
+          t: "p",
+          text: "Rushh est configuré selon votre organisation, vos types d'appels, vos agendas et vos outils.",
         },
         {
-          t: "ul",
+          t: "statement",
+          text: "Notre équipe prend en charge la conception, l'installation, les tests, le suivi et les ajustements.",
+        },
+        {
+          t: "p",
+          text: "Vous n'avez pas à apprendre à configurer un nouveau logiciel pour que votre téléphone fonctionne.",
+        },
+      ],
+    },
+    {
+      id: "autres-solutions",
+      h2: "Et les autres solutions ?",
+      blocks: [
+        {
+          t: "p",
+          text: "Des solutions comme [Joe AI](/vs/joe-ai), [Fonio](/vs/fonio), AInora ou Orateur proposent également des fonctionnalités de réception téléphonique par intelligence artificielle.",
+        },
+        {
+          t: "p",
+          text: "Selon les offres, elles permettent notamment de qualifier des appels, de prendre des rendez-vous ou de connecter différents outils.",
+        },
+        {
+          t: "statement",
+          text: "Ces fonctionnalités ne suffisent donc pas, à elles seules, à départager les solutions.",
+        },
+        {
+          t: "p",
+          text: "La vraie question est ce que vous souhaitez obtenir de votre standard, et la manière dont il s'intègre à votre activité.",
+        },
+        {
+          t: "p",
+          text: "Chez Rushh, nous avons choisi de réunir la prise en charge des appels immobiliers, l'organisation des opportunités commerciales et un service entièrement géré.",
+        },
+      ],
+    },
+    {
+      id: "appel-vendeur",
+      h2: "Un appel vendeur ne doit pas finir en simple message",
+      blocks: [
+        {
+          t: "p",
+          text: "Un propriétaire appelle pour faire estimer son appartement pendant que vous êtes en visite.",
+        },
+        { t: "p", text: "Avec Rushh :" },
+        {
+          t: "ol",
           items: [
-            "**Sources** : uniquement les pages officielles de chaque fournisseur, listées en fin de page avec leur date de consultation. Ce qu'un fournisseur affirme sur lui-même est présenté comme déclaré par lui.",
-            "**Information absente** : « non indiqué sur la page consultée » ne veut pas dire que la fonction n'existe pas. Elle peut exister sans figurer sur la page, ou être proposée sur demande.",
-            "**Aucun classement** : Rushh n'arrive pas en tête de chaque critère, et ce n'est pas le but. Chaque ligne décrit une approche, pas un niveau de qualité.",
+            "Le standard décroche et identifie une demande d'estimation.",
+            "Il recueille les informations utiles sur le projet.",
+            "Il peut proposer un rendez-vous sur votre agenda connecté.",
+            "La demande apparaît dans la plateforme Rushh, classée comme opportunité vendeur, avec ses coordonnées et son résumé.",
           ],
         },
         {
-          t: "callout",
-          kind: "reco",
-          text: "Rushh édite cette page et figure dans le tableau : lisez les lignes avec cette réserve, et vérifiez chaque point sur le site du fournisseur concerné. Les prix et les fonctions changent ; la date de consultation fait foi.",
+          t: "statement",
+          text: "Vous ne récupérez pas simplement un numéro à rappeler. Vous retrouvez une demande qualifiée, avec une prochaine action identifiable.",
         },
         {
           t: "p",
-          text: "Pour distinguer les trois modèles de service utilisés ci-dessous, **logiciel autonome**, **service accompagné** et **prestation entièrement gérée**, voir le guide [télésecrétariat humain ou standard IA](/ressources/telesecretariat-humain-ou-ia). Pour savoir quoi demander à un fournisseur, voir le [guide de sélection](/ressources/choisir-standard-telephonique-ia-immobilier).",
+          text: "Le même principe s'applique aux demandes acquéreurs, locataires, bailleurs et aux autres appels de votre activité.",
         },
       ],
     },
     {
-      id: "positionnement",
-      h2: "Positionnement : modèle de service, spécialisation et canaux",
-      blocks: [
-        {
-          t: "table",
-          caption: "Modèle de service, spécialisation immobilière et canaux des cinq solutions",
-          head: ["Solution", "Modèle de service", "Spécialisation immobilière", "Appels et autres canaux"],
-          rows: [
-            [
-              "Rushh",
-              "Prestation entièrement gérée : Rushh conçoit, configure, teste, déploie et suit le standard",
-              "Spécialisé dans l'immobilier : transaction, gestion locative, syndic, réseaux",
-              "Appels entrants uniquement : ni appels sortants, ni SMS, ni WhatsApp, ni chat",
-            ],
-            [
-              "Joe AI",
-              "Service accompagné : l'équipe de Joe AI configure l'agent avec le client",
-              "Agent conversationnel conçu pour l'immobilier",
-              "Téléphone, SMS, WhatsApp, e-mail et site web ; relance des clients",
-            ],
-            [
-              "Fonio",
-              "Plateforme à configurer, avec forfaits d'accompagnement payants",
-              "Plateforme généraliste, avec des pages dédiées aux agences et à la gestion immobilière",
-              "Voix, WhatsApp et chat web ; appels sortants prévus dans les forfaits voix",
-            ],
-            [
-              "AInora",
-              "Service géré : AInora indique construire et exploiter l'agent",
-              "Offre dédiée aux agences immobilières, parmi d'autres usages listés sur son site",
-              "Appels entrants ; rappel des contacts ayant demandé à être joints, sans démarchage à froid",
-            ],
-            [
-              "Orateur",
-              "Logiciel en libre-service : inscription en ligne et essai",
-              "Réceptionniste IA généraliste, avec une page d'usage pour l'immobilier",
-              "Appels entrants ; aucun appel sortant mentionné sur la page consultée",
-            ],
-          ],
-          note: "Joe AI, Fonio, AInora et Orateur : pages officielles listées dans les sources, consultées le 28 octobre 2026. Rushh : pages /offre et /integrations de ce site.",
-        },
-      ],
-    },
-    {
-      id: "fonctions",
-      h2: "Qualification, rendez-vous et intégrations annoncés",
-      blocks: [
-        {
-          t: "table",
-          caption: "Qualification, rendez-vous, transfert et intégrations cités par chaque solution",
-          head: ["Solution", "Qualification", "Rendez-vous et transfert", "Intégrations citées"],
-          rows: [
-            [
-              "Rushh",
-              "Le motif et les informations utiles sont recueillis selon les règles validées avec le client",
-              "Rendez-vous et transfert selon le périmètre validé et l'agenda connecté",
-              "Google Calendar, Outlook, Apimo et Whise, selon le contexte technique, confirmées avec le client",
-            ],
-            [
-              "Joe AI",
-              "Qualification des acquéreurs, des candidats locataires et des prospects",
-              "Prise de rendez-vous de visite et d'estimation ; transmission à un collaborateur si besoin",
-              "Douze logiciels indiqués comme synchronisés, dont Apimo et Whise ; autres logiciels : « Nous l'intégrons »",
-            ],
-            [
-              "Fonio",
-              "Questions prédéfinies : budget, solvabilité, urgence, projet, type de bien",
-              "Visites planifiées dans l'agenda connecté ; transfert vers l'agence ou un agent",
-              "Pages immobilier : Stora, onOffice, Win-CASA, Hostaway, Aareon PowerHaus, Objego, entre autres ; Make, n8n, API ; Apimo et Whise non cités ; demande d'intégration possible",
-            ],
-            [
-              "AInora",
-              "Budget, financement, secteur, type de bien, délai ; score de priorité",
-              "Disponibilités des biens et des négociateurs vérifiées ; visite fixée avec SMS de confirmation",
-              "Logiciels de transaction via API, dont Apimo, Netty et Périclès ; HubSpot, Salesforce ; Google Calendar",
-            ],
-            [
-              "Orateur",
-              "Prise de message : nom, numéro et motif ; qualification immobilière non détaillée",
-              "Rendez-vous réservés, déplacés ou annulés selon les disponibilités ; transfert non mentionné",
-              "Google Calendar et Outlook",
-            ],
-          ],
-          note: "Les logiciels cités sont ceux nommés sur les pages consultées. Une intégration non citée n'est pas forcément impossible : demandez-la au fournisseur.",
-        },
-      ],
-    },
-    {
-      id: "mise-en-place",
-      h2: "Mise en place, coûts et données",
-      blocks: [
-        {
-          t: "table",
-          caption: "Configuration, maintenance, modèle économique et données déclarées",
-          head: ["Solution", "Configuration et maintenance", "Modèle économique", "Données (déclaré)"],
-          rows: [
-            [
-              "Rushh",
-              "Analyse, configuration, tests, mise en service visée sous 5 jours ouvrés après réception des éléments (objectif indicatif), puis suivi par Rushh",
-              "Sur devis",
-              "Hébergement et sous-traitants précisés sur demande et dans le contrat (DPA)",
-            ],
-            [
-              "Joe AI",
-              "Calibration avec l'équipe (environ 30 minutes), déploiement annoncé « en quelques heures », accompagnement",
-              "Tarif non affiché ; démonstration de 30 minutes",
-              "« Certifié ISO 27001 et conforme RGPD » ; hébergement « en France et en Europe »",
-            ],
-            [
-              "Fonio",
-              "Création en libre-service, « aucune connaissance technique requise ». Accompagnement payant : de 99 € à 899 € par mois, configuration complexe à partir de 1 000 €",
-              "Voix : 99 € par mois (1 000 minutes), 299 € (3 600 minutes), à partir de 539 € ; hors taxes, facturation annuelle ; satisfait ou remboursé pendant 30 jours",
-              "Hébergement « dans l'UE » ; « conforme au RGPD » et « conforme à l'EU AI Act »",
-            ],
-            [
-              "AInora",
-              "Consultation de 30 minutes, cadrage, puis configuration et lancement par AInora",
-              "Tarif individuel établi après un appel",
-              "Stockage en Allemagne et en Finlande ; traitement des appels dans l'UE et aux États-Unis dans la configuration standard, 100 % UE sur demande",
-            ],
-            [
-              "Orateur",
-              "Inscription et mise en place en ligne ; accompagnement non détaillé",
-              "49 €, 99 € ou 199 € par mois (4, 9 ou 19 heures d'agent IA), minutes supplémentaires de 0,20 € à 0,24 € ; essai de 100 minutes ; offre Entreprise sur devis",
-              "Aucune affirmation sur l'hébergement ou le RGPD sur la page consultée",
-            ],
-          ],
-          note: "Tarifs publics relevés le 28 octobre 2026 sur les pages officielles ; ils peuvent changer et varier selon la durée d'engagement. Chaque fournisseur reste seul juge de ses conditions.",
-        },
-        {
-          t: "callout",
-          kind: "fact",
-          text: "Fonio n'est pas seulement un outil à configurer seul : sa page « Configurations » propose des forfaits où un expert de Fonio intervient, de 30 minutes par mois à un suivi continu, et des configurations complexes sur devis. La différence avec une prestation entièrement gérée porte donc sur le périmètre, pas sur la présence ou l'absence d'accompagnement. Consulté le 28 octobre 2026.",
-        },
-      ],
-    },
-    {
-      id: "limites",
-      h2: "Limites et points à vérifier pour chaque solution",
-      blocks: [
-        {
-          t: "table",
-          caption: "Points à vérifier avant de choisir, solution par solution",
-          head: ["Solution", "À vérifier avant de choisir"],
-          rows: [
-            [
-              "Rushh",
-              "Le périmètre se limite aux appels entrants. Le tarif est sur devis et doit être demandé. Chaque intégration est confirmée au cas par cas. Les conditions d'hébergement se demandent avant signature.",
-            ],
-            [
-              "Joe AI",
-              "Le prix n'est pas affiché. Vérifiez que votre logiciel figure dans la liste ou sera bien intégré, et traitez les résultats chiffrés du site comme des chiffres déclarés par le fournisseur.",
-            ],
-            [
-              "Fonio",
-              "Plateforme généraliste : vérifiez la compatibilité avec votre logiciel métier, ce que couvre l'accompagnement payant, les minutes supplémentaires et les frais d'opérateur sur les appels sortants.",
-            ],
-            [
-              "AInora",
-              "Le tarif s'obtient par un appel. Pour le rappel de contacts, vérifiez le consentement préalable : la page cite l'article L223-1 du Code de la consommation depuis le 11 août 2026. Les intégrations sont proposées là où l'outil expose une API.",
-            ],
-            [
-              "Orateur",
-              "La page ne détaille ni la qualification immobilière, ni l'hébergement, ni le RGPD, et certaines réponses de la FAQ ne sont pas visibles : posez ces questions avant de souscrire.",
-            ],
-          ],
-        },
-      ],
-    },
-    {
-      id: "situations",
-      h2: "Quelle approche selon votre situation ?",
+      id: "pour-vous",
+      h2: "Un standard qui fonctionne pour vous, pas l'inverse",
       blocks: [
         {
           t: "p",
-          text: "Ces repères ne désignent pas un gagnant : ils relient un besoin à une approche, d'après les informations des tableaux.",
+          text: "Rushh est conçu pour prendre en charge le téléphone entrant sans ajouter une nouvelle charge de travail à vos équipes.",
         },
-        {
-          t: "ul",
-          items: [
-            "**Vous voulez déléguer la conception et le suivi, pour les seuls appels entrants** : une prestation gérée correspond à ce besoin. Rushh en est une, AInora se décrit aussi ainsi, et Joe AI propose un accompagnement.",
-            "**Vous voulez plusieurs canaux ou des relances sortantes** : Joe AI couvre SMS, WhatsApp, e-mail et site web, Fonio la voix, WhatsApp et le chat web, AInora rappelle les contacts qui l'ont demandé. Rushh ne propose que des appels entrants.",
-            "**Vous voulez connaître le coût avant de parler à quelqu'un** : Fonio et Orateur publient leurs tarifs. Rushh, Joe AI et AInora fonctionnent sur devis ou sur appel.",
-            "**Vous voulez tester vous-même, vite** : Orateur propose un essai en ligne et Fonio un remboursement possible pendant 30 jours. Un essai ne remplace pas un test sur vos propres scénarios d'appels.",
-            "**Vous utilisez Apimo ou Whise** : Rushh et Joe AI citent les deux, AInora cite Apimo. Sur les pages consultées, Fonio et Orateur ne les citent pas : posez la question.",
-          ],
-        },
+        { t: "p", text: "Vous continuez vos visites, vos rendez-vous et votre prospection." },
         {
           t: "p",
-          text: "D'autres offres existent. Alopeak, par exemple, présente un service géré pour des agences de Savoie, de Haute-Savoie et d'Isère à partir de 49 € par mois, consulté le 28 octobre 2026. Cette liste ne prétend pas couvrir tout le marché.",
+          text: "De notre côté, nous configurons et faisons évoluer le standard en fonction de votre organisation.",
+        },
+        {
+          t: "statement",
+          text: "Votre métier, c'est l'immobilier. Le nôtre, c'est de faire en sorte que vos appels ne vous interrompent plus et que les opportunités ne passent pas inaperçues.",
         },
       ],
     },
     {
-      id: "tester",
-      h2: "Comment vérifier avant de choisir ?",
+      id: "test",
+      h2: "Faites le test avec Rushh",
       blocks: [
         {
           t: "p",
-          text: "Un tableau compare des déclarations, pas des conversations. Quelle que soit la solution, testez-la avec vos propres appels : un vendeur pressé, un acquéreur qui cite une annonce, un locataire qui signale une panne, un appelant qui veut parler à une personne. Le [guide de sélection](/ressources/choisir-standard-telephonique-ia-immobilier) détaille les scénarios et les questions à poser.",
+          text: "Découvrez comment Rushh prend en charge les appels, qualifie les demandes et organise les opportunités pour les professionnels de l'immobilier.",
         },
-        {
-          t: "p",
-          text: "Pour entendre Rushh, appelez la [ligne de démonstration](/demonstrations), une agence fictive à Paris. Pour une comparaison détaillée avec un concurrent, voir [Rushh ou Joe AI](/vs/joe-ai), [Rushh ou Fonio](/vs/fonio) et [Rushh ou Volubilimo](/vs/volubilimo).",
-        },
+        { t: "button", label: "Réserver une démonstration", href: "/demonstrations" },
+        { t: "p", text: "Une solution personnalisée, entièrement prise en charge par notre équipe." },
       ],
     },
   ],
-  sources: [
-    {
-      label: "Joe AI : site officiel",
-      url: "https://www.getjoe-ai.com/",
-      usedFor: `Canaux, qualification, rendez-vous, douze logiciels synchronisés, déploiement, certifications et hébergement déclarés ; page indiquant « Mis à jour le 27 octobre 2026 ». ${CONSULTED}`,
-    },
-    {
-      label: "Fonio : assistant téléphonique IA pour les agences immobilières",
-      url: "https://www.fonio.ai/fr/assistant-telephonique-ia/assistant-telephonique-ia-agences-immobilieres/",
-      usedFor: `Fonctions, qualification, visites, transfert, hébergement dans l'UE déclaré. ${CONSULTED}`,
-    },
-    {
-      label: "Fonio : assistant téléphonique IA pour la gestion immobilière",
-      url: "https://www.fonio.ai/fr/assistants-telephoniques-ia/gestion-immobiliere",
-      usedFor: `Logiciels immobiliers nommés (Aareon PowerHaus, Objego, etc.). ${CONSULTED}`,
-    },
-    {
-      label: "Fonio : intégrations",
-      url: "https://www.fonio.ai/fr/integrations",
-      usedFor: `Logiciels immobiliers nommés (Stora, onOffice, Win-CASA, Hostaway), Make, n8n, demande d'intégration. ${CONSULTED}`,
-    },
-    {
-      label: "Fonio : tarifs",
-      url: "https://www.fonio.ai/fr/tarifs",
-      usedFor: `Forfaits voix, WhatsApp et chat web, appels sortants, prix hors taxes, satisfait ou remboursé 30 jours. ${CONSULTED}`,
-    },
-    {
-      label: "Fonio : configurations (Care et Setups)",
-      url: "https://www.fonio.ai/fr/configurations",
-      usedFor: `Forfaits d'accompagnement par un expert, de 99 € à 899 € par mois, configuration complexe à partir de 1 000 €. ${CONSULTED}`,
-    },
-    {
-      label: "AInora : accueil téléphonique pour agences immobilières",
-      url: "https://ainora.lt/fr/accueil-telephonique-agences-immobilieres",
-      usedFor: `Service géré, qualification, rendez-vous, logiciels via API, rappel des contacts, stockage des données, mention de l'article L223-1. ${CONSULTED}`,
-    },
-    {
-      label: "Orateur : réceptionniste IA pour agences immobilières",
-      url: "https://www.orateur.ai/fr/use-cases/real-estate",
-      usedFor: `Fonctions, rendez-vous, intégrations, tarifs Creator, Pro, Scale et Entreprise. ${CONSULTED}`,
-    },
-    {
-      label: "Alopeak : réceptionniste IA pour agences immobilières",
-      url: "https://alopeak.fr/",
-      usedFor: `Service géré, zone desservie, tarif à partir de 49 € par mois. ${CONSULTED}`,
-    },
-    {
-      label: "Rushh : l'offre",
-      url: "https://www.rushh.fr/offre",
-      usedFor: "Périmètre de Rushh : appels entrants, conception, configuration, tests, déploiement, suivi, délai indicatif et tarification sur devis.",
-    },
-    {
-      label: "Rushh : intégrations",
-      url: "https://www.rushh.fr/integrations",
-      usedFor: "Google Calendar, Outlook, Apimo et Whise, selon le contexte technique.",
-    },
-  ],
-  sourcesNote:
-    "Chaque information concernant un concurrent provient des pages officielles listées ci-dessus, consultées le 28 octobre 2026 : ce sont des déclarations commerciales, que nous n'avons pas vérifiées par un test. Les points « à vérifier » et les repères par situation sont des recommandations de Rushh. Rushh édite cette page et figure dans le comparatif. Pour corriger une information, écrivez à hello@rushh.fr.",
-  rushh: {
-    title: "Où Rushh est pertinent, et comment le vérifier",
-    text: "Rushh convient surtout à une agence qui veut déléguer entièrement la conception, la mise en place et le suivi de son standard. Si vous cherchez un outil multicanal, une grille tarifaire publique ou une création en libre-service, d'autres solutions du tableau sont plus proches de votre besoin.",
-    points: [
-      "Une prestation prise en charge de A à Z : analyse, scénarios, connexions, tests, suivi et améliorations",
-      "Une spécialisation dans les appels entrants des professionnels de l'immobilier",
-      "Une voix naturelle et réactive, personnalisable, que vous pouvez écouter avant de décider",
-      "Une plateforme de suivi : résumé, transcription, statut et attribution de chaque opportunité",
-    ],
-    links: [
-      { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
-      { href: "/offre", label: "Voir l'offre Rushh" },
-    ],
-  },
-  related: [
-    {
-      href: "/ressources/choisir-standard-telephonique-ia-immobilier",
-      label: "Choisir un standard téléphonique IA",
-      text: "Les questions à poser, les scénarios à tester et la checklist de décision.",
-    },
-    {
-      href: "/vs/fonio",
-      label: "Rushh ou Fonio",
-      text: "Comparaison détaillée entre une plateforme à configurer et une prestation gérée.",
-    },
-    {
-      href: "/vs/joe-ai",
-      label: "Rushh ou Joe AI",
-      text: "Comparatif factuel entre deux services IA, sources datées.",
-    },
-    {
-      href: "/vs/airagent",
-      label: "Rushh ou AirAgent",
-      text: "Un agent vocal à lancer vite face à une prestation gérée.",
-    },
-    {
-      href: "/vs/vokai",
-      label: "Rushh ou VOKAI",
-      text: "Deux offres immobilières dédiées aux appels entrants.",
-    },
-  ],
-  cta: {
-    title: "Comparez la voix et le suivi sur vos propres scénarios",
-    text: "Un tableau ne montre ni la voix ni la rapidité. Appelez la ligne de démonstration Rushh, puis jouez les mêmes scénarios avec les autres solutions de votre sélection. Tarification Rushh sur devis.",
-    links: [
-      { href: "/demonstrations", label: "Ligne de démonstration" },
-      { href: "/offre", label: "L'offre Rushh" },
-      { href: "/integrations", label: "Intégrations" },
-    ],
-  },
+  sources: [],
+  sourcesNote: "",
+  related: [],
+  cta: { title: "Faites le test avec Rushh", text: "", links: [] },
 };

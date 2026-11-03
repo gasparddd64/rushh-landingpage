@@ -34,6 +34,11 @@ const REQUIRED_LINKS: Record<string, string[]> = {
   "/vs/volubilimo": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/ressources/prise-rendez-vous-ia-immobilier"],
 };
 
+// Pages au texte validé : seuls les liens présents dans le texte (ou posés sur ses mots) sont exigés.
+const BARE_LINKS: Record<string, string[]> = {
+  "/comparatif/standards-telephoniques-ia-immobilier": ["/demonstrations", "/vs/fonio", "/vs/joe-ai"],
+};
+
 // Pages qui citent légitimement des prix publics de concurrents (sourcés) ; les prix Rushh restent interdits partout.
 const COMPETITOR_PRICE_PAGES = new Set(["/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio"]);
 // Page pédagogique dont la simulation est chiffrée en euros FICTIFS : ni tarif Rushh ni tarif concurrent.
@@ -68,7 +73,10 @@ function allText(a: Article): string {
       case "p":
       case "h3":
       case "callout":
+      case "statement":
         return b.text;
+      case "button":
+        return `${b.label} [x](${b.href})`;
       case "ul":
       case "ol":
       case "checklist":
@@ -77,10 +85,16 @@ function allText(a: Article): string {
         return [b.caption, ...b.head, ...b.rows.flat(), b.note ?? ""].join(" ");
       case "fiche":
         return [b.title, ...b.rows.flat(), b.note ?? ""].join(" ");
+      case "detail":
+        return [b.summary, ...b.blocks.map(blockText)].join(" ");
+      case "rushh":
+        return [b.title, b.text, ...(b.points ?? []), b.link ? `[x](${b.link.href})` : ""].join(" ");
     }
   };
+  const intro = (a.intro ?? []).map(blockText);
+  const extra = [...intro, ...(a.keyPoints ?? []), a.rushhBrief ?? "", ...(a.verdict ? [...a.verdict.rushhIf, ...a.verdict.otherIf] : [])];
   const rushh = a.rushh ? [a.rushh.title, a.rushh.text, ...a.rushh.points] : [];
-  return [a.title, a.description, a.h1, a.answer, a.sourcesNote, ...rushh, a.cta.title, a.cta.text, ...a.sections.flatMap((s) => [s.h2, ...s.blocks.map(blockText)])].join("\n");
+  return [a.title, a.description, a.h1, a.answer, ...extra, a.sourcesNote, ...rushh, a.cta.title, a.cta.text, ...a.sections.flatMap((s) => [s.h2, s.takeaway ?? "", ...s.blocks.map(blockText)])].join("\n");
 }
 
 function internalLinks(a: Article): string[] {
@@ -113,28 +127,21 @@ describe.each(ARTICLES.map((a) => [a.path, a] as const))("guide %s", (path, a) =
   it("has real, valid dates and a consistent modification date", () => {
     expect(a.datePublished).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     expect(a.dateModified >= a.datePublished).toBe(true);
+    if (a.bare) return; // texte validé : aucune date ajoutée au texte (les dates restent dans le JSON-LD)
     expect(articleToMarkdown(a)).toMatch(/Publié le \d+(er)? \w+ \d{4}/);
   });
 
   it("links to the pages required by the brief, and every internal link resolves", () => {
     const links = internalLinks(a);
-    for (const required of REQUIRED_LINKS[path]) expect(links).toContain(required);
+    for (const required of a.bare ? BARE_LINKS[path] : REQUIRED_LINKS[path]) expect(links).toContain(required);
     for (const l of links) expect(isKnownRoute(l), l).toBe(true);
   });
 
   it("shows no Rushh price, no Hektor, no guarantee wording", () => {
     const t = allText(a);
-    if (COMPETITOR_PRICE_PAGES.has(path)) {
-      expect(rushhText(a)).not.toMatch(/€|euros?\b/i);
-      expect(t).toContain("Sur devis");
-    } else if (FICTIONAL_PRICE_PAGES.has(path)) {
-      expect(rushhText(a)).not.toMatch(/€|euros?\b/i);
-      expect(t).toMatch(/entièrement fictifs?/);
-      expect(t).toMatch(/ni des tarifs de Rushh ni (ceux d'un concurrent|des tarifs de concurrents)/);
-      expect(t).toContain("sur devis");
-    } else {
-      expect(t).not.toMatch(/€|euros?\b/i);
-    }
+    // aucun montant en euros sur aucune page : ni tarif Rushh, ni tarif d'agent vocal concurrent, ni simulation
+    expect(t).not.toMatch(/€|euros?\b/i);
+    if (COMPETITOR_PRICE_PAGES.has(path) && !a.bare) expect(t).toMatch(/Sur devis|Tarification personnalisée/);
     expect(t).not.toMatch(/hektor/i);
     expect(t).not.toMatch(/garantit|garanti(e|s)? (de|un|des)/i);
   });
@@ -157,7 +164,7 @@ describe.each(ARTICLES.map((a) => [a.path, a] as const))("guide %s", (path, a) =
     expect(buf.readUInt32BE(16)).toBe(a.cover.width);
     expect(buf.readUInt32BE(20)).toBe(a.cover.height);
     expect(a.cover.alt.length).toBeGreaterThan(60);
-    expect(articleToMarkdown(a)).toContain(`](https://www.rushh.fr${a.cover.src})`);
+    if (!a.bare) expect(articleToMarkdown(a)).toContain(`](https://www.rushh.fr${a.cover.src})`);
     expect(buf.length).toBeLessThan(150_000);
   });
 
@@ -278,7 +285,7 @@ describe("catalogue /ressources (le Blog)", () => {
 
 describe("article endings", () => {
   it("merges the Rushh block and the closing invitation into one block, with no separate final CTA in the mirror", () => {
-    for (const a of ARTICLES) {
+    for (const a of ARTICLES.filter((x) => !x.bare)) {
       const md = articleToMarkdown(a);
       expect(md, a.path).toContain(`### ${a.cta.title}`);
       expect(md, a.path).not.toContain(`\n## ${a.cta.title}`);
@@ -317,21 +324,13 @@ describe("catalogue card titles and dates", () => {
 describe("wave 1 (Nov. 2026) guides", () => {
   const get = (p: string) => ARTICLES.find((a) => a.path === p)!;
 
-  it("the cost guide's euro simulation is explicit, fictional and consistent with its own calculations", () => {
+  it("the cost guide compares billing structures without any amount", () => {
     const a = get("/ressources/cout-standard-telephonique-ia-immobilier");
     const t = allText(a);
-    expect(t).not.toMatch(/unités de compte/);
-    expect(t).toContain("montants entièrement fictifs");
-    expect(t).toContain("Hypothèses");
-    // les calculs affichés se recalculent à partir des hypothèses
-    const cost = (abo: number, incl: number, over: number, minutes: number, install = 0) => abo + Math.max(0, minutes - incl) * over + install;
-    expect(cost(35, 100, 0.4, 600)).toBe(235);
-    expect(cost(90, 400, 0.2, 1200)).toBe(250);
-    expect(cost(150, 800, 0.15, 600, 40)).toBe(190);
-    expect(cost(150, 800, 0.15, 1200, 40)).toBe(250);
-    expect(cost(35, 100, 0.4, 1200)).toBe(475);
-    expect(cost(90, 400, 0.2, 600)).toBe(130);
-    expect(t).toContain("Offre 1 à 600 minutes : 35 + (600 − 100) × 0,40 = 235");
+    expect(t).not.toMatch(/€|euros?\b/i);
+    expect(t).not.toMatch(/\b(235|475|130|250|190)\b/);
+    expect(t).toContain("ne contient aucun montant");
+    expect(t).toContain("Trois structures de facturation");
   });
 
   it("the Apimo guide never claims an official partnership, a native or certified plug-in, or documented agendas", () => {
@@ -398,17 +397,17 @@ describe("wave 2 (Nov. 2026) guides and comparisons", () => {
     expect(a.sources.map((s) => s.url)).toContain("https://www.whise.eu/fr-fr/marketplace/");
   });
 
-  it("the profitability guide's euro example is explicit, fictional and arithmetically consistent, and promises no result", () => {
+  it("the profitability guide's example is in units (no euro amount), fictional and arithmetically consistent, and promises no result", () => {
     const a = get("/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere");
     const t = allText(a);
     expect(t).toContain("Exemple entièrement fictif");
-    expect(t).toContain("ne sont ni des tarifs de Rushh ni des tarifs de concurrents");
+    expect(t).toContain("exprimé en unités");
     expect(t).toContain("Rushh ne promet aucun résultat commercial");
-    expect(Math.round((240 / 3600) * 1000) / 1000).toBe(0.067);
-    expect(3600 / 240).toBe(15);
-    expect(3600 / 5).toBe(720);
-    expect(Math.round((240 / 720) * 100) / 100).toBe(0.33);
-    expect(rushhText(a)).not.toMatch(/€|euros?\b/i);
+    expect(Math.round((1 / 15) * 1000) / 1000).toBe(0.067);
+    expect(15 / 1).toBe(15);
+    expect(15 / 5).toBe(3);
+    expect(Math.round((1 / 3) * 100) / 100).toBe(0.33);
+    expect(t).not.toMatch(/€|euros?\b/i);
   });
 
   it("the profitability guide differs in intent from the missed-calls and cost guides, and links to both", () => {
@@ -514,5 +513,28 @@ describe("wave 4 (Nov. 2026) guides", () => {
     expect(allText(a)).toContain("aucun taux de messages laissés");
     expect(a.h1).not.toBe(get("/ressources/appels-manques-immobilier").h1);
     expect(internalLinks(a)).toContain("/ressources/appels-manques-immobilier");
+  });
+});
+
+describe("validated-text page /comparatif/standards-telephoniques-ia-immobilier", () => {
+  const a = ARTICLES.find((x) => x.path === "/comparatif/standards-telephoniques-ia-immobilier")!;
+  const md = articleToMarkdown(a);
+
+  it("mirrors the validated text and nothing from the removed comparison", () => {
+    for (const phrase of [
+      "Quel standard téléphonique IA choisir pour l'immobilier ?",
+      "Rushh va plus loin que la simple réception téléphonique",
+      "Un appel vendeur ne doit pas finir en simple message",
+      "[Réserver une démonstration](https://www.rushh.fr/demonstrations)",
+      "Une solution personnalisée, entièrement prise en charge par notre équipe.",
+    ]) expect(md).toContain(phrase);
+    const all = `${md}\n${a.title}\n${a.description}\n${a.summary}`;
+    expect(all).not.toMatch(/Alopeak|Volubilimo|AirAgent|VOKAI|sur devis|consulté le|Sources et méthode|À lire aussi|huit critères|cinq solutions|ni SMS|appels entrants uniquement/i);
+  });
+
+  it("keeps a single H1, no source list and no automatic editorial blocks", () => {
+    expect(md.match(/^# /gm)).toHaveLength(1);
+    expect(a.sources).toHaveLength(0);
+    expect(md).not.toMatch(/En bref|Comment Rushh répond/);
   });
 });

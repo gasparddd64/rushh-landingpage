@@ -1,4 +1,4 @@
-import { CALLOUT_LABEL, formatFrenchDate, type Article, type Block } from "./types";
+import { CALLOUT_LABEL, RUSHH_BRIEF, formatFrenchDate, type Article, type Block } from "./types";
 
 const SITE_URL = "https://www.rushh.fr";
 const CALENDLY = "https://calendly.com/gaspard-david/demo";
@@ -16,6 +16,12 @@ function blockToMarkdown(b: Block): string {
   switch (b.t) {
     case "p":
       return abs(b.text);
+    case "statement":
+      return `**${abs(b.text)}**`;
+    case "button":
+      return `[${b.label}](${SITE_URL}${b.href})`;
+    case "detail":
+      return b.blocks.map(blockToMarkdown).join("\n\n");
     case "ul":
       return b.items.map((i) => `- ${abs(i)}`).join("\n");
     case "ol":
@@ -30,22 +36,41 @@ function blockToMarkdown(b: Block): string {
       const head = `| ${b.head.map(cell).join(" | ")} |`;
       const sep = `|${b.head.map(() => "---").join("|")}|`;
       const rows = b.rows.map((r) => `| ${r.map(cell).join(" | ")} |`);
-      return [`${b.caption}`, "", head, sep, ...rows, ...(b.note ? ["", b.note] : [])].join("\n");
+      return [...(b.caption ? [b.caption, ""] : []), head, sep, ...rows, ...(b.note ? ["", b.note] : [])].join("\n");
     }
+    case "rushh":
+      return [`> **Comment Rushh gère cette situation : ${b.title}.** ${abs(b.text)}`, ...(b.points ?? []).map((x) => `> - ${abs(x)}`), ...(b.link ? [`> [${b.link.label}](${SITE_URL}${b.link.href})`] : [])].join("\n");
     case "fiche":
       return [`**${b.title}**`, "", ...b.rows.map(([k, v]) => `- ${k} : ${abs(v)}`), ...(b.note ? ["", b.note] : [])].join("\n");
   }
 }
 
 export function articleToMarkdown(a: Article): string {
+  if (a.bare) {
+    const parts = [`# ${a.h1}`, ...(a.intro ?? []).map(blockToMarkdown)];
+    for (const s of a.sections) {
+      parts.push(`## ${s.h2}`);
+      for (const b of s.blocks) parts.push(blockToMarkdown(b));
+    }
+    return parts.join("\n\n") + "\n";
+  }
   const parts: string[] = [
     `# ${a.h1}`,
     `Publié le ${formatFrenchDate(a.datePublished)}. Mis à jour le ${formatFrenchDate(a.dateModified)}. Rédaction Rushh.`,
     `**En bref.** ${a.answer}`,
   ];
-  if (a.cover) parts.splice(3, 0, `![${a.cover.alt}](${SITE_URL}${a.cover.src})`);
+  const top: string[] = [];
+  if (a.keyPoints) top.push(["**À retenir.**", ...a.keyPoints.map((x) => `- ${abs(x)}`)].join("\n"));
+  if (a.verdict) {
+    const v = a.verdict;
+    top.push([`**Choisir selon votre situation.**`, `Rushh peut mieux convenir si vous cherchez :`, ...v.rushhIf.map((x) => `- ${abs(x)}`), `${v.otherName} peut mieux convenir si vous cherchez :`, ...v.otherIf.map((x) => `- ${abs(x)}`)].join("\n"));
+  }
+  top.push(`**Rushh immo.** ${a.rushhBrief ?? `Rushh immo : ${RUSHH_BRIEF}`}`.replace("**Rushh immo.** Rushh immo : ", "**Rushh immo :** "));
+  parts.splice(3, 0, ...top);
+  if (a.cover) parts.splice(3 + top.length, 0, `![${a.cover.alt}](${SITE_URL}${a.cover.src})`);
   for (const s of a.sections) {
     parts.push(`## ${s.h2}`);
+    if (s.takeaway) parts.push(`**À retenir :** ${abs(s.takeaway)}`);
     for (const b of s.blocks) parts.push(blockToMarkdown(b));
   }
   if (a.rushh) {

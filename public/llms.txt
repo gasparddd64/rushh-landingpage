@@ -38,7 +38,7 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Integrations & technical resources: https://www.rushh.fr/integrations
 - Rushh vs Joe AI (comparison): https://www.rushh.fr/vs/joe-ai
 - Rushh vs Fonio (comparison, sourced and dated): https://www.rushh.fr/vs/fonio
-- Comparison of AI phone answering solutions for real estate (sourced and dated): https://www.rushh.fr/comparatif/standards-telephoniques-ia-immobilier
+- What matters in an AI phone answering service for real estate, and Rushh's approach: https://www.rushh.fr/comparatif/standards-telephoniques-ia-immobilier
 - Guide, how to choose an AI phone answering service: https://www.rushh.fr/ressources/choisir-standard-telephonique-ia-immobilier
 - Guide, AI appointment booking in real estate: https://www.rushh.fr/ressources/prise-rendez-vous-ia-immobilier
 - Guide, real cost of an AI phone answering service for real estate: https://www.rushh.fr/ressources/cout-standard-telephonique-ia-immobilier
