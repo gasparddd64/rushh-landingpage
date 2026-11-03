@@ -39,6 +39,7 @@ const BARE_LINKS: Record<string, string[]> = {
   "/comparatif/standards-telephoniques-ia-immobilier": ["/demonstrations", "/vs/fonio", "/vs/joe-ai"],
   "/ressources/qualification-appels-vendeurs-acquereurs": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/prise-rendez-vous-ia-immobilier"],
   "/ressources/prise-rendez-vous-ia-immobilier": ["/demonstrations", "/integrations", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/standard-ia-google-agenda-outlook-immobilier", "/ressources/appel-vendeur-estimation-immobiliere"],
+  "/ressources/appel-vendeur-estimation-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/prise-rendez-vous-ia-immobilier", "/ressources/standard-ia-google-agenda-outlook-immobilier"],
   "/ressources/appels-manques-immobilier": ["/demonstrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/permanence-telephonique-agence-immobiliere"],
 };
 
@@ -351,12 +352,13 @@ describe("wave 1 (Nov. 2026) guides", () => {
     expect(a.sources.map((s) => s.url)).toEqual(expect.arrayContaining(["https://apimo.com/api/webservice", "https://apimo.com/api"]));
   });
 
-  it("the seller-call guide never announces a price or a mandate, and its dialogue is labelled fictional", () => {
+  it("the seller-call guide keeps the validated three steps and no decision tree, dialogue or fiche", () => {
     const a = get("/ressources/appel-vendeur-estimation-immobiliere");
-    const fiche = a.sections.flatMap((s) => s.blocks).find((b) => b.t === "fiche");
-    expect(fiche && fiche.t === "fiche" && fiche.note).toContain("fictif");
-    expect(allText(a)).toContain("Annoncer une valeur");
-    expect(allText(a)).toContain("Dialogue fictif");
+    expect(a.bare).toBe(true);
+    const blocks = a.sections.flatMap((s) => s.blocks);
+    expect(blocks.filter((b) => b.t === "h3" && /^[1-3]\. /.test(b.text))).toHaveLength(3);
+    expect(blocks.filter((b) => b.t === "fiche")).toHaveLength(0);
+    expect(articleToMarkdown(a)).not.toMatch(/arbre de décision|Dialogue fictif|Annoncer une valeur|Sources et méthode/i);
   });
 
   it("the permanence guide holds a four-row, four-column transfer matrix and is not presented as Rushh-first", () => {

@@ -112,7 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/appel-vendeur-estimation-immobiliere',
-      lastModified: new Date('2026-10-31'),
+      lastModified: new Date('2026-11-03'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },

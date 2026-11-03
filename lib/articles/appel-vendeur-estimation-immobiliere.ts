@@ -1,274 +1,255 @@
 import type { Article } from "./types";
 
+/** Texte validé : à reproduire tel quel, sans reformulation (voir `bare` dans types.ts). */
 export const appelVendeurEstimation: Article = {
   path: "/ressources/appel-vendeur-estimation-immobiliere",
+  bare: true,
   category: "guides",
   cover: {
     src: "/ressources/appel-vendeur-estimation-immobiliere.png",
     width: 1600,
     height: 840,
-    alt: "Un arbre de décision part d'un appel vendeur et débouche sur cinq suites possibles : estimation à planifier, vente future à rappeler, demande non mûre à documenter, informations insuffisantes à compléter, refus de répondre à respecter.",
+    alt: "Illustration : un appel vendeur qui débouche sur une suite concrète, un rendez-vous d'estimation ou un suivi adapté.",
   },
-  title: "Appel vendeur pour une estimation : qualifier et fixer le RDV | Rushh",
+  title: "Appel vendeur : obtenir un rendez-vous d'estimation | Rushh",
   description:
-    "Appel vendeur avant une estimation : informations à recueillir, arbre de décision en cinq issues, dialogue fictif et erreurs à éviter.",
+    "Comprendre le projet, recueillir les bonnes informations, proposer une suite claire : transformer un appel vendeur en rendez-vous d'estimation.",
   shortTitle: "L'appel vendeur avant une estimation",
-  summary: "Les informations à recueillir, un arbre de décision en cinq issues et un dialogue fictif pour préparer l'estimation.",
-  h1: "Appel vendeur : que demander avant un rendez-vous d'estimation immobilière ?",
+  summary: "Comprendre le projet, recueillir les informations utiles et proposer une prochaine étape à un propriétaire.",
+  h1: "Appel vendeur : comment obtenir un rendez-vous d'estimation immobilière ?",
   answer:
-    "Lors d'un appel vendeur, il faut identifier le projet, le secteur ou l'adresse sans les deviner, le type de bien, le calendrier de vente et le moyen de joindre la personne, puis proposer l'étape suivante : un rendez-vous ou un rappel. Il ne faut jamais annoncer un prix estimé, ni promettre un mandat, ni inventer un créneau.",
+    "L'objectif n'est pas simplement de recueillir les coordonnées du propriétaire, mais de comprendre son projet et de lui proposer une prochaine étape concrète.",
   datePublished: "2026-10-31",
-  dateModified: "2026-10-31",
+  dateModified: "2026-11-03",
+  intro: [
+    {
+      "t": "p",
+      "text": "Un propriétaire contacte votre [agence](/solutions/transaction-immobiliere) pour faire estimer sa maison ou son appartement. C'est une opportunité commerciale importante, mais encore faut-il savoir transformer ce premier échange en rendez-vous."
+    },
+    {
+      "t": "p",
+      "text": "Un appel trop long, des questions inutiles ou un manque de suivi peuvent ralentir la prise de contact."
+    },
+    {
+      "t": "p",
+      "text": "L'objectif n'est pas simplement de recueillir les coordonnées du propriétaire, mais de comprendre son projet et de lui proposer une prochaine étape concrète."
+    }
+  ],
   sections: [
     {
-      id: "premieres-secondes",
-      h2: "Les premières secondes de l'appel",
-      blocks: [
+      "id": "methode",
+      "h2": "Comment transformer un appel vendeur en rendez-vous d'estimation ?",
+      "blocks": [
         {
-          t: "p",
-          text: "Un propriétaire qui appelle pour une estimation fait souvent sa première démarche : il n'a pas toujours le vocabulaire de l'agence, et il compare parfois plusieurs professionnels. Les premières secondes servent à lui montrer qu'il est entendu : un accueil clair, l'agence nommée, puis une question ouverte sur son projet.",
+          "t": "p",
+          "text": "Une bonne prise en charge repose sur trois étapes : [comprendre le projet](/ressources/qualification-appels-vendeurs-acquereurs), recueillir les informations utiles et organiser la suite."
         },
         {
-          t: "p",
-          text: "Évitez de lui demander d'emblée son nom, son numéro et son adresse comme un formulaire. Laissez-le expliquer, puis recueillez ce qui manque. Quand l'appel est pris par un standard téléphonique, la règle est la même : écouter, reformuler, puis questionner.",
+          "t": "h3",
+          "text": "1. Comprendre le projet du propriétaire"
         },
-      ],
+        {
+          "t": "p",
+          "text": "Tous les propriétaires qui demandent une estimation ne sont pas au même stade."
+        },
+        {
+          "t": "p",
+          "text": "Certains souhaitent vendre rapidement. D'autres envisagent une vente dans quelques mois ou veulent simplement connaître la valeur de leur bien."
+        },
+        {
+          "t": "p",
+          "text": "Le premier objectif est donc d'identifier :"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "La nature de la demande : estimation, projet de vente ou renseignement.",
+            "Le type de bien : maison, appartement, terrain ou autre.",
+            "Sa localisation : ville, quartier ou secteur.",
+            "Le calendrier envisagé pour la vente."
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Ces informations permettent de comprendre le contexte sans transformer la conversation en interrogatoire."
+        },
+        {
+          "t": "p",
+          "text": "Un propriétaire qui réfléchit à vendre mérite autant une réponse adaptée qu'un vendeur prêt à prendre rendez-vous immédiatement."
+        },
+        {
+          "t": "h3",
+          "text": "2. Recueillir les informations nécessaires au rendez-vous"
+        },
+        {
+          "t": "p",
+          "text": "Une fois le projet identifié, quelques renseignements permettent de préparer la suite."
+        },
+        {
+          "t": "p",
+          "text": "Selon la situation, il peut être utile de demander la surface approximative du bien, le nombre de pièces et les coordonnées du propriétaire."
+        },
+        {
+          "t": "p",
+          "text": "S'il souhaite rencontrer un professionnel, ses disponibilités permettent de rechercher un créneau adapté."
+        },
+        {
+          "t": "p",
+          "text": "Il n'est pas nécessaire de connaître immédiatement tous les détails du logement."
+        },
+        {
+          "t": "p",
+          "text": "Le premier appel doit donner envie au propriétaire de poursuivre son échange avec l'agence, pas lui faire remplir un dossier complet au téléphone."
+        },
+        {
+          "t": "h3",
+          "text": "3. Proposer une prochaine étape claire"
+        },
+        {
+          "t": "p",
+          "text": "Lorsque le propriétaire souhaite avancer, le plus simple est de lui proposer un [rendez-vous d'estimation](/ressources/prise-rendez-vous-ia-immobilier)."
+        },
+        {
+          "t": "p",
+          "text": "Un créneau peut être fixé directement si les disponibilités du négociateur sont accessibles."
+        },
+        {
+          "t": "p",
+          "text": "Mais tous les propriétaires ne souhaitent pas prendre rendez-vous immédiatement."
+        },
+        {
+          "t": "p",
+          "text": "Dans ce cas, plusieurs suites sont possibles :"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Organiser un rappel ultérieur, au moment qui convient au propriétaire.",
+            "Proposer un échange avec un négociateur.",
+            "Répondre à une question simple lorsqu'une information fiable est disponible."
+          ]
+        },
+        {
+          "t": "p",
+          "text": "L'essentiel est de conserver le contexte de la demande pour pouvoir reprendre la conversation sans repartir de zéro."
+        },
+        {
+          "t": "statement",
+          "text": "Une demande vendeur bien suivie peut devenir une opportunité commerciale, même sans rendez-vous dès le premier appel."
+        }
+      ]
     },
     {
-      id: "informations",
-      h2: "Les informations indispensables",
-      blocks: [
+      "id": "exemple",
+      "h2": "Exemple : un propriétaire appelle pendant une visite",
+      "blocks": [
         {
-          t: "p",
-          text: "Pour préparer un rendez-vous d'estimation, six éléments suffisent le plus souvent. Tout le reste peut attendre le rendez-vous lui-même.",
+          "t": "p",
+          "text": "Un propriétaire contacte votre agence pour faire estimer une maison de 120 m² située dans votre secteur."
         },
         {
-          t: "ol",
-          items: [
-            "**Le projet** : vendre, faire estimer pour information, hériter, divorcer, investir. Le motif change le ton du rendez-vous.",
-            "**Le secteur ou l'adresse** : demandez-le sans le deviner. Si la personne hésite à donner l'adresse exacte, la commune ou le quartier suffit pour orienter l'appel.",
-            "**Le type de bien** : maison, appartement, terrain, local, et si possible la surface ou le nombre de pièces.",
-            "**Le calendrier** : vente immédiate, dans quelques mois, simple réflexion.",
-            "**Le moyen de joindre la personne** : numéro, et le meilleur moment pour la rappeler.",
-            "**La suite souhaitée** : rendez-vous sur place, échange téléphonique, simple information.",
-          ],
+          "t": "p",
+          "text": "Il envisage de vendre dans les prochains mois et souhaite connaître les démarches à suivre."
         },
         {
-          t: "callout",
-          kind: "reco",
-          text: "Ne recueillez que ce qui sert à préparer le rendez-vous. La CNIL rappelle le principe de minimisation : les données collectées doivent être limitées à ce qui est nécessaire à la finalité.",
+          "t": "p",
+          "text": "La bonne méthode consiste à comprendre son projet, recueillir les informations utiles sur le bien, puis lui proposer un rendez-vous d'estimation."
         },
-      ],
+        {
+          "t": "p",
+          "text": "S'il accepte, un créneau est organisé selon les disponibilités de l'agence."
+        },
+        {
+          "t": "p",
+          "text": "S'il préfère attendre, sa demande est conservée avec son projet et son calendrier afin de prévoir une suite adaptée."
+        },
+        {
+          "t": "statement",
+          "text": "Dans les deux cas, l'appel ne se termine pas par une simple prise de message sans contexte."
+        }
+      ]
     },
     {
-      id: "arbre",
-      h2: "Un arbre de décision en cinq issues",
-      blocks: [
+      "id": "rushh",
+      "h2": "Comment Rushh applique cette méthode",
+      "blocks": [
         {
-          t: "p",
-          text: "Tous les appels vendeurs ne mènent pas à un rendez-vous, et ce n'est pas un échec. L'arbre ci-dessous donne à chaque situation une suite claire, que ce soit un agent, un collaborateur ou un standard qui prend l'appel.",
+          "t": "p",
+          "text": "Rushh est un standard téléphonique alimenté par intelligence artificielle, conçu pour les professionnels de l'immobilier."
         },
         {
-          t: "table",
-          caption: "Arbre de décision d'un appel vendeur pour une estimation",
-          head: ["Situation", "Signal dans l'appel", "Suite à donner", "À ne pas faire"],
-          rows: [
-            [
-              "1. Estimation immédiate",
-              "Projet de vente défini, bien identifié, calendrier court",
-              "Proposer un rendez-vous si l'agenda le permet, sinon prendre une préférence horaire et transmettre à confirmer",
-              "Annoncer un prix ou promettre un créneau non vérifié",
-            ],
-            [
-              "2. Vente future",
-              "Projet réel mais à plusieurs mois",
-              "Noter le calendrier, proposer un rappel à une date convenue",
-              "Relancer comme une vente immédiate",
-            ],
-            [
-              "3. Demande non mûre",
-              "Simple curiosité sur la valeur du bien, pas de projet",
-              "Expliquer ce que l'agence propose, laisser un moyen de reprendre contact",
-              "Forcer un rendez-vous",
-            ],
-            [
-              "4. Informations insuffisantes",
-              "Appel haché, bien mal décrit, adresse floue",
-              "Reformuler, poser une ou deux questions de plus, sinon proposer un rappel",
-              "Deviner l'adresse ou le type de bien",
-            ],
-            [
-              "5. Refus de répondre",
-              "La personne ne veut pas donner d'informations",
-              "Respecter son choix, indiquer comment joindre l'agence",
-              "Insister ou conditionner la suite à la réponse",
-            ],
-          ],
-          note: "Les cinq issues sont une proposition de départ. Une agence peut en ajouter, par exemple pour les successions ou les biens atypiques.",
+          "t": "p",
+          "text": "Lorsqu'un propriétaire appelle, Rushh peut prendre en charge la conversation, identifier une demande d'estimation et recueillir les informations utiles sur son bien et son projet."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Selon les règles définies avec l'agence, il peut ensuite :"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Prendre un rendez-vous d'estimation directement sur un [agenda connecté](/ressources/standard-ia-google-agenda-outlook-immobilier).",
+            "Transférer l'appel à un collaborateur lorsque son intervention est nécessaire.",
+            "Organiser la transmission ou le suivi lorsque le propriétaire ne souhaite pas encore prendre rendez-vous.",
+            "Envoyer une confirmation par SMS ou e-mail selon le scénario configuré."
+          ]
+        },
+        {
+          "t": "p",
+          "text": "La demande apparaît dans la plateforme métier Rushh comme une opportunité vendeur, avec les coordonnées du propriétaire, le résumé de l'échange et son statut."
+        },
+        {
+          "t": "p",
+          "text": "Votre équipe retrouve ainsi les informations nécessaires pour poursuivre la relation commerciale."
+        },
+        {
+          "t": "h3",
+          "text": "Un fonctionnement entièrement pris en charge"
+        },
+        {
+          "t": "p",
+          "text": "Rushh adapte les scénarios d'appel au fonctionnement de votre agence."
+        },
+        {
+          "t": "p",
+          "text": "Notre équipe assure la configuration, les connexions nécessaires, les tests et le suivi du standard."
+        },
+        {
+          "t": "p",
+          "text": "Vos négociateurs restent concentrés sur leurs visites et leurs rendez-vous, pendant que les nouvelles demandes vendeurs sont prises en charge."
+        }
+      ]
     },
     {
-      id: "dialogue",
-      h2: "Exemple de conversation",
-      blocks: [
+      "id": "demonstration",
+      "h2": "Ne laissez plus un appel vendeur attendre votre disponibilité",
+      "blocks": [
         {
-          t: "callout",
-          kind: "example",
-          text: "Dialogue fictif, écrit pour illustrer une méthode. Il ne reflète ni un client réel ni un résultat mesuré.",
+          "t": "p",
+          "text": "Un propriétaire peut appeler à n'importe quel moment de la journée, y compris lorsque vous êtes déjà avec un client."
         },
         {
-          t: "fiche",
-          title: "Appel vendeur : premier contact",
-          rows: [
-            ["Accueil", "« Agence Exemple, bonjour, que puis-je faire pour vous ? »"],
-            ["Appelant", "« Bonjour, j'aimerais faire estimer ma maison, je pense la vendre. »"],
-            ["Agence", "« Très bien. Votre maison est dans quelle commune ? »"],
-            ["Appelant", "« À Sceaux, près du centre. »"],
-            ["Agence", "« Merci. Et vous pensez la vendre plutôt rapidement ou dans quelques mois ? »"],
-            ["Appelant", "« Plutôt d'ici l'été. »"],
-            ["Agence", "« Je note : estimation d'une maison à Sceaux, vente envisagée d'ici l'été. Un collaborateur peut vous rappeler pour convenir d'un rendez-vous : quel moment vous arrange ? »"],
-            ["Appelant", "« En fin de journée. »"],
-            ["Agence", "« C'est noté, en fin de journée. Je transmets votre demande à l'équipe, qui vous rappellera pour fixer le rendez-vous. »"],
-          ],
-          note: "Dialogue fictif. L'agence ne donne ni prix ni créneau : elle recueille l'essentiel et annonce un rappel, car l'agenda n'a pas été consulté.",
-        },
-      ],
-    },
-    {
-      id: "creneau",
-      h2: "Réserver ou proposer un rappel, sans promettre un créneau inventé",
-      blocks: [
-        {
-          t: "p",
-          text: "Une réservation n'est fiable que si l'agenda est accessible, le créneau libre et la règle de réservation claire. Dans le cas contraire, le bon message n'est pas « c'est réservé » mais « votre demande est transmise, vous serez rappelé ». Cette distinction vaut pour un agent comme pour un standard. Le guide sur la [prise de rendez-vous par IA](/ressources/prise-rendez-vous-ia-immobilier) détaille ces deux cas.",
+          "t": "p",
+          "text": "L'enjeu est de lui répondre, de comprendre son projet et de lui proposer une suite adaptée."
         },
         {
-          t: "ul",
-          items: [
-            "**Agenda accessible et règle claire** : proposer un ou deux créneaux réels, puis confirmer la date, l'heure et l'adresse.",
-            "**Agenda inaccessible ou règle incertaine** : relever une préférence horaire et annoncer un rappel.",
-            "**Demande hors secteur** : indiquer poliment que l'agence n'intervient pas dans la zone, si c'est la règle.",
-          ],
-        },
-      ],
-    },
-    {
-      id: "erreurs",
-      h2: "Erreurs à éviter",
-      blocks: [
-        {
-          t: "ul",
-          items: [
-            "**Annoncer une valeur** : une estimation se fait sur place, avec des éléments que l'appel ne donne pas.",
-            "**Promettre un mandat ou un délai de vente** : aucun résultat ne dépend de l'appel seul.",
-            "**Poser dix questions d'affilée** : l'appelant raccroche, ou donne des réponses approximatives.",
-            "**Redemander une information déjà donnée** : l'agent ou le standard doit retenir ce qui a été dit.",
-            "**Oublier l'étape suivante** : un appel sans suite annoncée est un appel perdu.",
-          ],
+          "t": "statement",
+          "text": "Avec Rushh, les demandes d'estimation peuvent avancer dès le premier appel, sans interrompre votre équipe."
         },
         {
-          t: "p",
-          text: "Si l'appel est enregistré, la personne doit en être informée. La CNIL donne des repères sur l'écoute et l'enregistrement des appels ; sa page indique être en cours de mise à jour, vérifiez donc la version en vigueur et faites valider votre organisation par votre conseil.",
+          "t": "button",
+          "label": "Réserver une démonstration",
+          "href": "/demonstrations"
         },
-      ],
-    },
-    {
-      id: "checklist",
-      h2: "Checklist pour une agence",
-      blocks: [
         {
-          t: "checklist",
-          items: [
-            "Les six informations utiles sont définies, et rien de plus n'est demandé",
-            "L'arbre de décision en cinq issues est écrit et connu de toute l'équipe",
-            "La règle de réservation est claire : quels créneaux, quel agenda, quelles validations",
-            "Un rappel est toujours annoncé avec un moment précis ou une plage",
-            "Aucun prix, aucune promesse de mandat ne sont annoncés au téléphone",
-            "Un exemple de chaque issue a été testé par un appel réel avant la mise en service",
-          ],
-        },
-      ],
-    },
-    {
-      id: "faq",
-      h2: "Questions fréquentes",
-      blocks: [
-        { t: "h3", text: "Une IA peut-elle prendre un appel d'estimation ?" },
-        {
-          t: "p",
-          text: "Oui, si les consignes de qualification sont claires : elle recueille le projet, le secteur, le type de bien et le moyen de rappeler, puis transmet la demande ou propose un rendez-vous si l'agenda le permet. Elle ne donne pas de valeur.",
-        },
-        { t: "h3", text: "Faut-il demander l'adresse exacte dès le premier appel ?" },
-        {
-          t: "p",
-          text: "Pas obligatoirement. Le secteur ou la commune suffit souvent pour orienter la demande ; l'adresse précise peut être confirmée par l'agent lors du rappel ou sur place.",
-        },
-        { t: "h3", text: "Comment gérer un appelant qui veut un prix tout de suite ?" },
-        {
-          t: "p",
-          text: "Expliquer qu'une estimation sérieuse suppose de voir le bien, puis proposer un rendez-vous ou un rappel. Annoncer un chiffre au téléphone engage l'agence sans éléments fiables.",
-        },
-        { t: "h3", text: "Un appel mène-t-il toujours à un rendez-vous ?" },
-        {
-          t: "p",
-          text: "Non. Plusieurs issues sont normales : vente future, simple curiosité, informations insuffisantes. Le résultat commercial d'un appel dépend de nombreux facteurs.",
-        },
-      ],
-    },
+          "t": "p",
+          "text": "Découvrez comment Rushh qualifie les appels vendeurs et organise les rendez-vous d'estimation pour votre agence."
+        }
+      ]
+    }
   ],
-  sources: [
-    {
-      label: "CNIL : le principe de minimisation des données",
-      url: "https://www.cnil.fr/fr/definition/minimisation",
-      usedFor: "Limiter les informations personnelles recueillies au besoin de la finalité. Consulté le 31 octobre 2026.",
-    },
-    {
-      label: "CNIL : l'écoute et l'enregistrement des appels sur le lieu de travail",
-      url: "https://www.cnil.fr/fr/lecoute-et-lenregistrement-des-appels-sur-le-lieu-de-travail",
-      usedFor:
-        "Information des personnes en cas d'enregistrement. La CNIL signale que cette page est en cours de mise à jour : vérifiez la version en vigueur. Consulté le 31 octobre 2026.",
-    },
-  ],
-  sourcesNote:
-    "Ce guide décrit une méthode. L'arbre de décision et le dialogue sont des modèles fictifs à adapter à votre organisation : aucun résultat de client n'est présenté. Ce texte n'est pas un avis juridique. Rushh édite cette page et en est partie prenante.",
-  rushh: {
-    title: "Chaque appel vendeur reçoit une suite claire, sans valeur annoncée ni créneau inventé",
-    text: "Rushh conçoit, configure, teste, déploie et suit un standard téléphonique IA spécialisé dans les appels entrants de l'immobilier. L'arbre de décision de ce guide est le type de scénario que l'équipe Rushh écrit avec l'agence, puis teste en conditions d'appel avant la mise en service.",
-    points: [
-      "Un scénario d'appel vendeur écrit pour l'estimation, avec vos informations utiles et vos règles",
-      "Un rendez-vous enregistré seulement si l'agenda le permet, sinon une demande transmise à confirmer",
-      "Aucune valeur annoncée, aucune promesse de mandat",
-      "Une prestation entièrement prise en charge : vous validez les règles, Rushh s'occupe du reste",
-    ],
-    links: [
-      { href: "/demonstrations", label: "Tester la ligne de démonstration" },
-      { href: "/solutions/transaction-immobiliere", label: "Standard pour la transaction" },
-    ],
-  },
-  related: [
-    {
-      href: "/ressources/qualification-appels-vendeurs-acquereurs",
-      label: "Qualifier les appels vendeurs et acquéreurs",
-      text: "Les informations à recueillir selon le profil de l'appelant.",
-    },
-    {
-      href: "/ressources/prise-rendez-vous-ia-immobilier",
-      label: "Prise de rendez-vous par IA",
-      text: "Réserver, ou transmettre une demande à confirmer.",
-    },
-    {
-      href: "/ressources/permanence-telephonique-agence-immobiliere",
-      label: "Organiser la permanence téléphonique",
-      text: "Qui prévenir, et quand, selon le motif d'appel.",
-    },
-  ],
-  cta: {
-    title: "Jouez un appel d'estimation sur la ligne de démonstration",
-    text: "Appelez l'agence fictive à Paris en vendeur, donnez peu d'informations puis davantage : vous jugerez la qualification et la suite annoncée. Tarification sur devis.",
-    links: [
-      { href: "/demonstrations", label: "Ligne de démonstration" },
-      { href: "/offre", label: "L'offre Rushh" },
-    ],
-  },
+  sources: [],
+  sourcesNote: "",
+  related: [],
+  cta: { title: "Ne laissez plus un appel vendeur attendre votre disponibilité", text: "", links: [] },
 };
