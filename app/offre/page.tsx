@@ -16,7 +16,7 @@ import "../solutions/sol.css";
 
 const TITLE = "L'offre Rushh immo : standard téléphonique IA pour l'immobilier";
 const DESCRIPTION =
-  "L'offre Rushh : un standard téléphonique IA conçu, testé, déployé et suivi pour votre organisation immobilière. Tarification sur devis.";
+  "L'offre Rushh : un standard téléphonique IA qui prend vos appels 24 h/24, qualifie, fixe vos rendez-vous et classe les demandes. Proposition personnalisée.";
 const URL = "https://www.rushh.fr/offre";
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: TITLE, description: DESCRIPTION, images: ["https://www.rushh.fr/logo-rushh-og.png"] },
 };
 
-// JSON-LD factuel : aucun prix, aucune offre chiffrée (tarification sur devis).
+// JSON-LD factuel : aucun prix, aucune offre chiffrée (proposition personnalisée).
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -43,7 +43,7 @@ const serviceSchema = {
   serviceType: "Standard téléphonique alimenté par intelligence artificielle",
   url: URL,
   description:
-    "Standard téléphonique alimenté par intelligence artificielle, conçu, testé, déployé, suivi et optimisé pour les professionnels de l'immobilier. Il prend en charge les appels entrants selon les règles validées avec le client.",
+    "Standard téléphonique alimenté par intelligence artificielle, spécialisé dans l'immobilier : appels entrants 24 h/24 et 7 j/7, qualification, rendez-vous sur agendas connectés, transfert d'appel, SMS et e-mails automatiques, plateforme métier. Conception, configuration, connexions, tests, installation, maintenance et suivi assurés par Rushh.",
   provider: orgRef,
   areaServed: { "@type": "Country", name: "France" },
   audience: { "@type": "Audience", audienceType: "Professionnels de l'immobilier" },
@@ -64,9 +64,6 @@ const IconFocus = () => (
 const IconList = () => (
   <Svg><path d="M9 6h11M9 12h11M9 18h11" /><path d="m3.5 6 1 1 2-2M3.5 12l1 1 2-2M3.5 18l1 1 2-2" /></Svg>
 );
-const IconClock = () => (
-  <Svg><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></Svg>
-);
 const IconArrow = () => (
   <Svg><path d="M5 12h14M13 6l6 6-6 6" /></Svg>
 );
@@ -78,42 +75,43 @@ const BENEFITS = [
   {
     icon: <IconPhone />,
     title: "Moins d'appels laissés sans réponse",
-    text: "Quand votre équipe est en visite, en rendez-vous ou déjà au téléphone, Rushh décroche et prend la demande en charge.",
+    text: "Visite, rendez-vous, agence fermée : Rushh prend l'appel.",
   },
   {
     icon: <IconFocus />,
     title: "Moins d'interruptions pour vos équipes",
-    text: "Votre équipe ne décroche plus que ce qui mérite vraiment un humain, selon les règles que vous définissez.",
+    text: "Votre équipe ne décroche que ce qui mérite un humain.",
   },
   {
     icon: <IconList />,
-    title: "Des demandes mieux qualifiées",
-    text: "Le motif, les informations utiles et le contexte sont recueillis avant la transmission : vous reprenez l'échange en sachant de quoi il s'agit.",
+    title: "Davantage d'opportunités traitées",
+    text: "Chaque demande est qualifiée et classée, prête à être traitée.",
   },
 ];
 
 const FLOW = [
   { title: "Appel entrant", text: "Un vendeur, un acquéreur, un locataire, un copropriétaire ou un prestataire appelle." },
   { title: "Rushh comprend", text: "Le Standard décroche et identifie la demande dès les premiers mots." },
-  { title: "Qualifie et applique vos règles", text: "Orientation, transfert ou prise de rendez-vous, selon ce que vous avez validé." },
-  { title: "Votre équipe reçoit les informations", text: "Une demande prête à traiter, avec le contexte utile pour reprendre l'échange." },
+  { title: "Qualifie et agit", text: "Rendez-vous, transfert ou transmission, selon les règles validées avec vous." },
+  { title: "Votre équipe retrouve la demande", text: "Qualifiée, résumée, avec son statut et sa prochaine étape." },
 ];
 
-const CAPABILITIES = [
-  "Appels entrants",
-  "Qualification",
-  "Orientation",
-  "Transferts",
-  "Prise de rendez-vous, selon vos règles",
-  "Transmission à votre équipe",
+const FEATURES = [
+  { title: "Appels entrants 24 h/24, 7 j/7", text: "Réponse directe ou renvoi d'appel, selon l'organisation de votre agence." },
+  { title: "Qualification", text: "Vendeur, acquéreur, locataire, bailleur ou prestataire." },
+  { title: "Rendez-vous", text: "Pris sur vos agendas connectés, selon vos règles." },
+  { title: "Transfert d'appel", text: "En direct vers un collaborateur, lorsque son intervention est nécessaire." },
+  { title: "SMS et e-mails automatiques", text: "Confirmations et informations, selon les scénarios configurés." },
+  { title: "Plateforme métier", text: "Opportunités classées par catégorie, avec coordonnées, résumé, statut et suivi." },
+  { title: "Connexions personnalisées", text: "Aux outils disposant d'une API accessible, avec les autorisations nécessaires." },
+  { title: "Voix personnalisable", text: "Personnalisation de la voix et clonage vocal, selon la configuration." },
 ];
 
-const YOU = ["Nous expliquer comment vous travaillez", "Valider le fonctionnement avant la mise en service"];
+const YOU = ["Nous expliquer comment vous travaillez", "Valider le fonctionnement avant le déploiement"];
 const RUSHH = [
-  "Analyser votre fonctionnement",
-  "Configurer et tester les scénarios",
-  "Déployer le Standard",
-  "Suivre les performances et le faire évoluer avec vous",
+  "Les scénarios d'appel, conçus pour votre agence",
+  "Les connexions à vos outils",
+  "La maintenance, le suivi et les ajustements",
 ];
 
 const ADAPT = [
@@ -123,18 +121,15 @@ const ADAPT = [
 ];
 
 const STEPS = [
-  { title: "Analyse", text: "Nous étudions votre fonctionnement, vos règles et vos interlocuteurs." },
-  { title: "Configuration", text: "Nous construisons les scénarios qui correspondent à votre organisation." },
-  { title: "Tests", text: "Nous testons les appels avant toute mise en service." },
+  { title: "Analyse et configuration", text: "Nous étudions votre fonctionnement et construisons les scénarios qui correspondent à votre organisation." },
+  { title: "Tests", text: "Nous testons les appels avant tout déploiement." },
   { title: "Validation", text: "Vous validez le fonctionnement." },
-  { title: "Déploiement", text: "Le Standard prend en charge vos appels." },
-  { title: "Suivi", text: "Nous suivons les performances et ajustons dans le temps." },
+  { title: "Déploiement et suivi", text: "Le Standard prend en charge vos appels ; nous suivons son fonctionnement et ajustons dans le temps." },
 ];
 
 const RECEIVE = [
-  "Une demande prête à traiter : le motif, les informations recueillies et le contexte pour reprendre l'échange.",
-  "Des demandes orientées vers la bonne personne, selon vos règles.",
-  "Un suivi dans le temps assuré par l'équipe Rushh.",
+  "Une demande qualifiée : motif, coordonnées, résumé et statut.",
+  "Orientée vers la bonne personne, selon vos règles.",
 ];
 
 export default function OffrePage() {
@@ -153,19 +148,21 @@ export default function OffrePage() {
           <div className="lf-wrap">
             <span className="lf-pill">L&apos;offre Rushh</span>
             <h1 id="offre-title" className="of-h1">
-              L&apos;offre Rushh : un <em>standard téléphonique</em> conçu et suivi pour votre organisation.
+              L&apos;offre Rushh : un <em>standard téléphonique</em> IA qui prend vos appels, fixe vos rendez-vous et libère vos équipes.
             </h1>
             <p className="of-lead">
-              Vous cherchez une IA qui répond au téléphone de votre agence immobilière ? Rushh met en place un standard téléphonique alimenté par intelligence artificielle, qui prend vos appels entrants, qualifie les demandes et peut organiser des rendez-vous selon vos disponibilités. Conçu sur mesure pour les professionnels de l&apos;immobilier, il est testé, déployé et suivi par l&apos;équipe Rushh : vous nous expliquez votre fonctionnement, nous nous occupons du reste.
+              Rushh répond aux appels entrants de votre agence 24h/24, qualifie les demandes et fixe des rendez-vous sur vos agendas connectés. Notre équipe conçoit, installe et fait fonctionner votre standard pour vous.
+              <br />
+              Vous vous concentrez sur vos clients. Rushh s&apos;occupe du téléphone.
             </p>
             <div className="of-actions">
               <DemoCTA label="Réserver une démo" showArrow={false} />
               <a className="of-ghost" href="#mise-en-service">
-                Voir comment ça se déroule
+                Voir comment ça se met en place
                 <IconArrow />
               </a>
             </div>
-            <p className="of-note">Standard téléphonique alimenté par intelligence artificielle · Tarification sur devis</p>
+            <p className="of-note">Standard téléphonique alimenté par intelligence artificielle · Proposition personnalisée</p>
 
             <ul className="of-benefits">
               {BENEFITS.map((b) => (
@@ -183,9 +180,9 @@ export default function OffrePage() {
         <section aria-labelledby="prise-en-charge-title">
           <div className="lf-wrap">
             <div className="lf-head--center">
-              <span className="lf-pill">Le parcours d&apos;un appel</span>
+              <span className="lf-pill">Ce que fait Rushh</span>
               <h2 id="prise-en-charge-title" className="lf-h2">Ce que le Standard Rushh prend en charge</h2>
-              <p className="lf-sub">Rushh traite automatiquement vos appels entrants, du premier mot de l&apos;appelant à la transmission à votre équipe, selon les règles validées avec vous.</p>
+              <p className="lf-sub">Du premier mot de l&apos;appelant à la transmission à votre équipe, selon les règles validées avec vous.</p>
             </div>
             <ol className="of-flow">
               {FLOW.map((s, i) => (
@@ -196,20 +193,17 @@ export default function OffrePage() {
                 </li>
               ))}
             </ol>
-            <details className="of-acc of-acc--label">
-              <summary>Fonctionnalités détaillées</summary>
-              <div className="of-acc-body">
-                <ul className="of-chips">
-                  {CAPABILITIES.map((c) => (
-                    <li key={c}>{c}</li>
-                  ))}
-                </ul>
-                <p className="of-caption">
-                  Le Standard n&apos;applique que les règles validées avec vous. Il ne remplace pas votre équipe : il
-                  prend le relais quand elle ne peut pas répondre.
-                </p>
-              </div>
-            </details>
+            <ul className="of-features" aria-label="Fonctionnalités">
+              {FEATURES.map((f) => (
+                <li key={f.title} className="lf-card of-feature">
+                  <h3>{f.title}</h3>
+                  <p>{f.text}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="of-caption of-caption--center">
+              Les fonctionnalités activées dépendent de votre organisation et de vos outils.
+            </p>
           </div>
         </section>
 
@@ -217,9 +211,9 @@ export default function OffrePage() {
         <section aria-labelledby="accompagnement-title">
           <div className="lf-wrap">
             <div className="lf-head--center">
-              <span className="lf-pill">Un accompagnement complet</span>
-              <h2 id="accompagnement-title" className="lf-h2">Ce qui est inclus dans l&apos;accompagnement</h2>
-              <p className="lf-sub">Vous n&apos;avez rien à configurer ni à gérer : c&apos;est le travail de l&apos;équipe Rushh.</p>
+              <span className="lf-pill">Entièrement géré</span>
+              <h2 id="accompagnement-title" className="lf-h2">Une prestation entièrement prise en charge</h2>
+              <p className="lf-sub">Vous n&apos;avez aucun logiciel à configurer : tout est assuré par l&apos;équipe Rushh.</p>
             </div>
             <div className="of-split">
               <div className="lf-card of-panel">
@@ -265,8 +259,8 @@ export default function OffrePage() {
                     </summary>
                     <div className="of-acc-body">
                       <p>
-                        Rushh peut se connecter à certains outils existants selon vos besoins. Les possibilités
-                        sont étudiées et confirmées avec vous. <Link href="/integrations">Voir les intégrations</Link>
+                        Rushh se connecte de façon personnalisée aux outils disposant d&apos;une API accessible,
+                        avec les autorisations nécessaires. <Link href="/integrations">Voir les intégrations</Link>
                       </p>
                     </div>
                   </details>
@@ -282,14 +276,14 @@ export default function OffrePage() {
         <section id="mise-en-service" aria-labelledby="mise-en-service-title">
           <div className="lf-wrap of-wrap--steps">
             <div className="lf-head--center">
-              <span className="lf-pill">Six étapes</span>
-              <h2 id="mise-en-service-title" className="lf-h2">Comment se déroule la mise en service</h2>
+              <span className="lf-pill">Quatre étapes</span>
+              <h2 id="mise-en-service-title" className="lf-h2">Comment se déroule la mise en place</h2>
               <p className="lf-sub">De l&apos;analyse au suivi, l&apos;équipe Rushh mène chaque étape avec vous.</p>
             </div>
             <details className="of-acc of-acc--label of-acc--steps">
-              <summary>Les six étapes en détail</summary>
+              <summary>Les quatre étapes en détail</summary>
               <div className="of-acc-body">
-                <ol className="of-steps">
+                <ol className="of-steps of-steps--four">
                   {STEPS.map((s, i) => (
                     <li key={s.title} className="lf-card of-step">
                       <div className="of-step-top">
@@ -302,16 +296,6 @@ export default function OffrePage() {
                 </ol>
               </div>
             </details>
-            <div className="of-delay">
-              <span className="of-ic"><IconClock /></span>
-              <div>
-                <strong>Mise en service visée sous 5 jours ouvrés après réception des éléments nécessaires.</strong>
-                <span>
-                  Ce délai est un objectif indicatif, détaillé dans les{" "}
-                  <Link href="/cgv">conditions générales de vente</Link>.
-                </span>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -331,9 +315,6 @@ export default function OffrePage() {
                         <li key={t}><Tick />{t}</li>
                       ))}
                     </ul>
-                    <p className="of-limit">
-                      Le Standard est un outil d&apos;assistance, sans promesse de résultat commercial.
-                    </p>
                   </div>
                 </details>
               </div>
@@ -352,18 +333,18 @@ export default function OffrePage() {
         </section>
 
         <RxDiff id="diff-title" pill={OFFRE.diff.pill} title={OFFRE.diff.title} sub={OFFRE.diff.sub} items={OFFRE.diff.items} />
-        <RxProof id="proof-title" title={OFFRE.proof.title} text={OFFRE.proof.text} say={OFFRE.proof.say} />
+        <RxProof id="proof-title" title={OFFRE.proof.title} text={OFFRE.proof.text} say={OFFRE.proof.say} showPhone={false} />
 
         {/* ── 6. Démonstration et devis ── */}
         <section aria-labelledby="demo-title">
           <div className="lf-wrap">
             <div className="of-final">
-              <span className="of-badge">Tarification sur devis</span>
-              <h2 id="demo-title">Demander une démonstration et un devis</h2>
+              <span className="of-badge">Proposition personnalisée</span>
+              <h2 id="demo-title">Demander une démonstration</h2>
               <p>
                 Lors d&apos;une démonstration, nous regardons votre fonctionnement et nous vous montrons comment
-                le Standard Rushh s&apos;adapterait à votre organisation. Le devis est établi selon votre
-                organisation et le périmètre retenu.
+                Rushh s&apos;adapterait à votre organisation. Vous recevez ensuite une proposition personnalisée,
+                établie selon votre organisation et le périmètre retenu.
               </p>
               <div className="of-actions">
                 <DemoCTA label="Réserver une démo" showArrow={false} />

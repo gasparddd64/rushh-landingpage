@@ -152,7 +152,7 @@ export const MULTI: PremiumContent = {
 };
 
 /** Fragment Markdown (différenciateurs + preuve) injecté dans les miroirs. */
-export function premiumToMd(c: { diff: DiffBlock; proof: ProofBlock }): string {
+export function premiumToMd(c: { diff: DiffBlock; proof: ProofBlock }, opts: { phone?: boolean } = {}): string {
   return `## ${c.diff.title}
 
 ${c.diff.sub}
@@ -161,7 +161,7 @@ ${c.diff.items.map((d) => `### ${d.title}\n\n${d.text}`).join("\n\n")}
 
 ## ${c.proof.title}
 
-${c.proof.text} Ligne de démonstration (agence fictive à Paris) : 01 76 63 57 09.
+${c.proof.text}${opts.phone === false ? "" : " Ligne de démonstration (agence fictive à Paris) : 01 76 63 57 09."}
 
 ${bullets(c.proof.say.map((q) => `« ${q} »`))}
 `;
@@ -171,26 +171,26 @@ export const OFFRE: Pick<PremiumContent, "diff" | "proof"> = {
   diff: {
     pill: "Pourquoi Rushh",
     title: "Pourquoi confier ses appels à Rushh plutôt qu'à un outil à configurer",
-    sub: "Trois différences, à juger sur pièces pendant la démonstration.",
+    sub: "Trois différences, à juger pendant la démonstration.",
     items: [
       {
-        title: "Une prestation entièrement prise en charge",
-        text: "Avec un outil en libre-service, vous consacrez du temps à tout configurer, tester et améliorer. Chez Rushh, l'équipe prend le projet en charge, adapte le fonctionnement à votre agence, puis le fait évoluer avec vos retours.",
+        title: "Rien à configurer de votre côté",
+        text: "Avec un outil à configurer soi-même, vous y consacrez du temps. Chez Rushh, l'équipe s'en charge et fait évoluer le standard avec vos retours.",
       },
       {
-        title: "Une expérience téléphonique naturelle et réactive",
-        text: "L'appelant parle normalement et obtient des réponses rapides, sans menu rigide. Voix personnalisable, clonage vocal avec autorisation du titulaire, français, anglais, espagnol et allemand selon la configuration.",
+        title: "Une expérience téléphonique naturelle",
+        text: "L'appelant parle normalement et obtient des réponses rapides, sans menu rigide.",
         link: { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
       },
       {
-        title: "Des appels qui deviennent des opportunités suivies",
-        text: "La plateforme Rushh indique qui a appelé, pourquoi, ce qui a été dit et ce qu'il reste à faire : résumé, transcription, statut et attribution à un membre de l'équipe. Elle est recommandée, sans être obligatoire : vous pouvez aussi recevoir les informations par les canaux convenus.",
+        title: "Spécialisé dans l'immobilier",
+        text: "Vendeurs, acquéreurs, locataires, bailleurs, prestataires : Rushh est conçu pour les appels des professionnels de l'immobilier.",
       },
     ],
   },
   proof: {
-    title: "Écoutez-le avant de demander un devis",
-    text: "Appelez la ligne de démonstration, jouez le rôle d'un vendeur ou d'un acquéreur et jugez la voix, la rapidité et la manière de qualifier une demande. Ensuite, une démonstration adaptée à votre agence précise le périmètre et le devis.",
+    title: "Écoutez-le avant de vous décider",
+    text: "Jouez le rôle d'un vendeur ou d'un acquéreur sur la ligne de démonstration et jugez la voix, la rapidité et la manière de qualifier une demande. Une démonstration adaptée à votre agence précise ensuite le périmètre et la proposition personnalisée.",
     say: ["Bonjour, je souhaite faire estimer mon appartement à Paris.", "J'aimerais organiser une visite pour un appartement."],
   },
 };

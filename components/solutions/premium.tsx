@@ -234,6 +234,7 @@ export function RxProof({
   text,
   say,
   cta = "Réserver une démo adaptée à votre agence",
+  showPhone = true,
 }: {
   id: string;
   title: string;
@@ -241,6 +242,8 @@ export function RxProof({
   /** Phrases à essayer au téléphone. */
   say: string[];
   cta?: string;
+  /** Affiche le numéro de la ligne de démonstration (masqué sur /offre). */
+  showPhone?: boolean;
 }) {
   return (
     <section className="rx-section rx-section--flush" aria-labelledby={id}>
@@ -257,11 +260,15 @@ export function RxProof({
             </ul>
           </div>
           <div className="rx-proof-act">
-            <a className="rx-call-btn" href={DEMO_PHONE_HREF} aria-label={`Appeler la ligne de démonstration Rushh au ${DEMO_PHONE_LABEL}`}>
-              <IconPhone />
-              {DEMO_PHONE_LABEL}
-            </a>
-            <p>Agence immobilière fictive, située à Paris. Les réponses dépendent de la configuration de la ligne.</p>
+            {showPhone && (
+              <>
+                <a className="rx-call-btn" href={DEMO_PHONE_HREF} aria-label={`Appeler la ligne de démonstration Rushh au ${DEMO_PHONE_LABEL}`}>
+                  <IconPhone />
+                  {DEMO_PHONE_LABEL}
+                </a>
+                <p>Agence immobilière fictive, située à Paris. Les réponses dépendent de la configuration de la ligne.</p>
+              </>
+            )}
             <div className="rx-proof-links">
               <DemoCTA label={cta} showArrow={false} />
               <Link href="/demonstrations" className="rx-link rx-link--light">

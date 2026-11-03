@@ -76,11 +76,13 @@ describe("/offre", () => {
     expect(getMarkdownPage("/offre")?.markdown).toContain("# L'offre Rushh");
   });
 
-  it("states quote-based pricing, the official lead time, and shows no price", () => {
+  it("states a personalised proposal, carries no lead time or price, and no unconfirmed claim", () => {
     const md = getMarkdownPage("/offre")?.markdown ?? "";
-    expect(md).toContain("sur devis");
-    expect(md).toContain("5 jours ouvrés après réception des éléments");
-    expect(md).not.toMatch(/€|euros?\b/i);
+    expect(md).toContain("Proposition personnalisée");
+    expect(md).not.toMatch(/sur devis|jours ouvrés|€|euros?\b|transcription|anglais, espagnol|facultative|sans être obligatoire/i);
+    expect(md).toContain("SMS et e-mails automatiques");
+    expect(md).toContain("24h/24");
+    expect(md).not.toMatch(/garantit aucune|outil d'assistance|01 76 63 57 09|certains outils/i);
   });
 });
 
@@ -180,8 +182,8 @@ describe("search-intent wording (SEO ciblé)", () => {
 
   it("/offre states what Rushh is in the words visitors search, and keeps the official positioning", () => {
     const t = md("/offre");
-    expect(t).toContain("IA qui répond au téléphone de votre agence immobilière");
-    expect(t).toContain("standard téléphonique alimenté par intelligence artificielle");
+    expect(t).toContain("standard téléphonique IA");
+    expect(t).toContain("Standard téléphonique alimenté par intelligence artificielle");
     expect(t).toContain("/comparatif/standards-telephoniques-ia-immobilier");
     expect(t).not.toMatch(/meilleur(e)? (voix|solution|standard)/i);
   });

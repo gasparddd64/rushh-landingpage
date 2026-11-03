@@ -180,33 +180,46 @@ Pour toute question relative à la confidentialité des données, contactez hell
   },
   "/offre": {
     title: "L'offre Rushh immo : standard téléphonique IA pour l'immobilier",
-    markdown: `# L'offre Rushh : un standard téléphonique conçu et suivi pour votre organisation
+    markdown: `# L'offre Rushh : un standard téléphonique IA qui prend vos appels, fixe vos rendez-vous et libère vos équipes.
 
-Vous cherchez une IA qui répond au téléphone de votre agence immobilière ? Rushh met en place un standard téléphonique alimenté par intelligence artificielle, qui prend vos appels entrants, qualifie les demandes et peut organiser des rendez-vous selon vos disponibilités. Conçu sur mesure pour les professionnels de l'immobilier, il est testé, déployé et suivi par l'équipe Rushh : vous nous expliquez votre fonctionnement, nous nous occupons du reste.
+Rushh répond aux appels entrants de votre agence 24h/24, qualifie les demandes et fixe des rendez-vous sur vos agendas connectés. Notre équipe conçoit, installe et fait fonctionner votre standard pour vous.
 
-- Moins d'appels laissés sans réponse : quand votre équipe est en visite, en rendez-vous ou déjà au téléphone, Rushh décroche et prend la demande en charge.
-- Moins d'interruptions pour vos équipes : votre équipe ne décroche plus que ce qui mérite vraiment un humain, selon les règles que vous définissez.
-- Des demandes mieux qualifiées : le motif, les informations utiles et le contexte sont recueillis avant la transmission.
+Vous vous concentrez sur vos clients. Rushh s'occupe du téléphone.
 
-## Ce que le Standard Rushh prend en charge
+Standard téléphonique alimenté par intelligence artificielle · Proposition personnalisée.
 
-Rushh traite automatiquement vos appels entrants, du premier mot de l'appelant à la transmission à votre équipe, selon les règles validées avec vous :
+- Moins d'appels laissés sans réponse : visite, rendez-vous, agence fermée, Rushh prend l'appel.
+- Moins d'interruptions pour vos équipes : votre équipe ne décroche que ce qui mérite un humain.
+- Davantage d'opportunités traitées : chaque demande est qualifiée et classée, prête à être traitée.
+
+## Ce que Rushh prend en charge
+
+Du premier mot de l'appelant à la transmission à votre équipe, selon les règles validées avec vous :
 
 1. **Appel entrant** : un vendeur, un acquéreur, un locataire, un copropriétaire ou un prestataire appelle.
 2. **Rushh comprend** : le Standard décroche et identifie la demande dès les premiers mots.
-3. **Qualifie et applique vos règles** : orientation, transfert ou prise de rendez-vous, selon ce que vous avez validé.
-4. **Votre équipe reçoit les informations** : une demande prête à traiter, avec le contexte utile pour reprendre l'échange.
+3. **Qualifie et agit** : rendez-vous, transfert ou transmission, selon les règles validées avec vous.
+4. **Votre équipe retrouve la demande** : qualifiée, résumée, avec son statut et sa prochaine étape.
 
-Capacités : appels entrants, qualification, orientation, transferts, prise de rendez-vous (selon vos règles), transmission à votre équipe.
+Fonctionnalités :
 
-Le Standard n'applique que les règles validées avec vous. Il ne remplace pas votre équipe : il prend le relais quand elle ne peut pas répondre.
+- **Appels entrants 24 h/24, 7 j/7** : réponse directe ou renvoi d'appel, selon l'organisation de votre agence.
+- **Qualification** : vendeur, acquéreur, locataire, bailleur ou prestataire.
+- **Rendez-vous** : pris sur vos agendas connectés, selon vos règles.
+- **Transfert d'appel** : en direct vers un collaborateur, lorsque son intervention est nécessaire.
+- **SMS et e-mails automatiques** : confirmations et informations, selon les scénarios configurés.
+- **Plateforme métier** : opportunités classées par catégorie, avec coordonnées, résumé, statut et suivi.
+- **Connexions personnalisées** : aux outils disposant d'une API accessible, avec les autorisations nécessaires.
+- **Voix personnalisable** : personnalisation de la voix et clonage vocal, selon la configuration.
 
-## Ce qui est inclus dans l'accompagnement
+Les fonctionnalités activées dépendent de votre organisation et de vos outils.
 
-Vous n'avez rien à configurer ni à gérer : c'est le travail de l'équipe Rushh.
+## Une prestation entièrement prise en charge
 
-- De votre côté : nous expliquer comment vous travaillez ; valider le fonctionnement avant la mise en service.
-- Du côté de Rushh : analyser votre fonctionnement ; configurer et tester les scénarios ; déployer le Standard ; suivre les performances et le faire évoluer avec vous.
+Vous n'avez aucun logiciel à configurer : tout est assuré par l'équipe Rushh.
+
+- De votre côté : nous expliquer comment vous travaillez ; valider le fonctionnement avant le déploiement.
+- Du côté de Rushh : les scénarios d'appel conçus pour votre agence ; les connexions à vos outils ; la maintenance, le suivi et les ajustements.
 
 ## Ce qui s'adapte à votre organisation
 
@@ -215,31 +228,24 @@ Le Standard suit votre façon de travailler, pas l'inverse.
 - **Vos règles** : qui reçoit quelle demande, quand transférer, quand alerter votre équipe.
 - **Vos métiers** : transaction, gérance, syndic, location : chaque métier a ses propres situations.
 - **Votre structure** : une agence ou plusieurs, avec leurs services et leurs interlocuteurs.
-- **Vos outils** : Rushh peut se connecter à certains outils existants selon vos besoins. Les possibilités sont étudiées et confirmées avec vous ; voir [Intégrations](${SITE_URL}/integrations).
+- **Vos outils** : Rushh se connecte de façon personnalisée aux outils disposant d'une API accessible, avec les autorisations nécessaires ; voir [Intégrations](${SITE_URL}/integrations).
 
-## Comment se déroule la mise en service
+## Comment se déroule la mise en place
 
-1. **Analyse** : nous étudions votre fonctionnement, vos règles et vos interlocuteurs.
-2. **Configuration** : nous construisons les scénarios qui correspondent à votre organisation.
-3. **Tests** : nous testons les appels avant toute mise en service.
-4. **Validation** : vous validez le fonctionnement.
-5. **Déploiement** : le Standard prend en charge vos appels.
-6. **Suivi** : nous suivons les performances et ajustons dans le temps.
-
-Mise en service visée sous 5 jours ouvrés après réception des éléments nécessaires. Ce délai est un objectif indicatif, détaillé dans les [conditions générales de vente](${SITE_URL}/cgv).
+1. **Analyse et configuration** : nous étudions votre fonctionnement et construisons les scénarios qui correspondent à votre organisation.
+2. **Tests** : nous testons les appels avant tout déploiement.
+3. **Validation** : vous validez le fonctionnement.
+4. **Déploiement et suivi** : le Standard prend en charge vos appels ; nous suivons son fonctionnement et ajustons dans le temps.
 
 ## Ce que reçoit votre équipe
 
-- Une demande prête à traiter : le motif, les informations recueillies et le contexte pour reprendre l'échange.
-- Des demandes orientées vers la bonne personne, selon vos règles.
-- Un suivi dans le temps assuré par l'équipe Rushh.
+- Une demande qualifiée : motif, coordonnées, résumé et statut.
+- Orientée vers la bonne personne, selon vos règles.
 
-Le Standard est un outil d'assistance, sans promesse de résultat commercial.
+${premiumToMd(OFFRE, { phone: false })}
+## Demander une démonstration
 
-${premiumToMd(OFFRE)}
-## Demander une démonstration et un devis
-
-Tarification sur devis. Lors d'une démonstration, nous regardons votre fonctionnement et nous vous montrons comment le Standard Rushh s'adapterait à votre organisation. Le devis est établi selon votre organisation et le périmètre retenu.
+Lors d'une démonstration, nous regardons votre fonctionnement et nous vous montrons comment Rushh s'adapterait à votre organisation. Vous recevez ensuite une proposition personnalisée, établie selon votre organisation et le périmètre retenu.
 
 Réserver une démo : [https://calendly.com/gaspard-david/demo](https://calendly.com/gaspard-david/demo)
 
