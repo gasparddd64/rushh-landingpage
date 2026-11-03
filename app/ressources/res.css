@@ -322,3 +322,5 @@
   .res .res-step h3 { font-size: 17.5px; gap: 10px; }
   .res .res-bare .res-body > section:not(.res-final) + section:not(.res-final) { margin-top: 36px; }
 }
+.res .res-bare-sources { margin-top: 28px; }
+.res .res-bare-sources li > span { display: block; margin-top: 4px; font-size: 14.5px; color: var(--lf-muted); }

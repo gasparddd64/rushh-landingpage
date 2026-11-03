@@ -52,6 +52,9 @@ export function articleToMarkdown(a: Article): string {
       parts.push(`## ${s.h2}`);
       for (const b of s.blocks) parts.push(blockToMarkdown(b));
     }
+    if (a.sources.length > 0) {
+      parts.push("## Sources", a.sources.map((s) => `- [${s.label}](${s.url}) : ${s.usedFor}`).join("\n"));
+    }
     return parts.join("\n\n") + "\n";
   }
   const parts: string[] = [

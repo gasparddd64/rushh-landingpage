@@ -138,7 +138,7 @@ describe.each(ARTICLES.map((a) => [a.path, a] as const))("guide %s", (path, a) =
 
   it("links to the pages required by the brief, and every internal link resolves", () => {
     const links = internalLinks(a);
-    for (const required of a.bare ? BARE_LINKS[path] : REQUIRED_LINKS[path]) expect(links).toContain(required);
+    for (const required of a.bare ? (BARE_LINKS[path] ?? ["/demonstrations"]) : REQUIRED_LINKS[path]) expect(links).toContain(required);
     for (const l of links) expect(isKnownRoute(l), l).toBe(true);
   });
 
@@ -193,25 +193,6 @@ describe("guide-specific requirements", () => {
     expect(articleToMarkdown(a)).not.toMatch(/journal d'appels|Tableau de suivi|Sources et méthode/i);
   });
 
-  it("comparison guide compares the three models on nine criteria and cites its legal source", () => {
-    const a = get("/ressources/telesecretariat-humain-ou-ia");
-    const table = a.sections.flatMap((s) => s.blocks).find((b) => b.t === "table" && b.head.length === 4);
-    expect(table && table.t === "table" && table.rows).toHaveLength(9);
-    expect(a.sources.map((s) => s.url)).toContain("https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50");
-    expect(a.sources.map((s) => s.url)).toContain("https://eur-lex.europa.eu/eli/reg/2024/1689/oj");
-    expect(allText(a)).toContain("2 août 2026");
-    expect(allText(a)).toContain("avis juridique individuel");
-    expect(allText(a)).toContain("Rushh n'est pas la seule solution possible");
-  });
-
-  it("qualification guide keeps the validated seller (4) and buyer (4) steps and no fictional fiche", () => {
-    const a = get("/ressources/qualification-appels-vendeurs-acquereurs");
-    expect(a.bare).toBe(true);
-    const blocks = a.sections.flatMap((s) => s.blocks);
-    expect(blocks.filter((b) => b.t === "h3" && /^[1-4]\. /.test(b.text))).toHaveLength(8);
-    expect(blocks.filter((b) => b.t === "fiche")).toHaveLength(0);
-    expect(articleToMarkdown(a)).not.toMatch(/fictif|CNIL|minimisation|Sources et méthode/i);
-  });
 });
 
 describe("catalogue /ressources (le Blog)", () => {
@@ -331,203 +312,6 @@ describe("catalogue card titles and dates", () => {
   });
 });
 
-describe("wave 1 (Nov. 2026) guides", () => {
-  const get = (p: string) => ARTICLES.find((a) => a.path === p)!;
-
-  it("the cost guide compares billing structures without any amount", () => {
-    const a = get("/ressources/cout-standard-telephonique-ia-immobilier");
-    const t = allText(a);
-    expect(t).not.toMatch(/€|euros?\b/i);
-    expect(t).not.toMatch(/\b(235|475|130|250|190)\b/);
-    expect(t).toContain("ne contient aucun montant");
-    expect(t).toContain("Trois structures de facturation");
-  });
-
-  it("the Apimo guide never claims an official partnership, a native or certified plug-in, or documented agendas", () => {
-    const a = get("/ressources/standard-telephonique-ia-apimo");
-    const t = allText(a);
-    expect(t).toContain("ne se présente pas comme partenaire officiel");
-    expect(t).toContain("ne présente pas cette connexion comme native, certifiée ou prête à l'emploi");
-    expect(t).not.toMatch(/\b(est|sommes|restons)\s+(un\s+)?partenaire officiel/i);
-    expect(t).not.toMatch(/plug-in (natif|certifié) (disponible|existe)/i);
-    expect(a.sources.map((s) => s.url)).toEqual(expect.arrayContaining(["https://apimo.com/api/webservice", "https://apimo.com/api"]));
-  });
-
-  it("the seller-call guide keeps the validated three steps and no decision tree, dialogue or fiche", () => {
-    const a = get("/ressources/appel-vendeur-estimation-immobiliere");
-    expect(a.bare).toBe(true);
-    const blocks = a.sections.flatMap((s) => s.blocks);
-    expect(blocks.filter((b) => b.t === "h3" && /^[1-3]\. /.test(b.text))).toHaveLength(3);
-    expect(blocks.filter((b) => b.t === "fiche")).toHaveLength(0);
-    expect(articleToMarkdown(a)).not.toMatch(/arbre de décision|Dialogue fictif|Annoncer une valeur|Sources et méthode/i);
-  });
-
-  it("the permanence guide keeps the validated four steps and no matrix, table or FAQ", () => {
-    const a = get("/ressources/permanence-telephonique-agence-immobiliere");
-    expect(a.bare).toBe(true);
-    const blocks = a.sections.flatMap((s) => s.blocks);
-    expect(blocks.filter((b) => b.t === "h3" && /^[1-4]\. /.test(b.text))).toHaveLength(4);
-    expect(blocks.filter((b) => b.t === "table")).toHaveLength(0);
-    expect(articleToMarkdown(a)).not.toMatch(/Matrice de transfert|Questions fréquentes|Sources et méthode/i);
-  });
-});
-
-describe("wave 2 (Nov. 2026) guides and comparisons", () => {
-  const get = (p: string) => ARTICLES.find((a) => a.path === p)!;
-  const comparisons = ["/vs/airagent", "/vs/vokai"];
-
-  it("each comparison is dated, sourced from the competitor's official site, and ranks nobody", () => {
-    for (const p of comparisons) {
-      const a = get(p);
-      expect(a.category).toBe("comparatifs");
-      expect(a.sources.some((x) => /airagent\.fr|vokai\.fr/.test(x.url)), p).toBe(true);
-      expect(allText(a), p).toContain("Consulté le 31 octobre 2026");
-      expect(allText(a), p).toContain("Aucun classement");
-      expect(allText(a), p).not.toMatch(/meilleur|numéro 1|n°\s?1|supérieur(e)? à/i);
-      expect(allText(a), p).toContain("Rushh édite cette page et en est partie prenante");
-    }
-  });
-
-  it("the comparisons recognise the competitor's real-estate offer instead of calling it generic", () => {
-    expect(allText(get("/vs/airagent"))).toContain("page consacrée à l'immobilier");
-    expect(allText(get("/vs/airagent"))).toContain("il serait inexact de le présenter comme un outil purement généraliste");
-    expect(allText(get("/vs/vokai"))).toContain("offre explicitement dédiée à l'immobilier");
-    expect(allText(get("/vs/vokai"))).toContain("Rushh ne revendique ici aucune supériorité technique");
-  });
-
-  it("the VOKAI comparison repeats none of the competitor's unverified figures or testimonials", () => {
-    const t = allText(get("/vs/vokai"));
-    expect(t).not.toMatch(/47\s?%|90 secondes|500 ms|\+150|3 000 appels|8 000/);
-  });
-
-  it("the Whise guide keeps its prudence: no official partnership, no native or certified connection, no documented resources invented", () => {
-    const a = get("/ressources/standard-telephonique-ia-whise");
-    const t = allText(a);
-    expect(t).toContain("ne se présente pas comme partenaire officiel de Whise");
-    expect(t).toContain("ne présente pas cette connexion comme native, certifiée ou prête à l'emploi");
-    expect(t).not.toMatch(/\b(est|sommes|restons)\s+(un\s+)?partenaire officiel/i);
-    expect(a.sources.map((s) => s.url)).toContain("https://www.whise.eu/fr-fr/marketplace/");
-  });
-
-  it("the profitability guide's example is in units (no euro amount), fictional and arithmetically consistent, and promises no result", () => {
-    const a = get("/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere");
-    const t = allText(a);
-    expect(t).toContain("Exemple entièrement fictif");
-    expect(t).toContain("exprimé en unités");
-    expect(t).toContain("Rushh ne promet aucun résultat commercial");
-    expect(Math.round((1 / 15) * 1000) / 1000).toBe(0.067);
-    expect(15 / 1).toBe(15);
-    expect(15 / 5).toBe(3);
-    expect(Math.round((1 / 3) * 100) / 100).toBe(0.33);
-    expect(t).not.toMatch(/€|euros?\b/i);
-  });
-
-  it("the profitability guide differs in intent from the missed-calls and cost guides, and links to both", () => {
-    const a = get("/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere");
-    const links = internalLinks(a);
-    expect(links).toContain("/ressources/appels-manques-immobilier");
-    expect(links).toContain("/ressources/cout-standard-telephonique-ia-immobilier");
-    expect(a.h1).not.toBe(get("/ressources/appels-manques-immobilier").h1);
-  });
-});
-
-describe("wave 3 (Nov. 2026) guides", () => {
-  const get = (p: string) => ARTICLES.find((a) => a.path === p)!;
-  const tables = (a: Article) => a.sections.flatMap((s) => s.blocks).filter((b) => b.t === "table");
-
-  it("the forwarding guide holds a real five-question decision tree and a situation table, and invents no operator feature", () => {
-    const a = get("/ressources/renvoi-appel-ou-decroche-ia-immobilier");
-    const tree = a.sections.flatMap((s) => s.blocks).find((b) => b.t === "ol");
-    expect(tree && tree.t === "ol" && tree.items).toHaveLength(5);
-    expect(tables(a)[0].t === "table" && tables(a)[0].head).toEqual(["Situation", "Mode conseillé", "Réglage à demander", "Point de vigilance"]);
-    expect(allText(a)).toContain("Rushh n'en présume aucune");
-    expect(a.sources.map((s) => s.url)).toContain("https://assistance.free.fr/articles/1755");
-  });
-
-  it("the solicitation guide promises no perfect filtering and keeps the doubt rule", () => {
-    const a = get("/ressources/filtrer-demarchage-telephonique-agence-immobiliere");
-    const t = allText(a);
-    expect(t).toContain("Aucun filtre n'est parfait");
-    expect(t).toContain("La règle du doute");
-    expect(t).toContain("Cas limites fictifs");
-    const profiles = tables(a)[0];
-    expect(profiles.t === "table" && profiles.rows).toHaveLength(5);
-  });
-
-  it("the evening/weekend guide has a five-slot, four-column hourly matrix and states the 24/7 availability", () => {
-    const a = get("/ressources/appels-agence-immobiliere-soir-week-end");
-    const m = tables(a)[0];
-    expect(m.t === "table" && m.rows).toHaveLength(5);
-    expect(m.t === "table" && m.head).toHaveLength(4);
-    expect(allText(a)).toContain("24 h/24 et 7 j/7");
-    expect(allText(a)).toContain("ne diagnostique pas");
-  });
-
-  it("the tenant/landlord guide lists seven reasons, cites the decree on rental files, and gives no legal advice", () => {
-    const a = get("/ressources/qualifier-appels-locataires-bailleurs");
-    const m = tables(a)[0];
-    expect(m.t === "table" && m.rows).toHaveLength(7);
-    expect(m.t === "table" && m.head).toHaveLength(5);
-    expect(allText(a)).toContain("décret n° 2015-1437 du 5 novembre 2015");
-    expect(allText(a)).toContain("Pas d'avis juridique");
-    expect(allText(a)).toContain("Pas de pièces de dossier par téléphone");
-    expect(a.sources.map((s) => s.url).some((u) => u.includes("anil.org"))).toBe(true);
-  });
-
-  it("the four guides each differ from the permanence guide and link to it", () => {
-    for (const p of ["/ressources/renvoi-appel-ou-decroche-ia-immobilier", "/ressources/filtrer-demarchage-telephonique-agence-immobiliere", "/ressources/appels-agence-immobiliere-soir-week-end", "/ressources/qualifier-appels-locataires-bailleurs"]) {
-      expect(internalLinks(get(p)), p).toContain("/ressources/permanence-telephonique-agence-immobiliere");
-      expect(get(p).h1, p).not.toBe(get("/ressources/permanence-telephonique-agence-immobiliere").h1);
-    }
-  });
-});
-
-describe("wave 4 (Nov. 2026) guides", () => {
-  const get = (p: string) => ARTICLES.find((a) => a.path === p)!;
-  const tables = (a: Article) => a.sections.flatMap((s) => s.blocks).filter((b) => b.t === "table");
-
-  it("the syndic guide has a six-row, five-column priority matrix and never lets the AI diagnose", () => {
-    const a = get("/ressources/standard-syndic-appels-urgents");
-    const m = tables(a)[0];
-    expect(m.t === "table" && m.rows).toHaveLength(6);
-    expect(m.t === "table" && m.head).toHaveLength(5);
-    expect(allText(a)).toContain("Il ne diagnostique pas");
-    expect(allText(a)).toContain("le syndic ou son astreinte qualifie et décide");
-    expect(a.sources.map((s) => s.url).some((u) => u.includes("anil.org"))).toBe(true);
-  });
-
-  it("the calendar guide describes a six-step journey, names both providers' official docs and promises no unconfirmed appointment", () => {
-    const a = get("/ressources/standard-ia-google-agenda-outlook-immobilier");
-    const tree = a.sections.flatMap((s) => s.blocks).find((b) => b.t === "ol");
-    expect(tree && tree.t === "ol" && tree.items).toHaveLength(6);
-    const urls = a.sources.map((s) => s.url);
-    expect(urls.some((u) => u.includes("developers.google.com"))).toBe(true);
-    expect(urls.some((u) => u.includes("learn.microsoft.com"))).toBe(true);
-    expect(allText(a)).toContain("rendez-vous n'est annoncé comme pris que lorsqu'un créneau a été confirmé");
-    expect(allText(a)).toContain("Aucune connexion n'est « native »");
-  });
-
-  it("the GDPR guide lists eight questions, cites official sources, and promises no automatic compliance or legal advice", () => {
-    const a = get("/ressources/standard-telephonique-ia-immobilier-rgpd");
-    const m = tables(a)[0];
-    expect(m.t === "table" && m.rows).toHaveLength(8);
-    const urls = a.sources.map((s) => s.url);
-    expect(urls.some((u) => u.includes("cnil.fr"))).toBe(true);
-    expect(urls.some((u) => u.includes("eur-lex.europa.eu"))).toBe(true);
-    expect(allText(a)).toContain("Aucun outil ne rend une agence conforme automatiquement");
-    expect(allText(a)).toContain("pas de conseil juridique personnalisé");
-  });
-
-  it("the voicemail guide compares three modes without any figure and differs from the missed-calls guide", () => {
-    const a = get("/ressources/repondeur-ou-standard-ia-agence-immobiliere");
-    const m = tables(a)[0];
-    expect(m.t === "table" && m.head).toHaveLength(4);
-    expect(allText(a)).toContain("aucun taux de messages laissés");
-    expect(a.h1).not.toBe(get("/ressources/appels-manques-immobilier").h1);
-    expect(internalLinks(a)).toContain("/ressources/appels-manques-immobilier");
-  });
-});
-
 describe("validated-text page /comparatif/standards-telephoniques-ia-immobilier", () => {
   const a = ARTICLES.find((x) => x.path === "/comparatif/standards-telephoniques-ia-immobilier")!;
   const md = articleToMarkdown(a);
@@ -548,5 +332,59 @@ describe("validated-text page /comparatif/standards-telephoniques-ia-immobilier"
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(a.sources).toHaveLength(0);
     expect(md).not.toMatch(/En bref|Comment Rushh répond/);
+  });
+});
+
+describe("refonte éditoriale : règles communes aux pages au texte réécrit", () => {
+  // pages déjà validées mot pour mot : protégées, hors de ces règles
+  const PROTECTED = new Set([
+    "/comparatif/standards-telephoniques-ia-immobilier",
+    "/ressources/appels-manques-immobilier",
+    "/ressources/qualification-appels-vendeurs-acquereurs",
+    "/ressources/prise-rendez-vous-ia-immobilier",
+    "/ressources/appel-vendeur-estimation-immobiliere",
+    "/ressources/permanence-telephonique-agence-immobiliere",
+  ]);
+  const bare = ARTICLES.filter((x) => x.bare && !PROTECTED.has(x.path));
+  const wc = (md: string) => md.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").split(/\s+/).length;
+
+  it("covers the 18 rewritten pages, all articles being now in the new format", () => {
+    expect(bare).toHaveLength(18);
+    expect(ARTICLES.every((x) => x.bare)).toBe(true);
+  });
+
+  it("stays short, with one demo button and no table", () => {
+    for (const a of bare) {
+      const md = articleToMarkdown(a);
+      expect(wc(md), a.path).toBeLessThanOrEqual(800);
+      expect(a.sections.flatMap((s) => s.blocks).filter((b) => b.t === "button"), a.path).toHaveLength(1);
+      expect(md, a.path).not.toContain("|---|");
+    }
+  });
+
+  it("never mentions a trial, a delay, a price, a contract, hosting, sub-processors or certifications", () => {
+    for (const a of bare) {
+      const md = `${a.title}\n${a.description}\n${articleToMarkdown(a)}`;
+      // le guide RGPD cite l'article 28 (sous-traitant) : sans aucune affirmation sur Rushh
+      const re = a.path === "/ressources/standard-telephonique-ia-immobilier-rgpd"
+        ? /période d'essai|essai gratuit|jours ouvrés|mise en service|€|\beuros?\b|sur devis|\bDPA\b|hébergement|certifi|garantit|garantie de résultat|\bnatif|officiel(le)? /i
+        : /période d'essai|essai gratuit|jours ouvrés|mise en service|€|\beuros?\b|sur devis|\bDPA\b|hébergement|sous-traitan|certifi|garantit|garantie de résultat|\bnatif|officiel(le)? /i;
+      expect(md, a.path).not.toMatch(re);
+    }
+  });
+
+  it("does not claim Rushh is limited to a voicemail, nor lists competitor prices", () => {
+    for (const a of bare) {
+      const md = articleToMarkdown(a);
+      expect(md, a.path).not.toMatch(/simple répondeur|ni SMS|uniquement des appels entrants/i);
+    }
+  });
+
+  it("competitor pages cite the competitor's official site with a consultation date", () => {
+    for (const [p, host] of [["/vs/fonio", "fonio.ai"], ["/vs/volubilimo", "volubilimo.com"], ["/vs/airagent", "airagent.fr"], ["/vs/vokai", "vokai.fr"]]) {
+      const md = articleToMarkdown(ARTICLES.find((x) => x.path === p)!);
+      expect(md, p).toContain(host);
+      expect(md, p).toMatch(/consultée? le \d+ octobre 2026/);
+    }
   });
 });

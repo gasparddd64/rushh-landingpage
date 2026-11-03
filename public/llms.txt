@@ -41,19 +41,19 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - What matters in an AI phone answering service for real estate, and Rushh's approach: https://www.rushh.fr/comparatif/standards-telephoniques-ia-immobilier
 - Guide, how to choose an AI phone answering service: https://www.rushh.fr/ressources/choisir-standard-telephonique-ia-immobilier
 - Guide, how AI books appointments in real estate (understand, check the agenda, confirm): https://www.rushh.fr/ressources/prise-rendez-vous-ia-immobilier
-- Guide, real cost of an AI phone answering service for real estate: https://www.rushh.fr/ressources/cout-standard-telephonique-ia-immobilier
+- Guide, what determines the cost of an AI phone answering service for real estate (no price given): https://www.rushh.fr/ressources/cout-standard-telephonique-ia-immobilier
 - Guide, the 4 steps of an effective phone reception service in a real-estate agency: https://www.rushh.fr/ressources/permanence-telephonique-agence-immobiliere
 - Guide, turning a seller call into a valuation appointment: https://www.rushh.fr/ressources/appel-vendeur-estimation-immobiliere
 - Guide, connecting an AI phone answering service to Apimo: https://www.rushh.fr/ressources/standard-telephonique-ia-apimo
 - Guide, connecting an AI phone answering service to Whise: https://www.rushh.fr/ressources/standard-telephonique-ia-whise
-- Guide, call forwarding or direct AI answering for a real-estate agency (decision tree): https://www.rushh.fr/ressources/renvoi-appel-ou-decroche-ia-immobilier
+- Guide, call forwarding or direct AI answering for a real-estate agency: https://www.rushh.fr/ressources/renvoi-appel-ou-decroche-ia-immobilier
 - Guide, filtering sales-solicitation calls in a real-estate agency: https://www.rushh.fr/ressources/filtrer-demarchage-telephonique-agence-immobiliere
-- Guide, answering agency calls in the evening and at weekends (hourly matrix): https://www.rushh.fr/ressources/appels-agence-immobiliere-soir-week-end
+- Guide, answering agency calls in the evening and at weekends: https://www.rushh.fr/ressources/appels-agence-immobiliere-soir-week-end
 - Guide, qualifying tenant and landlord calls in rental management: https://www.rushh.fr/ressources/qualifier-appels-locataires-bailleurs
-- Guide, is an AI phone answering service profitable for an agency (break-even method): https://www.rushh.fr/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere
-- Guide, handling urgent calls for a property-management (syndic) firm: priority, transmission and escalation matrix: https://www.rushh.fr/ressources/standard-syndic-appels-urgents
+- Guide, is an AI phone answering service profitable for an agency (potential gain and net profitability, fictional example): https://www.rushh.fr/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere
+- Guide, handling urgent calls for a property-management (syndic) firm: transfer, on-call and fallback rules: https://www.rushh.fr/ressources/standard-syndic-appels-urgents
 - Guide, AI phone answering with Google Calendar and Outlook for real-estate appointments: https://www.rushh.fr/ressources/standard-ia-google-agenda-outlook-immobilier
-- Guide, AI phone answering and GDPR: eight questions to ask before deploying: https://www.rushh.fr/ressources/standard-telephonique-ia-immobilier-rgpd
+- Guide, AI phone answering and GDPR: information of callers, AI Act Article 50, GDPR Article 28, data minimisation: https://www.rushh.fr/ressources/standard-telephonique-ia-immobilier-rgpd
 - Guide, voicemail or AI phone answering for a real-estate agency: https://www.rushh.fr/ressources/repondeur-ou-standard-ia-agence-immobiliere
 - Rushh vs Volubilimo (comparison, sourced and dated): https://www.rushh.fr/vs/volubilimo
 - Rushh vs AirAgent (comparison, sourced and dated): https://www.rushh.fr/vs/airagent

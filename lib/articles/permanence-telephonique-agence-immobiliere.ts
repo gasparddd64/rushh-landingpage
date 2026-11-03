@@ -9,7 +9,7 @@ export const permanenceTelephonique: Article = {
     src: "/ressources/permanence-telephonique-agence-immobiliere.png",
     width: 1600,
     height: 840,
-    alt: "Illustration : plusieurs appels entrants, estimation, visite, dossier locatif et urgence, pris en charge et dirigés vers la bonne suite par une permanence téléphonique.",
+    alt: "Illustration : les quatre étapes d'une permanence téléphonique en agence immobilière : répondre, qualifier, organiser la suite et suivre chaque demande.",
   },
   title: "Permanence téléphonique immobilière : organiser les appels | Rushh",
   description:

@@ -1,219 +1,144 @@
 import type { Article } from "./types";
 
+/** Texte réécrit (refonte éditoriale) : méthode, exemple, Rushh, invitation. Voir `bare` dans types.ts. */
 export const filtrerDemarchage: Article = {
   path: "/ressources/filtrer-demarchage-telephonique-agence-immobiliere",
+  bare: true,
   category: "guides",
   cover: {
     src: "/ressources/filtrer-demarchage-telephonique-agence-immobiliere.png",
     width: 1600,
     height: 840,
-    alt: "Un appel entrant passe par une question centrale, qui appelle et pourquoi, puis se dirige vers cinq suites : vendeur, acquéreur, locataire ou bailleur, prestataire connu, ou démarchage, qui reçoit un message ou un refus poli. En cas de doute, l'appel est transmis.",
+    alt: "Illustration : un standard qui trie les appels d'une agence, entre vraies demandes à transmettre et démarchage à écarter, avec une règle de prudence.",
   },
   title: "Filtrer le démarchage téléphonique en agence immobilière | Rushh",
   description:
-    "Distinguer démarchage, vendeurs, acquéreurs, prestataires et appels importants : cinq profils, un arbre de qualification, des règles écrites.",
+    "Comment filtrer le démarchage téléphonique d'une agence immobilière sans perdre un vrai appel : une règle simple, des questions utiles, un exemple.",
   shortTitle: "Filtrer le démarchage sans perdre un vrai appel",
-  summary: "Cinq profils d'appelants, quatre questions et des règles écrites pour trier sans rater un appel utile.",
+  summary: "Trier le démarchage sans écarter un vendeur ou un acquéreur : la règle de prudence.",
   h1: "Comment filtrer le démarchage téléphonique d'une agence immobilière sans perdre un vrai appel ?",
   answer:
-    "Pour filtrer le démarchage sans perdre un vrai appel, qualifiez avant de refuser : qui appelle, pour quelle raison, et avec qui il veut parler. Cinq profils couvrent la plupart des cas : vendeurs, acquéreurs, locataires ou bailleurs, prestataires connus et démarchage. En cas de doute, la règle sûre est de prendre un message ou de transmettre, jamais de raccrocher. Aucun filtre n'est parfait : ce qui compte est la règle écrite et la revue régulière des appels écartés.",
+    "Pour filtrer le démarchage, identifiez le motif de chaque appel et, dans le doute, transmettez : mieux vaut un appel de trop qu'un vendeur perdu.",
   datePublished: "2026-11-02",
-  dateModified: "2026-11-02",
+  dateModified: "2026-11-03",
+  intro: [
+    {
+      "t": "p",
+      "text": "[Les appels de démarchage](/ressources/permanence-telephonique-agence-immobiliere) prennent du temps à une équipe déjà sollicitée. Mais les écarter trop vite fait courir un risque : perdre un vrai vendeur ou un vrai acquéreur."
+    },
+    {
+      "t": "p",
+      "text": "Une règle simple suffit pour trier."
+    }
+  ],
   sections: [
     {
-      id: "probleme",
-      h2: "Le problème : un appel de démarchage ressemble parfois à un vrai appel",
-      blocks: [
+      "id": "methode",
+      "h2": "Trois réflexes pour trier",
+      "blocks": [
         {
-          t: "p",
-          text: "Une agence reçoit des appels de vendeurs, d'acquéreurs, de locataires, de prestataires et de commerciaux. Ces derniers interrompent un agent pendant une visite ou monopolisent une ligne, mais certains se présentent comme des clients ou évoquent une annonce. À l'inverse, un vrai vendeur qui hésite à donner son nom peut être pris pour un solliciteur.",
+          "t": "h3",
+          "text": "1. Demander le motif de l'appel"
         },
         {
-          t: "p",
-          text: "Refuser en bloc est donc risqué, et tout transmettre fait perdre du temps. La méthode ci-dessous consiste à qualifier d'abord, puis à décider de la suite avec des règles écrites. Elle s'applique qu'un collègue ou un standard téléphonique IA prenne l'appel.",
+          "t": "p",
+          "text": "Une question courte suffit : « C'est pour quel sujet ? ». Un démarchage s'identifie souvent à son motif, pas à son numéro."
         },
-      ],
+        {
+          "t": "h3",
+          "text": "2. Laisser la place au doute"
+        },
+        {
+          "t": "p",
+          "text": "Si le motif est flou ou ressemble à une demande réelle, la demande est transmise. Le filtre ne doit jamais écarter un appel douteux sans le signaler."
+        },
+        {
+          "t": "h3",
+          "text": "3. Garder une trace"
+        },
+        {
+          "t": "p",
+          "text": "Les appels écartés comme les appels transmis doivent rester consultables, avec leur motif, pour corriger les règles."
+        },
+        {
+          "t": "statement",
+          "text": "Un bon filtre protège le temps de l'équipe sans jamais décider à la place d'un humain dans les cas incertains."
+        }
+      ]
     },
     {
-      id: "profils",
-      h2: "Cinq profils d'appelants et la suite à leur donner",
-      blocks: [
+      "id": "exemple",
+      "h2": "Exemple : un appel ambigu",
+      "blocks": [
         {
-          t: "table",
-          caption: "Cinq profils d'appelants, signaux et suite conseillée",
-          head: ["Profil", "Signaux fréquents", "Suite à donner", "À ne pas faire"],
-          rows: [
-            [
-              "Vendeur ou propriétaire",
-              "Parle de son bien, d'une estimation, d'un projet de vente",
-              "Qualifier le projet, proposer un rendez-vous ou un rappel",
-              "Le traiter comme un démarcheur parce qu'il hésite à se présenter",
-            ],
-            [
-              "Acquéreur",
-              "Évoque une annonce, une visite, un budget",
-              "Identifier le bien et le moyen de le joindre, transmettre vite",
-              "Ignorer un appel sur une annonce récente",
-            ],
-            [
-              "Locataire ou bailleur",
-              "Signale un incident, demande une quittance, parle d'un logement géré",
-              "Qualifier selon l'urgence, transmettre au gestionnaire",
-              "Répondre sur un dossier à un tiers non identifié",
-            ],
-            [
-              "Prestataire ou partenaire connu",
-              "Nomme un collaborateur, un chantier, une intervention en cours",
-              "Transmettre à la personne concernée, avec le message",
-              "Le confondre avec une prospection",
-            ],
-            [
-              "Démarchage commercial",
-              "Propose un service, demande « le responsable », ne cite aucun dossier",
-              "Répondre poliment, proposer un message écrit ou décliner selon la règle de l'agence",
-              "Raccrocher sans suite ou laisser sonner jusqu'à épuisement",
-            ],
-          ],
-          note: "Modèle à adapter à votre organisation. Les signaux sont des indices, pas des preuves : en cas de doute, prendre un message est la règle prudente.",
+          "t": "p",
+          "text": "Une personne appelle « au sujet d'un bien ». Elle peut être un prestataire qui démarche, ou un propriétaire qui hésite à vendre."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Dans le doute, la demande est [qualifiée et transmise](/ressources/qualification-appels-vendeurs-acquereurs) avec son résumé : l'équipe tranche en quelques secondes."
+        }
+      ]
     },
     {
-      id: "arbre",
-      h2: "Un arbre de qualification en quatre questions",
-      blocks: [
+      "id": "jamais",
+      "h2": "Les appels à ne jamais écarter",
+      "blocks": [
         {
-          t: "ol",
-          items: [
-            "**Qui appelle ?** Un particulier, un professionnel, un partenaire connu. L'appelant le dit lui-même ; on ne le devine pas.",
-            "**Pourquoi appelle-t-il ?** Le motif oriente vers l'un des cinq profils. Une demande liée à un bien, un dossier ou un rendez-vous est présumée utile.",
-            "**Cite-t-il un dossier, un bien ou un interlocuteur ?** Si oui, transmettre. Si non et que la demande est commerciale, passer à la règle de démarchage.",
-            "**Quelle suite ?** Rendez-vous, rappel, transmission, message ou refus poli. Une suite est toujours annoncée à l'appelant.",
-          ],
+          "t": "ul",
+          "items": [
+            "Un propriétaire que vous ne connaissez pas encore.",
+            "Un numéro masqué ou inconnu.",
+            "Un motif flou ou incomplet.",
+            "Un locataire, un bailleur ou un prestataire déjà en relation avec l'agence."
+          ]
         },
         {
-          t: "callout",
-          kind: "example",
-          text: "Cas limites fictifs. Un appelant dit « j'appelle au sujet de l'annonce » mais ne cite aucun bien : demander laquelle, puis transmettre ou prendre un message. Un appelant demande « le directeur » sans autre précision : proposer de transmettre un message plutôt que de refuser. Un appelant dit être « votre prestataire » sans nommer de chantier : prendre le message et le faire vérifier.",
-        },
-      ],
+          "t": "p",
+          "text": "Dans ces cas, la demande est qualifiée et transmise, même si elle semble douteuse."
+        }
+      ]
     },
     {
-      id: "regles",
-      h2: "Les règles à écrire avant de filtrer",
-      blocks: [
+      "id": "rushh",
+      "h2": "Comment Rushh applique cette méthode",
+      "blocks": [
         {
-          t: "ul",
-          items: [
-            "**La liste des interlocuteurs connus** : prestataires, partenaires, fournisseurs que l'agence veut toujours transmettre.",
-            "**La réponse standard au démarchage** : une phrase polie, sans promesse de rappel, avec la possibilité de laisser un message écrit.",
-            "**La règle du doute** : en cas d'incertitude, prendre un message ou transmettre. Ne jamais refuser un appel dont le motif est incertain.",
-            "**La limite à ne pas dépasser** : ce que l'agence refuse de faire au téléphone, par exemple communiquer des informations sur un dossier à un tiers.",
-            "**Le point de revue** : une fois par semaine, relire les appels écartés pour corriger les règles.",
-          ],
+          "t": "p",
+          "text": "Rushh est un standard téléphonique alimenté par intelligence artificielle, spécialisé dans l'immobilier."
         },
         {
-          t: "p",
-          text: "Les informations recueillies doivent rester limitées au besoin : la CNIL rappelle le principe de minimisation des données. Pour un appel écarté, un motif et un horaire suffisent souvent.",
+          "t": "p",
+          "text": "Il identifie les vendeurs, acquéreurs, locataires, bailleurs et prestataires, recueille le motif de l'appel et applique les règles définies avec votre agence : transmettre, transférer ou classer."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Les demandes à traiter sont consignées dans la plateforme métier Rushh, avec leurs coordonnées, leur résumé et leur statut. Vos équipes ne traitent que ce qui mérite leur attention."
+        },
+        {
+          "t": "p",
+          "text": "Notre équipe prend en charge la conception, la configuration, les connexions, les tests, l'installation, la maintenance et les ajustements. Voir [l'offre Rushh](/offre)."
+        }
+      ]
     },
     {
-      id: "mesure",
-      h2: "Mesurer sans se tromper de chiffre",
-      blocks: [
+      "id": "demonstration",
+      "h2": "Gardez votre équipe sur les vraies demandes",
+      "blocks": [
         {
-          t: "table",
-          caption: "Tableau de revue hebdomadaire du filtrage",
-          head: ["Indicateur", "Comment le lire", "Piège à éviter"],
-          rows: [
-            ["Appels transmis", "Nombre d'appels envoyés à l'équipe", "Croire qu'un taux de transmission bas est un bon signe"],
-            ["Appels écartés", "Nombre d'appels refusés ou orientés vers un message", "Ne jamais relire ce qui a été écarté"],
-            ["Faux refus relevés", "Appels écartés qui auraient dû être transmis, repérés à la relecture", "Compter seulement les réclamations reçues"],
-            ["Messages laissés", "Demandes écrites des solliciteurs", "Les laisser sans lecture ni tri"],
-          ],
-          note: "Aucun taux de filtrage n'est promis dans ce guide : il dépend de vos appels et de vos règles.",
+          "t": "p",
+          "text": "Découvrez comment Rushh trie, qualifie et organise les appels de votre agence."
         },
-      ],
-    },
-    {
-      id: "faq",
-      h2: "Questions fréquentes",
-      blocks: [
-        { t: "h3", text: "Un standard IA peut-il filtrer parfaitement le démarchage ?" },
         {
-          t: "p",
-          text: "Non. Il applique les règles de qualification définies avec l'agence et laisse un message ou transmet en cas de doute. Un filtrage parfait n'existe pas : c'est la revue régulière qui limite les erreurs.",
-        },
-        { t: "h3", text: "Faut-il bloquer le numéro d'un démarcheur ?" },
-        {
-          t: "p",
-          text: "Cela relève de votre opérateur et de votre organisation. Le plus simple est de définir une réponse standard et un message écrit, sans conserver plus de données que nécessaire.",
-        },
-        { t: "h3", text: "Comment éviter de refuser un vrai vendeur ?" },
-        {
-          t: "p",
-          text: "En qualifiant d'abord le motif, et en prenant un message si celui-ci est incertain. Un appel qui évoque un bien, une estimation ou un projet de vente n'est jamais écarté.",
-        },
-        { t: "h3", text: "Que faire d'un appel qui hésite entre deux profils ?" },
-        {
-          t: "p",
-          text: "Appliquer la règle du doute : prendre un message ou transmettre à la personne la plus proche du sujet.",
-        },
-      ],
-    },
+          "t": "button",
+          "label": "Réserver une démonstration",
+          "href": "/demonstrations"
+        }
+      ]
+    }
   ],
-  sources: [
-    {
-      label: "CNIL : le principe de minimisation des données",
-      url: "https://www.cnil.fr/fr/definition/minimisation",
-      usedFor: "Limiter les informations recueillies sur un appelant au besoin de la finalité. Consulté le 31 octobre 2026.",
-    },
-    {
-      label: "Rushh : l'offre",
-      url: "https://www.rushh.fr/offre",
-      usedFor: "Périmètre de la prestation gérée et tarification sur devis.",
-    },
-  ],
-  sourcesNote:
-    "Ce guide décrit une méthode : les profils, signaux et cas limites sont des modèles fictifs à adapter. Aucun taux de filtrage ni chiffre de marché n'est avancé, et aucun filtre n'est présenté comme parfait. Ce texte n'est pas un avis juridique. Rushh édite cette page et en est partie prenante.",
-  rushh: {
-    title: "Des scénarios de qualification écrits avec vous, pour trier sans rien jeter",
-    text: "Le Standard Rushh, conçu, configuré, testé, déployé et suivi par l'équipe Rushh, qualifie chaque appel entrant avant de décider de la suite. Les cinq profils de ce guide deviennent des scénarios sur mesure : vos interlocuteurs connus, votre réponse au démarchage, votre règle du doute. Un message est pris ou l'appel transmis lorsque la demande n'est pas claire.",
-    points: [
-      "Des scénarios de qualification écrits pour votre agence, pas un filtre générique",
-      "Vos règles appliquées : interlocuteurs à toujours transmettre, réponse au démarchage, règle du doute",
-      "Une transmission structurée avec le motif de l'appel",
-      "Une prestation entièrement prise en charge, avec des tests avant la mise en service",
-    ],
-    links: [
-      { href: "/demonstrations", label: "Tester la ligne de démonstration" },
-      { href: "/offre", label: "Comprendre l'offre" },
-    ],
-  },
-  related: [
-    {
-      href: "/ressources/qualification-appels-vendeurs-acquereurs",
-      label: "Qualifier les appels vendeurs et acquéreurs",
-      text: "Les informations utiles selon le profil de l'appelant.",
-    },
-    {
-      href: "/ressources/permanence-telephonique-agence-immobiliere",
-      label: "Organiser la permanence téléphonique",
-      text: "Qui prévenir, et quand, selon le motif d'appel.",
-    },
-    {
-      href: "/ressources/choisir-standard-telephonique-ia-immobilier",
-      label: "Choisir un standard téléphonique IA",
-      text: "Dix scénarios à tester avant de signer.",
-    },
-  ],
-  cta: {
-    title: "Testez le standard sur un appel de démarchage",
-    text: "Appelez la ligne de démonstration, une agence fictive à Paris, et jouez un vendeur, un acquéreur, puis un commercial : vous jugerez la qualification et la suite donnée à chacun. Tarification sur devis.",
-    links: [
-      { href: "/demonstrations", label: "Ligne de démonstration" },
-      { href: "/offre", label: "L'offre Rushh" },
-    ],
-  },
+  sources: [],
+  sourcesNote: "",
+  related: [],
+  cta: { title: "Gardez votre équipe sur les vraies demandes", text: "", links: [] },
 };

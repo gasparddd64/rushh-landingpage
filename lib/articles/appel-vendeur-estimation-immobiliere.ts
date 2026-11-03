@@ -9,7 +9,7 @@ export const appelVendeurEstimation: Article = {
     src: "/ressources/appel-vendeur-estimation-immobiliere.png",
     width: 1600,
     height: 840,
-    alt: "Illustration : un appel vendeur qui débouche sur une suite concrète, un rendez-vous d'estimation ou un suivi adapté.",
+    alt: "Illustration : les trois étapes d'un appel vendeur : comprendre le projet du propriétaire, recueillir les informations utiles, proposer la suite.",
   },
   title: "Appel vendeur : obtenir un rendez-vous d'estimation | Rushh",
   description:

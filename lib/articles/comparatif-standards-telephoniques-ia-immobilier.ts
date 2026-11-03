@@ -9,7 +9,7 @@ export const comparatif: Article = {
     src: "/ressources/comparatif-standards-telephoniques-ia-immobilier.png",
     width: 1600,
     height: 840,
-    alt: "Illustration de la page Quel standard téléphonique IA choisir pour l'immobilier.",
+    alt: "Illustration : les trois besoins d'un standard téléphonique IA pour l'immobilier : répondre aux appels, faire avancer les demandes, exploiter chaque opportunité.",
   },
   title: "Quel standard téléphonique IA choisir pour l'immobilier ? | Rushh",
   description:

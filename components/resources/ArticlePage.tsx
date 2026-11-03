@@ -231,6 +231,21 @@ export function ArticlePage({ article: a }: { article: Article }) {
                 <BareBlocks blocks={s.blocks} />
               </section>
             ))}
+            {a.sources.length > 0 && (
+              <details className="res-fold res-sources-list res-bare-sources">
+                <summary>Sources</summary>
+                <div>
+                  <ol>
+                    {a.sources.map((s) => (
+                      <li key={s.url}>
+                        <a href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a>
+                        <span>{s.usedFor}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </details>
+            )}
           </div>
         </article>
       </SolShell>

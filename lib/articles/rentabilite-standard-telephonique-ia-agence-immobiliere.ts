@@ -1,226 +1,163 @@
 import type { Article } from "./types";
 
+/** Texte réécrit (refonte éditoriale) : méthode, exemple, Rushh, invitation. Voir `bare` dans types.ts. */
 export const rentabiliteStandard: Article = {
   path: "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere",
+  bare: true,
   category: "guides",
   cover: {
     src: "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere.png",
     width: 1600,
     height: 840,
-    alt: "Une balance compare le coût mensuel d'un standard téléphonique IA et la valeur d'une affaire conclue grâce à un appel, avec la formule du seuil de rentabilité : coût mensuel divisé par la valeur d'une affaire.",
+    alt: "Illustration : de l'estimation des appels non récupérés à la rentabilité nette d'un standard téléphonique IA : rendez-vous et affaires, marge par affaire, coût de la solution.",
   },
   title: "Un standard téléphonique IA est-il rentable pour une agence ? | Rushh",
   description:
-    "Seuil de rentabilité d'un standard téléphonique IA, calculé avec vos données : coût mensuel, valeur d'une affaire, appels perdus et test.",
-  shortTitle: "Un standard IA est-il rentable pour votre agence ?",
-  summary: "Une formule de seuil de rentabilité à remplir avec vos données, sans chiffre de marché ni promesse de résultat.",
+    "Un standard téléphonique IA est-il rentable pour votre agence ? Gain potentiel, rentabilité nette, marge par affaire : méthode simple, exemple fictif.",
+  shortTitle: "Un standard IA est-il rentable ?",
+  summary: "Gain potentiel, rentabilité nette : une méthode simple, avec un exemple fictif.",
   h1: "Un standard téléphonique IA est-il rentable pour une agence immobilière ?",
   answer:
-    "Pour savoir si un standard téléphonique IA est rentable, ne partez pas de statistiques de marché : partez du seuil de rentabilité de votre agence. Il se calcule avec quatre données que vous possédez : le coût mensuel du standard, la valeur moyenne d'une affaire, le taux de transformation d'un rendez-vous et le nombre d'appels réellement perdus. Le calcul dit combien d'affaires il faut récupérer pour couvrir le coût, pas combien vous en récupérerez.",
+    "La rentabilité d'un standard téléphonique IA se calcule à partir de vos propres appels : le gain potentiel (appels non récupérés, marge par affaire), puis la rentabilité nette une fois le coût de la solution retranché.",
   datePublished: "2026-10-31",
-  dateModified: "2026-10-31",
+  dateModified: "2026-11-03",
+  intro: [
+    {
+      "t": "p",
+      "text": "Personne ne peut promettre une rentabilité à votre place : elle dépend de vos appels, de vos horaires et de la valeur de vos affaires."
+    },
+    {
+      "t": "p",
+      "text": "Mais on peut l'estimer, en distinguant deux notions : le gain potentiel, puis la rentabilité nette, une fois le coût de la solution retranché."
+    }
+  ],
   sections: [
     {
-      id: "question",
-      h2: "La bonne question : combien d'affaires faut-il récupérer ?",
-      blocks: [
+      "id": "calcul",
+      "h2": "Un calcul simple en quatre étapes",
+      "blocks": [
         {
-          t: "p",
-          text: "Une agence qui hésite à déléguer ses appels se demande souvent : « Combien vais-je gagner ? ». Personne ne peut répondre sérieusement à cette question à votre place : le résultat dépend de vos appels, de votre secteur et de votre équipe. La question que vous pouvez traiter avec vos propres données est inverse : combien d'affaires supplémentaires faut-il pour que le standard couvre son coût ?",
+          "t": "h3",
+          "text": "1. Compter les appels non récupérés"
         },
         {
-          t: "p",
-          text: "Ce guide ne cherche pas à mesurer vos appels manqués ; la méthode est décrite dans le guide sur les [appels manqués](/ressources/appels-manques-immobilier). Il ne détaille pas non plus la formation du coût d'un devis, traitée dans le guide sur le [coût d'un standard IA](/ressources/cout-standard-telephonique-ia-immobilier). Il relie les deux : à partir de ces deux données, savoir si l'opération a un sens.",
+          "t": "p",
+          "text": "Sur quelques semaines, relevez les [appels commerciaux restés sans suite](/ressources/appels-manques-immobilier) : estimation, projet de vente, visite."
         },
-      ],
+        {
+          "t": "h3",
+          "text": "2. Estimer ce qui aurait pu aboutir"
+        },
+        {
+          "t": "p",
+          "text": "Quelle part de ces appels aurait débouché sur un rendez-vous, puis quelle part des rendez-vous devient une affaire ? Utilisez vos propres taux."
+        },
+        {
+          "t": "h3",
+          "text": "3. Retenir la marge par affaire"
+        },
+        {
+          "t": "p",
+          "text": "Retenez la marge que dégage une affaire pour votre agence, et non son chiffre d'affaires, sans extrapoler."
+        },
+        {
+          "t": "h3",
+          "text": "4. Retrancher le coût de la solution"
+        },
+        {
+          "t": "p",
+          "text": "Comparez le gain potentiel au [coût de la solution](/ressources/cout-standard-telephonique-ia-immobilier) sur la même période : la différence est la rentabilité nette."
+        },
+        {
+          "t": "statement",
+          "text": "Gain potentiel = appels non récupérés × part qui aboutit à un rendez-vous × part de rendez-vous qui devient une affaire × marge par affaire."
+        },
+        {
+          "t": "statement",
+          "text": "Rentabilité nette = gain potentiel − coût de la solution."
+        }
+      ]
     },
     {
-      id: "donnees",
-      h2: "Les quatre données à sortir de votre agence",
-      blocks: [
+      "id": "exemple",
+      "h2": "Exemple entièrement fictif",
+      "blocks": [
         {
-          t: "table",
-          caption: "Grille à remplir avec vos propres données",
-          head: ["Donnée", "Où la trouver", "À ne pas faire"],
-          rows: [
-            [
-              "1. Coût mensuel du standard",
-              "Le devis, lissé sur la durée d'engagement (installation comprise)",
-              "Comparer sur le prix affiché : voir le guide sur le coût",
-            ],
-            [
-              "2. Valeur moyenne d'une affaire",
-              "Vos honoraires nets moyens, après la part du négociateur ou du mandataire, sur les douze derniers mois",
-              "Utiliser un prix de vente moyen du marché ou des honoraires bruts",
-            ],
-            [
-              "3. Taux de transformation d'un rendez-vous",
-              "Le nombre de rendez-vous d'estimation ou de visite divisé par les affaires conclues, sur vos propres dossiers",
-              "Reprendre un taux entendu en formation ou publié par un tiers",
-            ],
-            [
-              "4. Appels perdus qui comptaient",
-              "Votre journal d'appels : les appels sans suite dont le motif était une estimation, une visite ou un mandat",
-              "Compter tous les appels manqués comme des opportunités perdues",
-            ],
-          ],
-          note: "Si vous ne disposez pas d'une de ces données, mesurez-la pendant quelques semaines avant de décider : la méthode figure dans le guide sur les appels manqués.",
+          "t": "p",
+          "text": "Les chiffres ci-dessous sont inventés, uniquement pour illustrer le calcul : remplacez-les par les vôtres."
         },
-      ],
+        {
+          "t": "ul",
+          "items": [
+            "20 appels commerciaux non récupérés sur un mois.",
+            "Un appel sur quatre aurait débouché sur un rendez-vous : 5 rendez-vous.",
+            "Un rendez-vous sur cinq devient une affaire : 1 affaire."
+          ]
+        },
+        {
+          "t": "p",
+          "text": "Gain potentiel du mois : 1 affaire × la marge par affaire (M). Rentabilité nette : M − le coût du mois (C). Si M dépasse C, le calcul est positif ; sinon, il ne l'est pas."
+        },
+        {
+          "t": "p",
+          "text": "Le gain potentiel est une estimation, pas un gain réalisé."
+        }
+      ]
     },
     {
-      id: "formule",
-      h2: "La formule du seuil de rentabilité",
-      blocks: [
+      "id": "pieges",
+      "h2": "Trois erreurs à éviter",
+      "blocks": [
         {
-          t: "p",
-          text: "Seuil en affaires par mois = coût mensuel du standard ÷ valeur moyenne d'une affaire. Seuil en rendez-vous par mois = seuil en affaires ÷ taux de transformation d'un rendez-vous. Le premier résultat est généralement inférieur à une affaire par mois : il se lit alors en nombre de mois couverts par une seule affaire.",
+          "t": "ul",
+          "items": [
+            "Compter tous les appels manqués comme des affaires perdues.",
+            "Extrapoler à partir d'une semaine exceptionnelle.",
+            "Comparer des périodes qui ne sont pas équivalentes."
+          ]
         },
         {
-          t: "callout",
-          kind: "example",
-          text: "Exemple entièrement fictif, exprimé en unités : C désigne le coût mensuel du standard, quel qu'il soit. Les valeurs ci-dessous sont inventées pour montrer le calcul et ne décrivent aucun résultat réel. Ne les utilisez pas comme repère.",
-        },
-        {
-          t: "table",
-          caption: "Exemple fictif de seuil de rentabilité",
-          head: ["Hypothèse fictive", "Valeur", "Calcul"],
-          rows: [
-            ["Coût mensuel du standard", "C", "Donnée 1"],
-            ["Valeur moyenne d'une affaire (honoraires nets)", "15 C", "Donnée 2, fictive"],
-            ["Taux de transformation d'un rendez-vous", "1 sur 5", "Donnée 3"],
-            ["Seuil en affaires", "0,067 affaire par mois", "C ÷ 15 C = 1 ÷ 15"],
-            ["Une seule affaire couvre", "15 mois de coût", "15 C ÷ C"],
-            ["Valeur d'un rendez-vous", "3 C", "15 C ÷ 5"],
-            ["Seuil en rendez-vous", "1 rendez-vous tous les 3 mois", "C ÷ 3 C = 0,33 par mois"],
-          ],
-          note: "Calculs fictifs. Un seuil bas ne prouve pas que le standard fera récupérer ces rendez-vous : il dit seulement ce qu'il faut récupérer pour que l'opération soit neutre.",
-        },
-      ],
+          "t": "p",
+          "text": "Une estimation prudente, fondée sur quelques semaines d'appels, vaut mieux qu'un chiffre spectaculaire."
+        }
+      ]
     },
     {
-      id: "erreurs",
-      h2: "Trois erreurs de calcul fréquentes",
-      blocks: [
+      "id": "rushh",
+      "h2": "Comment Rushh aide à récupérer ces appels",
+      "blocks": [
         {
-          t: "ul",
-          items: [
-            "**Tout appel manqué n'est pas une affaire perdue.** Beaucoup d'appelants rappellent, d'autres appellent pour un sujet sans valeur commerciale. Seule la quatrième donnée compte, et elle se lit dans votre journal d'appels.",
-            "**Le seuil n'est pas une prévision.** Il dit à partir de quand l'opération couvre son coût, pas combien de rendez-vous le standard fera réellement gagner.",
-            "**La valeur n'est pas le prix de vente.** Retenez vos honoraires nets, c'est-à-dire ce qui reste à l'agence après la rémunération du négociateur ou du mandataire.",
-          ],
+          "t": "p",
+          "text": "Rushh est un standard téléphonique alimenté par intelligence artificielle, spécialisé dans l'immobilier."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Il répond 24 h/24 et 7 j/7, qualifie la demande, peut proposer un rendez-vous sur un agenda connecté ou transférer l'appel à un collaborateur. Chaque demande est classée dans la plateforme métier Rushh, avec ses coordonnées, son résumé et son statut."
+        },
+        {
+          "t": "p",
+          "text": "La tarification est une proposition personnalisée, définie avec votre agence : voir [l'offre Rushh](/offre). Rushh ne promet aucun résultat commercial."
+        }
+      ]
     },
     {
-      id: "test",
-      h2: "Un test de quelques semaines, avec des indicateurs fixés avant",
-      blocks: [
+      "id": "demonstration",
+      "h2": "Faites le calcul avec vos propres appels",
+      "blocks": [
         {
-          t: "p",
-          text: "Plutôt que de parier sur un calcul, testez. Fixez avant le démarrage ce que vous observerez : appels pris en charge, demandes qualifiées, rendez-vous réellement inscrits au calendrier, demandes de rappel, appels transmis pour un humain. Comparez à la période précédente avec la même grille. Le guide sur la [prise de rendez-vous par IA](/ressources/prise-rendez-vous-ia-immobilier) distingue ces indicateurs.",
+          "t": "p",
+          "text": "Découvrez comment Rushh prend en charge les appels entrants de votre agence."
         },
         {
-          t: "checklist",
-          items: [
-            "Les quatre données sont relevées avant le test, avec leur date",
-            "Les indicateurs du test sont écrits avant son démarrage",
-            "La durée du test est fixée à l'avance, et le point de décision aussi",
-            "Un appel peut être suivi jusqu'au rendez-vous, et le rendez-vous jusqu'à l'affaire",
-          ],
-        },
-        {
-          t: "callout",
-          kind: "hypo",
-          text: "Une période courte et un faible volume d'affaires donnent des résultats peu fiables : une affaire de plus ou de moins change tout. Lisez le test comme une indication, pas comme une démonstration.",
-        },
-      ],
-    },
-    {
-      id: "limites",
-      h2: "Quand le calcul ne justifie pas un standard",
-      blocks: [
-        {
-          t: "p",
-          text: "Si votre agence reçoit peu d'appels hors de portée, ou si vos appels perdus sont rarement des demandes à valeur, le seuil sera difficile à atteindre. Une organisation interne, un renvoi vers un collègue ou un service humain peut alors suffire. Le guide sur la [permanence téléphonique](/ressources/permanence-telephonique-agence-immobiliere) aide à comparer ces organisations. Le calcul sert aussi à écarter une dépense inutile.",
-        },
-      ],
-    },
-    {
-      id: "faq",
-      h2: "Questions fréquentes",
-      blocks: [
-        { t: "h3", text: "Un standard IA est-il toujours rentable ?" },
-        {
-          t: "p",
-          text: "Non. Cela dépend de vos appels, de la valeur de vos affaires et du coût du service. Le calcul de ce guide permet de le vérifier sans s'appuyer sur un chiffre de marché.",
-        },
-        { t: "h3", text: "Quel taux de transformation retenir ?" },
-        {
-          t: "p",
-          text: "Le vôtre, relevé sur vos dossiers. Un taux entendu ailleurs ne décrit pas votre agence.",
-        },
-        { t: "h3", text: "Pourquoi ne pas donner un nombre d'appels récupérés ?" },
-        {
-          t: "p",
-          text: "Parce qu'aucune donnée vérifiable ne permet de l'annoncer. Rushh ne promet aucun résultat commercial : les résultats dépendent de nombreux facteurs.",
-        },
-        { t: "h3", text: "Rushh publie-t-il son tarif ?" },
-        { t: "p", text: "Non. Rushh est proposé sur devis, après échange sur l'organisation de l'agence." },
-      ],
-    },
+          "t": "button",
+          "label": "Réserver une démonstration",
+          "href": "/demonstrations"
+        }
+      ]
+    }
   ],
-  sources: [
-    {
-      label: "Rushh : l'offre",
-      url: "https://www.rushh.fr/offre",
-      usedFor: "Périmètre de la prestation gérée et tarification sur devis.",
-    },
-    {
-      label: "Rushh : appels manqués en agence immobilière",
-      url: "https://www.rushh.fr/ressources/appels-manques-immobilier",
-      usedFor: "Méthode de relevé du journal d'appels et du tableau de suivi.",
-    },
-  ],
-  sourcesNote:
-    "Ce guide décrit une méthode de calcul, sans source externe : aucune donnée de marché n'est reprise. L'exemple chiffré est entièrement fictif : ses valeurs et ses taux sont inventés et ne représentent ni un tarif, ni un résultat. Rushh ne promet aucun résultat commercial. Rushh édite cette page et en est partie prenante.",
-  rushh: {
-    title: "Un devis sur votre organisation, un test que vous pouvez juger vous-même",
-    text: "Rushh conçoit, configure, teste, déploie et suit un standard téléphonique IA spécialisé dans les appels entrants de l'immobilier. La tarification se fait sur devis, après un échange sur vos appels : vous pouvez ensuite appliquer à ce devis le calcul de ce guide, et écouter la ligne de démonstration avant de décider.",
-    points: [
-      "Un devis établi sur votre organisation réelle plutôt que sur une grille standard",
-      "Une prestation entièrement prise en charge : vous n'avez pas à construire ni à maintenir les scénarios",
-      "Une ligne de démonstration pour juger la voix et la suite donnée avant tout engagement",
-      "Aucun résultat promis : la rentabilité se vérifie avec vos propres chiffres",
-    ],
-    links: [
-      { href: "/offre", label: "Comprendre l'offre" },
-      { href: "/demonstrations", label: "Tester la ligne de démonstration" },
-    ],
-  },
-  related: [
-    {
-      href: "/ressources/cout-standard-telephonique-ia-immobilier",
-      label: "Le coût réel d'un standard IA",
-      text: "Les sept lignes d'un devis, pour renseigner le coût mensuel.",
-    },
-    {
-      href: "/ressources/appels-manques-immobilier",
-      label: "Mesurer les appels manqués",
-      text: "Relever le journal d'appels et les motifs.",
-    },
-    {
-      href: "/ressources/choisir-standard-telephonique-ia-immobilier",
-      label: "Choisir un standard téléphonique IA",
-      text: "La méthode de sélection, une fois le calcul fait.",
-    },
-  ],
-  cta: {
-    title: "Écoutez le standard, puis chiffrez avec votre devis",
-    text: "Appelez la ligne de démonstration, une agence fictive à Paris, puis demandez un devis adapté à votre volume d'appels : vous pourrez appliquer le calcul de ce guide avec vos propres chiffres. Tarification sur devis.",
-    links: [
-      { href: "/demonstrations", label: "Ligne de démonstration" },
-      { href: "/offre", label: "L'offre Rushh" },
-    ],
-  },
+  sources: [],
+  sourcesNote: "",
+  related: [],
+  cta: { title: "Faites le calcul avec vos propres appels", text: "", links: [] },
 };

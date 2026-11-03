@@ -1,325 +1,126 @@
 import type { Article } from "./types";
 
-const CONSULTED = "Consulté le 28 octobre 2026.";
-
+/** Texte réécrit (refonte éditoriale) : méthode, exemple, Rushh, invitation. Voir `bare` dans types.ts. */
 export const vsFonio: Article = {
   path: "/vs/fonio",
+  bare: true,
   category: "comparatifs",
   cover: {
     src: "/ressources/vs-fonio.png",
     width: 1600,
     height: 840,
-    alt: "Deux parcours d'appel comparés, une plateforme à configurer avec accompagnement optionnel et une prestation gérée, qui mènent au même résultat : un appel qualifié et transmis à l'équipe.",
+    alt: "Illustration : deux façons d'équiper une agence pour ses appels, une plateforme d'assistants IA à piloter soi-même et une prestation entièrement gérée.",
   },
   title: "Alternative à Fonio pour l'immobilier : Rushh ou Fonio ? | Rushh",
   description:
-    "Fonio ou Rushh pour les appels d'une agence immobilière ? Comparaison sourcée, consultée le 28 octobre 2026 : positionnement, accompagnement, tarifs.",
+    "Fonio ou Rushh pour les appels d'une agence immobilière ? Une plateforme à piloter soi-même face à une prestation entièrement gérée.",
   shortTitle: "Rushh ou Fonio : que choisir ?",
-  summary:
-    "Une plateforme à configurer face à une prestation gérée : accompagnement, canaux et tarification.",
+  summary: "Une plateforme à piloter soi-même face à une prestation entièrement gérée.",
   h1: "Alternative à Fonio pour l'immobilier : Rushh ou Fonio, que choisir pour les appels de votre agence ?",
   answer:
-    "Fonio : une plateforme d'assistants IA à créer et piloter soi-même. Rushh : une prestation entièrement gérée, spécialisée dans les appels immobiliers. Tous deux qualifient et prennent des rendez-vous ; la différence porte sur qui conçoit et suit le standard.",
-  rushhBrief:
-    "standard téléphonique IA immobilier entièrement pris en charge : qualification, rendez-vous, plateforme métier.",
-  verdict: {
-    otherName: "Fonio",
-    rushhIf: ["un standard conçu et suivi pour vous", "une solution pour appels d'agence immobilière", "des demandes classées par opportunité"],
-    otherIf: ["un assistant à piloter soi-même", "une grille de forfaits publique", "WhatsApp ou chat web"],
-  },
+    "Fonio est une plateforme d'assistants IA à créer et piloter soi-même ; Rushh est une prestation entièrement gérée, spécialisée dans l'immobilier.",
   datePublished: "2026-10-29",
-  dateModified: "2026-11-02",
+  dateModified: "2026-11-03",
+  intro: [
+    {
+      "t": "p",
+      "text": "Fonio et Rushh [répondent tous deux aux appels](/comparatif/standards-telephoniques-ia-immobilier) d'une agence immobilière. Ils qualifient les demandes et prennent des rendez-vous."
+    },
+    {
+      "t": "p",
+      "text": "La vraie question est de savoir [qui conçoit, configure et fait évoluer le standard](/ressources/choisir-standard-telephonique-ia-immobilier)."
+    }
+  ],
   sections: [
     {
-      id: "fonio",
-      h2: "Ce que Fonio propose, d'après son site",
-      takeaway: "Fonio propose bien la réservation de rendez-vous, le transfert d'appel et un accompagnement payant : ce n'est pas un simple outil à configurer seul.",
-      fold: true,
-      blocks: [
+      "id": "question",
+      "h2": "Une question utile : piloter soi-même ou déléguer ?",
+      "blocks": [
         {
-          t: "p",
-          text: "Fonio présente une plateforme d'assistants téléphoniques IA, avec des pages dédiées aux agences immobilières et à la gestion immobilière. Voici ce que ces pages indiquent.",
+          "t": "p",
+          "text": "D'après [le site de Fonio](https://www.fonio.ai/fr/integrations), consulté le 28 octobre 2026, c'est une plateforme d'assistants IA que l'on crée et que l'on pilote soi-même. Elle propose plusieurs canaux, dont la voix, WhatsApp et le chat web, des connexions à des outils et un accompagnement par un expert, proposé en option : elle n'est donc pas réservée aux agences qui configurent seules."
         },
         {
-          t: "ul",
-          items: [
-            "**Appels** : l'assistant répond 24 h/24 aux acheteurs, aux locataires et aux vendeurs, traite la demande lui-même ou transfère l'appel à l'agence ou à un agent.",
-            "**Qualification** : il pose des questions prédéfinies (budget, solvabilité, urgence, projet, type de bien) et recueille les coordonnées.",
-            "**Rendez-vous** : il propose des créneaux de visite d'après l'agenda connecté et enregistre la réservation.",
-            "**Gestion locative et syndic** : Fonio décrit la prise en charge de questions sur les charges, de signalements de maintenance et d'urgences comme une panne de chauffage.",
-            "**Autres canaux et appels sortants** : WhatsApp et chat web sont proposés, et les appels sortants figurent dans les conditions des forfaits voix.",
-            "**Création** : elle se fait en ligne, avec la mention « aucune connaissance technique requise », et un assistant « prêt à être testé en 30 secondes ».",
-            "**Accompagnement** : une page « Configurations » propose des forfaits où un expert de Fonio intervient, de 30 minutes par mois à un suivi continu, et des configurations complexes sur devis.",
-            "**Données** : hébergement « sur des serveurs sécurisés dans l'UE », mentions « conforme au RGPD » et « conforme à l'EU AI Act » (déclarations de Fonio).",
-          ],
+          "t": "p",
+          "text": "C'est un bon choix pour une agence qui veut garder la main sur la configuration de ses assistants."
         },
         {
-          t: "callout",
-          kind: "fact",
-          text: "Fonio ne se limite donc pas à un outil à configurer seul, et il propose bien la réservation de rendez-vous et le transfert d'appel. Sources et dates en fin de page ; ces informations sont déclarées par le fournisseur.",
-        },
-      ],
+          "t": "statement",
+          "text": "L'autre approche consiste à confier la conception, les connexions, les tests et le suivi à un prestataire."
+        }
+      ]
     },
     {
-      id: "rushh",
-      h2: "Ce que Rushh propose",
-      blocks: [
+      "id": "exemple",
+      "h2": "Exemple : une agence qui change ses horaires",
+      "blocks": [
         {
-          t: "ul",
-          items: [
-            "**Appels entrants 24 h/24** : réponse directe ou renvoi conditionnel ; le Standard identifie le motif et qualifie vendeurs, acquéreurs, locataires, bailleurs, fournisseurs et prestataires.",
-            "**Plateforme métier Rushh** : chaque demande est classée par type d'opportunité, avec résumé, statut et suivi ; SMS et e-mails envoyés selon les scénarios configurés.",
-            "**Rendez-vous et intégrations** : agendas connectés (Google Calendar, Outlook), connexions CRM et API sur mesure (Apimo, Whise ou tout logiciel doté d'une API), sous réserve des accès.",
-            "**Prestation entièrement gérée** : conception, personnalisation des scénarios et de la voix (clonage vocal selon la configuration), tests, installation, suivi et maintenance. L'agence ne configure rien.",
-            "**Spécialisation immobilière** : transaction, gestion locative, syndic et réseaux d'agences. Voir les pages [mandataires](/solutions/mandataires-immobiliers), [gestion locative](/solutions/gestion-locative) et [syndics](/solutions/syndics).",
-            "**Périmètre** : Rushh se concentre sur les appels entrants et ne fait pas d'appels sortants. Les capacités ci-dessus sont activées selon la configuration de chaque agence.",
-          ],
+          "t": "p",
+          "text": "Une agence modifie ses horaires et ses règles de transfert. Avec une plateforme à piloter soi-même, quelqu'un de l'équipe met à jour les scénarios, avec ou sans l'accompagnement optionnel du fournisseur."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Avec une prestation gérée, l'agence décrit le changement et c'est l'équipe du prestataire qui ajuste le standard."
+        }
+      ]
     },
     {
-      id: "differences",
-      h2: "Les différences de positionnement, critère par critère",
-      blocks: [
+      "id": "rushh",
+      "h2": "Ce que Rushh apporte",
+      "blocks": [
         {
-          t: "table",
-          caption: "Fonio et Rushh : les quatre différences qui comptent",
-          head: ["Critère", "Fonio", "Rushh"],
-          rows: [
-            [
-              "Modèle de service",
-              "Plateforme créée en ligne ; accompagnement par un expert en option payante",
-              "Prestation entièrement gérée : conception, configuration, tests, déploiement et suivi par Rushh",
-            ],
-            [
-              "Spécialisation",
-              "Plateforme généraliste, avec des pages dédiées à l'immobilier et à la gestion immobilière",
-              "Spécialisé dans les appels des professionnels de l'immobilier",
-            ],
-            [
-              "Qui configure",
-              "Le client, avec la possibilité d'acheter du temps d'expert ou une configuration complexe",
-              "Rushh, à partir de l'analyse du fonctionnement de l'agence",
-            ],
-            [
-              "Canaux",
-              "Voix, WhatsApp et chat web ; appels sortants dans les forfaits voix",
-              "Appels entrants ; SMS et e-mails pour confirmations et informations, selon les scénarios",
-            ],
-          ],
+          "t": "p",
+          "text": "Rushh est un standard téléphonique alimenté par intelligence artificielle, spécialisé dans l'immobilier."
         },
         {
-          t: "detail",
-          summary: "Voir les quatre autres critères : intégrations, mise en service, tarification, données",
-          blocks: [
-            {
-              t: "table",
-              caption: "Fonio et Rushh : intégrations, mise en service, tarification et données",
-              head: ["Critère", "Fonio", "Rushh"],
-              rows: [
-            [
-              "Intégrations immobilières citées",
-              "Stora, onOffice, Win-CASA, Hostaway, Aareon PowerHaus, Objego, entre autres ; Make, n8n et API ; Apimo et Whise non cités sur les pages consultées",
-              "Google Calendar, Outlook, Apimo et Whise, selon le contexte technique",
-            ],
-            [
-              "Mise en service",
-              "Test annoncé en 30 secondes ; durée de mise en place non détaillée sur la page immobilier",
-              "Visée sous 5 jours ouvrés après réception des éléments, à titre indicatif",
-            ],
-            [
-              "Tarification",
-              "Grille publique sur le site du fournisseur, à vérifier à la date du choix ; accompagnement payant en option",
-              "Tarification personnalisée selon l'agence",
-            ],
-            [
-              "Données (déclaré)",
-              "Hébergement dans l'UE ; conforme au RGPD et à l'EU AI Act",
-              "Conditions d'hébergement et sous-traitants précisés sur demande et dans le contrat (DPA)",
-            ],
-              ],
-              note: "Fonio : pages officielles listées en fin de page, consultées le 28 octobre 2026. Rushh : pages /offre, /integrations et /privacy de ce site.",
-            },
-          ],
+          "t": "p",
+          "text": "Rushh prend en charge la conception, la configuration, les connexions, les tests, l'installation, la maintenance et les ajustements. Il est centré sur les appels entrants, 24 h/24 et 7 j/7 : il qualifie vendeurs, acquéreurs, locataires, bailleurs et prestataires, prend des rendez-vous sur agendas connectés et peut transférer un appel à un humain. Il envoie aussi des SMS et des e-mails automatiques, selon les scénarios."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Chaque demande est organisée dans la plateforme métier Rushh par type d'opportunité, avec coordonnées, résumé, statut et suivi. Voir [l'offre Rushh](/offre)."
+        }
+      ]
     },
     {
-      id: "contextes",
-      h2: "Dans quels contextes chaque approche peut convenir",
-      takeaway: "Selon votre situation, l'une ou l'autre approche peut convenir.",
-      fold: true,
-      blocks: [
+      "id": "demonstration",
+      "h2": "Comparez avec vos propres appels",
+      "blocks": [
         {
-          t: "table",
-          caption: "Situations pour lesquelles chaque approche peut convenir",
-          head: ["Situation", "Approche qui peut convenir", "Pourquoi"],
-          rows: [
-            [
-              "Vous voulez publier un budget clair et créer vous-même votre assistant",
-              "Fonio",
-              "Tarifs publics, création en ligne et possibilité d'ajouter de l'accompagnement",
-            ],
-            [
-              "Vous voulez des appels sortants, WhatsApp ou un chat web",
-              "Fonio",
-              "Ces canaux figurent dans son offre ; Rushh ne les propose pas",
-            ],
-            [
-              "Votre agence utilise un logiciel que Fonio cite",
-              "Fonio",
-              "Il figure sur les pages consultées ; confirmez la connexion avec le fournisseur",
-            ],
-            [
-              "Vous voulez déléguer la conception, les tests et le suivi des appels entrants",
-              "Rushh",
-              "C'est le modèle d'une prestation entièrement gérée",
-            ],
-            [
-              "Vous utilisez Apimo ou Whise",
-              "Rushh, ou Fonio après vérification",
-              "Rushh les cite ; Fonio ne les cite pas sur les pages consultées, mais propose une demande d'intégration",
-            ],
-            [
-              "Votre organisation mêle transaction, gestion locative et syndic",
-              "Les deux, après un test",
-              "Fonio décrit des offres pour l'agence et la gestion immobilière ; Rushh construit des scénarios par métier avec vous. Seul un test sur vos appels tranche",
-            ],
-          ],
+          "t": "p",
+          "text": "Écoutez comment Rushh prend en charge les appels de votre agence."
         },
         {
-          t: "callout",
-          kind: "reco",
-          text: "Dans les deux cas, demandez un test avec vos propres scénarios d'appels avant de vous engager : le [guide de sélection](/ressources/choisir-standard-telephonique-ia-immobilier) en propose une liste.",
-        },
-      ],
-    },
-    {
-      id: "accompagnement",
-      h2: "Accompagnement : où se situe la différence ?",
-      blocks: [
-        {
-          t: "p",
-          text: "Dire que Fonio est « un outil DIY » serait inexact : il vend des heures d'expert et des configurations complexes. Dire que Rushh est « un simple logiciel » le serait aussi : l'agence n'en configure aucun. La différence se situe ailleurs.",
-        },
-        {
-          t: "ul",
-          items: [
-            "**Chez Fonio**, l'accompagnement est une option que le client choisit et achète à la carte, par forfait de temps ou par projet, sur une plateforme qu'il pilote.",
-            "**Chez Rushh**, la conception, la configuration, les tests, la mise en service et le suivi font partie de la prestation, dont le périmètre est défini dans le devis.",
-          ],
-        },
-        {
-          t: "p",
-          text: "Pour situer ces deux logiques parmi les autres solutions du marché, voir le [comparatif des standards téléphoniques IA pour l'immobilier](/comparatif/standards-telephoniques-ia-immobilier). Pour une comparaison avec un autre service accompagné, voir [Rushh ou Joe AI](/vs/joe-ai) ; pour une offre immobilière annonçant aussi des appels sortants, [Rushh ou Volubilimo](/vs/volubilimo).",
-        },
-      ],
-    },
-    {
-      id: "questions",
-      h2: "Dix questions à poser à Fonio comme à Rushh",
-      takeaway: "Dix questions à poser à tous les fournisseurs, Rushh compris.",
-      fold: true,
-      blocks: [
-        {
-          t: "checklist",
-          items: [
-            "Pouvez-vous tester mon logiciel métier exact, et qui paie l'intégration ?",
-            "Que couvre précisément l'accompagnement : conception, tests, évolutions ?",
-            "Qui modifie les scénarios quand mon organisation change, et sous quel délai ?",
-            "Quels frais s'ajoutent aux tarifs affichés : minutes, numéros, opérateur, intégration ?",
-            "Comment un appel hors scénario est-il traité ?",
-            "Comment l'appelant est-il informé qu'il parle à une IA ?",
-            "Où les données sont-elles traitées, par qui, et combien de temps sont-elles conservées ?",
-            "Quel contrat de sous-traitance (DPA) est fourni ?",
-            "Que se passe-t-il en cas de panne du service ?",
-            "Quelles sont les conditions de sortie ?",
-          ],
-        },
-        {
-          t: "p",
-          text: "Pour entendre Rushh sur vos propres phrases, appelez la [ligne de démonstration](/demonstrations) : il s'agit d'une agence fictive à Paris.",
-        },
-      ],
-    },
+          "t": "button",
+          "label": "Réserver une démonstration",
+          "href": "/demonstrations"
+        }
+      ]
+    }
   ],
   sources: [
     {
-      label: "Fonio : assistant téléphonique IA pour les agences immobilières",
-      url: "https://www.fonio.ai/fr/assistant-telephonique-ia/assistant-telephonique-ia-agences-immobilieres/",
-      usedFor: `Appels, qualification, visites, transfert, création en ligne, hébergement dans l'UE déclaré. ${CONSULTED}`,
+      "label": "Fonio : assistant téléphonique IA pour les agences immobilières",
+      "url": "https://www.fonio.ai/fr/assistant-telephonique-ia/assistant-telephonique-ia-agences-immobilieres/",
+      "usedFor": "Présentation de l'offre pour l'immobilier. Consulté le 28 octobre 2026."
     },
     {
-      label: "Fonio : assistant téléphonique IA pour la gestion immobilière",
-      url: "https://www.fonio.ai/fr/assistants-telephoniques-ia/gestion-immobiliere",
-      usedFor: `Gestion locative et syndic, urgences, logiciels immobiliers nommés, « Laissez-nous gérer la configuration ». ${CONSULTED}`,
+      "label": "Fonio : tarifs",
+      "url": "https://www.fonio.ai/fr/tarifs",
+      "usedFor": "Canaux proposés (voix, WhatsApp, chat web). Consulté le 28 octobre 2026."
     },
     {
-      label: "Fonio : intégrations",
-      url: "https://www.fonio.ai/fr/integrations",
-      usedFor: `Logiciels immobiliers nommés, Make, n8n, demande d'intégration. ${CONSULTED}`,
+      "label": "Fonio : configurations (Care et Setups)",
+      "url": "https://www.fonio.ai/fr/configurations",
+      "usedFor": "Accompagnement par un expert en option. Consulté le 28 octobre 2026."
     },
     {
-      label: "Fonio : tarifs",
-      url: "https://www.fonio.ai/fr/tarifs",
-      usedFor: `Forfaits voix, WhatsApp et chat web, appels sortants, prix hors taxes, facturation annuelle. ${CONSULTED}`,
-    },
-    {
-      label: "Fonio : configurations (Care et Setups)",
-      url: "https://www.fonio.ai/fr/configurations",
-      usedFor: `Accompagnement par un expert en option, configuration complexe. ${CONSULTED}`,
-    },
-    {
-      label: "Rushh : l'offre",
-      url: "https://www.rushh.fr/offre",
-      usedFor: "Périmètre de Rushh : appels entrants, prestation gérée, délai indicatif et tarification sur devis.",
-    },
-    {
-      label: "Rushh : intégrations",
-      url: "https://www.rushh.fr/integrations",
-      usedFor: "Google Calendar, Outlook, Apimo et Whise, selon le contexte technique.",
-    },
+      "label": "Fonio : intégrations",
+      "url": "https://www.fonio.ai/fr/integrations",
+      "usedFor": "Connexions à des outils. Consulté le 28 octobre 2026."
+    }
   ],
-  sourcesNote:
-    "Toutes les informations sur Fonio proviennent de ses pages officielles, consultées le 28 octobre 2026 : ce sont des déclarations commerciales, que nous n'avons pas vérifiées par un test. Les tarifs, hors taxes, peuvent changer. L'absence d'une fonction sur une page ne prouve pas qu'elle n'existe pas. Les repères par situation et les questions sont des recommandations de Rushh. Rushh édite cette page et en est partie prenante. Pour corriger une information, écrivez à hello@rushh.fr.",
-  rushh: {
-    title: "Quand Rushh est pertinent face à Fonio",
-    text: "Fonio propose une plateforme polyvalente, avec création en libre-service et accompagnement en option. Rushh propose une prestation gérée de bout en bout, centrée sur les appels entrants de l'immobilier. Si vous ne voulez ni configurer, ni tester, ni suivre vous-même votre standard, c'est le contexte où Rushh est le plus pertinent.",
-    points: [
-      "Vous préférez déléguer la conception et le suivi du standard plutôt que de les piloter",
-      "Votre besoin porte sur les appels entrants d'une agence, d'un mandataire ou d'un cabinet immobilier",
-      "Vous voulez retrouver chaque appel comme une opportunité suivie : résumé, statut, attribution",
-      "Vous souhaitez un devis établi selon votre organisation plutôt qu'une grille de forfaits",
-    ],
-    links: [
-      { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
-      { href: "/offre", label: "Voir l'offre Rushh" },
-    ],
-  },
-  related: [
-    {
-      href: "/comparatif/standards-telephoniques-ia-immobilier",
-      label: "Comparatif des standards téléphoniques IA",
-      text: "Cinq solutions comparées sur huit critères, sources datées.",
-    },
-    {
-      href: "/ressources/choisir-standard-telephonique-ia-immobilier",
-      label: "Choisir un standard téléphonique IA",
-      text: "Questions à poser, scénarios à tester, checklist de décision.",
-    },
-    {
-      href: "/vs/joe-ai",
-      label: "Rushh ou Joe AI",
-      text: "Un autre comparatif factuel, avec un service accompagné.",
-    },
-  ],
-  cta: {
-    title: "Comparez les deux sur le même appel",
-    text: "Appelez la ligne de démonstration Rushh, puis jouez le même scénario avec une démonstration de Fonio : la voix, la rapidité et la suite donnée se jugent à l'oreille. Tarification Rushh sur devis.",
-    links: [
-      { href: "/demonstrations", label: "Ligne de démonstration" },
-      { href: "/offre", label: "L'offre Rushh" },
-      { href: "/solutions/transaction-immobiliere", label: "Transaction immobilière" },
-    ],
-  },
+  sourcesNote: "",
+  related: [],
+  cta: { title: "Comparez avec vos propres appels", text: "", links: [] },
 };
