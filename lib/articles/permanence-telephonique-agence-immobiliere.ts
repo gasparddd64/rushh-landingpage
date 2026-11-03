@@ -1,259 +1,238 @@
 import type { Article } from "./types";
 
+/** Texte validé : à reproduire tel quel, sans reformulation (voir `bare` dans types.ts). */
 export const permanenceTelephonique: Article = {
   path: "/ressources/permanence-telephonique-agence-immobiliere",
+  bare: true,
   category: "guides",
   cover: {
     src: "/ressources/permanence-telephonique-agence-immobiliere.png",
     width: 1600,
     height: 840,
-    alt: "Quatre motifs d'appel, estimation, visite, dossier locatif et syndic, partent d'un même standard et suivent chacun une règle de transmission différente : prévenir tout de suite, laisser un message ou rappeler dans la journée.",
+    alt: "Illustration : plusieurs appels entrants, estimation, visite, dossier locatif et urgence, pris en charge et dirigés vers la bonne suite par une permanence téléphonique.",
   },
   title: "Permanence téléphonique immobilière : organiser les appels | Rushh",
   description:
-    "Organiser l'accueil téléphonique d'une agence : appels urgents, interne, prestataire ou IA, matrice de transfert par motif, visites et heures de fermeture.",
+    "Les 4 étapes d'une permanence téléphonique efficace en agence immobilière : répondre, qualifier, organiser la suite et assurer le suivi des demandes.",
   shortTitle: "Organiser la permanence téléphonique d'une agence",
-  summary: "Quels appels traiter, qui prévenir, quand : une matrice de transfert par motif avant de choisir un mode.",
+  summary: "Répondre, qualifier, organiser la suite, assurer le suivi : les 4 étapes d'une permanence téléphonique efficace.",
   h1: "Comment organiser une permanence téléphonique efficace en agence immobilière ?",
   answer:
-    "Une permanence téléphonique efficace commence par des décisions, pas par un outil : quels appels traiter, à quelles heures, dans quel ordre de priorité, qui prévenir et comment transmettre. Ces règles s'appliquent ensuite au mode retenu : équipe interne, prestataire humain ou standard IA. Aucun mode n'est supérieur dans l'absolu, et beaucoup d'agences en combinent plusieurs.",
+    "Une permanence téléphonique efficace ne consiste pas seulement à répondre aux appels. Elle doit permettre de comprendre chaque demande et d'organiser sa suite, sans interrompre constamment les équipes.",
   datePublished: "2026-10-31",
-  dateModified: "2026-11-02",
+  dateModified: "2026-11-03",
+  intro: [
+    {
+      "t": "p",
+      "text": "Entre les visites, les estimations et les rendez-vous clients, les [professionnels de l'immobilier](/solutions/transaction-immobiliere) ne peuvent pas toujours décrocher."
+    },
+    {
+      "t": "p",
+      "text": "Résultat : des [appels manqués](/ressources/appels-manques-immobilier), des messages à trier et des demandes importantes qui attendent parfois plusieurs heures avant d'être traitées."
+    },
+    {
+      "t": "p",
+      "text": "Une permanence téléphonique efficace ne consiste pas seulement à répondre aux appels. Elle doit permettre de comprendre chaque demande et d'organiser sa suite, sans interrompre constamment les équipes."
+    }
+  ],
   sections: [
     {
-      id: "urgent",
-      h2: "Les appels qui ne peuvent pas attendre",
-      blocks: [
+      "id": "pourquoi",
+      "h2": "Pourquoi mettre en place une permanence téléphonique ?",
+      "blocks": [
         {
-          t: "p",
-          text: "Tous les appels n'ont pas la même urgence. Un acquéreur qui appelle pour un bien vu en annonce peut passer à une autre agence dans l'heure. Un propriétaire qui veut faire estimer son bien accepte volontiers un rappel dans la journée, pourvu qu'il soit annoncé. Un copropriétaire qui signale un dégât des eaux ne peut pas attendre le lendemain.",
+          "t": "p",
+          "text": "Le téléphone reste un point de contact essentiel entre une agence et ses clients."
         },
         {
-          t: "p",
-          text: "Avant de comparer des solutions, classez vos motifs d'appel en trois niveaux : à traiter immédiatement, à rappeler dans la journée, à enregistrer simplement. Cette hiérarchie est celle que vous demanderez ensuite à votre équipe, à un prestataire ou à un standard IA d'appliquer.",
+          "t": "p",
+          "text": "Un propriétaire peut appeler pour une [estimation](/ressources/appel-vendeur-estimation-immobiliere) pendant une visite. Un acquéreur peut vouloir découvrir un bien après la fermeture. Un locataire peut signaler un problème alors que son [gestionnaire](/solutions/gestion-locative) est indisponible."
         },
         {
-          t: "callout",
-          kind: "reco",
-          text: "Relevez pendant deux semaines les motifs réels de vos appels. Le guide sur les [appels manqués](/ressources/appels-manques-immobilier) propose une grille de suivi : sans ces données, la hiérarchie reste une intuition.",
+          "t": "p",
+          "text": "Sans organisation adaptée, ces demandes finissent sur un répondeur ou dans une liste de rappels."
         },
-      ],
+        {
+          "t": "statement",
+          "text": "L'objectif d'une permanence est donc double : rester joignable et éviter que la gestion du téléphone ralentisse l'activité de l'agence."
+        }
+      ]
     },
     {
-      id: "organisations",
-      h2: "Trois organisations possibles : interne, prestataire humain, IA",
-      blocks: [
+      "id": "etapes",
+      "h2": "Les 4 étapes d'une permanence téléphonique efficace",
+      "blocks": [
         {
-          t: "p",
-          text: "Il n'y a pas de modèle idéal. Chacun répond mieux à certaines contraintes, et les horaires couverts varient d'un prestataire à l'autre : certains télésecrétariats indiquent par exemple une couverture du lundi au samedi de 8 h à 20 h, alors que d'autres laissent les soirées et le dimanche sans réponse, selon leurs sites.",
+          "t": "h3",
+          "text": "1. Assurer une réponse aux appels entrants"
         },
         {
-          t: "table",
-          caption: "Trois organisations de permanence téléphonique, selon six critères",
-          head: ["Critère", "Équipe interne", "Prestataire humain", "Standard IA"],
-          rows: [
-            ["Couverture soir et week-end", "Rarement, sauf astreinte", "Selon les horaires du prestataire", "Selon la configuration retenue"],
-            ["Pic d'appels simultanés", "Limité par les personnes disponibles", "Limité par les opératrices disponibles", "Dépend du nombre d'appels simultanés prévu au contrat"],
-            ["Connaissance de vos dossiers", "Complète", "Celle des consignes transmises", "Celle des consignes et des connexions configurées"],
-            ["Nuance sur un cas délicat", "Forte", "Forte, selon la formation", "À encadrer par des règles de transmission claires"],
-            ["Mise en place", "Immédiate", "Brief, paramétrage, tests", "Conception, tests, mise en service"],
-            ["Variation du coût avec le volume", "Peu variable, coût de temps", "Souvent lié aux appels traités", "Selon le modèle tarifaire du fournisseur"],
-          ],
-          note: "Tableau de repères, sans classement. Les situations réelles dépendent de l'offre et de la configuration de chaque fournisseur.",
+          "t": "p",
+          "text": "Les demandes peuvent arriver pendant les visites, les rendez-vous, les pauses ou en dehors des horaires d'ouverture."
         },
         {
-          t: "p",
-          text: "Pour comparer plus en détail un service humain et un standard IA, voir le guide [télésecrétariat humain ou standard IA](/ressources/telesecretariat-humain-ou-ia). Ici, l'enjeu est l'organisation : quel que soit le mode, les règles de la section suivante doivent exister.",
+          "t": "p",
+          "text": "Une permanence efficace doit permettre de répondre même lorsque les collaborateurs sont occupés."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Elle peut prendre le relais uniquement en cas d'indisponibilité ou assurer directement l'accueil téléphonique."
+        },
+        {
+          "t": "h3",
+          "text": "2. Identifier et qualifier chaque demande"
+        },
+        {
+          "t": "p",
+          "text": "Tous les appels ne nécessitent pas la même réponse."
+        },
+        {
+          "t": "p",
+          "text": "Un vendeur souhaite une estimation, un acquéreur demande une visite, un bailleur contacte son gestionnaire et un prestataire transmet une information."
+        },
+        {
+          "t": "p",
+          "text": "La première étape est d'identifier le motif, de recueillir les informations utiles et de comprendre ce que l'appelant attend."
+        },
+        {
+          "t": "p",
+          "text": "Une demande qualifiée évite de rappeler simplement pour découvrir pourquoi la personne avait téléphoné."
+        },
+        {
+          "t": "h3",
+          "text": "3. Organiser la bonne suite"
+        },
+        {
+          "t": "p",
+          "text": "Une fois la demande identifiée, plusieurs actions sont possibles :"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Proposer un rendez-vous lorsque les disponibilités le permettent.",
+            "Transférer l'appel au collaborateur concerné.",
+            "Transmettre les informations pour un traitement ultérieur.",
+            "Appliquer les consignes prévues pour les situations sensibles ou [urgentes](/ressources/standard-syndic-appels-urgents)."
+          ]
+        },
+        {
+          "t": "p",
+          "text": "L'objectif n'est pas d'interrompre systématiquement les équipes, mais de les solliciter lorsque leur intervention est nécessaire."
+        },
+        {
+          "t": "h3",
+          "text": "4. Centraliser les demandes et assurer leur suivi"
+        },
+        {
+          "t": "p",
+          "text": "Une permanence n'est réellement utile que si les informations recueillies restent accessibles."
+        },
+        {
+          "t": "p",
+          "text": "Chaque demande doit pouvoir être retrouvée avec son motif, les coordonnées de l'appelant, son résumé et son statut."
+        },
+        {
+          "t": "p",
+          "text": "L'équipe sait ainsi ce qui a été traité et ce qui nécessite encore une action."
+        }
+      ]
     },
     {
-      id: "matrice",
-      h2: "Une matrice de transfert par motif d'appel",
-      blocks: [
+      "id": "solutions",
+      "h2": "Répondeur, rappel manuel ou secrétariat téléphonique ?",
+      "blocks": [
         {
-          t: "p",
-          text: "La matrice ci-dessous associe quatre motifs d'appel fréquents à une priorité, à la personne à prévenir et à la manière de la prévenir. C'est un modèle de départ, à adapter à votre équipe : une agence de transaction, un service de gestion et un syndic n'ont pas les mêmes urgences.",
+          "t": "p",
+          "text": "Le [répondeur](/ressources/repondeur-ou-standard-ia-agence-immobiliere) permet de laisser un message, mais certains appelants raccrochent sans en enregistrer."
         },
         {
-          t: "table",
-          caption: "Matrice de transfert par motif d'appel (modèle à adapter)",
-          head: ["Motif", "Priorité", "Qui prévenir, et comment", "Ce que la permanence fait et ne fait pas"],
-          rows: [
-            [
-              "Estimation (vendeur)",
-              "Rappel dans la journée",
-              "Le négociateur du secteur, par notification avec le motif et le moment de rappel souhaité",
-              "Recueille le projet et le secteur ; n'annonce ni prix ni promesse de mandat",
-            ],
-            [
-              "Visite (acquéreur)",
-              "Immédiate si la visite est proche, sinon dans la journée",
-              "Le négociateur du bien, par notification ou appel direct selon vos règles",
-              "Identifie le bien et le moyen de joindre l'acquéreur ; ne confirme un créneau que si l'agenda le permet",
-            ],
-            [
-              "Dossier locatif (gestion)",
-              "Dans la journée",
-              "Le gestionnaire du dossier, par message structuré",
-              "Note la demande et l'identité ; ne donne pas d'information sur le dossier d'un tiers",
-            ],
-            [
-              "Incident en copropriété (syndic)",
-              "Immédiate si la situation est urgente",
-              "L'astreinte ou le gestionnaire défini par le syndic, par appel puis message",
-              "Applique la consigne d'escalade fixée par le syndic ; ne pose pas de diagnostic et ne promet pas d'intervention",
-            ],
-          ],
-          note: "Les niveaux de priorité et les personnes à prévenir sont des exemples fictifs : c'est votre organisation qui les fixe, pas l'outil.",
+          "t": "p",
+          "text": "Le rappel manuel reste utile, mais dépend de la disponibilité des collaborateurs."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Un [secrétariat humain](/ressources/telesecretariat-humain-ou-ia) peut accueillir et qualifier les appels, selon ses horaires et les prestations prévues."
+        },
+        {
+          "t": "statement",
+          "text": "Pour une prise en charge plus complète, l'enjeu est de réunir réponse, qualification, action et suivi dans un même fonctionnement."
+        }
+      ]
     },
     {
-      id: "visites-fermeture",
-      h2: "Que prévoir pendant les visites et après la fermeture ?",
-      blocks: [
+      "id": "exemple",
+      "h2": "Exemple : plusieurs appels pendant une visite",
+      "blocks": [
         {
-          t: "p",
-          text: "Pendant une visite, l'agent ne peut pas répondre : c'est le cas typique où l'appel est perdu ou laissé en attente. Après fermeture, la question est différente : faut-il simplement enregistrer un message, ou joindre quelqu'un ? Définissez deux règles distinctes, car elles ne se résument pas à « décrocher plus ».",
+          "t": "p",
+          "text": "Un négociateur accompagne un acquéreur lorsqu'un propriétaire appelle pour une estimation."
         },
         {
-          t: "ul",
-          items: [
-            "**Pendant les visites** : décider à partir de combien de sonneries l'appel est repris par la permanence, et quels motifs justifient d'interrompre l'agent.",
-            "**Le soir et le week-end** : lister les rares motifs qui déclenchent une alerte (urgence en copropriété, par exemple) et ceux qui attendent le lendemain avec un message clair.",
-            "**Jours fériés et congés** : prévoir qui est joignable, et le message d'accueil correspondant.",
-            "**Le numéro de l'agence** : selon l'opérateur, un renvoi d'appel conditionnel (après quelques sonneries ou en cas d'occupation) permet de conserver le numéro actuel. La possibilité exacte dépend de l'opérateur et du contrat.",
-          ],
+          "t": "p",
+          "text": "Au même moment, un autre client souhaite visiter un appartement."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Une permanence bien organisée recueille les deux demandes, identifie leurs motifs et propose la suite adaptée : rendez-vous lorsque c'est possible ou transmission au bon collaborateur."
+        },
+        {
+          "t": "statement",
+          "text": "Le négociateur peut poursuivre sa visite pendant que les demandes sont prises en charge."
+        }
+      ]
     },
     {
-      id: "cinq-decisions",
-      h2: "Mise en place en cinq décisions",
-      blocks: [
+      "id": "rushh",
+      "h2": "Comment Rushh applique cette méthode",
+      "blocks": [
         {
-          t: "ol",
-          items: [
-            "**Les motifs à traiter** : estimation, visite, location, syndic, autres, avec le niveau de priorité de chacun.",
-            "**Les horaires de couverture** : heures d'ouverture, visites, soirs, week-ends, congés.",
-            "**Les destinataires** : une personne ou un agenda par motif, et une solution de repli si elle est absente.",
-            "**Le format de transmission** : notification, e-mail ou fiche dans votre logiciel, avec les informations minimales attendues.",
-            "**Le test** : appeler la permanence comme le ferait un client, plusieurs fois, avec les cas difficiles, avant la mise en service.",
-          ],
+          "t": "p",
+          "text": "Rushh est un standard téléphonique alimenté par intelligence artificielle, conçu pour les professionnels de l'immobilier."
         },
         {
-          t: "checklist",
-          items: [
-            "Une hiérarchie des appels écrite, pas seulement connue de l'équipe",
-            "Une personne responsable de la permanence et un remplaçant",
-            "Un message d'accueil conforme à ce que la permanence fait réellement",
-            "Un point de contrôle après deux semaines pour corriger les règles",
-          ],
+          "t": "p",
+          "text": "Disponible 24 h/24 et 7 j/7, il peut répondre directement ou prendre le relais lorsque votre équipe est indisponible."
         },
-      ],
+        {
+          "t": "p",
+          "text": "Rushh identifie les demandes vendeurs, acquéreurs, locataires, bailleurs et prestataires. Selon les scénarios configurés, il peut prendre un rendez-vous, transférer un appel ou transmettre les informations nécessaires."
+        },
+        {
+          "t": "p",
+          "text": "Chaque demande est organisée dans la plateforme métier Rushh, avec ses coordonnées, son résumé, sa catégorie et son statut."
+        },
+        {
+          "t": "p",
+          "text": "Les situations sensibles suivent les consignes définies avec votre agence : Rushh recueille les informations et sollicite les personnes prévues lorsque leur intervention est nécessaire."
+        },
+        {
+          "t": "p",
+          "text": "Notre équipe prend en charge la conception, l'installation, les connexions, les tests et le suivi du standard."
+        }
+      ]
     },
     {
-      id: "faq",
-      h2: "Questions fréquentes",
-      blocks: [
-        { t: "h3", text: "Faut-il choisir entre humain et IA ?" },
+      "id": "demonstration",
+      "h2": "Restez joignable sans interrompre votre activité",
+      "blocks": [
         {
-          t: "p",
-          text: "Pas nécessairement. Certaines agences gardent leur équipe aux heures d'ouverture et confient les appels hors horaires ou en cas d'occupation à un service extérieur. L'important est que les règles de transmission soient les mêmes.",
+          "t": "p",
+          "text": "Vos collaborateurs peuvent se concentrer sur leurs clients pendant que les appels entrants sont pris en charge et organisés."
         },
-        { t: "h3", text: "Une permanence doit-elle répondre à tous les appels ?" },
         {
-          t: "p",
-          text: "Elle doit répondre à ceux que vous avez décidé de traiter, avec une suite connue. Un appel de démarchage, par exemple, peut recevoir une réponse brève et ne pas être transmis.",
+          "t": "statement",
+          "text": "Découvrez comment Rushh peut assurer la permanence téléphonique de votre agence."
         },
-        { t: "h3", text: "Que faire de l'enregistrement des appels ?" },
         {
-          t: "p",
-          text: "Si les appels sont enregistrés, la personne doit en être informée et des durées de conservation doivent être définies. La CNIL donne des repères sur l'écoute et l'enregistrement des appels sur le lieu de travail ; faites valider votre organisation par votre conseil.",
-        },
-        { t: "h3", text: "Une IA peut-elle gérer un appel urgent de syndic ?" },
-        {
-          t: "p",
-          text: "Elle peut appliquer la consigne d'escalade que le syndic a définie, par exemple prévenir l'astreinte. Elle ne décide pas elle-même de la gravité d'une situation et ne promet pas d'intervention.",
-        },
-      ],
-    },
+          "t": "button",
+          "label": "Réserver une démonstration",
+          "href": "/demonstrations"
+        }
+      ]
+    }
   ],
-  sources: [
-    {
-      label: "Optilib : télésecrétariat immobilier",
-      url: "https://www.optilib.com/telesecretariat-immobilier",
-      usedFor:
-        "Exemple de prestataire humain : appels de visite, d'estimation, de gestion locative et d'urgence de copropriété, couverture indiquée du lundi au samedi de 8 h à 20 h, transmission par e-mail ou transfert. Page sans date de publication visible. Consulté le 31 octobre 2026. Aucun tarif n'est repris.",
-    },
-    {
-      label: "Tala : standard téléphonique immobilier",
-      url: "https://www.tala-assistant.com/blog/standard-telephonique-immobilier",
-      usedFor:
-        "Exemple de fournisseur : couverture horaire des services humains et mise en place par renvoi d'appel conditionnel. Article publié le 23 avril 2026 et mis à jour le 20 juillet 2026, consulté le 31 octobre 2026. Aucun tarif ni chiffre de perte d'appels n'est repris.",
-    },
-    {
-      label: "CNIL : l'écoute et l'enregistrement des appels sur le lieu de travail",
-      url: "https://www.cnil.fr/fr/lecoute-et-lenregistrement-des-appels-sur-le-lieu-de-travail",
-      usedFor:
-        "Repères sur l'information des personnes et la conservation des enregistrements. La CNIL signale elle-même que cette page est en cours de mise à jour : vérifiez la version en vigueur. Consulté le 31 octobre 2026.",
-    },
-  ],
-  sourcesNote:
-    "Ce guide propose une méthode d'organisation, pas un résultat mesuré : les matrices et les priorités sont des modèles à adapter. Les horaires et services des prestataires cités sont ceux de leurs sites à la date de consultation et peuvent changer. Rushh édite cette page et en est partie prenante ; il n'est pas présenté comme la meilleure option dans tous les cas.",
-  rushh: {
-    title: "Vos règles de transmission, appliquées à chaque appel entrant",
-    text: "Rushh conçoit, configure, teste, déploie et suit un standard téléphonique IA spécialisé dans les appels entrants de l'immobilier. Les règles décrites dans ce guide (motifs, priorités, destinataires, escalade) sont celles que vous définissez avec l'équipe Rushh, qui les traduit en scénarios et les teste avant la mise en service.",
-    points: [
-      "Des scénarios écrits pour l'immobilier : estimation, visite, location, copropriété",
-      "Vos règles de priorité et d'escalade appliquées, sans diagnostic ni promesse faite à votre place",
-      "Une transmission structurée à la bonne personne, avec le motif et le contexte",
-      "Une prestation entièrement prise en charge : vous validez les règles, Rushh s'occupe du reste",
-    ],
-    links: [
-      { href: "/demonstrations", label: "Tester la ligne de démonstration" },
-      { href: "/offre", label: "Comprendre l'offre" },
-    ],
-  },
-  related: [
-    {
-      href: "/ressources/standard-syndic-appels-urgents",
-      label: "Appels urgents d'un syndic",
-      text: "Une matrice de priorité, de transmission et d'escalade.",
-    },
-    {
-      href: "/solutions/transaction-immobiliere",
-      label: "Standard pour la transaction",
-      text: "Estimations et visites pendant que l'équipe est sur le terrain.",
-    },
-    {
-      href: "/solutions/gestion-locative",
-      label: "Standard pour la gestion locative",
-      text: "Demandes de locataires et de bailleurs, transmission au gestionnaire.",
-    },
-    {
-      href: "/solutions/syndics",
-      label: "Standard pour les syndics",
-      text: "Messages et escalade définis par le syndic.",
-    },
-    {
-      href: "/ressources/renvoi-appel-ou-decroche-ia-immobilier",
-      label: "Renvoi d'appel ou décrochage direct",
-      text: "Choisir qui décroche en premier.",
-    },
-    {
-      href: "/ressources/appels-agence-immobiliere-soir-week-end",
-      label: "Appels le soir et le week-end",
-      text: "La matrice horaire hors horaires d'ouverture.",
-    },
-  ],
-  cta: {
-    title: "Écoutez comment un appel est pris et transmis",
-    text: "Appelez la ligne de démonstration, une agence fictive à Paris, et jouez une demande d'estimation, de visite ou un incident : la prise en charge et la suite donnée se jugent à l'oreille. Tarification sur devis.",
-    links: [
-      { href: "/demonstrations", label: "Ligne de démonstration" },
-      { href: "/offre", label: "L'offre Rushh" },
-    ],
-  },
+  sources: [],
+  sourcesNote: "",
+  related: [],
+  cta: { title: "Restez joignable sans interrompre votre activité", text: "", links: [] },
 };

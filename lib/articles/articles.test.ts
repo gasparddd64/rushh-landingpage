@@ -40,6 +40,7 @@ const BARE_LINKS: Record<string, string[]> = {
   "/ressources/qualification-appels-vendeurs-acquereurs": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/prise-rendez-vous-ia-immobilier"],
   "/ressources/prise-rendez-vous-ia-immobilier": ["/demonstrations", "/integrations", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/standard-ia-google-agenda-outlook-immobilier", "/ressources/appel-vendeur-estimation-immobiliere"],
   "/ressources/appel-vendeur-estimation-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/prise-rendez-vous-ia-immobilier", "/ressources/standard-ia-google-agenda-outlook-immobilier"],
+  "/ressources/permanence-telephonique-agence-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/solutions/gestion-locative", "/ressources/standard-syndic-appels-urgents", "/ressources/telesecretariat-humain-ou-ia", "/ressources/appels-manques-immobilier"],
   "/ressources/appels-manques-immobilier": ["/demonstrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/permanence-telephonique-agence-immobiliere"],
 };
 
@@ -361,12 +362,13 @@ describe("wave 1 (Nov. 2026) guides", () => {
     expect(articleToMarkdown(a)).not.toMatch(/arbre de décision|Dialogue fictif|Annoncer une valeur|Sources et méthode/i);
   });
 
-  it("the permanence guide holds a four-row, four-column transfer matrix and is not presented as Rushh-first", () => {
+  it("the permanence guide keeps the validated four steps and no matrix, table or FAQ", () => {
     const a = get("/ressources/permanence-telephonique-agence-immobiliere");
-    const m = a.sections.flatMap((s) => s.blocks).find((b) => b.t === "table" && b.caption.startsWith("Matrice de transfert"));
-    expect(m && m.t === "table" && m.rows).toHaveLength(4);
-    expect(m && m.t === "table" && m.head).toHaveLength(4);
-    expect(allText(a)).toContain("Aucun mode n'est supérieur dans l'absolu");
+    expect(a.bare).toBe(true);
+    const blocks = a.sections.flatMap((s) => s.blocks);
+    expect(blocks.filter((b) => b.t === "h3" && /^[1-4]\. /.test(b.text))).toHaveLength(4);
+    expect(blocks.filter((b) => b.t === "table")).toHaveLength(0);
+    expect(articleToMarkdown(a)).not.toMatch(/Matrice de transfert|Questions fréquentes|Sources et méthode/i);
   });
 });
 
