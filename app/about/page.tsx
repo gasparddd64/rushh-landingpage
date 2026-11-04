@@ -58,9 +58,6 @@ export default function AboutPage() {
                 loading="lazy"
                 style={{ display: "block", width: "100%", height: "auto", borderRadius: 18 }}
               />
-              <figcaption style={{ marginTop: 10, fontSize: 14, color: "var(--muted)" }}>
-                L&apos;équipe Rushh, lors d&apos;un salon de l&apos;immobilier.
-              </figcaption>
             </figure>
             <p>
               Nous allons à la rencontre des agences et des acteurs du secteur pour comprendre leurs appels du

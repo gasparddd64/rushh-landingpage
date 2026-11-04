@@ -1,4 +1,3 @@
-import { TestezCTA } from "@/components/ui/testez-cta";
 import "@/app/terrain.css";
 
 export function TerrainSection() {
@@ -14,7 +13,6 @@ export function TerrainSection() {
               alt="Deux membres de l'équipe Rushh, en costume, lors d'un salon de l'immobilier"
               loading="lazy"
             />
-            <figcaption>L&apos;équipe Rushh, lors d&apos;un salon de l&apos;immobilier.</figcaption>
           </figure>
           <div className="tr-copy">
             <span className="lf-pill">Sur le terrain</span>
@@ -23,7 +21,6 @@ export function TerrainSection() {
               Nous allons à la rencontre des agences et des acteurs du secteur pour comprendre leurs appels du
               quotidien et concevoir un standard qui leur ressemble.
             </p>
-            <TestezCTA />
           </div>
         </div>
       </div>
