@@ -32,9 +32,9 @@ describe('cohérence après audit', () => {
   });
   it('reflète le consentement dans la confidentialité Markdown', () => {
     const markdown = getMarkdownPage('/privacy')!.markdown;
-    expect(markdown).toContain('Google Analytics 4');
-    expect(markdown).toContain('Avant votre choix, aucun script');
-    expect(markdown).toContain('Gérer les cookies');
+    expect(markdown).toContain('Google Analytics');
+    expect(markdown).toContain("ne doit pas être activé avant que l'utilisateur ait exprimé son choix");
+    expect(markdown).toContain('Dernière mise à jour : 4 novembre 2026');
     expect(markdown).not.toContain("n'utilise aucun outil");
   });
   it('conserve les dates de publication et les deux formats pour les 25 articles', () => {

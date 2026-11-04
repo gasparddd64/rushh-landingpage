@@ -8,6 +8,10 @@ import { articleToMarkdown } from "./articles/markdown";
 import { CATALOGUE_TITLE, catalogueToMarkdown } from "./articles/catalogue-markdown";
 import * as mandataires from "./solutions/mandataires-immobiliers";
 import * as gestionLocative from "./solutions/gestion-locative";
+import { CGV } from "./legal/cgv";
+import { MENTIONS } from "./legal/mentions";
+import { PRIVACY } from "./legal/privacy";
+import { legalToMarkdown } from "./legal/markdown";
 import { DEMO_LISTEN, MULTI, OFFRE, SYNDICS, TRANSACTION, premiumToMd } from "./solutions/premium";
 
 export const SITE_URL = "https://www.rushh.fr";
@@ -143,78 +147,6 @@ Rushh est édité par Gaspard David, Entrepreneur Individuel (EI), immatriculé 
 - [Confidentialité](${SITE_URL}/privacy)
 `,
   },
-  "/mentions-legales": {
-    title: "Mentions légales | Rushh",
-    markdown: `# Mentions légales
-
-## 1. Éditeur du site
-
-Le site internet https://www.rushh.fr est édité par Gaspard David, Entrepreneur Individuel (EI), exerçant sous le nom commercial Rushh.
-
-- SIREN : 937 698 983
-- SIRET : 937 698 983 00023
-- Immatriculation : RCS de Bayonne
-- Adresse : 13 Rue du Brise Lames, 64600 Anglet, France
-- Email : hello@rushh.fr
-- Téléphone : +33 6 71 80 37 11
-
-## 2. Directeur de la publication
-
-Le directeur de la publication est Gaspard David.
-
-## 3. Hébergement du site
-
-Le site internet https://www.rushh.fr est hébergé par :
-
-Vercel Inc.
-
-- Adresse : 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis
-- Téléphone : +1 559 288 7060
-- Région d'exécution configurée : Paris, France (cdg1)
-- Site internet : https://vercel.com
-`,
-  },
-  "/privacy": {
-    title: "Confidentialité | Rushh",
-    markdown: `# Politique de confidentialité — Rushh
-
-Cette page décrit, à titre informatif, comment Rushh traite les données dans le cadre du Standard téléphonique IA fourni aux agences immobilières clientes. Pour le détail contractuel complet du traitement des données, se reporter au contrat ou au DPA (Data Processing Agreement) applicable, mentionné dans les Conditions Générales de Vente (${SITE_URL}/cgv).
-
-## Qui est responsable de quoi ?
-
-Rushh est édité par Gaspard David, Entrepreneur Individuel (EI), exerçant sous le nom commercial « Rushh », immatriculé au RCS de Bayonne sous le numéro 937 698 983 (SIRET 937 698 983 00023), 13 Rue du Brise Lames, 64600 Anglet, France.
-
-Appels pris en charge pour une agence cliente. Pour les traitements réalisés exclusivement pour le compte de l'agence dans le cadre de la gestion des appels, l'agence cliente agit en principe en qualité de responsable de traitement et Rushh en qualité de sous-traitant, sous réserve de la qualification juridique résultant des traitements effectivement mis en œuvre. Ces traitements sont encadrés par un accord de traitement de données (DPA) prévu au contrat.
-
-Traitements propres à Rushh. Rushh agit en qualité de responsable de traitement pour sa propre gestion commerciale, contractuelle et comptable, pour le support, pour la sécurité de ses systèmes, pour le respect de ses obligations légales.
-
-## Données traitées
-
-Dans le cadre du Standard Rushh, les données traitées incluent notamment : les informations recueillies lors des appels entrants pour le compte des agences clientes (identité de l'appelant, motif de l'appel, informations de qualification), les données de rendez-vous transmises aux outils connectés (agenda, CRM), et les données de contact des agences clientes.
-
-## Hébergement et sous-traitants
-
-Pour toute question sur l'hébergement des données et sur les sous-traitants intervenant dans le traitement, écrivez à hello@rushh.fr. Les conditions applicables sont précisées dans le contrat ou le DPA mentionné ci-dessus.
-
-## Cookies et mesure d'audience
-
-Google Analytics 4, uniquement avec votre accord. Le site rushh.fr utilise Google Analytics 4 (Google) pour mesurer sa fréquentation et savoir combien de visiteurs cliquent sur « Réserver une démo » ou sur le numéro de la ligne de démonstration. Avant votre choix, aucun script ni cookie Google Analytics n'est chargé. Si vous acceptez, Google Analytics dépose des cookies (de type _ga et _ga_*) et reçoit des informations sur votre navigation : pages consultées, clics sur ces boutons, type d'appareil et de navigateur, provenance de la visite. Ces traitements peuvent impliquer un transfert de données hors de l'Union européenne, encadré par les garanties que Google met en œuvre.
-
-Aucune donnée personnelle dans les événements. Rushh n'envoie à Google Analytics ni nom, ni adresse e-mail, ni numéro de téléphone. Les adresses de pages sont nettoyées avant envoi : les informations que Calendly peut ajouter à l'adresse de retour après une réservation ne sont pas transmises.
-
-Accepter, refuser, changer d'avis. Accepter et refuser sont aussi simples l'un que l'autre. Vous pouvez modifier votre choix à tout moment avec le bouton « Gérer les cookies » en bas de chaque page : un refus ou un retrait arrête la collecte et supprime les cookies Google Analytics déposés. Votre choix est mémorisé dans votre navigateur pendant 6 mois, puis la question vous est posée de nouveau. Refuser n'a aucune conséquence sur l'utilisation du site. Avec votre accord seulement, le site mémorise aussi dans votre navigateur la source de votre visite (par exemple une campagne) pendant la session et un identifiant technique qui évite de compter deux fois un retour sur la page de confirmation.
-
-Réservation via Calendly. Le bouton « Réserver une démo » ouvre Calendly (calendly.com) dans un nouvel onglet. Calendly est un service tiers qui traite les informations saisies pour la réservation selon sa propre politique de confidentialité. Rushh mesure uniquement les clics sur ce bouton et sur le numéro de la ligne de démonstration, pas les réservations effectuées sur Calendly : Rushh ne reçoit pas d'événement de réservation dans Google Analytics. Rushh ajoute au lien des paramètres indiquant la provenance de la demande (campagne d'origine, ou page du site si elle est inconnue) : ils ne contiennent aucune donnée personnelle et sont consultables dans Calendly. Si Calendly vous renvoie vers la page de confirmation de rushh.fr, l'adresse peut contenir les informations que vous avez saisies : elles servent uniquement à afficher la confirmation et sont retirées de la barre d'adresse dès que la page est affichée.
-
-## Vos droits
-
-Toute personne concernée par un traitement de données peut exercer ses droits d'accès, de rectification, d'opposition et de suppression en écrivant à hello@rushh.fr. Pour les appels pris en charge pour une agence cliente, l'agence est en principe l'interlocuteur pour l'exercice de ces droits.
-
-## Contact
-
-Pour toute question relative à la confidentialité des données, contactez hello@rushh.fr ou consultez la page [Contact](${SITE_URL}/contact).
-`,
-  },
   "/offre": {
     title: "L'offre Rushh immo : standard téléphonique IA pour l'immobilier",
     markdown: `# L'offre Rushh : un standard téléphonique IA qui prend vos appels, fixe vos rendez-vous et libère vos équipes.
@@ -316,17 +248,6 @@ Un outil qui ne figure pas dans cette liste ? L'équipe Rushh étudie l'intercon
 - [Contact](${SITE_URL}/contact)
 - [Guide pour agents IA (llms.txt)](${SITE_URL}/llms.txt)
 - [Plan du site](${SITE_URL}/sitemap.xml)
-`,
-  },
-  "/cgv": {
-    title: "Conditions Générales de Vente | Rushh",
-    markdown: `# Conditions Générales de Vente — Rushh
-
-Version du 4 novembre 2026. Les Conditions Générales de Vente complètes de Rushh sont disponibles sur ${SITE_URL}/cgv.
-
-Rushh est édité par Gaspard David, entrepreneur individuel (EI), exerçant sous le nom commercial « Rushh », immatriculé au RCS de Bayonne sous le numéro 937 698 983 (SIRET 937 698 983 00023), 13 rue du Brise-Lames, 64600 Anglet, France.
-
-Les CGV s'appliquent aux relations contractuelles conclues avec des clients professionnels établis en France. Elles comprennent 12 articles : objet et champ d'application, formation du contrat, prestations, tarifs et paiement, durée et résiliation, obligations du Client, responsabilité, données personnelles, confidentialité, propriété intellectuelle, force majeure, droit applicable et litiges. Le périmètre, les conditions financières et la durée sont définis dans le contrat commercial.
 `,
   },
   "/demonstrations": {
@@ -610,6 +531,10 @@ Retour à l'accueil : ${SITE_URL}/
 `,
   },
 };
+
+for (const doc of [CGV, PRIVACY, MENTIONS]) {
+  MARKDOWN_PAGES[doc.path] = { title: doc.metaTitle, markdown: legalToMarkdown(doc) };
+}
 
 MARKDOWN_PAGES["/ressources"] = { title: CATALOGUE_TITLE, markdown: catalogueToMarkdown() };
 

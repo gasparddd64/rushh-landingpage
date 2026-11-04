@@ -216,6 +216,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/privacy',
+      lastModified: new Date('2026-11-04'),
       changeFrequency: 'monthly',
       priority: 0.3,
     },
