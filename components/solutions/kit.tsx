@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/sections/Nav";
 import { DemoCTA } from "@/components/ui/demo-cta";
+import { TestezCTA } from "@/components/ui/testez-cta";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { OfferAccordions } from "@/app/offre/OfferAccordions";
@@ -148,7 +149,7 @@ export function SolHero({
         <p className="of-lead">{lead}</p>
         {children ?? (
           <div className="of-actions">
-            <DemoCTA label="Réserver une démo" showArrow={false} />
+            <TestezCTA />
             {secondary && (
               <a className="of-ghost" href={secondary.href}>
                 {secondary.label}

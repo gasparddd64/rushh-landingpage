@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
+import { TestezCTA } from "@/components/ui/testez-cta";
 import { DEMO_PHONE_HREF, DEMO_PHONE_LABEL, IconArrow, IconPhone, Tick } from "@/components/solutions/kit";
 import "@/app/solutions/rx.css";
 
@@ -58,7 +59,6 @@ export function RxHero({
   hook,
   lead,
   note,
-  primary = "Réserver une démo adaptée à votre agence",
   secondary = { href: "/demonstrations", label: "Écouter la ligne de démonstration" },
   sample,
   children,
@@ -84,7 +84,7 @@ export function RxHero({
           <p className="rx-lead">{lead}</p>
           {children ?? (
             <div className="rx-actions">
-              <DemoCTA label={primary} showArrow={false} />
+              <TestezCTA />
               {secondary && (
                 <Link className="of-ghost" href={secondary.href}>
                   {secondary.label}
@@ -316,7 +316,7 @@ export function RushhAnswer({
         </div>
       )}
       <div className="rx-answer-links">
-        {cta && <DemoCTA label="Réserver une démo" showArrow={false} />}
+        {cta && <TestezCTA />}
         {allLinks.map((l) => (
           <Link key={l.href} href={l.href} className="rx-link">
             {l.label}

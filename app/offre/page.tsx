@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/sections/Nav";
 import { DemoCTA } from "@/components/ui/demo-cta";
+import { TestezCTA } from "@/components/ui/testez-cta";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { BRAND_NAME, orgRef } from "@/lib/brand";
@@ -156,7 +157,7 @@ export default function OffrePage() {
               Vous vous concentrez sur vos clients. Rushh s&apos;occupe du téléphone.
             </p>
             <div className="of-actions">
-              <DemoCTA label="Réserver une démo" showArrow={false} />
+              <TestezCTA />
               <a className="of-ghost" href="#mise-en-service">
                 Voir comment ça se met en place
                 <IconArrow />

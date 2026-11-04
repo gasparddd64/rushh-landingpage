@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { DemoCTA } from "@/components/ui/demo-cta";
+import { TestezCTA } from "@/components/ui/testez-cta";
 
 /* ── Icônes (tracé fin, 18px) ── */
 const ICONS: Record<string, ReactNode> = {
@@ -185,7 +185,7 @@ export function MetiersSection() {
                     </li>
                   ))}
                 </ul>
-                <DemoCTA label="Réserver une démo" showArrow={false} />
+                <TestezCTA />
               </div>
             ))}
           </div>

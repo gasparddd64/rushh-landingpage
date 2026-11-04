@@ -27,8 +27,8 @@ const FAQ: Array<{ q: string; a: string }> = [
     a: "Oui. Le Standard Rushh s'appuie sur une intelligence artificielle vocale pour accueillir l'appel, comprendre la demande et recueillir les informations utiles. Elle traite le premier niveau selon les règles de l'agence, et transmet à l'équipe dès qu'un échange humain est nécessaire.",
   },
   {
-    q: "Le Standard Rushh est-il conforme au RGPD ?",
-    a: "Oui, Rushh est conforme au RGPD. Les informations recueillies pendant les appels sont utilisées uniquement pour traiter les demandes de l'agence, dans le cadre qu'elle définit.",
+    q: "Le Standard Rushh respecte-t-il le RGPD ?",
+    a: "Rushh s'engage à respecter le RGPD. Pour les appels de l'agence, Rushh intervient en qualité de sous-traitant et traite les informations recueillies selon ses instructions : l'agence reste responsable de ses finalités et de l'information des personnes. Voir la politique de confidentialité.",
   },
   {
     q: "Est-ce que le Standard Rushh remplace l'équipe de l'agence ?",
@@ -55,7 +55,7 @@ export const MARKDOWN_PAGES: Record<string, MarkdownPage> = {
     title: "Rushh immo — Agent vocal IA pour agence immobilière",
     markdown: `# Rushh — Agent vocal IA pour agence immobilière
 
-Rushh conçoit et déploie un standard téléphonique IA sur-mesure pour les agences immobilières : il décroche, qualifie et transmet chaque appel 24 h/24, avec un déploiement adapté à l’agence. La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.
+Rushh conçoit et déploie un standard téléphonique IA sur-mesure pour les agences immobilières : il décroche, qualifie et transmet les appels entrants 24 h/24, avec un déploiement adapté à l’agence. La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.
 
 ## Chaque appel compte pour votre agence
 
@@ -95,7 +95,7 @@ Contact : hello@rushh.fr
     title: "À propos | Rushh",
     markdown: `# À propos de Rushh
 
-Rushh conçoit et déploie le Standard téléphonique IA pensé pour l'immobilier : un agent vocal qui décroche, qualifie et transmet chaque appel entrant d'une agence immobilière, 24 h/24.
+Rushh conçoit et déploie le Standard téléphonique IA pensé pour l'immobilier : un agent vocal qui décroche, qualifie et transmet les appels entrants d'une agence immobilière, 24 h/24.
 
 ## Qui édite Rushh
 
@@ -109,7 +109,7 @@ Les agences immobilières perdent des appels pendant les visites, après la ferm
 
 Le Standard Rushh est pensé pour les métiers de l'immobilier : transaction, gérance locative et syndic de copropriété. Il s'intègre aux outils déjà utilisés par l'agence (Google Calendar, Outlook, Apimo, Whise) sans changer les habitudes de l'équipe.
 
-## Conforme au RGPD
+## Respect du RGPD
 
 Les informations recueillies pendant les appels sont utilisées uniquement pour traiter les demandes de l'agence cliente, dans le cadre qu'elle définit. Voir la politique de confidentialité : ${SITE_URL}/privacy
 

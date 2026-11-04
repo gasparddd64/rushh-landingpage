@@ -5,8 +5,8 @@ export const FAQ_ITEMS = [
     a: "Oui. Le Standard Rushh s'appuie sur une intelligence artificielle vocale pour accueillir l'appel, comprendre la demande et recueillir les informations utiles. Elle traite le premier niveau selon vos règles, et transmet à votre équipe dès qu'un échange humain est nécessaire.",
   },
   {
-    q: "Le Standard Rushh est-il conforme au RGPD ?",
-    a: "Oui, Rushh est conforme au RGPD. Les informations recueillies pendant les appels sont utilisées uniquement pour traiter les demandes de votre agence, dans le cadre que vous définissez.",
+    q: "Le Standard Rushh respecte-t-il le RGPD ?",
+    a: "Rushh s'engage à respecter le RGPD. Pour les appels de votre agence, Rushh intervient en qualité de sous-traitant et traite les informations recueillies selon vos instructions : l'agence reste responsable de ses finalités et de l'information des personnes. Voir la politique de confidentialité.",
   },
   {
     q: "Est-ce que le Standard Rushh remplace mon équipe ?",

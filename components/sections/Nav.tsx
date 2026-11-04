@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { DemoCTA } from "@/components/ui/demo-cta";
+import { TestezCTA } from "@/components/ui/testez-cta";
 
 const NAV_LINKS = [
   { label: "Le standard Rushh", href: "/#relais" },
@@ -51,7 +51,7 @@ export function Nav() {
 
           {/* CTA */}
           <div className="nav-cta">
-            <DemoCTA label="Réserver une démo" showArrow={false} />
+            <TestezCTA />
           </div>
 
           {/* Hamburger */}
@@ -108,7 +108,7 @@ export function Nav() {
           )}
         </div>
         <div className="mobile-menu-ctas">
-          <DemoCTA label="Réserver une démo" />
+          <TestezCTA />
         </div>
       </div>
     </>

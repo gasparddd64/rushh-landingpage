@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type CSSProperties } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
+import { TestezCTA } from "@/components/ui/testez-cta";
 
 const SCENARIOS = [
   {
@@ -226,7 +227,7 @@ export function RelaySection() {
                     <span className="rl-num">0{i + 1} / 04</span>
                     <h3 className="rl-title">{s.title}</h3>
                     <p className="rl-desc">{s.desc}</p>
-                    <DemoCTA label="Réserver une démo" showArrow={false} />
+                    {i < SCENARIOS.length - 1 ? <TestezCTA /> : <DemoCTA label="Réserver une démo" showArrow={false} />}
                   </div>
                 </div>
               </div>

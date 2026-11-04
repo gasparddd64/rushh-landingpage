@@ -5,7 +5,6 @@ import { MetiersSection } from "@/components/sections/MetiersSection";
 import { ToolsOrbitSection } from "@/components/sections/ToolsOrbitSection";
 import { ChiffresSection } from "@/components/sections/ChiffresSection";
 import { CompareSection } from "@/components/sections/CompareSection";
-import { DemoLineSection } from "@/components/sections/DemoLineSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FooterSection } from "@/components/sections/FooterSection";
@@ -143,7 +142,6 @@ export default function Home() {
         <MetiersSection />
         <ToolsOrbitSection />
         <ChiffresSection />
-        <DemoLineSection />
         <FAQSection />
         <CompareSection />
       </div>

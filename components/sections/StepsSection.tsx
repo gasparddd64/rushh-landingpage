@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { CheckIcon, RocketIcon } from "@/components/icons";
-import { DemoCTA } from "@/components/ui/demo-cta";
+import { TestezCTA } from "@/components/ui/testez-cta";
 
 function Typewriter({ text, active, speed = 28, onDone }: { text: string; active: boolean; speed?: number; onDone?: () => void }) {
   const [i, setI] = useState(0);
@@ -56,7 +56,7 @@ function StepCard({ step, active, dark }: { step: StepData; active: boolean; dar
         </div>
         {step.cta && titleDone && (
           <div style={{ marginTop: 18, alignSelf: "flex-start" }}>
-            <DemoCTA variant="white" />
+            <TestezCTA variant="white" />
           </div>
         )}
       </div>
@@ -68,7 +68,7 @@ const STEPS: StepData[] = [
   { num: "01", title: "On se parle", desc: "Un appel de 20 minutes pour comprendre votre agence, votre volume et vos typologies de clients." },
   { num: "02", title: "On configure tout", desc: "Script sur mesure, voix calibrée, connexion à votre calendrier. Vous relisez, vous validez." },
   { num: "03", title: "On teste ensemble", desc: "Appels de test sur chaque scénario. Vous écoutez, on ajuste, vous donnez le feu vert." },
-  { icon: true, title: "On lance !", kicker: "Rushh décroche", desc: "Dès la mise en ligne, chaque appel est pris, chaque prospect qualifié, chaque fiche transmise.", cta: "Réserver une démo" },
+  { icon: true, title: "On lance !", kicker: "Rushh décroche", desc: "Dès la mise en ligne, les appels sont pris en charge, les prospects qualifiés et les fiches transmises.", cta: "Réserver une démo" },
 ];
 
 export function StepsSection() {

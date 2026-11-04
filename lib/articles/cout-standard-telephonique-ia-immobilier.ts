@@ -13,12 +13,12 @@ export const coutStandard: Article = {
   },
   title: "Coût d'un standard téléphonique IA : ce qui le détermine | Rushh",
   description:
-    "Quels éléments déterminent le coût d'un standard téléphonique IA en agence immobilière : périmètre, volume, outils connectés, personnalisation.",
+    "Quels éléments déterminent le coût d'un standard téléphonique IA en agence immobilière : périmètre, organisation, outils connectés, personnalisation.",
   shortTitle: "Ce qui détermine le coût d'un standard IA",
-  summary: "Périmètre, volume, outils, personnalisation : les éléments qui font varier le coût.",
+  summary: "Périmètre, organisation, outils, personnalisation : les éléments qui font varier le coût.",
   h1: "Combien coûte réellement un standard téléphonique IA pour une agence immobilière ?",
   answer:
-    "Le coût d'un standard téléphonique IA n'est pas un chiffre unique : il dépend du périmètre de la prestation, du volume, des outils à connecter et de la personnalisation.",
+    "Le coût d'un standard téléphonique IA n'est pas un chiffre unique : il dépend du périmètre de la prestation, de l'organisation de l'agence, des outils à connecter et de la personnalisation.",
   datePublished: "2026-10-31",
   dateModified: "2026-11-03",
   intro: [
@@ -46,11 +46,11 @@ export const coutStandard: Article = {
         },
         {
           "t": "h3",
-          "text": "2. Le volume et l'organisation de l'agence"
+          "text": "2. L'organisation de l'agence"
         },
         {
           "t": "p",
-          "text": "Nombre d'appels, de métiers (transaction, gestion, syndic), d'agences ou de sites : plus l'organisation est complexe, plus le périmètre l'est aussi."
+          "text": "Métiers (transaction, gestion, syndic), agences ou sites : plus l'organisation est complexe, plus le périmètre l'est aussi."
         },
         {
           "t": "h3",

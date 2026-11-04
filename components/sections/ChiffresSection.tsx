@@ -19,7 +19,7 @@ export function ChiffresSection() {
             <div className="nb-rgpd" role="listitem">
               <div className="nb-rgpd-head">
                 <img className="nb-rgpd-logo" src="/rgpd-logo.webp" width={72} height={72} alt="Logo RGPD" loading="lazy" />
-                <p className="nb-rgpd-title">Conforme au RGPD</p>
+                <p className="nb-rgpd-title">Respect du RGPD</p>
               </div>
               <p className="nb-rgpd-text">
                 Les informations recueillies pendant les appels sont utilisées uniquement pour traiter les demandes de votre organisation, dans le cadre que vous définissez.

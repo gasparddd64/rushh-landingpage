@@ -109,7 +109,7 @@ export function FooterSection() {
           <span>© 2026 Rushh. Tous droits réservés.</span>
           <span className="footer-rgpd">
             <img src="/rgpd-logo.webp" width={20} height={20} alt="" loading="lazy" />
-            Conforme au RGPD
+            Respect du RGPD
           </span>
           <nav className="footer-legal">
             <Link href="/mentions-legales">Mentions légales</Link>
