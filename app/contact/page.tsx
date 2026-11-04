@@ -44,8 +44,6 @@ export default function ContactPage() {
             <p>
               Email : <a href="mailto:hello@rushh.fr">hello@rushh.fr</a>
               <br />
-              Téléphone : <a href="tel:+33517948549">+33 5 17 94 85 49</a>
-              <br />
               Adresse : 13 Rue du Brise Lames, 64600 Anglet, France
             </p>
           </section>

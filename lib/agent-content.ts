@@ -84,7 +84,7 @@ ${FAQ_MARKDOWN}
 - [Guide pour agents IA (llms.txt)](${SITE_URL}/llms.txt)
 - [Plan du site](${SITE_URL}/sitemap.xml)
 
-Contact : hello@rushh.fr — +33 5 17 94 85 49
+Contact : hello@rushh.fr
 `,
   },
   "/about": {
@@ -112,7 +112,6 @@ Les informations recueillies pendant les appels sont utilisées uniquement pour 
 ## Contact
 
 - Email : hello@rushh.fr
-- Téléphone : +33 5 17 94 85 49
 - Adresse : 13 Rue du Brise Lames, 64600 Anglet, France
 `,
   },
@@ -125,7 +124,6 @@ Une question sur le Standard Rushh, une démo à organiser, ou un point sur un d
 ## Coordonnées
 
 - Email : hello@rushh.fr
-- Téléphone : +33 5 17 94 85 49
 - Adresse : 13 Rue du Brise Lames, 64600 Anglet, France
 
 ## Réserver un échange

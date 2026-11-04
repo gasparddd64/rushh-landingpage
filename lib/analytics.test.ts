@@ -25,7 +25,7 @@ describe("classifyHref", () => {
   it("recognises the demo phone number only", () => {
     expect(classifyHref("tel:+33176635709")).toBe("demo_phone_click");
     expect(classifyHref("tel:+33 1 76 63 57 09")).toBe("demo_phone_click");
-    expect(classifyHref("tel:+33517948549")).toBeNull();
+    expect(classifyHref("tel:+33671803711")).toBeNull();
   });
   it("ignores every other link", () => {
     expect(classifyHref("/offre")).toBeNull();

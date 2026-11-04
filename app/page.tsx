@@ -24,7 +24,6 @@ const organizationSchema = {
   "logo": "https://www.rushh.fr/logo-rushh.png",
   "description": "Standard téléphonique conçu et déployé pour les agences immobilières françaises.",
   "email": "hello@rushh.fr",
-  "telephone": "+33517948549",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "13 Rue du Brise Lames",
@@ -36,7 +35,6 @@ const organizationSchema = {
     {
       "@type": "ContactPoint",
       "email": "hello@rushh.fr",
-      "telephone": "+33517948549",
       "contactType": "customer service",
       "areaServed": "FR",
       "availableLanguage": ["French"],
@@ -58,7 +56,6 @@ const localBusinessSchema = {
   "logo": "https://www.rushh.fr/logo-rushh.png",
   "description": "Standard téléphonique conçu et déployé pour les agences immobilières françaises.",
   "email": "hello@rushh.fr",
-  "telephone": "+33517948549",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "13 Rue du Brise Lames",
@@ -70,7 +67,6 @@ const localBusinessSchema = {
     {
       "@type": "ContactPoint",
       "email": "hello@rushh.fr",
-      "telephone": "+33517948549",
       "contactType": "customer service",
       "areaServed": "FR",
       "availableLanguage": ["French"],
