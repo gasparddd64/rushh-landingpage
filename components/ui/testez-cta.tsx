@@ -1,6 +1,7 @@
-import Link from "next/link";
+/** CTA « Testez Rushh » : appelle directement la ligne de démonstration (agence fictive). La réservation d'un rendez-vous reste le rôle de DemoCTA. */
+export const DEMO_LINE_HREF = "tel:+33176635709";
+export const DEMO_LINE_ARIA = "Testez Rushh : appeler la ligne de démonstration au 01 76 63 57 09";
 
-/** CTA « Testez Rushh » : mène à la page qui présente la ligne de démonstration (réservation d'un rendez-vous : DemoCTA). */
 export function TestezCTA({
   variant = "blue",
   label = "Testez Rushh",
@@ -10,9 +11,13 @@ export function TestezCTA({
 }) {
   return (
     <div className="demo-cta-wrap">
-      <Link href="/demonstrations" className={`demo-cta-btn ${variant === "white" ? "demo-cta-btn--white" : ""}`}>
+      <a
+        href={DEMO_LINE_HREF}
+        aria-label={DEMO_LINE_ARIA}
+        className={`demo-cta-btn ${variant === "white" ? "demo-cta-btn--white" : ""}`}
+      >
         {label}
-      </Link>
+      </a>
     </div>
   );
 }
