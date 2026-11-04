@@ -126,7 +126,7 @@ export function CalculatorSection() {
               </div>
 
               <div className="calc-rushh-line">
-                <p>Avec Rushh, ces appels sont pris en charge.</p>
+                <p>Avec Rushh, ces appels sont pris en charge — plus aucune opportunité qui part sans réponse.</p>
               </div>
 
               <DemoCTA variant="white" />
