@@ -207,6 +207,7 @@ const ARTICLES: Article[] = [
           "La transmission de fiches prospects, messages ou comptes rendus ;",
           "Le transfert d'appels vers des interlocuteurs désignés ;",
           "L'interconnexion avec des agendas, CRM ou autres outils professionnels ;",
+          "L'accès à la plateforme Rushh et aux services associés ;",
           "Des automatisations complémentaires expressément convenues."
         ]
       },
