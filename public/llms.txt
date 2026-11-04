@@ -59,6 +59,7 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Rushh vs AirAgent (comparison, sourced and dated): https://www.rushh.fr/vs/airagent
 - Rushh vs VOKAI (comparison, sourced and dated): https://www.rushh.fr/vs/vokai
 - Terms of sale (CGV): https://www.rushh.fr/cgv
+- Legal notice (publisher, hosting): https://www.rushh.fr/mentions-legales
 - Privacy: https://www.rushh.fr/privacy
 - Sitemap: https://www.rushh.fr/sitemap.xml
 

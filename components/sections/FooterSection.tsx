@@ -112,6 +112,7 @@ export function FooterSection() {
             Conforme au RGPD
           </span>
           <nav className="footer-legal">
+            <Link href="/mentions-legales">Mentions légales</Link>
             <Link href="/cgv">CGV</Link>
             <Link href="/privacy">Confidentialité</Link>
             <CookieSettingsButton />

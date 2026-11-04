@@ -209,6 +209,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: 'https://www.rushh.fr/mentions-legales',
+      lastModified: new Date('2026-11-04'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
       url: 'https://www.rushh.fr/privacy',
       changeFrequency: 'monthly',
       priority: 0.3,

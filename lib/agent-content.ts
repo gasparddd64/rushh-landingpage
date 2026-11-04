@@ -77,6 +77,7 @@ ${FAQ_MARKDOWN}
 
 - [À propos](${SITE_URL}/about)
 - [Contact](${SITE_URL}/contact)
+- [Mentions légales](${SITE_URL}/mentions-legales)
 - [Confidentialité](${SITE_URL}/privacy)
 - [Intégrations](${SITE_URL}/integrations)
 - [Conditions Générales de Vente](${SITE_URL}/cgv)
@@ -140,7 +141,39 @@ Rushh est édité par Gaspard David, Entrepreneur Individuel (EI), immatriculé 
 - [À propos](${SITE_URL}/about)
 - [Intégrations](${SITE_URL}/integrations)
 - [Conditions Générales de Vente](${SITE_URL}/cgv)
+- [Mentions légales](${SITE_URL}/mentions-legales)
 - [Confidentialité](${SITE_URL}/privacy)
+`,
+  },
+  "/mentions-legales": {
+    title: "Mentions légales | Rushh",
+    markdown: `# Mentions légales
+
+## 1. Éditeur du site
+
+Le site internet https://www.rushh.fr est édité par Gaspard David, Entrepreneur Individuel (EI), exerçant sous le nom commercial Rushh.
+
+- SIREN : 937 698 983
+- SIRET : 937 698 983 00023
+- Immatriculation : RCS de Bayonne
+- Adresse : 13 Rue du Brise Lames, 64600 Anglet, France
+- Email : hello@rushh.fr
+- Téléphone : +33 6 71 80 37 11
+
+## 2. Directeur de la publication
+
+Le directeur de la publication est Gaspard David.
+
+## 3. Hébergement du site
+
+Le site internet https://www.rushh.fr est hébergé par :
+
+Vercel Inc.
+
+- Adresse : 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis
+- Téléphone : +1 559 288 7060
+- Région d'exécution configurée : Paris, France (cdg1)
+- Site internet : https://vercel.com
 `,
   },
   "/privacy": {
