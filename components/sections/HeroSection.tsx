@@ -1,50 +1,35 @@
-import { DemoCTA } from "@/components/ui/demo-cta";
-import { TestezCTA } from "@/components/ui/testez-cta";
-
 export function HeroSection() {
   return (
-    <section aria-labelledby="home-title" className="hx">
-      <div className="hx-stage">
+    <section aria-labelledby="home-title" className="hero-x">
+      <div className="hero-x-stage">
         <img
           src="/hero-agent-photo.webp"
           alt="Agent immobilier souriant à son bureau, devant l'écran de son ordinateur"
-          className="hx-bg"
-          width={1672}
-          height={941}
+          className="hero-x-bg"
           fetchPriority="high"
         />
-        <div className="hx-overlay" aria-hidden />
+        <div className="hero-x-overlay" aria-hidden />
 
-        <div className="hx-copy">
-          <p className="hx-pill">
-            <span aria-hidden className="hx-pill-dot" />
-            Le standard téléphonique IA sur mesure pour les professionnels de l&apos;immobilier.
+        <div className="hero-x-copy">
+          <p className="hero-x-eyebrow">
+            Le standard téléphonique IA sur mesure pour les professionnels de l&apos;immobilier
           </p>
 
-          <h1 id="home-title" className="hx-title">
-            Ne perdez plus aucun mandat à cause d&apos;un appel manqué.
+          <h1 id="home-title" className="hero-x-title">
+            <span className="hero-x-mask hero-x-mask--a">
+              <span className="hero-x-line">Ne perdez plus d&apos;opportunités</span>
+            </span>
+            <span className="hero-x-mask hero-x-mask--b">
+              <span className="hero-x-line">à cause des appels manqués.</span>
+            </span>
           </h1>
 
-          <p className="hx-sub">
-            Rushh répond aux appels entrants de votre agence 24&nbsp;h/24, qualifie les demandes et fixe des rendez-vous sur
-            vos agendas connectés. Notre équipe conçoit, installe et fait fonctionner votre standard pour vous.
-          </p>
-
-          <div className="hx-ctas">
-            <DemoCTA label="Réserver une démo" variant="hero" />
-            <TestezCTA variant="hero" />
-          </div>
-
-          <ul className="hx-checks">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
-              Disponible 24&nbsp;h/24 et 7&nbsp;j/7
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
-              Entièrement pris en charge par notre équipe
-            </li>
-          </ul>
+          <a className="hero-x-cta" href="tel:+33176635709" aria-label="Testez Rushh : appeler la ligne de démonstration au 01 76 63 57 09">
+            Testez Rushh
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
