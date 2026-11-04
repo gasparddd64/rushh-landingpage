@@ -1335,7 +1335,7 @@ html { overflow-x: hidden; }
   z-index: 1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 34% 40% at 28% 24%, rgba(4,8,18,0.42) 0%, rgba(4,8,18,0.14) 60%, transparent 100%),
+    linear-gradient(90deg, rgba(8,12,24,0.62) 0%, rgba(8,12,24,0.42) 32%, rgba(8,12,24,0.08) 56%, transparent 70%),
     linear-gradient(180deg, rgba(8,12,24,0.06) 0%, rgba(8,12,24,0.04) 55%, rgba(8,12,24,0.38) 100%);
 }
 .hero-x-copy {
@@ -1343,51 +1343,61 @@ html { overflow-x: hidden; }
   inset: 0;
   z-index: 2;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 clamp(24px, 6.5vw, 140px);
+  padding-bottom: 6%;
 }
-.hero-x-eyebrow {
-  position: absolute;
-  left: 17%;
-  top: 18%;
-  margin: 0;
-  max-width: 30vw;
-  font-size: clamp(15px, 1.45vw, 26px);
+.hero-x-sub {
+  margin: clamp(16px, 1.8vw, 28px) 0 0;
+  max-width: min(34vw, 540px);
+  font-size: clamp(16px, 1.45vw, 24px);
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.4;
   letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 1px 18px rgba(8, 12, 24, 0.35);
   opacity: 0;
-  animation: heroFade 0.9s ease 0.15s forwards;
+  animation: heroFade 0.9s ease 0.55s forwards;
+}
+.hero-x-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: clamp(22px, 2.4vw, 36px);
+  opacity: 0;
+  animation: heroFade 0.9s ease 0.75s forwards;
 }
 .hero-x-title {
   margin: 0;
   font-weight: 700;
-  font-size: clamp(34px, 4.7vw, 96px);
-  line-height: 1.05;
+  font-size: clamp(34px, 3.9vw, 80px);
+  line-height: 1.04;
+  max-width: 40vw;
   letter-spacing: -0.045em;
   color: #fff;
   text-shadow: 0 2px 28px rgba(8, 12, 24, 0.28);
 }
 .hero-x-mask {
-  position: absolute;
   display: block;
   overflow: hidden;
-  padding: 0.04em 0.06em 0.16em;
-  white-space: nowrap;
+  padding: 0.04em 0.06em 0.12em 0;
 }
-.hero-x-mask--a { left: 16.6%; top: 35%; }
-.hero-x-mask--b { right: 3.6%; top: 53%; }
 .hero-x-line {
   display: block;
+  text-wrap: balance;
   transform: translateY(115%);
   animation: heroRise 1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 .hero-x-mask--a .hero-x-line { animation-delay: 0.25s; }
 .hero-x-mask--b .hero-x-line { animation-delay: 0.42s; }
-/* Bouton du hero : affiché sur mobile uniquement (sur ordinateur le bouton est dans la barre du haut) */
-.hero-x-cta { display: none; }
 @keyframes heroRise { to { transform: translateY(0); } }
 @keyframes heroFade { to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
-  .hero-x-eyebrow, .hero-x-cta { opacity: 1; animation: none; }
+  .hero-x-sub, .hero-x-ctas { opacity: 1; animation: none; }
   .hero-x-line { transform: none; animation: none; }
 }
 @media (max-width: 768px) {
@@ -1405,37 +1415,17 @@ html { overflow-x: hidden; }
       radial-gradient(ellipse 80% 30% at 20% 12%, rgba(4,8,18,0.45) 0%, transparent 100%),
       linear-gradient(180deg, rgba(8,12,24,0.08) 0%, rgba(8,12,24,0.06) 45%, rgba(8,12,24,0.62) 100%);
   }
-  .hero-x-eyebrow { left: 20px; top: 24px; max-width: 70vw; font-size: 15px; }
-  /* Titre + bouton : un seul bloc collé en bas à gauche, aligné sur le texte du haut */
+  /* Texte + boutons : un seul bloc collé en bas à gauche */
   .hero-x-copy {
-    display: flex;
-    flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
-    padding: 0 20px 64px;
+    padding: 0 20px 56px;
   }
-  .hero-x-title { font-size: clamp(32px, 9.6vw, 50px); line-height: 1; max-width: 100%; }
-  .hero-x-mask { position: static; white-space: normal; padding: 0.03em 0.06em 0.1em 0; }
+  .hero-x-title { font-size: clamp(32px, 9.4vw, 48px); line-height: 1; max-width: 100%; }
+  .hero-x-mask { white-space: normal; padding: 0.03em 0.06em 0.1em 0; }
   .hero-x-line { text-wrap: balance; }
   .hero-x-mask--a { margin-bottom: -0.06em; }
-  .hero-x-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 18px;
-    padding: 13px 22px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    background: transparent;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    opacity: 0;
-    animation: heroFade 0.8s ease 0.65s forwards;
-  }
-  .hero-x-cta:active { background: rgba(255, 255, 255, 0.14); }
+  .hero-x-sub { max-width: 92%; font-size: 15.5px; margin-top: 14px; }
+  .hero-x-ctas { margin-top: 20px; gap: 10px; }
 }
 
 .hero-title {

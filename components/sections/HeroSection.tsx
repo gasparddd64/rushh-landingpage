@@ -1,3 +1,6 @@
+import { DemoCTA } from "@/components/ui/demo-cta";
+import { TestezCTA } from "@/components/ui/testez-cta";
+
 export function HeroSection() {
   return (
     <section aria-labelledby="home-title" className="hero-x">
@@ -11,25 +14,23 @@ export function HeroSection() {
         <div className="hero-x-overlay" aria-hidden />
 
         <div className="hero-x-copy">
-          <p className="hero-x-eyebrow">
-            Le standard téléphonique IA sur mesure pour les professionnels de l&apos;immobilier
-          </p>
-
           <h1 id="home-title" className="hero-x-title">
             <span className="hero-x-mask hero-x-mask--a">
-              <span className="hero-x-line">Ne perdez plus d&apos;opportunités</span>
+              <span className="hero-x-line">Ne perdez plus aucun mandat</span>
             </span>
             <span className="hero-x-mask hero-x-mask--b">
-              <span className="hero-x-line">à cause des appels manqués.</span>
+              <span className="hero-x-line">à cause d&apos;un appel manqué.</span>
             </span>
           </h1>
 
-          <a className="hero-x-cta" href="tel:+33176635709" aria-label="Testez Rushh : appeler la ligne de démonstration au 01 76 63 57 09">
-            Testez Rushh
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </a>
+          <p className="hero-x-sub">
+            Le standard téléphonique IA sur mesure pour les professionnels de l&apos;immobilier.
+          </p>
+
+          <div className="hero-x-ctas">
+            <DemoCTA label="Réserver une démo" showArrow={false} />
+            <TestezCTA variant="white" />
+          </div>
         </div>
       </div>
     </section>
