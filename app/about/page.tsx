@@ -48,6 +48,27 @@ export default function AboutPage() {
           </section>
 
           <section className="cgv-article">
+            <h2>Sur le terrain</h2>
+            <figure style={{ margin: "0 0 16px" }}>
+              <img
+                src="/equipe-salon-immobilier.webp"
+                width={1400}
+                height={933}
+                alt="Deux membres de l'équipe Rushh, en costume, lors d'un salon de l'immobilier"
+                loading="lazy"
+                style={{ display: "block", width: "100%", height: "auto", borderRadius: 18 }}
+              />
+              <figcaption style={{ marginTop: 10, fontSize: 14, color: "var(--muted)" }}>
+                L&apos;équipe Rushh, lors d&apos;un salon de l&apos;immobilier.
+              </figcaption>
+            </figure>
+            <p>
+              Nous allons à la rencontre des agences et des acteurs du secteur pour comprendre leurs appels du
+              quotidien et concevoir un standard qui leur ressemble.
+            </p>
+          </section>
+
+          <section className="cgv-article">
             <h2>Qui édite Rushh</h2>
             <p>
               Rushh est édité par Gaspard David, Entrepreneur Individuel (EI), exerçant sous le

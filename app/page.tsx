@@ -4,6 +4,7 @@ import { RelaySection } from "@/components/sections/RelaySection";
 import { MetiersSection } from "@/components/sections/MetiersSection";
 import { ToolsOrbitSection } from "@/components/sections/ToolsOrbitSection";
 import { ChiffresSection } from "@/components/sections/ChiffresSection";
+import { TerrainSection } from "@/components/sections/TerrainSection";
 import { CompareSection } from "@/components/sections/CompareSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
@@ -142,6 +143,7 @@ export default function Home() {
         <MetiersSection />
         <ToolsOrbitSection />
         <ChiffresSection />
+        <TerrainSection />
         <FAQSection />
         <CompareSection />
       </div>
