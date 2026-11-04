@@ -291,13 +291,13 @@ Un outil qui ne figure pas dans cette liste ? L'équipe Rushh étudie l'intercon
     title: "Conditions Générales de Vente | Rushh",
     markdown: `# Conditions Générales de Vente — Rushh
 
-Les Conditions Générales de Vente complètes de Rushh sont disponibles sur ${SITE_URL}/cgv.
+Version du 3 novembre 2026. Les Conditions Générales de Vente complètes de Rushh sont disponibles sur ${SITE_URL}/cgv.
 
 Rushh est édité par Gaspard David, Entrepreneur Individuel (EI), exerçant sous le nom commercial « Rushh », immatriculé au RCS de Bayonne sous le numéro 937 698 983 (SIRET 937 698 983 00023), 13 Rue du Brise Lames, 64600 Anglet, France.
 
-Rushh conçoit, configure, déploie et maintient pour ses clients un standard téléphonique personnalisé : réception automatisée d'appels entrants, qualification des appelants, prise de rendez-vous, transmission de fiches prospects et interconnexion avec l'agenda ou le CRM du client.
+Les CGV s'appliquent aux relations entre professionnels de l'immobilier établis en France et Rushh, pour les nouveaux contrats qui les intègrent. Elles sont organisées en six chapitres : dispositions générales ; configuration, déploiement et fonctionnement ; tarifs, consommation et paiement ; durée, résiliation et fin du contrat ; téléphonie, données et confidentialité ; propriété intellectuelle, responsabilité et litiges.
 
-Voir la page complète pour le détail des articles (objet, description du service, obligations des parties, tarifs, durée, résiliation).
+Voir la page complète pour le détail des 32 articles.
 `,
   },
   "/demonstrations": {

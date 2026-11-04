@@ -4711,3 +4711,54 @@ section { position: relative; }
 }
 
 
+
+/* CGV : chapitres, sous-articles, listes numérotées */
+.cgv-toc-chapter {
+  display: block;
+  margin: 14px 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3, var(--ink-2));
+}
+.cgv-toc-chapter:first-child { margin-top: 0; }
+.cgv-chapter {
+  margin: 56px 0 0;
+  padding-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cgv-chapter:first-child { margin-top: 0; }
+.cgv-chapter + .cgv-article { margin-top: 16px; border-top: none; padding-top: 0; }
+.cgv-article h3.cgv-sub {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 24px 0 12px;
+}
+.cgv-article ol {
+  list-style: decimal;
+  padding-left: 22px;
+  margin: 4px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cgv-article ol:last-child { margin-bottom: 0; }
+.cgv-article ol li { font-size: 16px; line-height: 1.7; color: var(--ink-2); }
+.cgv-closing {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+@media (max-width: 640px) {
+  .cgv-article ol li { font-size: 15px; }
+  .cgv-chapter { margin-top: 40px; }
+}
