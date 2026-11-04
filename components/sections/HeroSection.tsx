@@ -31,8 +31,8 @@ export function HeroSection() {
           </p>
 
           <div className="hx-ctas">
-            <DemoCTA label="Réserver une démo" showArrow={false} />
-            <TestezCTA variant="ghost" />
+            <DemoCTA label="Réserver une démo" variant="hero" />
+            <TestezCTA variant="hero" />
           </div>
 
           <ul className="hx-checks">

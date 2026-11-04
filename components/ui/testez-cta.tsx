@@ -6,9 +6,22 @@ export function TestezCTA({
   variant = "blue",
   label = "Testez Rushh",
 }: {
-  variant?: "blue" | "white" | "ghost";
+  variant?: "blue" | "white" | "ghost" | "hero";
   label?: string;
 }) {
+  if (variant === "hero") {
+    return (
+      <a href={DEMO_LINE_HREF} aria-label={DEMO_LINE_ARIA} className="hb hb--neutral">
+        <span className="hb-text">{label}</span>
+        <span className="hb-icon" aria-hidden>
+          <svg viewBox="0 0 18 18" fill="none" className="hb-phone">
+            <circle cx="9" cy="9" r="8.5" fill="currentColor" opacity="0.22" />
+            <path d="M12.6 12.9v1a.7.7 0 0 1-.77.7 7 7 0 0 1-3-1.05 6.9 6.9 0 0 1-2.1-2.1 7 7 0 0 1-1.05-3.05.7.7 0 0 1 .7-.77h1a.7.7 0 0 1 .7.6c.04.35.12.7.25 1a.7.7 0 0 1-.15.75l-.43.43a5.6 5.6 0 0 0 2.1 2.1l.43-.43a.7.7 0 0 1 .75-.15c.33.13.66.21 1 .25a.7.7 0 0 1 .6.7z" fill="currentColor" />
+          </svg>
+        </span>
+      </a>
+    );
+  }
   return (
     <div className="demo-cta-wrap">
       <a

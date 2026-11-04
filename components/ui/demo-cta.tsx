@@ -5,11 +5,27 @@ export function DemoCTA({
   label = "Réserver une démo",
   showArrow = false,
 }: {
-  variant?: "blue" | "white";
+  variant?: "blue" | "white" | "hero";
   label?: string;
   showArrow?: boolean;
 }) {
   const isWhite = variant === "white";
+  if (variant === "hero") {
+    return (
+      <a
+        href="https://calendly.com/gaspard-david/demo"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hb hb--primary"
+      >
+        <span className="hb-text">{label}</span>
+        <span className="hb-icon" aria-hidden>
+          <svg viewBox="0 0 10 10" fill="none" className="hb-arrow"><path d="M3.5415 8.54167L7.08317 5L3.5415 1.45833" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          <svg viewBox="0 0 10 10" fill="none" className="hb-arrow"><path d="M3.5415 8.54167L7.08317 5L3.5415 1.45833" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        </span>
+      </a>
+    );
+  }
   return (
     <div className="demo-cta-wrap">
       <a
