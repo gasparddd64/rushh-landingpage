@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DemoCTA } from "@/components/ui/demo-cta";
+import { Nav } from "@/components/sections/Nav";
 import { parseConfirmationParams, type SearchParamsInput } from "@/lib/confirmation";
 import { BookingAnalytics } from "@/components/confirmation/BookingAnalytics";
 import { ConfirmationUrlCleaner } from "@/components/confirmation/ConfirmationUrlCleaner";
@@ -40,12 +41,7 @@ export default async function ConfirmationPage({
         <circle cx="600" cy="600" r="520" fill="none" stroke="url(#confArcGradient)" strokeWidth="1.5" />
       </svg>
 
-      <div className="conf-topbar">
-        <Link href="/" className="conf-brand" aria-label="Rushh immo, retour à l'accueil">
-          <img src="/logo-rushh-icon.png" alt="" className="conf-brand-logo" />
-          <span>Rushh<span className="brand-immo">immo</span></span>
-        </Link>
-      </div>
+      <Nav />
 
       <div className="conf-content">
         <div className="conf-badge">

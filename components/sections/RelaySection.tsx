@@ -7,129 +7,72 @@ import { TestezCTA } from "@/components/ui/testez-cta";
 const SCENARIOS = [
   {
     title: "Besoin compris",
-    chip: "Motif identifié",
-    desc: "Rushh identifie la raison de l'appel et comprend la situation avant de transmettre.",
+    tag: "Capté",
+    points: [
+      { lead: "Estimation, visite, location ou gestion :", text: "Rushh identifie rapidement pourquoi votre client appelle." },
+      { lead: "Vendeur, acquéreur, locataire ou propriétaire bailleur :", text: "chaque demande est prise en charge selon son contexte." },
+    ],
     img: "/scenario-1.webp",
     alt: "Post-it jaune collé sur un écran d'ordinateur : Mme Lefèvre, visite T3, Victor Hugo, budget OK",
   },
   {
-    title: "Informations recueillies",
-    chip: "Fiche complétée",
-    desc: "Les éléments utiles à votre équipe sont collectés au fil de l'échange.",
+    title: "Les bonnes informations recueillies",
+    tag: "Organisé",
+    points: [
+      { lead: "Projet immobilier, bien concerné, disponibilités, urgence :", text: "Rushh pose les questions utiles." },
+      { lead: "Votre équipe retrouve une demande claire et complète,", text: "sans avoir à tout redemander." },
+    ],
     img: "/scenario-2.webp",
     alt: "Post-it jaune posé sur un agenda : M. Bernard, rappel demain, achat maison, budget à voir",
   },
   {
-    title: "Action adaptée",
-    chip: "Règle de l'agence appliquée",
-    desc: "Rendez-vous, transfert ou message : Rushh applique les règles de votre organisation.",
+    title: "La bonne action, au bon moment",
+    tag: "Traité",
+    points: [
+      { lead: "Proposer un rendez-vous, transférer un appel ou transmettre un message :", text: "Rushh agit selon vos consignes." },
+      { lead: "Et si votre agenda est connecté,", text: "vos rendez-vous peuvent être organisés directement." },
+    ],
     img: "/scenario-3.webp",
     alt: "Post-it jaune sur un téléphone de bureau d'agence : Mme Martin, vendeuse, rappel demain, pour Sarah",
   },
   {
-    title: "Équipe informée",
-    chip: "Équipe notifiée",
-    desc: "Votre équipe reçoit le contexte utile pour reprendre la demande, sans tout redemander.",
+    title: "Vous savez qui rappeler, et pourquoi",
+    tag: "Transmis",
+    points: [
+      { lead: "Un propriétaire souhaite vendre ? Un acquéreur attend une visite ?", text: "Vous retrouvez le motif, les coordonnées et les informations recueillies." },
+      { lead: "Votre équipe sait exactement", text: "quelle suite donner à chaque appel." },
+    ],
     img: "/scenario-4.webp",
     alt: "Post-it jaune posé près d'un téléphone : M. Martin, achat résidence principale, T4 ou T5, Bordeaux, budget environ 650 000 euros",
   },
 ]
 
-/* ══════════════════════════════════════════════
-   Les 3 situations du quotidien (texte seul, une par étape)
-═══════════════════════════════════════════════ */
-const MOMENTS = ["En visite", "Déjà en ligne", "Après la fermeture"];
-
-/* ══════════════════════════════════════════════
-   Mise en scène au scroll — le défilement normal pilote la scène (aucun blocage :
-   on peut scroller vite ou lentement, au doigt comme à la molette)
-   étape 0  « En visite » (apparaît à l'arrivée)
-   étape 1  + « Déjà en ligne »
-   étape 2  + « Après la fermeture »
-   étape 3  « Vos équipes sont occupées. Rushh prend le relais. » remplace les trois lignes
-   étape 4  il dézoome à sa place, le reste apparaît, la 1ʳᵉ carte remonte
-═══════════════════════════════════════════════ */
-const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
-const ease = (t: number) => t * t * (3 - 2 * t);
-const seg = (p: number, a: number, b: number) => ease(clamp01((p - a) / (b - a)));
-
-// Positions des 5 étapes le long de la scène (chacune se déroule en continu avec le scroll) (fraction de la distance épinglée)
-const STOPS = [0, 0.25, 0.5, 0.75, 1];
-
 // Décalage d'épinglage entre deux cartes (doit rester égal au --i * 26px du CSS)
 const PIN_STEP = 26;
 
 export function RelaySection() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const stageRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const moveRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Scène épinglée : progression du scroll → variables CSS
+  // Épinglage : une carte plus haute que l'écran se cale plus haut, pour qu'on puisse en lire toute la fin avant que la suivante la recouvre.
   useEffect(() => {
-    const track = trackRef.current;
-    const stage = stageRef.current;
-    const header = headerRef.current;
-    const move = moveRef.current;
-    if (!track || !stage || !header || !move) return;
-
-    let raf = 0;
-    // Toujours relu à la volée : la mise en page peut bouger (polices, images, redimensionnement)
-    const distance = () => Math.max(1, track.offsetHeight - stage.clientHeight);
-
-    const measure = () => {
-      const stageH = stage.clientHeight;
-      const centerY = header.offsetTop + move.offsetTop + move.offsetHeight / 2;
-      // centre visuel de la scène (la barre de navigation occupe le haut)
-      stage.style.setProperty("--dy", `${(stageH + 64) / 2 - centerY}px`);
-      const scale = (window.innerWidth * 0.9) / Math.max(1, move.offsetWidth);
-      stage.style.setProperty("--S", String(Math.min(2.5, Math.max(1.2, scale))));
+    const pin = () => {
+      const base = window.innerWidth <= 768 ? 84 : 92;
+      itemRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const wanted = base + i * PIN_STEP;
+        const fit = window.innerHeight - el.offsetHeight - 14;
+        el.style.top = `${Math.max(8, Math.min(wanted, fit))}px`;
+      });
     };
-
-    // Navigateurs récents : la scène est animée par le scroll côté CSS (animation-timeline), sans JS ni décalage
-    const cssDriven =
-      typeof CSS !== "undefined" &&
-      CSS.supports("animation-timeline: view()") &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const update = () => {
-      raf = 0;
-      if (cssDriven) return;
-      const top = track.getBoundingClientRect().top;
-      const p = clamp01(-top / distance());
-      const set = (k: string, v: number) => stage.style.setProperty(k, v.toFixed(4));
-      // « En visite » se révèle pendant que la scène entre à l'écran
-      set("--s1", ease(clamp01(1 - top / (window.innerHeight * 0.55))));
-      set("--s2", seg(p, STOPS[0], STOPS[1]));
-      set("--s3", seg(p, STOPS[1], STOPS[2]));
-      const swap = seg(p, STOPS[2], STOPS[3]);
-      set("--out", swap);
-      set("--ring", swap);
-      const z = seg(p, STOPS[3], STOPS[4]);
-      set("--z", z);
-      stage.style.setProperty("--mix", `${((1 - z) * 100).toFixed(1)}%`);
-      set("--hdr", seg(p, 0.83, 0.97));
-    };
-
-    const schedule = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-    const onResize = () => {
-      measure();
-      schedule();
-    };
-
-    measure();
-    update();
-    document.fonts?.ready.then(onResize);
-    window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", onResize);
+    pin();
+    const ro = new ResizeObserver(pin);
+    itemRefs.current.forEach((el) => el && ro.observe(el));
+    window.addEventListener("resize", pin);
+    document.fonts?.ready.then(pin);
     return () => {
-      window.removeEventListener("scroll", schedule);
-      window.removeEventListener("resize", onResize);
-      if (raf) cancelAnimationFrame(raf);
+      ro.disconnect();
+      window.removeEventListener("resize", pin);
     };
   }, []);
 
@@ -175,33 +118,19 @@ export function RelaySection() {
 
   return (
     <section id="relais" className="rs-section" data-no-reveal aria-labelledby="relais-title">
-      <div className="rs-track" ref={trackRef}>
-        <div className="rs-stage" ref={stageRef}>
-          {/* 1 · Les trois situations, qui apparaissent l'une après l'autre au scroll */}
-          <div className="rs-lines">
-            {MOMENTS.map((m, i) => (
-              <p key={m} className={`rs-line rs-line--${i + 1}`}>
-                <span className="rs-line-in">{m}</span>
-              </p>
-            ))}
-          </div>
-
-          {/* 2 · Vos équipes sont occupées. Rushh prend le relais. : surgit au centre, puis dézoome */}
-          <div className="rs-header" ref={headerRef}>
-            <span className="lf-pill rs-pill">Le relais Rushh</span>
-            <div className="rs-h2-move" ref={moveRef}>
-              <h2 id="relais-title" className="lf-h2 rs-h2">
-                Vos équipes sont occupées.<br />Rushh prend le relais.
-              </h2>
-            </div>
-            <p className="lf-sub rs-sub">
-              Rushh comprend chaque demande, recueille les informations essentielles et permet à vos équipes de reprendre les échanges au bon moment.
-            </p>
-          </div>
+      <div className="lf-wrap">
+        <div className="rs-head">
+          <span className="lf-pill">Le relais Rushh</span>
+          <h2 id="relais-title" className="lf-h2 rs-h2">
+            Vos équipes sont occupées.<br />Rushh prend le relais.
+          </h2>
+          <p className="lf-sub rs-sub">
+            Demande d&apos;estimation, visite à organiser, urgence locative… Rushh répond à vos clients, pose les bonnes questions et fait avancer chaque demande selon votre organisation.
+          </p>
         </div>
       </div>
 
-      {/* 3 · Les quatre cartes (la première remonte sous le titre) */}
+      {/* Les quatre cartes */}
       <div className="rs-stackwrap">
         <div className="lf-wrap">
           <div className="rl-stack">
@@ -220,14 +149,26 @@ export function RelaySection() {
                     <img src={s.img} alt={s.alt} loading="lazy" />
                     <span className="rl-chip">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
-                      {s.chip}
+                      {s.tag}
                     </span>
                   </div>
                   <div className="rl-content">
-                    <span className="rl-num">0{i + 1} / 04</span>
+                    <span className="rl-stepnum">0{i + 1}</span>
                     <h3 className="rl-title">{s.title}</h3>
-                    <p className="rl-desc">{s.desc}</p>
-                    {i < SCENARIOS.length - 1 ? <TestezCTA /> : <DemoCTA label="Réserver une démo" showArrow={false} />}
+                    <ul className="rl-points">
+                      {s.points.map((pt) => (
+                        <li key={pt.lead} className="rl-point">
+                          <svg className="rl-badge" width="24" height="24" viewBox="0 0 24 24" aria-hidden>
+                            <path className="rl-badge-bg" d="M12 2.2c.7 0 1.4.2 2 .6l5.6 3.2c1.2.7 2 2 2 3.4v5.2c0 1.4-.8 2.7-2 3.4L14 21.2c-1.2.7-2.8.7-4 0L4.4 18c-1.2-.7-2-2-2-3.4V9.4c0-1.4.8-2.7 2-3.4L10 2.8c.6-.4 1.3-.6 2-.6z" />
+                            <rect className="rl-badge-dot" x="9.3" y="9.3" width="5.4" height="5.4" rx="1.4" transform="rotate(45 12 12)" />
+                          </svg>
+                          <span>
+                            <b>{pt.lead}</b> {pt.text}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    {i === 0 ? <TestezCTA /> : i === SCENARIOS.length - 1 ? <DemoCTA label="Réserver une démo" /> : null}
                   </div>
                 </div>
               </div>

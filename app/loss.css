@@ -1,0 +1,39 @@
+/* Section « Chiffrez la perte » */
+.lf section.loss { padding-top: 150px; }
+@media (max-width: 760px) { .lf section.loss { padding-top: 120px; } }
+/* Section « Chiffrez la perte » : calculateur animé (carte de gauche) + résultat (carte de droite) */
+.loss-head { gap: 14px; }
+.loss-head .lf-h2 { font-size: clamp(28px, 3.3vw, 40px); max-width: 760px; text-wrap: balance; }
+.loss-lead-1, .loss-lead-2 { display: block; }
+.loss-lead-1 { text-wrap: balance; }
+.loss-lead-2 { margin-top: 6px; }
+.loss-lead { max-width: 600px; text-wrap: balance; margin: 0 auto; font-size: 15px; line-height: 1.6; text-align: center; }
+.loss-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr); gap: clamp(24px, 3vw, 40px); max-width: 980px; margin-left: auto; margin-right: auto; align-items: center; margin-top: clamp(32px, 4vw, 52px); }
+.loss-card { border-radius: 26px; border: 1px solid #d9e5f8; background: linear-gradient(180deg, #f8fbff 0%, #f2f7fe 100%); box-shadow: 0 1px 2px rgba(12, 16, 36, 0.03); }
+.loss-card--form { padding: 28px 30px 30px; display: flex; flex-direction: column; gap: 16px; }
+.loss-field { display: flex; flex-direction: column; gap: 9px; opacity: var(--o, 1); transform: translateY(calc((1 - var(--o, 1)) * 10px)); }
+.loss-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.loss-label { font-size: 13.5px; font-weight: 500; letter-spacing: -0.01em; color: #1a2140; }
+.loss-pct { font-size: 13px; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+.loss-input { display: flex; align-items: center; height: 44px; padding: 0 16px; border-radius: 14px; border: 1px solid #e3ebf8; background: #fbfdff; font-size: 14.5px; font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; width: 100%; box-sizing: border-box; }
+.loss-input--eur { justify-content: space-between; }
+.loss-input--eur span:last-child { color: #6b7396; font-weight: 500; }
+
+/* Barre de progression (affichage seul) */
+.loss-bar { width: 100%; height: 16px; border-radius: 999px; overflow: hidden; background: #fff; border: 1px solid #e3ebf8; }
+.loss-bar > i { display: block; height: 100%; border-radius: 999px; background: var(--accent); }
+
+.loss-card--result { padding: 30px 32px 28px; display: flex; flex-direction: column; background: linear-gradient(180deg, #fff 0%, #f6f9ff 100%); }
+.loss-eyebrow { margin: 0; font-size: 12.5px; font-weight: 600; letter-spacing: -0.01em; color: #1a2140; }
+.loss-result { margin: 16px 0 0; font-size: clamp(23px, 2.1vw, 28px); font-weight: 600; line-height: 1.16; letter-spacing: -0.045em; color: var(--ink); }
+.loss-amount { color: var(--accent); font-variant-numeric: tabular-nums; }
+.loss-result-sub { margin: 16px 0 0; max-width: 360px; font-size: 14px; line-height: 1.6; color: #3b4263; min-height: 3.2em; }
+.loss-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 1px solid #e7ecf6; }
+
+@media (max-width: 860px) {
+  .loss-grid { grid-template-columns: 1fr; }
+  .loss-card--form { padding: 28px 22px 30px; border-radius: 26px; }
+  .loss-card--result { padding: 30px 24px 26px; border-radius: 26px; }
+  .loss-result-sub { min-height: 0; }
+}
+

@@ -26,62 +26,62 @@ function Icon({ name }: { name: string }) {
   );
 }
 
-/* ── Contenu des métiers ── */
+/* ── Contenu des métiers (ordre des onglets : Transaction, Location, Gérance, Syndic) ── */
 const METIERS = [
-  {
-    id: "syndic",
-    name: "Syndic",
-    img: "/metier-syndic.png",
-    imgWebp: "/metier-syndic.webp",
-    alt: "Façade d'un immeuble résidentiel moderne, vue depuis la rue",
-    title: "Moins d'appels répétitifs. Plus de temps pour vos copropriétés.",
-    desc: "Rushh prend en charge les demandes courantes des copropriétaires et prestataires, tout en transmettant les situations qui nécessitent votre intervention.",
-    points: [
-      { icon: "chat", title: "Réponses aux questions courantes", desc: "Les demandes récurrentes des copropriétaires trouvent une réponse immédiate, sans solliciter votre équipe." },
-      { icon: "wrench", title: "Suivi des interventions prestataires", desc: "Les prestataires qui appellent sont identifiés et leur demande est consignée pour votre gestionnaire." },
-      { icon: "route", title: "Transmission aux bons interlocuteurs", desc: "Chaque demande est orientée vers la bonne personne, avec le contexte utile pour la traiter." },
-    ],
-  },
-  {
-    id: "gerance",
-    name: "Gérance",
-    img: "/metier-gerance.png",
-    imgWebp: "/metier-gerance.webp",
-    alt: "Vue aérienne d'une ville et de ses immeubles au crépuscule",
-    title: "Vos locataires obtiennent une réponse, même quand vous êtes occupé.",
-    desc: "Sinistre, panne ou question administrative : Rushh identifie les demandes, applique vos consignes et alerte votre équipe lorsque la situation l'exige.",
-    points: [
-      { icon: "clipboard", title: "Déclaration de sinistre guidée", desc: "Nature du sinistre, adresse, locataire concerné et degré d'urgence sont recueillis dès l'appel." },
-      { icon: "shield", title: "Application de vos procédures", desc: "Vos consignes de gérance sont appliquées à chaque appel, de la simple question à la panne." },
-      { icon: "alert", title: "Alerte immédiate si urgence", desc: "Une situation urgente déclenche le transfert ou l'alerte de votre équipe, sans attendre le lendemain." },
-    ],
-  },
   {
     id: "transaction",
     name: "Transaction",
-    img: "/metier-transaction.png",
-    imgWebp: "/metier-transaction.webp",
-    alt: "Façade d'un immeuble haussmannien, bien à vendre",
-    title: "Ne laissez plus un appel manqué vous coûter un mandat ou une vente.",
-    desc: "Rushh prend en charge les appels de vos vendeurs et acquéreurs, qualifie leurs projets et transmet les opportunités à votre équipe.",
+    img: "/metier-transaction.webp",
+    imgWebp: undefined as string | undefined,
+    alt: "Immeuble haussmannien d'angle et ses balcons en fer forgé",
+    title: "Un propriétaire veut vendre. Ne laissez pas passer le mandat.",
+    desc: "Pendant vos visites et vos rendez-vous, Rushh répond aux vendeurs et aux acquéreurs, recueille leurs projets et vous permet de reprendre chaque opportunité avec les bonnes informations.",
     points: [
-      { icon: "search", title: "Identification du bien concerné", desc: "Votre équipe rappelle en sachant de quel bien parle l'acquéreur, sans avoir à le redemander." },
-      { icon: "target", title: "Qualification du budget et du projet", desc: "Budget, projet d'achat et délais sont recueillis dès le premier appel pour prioriser vos rappels." },
-      { icon: "calendar", title: "Prise de rendez-vous automatique", desc: "La visite est proposée selon vos disponibilités et inscrite directement dans votre agenda." },
+      { icon: "target", title: "Qualification des demandes d'estimation" },
+      { icon: "home", title: "Renseignements sur les biens à vendre" },
+      { icon: "calendar", title: "Organisation des visites et rendez-vous" },
     ],
   },
   {
     id: "location",
     name: "Location",
-    img: "/metier-location.png",
+    img: "/metier-location.webp",
     imgWebp: undefined as string | undefined,
-    alt: "Vue sur les toits de Paris et la tour Eiffel",
-    title: "Vos demandes de location sont prises en charge, même pendant les visites.",
-    desc: "Rushh répond aux candidats locataires, recueille les informations utiles et facilite l'organisation des visites selon votre fonctionnement.",
+    alt: "Salon lumineux et meublé d'un appartement",
+    title: "Vos prochains locataires n'attendent pas que vous soyez disponible.",
+    desc: "Rushh répond aux candidats, les renseigne sur les biens disponibles, recueille leurs critères et peut organiser les visites selon vos disponibilités.",
     points: [
-      { icon: "user", title: "Qualification du dossier candidat", desc: "Situation, date d'entrée souhaitée et critères essentiels sont recueillis selon vos règles." },
-      { icon: "home", title: "Présentation des biens disponibles", desc: "Le candidat obtient les informations essentielles sur le bien qui l'intéresse." },
-      { icon: "calendar", title: "Planification des visites", desc: "Les visites sont planifiées sans effort pour votre équipe, sur vos créneaux." },
+      { icon: "user", title: "Qualification des dossiers candidats" },
+      { icon: "home", title: "Informations sur les biens disponibles" },
+      { icon: "calendar", title: "Planification des visites" },
+    ],
+  },
+  {
+    id: "gerance",
+    name: "Gérance",
+    img: "/metier-gerance.webp",
+    imgWebp: undefined as string | undefined,
+    alt: "Hall d'entrée d'un immeuble avec ses boîtes aux lettres",
+    title: "Vos gestionnaires ont autre chose à faire que décrocher toute la journée.",
+    desc: "Fuite d'eau, question de loyer, demande d'un propriétaire : Rushh identifie le motif de chaque appel, repère les urgences et transmet au bon interlocuteur.",
+    points: [
+      { icon: "chat", title: "Demandes des locataires et propriétaires" },
+      { icon: "alert", title: "Identification des urgences techniques" },
+      { icon: "route", title: "Transmission au gestionnaire concerné" },
+    ],
+  },
+  {
+    id: "syndic",
+    name: "Syndic",
+    img: "/metier-syndic.webp",
+    imgWebp: undefined as string | undefined,
+    alt: "Immeuble résidentiel moderne en bois et verre, vu depuis la rue",
+    title: "Une urgence dans un immeuble ? La bonne personne est prévenue.",
+    desc: "Panne d'ascenseur, dégât des eaux, question de charges : Rushh recueille les signalements des copropriétaires, identifie les priorités et transmet les informations utiles à votre équipe.",
+    points: [
+      { icon: "chat", title: "Demandes des copropriétaires" },
+      { icon: "alert", title: "Signalement des incidents et urgences" },
+      { icon: "route", title: "Transmission des informations au bon contact" },
     ],
   },
 ];
@@ -126,11 +126,12 @@ export function MetiersSection() {
         <div className="lf-head--split">
           <div className="lf-head-left">
             <span className="lf-pill">Pensé pour l&apos;immobilier</span>
-            <h2 id="metiers-title" className="lf-h2">Un standard conçu pour tous vos métiers.</h2>
+            <h2 id="metiers-title" className="lf-h2">
+              À chaque métier ses appels.
+              <br />
+              À chaque appel la bonne réponse.
+            </h2>
           </div>
-          <p className="lf-sub">
-            Un standard téléphonique conçu pour les professionnels de l&apos;immobilier, qui s&apos;adapte à votre métier, vos équipes et votre façon de travailler.
-          </p>
         </div>
 
         <div className="mt-tabs" role="tablist" aria-label="Métiers de l'agence" ref={barRef}>
@@ -178,10 +179,7 @@ export function MetiersSection() {
                   {m.points.map((p) => (
                     <li key={p.title} className="mt-point">
                       <span className="mt-point-icon"><Icon name={p.icon} /></span>
-                      <span>
-                        <span className="mt-point-title">{p.title}</span>
-                        <span className="mt-point-desc">{p.desc}</span>
-                      </span>
+                      <span className="mt-point-title">{p.title}</span>
                     </li>
                   ))}
                 </ul>

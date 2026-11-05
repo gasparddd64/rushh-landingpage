@@ -3,6 +3,7 @@ import { BRAND_NAME, orgRef, websiteRef } from "@/lib/brand";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/sections/Nav";
+import { CtaBandSection } from "@/components/sections/CtaBandSection";
 import { DemoCTA } from "@/components/ui/demo-cta";
 import { TestezCTA } from "@/components/ui/testez-cta";
 import { FooterSection } from "@/components/sections/FooterSection";
@@ -238,23 +239,5 @@ export function FinalCta({
   label?: string;
   links: { href: string; label: string }[];
 }) {
-  return (
-    <section aria-labelledby={id}>
-      <div className="lf-wrap">
-        <div className="of-final">
-          <span className="of-badge">Tarification sur devis</span>
-          <h2 id={id}>{title}</h2>
-          {text && <p>{text}</p>}
-          <div className="of-actions">
-            <DemoCTA label={label} showArrow={false} />
-          </div>
-          <nav className="of-more" aria-label="Pour aller plus loin">
-            {links.map((l) => (
-              <Link key={l.href} href={l.href}>{l.label}</Link>
-            ))}
-          </nav>
-        </div>
-      </div>
-    </section>
-  );
+  return <CtaBandSection pill="Tarification sur devis" title={title} text={text ?? ""} titleId={id} demoLabel={label} links={links} />;
 }

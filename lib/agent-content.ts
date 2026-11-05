@@ -11,6 +11,7 @@ import * as gestionLocative from "./solutions/gestion-locative";
 import { CGV } from "./legal/cgv";
 import { MENTIONS } from "./legal/mentions";
 import { PRIVACY } from "./legal/privacy";
+import { FAQ_ITEMS } from "./faq";
 import { legalToMarkdown } from "./legal/markdown";
 import { DEMO_LISTEN, MULTI, OFFRE, SYNDICS, TRANSACTION, premiumToMd } from "./solutions/premium";
 
@@ -21,32 +22,7 @@ export interface MarkdownPage {
   markdown: string;
 }
 
-const FAQ: Array<{ q: string; a: string }> = [
-  {
-    q: "Est-ce une intelligence artificielle qui répond aux appels ?",
-    a: "Oui. Le Standard Rushh s'appuie sur une intelligence artificielle vocale pour accueillir l'appel, comprendre la demande et recueillir les informations utiles. Elle traite le premier niveau selon les règles de l'agence, et transmet à l'équipe dès qu'un échange humain est nécessaire.",
-  },
-  {
-    q: "Le Standard Rushh respecte-t-il le RGPD ?",
-    a: "Rushh s'engage à respecter le RGPD. Pour les appels de l'agence, Rushh intervient en qualité de sous-traitant et traite les informations recueillies selon ses instructions : l'agence reste responsable de ses finalités et de l'information des personnes. Voir la politique de confidentialité.",
-  },
-  {
-    q: "Est-ce que le Standard Rushh remplace l'équipe de l'agence ?",
-    a: "Non. Le Standard Rushh intervient lorsque l'équipe ne peut pas prendre en charge un appel, ou sur les situations que l'agence choisit de lui confier. L'agence définit les cas dans lesquels l'appel doit être transmis à un collaborateur.",
-  },
-  {
-    q: "Que se passe-t-il si un client veut parler à quelqu'un de l'agence ?",
-    a: "Selon les règles définies par l'agence, le Standard Rushh peut transmettre l'appel, recueillir les informations nécessaires ou organiser la suite avec l'équipe.",
-  },
-  {
-    q: "Est-ce à l'agence de configurer et maintenir le système ?",
-    a: "Non. Rushh conçoit, configure, teste et fait évoluer le standard téléphonique avec l'agence.",
-  },
-  {
-    q: "Combien de temps faut-il pour déployer le Standard Rushh ?",
-    a: "La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.",
-  },
-];
+const FAQ: Array<{ q: string; a: string }> = FAQ_ITEMS;
 
 const FAQ_MARKDOWN = FAQ.map((item) => `### ${item.q}\n\n${item.a}`).join("\n\n");
 
@@ -60,10 +36,6 @@ Rushh conçoit et déploie un standard téléphonique IA sur-mesure pour les age
 ## Chaque appel compte pour votre agence
 
 Rushh prend le relais quand l'équipe de l'agence n'est pas disponible. Chaque appel est compris et traité selon les règles définies par l'agence : besoin compris, informations recueillies, action adaptée (rendez-vous, transfert ou message), équipe informée avec le contexte utile pour reprendre la demande.
-
-## Une équipe à vos côtés, pas un outil générique
-
-Le Standard Rushh n'est pas un logiciel à configurer soi-même : une équipe conçoit, déploie et fait évoluer le standard selon le fonctionnement réel de l'agence (syndic, gérance, transaction).
 
 ## Intégrations
 

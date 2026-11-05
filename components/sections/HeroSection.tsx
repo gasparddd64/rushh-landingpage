@@ -1,37 +1,43 @@
+import { TestezCTA } from "@/components/ui/testez-cta";
+import { HeroTalk } from "@/components/sections/HeroTalk";
+
+/** Hero plein bleu : barre de navigation transparente, titre léger, sous-titre, un CTA blanc, immeuble détouré qui monte du bas. */
 export function HeroSection() {
   return (
-    <section aria-labelledby="home-title" className="hero-x">
-      <div className="hero-x-stage">
-        <img
-          src="/hero-agent-photo.webp"
-          alt="Agent immobilier souriant à son bureau, devant l'écran de son ordinateur"
-          className="hero-x-bg"
-          fetchPriority="high"
-        />
-        <div className="hero-x-overlay" aria-hidden />
-
-        <div className="hero-x-copy">
-          <p className="hero-x-eyebrow">
-            Le standard téléphonique IA sur mesure pour les professionnels de l&apos;immobilier
-          </p>
-
-          <h1 id="home-title" className="hero-x-title">
-            <span className="hero-x-mask hero-x-mask--a">
-              <span className="hero-x-line">Ne perdez plus d&apos;opportunités</span>
+    <section aria-labelledby="home-title" className="hz">
+      <HeroTalk />
+      <div className="hz-inner">
+        <h1 id="home-title" className="hz-title">
+          Vous êtes en visite.
+          <br />
+          <span className="hz-anch">
+            Un client appelle.
+            <span className="hz-bub hz-bub--client" data-who="Propriétaire" data-t="Bonjour, je voudrais vendre ma maison." aria-hidden>
+              <i className="hz-tail" />
             </span>
-            <span className="hero-x-mask hero-x-mask--b">
-              <span className="hero-x-line">à cause des appels manqués.</span>
+          </span>
+          <br />
+          <span className="hz-anch hz-title-accent">
+            Rushh décroche.
+            <span className="hz-bub hz-bub--rushh" data-who="Rushh" data-t="Bien sûr. Quelle est l’adresse du bien ?" aria-hidden>
+              <i className="hz-tail" />
             </span>
-          </h1>
-
-          <a className="hero-x-cta" href="tel:+33176635709" aria-label="Testez Rushh : appeler la ligne de démonstration au 01 76 63 57 09">
-            Testez Rushh
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </a>
-        </div>
+          </span>
+        </h1>
+        <p className="hz-sub">
+          <span className="hz-sub-d">
+            Pendant vos visites, vos rendez-vous ou après la fermeture, Rushh prend vos appels, qualifie les demandes et
+            vous transmet les informations essentielles. Aucun appel important ne reste sans réponse.
+          </span>
+          <span className="hz-sub-m">
+            En visite, en rendez-vous ou après la fermeture, Rushh répond à vos appels, qualifie les demandes et vous
+            transmet l’essentiel. Aucun appel important ne reste sans réponse.
+          </span>
+        </p>
+        <TestezCTA />
       </div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className="hz-building" src="/hero-building.webp" alt="" width={1288} height={940} decoding="async" />
     </section>
   );
 }

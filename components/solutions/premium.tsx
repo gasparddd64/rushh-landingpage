@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
 import { TestezCTA } from "@/components/ui/testez-cta";
-import { DEMO_PHONE_HREF, DEMO_PHONE_LABEL, IconArrow, IconPhone, Tick } from "@/components/solutions/kit";
+import { DEMO_PHONE_HREF, DEMO_PHONE_LABEL, IconArrow, Tick } from "@/components/solutions/kit";
 import "@/app/solutions/rx.css";
 
 /**
@@ -262,10 +262,11 @@ export function RxProof({
           <div className="rx-proof-act">
             {showPhone && (
               <>
-                <a className="rx-call-btn" href={DEMO_PHONE_HREF} aria-label={`Appeler la ligne de démonstration Rushh au ${DEMO_PHONE_LABEL}`}>
-                  <IconPhone />
-                  {DEMO_PHONE_LABEL}
-                </a>
+                <TestezCTA />
+                <p className="rx-call-num">
+                  Ligne de démonstration :{" "}
+                  <a href={DEMO_PHONE_HREF} aria-label={`Appeler la ligne de démonstration Rushh au ${DEMO_PHONE_LABEL}`}>{DEMO_PHONE_LABEL}</a>
+                </p>
                 <p>Agence immobilière fictive, située à Paris. Les réponses dépendent de la configuration de la ligne.</p>
               </>
             )}

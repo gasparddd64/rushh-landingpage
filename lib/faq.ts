@@ -1,27 +1,35 @@
-// Source unique de la FAQ : affichée par FAQSection et reprise dans le JSON-LD FAQPage de app/page.tsx.
+// Source unique de la FAQ : affichée par FAQSection, reprise dans le JSON-LD FAQPage de app/page.tsx et dans le miroir Markdown.
 export const FAQ_ITEMS = [
   {
-    q: "Est-ce une intelligence artificielle qui répond aux appels ?",
-    a: "Oui. Le Standard Rushh s'appuie sur une intelligence artificielle vocale pour accueillir l'appel, comprendre la demande et recueillir les informations utiles. Elle traite le premier niveau selon vos règles, et transmet à votre équipe dès qu'un échange humain est nécessaire.",
+    q: "Est-ce vraiment une intelligence artificielle qui répond ?",
+    a: "Oui. Rushh est un standard téléphonique alimenté par intelligence artificielle, conçu spécialement pour l'immobilier. Il échange naturellement avec vos clients, comprend leurs demandes et suit les consignes de votre agence. Le plus simple pour vous faire une idée ? Appelez-le et jugez par vous-même.",
   },
   {
-    q: "Le Standard Rushh respecte-t-il le RGPD ?",
-    a: "Rushh s'engage à respecter le RGPD. Pour les appels de votre agence, Rushh intervient en qualité de sous-traitant et traite les informations recueillies selon vos instructions : l'agence reste responsable de ses finalités et de l'information des personnes. Voir la politique de confidentialité.",
+    q: "Mes clients peuvent-ils parler à quelqu'un de l'agence ?",
+    a: "Bien sûr. Rushh peut transférer les appels à vos collaborateurs lorsqu'ils sont disponibles, selon les règles que vous définissez. Sinon, il recueille la demande et transmet les informations nécessaires pour que votre équipe puisse reprendre le relais.",
   },
   {
-    q: "Est-ce que le Standard Rushh remplace mon équipe ?",
-    a: "Non. Le Standard Rushh intervient lorsque votre équipe ne peut pas prendre en charge un appel, ou sur les situations que vous choisissez de lui confier. Vous définissez également les cas dans lesquels l'appel doit être transmis à un collaborateur.",
+    q: "Est-ce que Rushh remplace mon équipe ?",
+    a: "Non, il lui permet de se concentrer sur son métier. Vos collaborateurs continuent de gérer les relations clients, les visites et les négociations. Rushh prend le relais au téléphone lorsqu'ils ne peuvent pas répondre.",
   },
   {
-    q: "Que se passe-t-il si un client veut parler à quelqu'un de l'agence ?",
-    a: "Vous définissez vos règles. Selon la situation, le Standard Rushh peut transmettre l'appel, recueillir les informations nécessaires ou organiser la suite avec votre équipe.",
+    q: "Dois-je changer de numéro ou de logiciel ?",
+    a: "Non. Vous conservez votre numéro de téléphone et vos habitudes de travail. Rushh s'active grâce à un renvoi d'appel et peut se connecter à vos outils existants selon votre organisation et les intégrations disponibles.",
   },
   {
-    q: "Est-ce à nous de configurer et maintenir le système ?",
-    a: "Non. C'est justement la différence entre le Standard Rushh et un logiciel classique. Nous concevons, configurons, testons et faisons évoluer votre standard téléphonique avec vous.",
+    q: "Est-ce à nous de configurer et maintenir le standard ?",
+    a: "Non, l'équipe Rushh s'occupe de tout. Nous étudions votre fonctionnement, configurons votre standard, réalisons les tests avec vous et assurons son suivi. Vous n'avez pas de nouvel outil à apprendre ni de système à maintenir.",
   },
   {
-    q: "Combien de temps faut-il pour déployer le Standard Rushh ?",
-    a: "La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.",
+    q: "Combien de temps faut-il pour installer Rushh ?",
+    a: "Comptez 5 jours ouvrés après réception des éléments nécessaires pour un déploiement standard. Notre équipe se charge de la configuration et des tests avant la mise en service. Les besoins d'intégration particuliers sont étudiés avec vous.",
+  },
+  {
+    q: "Mes données et celles de mes clients sont-elles protégées ?",
+    a: "Rushh est conçu pour traiter les informations nécessaires à vos appels dans un cadre conforme aux exigences applicables du RGPD. Les modalités de traitement, de conservation et de protection des données sont définies avec votre organisation et précisées dans notre documentation.",
+  },
+  {
+    q: "Combien coûte le Standard Rushh ?",
+    a: "Chaque standard est conçu selon les besoins de votre organisation : volume d'appels, scénarios à traiter et intégrations souhaitées. Nous vous proposons un devis adapté, avec la configuration, la mise en place et le suivi inclus.",
   },
 ];

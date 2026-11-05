@@ -1,22 +1,46 @@
-/** CTA « Testez Rushh » : appelle directement la ligne de démonstration (agence fictive). La réservation d'un rendez-vous reste le rôle de DemoCTA. */
+/** CTA « Testez Rushh » : appelle directement la ligne de démonstration (agence fictive). La réservation d'un rendez-vous reste le rôle de DemoCTA.
+ *  Un seul design sur tout le site : pastille bleue + téléphone ; au survol, le texte sort par le haut et revient par le bas, le téléphone part en haut à droite et revient d'en bas à gauche. */
 export const DEMO_LINE_HREF = "tel:+33176635709";
 export const DEMO_LINE_ARIA = "Testez Rushh : appeler la ligne de démonstration au 01 76 63 57 09";
+
+function PhoneIcon({ className }: { className: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
 
 export function TestezCTA({
   variant = "blue",
   label = "Testez Rushh",
+  href = DEMO_LINE_HREF,
+  ariaLabel,
 }: {
+  /** « white » : version inversée, uniquement sur un fond bleu. */
   variant?: "blue" | "white";
   label?: string;
+  /** Lien différent de la ligne de démonstration (ex. la page « Démonstration ») ; le libellé doit alors se suffire à lui-même. */
+  href?: string;
+  ariaLabel?: string;
 }) {
   return (
     <div className="demo-cta-wrap">
       <a
-        href={DEMO_LINE_HREF}
-        aria-label={DEMO_LINE_ARIA}
-        className={`demo-cta-btn ${variant === "white" ? "demo-cta-btn--white" : ""}`}
+        href={href}
+        aria-label={ariaLabel ?? (href === DEMO_LINE_HREF ? DEMO_LINE_ARIA : undefined)}
+        className={`cta-testez${variant === "white" ? " cta-testez--white" : ""}`}
       >
-        {label}
+        <span className="cta-roll">
+          <span className="cta-roll-a">{label}</span>
+          <span className="cta-roll-b" aria-hidden>
+            {label}
+          </span>
+        </span>
+        <span className="cta-dot" aria-hidden>
+          <PhoneIcon className="cta-ic cta-ic-a" />
+          <PhoneIcon className="cta-ic cta-ic-b" />
+        </span>
       </a>
     </div>
   );

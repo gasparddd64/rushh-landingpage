@@ -2,7 +2,6 @@ import {
   DEMO_PHONE_HREF,
   DEMO_PHONE_LABEL,
   FinalCta,
-  IconPhone,
   JsonLd,
   SectionHead,
   SolShell,
@@ -10,6 +9,7 @@ import {
   webPageSchema,
 } from "@/components/solutions/kit";
 import { RxHero, RxStakes } from "@/components/solutions/premium";
+import { TestezCTA } from "@/components/ui/testez-cta";
 import { DEMO_LISTEN } from "@/lib/solutions/premium";
 
 const PATH = "/demonstrations";
@@ -48,10 +48,11 @@ export default function DemonstrationsPage() {
         }}
       >
         <div className="rx-actions">
-          <a className="sol-call" href={DEMO_PHONE_HREF} aria-label={`Appeler la ligne de démonstration Rushh au ${DEMO_PHONE_LABEL}`}>
-            <IconPhone />
-            {DEMO_PHONE_LABEL}
-          </a>
+          <TestezCTA />
+          <p className="rx-call-num">
+            Ligne de démonstration :{" "}
+            <a href={DEMO_PHONE_HREF} aria-label={`Appeler la ligne de démonstration Rushh au ${DEMO_PHONE_LABEL}`}>{DEMO_PHONE_LABEL}</a>
+          </p>
         </div>
         <p className="rx-note">La ligne simule une agence immobilière fictive Rushh, située à Paris.</p>
       </RxHero>

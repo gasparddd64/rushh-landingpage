@@ -3,6 +3,7 @@ import { orgRef } from "@/lib/brand";
 import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 import { DemoCTA } from "@/components/ui/demo-cta";
+import { TestezCTA } from "@/components/ui/testez-cta";
 import { JsonLd, SITE, SolShell } from "@/components/solutions/kit";
 import { RushhAnswer } from "@/components/solutions/premium";
 import { categoryLabel } from "@/lib/articles/categories";
@@ -36,9 +37,9 @@ function BlockView({ b }: { b: Block }) {
       return <p className="res-statement">{inline(b.text)}</p>;
     case "button":
       return (
-        <p className="res-btn-row">
-          <Link href={b.href} className="res-btn">{b.label}</Link>
-        </p>
+        <div className="res-btn-row">
+          <TestezCTA href={b.href} label={b.label} />
+        </div>
       );
     case "detail":
       return (

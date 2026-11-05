@@ -30,9 +30,13 @@ export function ToolsOrbitSection() {
 
         <div className="orb-copy">
           <span className="lf-pill">Vos outils</span>
-          <h2 id="outils-title" className="lf-h2">Rushh s&apos;intègre à vos outils.</h2>
+          <h2 id="outils-title" className="lf-h2">
+            Gardez vos outils.
+            <br />
+            Rushh s&apos;adapte.
+          </h2>
           <p className="lf-sub">
-            Rushh s&apos;adapte à votre environnement et se connecte à vos outils existants, selon vos besoins.
+            Pas de nouveau logiciel à apprendre, pas d&apos;habitudes à changer. Rushh fonctionne avec votre numéro actuel et peut se connecter à vos outils existants, selon vos besoins.
           </p>
           <p className="orb-note">
             Vous utilisez un autre logiciel ? Parlons-en.

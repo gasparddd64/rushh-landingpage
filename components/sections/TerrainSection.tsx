@@ -16,10 +16,11 @@ export function TerrainSection() {
           </figure>
           <div className="tr-copy">
             <span className="lf-pill">Sur le terrain</span>
-            <h2 id="terrain-title" className="tr-title">Au contact des professionnels de l&apos;immobilier.</h2>
+            <h2 id="terrain-title" className="tr-title">L&apos;immobilier, on connaît votre quotidien.</h2>
             <p className="tr-text">
-              Nous allons à la rencontre des agences et des acteurs du secteur pour comprendre leurs appels du
-              quotidien et concevoir un standard qui leur ressemble.
+              Visites, estimations, appels de locataires, urgences de gestion… Nous échangeons directement avec les
+              professionnels de l&apos;immobilier pour comprendre leurs réalités et concevoir des standards qui s&apos;adaptent
+              à leur façon de travailler.
             </p>
           </div>
         </div>

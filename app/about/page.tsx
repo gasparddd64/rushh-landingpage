@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { withSocial } from "@/lib/seo";
 import Link from "next/link";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { Nav } from "@/components/sections/Nav";
 
 const baseMetadata: Metadata = {
   title: "À propos de Rushh immo | Standard téléphonique IA pour l'immobilier",
@@ -17,17 +18,7 @@ export const metadata: Metadata = withSocial(baseMetadata, "/about");
 export default function AboutPage() {
   return (
     <main className="cgv-page">
-      <header className="nav">
-        <div className="nav-inner" style={{ justifyContent: "space-between" }}>
-          <Link href="/" className="brand">
-            <img src="/logo-rushh.png" alt="Rushh immo" className="brand-logo" />
-            <span>Rushh<span className="brand-immo">immo</span></span>
-          </Link>
-          <Link href="/" className="nav-link cgv-back-link">
-            ← Retour au site
-          </Link>
-        </div>
-      </header>
+      <Nav />
 
       <div className="wrap">
         <div className="cgv-hero">

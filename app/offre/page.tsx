@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/sections/Nav";
-import { DemoCTA } from "@/components/ui/demo-cta";
+import { CtaBandSection } from "@/components/sections/CtaBandSection";
 import { TestezCTA } from "@/components/ui/testez-cta";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -337,28 +337,19 @@ export default function OffrePage() {
         <RxProof id="proof-title" title={OFFRE.proof.title} text={OFFRE.proof.text} say={OFFRE.proof.say} showPhone={false} />
 
         {/* ── 6. Démonstration et devis ── */}
-        <section aria-labelledby="demo-title">
-          <div className="lf-wrap">
-            <div className="of-final">
-              <span className="of-badge">Proposition personnalisée</span>
-              <h2 id="demo-title">Demander une démonstration</h2>
-              <p>
-                Lors d&apos;une démonstration, nous regardons votre fonctionnement et nous vous montrons comment
-                Rushh s&apos;adapterait à votre organisation. Vous recevez ensuite une proposition personnalisée,
-                établie selon votre organisation et le périmètre retenu.
-              </p>
-              <div className="of-actions">
-                <DemoCTA label="Réserver une démo" showArrow={false} />
-              </div>
-              <nav className="of-more" aria-label="Pour aller plus loin">
-                <Link href="/integrations">Intégrations</Link>
-                <Link href="/comparatif/standards-telephoniques-ia-immobilier">Comparatif des standards IA</Link>
-                <Link href="/vs/joe-ai">Rushh vs Joe AI</Link>
-                <Link href="/">Retour à l&apos;accueil</Link>
-              </nav>
-            </div>
-          </div>
-        </section>
+        <CtaBandSection
+          pill="Proposition personnalisée"
+          titleId="demo-title"
+          title="Demander une démonstration"
+          text="Lors d'une démonstration, nous regardons votre fonctionnement et nous vous montrons comment Rushh s'adapterait à votre organisation. Vous recevez ensuite une proposition personnalisée, établie selon votre organisation et le périmètre retenu."
+          demoLabel="Réserver une démo"
+          links={[
+            { href: "/integrations", label: "Intégrations" },
+            { href: "/comparatif/standards-telephoniques-ia-immobilier", label: "Comparatif des standards IA" },
+            { href: "/vs/joe-ai", label: "Rushh vs Joe AI" },
+            { href: "/", label: "Retour à l'accueil" },
+          ]}
+        />
       </div>
 
       <FooterSection />

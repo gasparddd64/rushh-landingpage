@@ -118,6 +118,8 @@
   max-width: 740px;
 }
 .lf-head--split .lf-sub { max-width: 400px; padding-bottom: 6px; }
+#metiers .lf-head-left { max-width: 960px; }
+#metiers .lf-h2 { text-wrap: balance; }
 .lf-card {
   background: #fff;
   border: 1px solid var(--lf-line);
@@ -154,117 +156,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 24px;
-  padding: 24px 56px;
+  gap: 20px;
+  padding: 24px 48px;
 }
-.rl-num {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--lf-accent);
+.rl-stepnum {
+  font-size: clamp(60px, 7vw, 104px);
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: -0.075em;
+  color: var(--lf-ink);
+  font-variant-numeric: tabular-nums;
 }
 .rl-title {
   margin: 0;
-  font-size: clamp(30px, 3.4vw, 40px);
+  font-size: clamp(32px, 3.9vw, 50px);
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.045em;
-}
-.rl-desc {
-  margin: 0;
-  max-width: 340px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-  color: var(--lf-muted);
-}
-
-/* ---------- Scène d'ouverture épinglée (situations → « Vos équipes sont occupées. Rushh prend le relais. ») ---------- */
-.lf .rs-section { padding: 0 0 110px; }
-.rs-track {
-  --rs-dist: 290svh;
-  position: relative;
-  height: calc(100svh + var(--rs-dist));
-}
-.rs-stage {
-  --s1: 0; --s2: 0; --s3: 0; --out: 0; --ring: 0; --z: 0; --hdr: 0;
-  --mix: 100%; --dy: 0px; --S: 1.8;
-  position: sticky;
-  top: 0;
-  height: 100svh;
-  overflow: clip;
-}
-/* Les trois situations : texte seul, une ligne de plus à chaque roulement */
-.rs-lines {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(6px, 1.6vh, 18px);
-  padding: 96px 24px 32px;
-  text-align: center;
-  opacity: calc(1 - var(--out));
-  pointer-events: none;
-}
-.rs-line {
-  margin: 0;
-  font-size: clamp(40px, 7.4vw, 108px);
-  font-weight: 700;
-  line-height: 1.04;
+  line-height: 1.03;
   letter-spacing: -0.05em;
   color: var(--lf-ink);
-  opacity: var(--sv);
-  transform: translateY(calc((1 - var(--sv)) * 34px));
-  will-change: transform, opacity;
+  text-wrap: balance;
 }
-.rs-line-in { display: block; opacity: calc(1 - 0.68 * var(--sd, 0)); }
-.rs-line--1 { --sv: var(--s1); --sd: var(--s2); }
-.rs-line--2 { --sv: var(--s2); --sd: var(--s3); }
-.rs-line--3 { --sv: var(--s3); }
+.rl-points { display: flex; flex-direction: column; gap: 16px; margin: 4px 0 0; padding: 0; list-style: none; max-width: 440px; }
+.rl-point { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; font-size: 16px; font-weight: 500; line-height: 1.45; letter-spacing: -0.015em; color: var(--lf-muted); }
+.rl-point b { font-weight: 600; color: var(--lf-ink); }
+.rl-badge { margin-top: 1px; }
+.rl-badge-bg { fill: var(--lf-accent-soft); stroke: rgba(0, 71, 198, 0.22); stroke-width: 1; stroke-linejoin: round; }
+.rl-badge-dot { fill: var(--lf-accent); }
 
-.rs-header {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: clamp(96px, 13svh, 130px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  padding: 0 24px;
-  text-align: center;
-}
-.rs-pill {
-  opacity: var(--hdr);
-  transform: translateY(calc((1 - var(--hdr)) * -14px));
-}
-.rs-sub {
-  max-width: 470px;
-  opacity: var(--hdr);
-  transform: translateY(calc((1 - var(--hdr)) * 14px));
-}
-/* Le titre surgit au centre (grand, bleu), puis dézoome à sa place (encre) */
-.rs-h2-move {
-  width: fit-content;
-  will-change: transform, opacity;
-  opacity: var(--ring);
-  transform:
-    translate3d(0, calc((1 - var(--z)) * var(--dy)), 0)
-    scale(calc((1 + (var(--S) - 1) * (1 - var(--z))) * (0.9 + 0.1 * var(--ring))));
-}
-.rs-h2 {
-  white-space: nowrap;
-  color: color-mix(in srgb, var(--lf-accent) var(--mix), var(--lf-ink));
-}
-/* La première carte remonte sous le titre pendant les derniers pixels de la scène */
-.rs-stackwrap {
-  position: relative;
-  z-index: 2;
-  margin-top: calc(450px - 100svh);
-}
+/* ---------- Relais : titre puis les quatre cartes ---------- */
+.lf .rs-section { padding: 110px 0; }
+.rs-head { display: flex; flex-direction: column; align-items: center; gap: 22px; margin-bottom: 64px; text-align: center; }
+.rs-sub { max-width: 470px; }
+.rs-stackwrap { position: relative; z-index: 2; }
 
 /* ---------- Panneau visuel : photo du scénario ---------- */
 .rl-visual {
@@ -572,22 +495,21 @@
 @media (max-width: 900px) {
   .rl-card { grid-template-columns: 1fr; min-height: 0; }
   .rl-card--flip .rl-visual { order: 0; }
-  .rl-visual { min-height: 260px; }
-  .rl-content { padding: 28px 20px 24px; gap: 20px; }
+  .rl-visual { min-height: 150px; }
+  .rl-content { padding: 20px 18px 18px; gap: 12px; }
+  .rl-stepnum { font-size: 56px; }
+  .rl-title { font-size: 32px; }
+  .rl-points { gap: 10px; }
+  .rl-point { font-size: 14.5px; line-height: 1.4; gap: 10px; grid-template-columns: 22px 1fr; }
+  .rl-badge { width: 22px; height: 22px; }
   .lf-head--split { flex-direction: column; align-items: flex-start; gap: 20px; }
   .lf-head--split .lf-sub { max-width: none; padding-bottom: 0; }
 }
 @media (max-width: 768px) {
   .lf section { padding: 72px 0; }
   .lf-wrap { padding: 0 16px; }
-  .rl-stack { gap: 130px; }
+  .rl-stack { gap: 90px; }
   .rl-item { top: calc(84px + var(--i) * 26px); }
-  .rs-track { --rs-dist: 240svh; }
-  .rs-stackwrap { margin-top: calc(400px - 100svh); }
-  .rs-lines { padding: 84px 16px 24px; }
-  .rs-h2 { white-space: normal; text-wrap: balance; }
-  .rs-h2-move { max-width: calc(100vw - 32px); }
-  .rs-header { top: 92px; gap: 18px; }
   .mt-tabs { margin-top: 40px; padding: 4px; gap: 2px; }
   .mt-pill { top: 4px; bottom: 4px; }
   .mt-tab { padding: 11px 2px; }
@@ -596,14 +518,7 @@
   .fq-q { font-size: 16px; padding: 20px 0; }
   .fq-item { padding: 0 18px; }
 }
-/* Très petits téléphones : le titre du relais passe sur 4 lignes, on le réduit un peu et la 1re carte arrive plus bas */
-@media (max-width: 380px) {
-  .rs-h2 { font-size: clamp(28px, 8.4vw, 34px); }
-  .rs-stackwrap { margin-top: calc(440px - 100svh); }
-}
 @media (prefers-reduced-motion: reduce) {
-  .rs-h2-move { transform: none; }
-  .rs-line { transform: none; filter: none; }
   .orb-path { --orb-dur: 400s; --orb-step: 16.6667s; }
   .mt-copy { transition: none !important; }
   .t-reel-strip { transition: none !important; filter: none !important; }
@@ -744,18 +659,6 @@
    Texture & structure — moins de blanc vide
    ========================================================================== */
 .lf { position: relative; isolation: isolate; }
-/* Trame de points très discrète, estompée en haut et en bas */
-.lf::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(rgba(12, 16, 36, 0.09) 1px, transparent 1.2px);
-  background-size: 26px 26px;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 220px, #000 calc(100% - 220px), transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 220px, #000 calc(100% - 220px), transparent 100%);
-  pointer-events: none;
-}
 /* Halos bleus derrière les grands titres */
 .lf #metiers {
   background:
@@ -767,7 +670,7 @@
 .lf .compare-section { border-top: 1px solid var(--lf-line); }
 .lf .nb-section { border-top: 1px solid var(--lf-line); }
 
-/* Pastille « résultat » sur les photos des cartes */
+/* Pastille sur les photos des cartes (Capté, Organisé, Traité, Transmis) */
 .rl-chip {
   position: absolute;
   left: 14px;
@@ -787,82 +690,3 @@
   color: var(--lf-ink);
 }
 .rl-chip svg { padding: 2px; width: 18px; height: 18px; border-radius: 50%; background: var(--lf-accent); color: #fff; }
-
-/* ==========================================================================
-   Scène épinglée pilotée par le scroll côté CSS (compositeur du navigateur)
-   → aucune mise à jour JS pendant le défilement, donc pas de tremblement sur téléphone.
-   Le code JS (variables --s1…--z) reste en secours pour les navigateurs sans animation-timeline.
-   ========================================================================== */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .rs-track { view-timeline: --rs block; }
-
-    .rs-lines, .rs-line, .rs-line-in, .rs-pill, .rs-sub, .rs-h2-move, .rs-h2 {
-      animation-duration: 1ms;
-      animation-timing-function: linear;
-      animation-fill-mode: both;
-      animation-timeline: --rs;
-      animation-range: contain 0% contain 100%;
-    }
-    .rs-lines { animation-name: rs-lines-out; }
-    .rs-line--1 { animation-name: rs-in-1; animation-range: entry 45% entry 100%; }
-    .rs-line--2 { animation-name: rs-in-2; }
-    .rs-line--3 { animation-name: rs-in-3; }
-    .rs-line--1 .rs-line-in { animation-name: rs-dim-1; }
-    .rs-line--2 .rs-line-in { animation-name: rs-dim-2; }
-    .rs-pill { animation-name: rs-pill-in; }
-    .rs-sub { animation-name: rs-sub-in; }
-    .rs-h2-move { animation-name: rs-zoom; }
-    .rs-h2 { animation-name: rs-ink; }
-
-    @keyframes rs-lines-out {
-      0%, 50% { opacity: 1; animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
-      75%, 100% { opacity: 0; }
-    }
-    @keyframes rs-in-1 {
-      from { opacity: 0; transform: translateY(34px); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
-      to { opacity: 1; transform: none; }
-    }
-    @keyframes rs-in-2 {
-      0% { opacity: 0; transform: translateY(34px); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
-      25%, 100% { opacity: 1; transform: none; }
-    }
-    @keyframes rs-in-3 {
-      0%, 25% { opacity: 0; transform: translateY(34px); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
-      50%, 100% { opacity: 1; transform: none; }
-    }
-    @keyframes rs-dim-1 {
-      0% { opacity: 1; animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
-      25%, 100% { opacity: 0.32; }
-    }
-    @keyframes rs-dim-2 {
-      0%, 25% { opacity: 1; animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
-      50%, 100% { opacity: 0.32; }
-    }
-    @keyframes rs-pill-in {
-      0%, 83% { opacity: 0; transform: translateY(-14px); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
-      97%, 100% { opacity: 1; transform: none; }
-    }
-    @keyframes rs-sub-in {
-      0%, 83% { opacity: 0; transform: translateY(14px); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
-      97%, 100% { opacity: 1; transform: none; }
-    }
-    @keyframes rs-zoom {
-      0%, 50% {
-        opacity: 0;
-        transform: translate3d(0, var(--dy), 0) scale(calc(var(--S) * 0.9));
-        animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
-      }
-      75% {
-        opacity: 1;
-        transform: translate3d(0, var(--dy), 0) scale(var(--S));
-        animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
-      }
-      100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
-    }
-    @keyframes rs-ink {
-      0%, 75% { color: var(--lf-accent); animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
-      100% { color: var(--lf-ink); }
-    }
-  }
-}

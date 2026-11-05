@@ -1,27 +1,17 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono, Instrument_Serif } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { BRAND_NAME } from "@/lib/brand";
 import { CalendlyTracking } from "@/components/CalendlyTracking";
 import { ConsentManager } from "@/components/ConsentManager";
 import { ConversionTracking } from "@/components/ConversionTracking";
+import { AnnouncementBar } from "@/components/ui/announcement-bar";
 
 const inter = Plus_Jakarta_Sans({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-});
-
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-serif",
-  weight: "400",
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Agent vocal IA pour agence immobilière | Rushh immo",
@@ -75,12 +65,13 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}
+      className={inter.variable}
     >
       <body>
         <CalendlyTracking />
         <ConversionTracking />
         <ConsentManager />
+        <AnnouncementBar />
         {children}
       </body>
     </html>

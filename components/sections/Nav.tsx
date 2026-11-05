@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { TestezCTA } from "@/components/ui/testez-cta";
+import { DemoCTA } from "@/components/ui/demo-cta";
 
 const NAV_LINKS = [
   { label: "Le standard Rushh", href: "/#relais" },
@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { label: "FAQ", href: "/#faq" },
 ];
 
-export function Nav() {
+export function Nav({ variant }: { variant?: "hero" } = {}) {
   const [open, setOpen] = useState(false);
 
   const trigger = useRef<HTMLButtonElement>(null);
@@ -26,7 +26,7 @@ export function Nav() {
 
   return (
     <>
-      <nav className="nav">
+      <nav className={`nav${variant === "hero" ? " nav--hero" : ""}`}>
         <div className="nav-inner">
           {/* Logo */}
           <Link href="/" className="brand">
@@ -51,7 +51,7 @@ export function Nav() {
 
           {/* CTA */}
           <div className="nav-cta">
-            <TestezCTA />
+            <DemoCTA />
           </div>
 
           {/* Hamburger */}
@@ -63,7 +63,6 @@ export function Nav() {
             onClick={() => setOpen(!open)}
             aria-label="Menu"
           >
-            <span className={`nav-hamburger-bar${open ? " open" : ""}`} />
             <span className={`nav-hamburger-bar${open ? " open" : ""}`} />
             <span className={`nav-hamburger-bar${open ? " open" : ""}`} />
           </button>
@@ -108,7 +107,7 @@ export function Nav() {
           )}
         </div>
         <div className="mobile-menu-ctas">
-          <TestezCTA />
+          <DemoCTA />
         </div>
       </div>
     </>

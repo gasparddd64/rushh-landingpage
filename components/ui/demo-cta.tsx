@@ -1,36 +1,26 @@
 "use client";
 
+/** CTA « Réserver une démo » (Calendly) : un seul design sur tout le site, noir au survol. */
 export function DemoCTA({
   variant = "blue",
   label = "Réserver une démo",
-  showArrow = false,
 }: {
+  /** « white » : version inversée, uniquement sur un fond bleu. */
   variant?: "blue" | "white";
   label?: string;
+  /** Conservé pour compatibilité : le rond fléché n'existe plus. */
   showArrow?: boolean;
 }) {
-  const isWhite = variant === "white";
   return (
     <div className="demo-cta-wrap">
       <a
         href="https://calendly.com/gaspard-david/demo"
         target="_blank"
         rel="noopener noreferrer"
-        className={`demo-cta-btn ${isWhite ? "demo-cta-btn--white" : ""}`}
+        className={`demo-cta-btn${variant === "white" ? " demo-cta-btn--white" : ""}`}
       >
         {label}
       </a>
-      {showArrow && (
-        <a
-          href="https://calendly.com/gaspard-david/demo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`demo-cta-arrow ${isWhite ? "demo-cta-arrow--white" : ""}`}
-          aria-label={label}
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </a>
-      )}
     </div>
   );
 }

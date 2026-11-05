@@ -1,28 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { DemoCTA } from "@/components/ui/demo-cta";
 import { CookieSettingsButton } from "@/components/CookieSettingsButton";
 
 export function FooterSection() {
   return (
     <footer className="footer-section">
       <div className="wrap">
-
-        {/* Top CTA banner */}
-        <div className="footer-cta-banner">
-          <div className="footer-cta-text">
-            <span className="footer-cta-eyebrow">Le prochain contact compte.</span>
-            <h2 className="footer-cta-title">
-              Vos équipes ne peuvent pas toujours répondre.<br />
-              Rushh, si<span className="footer-cta-dot">.</span>
-            </h2>
-          </div>
-          <div className="footer-cta-action">
-            <DemoCTA label="Réserver une démo" />
-            <span className="footer-cta-caption">Découvrez comment Rushh peut s&apos;adapter à votre organisation.</span>
-          </div>
-        </div>
 
         <div className="footer-grid">
 
@@ -33,10 +17,8 @@ export function FooterSection() {
               <span>Rushh<span className="brand-immo">immo</span></span>
             </Link>
             <p className="footer-tagline">
-              Le Standard téléphonique IA<br />
-              pensé pour l&apos;immobilier.
+              Le standard téléphonique intelligent, conçu exclusivement pour les professionnels de l&apos;immobilier.
             </p>
-            <span className="footer-badge">À vos côtés, 24h/24</span>
             <h3 className="footer-col-title footer-socials-title">Suivez-nous</h3>
             <div className="footer-socials">
               <a href="https://www.linkedin.com/in/gaspardv/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social-btn">
@@ -93,15 +75,6 @@ export function FooterSection() {
             </nav>
           </div>
 
-        </div>
-
-        {/* Giant wordmark */}
-        <div className="footer-wordmark" aria-hidden="true">
-          <picture>
-            <source srcSet="/footer-rushh-wordmark.webp" type="image/webp" />
-            <img src="/footer-rushh-wordmark.png" alt="" className="footer-wordmark-img" />
-          </picture>
-          <span className="footer-wordmark-immo">immo</span>
         </div>
 
         {/* Bottom bar */}

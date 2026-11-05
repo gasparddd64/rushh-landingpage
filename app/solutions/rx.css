@@ -203,3 +203,38 @@
   .rx-call-btn { transition: none; }
   .rx-call-btn:hover { transform: none; }
 }
+
+
+/* ==========================================================================
+   Cohérence avec la page d'accueil : panneaux clairs (plus de fond marine), mêmes pastilles
+   ========================================================================== */
+.rx-route[class][class], .rx-proof[class][class] { background: linear-gradient(180deg, #fff 0%, #f1f6ff 100%); color: var(--lf-ink); border: 1px solid var(--lf-line); box-shadow: 0 30px 60px -46px rgba(0, 71, 198, 0.4); }
+.rx-route::before { background: radial-gradient(50% 70% at 100% 0%, rgba(0, 71, 198, 0.14), transparent 70%); }
+.rx-proof::before { background: radial-gradient(60% 80% at 0% 100%, rgba(0, 71, 198, 0.14), transparent 70%); }
+.offre .rx-route .rx-h2[class][class], .offre .rx-proof .rx-h2[class][class] { color: var(--lf-ink); }
+.offre .rx-route .rx-sub[class][class] { color: var(--lf-muted); }
+.rx-route li::before { background: rgba(0, 71, 198, 0.22); }
+.rx-route li:last-child::before { background: linear-gradient(90deg, rgba(0, 71, 198, 0.22), transparent); }
+.rx-route li::after { background: #fff; }
+.rx-route-n { color: var(--lf-accent); }
+.rx-route h3 { color: var(--lf-ink); }
+.rx-route p { color: var(--lf-muted); }
+.rx-route-foot { border-top-color: var(--lf-line); color: var(--lf-muted); }
+.rx-route-foot a { color: var(--lf-accent); }
+.rx-proof-copy p { color: var(--lf-muted); }
+.rx-proof-copy li { background: #fff; border: 1px solid var(--lf-line); color: var(--lf-ink); }
+.rx-proof-copy li::before, .rx-proof-copy li::after { color: var(--lf-accent); }
+.rx-proof-act > p { color: var(--lf-muted); }
+.rx-link--light { color: var(--lf-accent); }
+.rx-call-num { margin: 0; font-size: 14px; font-weight: 500; color: var(--lf-muted); }
+.rx-call-num a { color: var(--lf-ink); font-weight: 600; text-decoration: none; }
+.rx-call-num a:hover { color: var(--lf-accent); }
+
+/* Carte d'exemple d'appel : claire, comme le reste du site */
+.rx-call[class][class] { background: linear-gradient(180deg, #fff 0%, #f1f6ff 100%); color: var(--lf-ink); border: 1px solid var(--lf-line); box-shadow: 0 30px 60px -44px rgba(0, 71, 198, 0.4); }
+.rx-call-tag { color: var(--lf-accent); }
+.rx-call-who { color: var(--lf-muted); }
+.rx-call blockquote::before, .rx-call blockquote::after { color: var(--lf-accent); }
+.rx-call-route i { background: linear-gradient(90deg, rgba(0, 71, 198, 0.5), rgba(0, 71, 198, 0.12)); }
+.rx-call-route span { border-color: rgba(0, 71, 198, 0.35); color: var(--lf-accent); background: #fff; }
+.rx-call-out { border: 1px solid var(--lf-line); box-shadow: 0 1px 2px rgba(12, 16, 36, 0.04); }

@@ -1,13 +1,15 @@
 import { Nav } from "@/components/sections/Nav";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { LossSection } from "@/components/sections/LossSection";
 import { RelaySection } from "@/components/sections/RelaySection";
 import { MetiersSection } from "@/components/sections/MetiersSection";
 import { ToolsOrbitSection } from "@/components/sections/ToolsOrbitSection";
 import { ChiffresSection } from "@/components/sections/ChiffresSection";
 import { TerrainSection } from "@/components/sections/TerrainSection";
-import { CompareSection } from "@/components/sections/CompareSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { BlogSection } from "@/components/sections/BlogSection";
+import { CtaBandSection } from "@/components/sections/CtaBandSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { FAQ_ITEMS } from "@/lib/faq";
@@ -136,18 +138,20 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Nav />
+      <Nav variant="hero" />
       <HeroSection />
       <div className="lf">
+        <LossSection />
         <RelaySection />
         <MetiersSection />
         <ToolsOrbitSection />
         <ChiffresSection />
         <TerrainSection />
         <FAQSection />
-        <CompareSection />
       </div>
       <TestimonialsSection />
+      <BlogSection />
+      <CtaBandSection />
       <FooterSection />
       <ScrollReveal />
     </>

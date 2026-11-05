@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { Nav } from "@/components/sections/Nav";
 import type { LegalBlock, LegalDoc } from "@/lib/legal/types";
 import { LegalToc } from "./LegalToc";
 
@@ -73,17 +74,7 @@ export function LegalDocument({ doc }: { doc: LegalDoc }) {
   }));
   return (
     <main className="cgv-page lg-page">
-      <header className="nav">
-        <div className="nav-inner" style={{ justifyContent: "space-between" }}>
-          <Link href="/" className="brand">
-            <img src="/logo-rushh.png" alt="Rushh immo" className="brand-logo" />
-            <span>Rushh<span className="brand-immo">immo</span></span>
-          </Link>
-          <Link href="/" className="nav-link cgv-back-link">
-            ← Retour au site
-          </Link>
-        </div>
-      </header>
+      <Nav />
 
       <div className="wrap">
         <div className="lg-hero">

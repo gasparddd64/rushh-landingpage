@@ -342,7 +342,7 @@
   .offre .of-h1 { font-size: 30px; line-height: 1.08; }
   .offre .of-lead { margin-top: 14px; font-size: 16px; line-height: 1.5; }
   .offre .of-actions { flex-direction: column; gap: 4px; margin-top: 22px; }
-  .offre .of-actions .demo-cta-wrap, .offre .of-actions .demo-cta-btn { width: 100%; justify-content: center; text-align: center; }
+  .offre .of-actions .demo-cta-wrap, .offre .of-actions .demo-cta-btn, .offre .of-actions .cta-testez { width: 100%; justify-content: center; text-align: center; }
   .offre .of-ghost { display: none; }
   .offre .of-note { margin-top: 12px; font-size: 12.5px; }
 
@@ -453,3 +453,13 @@
   .offre .of-feature p { font-size: 14.5px; }
   .offre .of-steps--four { grid-template-columns: 1fr; }
 }
+
+/* Bloc « sur mesure » : clair, comme le reste du site */
+.offre .of-bespoke[class][class] { color: var(--lf-ink); border: 1px solid var(--lf-line); background: radial-gradient(60% 80% at 100% 0%, rgba(0, 71, 198, 0.12), transparent 70%), linear-gradient(180deg, #fff 0%, #f1f6ff 100%); box-shadow: 0 30px 60px -46px rgba(0, 71, 198, 0.4); }
+.offre .of-bespoke .lf-pill[class] { background: #fff; border-color: var(--lf-line); color: var(--lf-ink); box-shadow: 0 1px 2px rgba(12, 16, 36, 0.04); }
+.offre .of-bespoke .lf-h2[class] { color: var(--lf-ink); }
+.offre .of-bespoke .lf-sub[class] { color: var(--lf-muted); }
+.offre .of-tile[class] { background: #fff; border: 1px solid var(--lf-line); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.offre .of-tile h3[class] { color: var(--lf-ink); }
+.offre .of-tile p[class] { color: var(--lf-muted); }
+.offre .of-tile a[class] { color: var(--lf-accent); text-decoration-color: rgba(0, 71, 198, 0.4); }
