@@ -1,6 +1,7 @@
 import { Nav } from "@/components/sections/Nav";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { LossSection } from "@/components/sections/LossSection";
+import { EndingsSection } from "@/components/sections/EndingsSection";
 import { RelaySection } from "@/components/sections/RelaySection";
 import { MetiersSection } from "@/components/sections/MetiersSection";
 import { ToolsOrbitSection } from "@/components/sections/ToolsOrbitSection";
@@ -142,6 +143,7 @@ export default function Home() {
       <HeroSection />
       <div className="lf">
         <LossSection />
+        <EndingsSection />
         <RelaySection />
         <MetiersSection />
         <ToolsOrbitSection />

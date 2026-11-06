@@ -1,0 +1,27 @@
+/* « Deux fins possibles » : le même appel, avec et sans Rushh */
+.lf section.ed { padding-top: 40px; }
+.ed-head { gap: 14px; }
+.ed-head .lf-h2 { font-size: clamp(28px, 3.3vw, 40px); max-width: 760px; text-wrap: balance; }
+.ed-lead { max-width: 560px; text-wrap: balance; font-size: 15px; line-height: 1.6; }
+.ed-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); max-width: 980px; margin: clamp(32px, 4vw, 52px) auto 0; }
+.ed-card { display: flex; flex-direction: column; padding: 30px 32px 28px; border-radius: 26px; border: 1px solid var(--lf-line); background: #fff; box-shadow: var(--lf-card-shadow); }
+.ed-card--with { border-color: rgba(0, 71, 198, 0.28); background: linear-gradient(180deg, #fff 0%, #f6f9ff 100%); }
+.ed-card--without { background: #fafbfd; box-shadow: none; }
+.ed-name { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.035em; color: var(--lf-ink); }
+.ed-card--without .ed-name { color: var(--lf-muted); }
+.ed-list { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.ed-list li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; font-size: 16px; font-weight: 500; line-height: 1.45; letter-spacing: -0.015em; color: var(--lf-ink); }
+.ed-card--without .ed-list li { color: var(--lf-muted); }
+.ed-ic { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; }
+.ed-ic svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.ed-card--with .ed-ic { background: var(--lf-accent); color: #fff; }
+.ed-card--without .ed-ic { background: #eceef5; color: #8a90a8; }
+.ed-end { margin: auto 0 0; padding-top: 20px; border-top: 1px solid var(--lf-line); font-size: 14px; font-weight: 500; line-height: 1.5; letter-spacing: -0.01em; color: var(--lf-muted); }
+.ed-card--with .ed-end { color: var(--lf-accent); font-weight: 600; }
+.ed-list { margin-bottom: 24px; }
+@media (max-width: 760px) {
+  .lf section.ed { padding-top: 24px; }
+  .ed-grid { grid-template-columns: 1fr; }
+  .ed-card { padding: 26px 22px 24px; border-radius: 22px; }
+  .ed-list li { font-size: 15.5px; }
+}
