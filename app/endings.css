@@ -1,27 +1,34 @@
-/* « Deux fins possibles » : le même appel, avec et sans Rushh */
+/* « Deux fins possibles » : deux colonnes, titre souligné, lignes séparées par un filet */
 .lf section.ed { padding-top: 40px; }
 .ed-head { gap: 14px; }
-.ed-head .lf-h2 { font-size: clamp(28px, 3.3vw, 40px); max-width: 760px; text-wrap: balance; }
-.ed-lead { max-width: 560px; text-wrap: balance; font-size: 15px; line-height: 1.6; }
-.ed-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); max-width: 980px; margin: clamp(32px, 4vw, 52px) auto 0; }
-.ed-card { display: flex; flex-direction: column; padding: 30px 32px 28px; border-radius: 26px; border: 1px solid var(--lf-line); background: #fff; box-shadow: var(--lf-card-shadow); }
-.ed-card--with { border-color: rgba(0, 71, 198, 0.28); background: linear-gradient(180deg, #fff 0%, #f6f9ff 100%); }
-.ed-card--without { background: #fafbfd; box-shadow: none; }
-.ed-name { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.035em; color: var(--lf-ink); }
-.ed-card--without .ed-name { color: var(--lf-muted); }
-.ed-list { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
-.ed-list li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; font-size: 16px; font-weight: 500; line-height: 1.45; letter-spacing: -0.015em; color: var(--lf-ink); }
+.ed-head .lf-h2 { font-size: clamp(34px, 4.6vw, 52px); max-width: 860px; text-wrap: balance; }
+.ed-lead { max-width: 560px; text-wrap: balance; font-size: 16px; line-height: 1.6; }
+.ed-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(40px, 7vw, 88px); max-width: 1100px; margin: clamp(40px, 5vw, 64px) auto 0; }
+.ed-card { display: flex; flex-direction: column; min-width: 0; }
+.ed-name { margin: 0; padding-bottom: 26px; text-align: center; font-size: clamp(20px, 2vw, 24px); font-weight: 600; letter-spacing: -0.035em; color: var(--lf-ink); border-bottom: 3px solid var(--ed-line); }
+.ed-card--with { --ed-line: var(--lf-accent); }
+.ed-card--without { --ed-line: var(--lf-ink); }
+.ed-card--without .ed-name { color: rgba(12, 16, 36, 0.78); }
+.ed-list { list-style: none; margin: 0; padding: 0; }
+.ed-list li { display: flex; align-items: center; gap: 20px; padding: 28px 0; font-size: clamp(16px, 1.55vw, 19px); font-weight: 500; line-height: 1.35; letter-spacing: -0.02em; color: var(--lf-ink); border-bottom: 1px solid rgba(12, 16, 36, 0.28); }
 .ed-card--without .ed-list li { color: var(--lf-muted); }
-.ed-ic { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; }
-.ed-ic svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.ed-ic { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; }
+.ed-ic svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .ed-card--with .ed-ic { background: var(--lf-accent); color: #fff; }
-.ed-card--without .ed-ic { background: #eceef5; color: #8a90a8; }
-.ed-end { margin: auto 0 0; padding-top: 20px; border-top: 1px solid var(--lf-line); font-size: 14px; font-weight: 500; line-height: 1.5; letter-spacing: -0.01em; color: var(--lf-muted); }
-.ed-card--with .ed-end { color: var(--lf-accent); font-weight: 600; }
-.ed-list { margin-bottom: 24px; }
+.ed-card--without .ed-ic { background: #d6e2fa; color: var(--lf-ink); }
+.ed-end { margin: 0; padding-top: 24px; font-size: clamp(15px, 1.4vw, 17px); font-weight: 600; line-height: 1.45; letter-spacing: -0.02em; color: var(--lf-ink); }
+.ed-card--with .ed-end { color: var(--lf-accent); }
+.ed-card--without .ed-end { color: var(--lf-muted); }
+@media (min-width: 761px) {
+  .ed-grid { grid-template-rows: repeat(6, auto); }
+  .ed-card { display: grid; grid-row: span 6; grid-template-rows: subgrid; }
+  .ed-list { display: contents; }
+}
 @media (max-width: 760px) {
   .lf section.ed { padding-top: 24px; }
-  .ed-grid { grid-template-columns: 1fr; }
-  .ed-card { padding: 26px 22px 24px; border-radius: 22px; }
-  .ed-list li { font-size: 15.5px; }
+  .ed-grid { grid-template-columns: 1fr; row-gap: 48px; }
+  .ed-name { padding-bottom: 20px; }
+  .ed-list li { gap: 16px; padding: 20px 0; }
+  .ed-ic { width: 34px; height: 34px; }
+  .ed-ic svg { width: 15px; height: 15px; }
 }

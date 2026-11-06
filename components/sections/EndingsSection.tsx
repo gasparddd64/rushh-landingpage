@@ -14,17 +14,17 @@ const WITHOUT = [
   "Elle contacte une autre agence, qui répond à sa demande.",
 ];
 
-function Check() {
+function Plus() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden>
-      <path d="M5 12.5l4.5 4.5L19 7.5" />
+      <path d="M12 5v14M5 12h14" />
     </svg>
   );
 }
 function Cross() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden>
-      <path d="M7 7l10 10M17 7L7 17" />
+      <path d="M6 6l12 12M18 6L6 18" />
     </svg>
   );
 }
@@ -54,7 +54,7 @@ export function EndingsSection() {
               {WITH.map((t) => (
                 <li key={t}>
                   <span className="ed-ic" aria-hidden>
-                    <Check />
+                    <Plus />
                   </span>
                   {t}
                 </li>
