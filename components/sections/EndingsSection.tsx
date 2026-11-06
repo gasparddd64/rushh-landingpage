@@ -1,17 +1,17 @@
 import "@/app/endings.css";
 
 const WITH = [
-  "Décroche à chaque appel, même après la fermeture",
-  "Pose les questions que vous poseriez",
-  "Prend rendez-vous directement dans votre agenda",
-  "Vous envoie le résumé par SMS ou e‑mail",
+  "L’appel est pris en charge, même après la fermeture.",
+  "Le projet de vente est qualifié et les informations essentielles sont recueillies.",
+  "Un rendez-vous d’estimation est fixé selon vos disponibilités.",
+  "Votre équipe reçoit le récapitulatif et sait exactement de quoi il s’agit.",
 ];
 
 const WITHOUT = [
-  "Un bip, puis le silence",
-  "Aucune information recueillie",
-  "Rien dans l’agenda",
-  "Vous l’apprenez le lendemain",
+  "Le téléphone sonne, puis le répondeur se déclenche.",
+  "Mme\u00a0Durand raccroche sans laisser de message.",
+  "Vous ne savez même pas qu’elle a appelé.",
+  "Elle contacte une autre agence, qui répond à sa demande.",
 ];
 
 function Check() {
@@ -40,8 +40,8 @@ export function EndingsSection() {
             Le même appel. Deux fins possibles.
           </h2>
           <p className="lf-sub ed-lead">
-            18&nbsp;h&nbsp;40, un propriétaire veut faire estimer son appartement. D’un côté, un message que personne ne
-            laisse. De l’autre, Mme&nbsp;Durand attendue demain à 9&nbsp;h.
+            Il est 18&nbsp;h&nbsp;40. Mme&nbsp;Durand souhaite faire estimer son appartement. Votre agence est fermée.
+            Voici ce qui se passe.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export function EndingsSection() {
                 </li>
               ))}
             </ul>
-            <p className="ed-end">Mme Durand est au rendez-vous d’estimation, demain à 9&nbsp;h.</p>
+            <p className="ed-end">Demain à 9&nbsp;h, vous avez rendez-vous avec une propriétaire vendeuse.</p>
           </article>
 
           <article className="ed-card ed-card--without" aria-labelledby="ed-without">
@@ -77,7 +77,7 @@ export function EndingsSection() {
                 </li>
               ))}
             </ul>
-            <p className="ed-end">Aucun message laissé. Le mandat part chez l’agence suivante.</p>
+            <p className="ed-end">Une opportunité de mandat perdue, sans même le savoir.</p>
           </article>
         </div>
       </div>
