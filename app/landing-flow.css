@@ -651,7 +651,8 @@
 @media (max-width: 768px) {
   .nb-wrap { padding: 0 16px; }
   .nb-hero { flex-direction: column; align-items: flex-start; gap: 6px; }
-  .nb-hero-label { padding-bottom: 0; }
+  /* en colonne, flex-basis (9rem) devenait une hauteur : gros blanc entre le texte et la photo */
+  .nb-hero-label { flex: none; min-width: 0; padding-bottom: 0; }
   .nb-stat p { font-size: 11px; letter-spacing: 0.04em; }
 }
 
