@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { CookieSettingsButton } from "@/components/CookieSettingsButton";
 
 export function FooterSection() {
   return (
@@ -88,7 +87,6 @@ export function FooterSection() {
             <Link href="/mentions-legales">Mentions légales</Link>
             <Link href="/cgv">CGV</Link>
             <Link href="/privacy">Confidentialité</Link>
-            <CookieSettingsButton />
           </nav>
         </div>
       </div>

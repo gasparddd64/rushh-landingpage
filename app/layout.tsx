@@ -3,7 +3,6 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { BRAND_NAME } from "@/lib/brand";
 import { CalendlyTracking } from "@/components/CalendlyTracking";
-import { ConsentManager } from "@/components/ConsentManager";
 import { ConversionTracking } from "@/components/ConversionTracking";
 import { AnnouncementBar } from "@/components/ui/announcement-bar";
 
@@ -70,7 +69,6 @@ export default function RootLayout({
       <body>
         <CalendlyTracking />
         <ConversionTracking />
-        <ConsentManager />
         <AnnouncementBar />
         {children}
       </body>
