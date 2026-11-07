@@ -1,25 +1,28 @@
-/* « Demandez à votre IA » */
-.lf section.ai { padding-top: 40px; }
-.ai-head { gap: 14px; }
-.ai-head .lf-h2 { font-size: clamp(30px, 3.8vw, 46px); max-width: 780px; text-wrap: balance; }
-.ai-lead { max-width: 560px; text-wrap: balance; font-size: 16px; line-height: 1.6; }
-.ai-row { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); max-width: 880px; margin: clamp(32px, 4vw, 48px) auto 0; }
-.ai-card { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; width: 100%; min-height: 168px; padding: 26px 12px 22px; border-radius: 22px; border: 1px solid var(--lf-line); background: #fff; box-shadow: var(--lf-card-shadow); font: inherit; color: var(--lf-ink); text-decoration: none; cursor: pointer; transition: border-color .2s ease, transform .2s ease; }
-.ai-card:hover { border-color: rgba(0, 71, 198, 0.45); transform: translateY(-3px); }
-.ai-logo { display: block; width: auto; height: 46px; max-width: 70px; object-fit: contain; }
-.ai-name { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
-.ai-copied { position: absolute; left: 6px; right: 6px; bottom: 7px; font-size: 11.5px; font-weight: 600; text-align: center; color: var(--lf-accent); }
-.ai-card:focus-visible, .ai-copy:focus-visible, .ai-details summary:focus-visible { outline: 2px solid var(--lf-accent); outline-offset: 3px; }
-.ai-details { max-width: 760px; margin: 18px auto 0; text-align: center; }
-.ai-details summary { display: inline-block; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--lf-accent); list-style: none; }
+/* Bande « posez la question à votre assistant » : sobre, filets fins, sans ombre */
+.lf section.ai { padding: 40px 0 20px; }
+.ai-panel { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: clamp(28px, 5vw, 72px); max-width: 1040px; margin: 0 auto; padding: clamp(28px, 3.6vw, 44px) clamp(24px, 4vw, 52px); border-radius: 22px; border: 1px solid var(--lf-line); background: #fff; }
+.ai-title { margin: 0; font-size: clamp(22px, 2.5vw, 30px); font-weight: 600; line-height: 1.15; letter-spacing: -0.04em; color: var(--lf-ink); text-wrap: balance; }
+.ai-text { margin: 12px 0 0; max-width: 440px; font-size: 15px; font-weight: 500; line-height: 1.55; letter-spacing: -0.015em; color: var(--lf-muted); }
+.ai-row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--lf-line); border-radius: 16px; overflow: hidden; }
+.ai-row li { border-bottom: 1px solid var(--lf-line); }
+.ai-row li:nth-child(odd) { border-right: 1px solid var(--lf-line); }
+.ai-row li:nth-last-child(-n+2) { border-bottom: 0; }
+.ai-card { position: relative; display: flex; align-items: center; gap: 14px; width: 100%; padding: 18px 20px; background: transparent; border: 0; font: inherit; color: var(--lf-ink); text-decoration: none; text-align: left; cursor: pointer; transition: background .18s ease; }
+.ai-card:hover { background: #f6f8fc; }
+.ai-logo { flex: none; display: block; width: auto; height: 24px; max-width: 28px; object-fit: contain; }
+.ai-name { font-size: 15.5px; font-weight: 600; letter-spacing: -0.02em; }
+.ai-copied { position: absolute; right: 12px; font-size: 11px; font-weight: 600; color: var(--lf-accent); }
+.ai-card:focus-visible, .ai-copy:focus-visible, .ai-details summary:focus-visible { outline: 2px solid var(--lf-accent); outline-offset: -2px; }
+.ai-details { margin-top: 18px; }
+.ai-details summary { display: inline-block; cursor: pointer; font-size: 13.5px; font-weight: 600; color: var(--lf-accent); list-style: none; }
 .ai-details summary::-webkit-details-marker { display: none; }
-.ai-prompt { margin: 16px 0 0; padding: 20px 22px; border-radius: 18px; border: 1px solid var(--lf-line); background: #fff; text-align: left; white-space: pre-wrap; font: inherit; font-size: 13.5px; line-height: 1.6; color: var(--lf-muted); max-height: 320px; overflow: auto; }
-.ai-copy { margin-top: 12px; height: 40px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--lf-line); background: #fff; font: inherit; font-size: 14px; font-weight: 600; color: var(--lf-ink); cursor: pointer; }
-@media (max-width: 760px) {
-  .lf section.ai { padding-top: 24px; }
-  .ai-row { gap: 8px; }
-  .ai-card { min-height: 104px; gap: 12px; padding: 18px 4px 14px; border-radius: 16px; }
-  .ai-logo { height: 30px; max-width: 40px; }
-  .ai-name { font-size: 12.5px; letter-spacing: -0.03em; }
-  .ai-copied { font-size: 9.5px; bottom: 4px; }
+.ai-prompt { margin: 14px 0 0; padding: 16px 18px; border-radius: 12px; border: 1px solid var(--lf-line); background: #fafbfd; white-space: pre-wrap; font: inherit; font-size: 13px; line-height: 1.6; color: var(--lf-muted); max-height: 260px; overflow: auto; }
+.ai-copy { margin-top: 10px; height: 36px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--lf-line); background: #fff; font: inherit; font-size: 13.5px; font-weight: 600; color: var(--lf-ink); cursor: pointer; }
+@media (max-width: 860px) {
+  .lf section.ai { padding: 24px 0 8px; }
+  .ai-panel { grid-template-columns: 1fr; gap: 24px; padding: 26px 20px; }
+}
+@media (max-width: 420px) {
+  .ai-card { padding: 16px 14px; gap: 10px; }
+  .ai-name { font-size: 14.5px; }
 }
