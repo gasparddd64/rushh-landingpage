@@ -25,7 +25,7 @@ const organizationSchema = {
   "name": BRAND_NAME,
   "alternateName": BRAND_SHORT,
   "url": SITE,
-  "logo": "https://www.rushh.fr/logo-rushh.png",
+  "logo": "https://www.rushh.fr/logo-rushh-og.png",
   "description": "Standard téléphonique conçu et déployé pour les agences immobilières françaises.",
   "email": "hello@rushh.fr",
   "address": {
@@ -57,7 +57,7 @@ const localBusinessSchema = {
   "name": BRAND_NAME,
   "alternateName": BRAND_SHORT,
   "url": SITE,
-  "logo": "https://www.rushh.fr/logo-rushh.png",
+  "logo": "https://www.rushh.fr/logo-rushh-og.png",
   "description": "Standard téléphonique conçu et déployé pour les agences immobilières françaises.",
   "email": "hello@rushh.fr",
   "address": {
@@ -82,8 +82,8 @@ const localBusinessSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Agent vocal IA pour agence immobilière",
-  "serviceType": "Agent vocal IA immobilier",
+  "name": "Standard téléphonique IA pour agence immobilière",
+  "serviceType": "Standard téléphonique IA immobilier",
   "description": "Standard téléphonique alimenté par intelligence artificielle pour les professionnels de l'immobilier, prenant en charge les appels entrants selon les règles du client.",
   "provider": orgRef,
   "areaServed": {

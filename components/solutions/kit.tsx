@@ -26,7 +26,7 @@ export interface SocialImage {
 }
 
 // Visuel de partage par défaut (fichier carré existant) : dimensions réelles du fichier.
-const DEFAULT_SOCIAL_IMAGE: SocialImage = { src: "/logo-rushh-og.png", width: 365, height: 365, alt: BRAND_NAME };
+const DEFAULT_SOCIAL_IMAGE: SocialImage = { src: "/logo-rushh-og.png", width: 1200, height: 1200, alt: BRAND_NAME };
 
 export function buildMetadata({
   title,

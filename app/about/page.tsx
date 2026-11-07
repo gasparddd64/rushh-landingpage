@@ -33,7 +33,7 @@ export default function AboutPage() {
             <h2>Le Standard téléphonique IA pensé pour l&apos;immobilier</h2>
             <p>
               Rushh conçoit et déploie le Standard téléphonique IA pensé pour l&apos;immobilier :
-              un agent vocal qui décroche, qualifie et transmet les appels entrants d&apos;une
+              un standard qui décroche, qualifie et transmet les appels entrants d&apos;une
               agence immobilière, 24 h/24.
             </p>
           </section>

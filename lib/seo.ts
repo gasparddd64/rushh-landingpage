@@ -8,7 +8,7 @@ export function withSocial(base: Metadata, path: string): Metadata {
   const title = typeof base.title === "string" ? base.title : BRAND_NAME;
   const description = base.description ?? "";
   const url = `${SITE}${path}`;
-  const images = [{ url: `${SITE}/logo-rushh-og.png`, width: 365, height: 365, alt: BRAND_NAME }];
+  const images = [{ url: `${SITE}/logo-rushh-og.png`, width: 1200, height: 1200, alt: BRAND_NAME }];
   return {
     ...base,
     openGraph: { title, description, url, siteName: BRAND_NAME, locale: "fr_FR", type: "website", images },

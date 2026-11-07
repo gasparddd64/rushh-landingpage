@@ -28,8 +28,8 @@ const FAQ_MARKDOWN = FAQ.map((item) => `### ${item.q}\n\n${item.a}`).join("\n\n"
 
 export const MARKDOWN_PAGES: Record<string, MarkdownPage> = {
   "/": {
-    title: "Rushh immo — Agent vocal IA pour agence immobilière",
-    markdown: `# Rushh — Agent vocal IA pour agence immobilière
+    title: "Rushh immo — Standard téléphonique IA pour agence immobilière",
+    markdown: `# Rushh — Standard téléphonique IA pour agence immobilière
 
 Rushh conçoit et déploie un standard téléphonique IA sur-mesure pour les agences immobilières : il décroche, qualifie et transmet les appels entrants 24 h/24, avec un déploiement adapté à l’agence. La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.
 
@@ -67,7 +67,7 @@ Contact : hello@rushh.fr
     title: "À propos | Rushh",
     markdown: `# À propos de Rushh
 
-Rushh conçoit et déploie le Standard téléphonique IA pensé pour l'immobilier : un agent vocal qui décroche, qualifie et transmet les appels entrants d'une agence immobilière, 24 h/24.
+Rushh conçoit et déploie le Standard téléphonique IA pensé pour l'immobilier : un standard qui décroche, qualifie et transmet les appels entrants d'une agence immobilière, 24 h/24.
 
 ## Qui édite Rushh
 

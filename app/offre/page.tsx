@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: BRAND_NAME,
     locale: "fr_FR",
     type: "website",
-    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 365, height: 365, alt: BRAND_NAME }],
+    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 1200, height: 1200, alt: BRAND_NAME }],
   },
   twitter: { card: "summary", title: TITLE, description: DESCRIPTION, images: ["https://www.rushh.fr/logo-rushh-og.png"] },
 };
