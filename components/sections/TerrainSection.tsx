@@ -11,10 +11,10 @@ export function TerrainSection() {
               src="/equipe-salon-immobilier.webp"
               width={1400}
               height={933}
-              alt="Deux membres de l'équipe Rushh, en costume, lors d'un salon de l'immobilier"
+              alt="Deux membres de l'équipe Rushh, en costume, au salon RENT Paris"
               loading="lazy"
             />
-            <figcaption className="tr-caption">L&apos;équipe Rushh, sur un salon de l&apos;immobilier.</figcaption>
+            <figcaption className="tr-caption">L&apos;équipe Rushh, au RENT Paris.</figcaption>
           </figure>
           <div className="tr-copy">
             <span className="lf-pill">Sur le terrain</span>
