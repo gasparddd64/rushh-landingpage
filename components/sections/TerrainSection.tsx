@@ -2,10 +2,11 @@ import "@/app/terrain.css";
 
 export function TerrainSection() {
   return (
-    <section aria-labelledby="terrain-title">
+    <section className="tr" aria-labelledby="terrain-title">
       <div className="lf-wrap">
-        <div className="tr-card">
+        <div className="tr-grid">
           <figure className="tr-photo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/equipe-salon-immobilier.webp"
               width={1400}
@@ -13,10 +14,12 @@ export function TerrainSection() {
               alt="Deux membres de l'équipe Rushh, en costume, lors d'un salon de l'immobilier"
               loading="lazy"
             />
+            <figcaption className="tr-caption">L&apos;équipe Rushh, sur un salon de l&apos;immobilier.</figcaption>
           </figure>
           <div className="tr-copy">
             <span className="lf-pill">Sur le terrain</span>
             <h2 id="terrain-title" className="tr-title">L&apos;immobilier, on connaît votre quotidien.</h2>
+            <hr className="tr-rule" />
             <p className="tr-text">
               Visites, estimations, appels de locataires, urgences de gestion… Nous échangeons directement avec les
               professionnels de l&apos;immobilier pour comprendre leurs réalités et concevoir des standards qui s&apos;adaptent
