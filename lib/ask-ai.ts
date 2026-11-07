@@ -24,10 +24,10 @@ Une fois que j'ai répondu, dis-moi quelle est la meilleure prochaine étape pou
 Si une information manque, dis-le plutôt que de l'inventer.`;
 
 export const ASK_TARGETS = [
-  { id: "chatgpt", name: "ChatGPT", url: (q: string) => `https://chatgpt.com/?q=${q}` },
-  { id: "claude", name: "Claude", url: (q: string) => `https://claude.ai/new?q=${q}` },
-  { id: "perplexity", name: "Perplexity", url: (q: string) => `https://www.perplexity.ai/search?q=${q}` },
-  { id: "grok", name: "Grok", url: (q: string) => `https://grok.com/?q=${q}` },
+  { id: "chatgpt", name: "ChatGPT", logo: "/ia/chatgpt.webp", w: 237, h: 240, url: (q: string) => `https://chatgpt.com/?q=${q}` },
+  { id: "claude", name: "Claude", logo: "/ia/claude.webp", w: 240, h: 240, url: (q: string) => `https://claude.ai/new?q=${q}` },
+  { id: "gemini", name: "Gemini", logo: "/ia/gemini.webp", w: 240, h: 240, url: null },
+  { id: "perplexity", name: "Perplexity", logo: "/ia/perplexity.webp", w: 210, h: 240, url: (q: string) => `https://www.perplexity.ai/search?q=${q}` },
 ] as const;
 
 export const GEMINI_URL = "https://gemini.google.com/app";

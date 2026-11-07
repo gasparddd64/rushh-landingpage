@@ -1,20 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { DemoCTA } from "@/components/ui/demo-cta";
-import { TestezCTA } from "@/components/ui/testez-cta";
 import { ASK_PROMPT, ASK_TARGETS, GEMINI_URL } from "@/lib/ask-ai";
 import "@/app/ask-ai.css";
 
-function Arrow() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden>
-      <path d="M7 17L17 7M9 7h8v8" />
-    </svg>
-  );
-}
-
-/** « Demandez à votre IA » : un clic envoie un prompt déjà rédigé à ChatGPT, Claude, Perplexity, Grok ou Gemini. */
+/** « Demandez à votre IA » : un clic envoie un prompt déjà rédigé à ChatGPT, Claude, Gemini ou Perplexity. */
 export function AskAISection() {
   const [copied, setCopied] = useState(false);
   const q = encodeURIComponent(ASK_PROMPT);
@@ -24,9 +14,8 @@ export function AskAISection() {
       await navigator.clipboard.writeText(ASK_PROMPT);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2400);
-      return true;
     } catch {
-      return false;
+      /* pas de presse-papiers : le prompt reste lisible ci-dessous */
     }
   };
 
@@ -49,21 +38,31 @@ export function AskAISection() {
           </p>
         </div>
 
-        <div className="ai-row" role="group" aria-label="Poser la question à une IA">
-          {ASK_TARGETS.map((t) => (
-            <a key={t.id} className="ai-btn" href={t.url(q)} target="_blank" rel="noopener noreferrer">
-              <span>Demander à {t.name}</span>
-              <Arrow />
-            </a>
-          ))}
-          <button type="button" className="ai-btn" onClick={openGemini}>
-            <span>Demander à Gemini</span>
-            <Arrow />
-          </button>
-        </div>
-        <p className="ai-note" aria-live="polite">
-          {copied ? "Prompt copié : collez-le dans Gemini (Ctrl/Cmd + V)." : "Pour Gemini, le prompt est copié : il ne reste qu’à le coller."}
-        </p>
+        <ul className="ai-row" aria-label="Poser la question à une IA">
+          {ASK_TARGETS.map((t) => {
+            const inner = (
+              <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="ai-logo" src={t.logo} width={t.w} height={t.h} alt="" loading="lazy" decoding="async" />
+                <span className="ai-name">{t.name}</span>
+              </>
+            );
+            return (
+              <li key={t.id}>
+                {t.url ? (
+                  <a className="ai-card" href={t.url(q)} target="_blank" rel="noopener noreferrer" aria-label={`Demander à ${t.name}`}>
+                    {inner}
+                  </a>
+                ) : (
+                  <button type="button" className="ai-card" onClick={openGemini} aria-label={`Demander à ${t.name} (le prompt est copié, à coller)`}>
+                    {inner}
+                    <span className="ai-copied" aria-live="polite">{copied ? "Prompt copié, à coller" : ""}</span>
+                  </button>
+                )}
+              </li>
+            );
+          })}
+        </ul>
 
         <details className="ai-details">
           <summary>Voir le prompt</summary>
@@ -72,11 +71,6 @@ export function AskAISection() {
             {copied ? "Copié ✓" : "Copier le prompt"}
           </button>
         </details>
-
-        <div className="ai-cta">
-          <TestezCTA />
-          <DemoCTA />
-        </div>
       </div>
     </section>
   );
