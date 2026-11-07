@@ -1,5 +1,5 @@
 /* « Demandez à votre IA » */
-.lf section.ai { padding-top: 40px; }
+.lf section.ai { padding: 96px 0; background: linear-gradient(180deg, #f1f5fc 0%, #f6f9fd 100%); border-top: 1px solid var(--lf-line); border-bottom: 1px solid var(--lf-line); }
 .ai-head { gap: 14px; }
 .ai-head .lf-h2 { font-size: clamp(30px, 3.8vw, 46px); max-width: 780px; text-wrap: balance; }
 .ai-lead { max-width: 560px; text-wrap: balance; font-size: 16px; line-height: 1.6; }
@@ -16,7 +16,7 @@
 .ai-prompt { margin: 16px 0 0; padding: 20px 22px; border-radius: 18px; border: 1px solid var(--lf-line); background: #fff; text-align: left; white-space: pre-wrap; font: inherit; font-size: 13.5px; line-height: 1.6; color: var(--lf-muted); max-height: 320px; overflow: auto; }
 .ai-copy { margin-top: 12px; height: 40px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--lf-line); background: #fff; font: inherit; font-size: 14px; font-weight: 600; color: var(--lf-ink); cursor: pointer; }
 @media (max-width: 760px) {
-  .lf section.ai { padding-top: 24px; }
+  .lf section.ai { padding: 64px 0; }
   .ai-row { gap: 8px; }
   .ai-card { min-height: 104px; gap: 12px; padding: 18px 4px 14px; border-radius: 16px; }
   .ai-logo { height: 30px; max-width: 40px; }
