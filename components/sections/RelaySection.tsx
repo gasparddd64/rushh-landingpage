@@ -52,7 +52,6 @@ const PIN_STEP = 26;
 
 export function RelaySection() {
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // Épinglage : une carte plus haute que l'écran se cale plus haut, pour qu'on puisse en lire toute la fin avant que la suivante la recouvre.
   useEffect(() => {
@@ -73,46 +72,6 @@ export function RelaySection() {
     return () => {
       ro.disconnect();
       window.removeEventListener("resize", pin);
-    };
-  }, []);
-
-  // Chaque carte se réduit légèrement quand la suivante vient la recouvrir.
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: no-preference)");
-    let raf = 0;
-
-    const update = () => {
-      raf = 0;
-      const items = itemRefs.current;
-      const cards = cardRefs.current;
-      for (let i = 0; i < items.length - 1; i++) {
-        const cur = items[i];
-        const next = items[i + 1];
-        const card = cards[i];
-        if (!cur || !next || !card) continue;
-        if (!mq.matches) {
-          card.style.transform = "";
-          continue;
-        }
-        const overlap = cur.getBoundingClientRect().bottom - next.getBoundingClientRect().top;
-        const range = cur.offsetHeight - PIN_STEP;
-        const p = Math.min(1, Math.max(0, overlap / range));
-        card.style.transform = p > 0 ? `scale(${1 - 0.05 * p})` : "";
-      }
-    };
-    const schedule = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", schedule);
-    mq.addEventListener("change", schedule);
-    return () => {
-      window.removeEventListener("scroll", schedule);
-      window.removeEventListener("resize", schedule);
-      mq.removeEventListener("change", schedule);
-      if (raf) cancelAnimationFrame(raf);
     };
   }, []);
 
@@ -143,7 +102,6 @@ export function RelaySection() {
               >
                 <div
                   className={`lf-card rl-card${i % 2 === 1 ? " rl-card--flip" : ""}`}
-                  ref={(el) => { cardRefs.current[i] = el; }}
                 >
                   <div className="rl-visual">
                     <img src={s.img} alt={s.alt} loading="lazy" />

@@ -147,8 +147,6 @@
   grid-template-columns: 1fr 1fr;
   min-height: 450px;
   padding: 8px;
-  transform-origin: 50% 0;
-  will-change: transform;
 }
 .rl-card--flip .rl-visual { order: 2; }
 .rl-content {
