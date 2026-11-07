@@ -54,24 +54,34 @@ export function RelaySection() {
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // Épinglage : une carte plus haute que l'écran se cale plus haut, pour qu'on puisse en lire toute la fin avant que la suivante la recouvre.
+  // La hauteur d'écran n'est relue que si la largeur change : sur téléphone, la barre d'adresse qui se replie pendant le défilement
+  // modifie innerHeight, et recalculer les positions à ce moment-là faisait trembler les cartes.
   useEffect(() => {
+    let vw = window.innerWidth;
+    let vh = window.innerHeight;
     const pin = () => {
-      const base = window.innerWidth <= 768 ? 84 : 92;
+      const base = vw <= 768 ? 84 : 92;
       itemRefs.current.forEach((el, i) => {
         if (!el) return;
         const wanted = base + i * PIN_STEP;
-        const fit = window.innerHeight - el.offsetHeight - 14;
+        const fit = vh - el.offsetHeight - 14;
         el.style.top = `${Math.max(8, Math.min(wanted, fit))}px`;
       });
+    };
+    const onResize = () => {
+      if (window.innerWidth === vw) return;
+      vw = window.innerWidth;
+      vh = window.innerHeight;
+      pin();
     };
     pin();
     const ro = new ResizeObserver(pin);
     itemRefs.current.forEach((el) => el && ro.observe(el));
-    window.addEventListener("resize", pin);
+    window.addEventListener("resize", onResize);
     document.fonts?.ready.then(pin);
     return () => {
       ro.disconnect();
-      window.removeEventListener("resize", pin);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
