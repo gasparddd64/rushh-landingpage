@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { LossSection } from "@/components/sections/LossSection";
 import { EndingsSection } from "@/components/sections/EndingsSection";
 import { RelaySection } from "@/components/sections/RelaySection";
+import { AskAISection } from "@/components/sections/AskAISection";
 import { MetiersSection } from "@/components/sections/MetiersSection";
 import { ToolsOrbitSection } from "@/components/sections/ToolsOrbitSection";
 import { ChiffresSection } from "@/components/sections/ChiffresSection";
@@ -145,6 +146,7 @@ export default function Home() {
         <LossSection />
         <EndingsSection />
         <RelaySection />
+        <AskAISection />
         <MetiersSection />
         <ToolsOrbitSection />
         <ChiffresSection />

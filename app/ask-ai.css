@@ -1,0 +1,24 @@
+/* « Demandez à votre IA » */
+.lf section.ai { padding-top: 40px; }
+.ai-head { gap: 14px; }
+.ai-head .lf-h2 { font-size: clamp(30px, 3.8vw, 46px); max-width: 780px; text-wrap: balance; }
+.ai-lead { max-width: 560px; text-wrap: balance; font-size: 16px; line-height: 1.6; }
+.ai-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: clamp(30px, 4vw, 44px) auto 0; }
+.ai-btn { display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 24px; border-radius: 999px; border: 1px solid var(--lf-line); background: #fff; box-shadow: var(--lf-card-shadow); font: inherit; font-size: 16px; font-weight: 500; letter-spacing: -0.02em; color: var(--lf-ink); text-decoration: none; cursor: pointer; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+.ai-btn svg { width: 17px; height: 17px; fill: none; stroke: var(--lf-accent); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s ease; }
+.ai-btn:hover { border-color: rgba(0, 71, 198, 0.45); }
+.ai-btn:hover svg { transform: translate(2px, -2px); }
+.ai-btn:focus-visible, .ai-copy:focus-visible, .ai-details summary:focus-visible { outline: 2px solid var(--lf-accent); outline-offset: 3px; }
+.ai-note { margin: 14px 0 0; text-align: center; font-size: 13.5px; font-weight: 500; color: var(--lf-muted); min-height: 1.4em; }
+.ai-details { max-width: 760px; margin: 18px auto 0; text-align: center; }
+.ai-details summary { display: inline-block; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--lf-accent); list-style: none; }
+.ai-details summary::-webkit-details-marker { display: none; }
+.ai-prompt { margin: 16px 0 0; padding: 20px 22px; border-radius: 18px; border: 1px solid var(--lf-line); background: #fff; text-align: left; white-space: pre-wrap; font: inherit; font-size: 13.5px; line-height: 1.6; color: var(--lf-muted); max-height: 320px; overflow: auto; }
+.ai-copy { margin-top: 12px; height: 40px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--lf-line); background: #fff; font: inherit; font-size: 14px; font-weight: 600; color: var(--lf-ink); cursor: pointer; }
+.ai-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; margin-top: clamp(32px, 4vw, 44px); }
+@media (max-width: 760px) {
+  .lf section.ai { padding-top: 24px; }
+  .ai-row { flex-direction: column; align-items: stretch; }
+  .ai-btn { justify-content: space-between; }
+  .ai-cta { flex-direction: column; }
+}
