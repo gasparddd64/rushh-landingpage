@@ -4,6 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: 'https://www.rushh.fr',
+      lastModified: new Date('2026-11-07'),
       changeFrequency: 'weekly',
       priority: 1,
     },
