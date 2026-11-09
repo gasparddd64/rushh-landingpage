@@ -31,6 +31,7 @@ const REQUIRED_LINKS: Record<string, string[]> = {
   "/ressources/standard-ia-google-agenda-outlook-immobilier": ["/offre", "/demonstrations", "/integrations", "/ressources/prise-rendez-vous-ia-immobilier"],
   "/ressources/standard-telephonique-ia-immobilier-rgpd": ["/offre", "/demonstrations", "/privacy"],
   "/ressources/repondeur-ou-standard-ia-agence-immobiliere": ["/offre", "/demonstrations", "/ressources/appels-manques-immobilier", "/ressources/standard-telephonique-ia-immobilier-rgpd"],
+  "/ressources/messages-repondeur-agence-immobiliere": ["/offre", "/demonstrations", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/repondeur-ou-standard-ia-agence-immobiliere"],
   "/vs/volubilimo": ["/offre", "/demonstrations", "/comparatif/standards-telephoniques-ia-immobilier", "/vs/fonio", "/vs/joe-ai", "/ressources/prise-rendez-vous-ia-immobilier"],
 };
 
@@ -42,6 +43,7 @@ const BARE_LINKS: Record<string, string[]> = {
   "/ressources/appel-vendeur-estimation-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/prise-rendez-vous-ia-immobilier", "/ressources/standard-ia-google-agenda-outlook-immobilier"],
   "/ressources/permanence-telephonique-agence-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/solutions/gestion-locative", "/ressources/standard-syndic-appels-urgents", "/ressources/telesecretariat-humain-ou-ia", "/ressources/appels-manques-immobilier"],
   "/ressources/appels-manques-immobilier": ["/demonstrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/permanence-telephonique-agence-immobiliere"],
+  "/ressources/messages-repondeur-agence-immobiliere": ["/demonstrations", "/offre", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/repondeur-ou-standard-ia-agence-immobiliere"],
 };
 
 // Pages qui citent légitimement des prix publics de concurrents (sourcés) ; les prix Rushh restent interdits partout.
@@ -198,12 +200,12 @@ describe("guide-specific requirements", () => {
 describe("catalogue /ressources (le Blog)", () => {
   const md = getMarkdownPage("/ressources")?.markdown ?? "";
 
-  it("is a known route with a Markdown mirror, one H1, and links to all twenty-five publications", () => {
+  it("is a known route with a Markdown mirror, one H1, and links to all twenty-six publications", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(md).toContain("# Le Blog Rushh");
-    expect(ARTICLES).toHaveLength(25);
-    expect(CATALOGUE).toHaveLength(25);
+    expect(ARTICLES).toHaveLength(26);
+    expect(CATALOGUE).toHaveLength(26);
     for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
@@ -214,7 +216,7 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(CATALOGUE.map((e) => e.path)).toContain(FEATURED_PATH);
   });
 
-  it("offers the three filters: all (25), guides (19), comparatifs (6)", () => {
+  it("offers the three filters: all (26), guides (20), comparatifs (6)", () => {
     expect(CATEGORIES.map((c) => c.label)).toEqual(["Guides & conseils", "Comparatifs"]);
     const by = (c: string) => CATALOGUE.filter((e) => e.category === c).map((e) => e.path).sort();
     expect(by("guides")).toEqual([
@@ -224,6 +226,7 @@ describe("catalogue /ressources (le Blog)", () => {
       "/ressources/choisir-standard-telephonique-ia-immobilier",
       "/ressources/cout-standard-telephonique-ia-immobilier",
       "/ressources/filtrer-demarchage-telephonique-agence-immobiliere",
+      "/ressources/messages-repondeur-agence-immobiliere",
       "/ressources/permanence-telephonique-agence-immobiliere",
       "/ressources/prise-rendez-vous-ia-immobilier",
       "/ressources/qualification-appels-vendeurs-acquereurs",
@@ -344,6 +347,7 @@ describe("refonte éditoriale : règles communes aux pages au texte réécrit", 
     "/ressources/prise-rendez-vous-ia-immobilier",
     "/ressources/appel-vendeur-estimation-immobiliere",
     "/ressources/permanence-telephonique-agence-immobiliere",
+    "/ressources/messages-repondeur-agence-immobiliere",
   ]);
   const bare = ARTICLES.filter((x) => x.bare && !PROTECTED.has(x.path));
   const wc = (md: string) => md.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").split(/\s+/).length;

@@ -25,9 +25,10 @@ import { standardSyndicUrgents } from "./standard-syndic-appels-urgents";
 import { standardIaAgenda } from "./standard-ia-google-agenda-outlook-immobilier";
 import { standardIaRgpd } from "./standard-telephonique-ia-immobilier-rgpd";
 import { repondeurOuStandardIa } from "./repondeur-ou-standard-ia-agence-immobiliere";
+import { messagesRepondeur } from "./messages-repondeur-agence-immobiliere";
 
-export const ARTICLES: Article[] = [appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, vsJoeAi, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs, standardSyndicUrgents, standardIaAgenda, standardIaRgpd, repondeurOuStandardIa];
+export const ARTICLES: Article[] = [appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, vsJoeAi, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs, standardSyndicUrgents, standardIaAgenda, standardIaRgpd, repondeurOuStandardIa, messagesRepondeur];
 
-export { appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, vsJoeAi, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs, standardSyndicUrgents, standardIaAgenda, standardIaRgpd, repondeurOuStandardIa };
+export { appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, vsJoeAi, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs, standardSyndicUrgents, standardIaAgenda, standardIaRgpd, repondeurOuStandardIa, messagesRepondeur };
 export * from "./types";
 export * from "./categories";

@@ -30,6 +30,7 @@ const ORDER = [
   "/ressources/qualifier-appels-locataires-bailleurs",
   "/ressources/standard-syndic-appels-urgents",
   "/ressources/standard-ia-google-agenda-outlook-immobilier",
+  "/ressources/messages-repondeur-agence-immobiliere",
   "/ressources/repondeur-ou-standard-ia-agence-immobiliere",
   "/ressources/choisir-standard-telephonique-ia-immobilier",
   "/ressources/cout-standard-telephonique-ia-immobilier",

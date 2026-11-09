@@ -182,6 +182,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: 'https://www.rushh.fr/ressources/messages-repondeur-agence-immobiliere',
+      lastModified: new Date('2026-11-09'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: 'https://www.rushh.fr/ressources/repondeur-ou-standard-ia-agence-immobiliere',
       lastModified: new Date('2026-11-03'),
       changeFrequency: 'monthly',
