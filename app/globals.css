@@ -220,7 +220,7 @@ html { overflow-x: hidden; }
   display: flex; align-items: center;
 }
 /* « Réserver une démo » : même taille que « Testez Rushh » (172 × 48 px) */
-.nav-cta .demo-cta-btn { width: 172px; padding: 0; }
+.nav-cta .demo-cta-btn, .mobile-menu-ctas .demo-cta-btn { width: 172px; padding: 0; }
 
 /* Hamburger — hidden on desktop */
 .nav-hamburger {
@@ -5054,6 +5054,10 @@ button, input, select, textarea { font-family: inherit; }
 /* Survol : « Nouveauté » passe en bleu Rushh, en gras */
 @media (hover: hover) {
   .ann-in:hover .ann-tag { color: var(--accent); font-weight: 800; }
+}
+/* Sur téléphone (pas de survol) : même effet pendant l'appui */
+@media (hover: none) {
+  .ann-in:active .ann-tag { color: var(--accent); font-weight: 800; }
 }
 .nav--hero { top: var(--bar-h); }
 @media (max-width: 760px) {
