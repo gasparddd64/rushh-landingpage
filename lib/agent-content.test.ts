@@ -84,7 +84,7 @@ describe("/offre", () => {
     expect(md).not.toMatch(/sur devis|jours ouvrés|€|euros?\b|transcription|anglais, espagnol|facultative|sans être obligatoire/i);
     expect(md).toContain("SMS et e-mails automatiques");
     expect(md).toContain("24h/24");
-    expect(md).not.toMatch(/garantit aucune|outil d'assistance|01 76 63 57 09|certains outils/i);
+    expect(md).not.toMatch(/garantit aucune|outil d'assistance|09 74 05 14 22|certains outils/i);
   });
 });
 
@@ -117,8 +117,8 @@ describe.each(NEW_PAGES)("%s", (path, h1) => {
 describe("new pages specifics", () => {
   it("/demonstrations exposes the demo number and the fictional-agency disclaimer", () => {
     const md = getMarkdownPage("/demonstrations")?.markdown ?? "";
-    expect(md).toContain("01 76 63 57 09");
-    expect(md).toContain("tel:+33176635709");
+    expect(md).toContain("09 74 05 14 22");
+    expect(md).toContain("tel:+33974051422");
     expect(md).toContain("agence immobilière fictive");
     expect(md).toContain("dépendent de la configuration de la ligne");
   });

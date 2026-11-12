@@ -312,7 +312,7 @@ ${DIFF.items.map((d) => `### ${d.title}\n\n${d.text}`).join("\n\n")}
 
 ## ${PROOF.title}
 
-${PROOF.text} Ligne de démonstration (agence fictive à Paris) : 01 76 63 57 09.
+${PROOF.text} Ligne de démonstration (agence fictive à Paris) : 09 74 05 14 22.
 
 ${bullets(PROOF.say.map((q) => `« ${q} »`))}
 

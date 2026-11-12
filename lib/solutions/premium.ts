@@ -161,7 +161,7 @@ ${c.diff.items.map((d) => `### ${d.title}\n\n${d.text}`).join("\n\n")}
 
 ## ${c.proof.title}
 
-${c.proof.text}${opts.phone === false ? "" : " Ligne de démonstration (agence fictive à Paris) : 01 76 63 57 09."}
+${c.proof.text}${opts.phone === false ? "" : " Ligne de démonstration (agence fictive à Paris) : 09 74 05 14 22."}
 
 ${bullets(c.proof.say.map((q) => `« ${q} »`))}
 `;

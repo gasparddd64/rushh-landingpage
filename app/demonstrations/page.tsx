@@ -15,7 +15,7 @@ import { DEMO_LISTEN } from "@/lib/solutions/premium";
 const PATH = "/demonstrations";
 const TITLE = "Démonstration : testez le Standard Rushh par téléphone | Rushh";
 const DESCRIPTION =
-  "Appelez la ligne de démonstration Rushh au 01 76 63 57 09 et jouez le rôle d'un vendeur ou d'un acquéreur auprès d'une agence immobilière fictive à Paris.";
+  "Appelez la ligne de démonstration Rushh au 09 74 05 14 22 et jouez le rôle d'un vendeur ou d'un acquéreur auprès d'une agence immobilière fictive à Paris.";
 
 export const metadata = buildMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
 
