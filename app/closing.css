@@ -25,7 +25,7 @@
 .cb { position: relative; overflow: hidden; isolation: isolate; margin-top: clamp(24px, 4vw, 56px); padding: clamp(80px, 10vw, 140px) 24px; background: linear-gradient(180deg, #fff 0%, #f4f8ff 45%, #eaf1ff 100%); }
 /* Ombres bleues : deux grandes taches qui suivent la souris + quelques taches fixes (comme le haut de la page) */
 .lf section.cb { padding: clamp(80px, 10vw, 140px) 24px; }
-.cb-glows { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.cb-glows { position: absolute; inset: 0; z-index: -1; pointer-events: none; -webkit-mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,0.35) clamp(60px, 8vw, 120px), #000 clamp(180px, 22vw, 320px)); mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,0.35) clamp(60px, 8vw, 120px), #000 clamp(180px, 22vw, 320px)); } /* le haut des ombres s'estompe : plus de trait net avec la section du dessus */
 .cb-glow { position: absolute; left: 0; top: 0; border-radius: 50%; will-change: transform; filter: blur(8px); }
 .cb-glow--a { width: 620px; height: 620px; background: radial-gradient(closest-side, rgba(0, 71, 198, 0.62) 0%, rgba(26, 100, 225, 0.34) 45%, rgba(70, 135, 240, 0) 100%); }
 .cb-glow--b { width: 760px; height: 760px; background: radial-gradient(closest-side, rgba(40, 110, 235, 0.46) 0%, rgba(90, 150, 245, 0.22) 50%, rgba(130, 180, 250, 0) 100%); }
