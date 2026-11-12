@@ -5049,6 +5049,28 @@ button, input, select, textarea { font-family: inherit; }
 .ann-cta { display: inline-flex; align-items: center; gap: 4px; flex: none; color: #fff; font-weight: 700; white-space: nowrap; }
 .ann-cta svg { transition: transform 0.18s ease; }
 .ann-in:hover .ann-cta svg, .ann-in:focus-visible .ann-cta svg { transform: translateX(3px); }
+
+/* Survol : léger halo bleu, reflet qui traverse la barre, étiquette teintée, « Tester » souligné (sobre, sans clignotement) */
+.ann-in { position: relative; overflow: hidden; isolation: isolate; transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, color 0.2s ease; }
+.ann-in::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.16) 50%, transparent 62%); transform: translateX(-130%); }
+.ann-tag { transition: background-color 0.25s ease, color 0.25s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1); }
+.ann-cta { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; padding-bottom: 1px; transition: background-size 0.3s ease; }
+.ann-in:focus-visible { outline: 2px solid #7fb0ff; outline-offset: 2px; }
+@media (hover: hover) {
+  .ann-in:hover { transform: translateY(-1px); color: rgba(255, 255, 255, 0.95); box-shadow: 0 0 0 1px rgba(110, 165, 255, 0.55), 0 8px 24px -8px rgba(0, 71, 198, 0.65); }
+  .ann-in:hover::after { transform: translateX(130%); transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+  .ann-in:hover .ann-tag { background: var(--accent-soft); color: var(--accent-ink); transform: scale(1.04); }
+  .ann-in:hover .ann-cta { background-size: 100% 1.5px; }
+}
+@media (hover: none) {
+  .ann-in:active { transform: scale(0.99); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ann-in, .ann-tag, .ann-cta, .ann-cta svg { transition: none; }
+  .ann-in:hover { transform: none; }
+  .ann-in:hover::after { display: none; }
+  .ann-in:hover .ann-tag { transform: none; }
+}
 .nav--hero { top: var(--bar-h); }
 @media (max-width: 760px) {
   :root { --bar-h: 64px; }
