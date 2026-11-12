@@ -37,7 +37,7 @@ export function HeroSection() {
         <TestezCTA />
       </div>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="hz-building" src="/hero-immeuble.webp" alt="" width={1485} height={1020} decoding="async" />
+      <img className="hz-building" src="/hero-immeuble.webp" alt="" width={1536} height={1024} decoding="async" />
     </section>
   );
 }
