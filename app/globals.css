@@ -219,6 +219,8 @@ html { overflow-x: hidden; }
 .nav-cta {
   display: flex; align-items: center;
 }
+/* « Réserver une démo » : même taille que « Testez Rushh » (172 × 48 px) */
+.nav-cta .demo-cta-btn { width: 172px; padding: 0; }
 
 /* Hamburger — hidden on desktop */
 .nav-hamburger {
