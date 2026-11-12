@@ -5049,9 +5049,9 @@ button, input, select, textarea { font-family: inherit; }
 .ann-cta { display: inline-flex; align-items: center; gap: 4px; flex: none; color: #fff; font-weight: 700; white-space: nowrap; }
 .ann-cta svg { transition: transform 0.18s ease; }
 .ann-in:hover .ann-cta svg, .ann-in:focus-visible .ann-cta svg { transform: translateX(3px); }
-/* Survol : « Nouveauté », « vraiment » et « Tester » passent en bleu Rushh, en gras */
+/* Survol : « Nouveauté » passe en bleu Rushh, en gras */
 @media (hover: hover) {
-  .ann-in:hover .ann-tag, .ann-in:hover b, .ann-in:hover .ann-cta { color: var(--accent); font-weight: 800; }
+  .ann-in:hover .ann-tag { color: var(--accent); font-weight: 800; }
 }
 .nav--hero { top: var(--bar-h); }
 @media (max-width: 760px) {
