@@ -14,8 +14,8 @@ import "@/app/offre.css";
 import "@/app/solutions/sol.css";
 
 export const SITE = "https://www.rushh.fr";
-export const DEMO_PHONE_LABEL = "09 74 05 14 22";
-export const DEMO_PHONE_HREF = "tel:+33974051422";
+export const DEMO_PHONE_LABEL = "01 76 63 57 09";
+export const DEMO_PHONE_HREF = "tel:+33176635709";
 
 /* ── Métadonnées et données structurées ── */
 export interface SocialImage {

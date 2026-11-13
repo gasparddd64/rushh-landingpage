@@ -9,7 +9,7 @@ import { GA_ID, readConsent } from "./consent";
 export type ConversionEvent = "demo_cta_click" | "demo_phone_click" | "demo_booked" | "demo_booking_return";
 
 const CALENDLY_DEMO_URL = "https://calendly.com/gaspard-david/demo";
-const DEMO_PHONE_DIGITS = "33974051422";
+const DEMO_PHONE_DIGITS = "33176635709";
 const DEDUPE_MS = 1000;
 const BOOKED_KEY = "rushh_booked_v1";
 

@@ -23,8 +23,8 @@ describe("classifyHref", () => {
     expect(classifyHref("https://calendly.com/gaspard-david/demo/?utm_source=x")).toBe("demo_cta_click");
   });
   it("recognises the demo phone number only", () => {
-    expect(classifyHref("tel:+33974051422")).toBe("demo_phone_click");
-    expect(classifyHref("tel:+33 9 74 05 14 22")).toBe("demo_phone_click");
+    expect(classifyHref("tel:+33176635709")).toBe("demo_phone_click");
+    expect(classifyHref("tel:+33 1 76 63 57 09")).toBe("demo_phone_click");
     expect(classifyHref("tel:+33671803711")).toBeNull();
   });
   it("ignores every other link", () => {

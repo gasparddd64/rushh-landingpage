@@ -228,7 +228,7 @@ Un outil qui ne figure pas dans cette liste ? L'équipe Rushh étudie l'intercon
 
 Découvrez comment Rushh prend en charge un appel immobilier. Appelez notre ligne de démonstration et écoutez une IA répondre au téléphone d'une agence immobilière : jouez le rôle d'un vendeur ou d'un acquéreur, et jugez la voix, la rapidité et la façon dont l'appel est conduit.
 
-**Ligne de démonstration : 09 74 05 14 22** (tel:+33974051422)
+**Ligne de démonstration : 01 76 63 57 09** (tel:+33176635709)
 
 La ligne simule une agence immobilière fictive Rushh, située à Paris.
 

@@ -1,6 +1,6 @@
 /** Prompt pré-rédigé envoyé aux assistants IA (ChatGPT, Claude, Perplexity, Grok, Gemini).
  *  Il ne contient que des faits vérifiés (voir les articles et la FAQ) : pas de prix, pas de chiffres inventés. */
-export const ASK_PHONE_DISPLAY = "09 74 05 14 22";
+export const ASK_PHONE_DISPLAY = "01 76 63 57 09";
 export const ASK_BOOKING_URL = "https://calendly.com/gaspard-david/demo";
 
 export const ASK_PROMPT = `Je dirige une agence immobilière et je viens de découvrir Rushh (rushh.fr), un standard téléphonique IA pour l'immobilier. J'aimerais savoir s'il peut vraiment m'aider.
