@@ -1,6 +1,5 @@
 import { Nav } from "@/components/sections/Nav";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { DefinitionSection } from "@/components/sections/DefinitionSection";
 import { LossSection } from "@/components/sections/LossSection";
 import { EndingsSection } from "@/components/sections/EndingsSection";
 import { RelaySection } from "@/components/sections/RelaySection";
@@ -144,7 +143,6 @@ export default function Home() {
       <Nav variant="hero" />
       <HeroSection />
       <div className="lf">
-        <DefinitionSection />
         <LossSection />
         <EndingsSection />
         <RelaySection />

@@ -38,6 +38,7 @@ const ORDER = [
   "/ressources/standard-telephonique-ia-whise",
   "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere",
   "/ressources/telesecretariat-humain-ou-ia",
+  "/ressources/rushh-standard-telephonique-ia-immobilier",
   "/ressources/standard-telephonique-ia-immobilier-rgpd",
   "/comparatif/standards-telephoniques-ia-immobilier",
   "/vs/joe-ai",

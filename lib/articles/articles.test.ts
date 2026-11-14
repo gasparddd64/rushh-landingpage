@@ -43,6 +43,7 @@ const BARE_LINKS: Record<string, string[]> = {
   "/ressources/appel-vendeur-estimation-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/prise-rendez-vous-ia-immobilier", "/ressources/standard-ia-google-agenda-outlook-immobilier"],
   "/ressources/permanence-telephonique-agence-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/solutions/gestion-locative", "/ressources/standard-syndic-appels-urgents", "/ressources/telesecretariat-humain-ou-ia", "/ressources/appels-manques-immobilier"],
   "/ressources/appels-manques-immobilier": ["/demonstrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/permanence-telephonique-agence-immobiliere"],
+  "/ressources/rushh-standard-telephonique-ia-immobilier": ["/demonstrations", "/offre", "/integrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/repondeur-ou-standard-ia-agence-immobiliere"],
   "/ressources/messages-repondeur-agence-immobiliere": ["/demonstrations", "/offre", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/repondeur-ou-standard-ia-agence-immobiliere"],
 };
 
@@ -200,12 +201,12 @@ describe("guide-specific requirements", () => {
 describe("catalogue /ressources (le Blog)", () => {
   const md = getMarkdownPage("/ressources")?.markdown ?? "";
 
-  it("is a known route with a Markdown mirror, one H1, and links to all twenty-six publications", () => {
+  it("is a known route with a Markdown mirror, one H1, and links to all twenty-seven publications", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(md).toContain("# Le Blog Rushh");
-    expect(ARTICLES).toHaveLength(26);
-    expect(CATALOGUE).toHaveLength(26);
+    expect(ARTICLES).toHaveLength(27);
+    expect(CATALOGUE).toHaveLength(27);
     for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
@@ -216,7 +217,7 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(CATALOGUE.map((e) => e.path)).toContain(FEATURED_PATH);
   });
 
-  it("offers the three filters: all (26), guides (20), comparatifs (6)", () => {
+  it("offers the three filters: all (27), guides (21), comparatifs (6)", () => {
     expect(CATEGORIES.map((c) => c.label)).toEqual(["Guides & conseils", "Comparatifs"]);
     const by = (c: string) => CATALOGUE.filter((e) => e.category === c).map((e) => e.path).sort();
     expect(by("guides")).toEqual([
@@ -234,6 +235,7 @@ describe("catalogue /ressources (le Blog)", () => {
       "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere",
       "/ressources/renvoi-appel-ou-decroche-ia-immobilier",
       "/ressources/repondeur-ou-standard-ia-agence-immobiliere",
+      "/ressources/rushh-standard-telephonique-ia-immobilier",
       "/ressources/standard-ia-google-agenda-outlook-immobilier",
       "/ressources/standard-syndic-appels-urgents",
       "/ressources/standard-telephonique-ia-apimo",
@@ -352,8 +354,8 @@ describe("refonte éditoriale : règles communes aux pages au texte réécrit", 
   const bare = ARTICLES.filter((x) => x.bare && !PROTECTED.has(x.path));
   const wc = (md: string) => md.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").split(/\s+/).length;
 
-  it("covers the 19 rewritten pages (18 guides/comparisons + Joe AI), all articles being now in the new format", () => {
-    expect(bare).toHaveLength(19);
+  it("covers the 20 rewritten pages (19 guides/comparisons + Joe AI), all articles being now in the new format", () => {
+    expect(bare).toHaveLength(20);
     expect(ARTICLES.every((x) => x.bare)).toBe(true);
   });
 

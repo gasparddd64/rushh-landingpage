@@ -14,7 +14,6 @@ import { PRIVACY } from "./legal/privacy";
 import { FAQ_ITEMS } from "./faq";
 import { legalToMarkdown } from "./legal/markdown";
 import { DEMO_LISTEN, MULTI, OFFRE, SYNDICS, TRANSACTION, premiumToMd } from "./solutions/premium";
-import { homeDefinitionToMd } from "./home-definition";
 import { offreCompareToMd } from "./offre-compare";
 
 export const SITE_URL = "https://www.rushh.fr";
@@ -35,7 +34,6 @@ export const MARKDOWN_PAGES: Record<string, MarkdownPage> = {
 
 Rushh conçoit et déploie un standard téléphonique IA sur-mesure pour les agences immobilières : il décroche, qualifie et transmet les appels entrants 24 h/24, avec un déploiement adapté à l’agence. La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.
 
-${homeDefinitionToMd()}
 ## Chaque appel compte pour votre agence
 
 Rushh prend le relais quand l'équipe de l'agence n'est pas disponible. Chaque appel est compris et traité selon les règles définies par l'agence : besoin compris, informations recueillies, action adaptée (rendez-vous, transfert ou message), équipe informée avec le contexte utile pour reprendre la demande.
@@ -58,6 +56,7 @@ ${FAQ_MARKDOWN}
 - [Contact](${SITE_URL}/contact)
 - [Mentions légales](${SITE_URL}/mentions-legales)
 - [Confidentialité](${SITE_URL}/privacy)
+- [Qu'est-ce que Rushh ?](${SITE_URL}/ressources/rushh-standard-telephonique-ia-immobilier)
 - [Intégrations](${SITE_URL}/integrations)
 - [Conditions Générales de Vente](${SITE_URL}/cgv)
 - [Guide pour agents IA (llms.txt)](${SITE_URL}/llms.txt)

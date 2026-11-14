@@ -69,6 +69,7 @@ export const OFFRE_COMPARE = {
   ] satisfies CompareOption[],
   note: "Aucune de ces approches ne convient à tout le monde : le bon choix dépend du temps que vous pouvez consacrer au paramétrage et de la place que vous voulez laisser à une voix humaine.",
   links: [
+    { href: "/ressources/rushh-standard-telephonique-ia-immobilier", label: "Qu'est-ce que Rushh ?" },
     { href: "/ressources/telesecretariat-humain-ou-ia", label: "Télésecrétariat humain ou IA : le comparatif détaillé" },
     { href: "/comparatif/standards-telephoniques-ia-immobilier", label: "Comparatif des standards IA" },
     { href: "/#faq", label: "Questions fréquentes" },

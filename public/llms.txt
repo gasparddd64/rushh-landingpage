@@ -57,6 +57,7 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Guide, handling urgent calls for a property-management (syndic) firm: transfer, on-call and fallback rules: https://www.rushh.fr/ressources/standard-syndic-appels-urgents
 - Guide, AI phone answering with Google Calendar and Outlook for real-estate appointments: https://www.rushh.fr/ressources/standard-ia-google-agenda-outlook-immobilier
 - Guide, AI phone answering and GDPR: information of callers, AI Act Article 50, GDPR Article 28, data minimisation: https://www.rushh.fr/ressources/standard-telephonique-ia-immobilier-rgpd
+- Guide, what Rushh is (AI-powered phone switchboard for real-estate agencies, who it is for, what the AI does, what the Rushh team handles): https://www.rushh.fr/ressources/rushh-standard-telephonique-ia-immobilier
 - Guide, 10 ready-to-adapt voicemail greetings for a real-estate agency (closed, visits, rentals, property management, syndic, independent agent): https://www.rushh.fr/ressources/messages-repondeur-agence-immobiliere
 - Guide, voicemail or AI phone answering for a real-estate agency: https://www.rushh.fr/ressources/repondeur-ou-standard-ia-agence-immobiliere
 - Rushh vs Volubilimo (comparison, sourced and dated): https://www.rushh.fr/vs/volubilimo
