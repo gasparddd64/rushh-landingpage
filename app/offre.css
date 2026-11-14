@@ -393,7 +393,7 @@
   .offre .of-tile p { font-size: 14.5px; }
   .offre .of-tile .of-acc > summary { min-height: 0; padding: 0; font-size: inherit; }
   .offre .of-tile .of-acc > summary h3 { margin: 0; }
-  .offre .of-tile .of-acc > summary::after { border-color: #fff; }
+  .offre .of-tile .of-acc > summary::after { border-color: var(--lf-ink); }
   .offre .of-tile .of-acc[open] > summary h3 { margin-bottom: 6px; }
 
   /* Mise en service : délai d'abord, étapes dans l'accordéon */
@@ -460,9 +460,9 @@
 .offre .of-bespoke .lf-h2[class] { color: var(--lf-ink); }
 .offre .of-bespoke .lf-sub[class] { color: var(--lf-muted); }
 .offre .of-tile[class] { background: #fff; border: 1px solid var(--lf-line); -webkit-backdrop-filter: none; backdrop-filter: none; }
-.offre .of-tile h3[class] { color: var(--lf-ink); }
-.offre .of-tile p[class] { color: var(--lf-muted); }
-.offre .of-tile a[class] { color: var(--lf-accent); text-decoration-color: rgba(0, 71, 198, 0.4); }
+.offre .of-tile[class] h3 { color: var(--lf-ink); }
+.offre .of-tile[class] p { color: var(--lf-muted); }
+.offre .of-tile[class] a { color: var(--lf-accent); text-decoration-color: rgba(0, 71, 198, 0.4); }
 
 /* ==========================================================================
    Trois approches : standard IA en libre-service / télésecrétariat humain / Rushh

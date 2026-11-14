@@ -445,6 +445,9 @@ html { overflow-x: hidden; }
   box-shadow: 0 6px 18px rgba(0, 71, 198, 0.22);
   transition: background-color 0.18s ease, color 0.18s ease;
 }
+/* Libellé long (ex. « Réserver une démo adaptée à votre agence ») : le bouton passe à la ligne au lieu de dépasser de l'écran */
+.demo-cta-wrap { max-width: 100%; }
+.demo-cta-wrap > .demo-cta-btn { max-width: 100%; height: auto; min-height: 48px; padding-top: 12px; padding-bottom: 12px; white-space: normal; text-align: center; line-height: 1.25; }
 .demo-cta-btn:hover, .demo-cta-btn:focus-visible { background: #0c1024 !important; color: #fff !important; box-shadow: 0 2px 12px rgba(12, 16, 36, 0.28) !important; transform: none !important; }
 /* Variante inversée, seulement sur les fonds bleus (sinon le bouton serait invisible) */
 .demo-cta-btn--white { background: #fff; color: var(--accent); box-shadow: none; }
