@@ -4980,6 +4980,8 @@ section { position: relative; }
 .hz-inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; padding-top: calc(215 * var(--v)); }
 .hz-title { margin: 0; font-size: calc(78 * var(--v)); font-weight: 480; line-height: 1.07; letter-spacing: -0.025em; color: var(--ink); }
 .hz-title-accent { color: var(--accent); }
+.hz-title { text-wrap: balance; }
+@media (max-width: 760px) { .hz-br { display: none; } }
 .hz-sub { margin: calc(30 * var(--v)) 0 0; max-width: calc(720 * var(--v)); font-size: calc(17.8 * var(--v)); font-weight: 500; line-height: 1.55; letter-spacing: -0.01em; color: rgba(24, 32, 58, 0.68); text-wrap: balance; }
 .hz-building { position: absolute; left: 50%; top: calc(760 * var(--v)); width: calc(980 * var(--v)); height: auto; transform: translateX(-50%); z-index: 0; -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 79%, rgba(0,0,0,0.7) 91%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 79%, rgba(0,0,0,0.7) 91%, transparent 100%); }
 .hz-inner > * { opacity: 0; transform: translateY(14px); animation: hxIn 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
