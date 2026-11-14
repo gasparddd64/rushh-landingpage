@@ -493,6 +493,10 @@ export const secretaireTelephoniqueIa: Article = {
           "text": "Vous pouvez [découvrir l'offre Rushh](/offre) ou [tester le standard lors d'une démonstration](/demonstrations)."
         },
         {
+          "t": "p",
+          "text": "Selon votre situation : [standard téléphonique IA pour mandataire immobilier](/ressources/standard-telephonique-ia-mandataire-immobilier) ou [standard téléphonique IA multilingue pour l'immobilier](/ressources/standard-telephonique-ia-multilingue-immobilier)."
+        },
+        {
           "t": "button",
           "label": "Tester le standard",
           "href": "/demonstrations"

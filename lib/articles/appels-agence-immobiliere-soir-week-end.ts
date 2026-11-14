@@ -2,26 +2,24 @@ import type { Article } from "./types";
 
 /** Texte réécrit (refonte éditoriale) : méthode, exemple, Rushh, invitation. Voir `bare` dans types.ts. */
 export const appelsSoirWeekEnd: Article = {
-  path: "/ressources/appels-agence-immobiliere-soir-week-end",
-  bare: true,
-  category: "guides",
-  cover: {
-    src: "/ressources/appels-agence-immobiliere-soir-week-end.png",
-    width: 1600,
-    height: 840,
-    alt: "Illustration : les appels d'une agence le soir et le week-end : réponse à toute heure, demande qualifiée, rendez-vous sur agenda connecté ou transmission pour la reprise.",
+  "path": "/ressources/appels-agence-immobiliere-soir-week-end",
+  "bare": true,
+  "category": "guides",
+  "cover": {
+    "src": "/ressources/appels-agence-immobiliere-soir-week-end.png",
+    "width": 1600,
+    "height": 840,
+    "alt": "Illustration : les appels d'une agence le soir et le week-end : réponse à toute heure, demande qualifiée, rendez-vous sur agenda connecté ou transmission pour la reprise."
   },
-  title: "Répondre aux appels d'agence le soir et le week-end | Rushh",
-  description:
-    "Comment répondre aux appels d'une agence immobilière le soir et le week-end : une réponse à toute heure, une qualification, une suite le lendemain.",
-  shortTitle: "Appels du soir et du week-end",
-  summary: "Répondre à toute heure et organiser la suite pour le lendemain.",
-  h1: "Comment répondre aux appels d'une agence immobilière le soir et le week-end ?",
-  answer:
-    "Le soir et le week-end, l'enjeu est de répondre, de qualifier la demande et de préparer sa suite pour la reprise, sans mobiliser l'équipe.",
-  datePublished: "2026-11-02",
-  dateModified: "2026-11-03",
-  intro: [
+  "title": "Répondre aux appels d'agence le soir et le week-end | Rushh",
+  "description": "Comment répondre aux appels d'une agence immobilière le soir et le week-end : une réponse à toute heure, une qualification, une suite le lendemain.",
+  "shortTitle": "Appels du soir et du week-end",
+  "summary": "Répondre à toute heure et organiser la suite pour le lendemain.",
+  "h1": "Comment répondre aux appels d'une agence immobilière le soir et le week-end ?",
+  "answer": "Le soir et le week-end, l'enjeu est de répondre, de qualifier la demande et de préparer sa suite pour la reprise, sans mobiliser l'équipe.",
+  "datePublished": "2026-11-02",
+  "dateModified": "2026-11-14",
+  "intro": [
     {
       "t": "p",
       "text": "Beaucoup de projets immobiliers se pensent le soir ou le week-end : à ce moment-là, l'agence est fermée."
@@ -31,7 +29,7 @@ export const appelsSoirWeekEnd: Article = {
       "text": "Un appel sans réponse peut alors attendre le lundi, ou aller vers une autre agence."
     }
   ],
-  sections: [
+  "sections": [
     {
       "id": "methode",
       "h2": "Trois temps pour ne rien perdre",
@@ -118,6 +116,10 @@ export const appelsSoirWeekEnd: Article = {
         {
           "t": "p",
           "text": "Chaque demande est classée dans la plateforme métier Rushh, avec ses coordonnées, son résumé et son statut. Notre équipe prend en charge la configuration et le suivi du standard. Voir [l'offre Rushh](/offre)."
+        },
+        {
+          "t": "p",
+          "text": "Autre moment d'indisponibilité : [gérer les appels pendant les visites immobilières](/ressources/gerer-appels-pendant-visites-immobilieres)."
         }
       ]
     },
@@ -137,8 +139,12 @@ export const appelsSoirWeekEnd: Article = {
       ]
     }
   ],
-  sources: [],
-  sourcesNote: "",
-  related: [],
-  cta: { title: "Restez joignable, même quand l'agence est fermée", text: "", links: [] },
+  "sources": [],
+  "sourcesNote": "",
+  "related": [],
+  "cta": {
+    "title": "Restez joignable, même quand l'agence est fermée",
+    "text": "",
+    "links": []
+  }
 };

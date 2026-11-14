@@ -59,6 +59,12 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Guide, AI phone answering and GDPR: information of callers, AI Act Article 50, GDPR Article 28, data minimisation: https://www.rushh.fr/ressources/standard-telephonique-ia-immobilier-rgpd
 - Guide, how to automate the inbound calls of a real-estate agency (scenarios, routing, tools, tests, human handover): https://www.rushh.fr/ressources/automatiser-appels-entrants-agence-immobiliere
 - Guide, outsourcing a real-estate agency's phone calls (human answering service, call centre, self-service AI, fully managed AI switchboard, how to choose a provider): https://www.rushh.fr/ressources/externalisation-appels-telephoniques-agence-immobiliere
+- Guide, 12 phone-greeting scripts for a real-estate agency (answering live, not voicemail): https://www.rushh.fr/ressources/script-accueil-telephonique-agence-immobiliere
+- Guide, handling incoming calls during property visits (welcome, qualify, act, notify): https://www.rushh.fr/ressources/gerer-appels-pendant-visites-immobilieres
+- Guide, AI phone switchboard for independent real-estate agents (mandataires): https://www.rushh.fr/ressources/standard-telephonique-ia-mandataire-immobilier
+- Guide, multilingual AI phone switchboard for real estate (French, English, Spanish, human handover): https://www.rushh.fr/ressources/standard-telephonique-ia-multilingue-immobilier
+- Guide, SMS confirmation templates for property visits and how to automate them: https://www.rushh.fr/ressources/sms-confirmation-visite-immobiliere
+- Guide, handling calls that come from SeLoger and other property portal listings: https://www.rushh.fr/ressources/appels-annonces-seloger-portails-immobiliers
 - Guide, AI phone secretary for real estate (which calls to delegate, example dialogues, instructions, when to transfer to a person): https://www.rushh.fr/ressources/secretaire-telephonique-ia-immobilier
 - Guide, AI receptionist for a real-estate agency (what it can do, which calls it handles, property data sources, appointments, SMS and e-mails, languages, limits, how to test it): https://www.rushh.fr/ressources/receptionniste-ia-agence-immobiliere
 - Guide, what Rushh is (AI-powered phone switchboard for real-estate agencies, who it is for, what the AI does, what the Rushh team handles): https://www.rushh.fr/ressources/rushh-standard-telephonique-ia-immobilier

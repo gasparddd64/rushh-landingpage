@@ -2,26 +2,24 @@ import type { Article } from "./types";
 
 /** Texte validé : à reproduire tel quel, sans reformulation (voir `bare` dans types.ts). */
 export const appelVendeurEstimation: Article = {
-  path: "/ressources/appel-vendeur-estimation-immobiliere",
-  bare: true,
-  category: "guides",
-  cover: {
-    src: "/ressources/appel-vendeur-estimation-immobiliere.png",
-    width: 1600,
-    height: 840,
-    alt: "Illustration : les trois étapes d'un appel vendeur : comprendre le projet du propriétaire, recueillir les informations utiles, proposer la suite.",
+  "path": "/ressources/appel-vendeur-estimation-immobiliere",
+  "bare": true,
+  "category": "guides",
+  "cover": {
+    "src": "/ressources/appel-vendeur-estimation-immobiliere.png",
+    "width": 1600,
+    "height": 840,
+    "alt": "Illustration : les trois étapes d'un appel vendeur : comprendre le projet du propriétaire, recueillir les informations utiles, proposer la suite."
   },
-  title: "Appel vendeur : obtenir un rendez-vous d'estimation | Rushh",
-  description:
-    "Comprendre le projet, recueillir les bonnes informations, proposer une suite claire : transformer un appel vendeur en rendez-vous d'estimation.",
-  shortTitle: "L'appel vendeur avant une estimation",
-  summary: "Comprendre le projet, recueillir les informations utiles et proposer une prochaine étape à un propriétaire.",
-  h1: "Appel vendeur : comment obtenir un rendez-vous d'estimation immobilière ?",
-  answer:
-    "L'objectif n'est pas simplement de recueillir les coordonnées du propriétaire, mais de comprendre son projet et de lui proposer une prochaine étape concrète.",
-  datePublished: "2026-10-31",
-  dateModified: "2026-11-03",
-  intro: [
+  "title": "Appel vendeur : obtenir un rendez-vous d'estimation | Rushh",
+  "description": "Comprendre le projet, recueillir les bonnes informations, proposer une suite claire : transformer un appel vendeur en rendez-vous d'estimation.",
+  "shortTitle": "L'appel vendeur avant une estimation",
+  "summary": "Comprendre le projet, recueillir les informations utiles et proposer une prochaine étape à un propriétaire.",
+  "h1": "Appel vendeur : comment obtenir un rendez-vous d'estimation immobilière ?",
+  "answer": "L'objectif n'est pas simplement de recueillir les coordonnées du propriétaire, mais de comprendre son projet et de lui proposer une prochaine étape concrète.",
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-11-14",
+  "intro": [
     {
       "t": "p",
       "text": "Un propriétaire contacte votre [agence](/solutions/transaction-immobiliere) pour faire estimer sa maison ou son appartement. C'est une opportunité commerciale importante, mais encore faut-il savoir transformer ce premier échange en rendez-vous."
@@ -35,7 +33,7 @@ export const appelVendeurEstimation: Article = {
       "text": "L'objectif n'est pas simplement de recueillir les coordonnées du propriétaire, mais de comprendre son projet et de lui proposer une prochaine étape concrète."
     }
   ],
-  sections: [
+  "sections": [
     {
       "id": "methode",
       "h2": "Comment transformer un appel vendeur en rendez-vous d'estimation ?",
@@ -217,6 +215,10 @@ export const appelVendeurEstimation: Article = {
         {
           "t": "p",
           "text": "Vos négociateurs restent concentrés sur leurs visites et leurs rendez-vous, pendant que les nouvelles demandes vendeurs sont prises en charge."
+        },
+        {
+          "t": "p",
+          "text": "Pour les phrases d'accueil au décroché : [scripts d'accueil téléphonique immobilier](/ressources/script-accueil-telephonique-agence-immobiliere)."
         }
       ]
     },
@@ -248,8 +250,12 @@ export const appelVendeurEstimation: Article = {
       ]
     }
   ],
-  sources: [],
-  sourcesNote: "",
-  related: [],
-  cta: { title: "Ne laissez plus un appel vendeur attendre votre disponibilité", text: "", links: [] },
+  "sources": [],
+  "sourcesNote": "",
+  "related": [],
+  "cta": {
+    "title": "Ne laissez plus un appel vendeur attendre votre disponibilité",
+    "text": "",
+    "links": []
+  }
 };

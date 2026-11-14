@@ -2,26 +2,24 @@ import type { Article } from "./types";
 
 /** Texte réécrit (refonte éditoriale) : méthode, exemple, Rushh, invitation. Voir `bare` dans types.ts. */
 export const standardApimo: Article = {
-  path: "/ressources/standard-telephonique-ia-apimo",
-  bare: true,
-  category: "guides",
-  cover: {
-    src: "/ressources/standard-telephonique-ia-apimo.png",
-    width: 1600,
-    height: 840,
-    alt: "Illustration : un standard téléphonique IA qui transmet les informations d'un appel vers le CRM Apimo, sur la base d'une connexion API sur mesure.",
+  "path": "/ressources/standard-telephonique-ia-apimo",
+  "bare": true,
+  "category": "guides",
+  "cover": {
+    "src": "/ressources/standard-telephonique-ia-apimo.png",
+    "width": 1600,
+    "height": 840,
+    "alt": "Illustration : un standard téléphonique IA qui transmet les informations d'un appel vers le CRM Apimo, sur la base d'une connexion API sur mesure."
   },
-  title: "Standard téléphonique IA et Apimo : connexion sur mesure | Rushh",
-  description:
-    "Comment connecter un standard téléphonique IA au CRM Apimo : ce qu'une connexion API sur mesure permet, et ce qui se passe sans connexion.",
-  shortTitle: "Standard IA et Apimo : la connexion",
-  summary: "Une connexion API sur mesure : ce qu'elle permet, et ce qui se passe sans.",
-  h1: "Comment connecter un standard téléphonique IA au CRM Apimo ?",
-  answer:
-    "Un standard IA peut échanger avec Apimo grâce à son API, lorsque l'accès et les autorisations le permettent ; la connexion se définit sur mesure.",
-  datePublished: "2026-10-31",
-  dateModified: "2026-11-03",
-  intro: [
+  "title": "Standard téléphonique IA et Apimo : connexion sur mesure | Rushh",
+  "description": "Comment connecter un standard téléphonique IA au CRM Apimo : ce qu'une connexion API sur mesure permet, et ce qui se passe sans connexion.",
+  "shortTitle": "Standard IA et Apimo : la connexion",
+  "summary": "Une connexion API sur mesure : ce qu'elle permet, et ce qui se passe sans.",
+  "h1": "Comment connecter un standard téléphonique IA au CRM Apimo ?",
+  "answer": "Un standard IA peut échanger avec Apimo grâce à son API, lorsque l'accès et les autorisations le permettent ; la connexion se définit sur mesure.",
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-11-14",
+  "intro": [
     {
       "t": "p",
       "text": "Un standard téléphonique recueille des informations utiles : motif, coordonnées, projet. Reste à les retrouver là où travaille l'équipe, dans le CRM."
@@ -31,7 +29,7 @@ export const standardApimo: Article = {
       "text": "Pour une agence qui utilise Apimo, la question est donc : comment relier les deux ?"
     }
   ],
-  sections: [
+  "sections": [
     {
       "id": "methode",
       "h2": "Connecter en trois temps",
@@ -95,6 +93,10 @@ export const standardApimo: Article = {
         {
           "t": "p",
           "text": "Les demandes sont organisées dans la plateforme métier Rushh, avec coordonnées, résumé, statut et suivi. Notre équipe prend en charge les connexions, les tests et les ajustements. Voir [l'offre Rushh](/offre)."
+        },
+        {
+          "t": "p",
+          "text": "Appels liés à une annonce : [traiter les appels issus de SeLoger et des annonces immobilières](/ressources/appels-annonces-seloger-portails-immobiliers)."
         }
       ]
     },
@@ -114,7 +116,7 @@ export const standardApimo: Article = {
       ]
     }
   ],
-  sources: [
+  "sources": [
     {
       "label": "Apimo : l'API pour les prestataires immobiliers",
       "url": "https://apimo.com/api",
@@ -126,7 +128,11 @@ export const standardApimo: Article = {
       "usedFor": "Documentation de l'API Apimo."
     }
   ],
-  sourcesNote: "",
-  related: [],
-  cta: { title: "Parlez de votre CRM avec l'équipe Rushh", text: "", links: [] },
+  "sourcesNote": "",
+  "related": [],
+  "cta": {
+    "title": "Parlez de votre CRM avec l'équipe Rushh",
+    "text": "",
+    "links": []
+  }
 };

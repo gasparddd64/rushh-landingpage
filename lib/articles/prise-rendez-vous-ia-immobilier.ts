@@ -333,6 +333,10 @@ export const priseRendezVous: Article = {
         {
           "t": "p",
           "text": "Pour une agence, les règles les plus utiles sont souvent simples : confirmation immédiate après création, rappel avant le rendez-vous si prévu, notification au conseiller et information claire lorsqu'une réservation a été modifiée."
+        },
+        {
+          "t": "p",
+          "text": "Modèles de messages et méthode d'automatisation : [SMS de confirmation de visite immobilière](/ressources/sms-confirmation-visite-immobiliere)."
         }
       ]
     },

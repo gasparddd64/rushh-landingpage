@@ -2,26 +2,24 @@ import type { Article } from "./types";
 
 /** Texte réécrit (refonte éditoriale) : méthode, exemple, Rushh, invitation. Voir `bare` dans types.ts. */
 export const standardIaAgenda: Article = {
-  path: "/ressources/standard-ia-google-agenda-outlook-immobilier",
-  bare: true,
-  category: "guides",
-  cover: {
-    src: "/ressources/standard-ia-google-agenda-outlook-immobilier.png",
-    width: 1600,
-    height: 840,
-    alt: "Illustration : le parcours d'un appel jusqu'au rendez-vous, du standard IA à l'agenda Google ou Outlook, avec confirmation à l'appelant.",
+  "path": "/ressources/standard-ia-google-agenda-outlook-immobilier",
+  "bare": true,
+  "category": "guides",
+  "cover": {
+    "src": "/ressources/standard-ia-google-agenda-outlook-immobilier.png",
+    "width": 1600,
+    "height": 840,
+    "alt": "Illustration : le parcours d'un appel jusqu'au rendez-vous, du standard IA à l'agenda Google ou Outlook, avec confirmation à l'appelant."
   },
-  title: "Standard IA avec Google Agenda et Outlook : le parcours | Rushh",
-  description:
-    "Comment un standard téléphonique IA fixe un rendez-vous grâce à Google Agenda ou Outlook : consulter les disponibilités, réserver, confirmer.",
-  shortTitle: "Standard IA, Google Agenda et Outlook",
-  summary: "Consulter l'agenda, réserver, confirmer : le parcours d'un rendez-vous pris par un standard IA.",
-  h1: "Comment un standard téléphonique IA s'appuie-t-il sur Google Agenda ou Outlook pour fixer un rendez-vous ?",
-  answer:
-    "Un standard IA fixe un rendez-vous en consultant l'agenda connecté, en proposant un créneau compatible avec vos règles, puis en le confirmant.",
-  datePublished: "2026-11-02",
-  dateModified: "2026-11-03",
-  intro: [
+  "title": "Standard IA avec Google Agenda et Outlook : le parcours | Rushh",
+  "description": "Comment un standard téléphonique IA fixe un rendez-vous grâce à Google Agenda ou Outlook : consulter les disponibilités, réserver, confirmer.",
+  "shortTitle": "Standard IA, Google Agenda et Outlook",
+  "summary": "Consulter l'agenda, réserver, confirmer : le parcours d'un rendez-vous pris par un standard IA.",
+  "h1": "Comment un standard téléphonique IA s'appuie-t-il sur Google Agenda ou Outlook pour fixer un rendez-vous ?",
+  "answer": "Un standard IA fixe un rendez-vous en consultant l'agenda connecté, en proposant un créneau compatible avec vos règles, puis en le confirmant.",
+  "datePublished": "2026-11-02",
+  "dateModified": "2026-11-14",
+  "intro": [
     {
       "t": "p",
       "text": "[Un rendez-vous pris au téléphone](/ressources/prise-rendez-vous-ia-immobilier) n'a de valeur que s'il est fiable : le créneau proposé doit être réellement libre."
@@ -31,7 +29,7 @@ export const standardIaAgenda: Article = {
       "text": "C'est le rôle de l'agenda connecté."
     }
   ],
-  sections: [
+  "sections": [
     {
       "id": "parcours",
       "h2": "Le parcours d'un appel jusqu'au rendez-vous",
@@ -103,6 +101,10 @@ export const standardIaAgenda: Article = {
         {
           "t": "p",
           "text": "Les demandes sont classées dans la plateforme métier Rushh, avec coordonnées, résumé et statut. Notre équipe prend en charge la configuration, les connexions et les tests. Voir [l'offre Rushh](/offre)."
+        },
+        {
+          "t": "p",
+          "text": "Pour les messages qui suivent la réservation : [SMS de confirmation de visite immobilière](/ressources/sms-confirmation-visite-immobiliere)."
         }
       ]
     },
@@ -122,7 +124,7 @@ export const standardIaAgenda: Article = {
       ]
     }
   ],
-  sources: [
+  "sources": [
     {
       "label": "Google Calendar API : Freebusy: query",
       "url": "https://developers.google.com/workspace/calendar/api/v3/reference/freebusy/query",
@@ -134,7 +136,11 @@ export const standardIaAgenda: Article = {
       "usedFor": "Consultation des disponibilités d'un agenda Outlook."
     }
   ],
-  sourcesNote: "",
-  related: [],
-  cta: { title: "Faites prendre vos rendez-vous sans interrompre vos journées", text: "", links: [] },
+  "sourcesNote": "",
+  "related": [],
+  "cta": {
+    "title": "Faites prendre vos rendez-vous sans interrompre vos journées",
+    "text": "",
+    "links": []
+  }
 };

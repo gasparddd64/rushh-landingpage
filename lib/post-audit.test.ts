@@ -37,8 +37,8 @@ describe('cohérence après audit', () => {
     expect(markdown).toContain('Dernière mise à jour : 4 novembre 2026');
     expect(markdown).not.toContain("n'utilise aucun outil");
   });
-  it('conserve les dates de publication et les deux formats pour les 31 articles', () => {
-    expect(ARTICLES).toHaveLength(31);
+  it('conserve les dates de publication et les deux formats pour les 37 articles', () => {
+    expect(ARTICLES).toHaveLength(37);
     for (const article of ARTICLES) {
       expect(article.datePublished).toMatch(/^2026-\d{2}-\d{2}$/);
       expect(getMarkdownPage(article.path)?.markdown).toContain(article.h1);

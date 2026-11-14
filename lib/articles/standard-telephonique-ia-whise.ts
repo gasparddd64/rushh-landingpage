@@ -2,26 +2,24 @@ import type { Article } from "./types";
 
 /** Texte réécrit (refonte éditoriale) : méthode, exemple, Rushh, invitation. Voir `bare` dans types.ts. */
 export const standardWhise: Article = {
-  path: "/ressources/standard-telephonique-ia-whise",
-  bare: true,
-  category: "guides",
-  cover: {
-    src: "/ressources/standard-telephonique-ia-whise.png",
-    width: 1600,
-    height: 840,
-    alt: "Illustration : un standard téléphonique IA qui transmet les informations d'un appel vers le logiciel Whise, sur la base d'une connexion API sur mesure.",
+  "path": "/ressources/standard-telephonique-ia-whise",
+  "bare": true,
+  "category": "guides",
+  "cover": {
+    "src": "/ressources/standard-telephonique-ia-whise.png",
+    "width": 1600,
+    "height": 840,
+    "alt": "Illustration : un standard téléphonique IA qui transmet les informations d'un appel vers le logiciel Whise, sur la base d'une connexion API sur mesure."
   },
-  title: "Standard téléphonique IA et Whise : connexion sur mesure | Rushh",
-  description:
-    "Comment connecter un standard téléphonique IA à Whise : ce qu'une connexion API sur mesure permet, et ce qui se passe sans connexion.",
-  shortTitle: "Standard IA et Whise : la connexion",
-  summary: "Une connexion API sur mesure : ce qu'elle permet, et ce qui se passe sans.",
-  h1: "Comment connecter un standard téléphonique IA à Whise ?",
-  answer:
-    "Un standard IA peut échanger avec Whise grâce à son API, lorsque l'accès et les autorisations le permettent ; la connexion se définit sur mesure.",
-  datePublished: "2026-10-31",
-  dateModified: "2026-11-03",
-  intro: [
+  "title": "Standard téléphonique IA et Whise : connexion sur mesure | Rushh",
+  "description": "Comment connecter un standard téléphonique IA à Whise : ce qu'une connexion API sur mesure permet, et ce qui se passe sans connexion.",
+  "shortTitle": "Standard IA et Whise : la connexion",
+  "summary": "Une connexion API sur mesure : ce qu'elle permet, et ce qui se passe sans.",
+  "h1": "Comment connecter un standard téléphonique IA à Whise ?",
+  "answer": "Un standard IA peut échanger avec Whise grâce à son API, lorsque l'accès et les autorisations le permettent ; la connexion se définit sur mesure.",
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-11-14",
+  "intro": [
     {
       "t": "p",
       "text": "Les informations recueillies au téléphone ne servent que si l'équipe les retrouve dans son logiciel."
@@ -31,7 +29,7 @@ export const standardWhise: Article = {
       "text": "Pour une agence qui utilise Whise, comment relier le standard à ses outils ?"
     }
   ],
-  sections: [
+  "sections": [
     {
       "id": "methode",
       "h2": "Connecter en trois temps",
@@ -95,6 +93,10 @@ export const standardWhise: Article = {
         {
           "t": "p",
           "text": "Les demandes sont organisées dans la plateforme métier Rushh. Notre équipe prend en charge les connexions, les tests et les ajustements. Voir [l'offre Rushh](/offre)."
+        },
+        {
+          "t": "p",
+          "text": "Appels liés à une annonce : [traiter les appels issus de SeLoger et des annonces immobilières](/ressources/appels-annonces-seloger-portails-immobiliers)."
         }
       ]
     },
@@ -114,7 +116,7 @@ export const standardWhise: Article = {
       ]
     }
   ],
-  sources: [
+  "sources": [
     {
       "label": "Whise : marketplace et partenaires",
       "url": "https://www.whise.eu/fr-fr/marketplace/",
@@ -126,7 +128,11 @@ export const standardWhise: Article = {
       "usedFor": "Point de contact pour demander un accès."
     }
   ],
-  sourcesNote: "",
-  related: [],
-  cta: { title: "Parlez de votre logiciel avec l'équipe Rushh", text: "", links: [] },
+  "sourcesNote": "",
+  "related": [],
+  "cta": {
+    "title": "Parlez de votre logiciel avec l'équipe Rushh",
+    "text": "",
+    "links": []
+  }
 };

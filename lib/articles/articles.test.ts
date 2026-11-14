@@ -205,12 +205,12 @@ describe("guide-specific requirements", () => {
 describe("catalogue /ressources (le Blog)", () => {
   const md = getMarkdownPage("/ressources")?.markdown ?? "";
 
-  it("is a known route with a Markdown mirror, one H1, and links to all thirty-one publications", () => {
+  it("is a known route with a Markdown mirror, one H1, and links to all thirty-seven publications", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(md).toContain("# Le Blog Rushh");
-    expect(ARTICLES).toHaveLength(31);
-    expect(CATALOGUE).toHaveLength(31);
+    expect(ARTICLES).toHaveLength(37);
+    expect(CATALOGUE).toHaveLength(37);
     for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
@@ -221,18 +221,20 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(CATALOGUE.map((e) => e.path)).toContain(FEATURED_PATH);
   });
 
-  it("offers the three filters: all (31), guides (25), comparatifs (6)", () => {
+  it("offers the three filters: all (37), guides (31), comparatifs (6)", () => {
     expect(CATEGORIES.map((c) => c.label)).toEqual(["Guides & conseils", "Comparatifs"]);
     const by = (c: string) => CATALOGUE.filter((e) => e.category === c).map((e) => e.path).sort();
     expect(by("guides")).toEqual([
       "/ressources/appel-vendeur-estimation-immobiliere",
       "/ressources/appels-agence-immobiliere-soir-week-end",
+      "/ressources/appels-annonces-seloger-portails-immobiliers",
       "/ressources/appels-manques-immobilier",
       "/ressources/automatiser-appels-entrants-agence-immobiliere",
       "/ressources/choisir-standard-telephonique-ia-immobilier",
       "/ressources/cout-standard-telephonique-ia-immobilier",
       "/ressources/externalisation-appels-telephoniques-agence-immobiliere",
       "/ressources/filtrer-demarchage-telephonique-agence-immobiliere",
+      "/ressources/gerer-appels-pendant-visites-immobilieres",
       "/ressources/messages-repondeur-agence-immobiliere",
       "/ressources/permanence-telephonique-agence-immobiliere",
       "/ressources/prise-rendez-vous-ia-immobilier",
@@ -243,11 +245,15 @@ describe("catalogue /ressources (le Blog)", () => {
       "/ressources/renvoi-appel-ou-decroche-ia-immobilier",
       "/ressources/repondeur-ou-standard-ia-agence-immobiliere",
       "/ressources/rushh-standard-telephonique-ia-immobilier",
+      "/ressources/script-accueil-telephonique-agence-immobiliere",
       "/ressources/secretaire-telephonique-ia-immobilier",
+      "/ressources/sms-confirmation-visite-immobiliere",
       "/ressources/standard-ia-google-agenda-outlook-immobilier",
       "/ressources/standard-syndic-appels-urgents",
       "/ressources/standard-telephonique-ia-apimo",
       "/ressources/standard-telephonique-ia-immobilier-rgpd",
+      "/ressources/standard-telephonique-ia-mandataire-immobilier",
+      "/ressources/standard-telephonique-ia-multilingue-immobilier",
       "/ressources/standard-telephonique-ia-whise",
       "/ressources/telesecretariat-humain-ou-ia",
     ]);
@@ -369,6 +375,12 @@ describe("refonte éditoriale : règles communes aux pages au texte réécrit", 
     "/ressources/automatiser-appels-entrants-agence-immobiliere",
     "/ressources/externalisation-appels-telephoniques-agence-immobiliere",
     "/ressources/secretaire-telephonique-ia-immobilier",
+    "/ressources/script-accueil-telephonique-agence-immobiliere",
+    "/ressources/gerer-appels-pendant-visites-immobilieres",
+    "/ressources/standard-telephonique-ia-mandataire-immobilier",
+    "/ressources/standard-telephonique-ia-multilingue-immobilier",
+    "/ressources/sms-confirmation-visite-immobiliere",
+    "/ressources/appels-annonces-seloger-portails-immobiliers",
   ]);
   const bare = ARTICLES.filter((x) => x.bare && !PROTECTED.has(x.path));
   const wc = (md: string) => md.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").split(/\s+/).length;

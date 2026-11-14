@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/appels-manques-immobilier',
-      lastModified: new Date('2026-11-03'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -64,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/qualification-appels-vendeurs-acquereurs',
-      lastModified: new Date('2026-11-03'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -106,19 +106,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/appel-vendeur-estimation-immobiliere',
-      lastModified: new Date('2026-11-03'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: 'https://www.rushh.fr/ressources/standard-telephonique-ia-apimo',
-      lastModified: new Date('2026-11-03'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: 'https://www.rushh.fr/ressources/standard-telephonique-ia-whise',
-      lastModified: new Date('2026-11-03'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -154,7 +154,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/appels-agence-immobiliere-soir-week-end',
-      lastModified: new Date('2026-11-03'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -172,7 +172,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/standard-ia-google-agenda-outlook-immobilier',
-      lastModified: new Date('2026-11-03'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -184,7 +184,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/messages-repondeur-agence-immobiliere',
-      lastModified: new Date('2026-11-09'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -214,6 +214,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/secretaire-telephonique-ia-immobilier',
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/script-accueil-telephonique-agence-immobiliere',
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/gerer-appels-pendant-visites-immobilieres',
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/standard-telephonique-ia-mandataire-immobilier',
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/standard-telephonique-ia-multilingue-immobilier',
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/sms-confirmation-visite-immobiliere',
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/appels-annonces-seloger-portails-immobiliers',
       lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
