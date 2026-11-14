@@ -1,8 +1,20 @@
 // Source unique de la FAQ : affichée par FAQSection, reprise dans le JSON-LD FAQPage de app/page.tsx et dans le miroir Markdown.
 export const FAQ_ITEMS = [
   {
-    q: "Est-ce vraiment une intelligence artificielle qui répond ?",
-    a: "Oui. Rushh est un standard téléphonique alimenté par intelligence artificielle, conçu spécialement pour l'immobilier. Il échange naturellement avec vos clients, comprend leurs demandes et suit les consignes de votre agence. Le plus simple pour vous faire une idée ? Appelez-le et jugez par vous-même.",
+    q: "Existe-t-il une IA qui répond au téléphone pour une agence immobilière ?",
+    a: "Oui. Rushh est un standard téléphonique alimenté par intelligence artificielle, conçu pour les appels des agences immobilières. L'IA décroche, échange à l'oral avec l'appelant, comprend sa demande et suit les consignes de votre agence. Le plus simple pour vous faire une idée : appelez la ligne de démonstration et jugez par vous-même.",
+  },
+  {
+    q: "Peut-on automatiser les appels entrants d'une agence immobilière ?",
+    a: "Oui, en grande partie. Un standard téléphonique IA peut décrocher, identifier le motif de l'appel, recueillir les informations utiles, proposer un rendez-vous sur un agenda connecté, transférer l'appel à un collaborateur ou transmettre la demande à l'équipe, selon des règles définies à l'avance. Lorsque c'est techniquement possible via API, des automatisations sur mesure peuvent être développées pour aller plus loin. Les cas qui demandent une personne sont transférés ou transmis à votre équipe, selon vos règles.",
+  },
+  {
+    q: "Une réceptionniste IA peut-elle prendre les rendez-vous de visite et d'estimation ?",
+    a: "Oui, lorsque l'agenda de l'agence est connecté à Rushh : l'IA identifie le motif (visite, estimation…), recueille les informations utiles et propose un créneau libre, selon vos règles. Sans agenda connecté, elle transmet la demande avec son contexte pour que votre équipe fixe elle-même le rendez-vous.",
+  },
+  {
+    q: "Peut-on confier entièrement la gestion des appels de son agence à un prestataire ?",
+    a: "Oui, la prise en charge des appels entrants peut être confiée à un prestataire. Avec Rushh, l'équipe conçoit, configure, teste, surveille et optimise le standard pour votre agence : c'est une IA qui décroche, pas une secrétaire humaine. Vous gardez la main sur les règles (qui reçoit quelle demande, quand transférer) et vos collaborateurs restent joignables pour les cas qui le demandent.",
   },
   {
     q: "Mes clients peuvent-ils parler à quelqu'un de l'agence ?",
@@ -17,8 +29,8 @@ export const FAQ_ITEMS = [
     a: "Non. Vous conservez votre numéro de téléphone et vos habitudes de travail. Rushh s'active grâce à un renvoi d'appel et peut se connecter à vos outils existants selon votre organisation et les intégrations disponibles.",
   },
   {
-    q: "Est-ce à nous de configurer et maintenir le standard ?",
-    a: "Non, l'équipe Rushh s'occupe de tout. Nous étudions votre fonctionnement, configurons votre standard, réalisons les tests avec vous et assurons son suivi. Vous n'avez pas de nouvel outil à apprendre ni de système à maintenir.",
+    q: "Quelle différence entre un standard IA à configurer soi-même et Rushh ?",
+    a: "Avec un outil en libre-service, l'agence paramètre, teste et fait évoluer elle-même ses scénarios. Avec Rushh, c'est l'équipe qui s'en charge : nous étudions votre fonctionnement, configurons le standard, le testons avec vous, puis le suivons et l'ajustons dans le temps. Vous n'avez ni logiciel à apprendre ni système à maintenir.",
   },
   {
     q: "Combien de temps faut-il pour installer Rushh ?",

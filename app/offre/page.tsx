@@ -9,6 +9,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { BRAND_NAME, orgRef } from "@/lib/brand";
 import { RxDiff, RxProof } from "@/components/solutions/premium";
 import { OFFRE } from "@/lib/solutions/premium";
+import { OFFRE_COMPARE } from "@/lib/offre-compare";
 import { ToolsStrip } from "@/components/solutions/ToolsStrip";
 import { OfferAccordions } from "./OfferAccordions";
 import "../landing-flow.css";
@@ -17,7 +18,7 @@ import "../solutions/sol.css";
 
 const TITLE = "L'offre Rushh immo : standard téléphonique IA pour l'immobilier";
 const DESCRIPTION =
-  "L'offre Rushh : un standard téléphonique IA qui prend vos appels 24 h/24, qualifie, fixe vos rendez-vous et classe les demandes. Proposition personnalisée.";
+  "Rushh externalise les appels entrants de votre agence : standard téléphonique alimenté par IA 24 h/24, configuré et suivi par notre équipe. Sur mesure.";
 const URL = "https://www.rushh.fr/offre";
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ const serviceSchema = {
   serviceType: "Standard téléphonique alimenté par intelligence artificielle",
   url: URL,
   description:
-    "Standard téléphonique alimenté par intelligence artificielle, spécialisé dans l'immobilier : appels entrants 24 h/24 et 7 j/7, qualification, rendez-vous sur agendas connectés, transfert d'appel, SMS et e-mails automatiques, plateforme métier. Conception, configuration, connexions, tests, installation, maintenance et suivi assurés par Rushh.",
+    "Externalisation des appels entrants immobiliers par un standard téléphonique alimenté par intelligence artificielle (une IA décroche, pas une secrétaire humaine) : appels entrants 24 h/24 et 7 j/7, qualification, rendez-vous sur agendas connectés, transfert d'appel, SMS et e-mails automatiques, plateforme métier. Conception, configuration, connexions, tests, installation, maintenance et suivi assurés par Rushh.",
   provider: orgRef,
   areaServed: { "@type": "Country", name: "France" },
   audience: { "@type": "Audience", audienceType: "Professionnels de l'immobilier" },
@@ -163,7 +164,7 @@ export default function OffrePage() {
                 <IconArrow />
               </a>
             </div>
-            <p className="of-note">Standard téléphonique alimenté par intelligence artificielle · Proposition personnalisée</p>
+            <p className="of-note">Standard téléphonique alimenté par intelligence artificielle · Externalisation des appels entrants · Proposition personnalisée</p>
 
             <ul className="of-benefits">
               {BENEFITS.map((b) => (
@@ -234,6 +235,43 @@ export default function OffrePage() {
                 </ul>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ── 2 bis. Trois façons de gérer ses appels ── */}
+        <section id="comparer" aria-labelledby="comparer-title">
+          <div className="lf-wrap">
+            <div className="lf-head--center of-cmp-head">
+              <span className="lf-pill">{OFFRE_COMPARE.pill}</span>
+              <h2 id="comparer-title" className="lf-h2">{OFFRE_COMPARE.title}</h2>
+              <p className="lf-sub">{OFFRE_COMPARE.sub}</p>
+            </div>
+            <div className="of-cmp">
+              {OFFRE_COMPARE.options.map((o) => (
+                <article key={o.id} className={`lf-card of-cmp-card${o.highlight ? " of-cmp-card--rushh" : ""}`}>
+                  <h3>{o.name}</h3>
+                  <p className="of-cmp-who">{o.who}</p>
+                  <h4>Avantages</h4>
+                  <ul className="of-cmp-list of-cmp-list--pros">
+                    {o.pros.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                  <h4>Limites</h4>
+                  <ul className="of-cmp-list of-cmp-list--limits">
+                    {o.limits.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+            <p className="of-caption of-caption--center">{OFFRE_COMPARE.note}</p>
+            <p className="of-cmp-links">
+              {OFFRE_COMPARE.links.map((l) => (
+                <Link key={l.href} href={l.href}>{l.label}</Link>
+              ))}
+            </p>
           </div>
         </section>
 

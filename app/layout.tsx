@@ -14,7 +14,7 @@ const inter = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Standard téléphonique IA pour agence immobilière | Rushh immo",
-  description: "Rushh est le standard téléphonique IA des agences immobilières : il décroche, qualifie et transmet vos appels 24 h/24, configuré et suivi par notre équipe.",
+  description: "Rushh : l'IA qui répond au téléphone pour votre agence immobilière. Standard téléphonique alimenté par IA 24 h/24, configuré et suivi par notre équipe.",
   keywords: [
     "standard téléphonique IA agence immobilière",
     "standard téléphonique IA immobilier",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Standard téléphonique IA pour agence immobilière | Rushh immo",
-    description: "Rushh est le standard téléphonique IA des agences immobilières : il décroche, qualifie et transmet vos appels 24 h/24, configuré et suivi par notre équipe.",
+    description: "Rushh : l'IA qui répond au téléphone pour votre agence immobilière. Standard téléphonique alimenté par IA 24 h/24, configuré et suivi par notre équipe.",
     url: "https://www.rushh.fr",
     siteName: BRAND_NAME,
     locale: "fr_FR",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Standard téléphonique IA pour agence immobilière | Rushh immo",
-    description: "Rushh est le standard téléphonique IA des agences immobilières : il décroche, qualifie et transmet vos appels 24 h/24, configuré et suivi par notre équipe.",
+    description: "Rushh : l'IA qui répond au téléphone pour votre agence immobilière. Standard téléphonique alimenté par IA 24 h/24, configuré et suivi par notre équipe.",
   },
   alternates: {
     canonical: "https://www.rushh.fr",

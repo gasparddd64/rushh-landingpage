@@ -689,3 +689,25 @@
   color: var(--lf-ink);
 }
 .rl-chip svg { padding: 2px; width: 18px; height: 18px; border-radius: 50%; background: var(--lf-accent); color: #fff; }
+
+/* ==========================================================================
+   Définition de Rushh (sous l'en-tête de l'accueil) : texte visible, mêmes cartes que le reste du site
+   ========================================================================== */
+.lf section.df { padding: 72px 0 24px; }
+.df-head { max-width: 800px; gap: 20px; }
+.df-head .lf-h2 { font-size: clamp(28px, 3.6vw, 44px); text-wrap: balance; }
+.df-head .lf-sub { font-size: 17px; line-height: 1.55; text-wrap: pretty; }
+.df-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 44px 0 0; padding: 0; list-style: none; }
+.df-card { padding: 26px 24px 28px; }
+.df-card h3 { margin: 0 0 10px; font-size: 17px; font-weight: 700; line-height: 1.25; letter-spacing: -0.03em; color: var(--lf-ink); }
+.df-card p { margin: 0; font-size: 15px; font-weight: 500; line-height: 1.55; letter-spacing: -0.015em; color: var(--lf-muted); }
+.df-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; margin: 28px 0 0; }
+.df-links a { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; color: var(--lf-accent); text-decoration: none; }
+.df-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 1060px) { .df-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .lf section.df { padding: 44px 0 8px; }
+  .df-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 28px; }
+  .df-card { padding: 20px 20px 22px; }
+  .df-head .lf-sub { font-size: 15.5px; }
+}

@@ -1,5 +1,6 @@
 import { Nav } from "@/components/sections/Nav";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { DefinitionSection } from "@/components/sections/DefinitionSection";
 import { LossSection } from "@/components/sections/LossSection";
 import { EndingsSection } from "@/components/sections/EndingsSection";
 import { RelaySection } from "@/components/sections/RelaySection";
@@ -26,7 +27,7 @@ const organizationSchema = {
   "alternateName": BRAND_SHORT,
   "url": SITE,
   "logo": "https://www.rushh.fr/logo-rushh-og.png",
-  "description": "Standard téléphonique conçu et déployé pour les agences immobilières françaises.",
+  "description": "Agence spécialisée dans l'externalisation des appels entrants immobiliers : standard téléphonique IA conçu, configuré, testé et suivi par l'équipe Rushh pour les agences immobilières françaises.",
   "email": "hello@rushh.fr",
   "address": {
     "@type": "PostalAddress",
@@ -58,7 +59,7 @@ const localBusinessSchema = {
   "alternateName": BRAND_SHORT,
   "url": SITE,
   "logo": "https://www.rushh.fr/logo-rushh-og.png",
-  "description": "Standard téléphonique conçu et déployé pour les agences immobilières françaises.",
+  "description": "Agence spécialisée dans l'externalisation des appels entrants immobiliers : standard téléphonique IA conçu, configuré, testé et suivi par l'équipe Rushh pour les agences immobilières françaises.",
   "email": "hello@rushh.fr",
   "address": {
     "@type": "PostalAddress",
@@ -84,7 +85,7 @@ const serviceSchema = {
   "@type": "Service",
   "name": "Standard téléphonique IA pour agence immobilière",
   "serviceType": "Standard téléphonique IA immobilier",
-  "description": "Standard téléphonique alimenté par intelligence artificielle pour les professionnels de l'immobilier, prenant en charge les appels entrants selon les règles du client.",
+  "description": "Externalisation des appels entrants pour les professionnels de l'immobilier : un standard téléphonique alimenté par intelligence artificielle (une IA décroche, pas une secrétaire humaine), conçu, configuré, testé, surveillé et optimisé par l'équipe Rushh, qui prend en charge les appels selon les règles du client.",
   "provider": orgRef,
   "areaServed": {
     "@type": "Country",
@@ -143,6 +144,7 @@ export default function Home() {
       <Nav variant="hero" />
       <HeroSection />
       <div className="lf">
+        <DefinitionSection />
         <LossSection />
         <EndingsSection />
         <RelaySection />

@@ -14,6 +14,8 @@ import { PRIVACY } from "./legal/privacy";
 import { FAQ_ITEMS } from "./faq";
 import { legalToMarkdown } from "./legal/markdown";
 import { DEMO_LISTEN, MULTI, OFFRE, SYNDICS, TRANSACTION, premiumToMd } from "./solutions/premium";
+import { homeDefinitionToMd } from "./home-definition";
+import { offreCompareToMd } from "./offre-compare";
 
 export const SITE_URL = "https://www.rushh.fr";
 
@@ -33,6 +35,7 @@ export const MARKDOWN_PAGES: Record<string, MarkdownPage> = {
 
 Rushh conçoit et déploie un standard téléphonique IA sur-mesure pour les agences immobilières : il décroche, qualifie et transmet les appels entrants 24 h/24, avec un déploiement adapté à l’agence. La mise en service est organisée avec vous après validation du périmètre technique et réception des éléments nécessaires.
 
+${homeDefinitionToMd()}
 ## Chaque appel compte pour votre agence
 
 Rushh prend le relais quand l'équipe de l'agence n'est pas disponible. Chaque appel est compris et traité selon les règles définies par l'agence : besoin compris, informations recueillies, action adaptée (rendez-vous, transfert ou message), équipe informée avec le contexte utile pour reprendre la demande.
@@ -127,7 +130,7 @@ Rushh répond aux appels entrants de votre agence 24h/24, qualifie les demandes 
 
 Vous vous concentrez sur vos clients. Rushh s'occupe du téléphone.
 
-Standard téléphonique alimenté par intelligence artificielle · Proposition personnalisée.
+Standard téléphonique alimenté par intelligence artificielle · Externalisation des appels entrants · Proposition personnalisée.
 
 - Moins d'appels laissés sans réponse : visite, rendez-vous, agence fermée, Rushh prend l'appel.
 - Moins d'interruptions pour vos équipes : votre équipe ne décroche que ce qui mérite un humain.
@@ -162,6 +165,7 @@ Vous n'avez aucun logiciel à configurer : tout est assuré par l'équipe Rushh.
 - De votre côté : nous expliquer comment vous travaillez ; valider le fonctionnement avant le déploiement.
 - Du côté de Rushh : les scénarios d'appel conçus pour votre agence ; les connexions à vos outils ; la maintenance, le suivi et les ajustements.
 
+${offreCompareToMd()}
 ## Ce qui s'adapte à votre organisation
 
 Le Standard suit votre façon de travailler, pas l'inverse.
