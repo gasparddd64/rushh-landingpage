@@ -37,12 +37,16 @@ const REQUIRED_LINKS: Record<string, string[]> = {
 
 // Pages au texte validé : seuls les liens présents dans le texte (ou posés sur ses mots) sont exigés.
 const BARE_LINKS: Record<string, string[]> = {
-  "/comparatif/standards-telephoniques-ia-immobilier": ["/demonstrations", "/vs/fonio", "/vs/joe-ai"],
+  "/comparatif/standards-telephoniques-ia-immobilier": ["/demonstrations", "/offre", "/vs/fonio", "/vs/joe-ai", "/vs/airagent", "/vs/vokai", "/ressources/choisir-standard-telephonique-ia-immobilier", "/ressources/externalisation-appels-telephoniques-agence-immobiliere"],
   "/ressources/qualification-appels-vendeurs-acquereurs": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/prise-rendez-vous-ia-immobilier"],
   "/ressources/prise-rendez-vous-ia-immobilier": ["/demonstrations", "/integrations", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/standard-ia-google-agenda-outlook-immobilier", "/ressources/appel-vendeur-estimation-immobiliere"],
   "/ressources/appel-vendeur-estimation-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/prise-rendez-vous-ia-immobilier", "/ressources/standard-ia-google-agenda-outlook-immobilier"],
   "/ressources/permanence-telephonique-agence-immobiliere": ["/demonstrations", "/solutions/transaction-immobiliere", "/solutions/gestion-locative", "/ressources/standard-syndic-appels-urgents", "/ressources/telesecretariat-humain-ou-ia", "/ressources/appels-manques-immobilier"],
   "/ressources/appels-manques-immobilier": ["/demonstrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/permanence-telephonique-agence-immobiliere"],
+  "/ressources/automatiser-appels-entrants-agence-immobiliere": ["/demonstrations", "/offre", "/integrations", "/ressources/qualification-appels-vendeurs-acquereurs", "/ressources/renvoi-appel-ou-decroche-ia-immobilier", "/ressources/standard-telephonique-ia-immobilier-rgpd"],
+  "/ressources/externalisation-appels-telephoniques-agence-immobiliere": ["/demonstrations", "/offre", "/integrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/renvoi-appel-ou-decroche-ia-immobilier", "/ressources/appel-vendeur-estimation-immobiliere", "/ressources/prise-rendez-vous-ia-immobilier", "/ressources/standard-syndic-appels-urgents", "/ressources/standard-telephonique-ia-immobilier-rgpd"],
+  "/ressources/secretaire-telephonique-ia-immobilier": ["/demonstrations", "/offre", "/integrations", "/ressources/receptionniste-ia-agence-immobiliere", "/ressources/telesecretariat-humain-ou-ia", "/ressources/appel-vendeur-estimation-immobiliere", "/ressources/standard-telephonique-ia-immobilier-rgpd"],
+  "/ressources/receptionniste-ia-agence-immobiliere": ["/demonstrations", "/offre", "/integrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/prise-rendez-vous-ia-immobilier", "/ressources/appel-vendeur-estimation-immobiliere", "/ressources/standard-telephonique-ia-immobilier-rgpd"],
   "/ressources/rushh-standard-telephonique-ia-immobilier": ["/demonstrations", "/offre", "/integrations", "/ressources/telesecretariat-humain-ou-ia", "/ressources/repondeur-ou-standard-ia-agence-immobiliere"],
   "/ressources/messages-repondeur-agence-immobiliere": ["/demonstrations", "/offre", "/ressources/permanence-telephonique-agence-immobiliere", "/ressources/repondeur-ou-standard-ia-agence-immobiliere"],
 };
@@ -201,12 +205,12 @@ describe("guide-specific requirements", () => {
 describe("catalogue /ressources (le Blog)", () => {
   const md = getMarkdownPage("/ressources")?.markdown ?? "";
 
-  it("is a known route with a Markdown mirror, one H1, and links to all twenty-seven publications", () => {
+  it("is a known route with a Markdown mirror, one H1, and links to all thirty-one publications", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(md).toContain("# Le Blog Rushh");
-    expect(ARTICLES).toHaveLength(27);
-    expect(CATALOGUE).toHaveLength(27);
+    expect(ARTICLES).toHaveLength(31);
+    expect(CATALOGUE).toHaveLength(31);
     for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
@@ -217,25 +221,29 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(CATALOGUE.map((e) => e.path)).toContain(FEATURED_PATH);
   });
 
-  it("offers the three filters: all (27), guides (21), comparatifs (6)", () => {
+  it("offers the three filters: all (31), guides (25), comparatifs (6)", () => {
     expect(CATEGORIES.map((c) => c.label)).toEqual(["Guides & conseils", "Comparatifs"]);
     const by = (c: string) => CATALOGUE.filter((e) => e.category === c).map((e) => e.path).sort();
     expect(by("guides")).toEqual([
       "/ressources/appel-vendeur-estimation-immobiliere",
       "/ressources/appels-agence-immobiliere-soir-week-end",
       "/ressources/appels-manques-immobilier",
+      "/ressources/automatiser-appels-entrants-agence-immobiliere",
       "/ressources/choisir-standard-telephonique-ia-immobilier",
       "/ressources/cout-standard-telephonique-ia-immobilier",
+      "/ressources/externalisation-appels-telephoniques-agence-immobiliere",
       "/ressources/filtrer-demarchage-telephonique-agence-immobiliere",
       "/ressources/messages-repondeur-agence-immobiliere",
       "/ressources/permanence-telephonique-agence-immobiliere",
       "/ressources/prise-rendez-vous-ia-immobilier",
       "/ressources/qualification-appels-vendeurs-acquereurs",
       "/ressources/qualifier-appels-locataires-bailleurs",
+      "/ressources/receptionniste-ia-agence-immobiliere",
       "/ressources/rentabilite-standard-telephonique-ia-agence-immobiliere",
       "/ressources/renvoi-appel-ou-decroche-ia-immobilier",
       "/ressources/repondeur-ou-standard-ia-agence-immobiliere",
       "/ressources/rushh-standard-telephonique-ia-immobilier",
+      "/ressources/secretaire-telephonique-ia-immobilier",
       "/ressources/standard-ia-google-agenda-outlook-immobilier",
       "/ressources/standard-syndic-appels-urgents",
       "/ressources/standard-telephonique-ia-apimo",
@@ -321,21 +329,28 @@ describe("validated-text page /comparatif/standards-telephoniques-ia-immobilier"
   const a = ARTICLES.find((x) => x.path === "/comparatif/standards-telephoniques-ia-immobilier")!;
   const md = articleToMarkdown(a);
 
-  it("mirrors the validated text and nothing from the removed comparison", () => {
+  it("mirrors the validated comparison of the November 2026 batch", () => {
     for (const phrase of [
-      "Quel standard téléphonique IA choisir pour l'immobilier ?",
-      "Rushh va plus loin que la simple réception téléphonique",
-      "Un appel vendeur ne doit pas finir en simple message",
+      "Quelle est la meilleure IA téléphonique pour une agence immobilière ?",
+      "Rushh, Fonio, Joe AI, AirAgent et VOKAI",
+      "Ce tableau n'est pas une notation.",
+      "ce comparatif est publié par Rushh",
+      "14 novembre 2026",
+      "https://www.fonio.ai/fr/",
+      "https://www.getjoe-ai.com/",
+      "https://airagent.fr/",
+      "https://vokai.fr/",
       "[Tester le standard](https://www.rushh.fr/demonstrations)",
-      "Une solution personnalisée, entièrement prise en charge par notre équipe.",
     ]) expect(md).toContain(phrase);
-    const all = `${md}\n${a.title}\n${a.description}\n${a.summary}`;
-    expect(all).not.toMatch(/Alopeak|Volubilimo|AirAgent|VOKAI|sur devis|consulté le|Sources et méthode|À lire aussi|huit critères|cinq solutions|ni SMS|appels entrants uniquement/i);
+    expect(md).not.toMatch(/Alopeak|Volubilimo/i);
   });
 
-  it("keeps a single H1, no source list and no automatic editorial blocks", () => {
+  it("is transparent about its author, shows no ranking, rating or Rushh price, and keeps the original publication date", () => {
     expect(md.match(/^# /gm)).toHaveLength(1);
-    expect(a.sources).toHaveLength(0);
+    expect(md).toMatch(/pas d'un classement indépendant|Il ne s'agit pas d'un classement indépendant/);
+    expect(md).not.toMatch(/numéro 1|meilleur de 2026|★|étoiles/i);
+    expect(a.datePublished).toBe("2026-10-29");
+    expect(a.dateModified >= "2026-11-14").toBe(true);
     expect(md).not.toMatch(/En bref|Comment Rushh répond/);
   });
 });
@@ -350,6 +365,10 @@ describe("refonte éditoriale : règles communes aux pages au texte réécrit", 
     "/ressources/appel-vendeur-estimation-immobiliere",
     "/ressources/permanence-telephonique-agence-immobiliere",
     "/ressources/messages-repondeur-agence-immobiliere",
+    "/ressources/receptionniste-ia-agence-immobiliere",
+    "/ressources/automatiser-appels-entrants-agence-immobiliere",
+    "/ressources/externalisation-appels-telephoniques-agence-immobiliere",
+    "/ressources/secretaire-telephonique-ia-immobilier",
   ]);
   const bare = ARTICLES.filter((x) => x.bare && !PROTECTED.has(x.path));
   const wc = (md: string) => md.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").split(/\s+/).length;

@@ -190,7 +190,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: a.h1,
-    ...(a.cover && !a.bare ? { image: [`${SITE}${a.cover.src}`] } : {}),
+    ...(a.cover ? { image: [`${SITE}${a.cover.src}`] } : {}),
     description: a.description,
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },

@@ -7,6 +7,7 @@ import { TestezCTA } from "@/components/ui/testez-cta";
 function Typewriter({ text, active, speed = 28, onDone }: { text: string; active: boolean; speed?: number; onDone?: () => void }) {
   const [i, setI] = useState(0);
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- machine à états d'animation : la mise à jour dans l'effet est voulue
     if (!active) { setI(0); return; }
     if (i >= text.length) { onDone?.(); return; }
     const t = setTimeout(() => setI(i + 1), speed);
@@ -33,6 +34,7 @@ interface StepData {
 
 function StepCard({ step, active, dark }: { step: StepData; active: boolean; dark: boolean }) {
   const [titleDone, setTitleDone] = useState(false);
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- machine à états d'animation : la mise à jour dans l'effet est voulue
   useEffect(() => { if (!active) setTitleDone(false); }, [active]);
   return (
     <div className={`stepcard${dark ? " stepcard-dark" : ""}${active ? " stepcard-active" : ""}`}>
@@ -90,6 +92,7 @@ export function StepsSection() {
   useEffect(() => {
     if (!inView) return;
     let idx = 0;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- machine à états d'animation : la mise à jour dans l'effet est voulue
     setActiveIdx(0);
     const tick = () => {
       idx++;

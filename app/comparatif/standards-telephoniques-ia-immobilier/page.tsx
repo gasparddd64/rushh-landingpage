@@ -6,6 +6,7 @@ export const metadata = buildMetadata({
   title: article.title,
   description: article.description,
   path: article.path,
+  image: article.cover,
   type: "article",
 });
 

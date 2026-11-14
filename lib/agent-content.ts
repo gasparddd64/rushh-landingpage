@@ -150,12 +150,12 @@ Fonctionnalités :
 - **Qualification** : vendeur, acquéreur, locataire, bailleur ou prestataire.
 - **Rendez-vous** : pris sur vos agendas connectés, selon vos règles.
 - **Transfert d'appel** : en direct vers un collaborateur, lorsque son intervention est nécessaire.
-- **SMS et e-mails automatiques** : confirmations et informations, selon les scénarios configurés.
+- **SMS et e-mails automatiques** : confirmations et informations, selon les scénarios configurés ; WhatsApp et autres workflows selon les accès et les API.
 - **Plateforme métier** : opportunités classées par catégorie, avec coordonnées, résumé, statut et suivi.
-- **Connexions personnalisées** : aux outils disposant d'une API accessible, avec les autorisations nécessaires.
-- **Voix personnalisable** : personnalisation de la voix et clonage vocal, selon la configuration.
+- **Connexions personnalisées** : aux outils disposant d'une API accessible, avec les autorisations nécessaires ; connexions Apimo et Whise opérationnelles.
+- **Voix et langues** : voix personnalisable, clonage vocal et échanges en français, anglais et espagnol, ainsi que d'autres langues, selon la configuration.
 
-Les fonctionnalités activées dépendent de votre organisation et de vos outils.
+Les fonctionnalités activées dépendent de votre organisation et de vos outils. Rushh traite les appels entrants : les appels sortants automatisés ne font pas partie de l'offre de base.
 
 ## Une prestation entièrement prise en charge
 

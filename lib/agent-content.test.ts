@@ -81,7 +81,7 @@ describe("/offre", () => {
   it("states a personalised proposal, carries no lead time or price, and no unconfirmed claim", () => {
     const md = getMarkdownPage("/offre")?.markdown ?? "";
     expect(md).toContain("Proposition personnalisée");
-    expect(md).not.toMatch(/sur devis|jours ouvrés|€|euros?\b|transcription|anglais, espagnol|facultative|sans être obligatoire/i);
+    expect(md).not.toMatch(/sur devis|jours ouvrés|€|euros?\b|transcription|facultative|sans être obligatoire/i);
     expect(md).toContain("SMS et e-mails automatiques");
     expect(md).toContain("24h/24");
     expect(md).not.toMatch(/garantit aucune|outil d'assistance|01 76 63 57 09|certains outils/i);

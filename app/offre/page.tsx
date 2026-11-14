@@ -103,10 +103,10 @@ const FEATURES = [
   { title: "Qualification", text: "Vendeur, acquéreur, locataire, bailleur ou prestataire." },
   { title: "Rendez-vous", text: "Pris sur vos agendas connectés, selon vos règles." },
   { title: "Transfert d'appel", text: "En direct vers un collaborateur, lorsque son intervention est nécessaire." },
-  { title: "SMS et e-mails automatiques", text: "Confirmations et informations, selon les scénarios configurés." },
+  { title: "SMS et e-mails automatiques", text: "Confirmations et informations, selon les scénarios configurés. WhatsApp et autres workflows selon les accès et les API." },
   { title: "Plateforme métier", text: "Opportunités classées par catégorie, avec coordonnées, résumé, statut et suivi." },
-  { title: "Connexions personnalisées", text: "Aux outils disposant d'une API accessible, avec les autorisations nécessaires." },
-  { title: "Voix personnalisable", text: "Personnalisation de la voix et clonage vocal, selon la configuration." },
+  { title: "Connexions personnalisées", text: "Aux outils disposant d'une API accessible, avec les autorisations nécessaires. Connexions Apimo et Whise opérationnelles." },
+  { title: "Voix et langues", text: "Voix personnalisable, clonage vocal et échanges en français, anglais et espagnol, ainsi que d'autres langues, selon la configuration." },
 ];
 
 const YOU = ["Nous expliquer comment vous travaillez", "Valider le fonctionnement avant le déploiement"];
@@ -204,7 +204,7 @@ export default function OffrePage() {
               ))}
             </ul>
             <p className="of-caption of-caption--center">
-              Les fonctionnalités activées dépendent de votre organisation et de vos outils.
+              Les fonctionnalités activées dépendent de votre organisation et de vos outils. Rushh traite les appels entrants : les appels sortants automatisés ne font pas partie de l&apos;offre de base.
             </p>
           </div>
         </section>

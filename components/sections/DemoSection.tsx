@@ -47,6 +47,7 @@ export function DemoSection() {
   }, [playing]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- machine à états d'animation : la mise à jour dans l'effet est voulue
     if (time >= 2 && counts.received < 1) setCounts({ received: 1, qualified: 0, sent: 0 });
     if (time >= 36 && counts.qualified < 1) setCounts({ received: 1, qualified: 1, sent: 0 });
     if (time >= 60 && counts.sent < 1) setCounts({ received: 1, qualified: 1, sent: 1 });

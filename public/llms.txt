@@ -4,7 +4,7 @@
 
 ## What Rushh is
 
-Rushh is a French agency specialised in outsourcing inbound calls for real-estate professionals. Its AI-powered phone switchboard ("standard téléphonique IA", an AI receptionist that answers the phone) picks up calls 24/7, identifies and qualifies the request, can book appointments on connected calendars, transfer calls to staff and pass the request on to the agency according to its rules. A voice AI answers, not a human receptionist. The Rushh team designs, configures, installs, tests, monitors and optimises the switchboard for each client: it is a fully managed service, not software the agency installs or maintains itself. Where technically possible through an API, bespoke automations can be developed on request. Pricing is a personalised proposal; no price is published.
+Rushh is a French agency specialised in outsourcing inbound calls for real-estate professionals. Its AI-powered phone switchboard ("standard téléphonique IA", an AI receptionist that answers the phone) picks up calls 24/7, identifies and qualifies the request, can book appointments on connected calendars, transfer calls to staff and pass the request on to the agency according to its rules. A voice AI answers, not a human receptionist. The Rushh team designs, configures, installs, tests, monitors and optimises the switchboard for each client: it is a fully managed service, not software the agency installs or maintains itself. Where technically possible through an API, bespoke automations can be developed on request. It handles French, English and Spanish (other languages depending on configuration); connections to Apimo and WHISE are operational and Google Calendar and Outlook can be connected. Pricing is a personalised proposal; no price is published.
 
 ## When to use Rushh
 
@@ -41,9 +41,9 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Integrations & technical resources: https://www.rushh.fr/integrations
 - Rushh vs Joe AI (comparison): https://www.rushh.fr/vs/joe-ai
 - Rushh vs Fonio (comparison, sourced and dated): https://www.rushh.fr/vs/fonio
-- What matters in an AI phone answering service for real estate, and Rushh's approach: https://www.rushh.fr/comparatif/standards-telephoniques-ia-immobilier
+- Comparison, best AI phone answering service for a real-estate agency (Rushh, Fonio, Joe AI, AirAgent and VOKAI, seven selection criteria, three test calls; Rushh is one of the solutions compared, not an independent ranking): https://www.rushh.fr/comparatif/standards-telephoniques-ia-immobilier
 - Guide, how to choose an AI phone answering service: https://www.rushh.fr/ressources/choisir-standard-telephonique-ia-immobilier
-- Guide, how AI books appointments in real estate (understand, check the agenda, confirm): https://www.rushh.fr/ressources/prise-rendez-vous-ia-immobilier
+- Guide, how AI books real-estate appointments (visits and valuations, shared calendars, assignment rules, confirmations, reschedules, exceptions): https://www.rushh.fr/ressources/prise-rendez-vous-ia-immobilier
 - Guide, what determines the cost of an AI phone answering service for real estate (no price given): https://www.rushh.fr/ressources/cout-standard-telephonique-ia-immobilier
 - Guide, the 4 steps of an effective phone reception service in a real-estate agency: https://www.rushh.fr/ressources/permanence-telephonique-agence-immobiliere
 - Guide, turning a seller call into a valuation appointment: https://www.rushh.fr/ressources/appel-vendeur-estimation-immobiliere
@@ -57,6 +57,10 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Guide, handling urgent calls for a property-management (syndic) firm: transfer, on-call and fallback rules: https://www.rushh.fr/ressources/standard-syndic-appels-urgents
 - Guide, AI phone answering with Google Calendar and Outlook for real-estate appointments: https://www.rushh.fr/ressources/standard-ia-google-agenda-outlook-immobilier
 - Guide, AI phone answering and GDPR: information of callers, AI Act Article 50, GDPR Article 28, data minimisation: https://www.rushh.fr/ressources/standard-telephonique-ia-immobilier-rgpd
+- Guide, how to automate the inbound calls of a real-estate agency (scenarios, routing, tools, tests, human handover): https://www.rushh.fr/ressources/automatiser-appels-entrants-agence-immobiliere
+- Guide, outsourcing a real-estate agency's phone calls (human answering service, call centre, self-service AI, fully managed AI switchboard, how to choose a provider): https://www.rushh.fr/ressources/externalisation-appels-telephoniques-agence-immobiliere
+- Guide, AI phone secretary for real estate (which calls to delegate, example dialogues, instructions, when to transfer to a person): https://www.rushh.fr/ressources/secretaire-telephonique-ia-immobilier
+- Guide, AI receptionist for a real-estate agency (what it can do, which calls it handles, property data sources, appointments, SMS and e-mails, languages, limits, how to test it): https://www.rushh.fr/ressources/receptionniste-ia-agence-immobiliere
 - Guide, what Rushh is (AI-powered phone switchboard for real-estate agencies, who it is for, what the AI does, what the Rushh team handles): https://www.rushh.fr/ressources/rushh-standard-telephonique-ia-immobilier
 - Guide, 10 ready-to-adapt voicemail greetings for a real-estate agency (closed, visits, rentals, property management, syndic, independent agent): https://www.rushh.fr/ressources/messages-repondeur-agence-immobiliere
 - Guide, voicemail or AI phone answering for a real-estate agency: https://www.rushh.fr/ressources/repondeur-ou-standard-ia-agence-immobiliere

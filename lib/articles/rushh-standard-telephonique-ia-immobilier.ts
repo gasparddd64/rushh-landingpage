@@ -79,6 +79,7 @@ export const rushhDefinition: Article = {
       h2: "Écoutez Rushh décrocher",
       blocks: [
         p("Appelez la ligne de démonstration et jugez la voix, la rapidité et la manière de qualifier une demande."),
+        p("Pour aller plus loin : ce que peut faire une [réceptionniste IA pour agence immobilière](/ressources/receptionniste-ia-agence-immobiliere), et les appels à lui confier avec une [secrétaire téléphonique IA en immobilier](/ressources/secretaire-telephonique-ia-immobilier)."),
         { t: "button", label: "Tester le standard", href: "/demonstrations" },
       ],
     },

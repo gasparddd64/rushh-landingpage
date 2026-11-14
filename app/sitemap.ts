@@ -4,12 +4,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: 'https://www.rushh.fr',
-      lastModified: new Date('2026-11-07'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: 'https://www.rushh.fr/offre',
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
@@ -45,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources',
-      lastModified: new Date('2026-11-03'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
@@ -69,7 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/comparatif/standards-telephoniques-ia-immobilier',
-      lastModified: new Date('2026-11-03'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
@@ -87,7 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/prise-rendez-vous-ia-immobilier',
-      lastModified: new Date('2026-11-03'),
+      lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -189,6 +190,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/ressources/rushh-standard-telephonique-ia-immobilier',
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/receptionniste-ia-agence-immobiliere',
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/automatiser-appels-entrants-agence-immobiliere',
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/externalisation-appels-telephoniques-agence-immobiliere',
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.rushh.fr/ressources/secretaire-telephonique-ia-immobilier',
       lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.6,
