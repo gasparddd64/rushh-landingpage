@@ -219,8 +219,8 @@ html { overflow-x: hidden; }
 .nav-cta {
   display: flex; align-items: center;
 }
-/* « Réserver une démo » : même taille que « Testez Rushh » (172 × 48 px) */
-.nav-cta .demo-cta-btn, .mobile-menu-ctas .demo-cta-btn { width: 172px; padding: 0; }
+/* « Réserver une démo » : même taille que « Tester le standard » (208 × 48 px) */
+.nav-cta .demo-cta-btn, .mobile-menu-ctas .demo-cta-btn { width: 208px; padding: 0; }
 
 /* Hamburger — hidden on desktop */
 .nav-hamburger {
@@ -435,7 +435,7 @@ html { overflow-x: hidden; }
 }
 
 /* ---------- CTA : un seul design par bouton, identique sur tout le site ---------- */
-/* « Réserver une démo » : pastille bleue, noire au survol. « Testez Rushh » : pastille bleue + téléphone, le texte et l'icône défilent au survol. */
+/* « Réserver une démo » : pastille bleue, noire au survol. « Tester le standard » : pastille bleue + téléphone, le texte et l'icône défilent au survol. */
 .demo-cta-wrap { display: inline-flex; align-items: center; }
 .demo-cta-btn, .cta-testez {
   display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box;

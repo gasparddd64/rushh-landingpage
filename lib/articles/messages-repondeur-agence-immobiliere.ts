@@ -152,7 +152,7 @@ export const messagesRepondeur: Article = {
       blocks: [
         p("Un répondeur est utile lorsque l'agence ne peut pas décrocher, à condition que les messages soient traités. Une autre approche consiste à confier les appels entrants à un **standard téléphonique alimenté par intelligence artificielle**, capable de dialoguer avec l'appelant, d'identifier sa demande et, selon les règles définies, de proposer un rendez-vous ou de transmettre les informations à l'équipe."),
         p("C'est le service proposé par **Rushh**, spécialisé dans l'immobilier, avec configuration et suivi pris en charge. Vous pouvez [découvrir l'offre Rushh](/offre)."),
-        { t: "button", label: "Tester le standard par téléphone", href: "/demonstrations" },
+        { t: "button", label: "Tester le standard", href: "/demonstrations" },
       ],
     },
   ],

@@ -92,7 +92,7 @@ export const vsFonio: Article = {
         },
         {
           "t": "button",
-          "label": "Tester le standard par téléphone",
+          "label": "Tester le standard",
           "href": "/demonstrations"
         }
       ]

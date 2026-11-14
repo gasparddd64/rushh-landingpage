@@ -1,7 +1,7 @@
-/** CTA « Testez Rushh » : appelle directement la ligne de démonstration (agence fictive). La réservation d'un rendez-vous reste le rôle de DemoCTA.
+/** CTA « Tester le standard » : appelle directement la ligne de démonstration (agence fictive). La réservation d'un rendez-vous reste le rôle de DemoCTA.
  *  Un seul design sur tout le site : pastille bleue + téléphone ; au survol, le texte sort par le haut et revient par le bas, le téléphone part en haut à droite et revient d'en bas à gauche. */
 export const DEMO_LINE_HREF = "tel:+33176635709";
-export const DEMO_LINE_ARIA = "Testez Rushh : appeler la ligne de démonstration au 01 76 63 57 09";
+export const DEMO_LINE_ARIA = "Tester le standard : appeler la ligne de démonstration au 01 76 63 57 09";
 
 function PhoneIcon({ className }: { className: string }) {
   return (
@@ -13,7 +13,7 @@ function PhoneIcon({ className }: { className: string }) {
 
 export function TestezCTA({
   variant = "blue",
-  label = "Testez Rushh",
+  label = "Tester le standard",
   href = DEMO_LINE_HREF,
   ariaLabel,
 }: {
