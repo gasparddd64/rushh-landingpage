@@ -34,7 +34,7 @@ function Card({ item }: { item: CatalogueItem }) {
       </Link>
       <div className="rc-body">
         <p className="rc-cat">{item.categoryLabel}</p>
-        <h3 className="rc-title"><Link href={item.path}>{item.path.startsWith("/vs/") ? <BrandedText text={item.title} /> : item.title}</Link></h3>
+        <h3 className="rc-title"><Link href={item.path}>{item.path.startsWith("/vs/") ? <BrandedText text={item.title} logo={false} /> : item.title}</Link></h3>
         <p className="rc-desc">{item.summary}</p>
       </div>
     </li>
