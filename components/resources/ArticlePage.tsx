@@ -234,12 +234,6 @@ export function ArticlePage({ article: a }: { article: Article }) {
                   sizes="(min-width: 900px) 760px, 100vw"
                   priority
                 />
-                <figcaption>
-                  Photo :{" "}
-                  <a href={`https://unsplash.com/photos/${ARTICLE_PHOTOS[a.path].unsplashId}`} target="_blank" rel="noopener noreferrer">
-                    Unsplash
-                  </a>
-                </figcaption>
               </figure>
             )}
             <div className="res-intro">{a.intro?.map((b, i) => <BlockView key={i} b={b} />)}</div>

@@ -332,6 +332,4 @@
 /* Photo d'en-tête des articles (sous le titre) */
 .res .res-photo { margin: 28px 0 8px; }
 .res .res-photo img { display: block; width: 100%; height: auto; aspect-ratio: 1920 / 1008; object-fit: cover; border-radius: 20px; background: #eef1f7; box-shadow: 0 24px 50px -32px rgba(12, 16, 36, 0.4); }
-.res .res-photo figcaption { margin-top: 10px; font-size: 12.5px; color: rgba(24, 32, 58, 0.5); text-align: right; }
-.res .res-photo figcaption a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 640px) { .res .res-photo { margin-top: 20px; } .res .res-photo img { border-radius: 14px; } }
