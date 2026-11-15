@@ -6,10 +6,10 @@ export const vsVokai: Article = {
   bare: true,
   category: "comparatifs",
   cover: {
-    src: "/ressources/vs-vokai.png",
+    src: "/ressources/vs-vokai-logos.png",
     width: 1600,
     height: 840,
-    alt: "Illustration : deux offres de standard téléphonique IA dédiées à l'immobilier, comparées sur la qualification, les connexions et la prise en charge.",
+    alt: "Illustration : les logos de VOKAI et de Rushh face à face, pour comparer un standard IA multi-métiers et un standard spécialisé en immobilier.",
   },
   title: "Rushh ou VOKAI : comparer deux standards IA immobiliers",
   description:

@@ -6,10 +6,10 @@ export const vsFonio: Article = {
   bare: true,
   category: "comparatifs",
   cover: {
-    src: "/ressources/vs-fonio.png",
+    src: "/ressources/vs-fonio-logos.png",
     width: 1600,
     height: 840,
-    alt: "Illustration : deux façons d'équiper une agence pour ses appels, les niveaux d'accompagnement de Fonio et la prestation immobilière entièrement gérée de Rushh.",
+    alt: "Illustration : les logos de Fonio et de Rushh face à face, pour comparer une plateforme d'assistants téléphoniques IA et un standard téléphonique entièrement géré.",
   },
   title: "Alternative à Fonio pour l'immobilier : Rushh ou Fonio ? | Rushh",
   description:

@@ -6,10 +6,10 @@ export const vsJoeAi: Article = {
   bare: true,
   category: "comparatifs",
   cover: {
-    src: "/ressources/vs-joe-ai.png",
+    src: "/ressources/vs-joe-ai-logos.png",
     width: 1600,
     height: 840,
-    alt: "Deux services d'appel comparés, Rushh centré sur les appels entrants et Joe AI proposant plusieurs canaux, qui convergent vers le même test : vos propres appels. Aucun classement n'est établi.",
+    alt: "Illustration : les logos de Joe AI et de Rushh face à face, pour comparer deux solutions d'IA téléphonique spécialisées dans l'immobilier.",
   },
   title: "Rushh ou Joe AI : comparatif pour agences immobilières | Rushh",
   description:

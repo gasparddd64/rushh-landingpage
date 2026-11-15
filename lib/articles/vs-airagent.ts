@@ -6,10 +6,10 @@ export const vsAirAgent: Article = {
   bare: true,
   category: "comparatifs",
   cover: {
-    src: "/ressources/vs-airagent.png",
+    src: "/ressources/vs-airagent-logos.png",
     width: 1600,
     height: 840,
-    alt: "Illustration : deux offres pour les appels d'une agence immobilière, celle d'AirAgent selon son site et une prestation de standard entièrement prise en charge, comparées sur vos propres appels.",
+    alt: "Illustration : les logos d'AirAgent et de Rushh face à face, pour comparer une plateforme de création d'agents vocaux et un standard entièrement géré.",
   },
   title: "Rushh ou AirAgent : comparer pour une agence immobilière",
   description:

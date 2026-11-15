@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ARTICLE_PHOTOS } from "@/lib/articles/photos";
 import { orgRef } from "@/lib/brand";
 import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
@@ -190,7 +191,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: a.h1,
-    ...(a.cover ? { image: [`${SITE}${a.cover.src}`] } : {}),
+    ...(a.cover ? { image: [`${SITE}${a.cover.src}`, ...(ARTICLE_PHOTOS[a.path] ? [`${SITE}${ARTICLE_PHOTOS[a.path].src}`] : [])] } : {}),
     description: a.description,
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
@@ -223,6 +224,24 @@ export function ArticlePage({ article: a }: { article: Article }) {
               <Link href="/ressources">Blog</Link>
             </nav>
             <h1 className="res-h1">{a.h1}</h1>
+            {ARTICLE_PHOTOS[a.path] && (
+              <figure className="res-photo">
+                <Image
+                  src={ARTICLE_PHOTOS[a.path].src}
+                  width={ARTICLE_PHOTOS[a.path].width}
+                  height={ARTICLE_PHOTOS[a.path].height}
+                  alt={ARTICLE_PHOTOS[a.path].alt}
+                  sizes="(min-width: 900px) 760px, 100vw"
+                  priority
+                />
+                <figcaption>
+                  Photo :{" "}
+                  <a href={`https://unsplash.com/photos/${ARTICLE_PHOTOS[a.path].unsplashId}`} target="_blank" rel="noopener noreferrer">
+                    Unsplash
+                  </a>
+                </figcaption>
+              </figure>
+            )}
             <div className="res-intro">{a.intro?.map((b, i) => <BlockView key={i} b={b} />)}</div>
           </header>
           <div className="res-body">

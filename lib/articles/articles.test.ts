@@ -6,6 +6,7 @@ import { getMarkdownPage, isKnownRoute } from "../agent-content";
 import { ARTICLES, CATEGORIES, FEATURED_PATH, type Article, type Block } from "./index";
 import { CATALOGUE } from "./catalogue";
 import { articleToMarkdown } from "./markdown";
+import { ARTICLE_PHOTOS } from "./photos";
 
 const REQUIRED_LINKS: Record<string, string[]> = {
   "/ressources/appels-manques-immobilier": ["/solutions/transaction-immobiliere", "/offre"],
@@ -460,5 +461,31 @@ describe("/vs/joe-ai (comparatif refondu)", () => {
   it("presents Rushh as inbound-call focused with appointments, live transfer, automatic SMS and e-mails, and a business platform", () => {
     for (const t of ["agenda connecté", "transfère l'appel en direct", "SMS et des e-mails automatiques", "plateforme métier", "alternative à Joe AI"]) expect(md).toContain(t);
     expect(md).not.toMatch(/voix uniquement|uniquement la voix/i);
+  });
+});
+
+describe("photos d'en-tête des articles", () => {
+  it("every photo exists with its declared size, a descriptive alt text and belongs to a known article", () => {
+    for (const [path, ph] of Object.entries(ARTICLE_PHOTOS)) {
+      expect(ARTICLES.some((a) => a.path === path), path).toBe(true);
+      const file = join(process.cwd(), "public", ph.src);
+      const buf = readFileSync(file);
+      // JPEG : on lit les dimensions dans le premier marqueur SOF
+      let w = 0, h = 0;
+      for (let i = 2; i < buf.length - 9; ) {
+        if (buf[i] !== 0xff) { i++; continue; }
+        const m = buf[i + 1];
+        if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) { h = buf.readUInt16BE(i + 5); w = buf.readUInt16BE(i + 7); break; }
+        i += 2 + buf.readUInt16BE(i + 2);
+      }
+      expect([w, h], path).toEqual([ph.width, ph.height]);
+      expect(buf.length, path).toBeLessThan(450 * 1024);
+      expect(ph.alt.length, path).toBeGreaterThan(30);
+    }
+  });
+
+  it("covers every article except the brand comparisons, which use logo covers", () => {
+    const without = ARTICLES.filter((a) => !ARTICLE_PHOTOS[a.path]).map((a) => a.path).sort();
+    expect(without).toEqual(["/comparatif/standards-telephoniques-ia-immobilier", "/vs/airagent", "/vs/fonio", "/vs/joe-ai", "/vs/vokai", "/vs/volubilimo"]);
   });
 });
