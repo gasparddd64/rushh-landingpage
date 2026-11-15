@@ -6,7 +6,7 @@ export const vsFonio: Article = {
   bare: true,
   category: "comparatifs",
   cover: {
-    src: "/ressources/vs-fonio-logos.png",
+    src: "/ressources/vs-fonio-logos-v2.png",
     width: 1600,
     height: 840,
     alt: "Illustration : les logos de Fonio et de Rushh face à face, pour comparer une plateforme d'assistants téléphoniques IA et un standard téléphonique entièrement géré.",

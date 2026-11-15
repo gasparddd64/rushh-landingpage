@@ -6,7 +6,7 @@ export const comparatif: Article = {
   "bare": true,
   "category": "comparatifs",
   "cover": {
-    "src": "/ressources/comparatif-standards-telephoniques-ia-immobilier-logos.png",
+    "src": "/ressources/comparatif-standards-telephoniques-ia-immobilier-logos-v2.png",
     "width": 1600,
     "height": 840,
     "alt": "Illustration : les logos de Fonio, Joe AI, AirAgent, VOKAI et Rushh alignés pour comparer cinq solutions d'IA téléphonique pour l'immobilier."

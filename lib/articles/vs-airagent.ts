@@ -6,7 +6,7 @@ export const vsAirAgent: Article = {
   bare: true,
   category: "comparatifs",
   cover: {
-    src: "/ressources/vs-airagent-logos.png",
+    src: "/ressources/vs-airagent-logos-v2.png",
     width: 1600,
     height: 840,
     alt: "Illustration : les logos d'AirAgent et de Rushh face à face, pour comparer une plateforme de création d'agents vocaux et un standard entièrement géré.",

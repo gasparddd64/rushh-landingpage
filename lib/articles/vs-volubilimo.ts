@@ -6,7 +6,7 @@ export const vsVolubilimo: Article = {
   bare: true,
   category: "comparatifs",
   cover: {
-    src: "/ressources/volubilimo-logos.png",
+    src: "/ressources/volubilimo-logos-v2.png",
     width: 1600,
     height: 840,
     alt: "Illustration : les logos de Volubilimo et de Rushh face à face, pour comparer deux standards téléphoniques IA immobiliers.",

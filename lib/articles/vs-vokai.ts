@@ -6,7 +6,7 @@ export const vsVokai: Article = {
   bare: true,
   category: "comparatifs",
   cover: {
-    src: "/ressources/vs-vokai-logos.png",
+    src: "/ressources/vs-vokai-logos-v2.png",
     width: 1600,
     height: 840,
     alt: "Illustration : les logos de VOKAI et de Rushh face à face, pour comparer un standard IA multi-métiers et un standard spécialisé en immobilier.",
