@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BrandedText } from "@/components/resources/BrandedText";
 import { ARTICLE_PHOTOS } from "@/lib/articles/photos";
 import { orgRef } from "@/lib/brand";
 import Link from "next/link";
@@ -223,7 +224,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
               <span aria-hidden>›</span>
               <Link href="/ressources">Blog</Link>
             </nav>
-            <h1 className="res-h1">{a.h1}</h1>
+            <h1 className="res-h1">{a.path.startsWith("/vs/") ? <BrandedText text={a.h1} /> : a.h1}</h1>
             {ARTICLE_PHOTOS[a.path] && (
               <figure className="res-photo">
                 <Image

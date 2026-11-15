@@ -5096,3 +5096,7 @@ button, input, select, textarea { font-family: inherit; }
 :is(.cgv-h1, .lg-h1, .of-h1, .rx-h1, .ri-h1, .res-h1, .conf-title)[class][class] em { font-style: normal; font-weight: inherit; color: var(--accent); }
 :is(.section-eyebrow, .rx-eyebrow, .res-cat)[class][class] { display: inline-flex; align-items: center; padding: 8px 16px; margin-bottom: 18px; border-radius: 999px; background: #fff; border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(12, 16, 36, 0.04); font-size: 14px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.3; text-transform: none; color: var(--ink); }
 .rx-eyebrow[class]::before { display: none; }
+
+/* Logo Rushh dans les titres de comparaison : pastille douce, les autres marques restent en texte */
+.rh-logo { display: inline-flex; align-items: center; vertical-align: -0.2em; margin: 0 0.04em; padding: 0.1em 0.34em; border-radius: 0.34em; background: linear-gradient(180deg, #f4f8ff 0%, #e3edff 100%); box-shadow: inset 0 0 0 1px rgba(0, 71, 198, 0.16), 0 6px 16px -10px rgba(0, 71, 198, 0.5); }
+.rh-logo img { display: block; width: auto; height: 0.82em; }

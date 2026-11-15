@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { BrandedText } from "@/components/resources/BrandedText";
 
 export interface CatalogueItem {
   path: string;
@@ -33,7 +34,7 @@ function Card({ item }: { item: CatalogueItem }) {
       </Link>
       <div className="rc-body">
         <p className="rc-cat">{item.categoryLabel}</p>
-        <h3 className="rc-title"><Link href={item.path}>{item.title}</Link></h3>
+        <h3 className="rc-title"><Link href={item.path}>{item.path.startsWith("/vs/") ? <BrandedText text={item.title} /> : item.title}</Link></h3>
         <p className="rc-desc">{item.summary}</p>
       </div>
     </li>
