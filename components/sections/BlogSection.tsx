@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ARTICLES } from "@/lib/articles";
+import { primaryImage } from "@/lib/articles/photos";
 import { categoryCardLabel } from "@/lib/articles/categories";
 import "@/app/closing.css";
 
@@ -38,7 +40,7 @@ export function BlogSection() {
           {items.map((a) => (
             <article key={a.path} className="bl-card">
               <Link href={a.path} className="bl-media" tabIndex={-1} aria-hidden>
-                <img src={a.cover!.src} width={a.cover!.width} height={a.cover!.height} alt="" loading="lazy" />
+                <Image src={primaryImage(a).src} width={primaryImage(a).width} height={primaryImage(a).height} alt="" sizes="(min-width: 900px) 380px, 100vw" />
               </Link>
               <div className="bl-meta">
                 <span className="bl-tag">{categoryCardLabel(a.category)}</span>

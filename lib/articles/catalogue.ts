@@ -1,6 +1,7 @@
 import { ARTICLES } from "./index";
 import { categoryCardLabel, categoryLabel, type CategoryId } from "./categories";
 import type { ArticleCover } from "./types";
+import { primaryImage } from "./photos";
 
 /** Carte du catalogue Blog : une publication, qu'elle soit un article ou une page existante. */
 export interface CatalogueEntry {
@@ -65,7 +66,7 @@ function build(): CatalogueEntry[] {
       title: a.shortTitle ?? a.h1,
       summary: a.summary ?? a.description,
       category: a.category,
-      cover: a.cover!,
+      cover: primaryImage(a),
     })),
     ...PAGES,
   ];

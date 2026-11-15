@@ -4,6 +4,8 @@
  * Choisies sans visage reconnaissable ni marque visible. Les pages de comparaison de marques (/vs/*, comparatif)
  * n'ont pas de photo : leur vignette montre les logos Rushh et concurrent.
  */
+import type { ArticleCover } from "./types";
+
 export interface ArticlePhoto {
   src: string;
   width: number;
@@ -77,3 +79,13 @@ export const ARTICLE_PHOTOS: Record<string, ArticlePhoto> = {
   "/ressources/appels-annonces-seloger-portails-immobiliers": { src: "/ressources/photos/appels-annonces-seloger-portails-immobiliers.jpg", width: 1920, height: 1008, unsplashId: "3v0aQxhZtVk",
     alt: "Immeuble haussmannien d'angle avec un lampadaire et des arbres." },
 };
+
+/**
+ * Image principale d'un article, partout où il est présenté (catalogue du blog, accueil, partage) :
+ * sa photo lorsqu'il en a une, sinon sa vignette (pages de comparaison : logos Rushh et concurrent).
+ */
+export function primaryImage(a: { path: string; cover?: ArticleCover }): ArticleCover {
+  const ph = ARTICLE_PHOTOS[a.path];
+  if (ph) return { src: ph.src, width: ph.width, height: ph.height, alt: ph.alt };
+  return a.cover!;
+}

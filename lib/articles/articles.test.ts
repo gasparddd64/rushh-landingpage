@@ -8,6 +8,18 @@ import { CATALOGUE } from "./catalogue";
 import { articleToMarkdown } from "./markdown";
 import { ARTICLE_PHOTOS } from "./photos";
 
+/** Dimensions d'un PNG ou d'un JPEG. */
+function imageSize(buf: Buffer): [number, number] {
+  if (buf.readUInt32BE(0) === 0x89504e47) return [buf.readUInt32BE(16), buf.readUInt32BE(20)];
+  for (let i = 2; i < buf.length - 9; ) {
+    if (buf[i] !== 0xff) { i++; continue; }
+    const m = buf[i + 1];
+    if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return [buf.readUInt16BE(i + 7), buf.readUInt16BE(i + 5)];
+    i += 2 + buf.readUInt16BE(i + 2);
+  }
+  return [0, 0];
+}
+
 const REQUIRED_LINKS: Record<string, string[]> = {
   "/ressources/appels-manques-immobilier": ["/solutions/transaction-immobiliere", "/offre"],
   "/ressources/telesecretariat-humain-ou-ia": ["/offre", "/demonstrations"],
@@ -276,12 +288,13 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(joe.category).toBe("comparatifs");
   });
 
-  it("gives every card a cover that matches the real PNG, a short title and an editorial summary distinct from the meta description", () => {
+  it("gives every card an image (photo or logo cover) that matches its real file size, a short title and an editorial summary distinct from the meta description", () => {
     for (const e of CATALOGUE) {
       const buf = readFileSync(join(process.cwd(), "public", e.cover.src));
-      expect(buf.readUInt32BE(16), e.path).toBe(e.cover.width);
-      expect(buf.readUInt32BE(20), e.path).toBe(e.cover.height);
-      expect(e.cover.alt.length).toBeGreaterThan(60);
+      const [w, h] = imageSize(buf);
+      expect(w, e.path).toBe(e.cover.width);
+      expect(h, e.path).toBe(e.cover.height);
+      expect(e.cover.alt.length).toBeGreaterThan(30);
       expect(e.title.length, e.path).toBeLessThanOrEqual(50);
       expect(e.summary.length, e.path).toBeLessThanOrEqual(130);
       const a = ARTICLES.find((x) => x.path === e.path);
