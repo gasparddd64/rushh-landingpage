@@ -224,7 +224,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
               <span aria-hidden>›</span>
               <Link href="/ressources">Blog</Link>
             </nav>
-            <h1 className="res-h1">{a.path.startsWith("/vs/") ? <BrandedText text={a.h1} /> : a.h1}</h1>
+            <h1 className="res-h1">{a.path.startsWith("/vs/") || a.path === "/ressources/rushh-standard-telephonique-ia-immobilier" ? <BrandedText text={a.h1} /> : a.h1}</h1>
             {ARTICLE_PHOTOS[a.path] && (
               <figure className="res-photo">
                 <Image
