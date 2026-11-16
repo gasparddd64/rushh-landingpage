@@ -5128,7 +5128,7 @@ button, input, select, textarea { font-family: inherit; }
 .hz-inner .hz-actions .demo-cta-wrap { margin-top: 0; }
 .hz-proof { display: flex; align-items: center; gap: calc(16 * var(--v)); text-align: left; }
 .hz-proof-faces { --av: max(38px, calc(62 * var(--v))); display: flex; }
-.hz-proof-faces img { width: var(--av); height: var(--av); border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(12, 16, 36, 0.12); }
+.hz-proof-faces img { width: var(--av); height: var(--av); border-radius: 50%; object-fit: cover; border: 0; box-shadow: 0 2px 8px rgba(12, 16, 36, 0.14); }
 .hz-proof-faces img + img { margin-left: calc(var(--av) * -0.5); }
 .hz-proof-text { display: flex; flex-direction: column; gap: 3px; }
 .hz-proof-stars { display: inline-flex; gap: 2px; }
