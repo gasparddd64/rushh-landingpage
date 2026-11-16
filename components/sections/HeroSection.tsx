@@ -25,14 +25,19 @@ export function HeroSection() {
               ))}
             </div>
             <div className="hz-proof-text">
-              <span className="hz-proof-stars" role="img" aria-label="Note de 5 sur 5">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <svg key={i} viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.52l-5.88 3.09 1.12-6.55L2.48 9.42l6.58-.96L12 2.5z" />
-                  </svg>
-                ))}
+              <span className="hz-proof-rate">
+                <span className="hz-proof-stars" role="img" aria-label="Note de 5 sur 5">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.52l-5.88 3.09 1.12-6.55L2.48 9.42l6.58-.96L12 2.5z" />
+                    </svg>
+                  ))}
+                </span>
+                <span className="hz-proof-score">5.0</span>
               </span>
-              <span className="hz-proof-label">Agences accompagnées</span>
+              <span className="hz-proof-label">
+                Agences <strong>accompagnées</strong>
+              </span>
             </div>
           </div>
         </div>
