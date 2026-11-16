@@ -15,12 +15,13 @@ export function HeroSection() {
           vous aide à ne manquer aucun mandat potentiel.
         </p>
         <div className="hz-actions">
-          <TestezCTA />
+          <TestezCTA label="Testez Rushh" ariaLabel="Testez Rushh : appeler la ligne de démonstration au 01 76 63 57 09" />
           <div className="hz-proof">
             <div className="hz-proof-faces" aria-hidden="true">
-              {[1, 2, 3, 4, 5].map((n) => (
+              {/* de gauche à droite : Camille, Thomas, Marie, Florent, David. Chaque visage est à moitié couvert par le suivant ; David, au premier plan, est le seul visible en entier. */}
+              {[5, 3, 4, 2, 1].map((n) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={n} src={`/hero-avatar-${n}.webp`} alt="" width={112} height={112} decoding="async" />
+                <img key={n} className={n === 1 ? "hz-proof-lead" : undefined} src={`/hero-avatar-${n}.webp`} alt="" width={112} height={112} decoding="async" />
               ))}
             </div>
             <div className="hz-proof-text">
