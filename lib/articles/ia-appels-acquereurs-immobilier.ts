@@ -46,7 +46,7 @@ export const iaAppelsAcquereurs: Article = {
         "Une question sur le prix ou la négociation revient au négociateur.",
         "Chaque demande est enregistrée avec ses coordonnées pour être suivie.",
       ]),
-      p("Les appels qui arrivent après la publication d'une annonce sont détaillés dans le guide sur les [appels des portails immobiliers](/ressources/appels-annonces-seloger-portails-immobiliers)."),
+      p("Les appels qui arrivent après la publication d'une annonce sont détaillés dans le guide sur les [appels des portails immobiliers](/ressources/appels-annonces-seloger-portails-immobiliers). Quand plusieurs acquéreurs appellent ensemble, voir les [pics d'appels après une annonce](/ressources/appels-simultanes-annonce-immobiliere) ; côté propriétaires, les [appels vendeurs](/ressources/ia-appels-vendeurs-immobilier)."),
     ),
     section(
       "rushh",

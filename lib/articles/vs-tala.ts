@@ -66,7 +66,7 @@ export const vsTala: Article = {
         "Notre équipe prend en charge la conception, la configuration, les connexions, les tests, l'installation, la maintenance et les ajustements. Rushh est centré sur les appels entrants : il peut prendre un rendez-vous sur un agenda connecté, transférer un appel en direct vers un collaborateur, envoyer des SMS et des e-mails automatiques selon les scénarios, et se connecter à des [logiciels immobiliers](/integrations) via leur API, selon les autorisations.",
       ),
       p(
-        "Les demandes sont organisées dans la plateforme métier Rushh, avec coordonnées, résumé et statut. Voir [l'offre Rushh](/offre) et le [comparatif des standards IA](/comparatif/standards-telephoniques-ia-immobilier). D'autres comparaisons : [Fonio](/vs/fonio), [Joe AI](/vs/joe-ai), [AirAgent](/vs/airagent).",
+        "Les demandes sont organisées dans la plateforme métier Rushh, avec coordonnées, résumé et statut. Voir [l'offre Rushh](/offre) et le [comparatif des standards IA](/comparatif/standards-telephoniques-ia-immobilier). D'autres comparaisons : [Fonio](/vs/fonio), [Joe AI](/vs/joe-ai), [AirAgent](/vs/airagent), [VOKAI](/vs/vokai).",
       ),
     ),
     demoSection(

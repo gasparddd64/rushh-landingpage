@@ -49,7 +49,7 @@ export const testAgentVocal: Article = {
     section(
       "suite",
       "Pour aller plus loin",
-      p("Le guide [réceptionniste IA](/ressources/receptionniste-ia-agence-immobiliere) détaille comment tester un service, et [choisir un standard](/ressources/choisir-standard-telephonique-ia-immobilier) propose les critères de décision."),
+      p("Le guide [réceptionniste IA](/ressources/receptionniste-ia-agence-immobiliere) détaille comment tester un service, et [choisir un standard](/ressources/choisir-standard-telephonique-ia-immobilier) propose les critères de décision. Sur la voix elle-même, voir [une voix IA naturelle](/ressources/voix-ia-naturelle-agence-immobiliere)."),
     ),
     section(
       "rushh",
