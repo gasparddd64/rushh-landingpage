@@ -46,7 +46,7 @@ export const agentVocalIa: Article = {
         "Il ne remplace pas un conseil d'agent sur un prix ou un projet complexe.",
         "L'appelant parle à une IA : l'annoncer clairement fait partie d'une bonne pratique.",
       ]),
-      p("Un agent vocal se juge sur des appels réels : voyez comment [le tester avant de s'engager](/ressources/test-agent-vocal-ia-immobilier)."),
+      p("Un agent vocal se juge sur des appels réels : voyez comment [le tester avant de s'engager](/ressources/test-agent-vocal-ia-immobilier). Pour la voix, voir [une voix IA naturelle](/ressources/voix-ia-naturelle-agence-immobiliere) ; pour le choix du canal, [chatbot, agent vocal ou standard](/ressources/assistant-conversationnel-immobilier) ; pour les propriétaires, [les appels vendeurs](/ressources/ia-appels-vendeurs-immobilier)."),
     ),
     section(
       "rushh",
