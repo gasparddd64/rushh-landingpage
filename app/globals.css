@@ -5130,7 +5130,6 @@ button, input, select, textarea { font-family: inherit; }
 .hz-proof-faces { --av: max(38px, calc(62 * var(--v))); display: flex; }
 .hz-proof-faces img { width: var(--av); height: var(--av); border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(12, 16, 36, 0.12); }
 .hz-proof-faces img + img { margin-left: calc(var(--av) * -0.5); }
-.hz-proof-faces img.hz-proof-lead { width: calc(var(--av) * 1.18); height: calc(var(--av) * 1.18); box-shadow: 0 4px 14px rgba(12, 16, 36, 0.2); }
 .hz-proof-text { display: flex; flex-direction: column; gap: 3px; }
 .hz-proof-stars { display: inline-flex; gap: 2px; }
 .hz-proof-stars svg { width: clamp(14px, calc(22 * var(--v)), 24px); height: clamp(14px, calc(22 * var(--v)), 24px); fill: #f59e0b; }
