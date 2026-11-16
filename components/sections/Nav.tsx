@@ -26,7 +26,7 @@ export function Nav({ variant }: { variant?: "hero" } = {}) {
 
   return (
     <>
-      <nav className={`nav${variant === "hero" ? " nav--hero" : ""}`}>
+      <nav aria-label="Navigation principale" className={`nav${variant === "hero" ? " nav--hero" : ""}`}>
         <div className="nav-inner">
           {/* Logo */}
           <Link href="/" className="brand">

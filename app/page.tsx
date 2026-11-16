@@ -141,6 +141,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Nav variant="hero" />
+      <main id="contenu">
       <HeroSection />
       <div className="lf">
         <LossSection />
@@ -156,6 +157,7 @@ export default function Home() {
       <TestimonialsSection />
       <BlogSection />
       <CtaBandSection />
+      </main>
       <FooterSection />
       <ScrollReveal />
     </>

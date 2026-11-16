@@ -112,7 +112,7 @@ export const Cross = () => (
 /* ── Structure de page ── */
 export function SolShell({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <main className={`offre sol${className ? ` ${className}` : ""}`}>
+    <main id="contenu" className={`offre sol${className ? ` ${className}` : ""}`}>
       <Nav />
       <div className="lf">{children}</div>
       <FooterSection />

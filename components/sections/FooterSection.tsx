@@ -84,7 +84,7 @@ export function FooterSection() {
             <img src="/rgpd-logo.webp" width={20} height={20} alt="" loading="lazy" />
             Respect du RGPD
           </span>
-          <nav className="footer-legal">
+          <nav className="footer-legal" aria-label="Informations légales">
             <Link href="/mentions-legales">Mentions légales</Link>
             <Link href="/cgv">CGV</Link>
             <Link href="/privacy">Confidentialité</Link>

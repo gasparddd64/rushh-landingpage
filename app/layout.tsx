@@ -70,6 +70,7 @@ export default function RootLayout({
       className={inter.variable}
     >
       <body>
+        <a href="#contenu" className="skip-link">Aller au contenu</a>
         <CalendlyTracking />
         <ConversionTracking />
         <AnnouncementBar />

@@ -73,7 +73,7 @@ export function LegalDocument({ doc }: { doc: LegalDoc }) {
     label: `${doc.sectionPrefix ? `${doc.sectionPrefix} ` : ""}${s.num}${doc.sectionPrefix ? " — " : ". "}${s.title}`,
   }));
   return (
-    <main className="cgv-page lg-page">
+    <main id="contenu" className="cgv-page lg-page">
       <Nav />
 
       <div className="wrap">

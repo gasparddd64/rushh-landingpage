@@ -18,7 +18,7 @@ export const metadata: Metadata = withSocial(baseMetadata, "/contact");
 
 export default function ContactPage() {
   return (
-    <main className="cgv-page">
+    <main id="contenu" className="cgv-page">
       <Nav />
 
       <div className="wrap">

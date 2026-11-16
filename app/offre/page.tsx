@@ -136,7 +136,7 @@ const RECEIVE = [
 
 export default function OffrePage() {
   return (
-    <main className="offre">
+    <main id="contenu" className="offre">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

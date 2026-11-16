@@ -36,7 +36,7 @@ const INTEGRATIONS = [
 
 export default function IntegrationsPage() {
   return (
-    <main className="cgv-page">
+    <main id="contenu" className="cgv-page">
       <Nav />
 
       <div className="wrap">

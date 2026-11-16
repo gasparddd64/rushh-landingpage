@@ -5100,3 +5100,25 @@ button, input, select, textarea { font-family: inherit; }
 /* Logo Rushh posé dans la ligne des titres (sans cadre) ; les autres marques en gris */
 .rh-logo { display: inline-block; width: auto; height: 0.96em; vertical-align: -0.11em; margin: 0 0.04em; }
 .rh-other { color: rgba(24, 32, 58, 0.46); }
+
+/* Lien d'évitement : invisible tant qu'il n'a pas le focus clavier */
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10000;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #0c1024;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}

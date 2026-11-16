@@ -28,7 +28,7 @@ export default async function ConfirmationPage({
 
 
   return (
-    <main className="conf-page">
+    <main id="contenu" className="conf-page">
       <div className="conf-bg" aria-hidden="true" />
       <svg className="conf-arc" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
         <defs>
