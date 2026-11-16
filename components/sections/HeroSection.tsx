@@ -1,4 +1,8 @@
+import { Inter } from "next/font/google";
 import { TestezCTA } from "@/components/ui/testez-cta";
+
+/** Police des avis clients (celle que l'on voit partout sur ce type de bloc), réservée au bloc de preuve sociale. */
+const proofFont = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap" });
 
 /** Hero plein bleu : barre de navigation transparente, titre léger, sous-titre, un CTA blanc, immeuble détouré qui monte du bas. */
 export function HeroSection() {
@@ -16,7 +20,7 @@ export function HeroSection() {
         </p>
         <div className="hz-actions">
           <TestezCTA label="Testez Rushh" ariaLabel="Testez Rushh : appeler la ligne de démonstration au 01 76 63 57 09" />
-          <div className="hz-proof">
+          <div className={`hz-proof ${proofFont.className}`}>
             <div className="hz-proof-faces" aria-hidden="true">
               {/* de gauche à droite : Camille, Thomas, Marie, Florent, David. Chaque visage est à moitié couvert par le suivant ; David, au premier plan, est le seul visible en entier (même taille que les autres). */}
               {[5, 3, 4, 2, 1].map((n) => (
