@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 
 /** Marques concurrentes citées dans les titres de comparaison : elles restent en texte, en gris. */
-const OTHERS = ["Fonio", "Joe AI", "Volubilimo", "AirAgent", "VOKAI"];
+const OTHERS = ["Fonio", "Joe AI", "Volubilimo", "AirAgent", "VOKAI","Tala"];
 const SPLIT = new RegExp(`(Rushh|${OTHERS.join("|")})`);
 
 /**

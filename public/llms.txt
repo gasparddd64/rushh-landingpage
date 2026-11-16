@@ -73,6 +73,21 @@ Rushh is not a good fit for industries outside real estate, and does not replace
 - Rushh vs Volubilimo (comparison, sourced and dated): https://www.rushh.fr/vs/volubilimo
 - Rushh vs AirAgent (comparison, sourced and dated): https://www.rushh.fr/vs/airagent
 - Rushh vs VOKAI (comparison, sourced and dated): https://www.rushh.fr/vs/vokai
+- Rushh vs Tala (comparison, sourced and dated): https://www.rushh.fr/vs/tala
+- Guide, AI voice agent for real estate (how an agent answers an agency's calls, example, limits): https://www.rushh.fr/ressources/agent-vocal-ia-immobilier
+- Guide, tailor-made AI phone switchboard for an agency (what the team does for you: audit, rules, setup, tests, follow-up): https://www.rushh.fr/ressources/standard-telephonique-ia-sur-mesure-immobilier
+- Guide, conversational assistant for real estate: chatbot, voice agent or phone switchboard: https://www.rushh.fr/ressources/assistant-conversationnel-immobilier
+- Guide, an AI that answers seller calls: from first contact to the valuation appointment: https://www.rushh.fr/ressources/ia-appels-vendeurs-immobilier
+- Guide, an AI that answers buyer calls: qualifying a viewing request without interrupting the negotiator: https://www.rushh.fr/ressources/ia-appels-acquereurs-immobilier
+- Guide, small agency without an assistant: should calls be outsourced?: https://www.rushh.fr/ressources/standard-ia-petite-agence-sans-assistante
+- Guide, how to test an AI voice agent before adopting it: 8 scenario calls: https://www.rushh.fr/ressources/test-agent-vocal-ia-immobilier
+- Guide, AI phone answering for sitting tenants: everyday requests, emergencies, routing: https://www.rushh.fr/ressources/ia-telephone-appels-locataires
+- Guide, AI phone answering for landlords without overloading the property manager: https://www.rushh.fr/ressources/ia-telephone-appels-bailleurs
+- Guide, AI phone answering for rental applicants calling about listings: https://www.rushh.fr/ressources/ia-candidats-location-immobiliere
+- Guide, AI voice agent for co-owners' calls: routine questions to urgent reports: https://www.rushh.fr/ressources/agent-vocal-ia-appels-coproprietaires
+- Guide, keeping the agency's phone number with an AI switchboard (immediate or conditional forwarding): https://www.rushh.fr/ressources/standard-ia-conserver-numero-immobilier
+- Guide, natural-sounding AI voice on the phone: criteria to avoid callers hanging up: https://www.rushh.fr/ressources/voix-ia-naturelle-agence-immobiliere
+- Guide, call peaks after a listing: answering several buyers at the same time: https://www.rushh.fr/ressources/appels-simultanes-annonce-immobiliere
 - Terms of sale (CGV): https://www.rushh.fr/cgv
 - Legal notice (publisher, hosting): https://www.rushh.fr/mentions-legales
 - Privacy: https://www.rushh.fr/privacy

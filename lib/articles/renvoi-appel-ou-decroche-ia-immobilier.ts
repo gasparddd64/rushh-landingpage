@@ -62,7 +62,7 @@ export const renvoiOuDecroche: Article = {
         },
         {
           "t": "statement",
-          "text": "Dans les deux cas, l'appelant doit avoir une réponse et l'équipe doit retrouver une demande claire."
+          "text": "Dans les deux cas, l'appelant doit avoir une réponse et l'équipe doit retrouver une demande claire. Pour savoir comment garder son numéro dans les deux cas, voir [garder son numéro avec un standard IA](/ressources/standard-ia-conserver-numero-immobilier)."
         }
       ]
     },

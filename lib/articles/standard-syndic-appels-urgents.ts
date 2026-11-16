@@ -28,7 +28,7 @@ export const standardSyndicUrgents: Article = {
     },
     {
       "t": "p",
-      "text": "Un appel urgent mal acheminé coûte cher. Une organisation claire évite l'improvisation."
+      "text": "Un appel urgent mal acheminé coûte cher. Une organisation claire évite l'improvisation. Pour les appels courants des copropriétaires, voir l'[agent vocal IA et les copropriétaires](/ressources/agent-vocal-ia-appels-coproprietaires)."
     }
   ],
   sections: [

@@ -20,6 +20,21 @@ import { filtrerDemarchage } from "./filtrer-demarchage-telephonique-agence-immo
 import { appelsSoirWeekEnd } from "./appels-agence-immobiliere-soir-week-end";
 import { qualifierLocatairesBailleurs } from "./qualifier-appels-locataires-bailleurs";
 import type { Article } from "./types";
+import { vsTala } from "./vs-tala";
+import { agentVocalIa } from "./agent-vocal-ia-immobilier";
+import { standardSurMesure } from "./standard-telephonique-ia-sur-mesure-immobilier";
+import { assistantConversationnel } from "./assistant-conversationnel-immobilier";
+import { iaAppelsVendeurs } from "./ia-appels-vendeurs-immobilier";
+import { iaAppelsAcquereurs } from "./ia-appels-acquereurs-immobilier";
+import { standardPetiteAgence } from "./standard-ia-petite-agence-sans-assistante";
+import { testAgentVocal } from "./test-agent-vocal-ia-immobilier";
+import { iaAppelsLocataires } from "./ia-telephone-appels-locataires";
+import { iaAppelsBailleurs } from "./ia-telephone-appels-bailleurs";
+import { iaCandidatsLocation } from "./ia-candidats-location-immobiliere";
+import { agentVocalCoproprietaires } from "./agent-vocal-ia-appels-coproprietaires";
+import { standardConserverNumero } from "./standard-ia-conserver-numero-immobilier";
+import { voixIaNaturelle } from "./voix-ia-naturelle-agence-immobiliere";
+import { appelsSimultanes } from "./appels-simultanes-annonce-immobiliere";
 
 import { standardSyndicUrgents } from "./standard-syndic-appels-urgents";
 import { standardIaAgenda } from "./standard-ia-google-agenda-outlook-immobilier";
@@ -38,8 +53,8 @@ import { standardMultilingue } from "./standard-telephonique-ia-multilingue-immo
 import { smsConfirmationVisite } from "./sms-confirmation-visite-immobiliere";
 import { appelsAnnonces } from "./appels-annonces-seloger-portails-immobiliers";
 
-export const ARTICLES: Article[] = [appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, vsJoeAi, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs, standardSyndicUrgents, standardIaAgenda, standardIaRgpd, repondeurOuStandardIa, messagesRepondeur, rushhDefinition, receptionnisteIa, automatiserAppels, externalisationAppels, secretaireTelephoniqueIa, scriptAccueil, appelsPendantVisites, standardMandataire, standardMultilingue, smsConfirmationVisite, appelsAnnonces];
+export const ARTICLES: Article[] = [appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, vsJoeAi, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs, standardSyndicUrgents, standardIaAgenda, standardIaRgpd, repondeurOuStandardIa, messagesRepondeur, rushhDefinition, receptionnisteIa, automatiserAppels, externalisationAppels, secretaireTelephoniqueIa, scriptAccueil, appelsPendantVisites, standardMandataire, standardMultilingue, smsConfirmationVisite, appelsAnnonces, vsTala, agentVocalIa, standardSurMesure, assistantConversationnel, iaAppelsVendeurs, iaAppelsAcquereurs, standardPetiteAgence, testAgentVocal, iaAppelsLocataires, iaAppelsBailleurs, iaCandidatsLocation, agentVocalCoproprietaires, standardConserverNumero, voixIaNaturelle, appelsSimultanes];
 
-export { appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, vsJoeAi, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs, standardSyndicUrgents, standardIaAgenda, standardIaRgpd, repondeurOuStandardIa, messagesRepondeur, rushhDefinition, receptionnisteIa, automatiserAppels, externalisationAppels, secretaireTelephoniqueIa, scriptAccueil, appelsPendantVisites, standardMandataire, standardMultilingue, smsConfirmationVisite, appelsAnnonces };
+export { appelsManques, telesecretariat, qualification, comparatif, vsFonio, choisir, priseRendezVous, vsVolubilimo, coutStandard, permanenceTelephonique, appelVendeurEstimation, standardApimo, standardWhise, vsAirAgent, vsVokai, vsJoeAi, rentabiliteStandard, renvoiOuDecroche, filtrerDemarchage, appelsSoirWeekEnd, qualifierLocatairesBailleurs, standardSyndicUrgents, standardIaAgenda, standardIaRgpd, repondeurOuStandardIa, messagesRepondeur, rushhDefinition, receptionnisteIa, automatiserAppels, externalisationAppels, secretaireTelephoniqueIa, scriptAccueil, appelsPendantVisites, standardMandataire, standardMultilingue, smsConfirmationVisite, appelsAnnonces, vsTala, agentVocalIa, standardSurMesure, assistantConversationnel, iaAppelsVendeurs, iaAppelsAcquereurs, standardPetiteAgence, testAgentVocal, iaAppelsLocataires, iaAppelsBailleurs, iaCandidatsLocation, agentVocalCoproprietaires, standardConserverNumero, voixIaNaturelle, appelsSimultanes };
 export * from "./types";
 export * from "./categories";

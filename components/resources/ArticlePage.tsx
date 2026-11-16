@@ -192,7 +192,7 @@ export function ArticlePage({ article: a }: { article: Article }) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: a.h1,
-    ...(a.cover ? { image: [`${SITE}${a.cover.src}`, ...(ARTICLE_PHOTOS[a.path] ? [`${SITE}${ARTICLE_PHOTOS[a.path].src}`] : [])] } : {}),
+    ...(a.cover || ARTICLE_PHOTOS[a.path] ? { image: [...(a.cover ? [`${SITE}${a.cover.src}`] : []), ...(ARTICLE_PHOTOS[a.path] ? [`${SITE}${ARTICLE_PHOTOS[a.path].src}`] : [])] } : {}),
     description: a.description,
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },

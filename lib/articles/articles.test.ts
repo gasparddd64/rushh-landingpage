@@ -218,12 +218,12 @@ describe("guide-specific requirements", () => {
 describe("catalogue /ressources (le Blog)", () => {
   const md = getMarkdownPage("/ressources")?.markdown ?? "";
 
-  it("is a known route with a Markdown mirror, one H1, and links to all thirty-seven publications", () => {
+  it("is a known route with a Markdown mirror, one H1, and links to all fifty-two publications", () => {
     expect(isKnownRoute("/ressources")).toBe(true);
     expect(md.match(/^# /gm)).toHaveLength(1);
     expect(md).toContain("# Le Blog Rushh");
-    expect(ARTICLES).toHaveLength(37);
-    expect(CATALOGUE).toHaveLength(37);
+    expect(ARTICLES).toHaveLength(52);
+    expect(CATALOGUE).toHaveLength(52);
     for (const e of CATALOGUE) expect(md).toContain(`(https://www.rushh.fr${e.path})`);
     expect(sitemap().map((e) => e.url)).toContain("https://www.rushh.fr/ressources");
   });
@@ -234,20 +234,29 @@ describe("catalogue /ressources (le Blog)", () => {
     expect(CATALOGUE.map((e) => e.path)).toContain(FEATURED_PATH);
   });
 
-  it("offers the three filters: all (37), guides (31), comparatifs (6)", () => {
+  it("offers the three filters: all (52), guides (45), comparatifs (7)", () => {
     expect(CATEGORIES.map((c) => c.label)).toEqual(["Guides & conseils", "Comparatifs"]);
     const by = (c: string) => CATALOGUE.filter((e) => e.category === c).map((e) => e.path).sort();
     expect(by("guides")).toEqual([
+      "/ressources/agent-vocal-ia-appels-coproprietaires",
+      "/ressources/agent-vocal-ia-immobilier",
       "/ressources/appel-vendeur-estimation-immobiliere",
       "/ressources/appels-agence-immobiliere-soir-week-end",
       "/ressources/appels-annonces-seloger-portails-immobiliers",
       "/ressources/appels-manques-immobilier",
+      "/ressources/appels-simultanes-annonce-immobiliere",
+      "/ressources/assistant-conversationnel-immobilier",
       "/ressources/automatiser-appels-entrants-agence-immobiliere",
       "/ressources/choisir-standard-telephonique-ia-immobilier",
       "/ressources/cout-standard-telephonique-ia-immobilier",
       "/ressources/externalisation-appels-telephoniques-agence-immobiliere",
       "/ressources/filtrer-demarchage-telephonique-agence-immobiliere",
       "/ressources/gerer-appels-pendant-visites-immobilieres",
+      "/ressources/ia-appels-acquereurs-immobilier",
+      "/ressources/ia-appels-vendeurs-immobilier",
+      "/ressources/ia-candidats-location-immobiliere",
+      "/ressources/ia-telephone-appels-bailleurs",
+      "/ressources/ia-telephone-appels-locataires",
       "/ressources/messages-repondeur-agence-immobiliere",
       "/ressources/permanence-telephonique-agence-immobiliere",
       "/ressources/prise-rendez-vous-ia-immobilier",
@@ -261,20 +270,26 @@ describe("catalogue /ressources (le Blog)", () => {
       "/ressources/script-accueil-telephonique-agence-immobiliere",
       "/ressources/secretaire-telephonique-ia-immobilier",
       "/ressources/sms-confirmation-visite-immobiliere",
+      "/ressources/standard-ia-conserver-numero-immobilier",
       "/ressources/standard-ia-google-agenda-outlook-immobilier",
+      "/ressources/standard-ia-petite-agence-sans-assistante",
       "/ressources/standard-syndic-appels-urgents",
       "/ressources/standard-telephonique-ia-apimo",
       "/ressources/standard-telephonique-ia-immobilier-rgpd",
       "/ressources/standard-telephonique-ia-mandataire-immobilier",
       "/ressources/standard-telephonique-ia-multilingue-immobilier",
+      "/ressources/standard-telephonique-ia-sur-mesure-immobilier",
       "/ressources/standard-telephonique-ia-whise",
       "/ressources/telesecretariat-humain-ou-ia",
+      "/ressources/test-agent-vocal-ia-immobilier",
+      "/ressources/voix-ia-naturelle-agence-immobiliere",
     ]);
     expect(by("comparatifs")).toEqual([
       "/comparatif/standards-telephoniques-ia-immobilier",
       "/vs/airagent",
       "/vs/fonio",
       "/vs/joe-ai",
+      "/vs/tala",
       "/vs/vokai",
       "/vs/volubilimo",
     ]);
@@ -399,8 +414,8 @@ describe("refonte éditoriale : règles communes aux pages au texte réécrit", 
   const bare = ARTICLES.filter((x) => x.bare && !PROTECTED.has(x.path));
   const wc = (md: string) => md.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").split(/\s+/).length;
 
-  it("covers the 20 rewritten pages (19 guides/comparisons + Joe AI), all articles being now in the new format", () => {
-    expect(bare).toHaveLength(20);
+  it("covers the 35 rewritten pages (19 guides/comparisons + Joe AI + 15 new pages of 16 November), all articles being now in the new format", () => {
+    expect(bare).toHaveLength(35);
     expect(ARTICLES.every((x) => x.bare)).toBe(true);
   });
 
@@ -432,7 +447,7 @@ describe("refonte éditoriale : règles communes aux pages au texte réécrit", 
   });
 
   it("competitor pages cite the competitor's official site with a consultation date", () => {
-    for (const [p, host] of [["/vs/fonio", "fonio.ai"], ["/vs/volubilimo", "volubilimo.com"], ["/vs/airagent", "airagent.fr"], ["/vs/vokai", "vokai.fr"], ["/vs/joe-ai", "getjoe-ai.com"]]) {
+    for (const [p, host] of [["/vs/fonio", "fonio.ai"], ["/vs/volubilimo", "volubilimo.com"], ["/vs/airagent", "airagent.fr"], ["/vs/vokai", "vokai.fr"], ["/vs/joe-ai", "getjoe-ai.com"], ["/vs/tala", "tala-assistant.com"]]) {
       const md = articleToMarkdown(ARTICLES.find((x) => x.path === p)!);
       expect(md, p).toContain(host);
       expect(md, p).toMatch(/consultée? le \d+ (octobre|novembre) 2026/);
@@ -499,6 +514,6 @@ describe("photos d'en-tête des articles", () => {
 
   it("covers every article except the brand comparisons, which use logo covers", () => {
     const without = ARTICLES.filter((a) => !ARTICLE_PHOTOS[a.path]).map((a) => a.path).sort();
-    expect(without).toEqual(["/comparatif/standards-telephoniques-ia-immobilier", "/vs/airagent", "/vs/fonio", "/vs/joe-ai", "/vs/vokai", "/vs/volubilimo"]);
+    expect(without).toEqual(["/comparatif/standards-telephoniques-ia-immobilier", "/vs/airagent", "/vs/fonio", "/vs/joe-ai", "/vs/tala", "/vs/vokai", "/vs/volubilimo"]);
   });
 });

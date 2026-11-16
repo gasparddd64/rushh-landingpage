@@ -96,7 +96,7 @@ export const qualifierLocatairesBailleurs: Article = {
         },
         {
           "t": "p",
-          "text": "Chaque motif appelle une suite différente : c'est ce qui rend la qualification utile."
+          "text": "Chaque motif appelle une suite différente : c'est ce qui rend la qualification utile. Voir aussi l'IA au téléphone pour les [locataires](/ressources/ia-telephone-appels-locataires), les [bailleurs](/ressources/ia-telephone-appels-bailleurs) et les [candidats à la location](/ressources/ia-candidats-location-immobiliere)."
         }
       ]
     },

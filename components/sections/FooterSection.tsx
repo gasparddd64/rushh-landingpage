@@ -61,6 +61,7 @@ export function FooterSection() {
               <Link href="/vs/joe-ai">Rushh vs Joe AI</Link>
               <Link href="/vs/fonio">Rushh vs Fonio</Link>
               <Link href="/vs/volubilimo">Rushh vs Volubilimo</Link>
+              <Link href="/vs/tala">Rushh vs Tala</Link>
             </nav>
           </div>
 
