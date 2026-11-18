@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/sections/Nav";
 import { CtaBandSection } from "@/components/sections/CtaBandSection";
 import { TestezCTA } from "@/components/ui/testez-cta";
+import { SocialProof } from "@/components/ui/social-proof";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { BRAND_NAME, OG_IMAGE, orgRef } from "@/lib/brand";
+import { BRAND_NAME, BRAND_VISUALS, OG_IMAGE, orgRef } from "@/lib/brand";
 import { RxDiff, RxProof } from "@/components/solutions/premium";
 import { OFFRE } from "@/lib/solutions/premium";
 import { OFFRE_COMPARE } from "@/lib/offre-compare";
@@ -373,6 +375,21 @@ export default function OffrePage() {
 
         <RxDiff id="diff-title" pill={OFFRE.diff.pill} title={OFFRE.diff.title} sub={OFFRE.diff.sub} items={OFFRE.diff.items} />
         <RxProof id="proof-title" title={OFFRE.proof.title} text={OFFRE.proof.text} say={OFFRE.proof.say} showPhone={false} />
+
+        {/* ── Rushh en images (visuels de marque : logo + une phrase) ── */}
+        <section aria-label="Rushh en images">
+          <div className="lf-wrap">
+            <div className="of-brand-proof"><SocialProof /></div>
+            <div className="of-brand">
+              {BRAND_VISUALS.map((v) => (
+                <figure key={v.path}>
+                  <Image src={v.path} width={v.width} height={v.height} alt={v.alt} sizes="(min-width: 900px) 360px, 100vw" />
+                  <figcaption>{v.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* ── 6. Démonstration et devis ── */}
         <CtaBandSection

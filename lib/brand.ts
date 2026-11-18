@@ -20,6 +20,31 @@ export const OG_IMAGE = {
 } as const;
 export const LOGO_URL = `${SITE}/logo-rushh-og.png`;
 
+/** Visuels de marque (logo Rushh + une phrase), montrés sur /offre et déclarés dans Schema.org et le sitemap. */
+export const BRAND_VISUALS = [
+  {
+    path: "/marque/rushh-logo-ne-laissez-plus-passer-opportunite.png",
+    width: 1600,
+    height: 900,
+    alt: "Logo Rushh et la phrase « Ne laissez plus passer la moindre opportunité ».",
+    caption: "Rushh, le standard téléphonique IA des agences immobilières.",
+  },
+  {
+    path: "/marque/rushh-logo-appels-agence-immobiliere.png",
+    width: 1600,
+    height: 900,
+    alt: "Logo Rushh et la phrase « Rushh répond aux appels de votre agence immobilière, à toute heure ».",
+    caption: "Rushh répond aux appels de votre agence, à toute heure.",
+  },
+  {
+    path: "/marque/rushh-logo-configure-teste-suivi.png",
+    width: 1600,
+    height: 900,
+    alt: "Logo Rushh et la phrase « Conçu, configuré, testé et suivi par l'équipe Rushh ».",
+    caption: "Une prestation entièrement prise en charge par l'équipe Rushh.",
+  },
+] as const;
+
 export const ORG_ID = `${SITE}/#organization`;
 export const WEBSITE_ID = `${SITE}/#website`;
 
