@@ -15,8 +15,25 @@ import { CtaBandSection } from "@/components/sections/CtaBandSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { FAQ_ITEMS } from "@/lib/faq";
-import { BRAND_NAME, BRAND_SHORT, ORG_ID, SITE, WEBSITE_ID, orgRef } from "@/lib/brand";
+import { BRAND_NAME, BRAND_SHORT, LOGO_URL, OG_IMAGE, ORG_ID, SITE, WEBSITE_ID, orgRef } from "@/lib/brand";
 import "./landing-flow.css";
+
+// Image de présentation officielle (≠ logo : le logo carré reste dans `logo`).
+const brandImage = {
+  "@type": "ImageObject",
+  "url": OG_IMAGE.url,
+  "width": OG_IMAGE.width,
+  "height": OG_IMAGE.height,
+  "caption": OG_IMAGE.alt,
+};
+
+// Le fondateur est une personne distincte de l'entreprise : son profil personnel n'est pas celui de Rushh.
+const founderSchema = {
+  "@type": "Person",
+  "name": "Gaspard David",
+  "jobTitle": "Fondateur",
+  "sameAs": ["https://www.linkedin.com/in/gaspardv/"],
+};
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -25,7 +42,8 @@ const organizationSchema = {
   "name": BRAND_NAME,
   "alternateName": BRAND_SHORT,
   "url": SITE,
-  "logo": "https://www.rushh.fr/logo-rushh-og.png",
+  "logo": LOGO_URL,
+  "image": brandImage,
   "description": "Agence spécialisée dans l'externalisation des appels entrants immobiliers : standard téléphonique IA conçu, configuré, testé et suivi par l'équipe Rushh pour les agences immobilières françaises.",
   "email": "hello@rushh.fr",
   "address": {
@@ -44,8 +62,8 @@ const organizationSchema = {
       "availableLanguage": ["French"],
     },
   ],
+  "founder": founderSchema,
   "sameAs": [
-    "https://www.linkedin.com/in/gaspardv/",
     "https://www.instagram.com/rushh.immo/",
   ],
 };
@@ -57,7 +75,8 @@ const localBusinessSchema = {
   "name": BRAND_NAME,
   "alternateName": BRAND_SHORT,
   "url": SITE,
-  "logo": "https://www.rushh.fr/logo-rushh-og.png",
+  "logo": LOGO_URL,
+  "image": brandImage,
   "description": "Agence spécialisée dans l'externalisation des appels entrants immobiliers : standard téléphonique IA conçu, configuré, testé et suivi par l'équipe Rushh pour les agences immobilières françaises.",
   "email": "hello@rushh.fr",
   "address": {

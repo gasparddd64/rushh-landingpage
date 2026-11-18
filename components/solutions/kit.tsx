@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BRAND_NAME, orgRef, websiteRef } from "@/lib/brand";
+import { BRAND_NAME, OG_IMAGE, orgRef, websiteRef } from "@/lib/brand";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/sections/Nav";
@@ -25,8 +25,8 @@ export interface SocialImage {
   alt: string;
 }
 
-// Visuel de partage par défaut (fichier carré existant) : dimensions réelles du fichier.
-const DEFAULT_SOCIAL_IMAGE: SocialImage = { src: "/logo-rushh-og.png", width: 1200, height: 1200, alt: BRAND_NAME };
+// Visuel de partage par défaut : image de marque Rushh 1200 × 630 (dimensions réelles du fichier).
+const DEFAULT_SOCIAL_IMAGE: SocialImage = { src: OG_IMAGE.path, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt };
 
 export function buildMetadata({
   title,
@@ -50,7 +50,7 @@ export function buildMetadata({
     alternates: { canonical: url },
     openGraph: { title, description, url, siteName: BRAND_NAME, locale: "fr_FR", type, images },
     twitter: {
-      card: image ? "summary_large_image" : "summary",
+      card: "summary_large_image",
       title,
       description,
       images: images.map((i) => i.url),

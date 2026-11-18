@@ -6,7 +6,7 @@ import { CtaBandSection } from "@/components/sections/CtaBandSection";
 import { TestezCTA } from "@/components/ui/testez-cta";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { BRAND_NAME, orgRef } from "@/lib/brand";
+import { BRAND_NAME, OG_IMAGE, orgRef } from "@/lib/brand";
 import { RxDiff, RxProof } from "@/components/solutions/premium";
 import { OFFRE } from "@/lib/solutions/premium";
 import { OFFRE_COMPARE } from "@/lib/offre-compare";
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     siteName: BRAND_NAME,
     locale: "fr_FR",
     type: "website",
-    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 1200, height: 1200, alt: BRAND_NAME }],
+    images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt }],
   },
-  twitter: { card: "summary", title: TITLE, description: DESCRIPTION, images: ["https://www.rushh.fr/logo-rushh-og.png"] },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: [OG_IMAGE.url] },
 };
 
 // JSON-LD factuel : aucun prix, aucune offre chiffrée (proposition personnalisée).
