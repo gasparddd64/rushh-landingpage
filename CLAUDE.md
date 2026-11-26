@@ -4,12 +4,9 @@
 
 Site marketing Next.js, remote `gasparddd64/rushh-landingpage`, branche de prod `main`. Prod = push sur `main` (Vercel).
 
-## Branches en attente (NON poussées, NON fusionnées — attendre le « go » explicite de Gaspard)
-- `identite-visuelle` (2 commits d'avance sur `main`) : image Open Graph de marque 1200×630, image Schema.org, fondateur distinct, visuels de marque sur /offre (3 images logo + phrase, preuve sociale, Schema.org, sitemap).
-- `maillage-interne` (2 commits) : liens croisés entre guides et vers pages peu liées.
-- `audit-technique` : sans commit propre.
-Après un « go » : fusionner dans `main`, pousser, puis vérifier rushh.fr (balises OG, Schema.org image/founder, sitemap images, section /offre). IndexNow (`scripts/indexnow.mjs`) seulement avec accord.
+## Fait (2026-11-26)
+`identite-visuelle` et `maillage-interne` fusionnées dans `main` (tests 591 OK, build OK) et poussées ; vérifié en ligne sur rushh.fr : og:image 1200×630, Schema.org (image Organization, fondateur Person), sitemap (3 images), 3 logos sur /offre. Les branches et les tags `backup-*-20261126-0855` restent en filet de sécurité (ne pas les supprimer avant quelques jours). IndexNow (`scripts/indexnow.mjs`) seulement avec accord de Gaspard.
 
 ## Ouvert
-- URL LinkedIn de la société requise pour le `sameAs` du Schema.org.
+- `sameAs` de l'Organization : seule l'URL LinkedIn de Gaspard est en place ; ajouter celle de la société si elle existe.
 - Dossiers non suivis par git : `audit/` (audits conversion/global/pages), `validation/` (textes offre, comparatif Joe AI), `docs/calendly-free-sync.md`, `.github/`, `scripts/calendly-sync*.mjs` — à commiter ou ignorer sur décision de Gaspard.
