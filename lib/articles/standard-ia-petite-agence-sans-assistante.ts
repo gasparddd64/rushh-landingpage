@@ -38,7 +38,7 @@ export const standardPetiteAgence: Article = {
         "Valider les règles de transfert et les créneaux de rendez-vous.",
         "Rappeler ou recevoir les demandes préparées.",
       ]),
-      p("Un négociateur indépendant a des besoins proches : voir le guide pour les [mandataires](/ressources/standard-telephonique-ia-mandataire-immobilier). Pour les horaires de réponse, voir la [permanence téléphonique](/ressources/permanence-telephonique-agence-immobiliere)."),
+      p("Un négociateur indépendant a des besoins proches : voir le guide pour les [mandataires](/ressources/standard-telephonique-ia-mandataire-immobilier). Pour les horaires de réponse, voir la [permanence téléphonique](/ressources/permanence-telephonique-agence-immobiliere). Pour un service réglé à votre place, voir le [standard IA sur mesure](/ressources/standard-telephonique-ia-sur-mesure-immobilier) ; pour écarter les appels commerciaux, [filtrer le démarchage](/ressources/filtrer-demarchage-telephonique-agence-immobiliere)."),
     ),
     section(
       "rushh",

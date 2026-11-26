@@ -28,7 +28,7 @@ export const standardConserverNumero: Article = {
         "Le renvoi conditionnel : le standard prend l'appel si la ligne est occupée, si personne ne répond ou si l'agence est fermée.",
         "Le décrochage direct : le standard répond à tous les appels et transfère ceux qui doivent arriver à une personne.",
       ]),
-      p("La différence entre renvoi et décrochage direct est détaillée dans [renvoi d'appel ou décroche IA](/ressources/renvoi-appel-ou-decroche-ia-immobilier)."),
+      p("La différence entre renvoi et décrochage direct est détaillée dans [renvoi d'appel ou décroche IA](/ressources/renvoi-appel-ou-decroche-ia-immobilier). Pour la fermeture, voir [les appels du soir et du week-end](/ressources/appels-agence-immobiliere-soir-week-end)."),
     ),
     section(
       "points",

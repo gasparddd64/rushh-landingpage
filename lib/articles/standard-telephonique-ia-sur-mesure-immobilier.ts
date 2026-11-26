@@ -48,7 +48,7 @@ export const standardSurMesure: Article = {
         "Valider les règles et les tests.",
         "Prévenir l'équipe de ce qui change dans la façon de traiter les appels.",
       ]),
-      p("Pour comparer avec le libre-service et le télésecrétariat, voir [externaliser ses appels](/ressources/externalisation-appels-telephoniques-agence-immobiliere)."),
+      p("Pour comparer avec le libre-service et le télésecrétariat, voir [externaliser ses appels](/ressources/externalisation-appels-telephoniques-agence-immobiliere). Pour une petite équipe, voir [la petite agence sans assistante](/ressources/standard-ia-petite-agence-sans-assistante) ; pour le choix du canal, [l'assistant conversationnel](/ressources/assistant-conversationnel-immobilier)."),
     ),
     section(
       "rushh",
