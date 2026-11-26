@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { BRAND_VISUALS } from '../lib/brand'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.rushh.fr/offre',
+      images: BRAND_VISUALS.map((v) => `https://www.rushh.fr${v.path}`),
       lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',
       priority: 0.8,

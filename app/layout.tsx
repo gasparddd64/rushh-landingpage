@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { BRAND_NAME } from "@/lib/brand";
+import { BRAND_NAME, OG_IMAGE } from "@/lib/brand";
 import { CalendlyTracking } from "@/components/CalendlyTracking";
 import { ConversionTracking } from "@/components/ConversionTracking";
 import { AnnouncementBar } from "@/components/ui/announcement-bar";
@@ -43,12 +43,13 @@ export const metadata: Metadata = {
     siteName: BRAND_NAME,
     locale: "fr_FR",
     type: "website",
-    images: [{ url: "https://www.rushh.fr/logo-rushh-og.png", width: 1200, height: 1200 }],
+    images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Standard téléphonique IA pour agence immobilière | Rushh immo",
     description: "Rushh répond aux appels de votre agence immobilière 24/7, qualifie vendeurs et acquéreurs. Moins d'appels manqués, plus d'opportunités de mandat.",
+    images: [OG_IMAGE.url],
   },
   alternates: {
     canonical: "https://www.rushh.fr",

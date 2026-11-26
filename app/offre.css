@@ -484,3 +484,25 @@
 .offre .of-cmp-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 1000px) { .offre .of-cmp { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; } }
 @media (max-width: 640px) { .offre .of-cmp-card { padding: 22px 20px 24px; border-radius: 20px; } .offre .of-cmp-card h3 { font-size: 17.5px; } }
+
+/* ---------- Visuels de marque ---------- */
+.offre .of-brand { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.offre .of-brand figure { margin: 0; }
+.offre .of-brand img { display: block; width: 100%; height: auto; border-radius: 20px; border: 1px solid var(--lf-line); }
+.offre .of-brand figcaption { margin-top: 12px; font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--lf-muted); }
+@media (max-width: 760px) { .offre .of-brand { grid-template-columns: 1fr; gap: 28px; } }
+
+/* Bloc de preuve sociale (visages + étoiles) au-dessus des visuels de marque */
+.offre .of-brand-proof { display: flex; justify-content: center; margin-bottom: 36px; }
+.offre .sp { display: flex; align-items: center; gap: 16px; text-align: left; }
+.offre .sp-faces { --av: 54px; display: flex; }
+.offre .sp-faces img { width: var(--av); height: var(--av); border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(12, 16, 36, 0.14); }
+.offre .sp-faces img + img { margin-left: calc(var(--av) * -0.5); }
+.offre .sp-text { display: flex; flex-direction: column; gap: 4px; padding-left: 20px; border-left: 1px solid rgba(17, 24, 39, 0.16); }
+.offre .sp-rate { display: inline-flex; align-items: center; gap: 8px; }
+.offre .sp-stars { display: inline-flex; gap: 2px; }
+.offre .sp-stars svg { width: 20px; height: 20px; fill: #fbbf24; }
+.offre .sp-score { font-size: 19px; font-weight: 700; line-height: 1; color: #111827; }
+.offre .sp-label { font-size: 16px; font-weight: 400; line-height: 1.2; color: #4f5663; white-space: nowrap; }
+.offre .sp-label strong { font-weight: 600; color: #111827; }
+@media (max-width: 760px) { .offre .sp { gap: 12px; } .offre .sp-faces { --av: 38px; } .offre .sp-text { padding-left: 12px; } .offre .of-brand-proof { margin-bottom: 28px; } }
